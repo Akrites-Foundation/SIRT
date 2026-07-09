@@ -1,4 +1,4 @@
-# Security Policy
+# Security Policy - DRAFT v.0.1
 
 The Open Source Security Incident Response Team (**OSS-SIRT**) coordinates the
 disclosure of security vulnerabilities for this project. Thank you for helping
