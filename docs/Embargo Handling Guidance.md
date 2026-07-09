@@ -1,4 +1,4 @@
-# Akrites SIRT — Embargo Handling Guidance
+# Akrites SIRT — Embargo Handling Guidance - DRAFT 0.1
 
 **Status:** Proposal / Draft for review
 
@@ -117,7 +117,7 @@ Some projects run scheduled release trains rather than per-issue embargoes — e
 5. **TLP throughout.** The embargo is enforced technically and procedurally via TLP 2.0 (TLP:RED at intake, TLP:AMBER+STRICT for case/patch material) and least-privilege read-in, consistent with the Akrites confidentiality framework.
 6. **Set Finder expectations at intake.** Confirm the Finder understands the timeline is governed by the project/list (§4.1), that duplicate reports may exist and alter the window (§4.2), and classify the report's **embargo eligibility** based on the tooling used — reports developed with public LLMs are treated as having **no embargo available** (§4.3).
 7. **Handle duplicates transparently.** When deduplication surfaces overlapping reports, inform the affected reporters that a duplicate exists (without leaking another Finder's confidential detail), and account for any embargo already set — or foreclosed — by a parallel discloser or Coordinator.
-8. **Unmaintained / unresponsive projects.** Where no policy and no responsive maintainer exist, the 30-day default applies as the working clock. If the project remains unresponsive, escalate per the intake process (new steward, or — with TOC approval and time-bounding — a hardened fork / full disclosure), with advisories and CVEs issued through the Linux Foundation's CNA authority.
+8. **Unmaintained / unresponsive projects.** Where no policy and no responsive maintainer exist, the 30-day default applies as the working clock. If the project remains unresponsive, escalate per the intake process (new steward, or — with TOC approval and time-bounding — a hardened fork / full disclosure), with advisories and CVEs issued through the Linux Foundation's CNA authority.  This will be detailed in additional guideance for the SIRT and members.
 9. **Document deviations.** Any embargo longer than 30 days (only expected for cross-vendor hardware/microarchitectural issues) requires explicit rationale and TOC awareness.
 
 ## 7. Summary table
