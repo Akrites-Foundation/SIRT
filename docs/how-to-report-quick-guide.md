@@ -1,4 +1,4 @@
-# How to Report a Vulnerability to OSS-SIRT
+# How to Report a Vulnerability to OSS-SIRT - DRAFT v0.1
 
 A short guide for security researchers and users (we call you a **Finder**) who
 have found a potential security issue in a project OSS-SIRT coordinates. Thank
