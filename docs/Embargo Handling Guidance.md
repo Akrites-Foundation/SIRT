@@ -109,6 +109,7 @@ Some projects run scheduled release trains rather than per-issue embargoes — e
 
 ## 6. Operating rules for the SIRT
 
+0. The SIRT will rely on automation to give us the reporting structure, workflow and timelines
 1. **Determine the governing timeline at the start of Coordination** and record it in the case (which of the four precedence tiers in §2 applies, and the source URL/policy it came from).
 2. **Set PD to the shortest applicable timeline.** When multiple parties/components are involved with different windows, the tightest binding constraint (e.g., a `linux-distros` 14-day cap, or a project that has already committed to a date) governs the synchronized window.
 3. **Maintainer authority is final.** The SIRT proposes and negotiates; the maintainer approves or revises the PD date for their project. The SIRT does not extend an embargo past what the project or a coordinating list permits.
