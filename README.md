@@ -49,7 +49,7 @@ To develop a cohort of trustworthy, vendor-neutral, vetted, well-orchestrated an
 - <!-- Official communications occur on the [OSSF OSS-SIRT Mailing list](https://lists.openssf.org/g/openssf-sig-osssirt/topics).  
   [Manage your subscriptions to Open SSF mailing lists](https://lists.openssf.org/g/main/subgroups) -->
 - Slack Channels - 
-  General Discussion (NOT FOR REPORTING VULNERATBILITIES)- [Akrites SIRT working group](https://akritesfoundation.slack.com/archives/C0BG2D5QQ12)
+  General Discussion (NOT FOR REPORTING VULNERABILITIES)- [Akrites SIRT working group](https://akritesfoundation.slack.com/archives/C0BG2D5QQ12)
 
 ### Quick Start
 
