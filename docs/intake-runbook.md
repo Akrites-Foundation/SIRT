@@ -1,4 +1,4 @@
-# OSS-SIRT Intake Runbook (one page)
+# OSS-SIRT Intake Runbook (one page) - DRAFT v0.1
 
 Step-by-step actions for the responder on duty, keyed to the nine-phase
 lifecycle in the [CVD Policy](https://github.com/ossf/SIRT/blob/main/coordinated-vulnerability-disclosure-policy.md).
