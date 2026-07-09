@@ -3,6 +3,7 @@
 **Status:** Proposal / Draft for review
 
 **Applies to:** All vulnerability cases handled by the OSS-SIRT (Intake → Synchronized Disclosure)
+
 **Relationship to existing docs:** Extends the *OSS-SIRT Process (High Level)* Coordination phase and the confidentiality principles in *Akrites: The SIRT*. Informed by the FIRST *Guidelines and Practices for Multi-Party Vulnerability Coordination and Disclosure*.
 
 ---
