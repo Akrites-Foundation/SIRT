@@ -1,0 +1,17 @@
+Member Name,Sponsoring Org,Working Group,SME Areas (Security Rolodex),Sanctioned Role(s),Prerequisites Complete (Y/N),Agreements on File (Embargo / CoC / Antitrust),Hardware 2FA Enabled (Y/N),Status (Active / Suspended / Removed),Added Date,Last Reviewed,Next Review,Removed Date,Removed Reason,Notes
+John Smith,Example Corp,libfoo WG,libfoo; TLS; C/memory-safety,Analyze-Patch; Test,Y,Embargo Y / CoC Y / Antitrust Y,Y,Active,2026-07-20,2026-07-20,2026-10-20,,,Contributed patch on CVE-2026-XXXX
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,

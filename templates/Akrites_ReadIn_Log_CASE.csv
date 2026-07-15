@@ -1,0 +1,17 @@
+Case ID,Date Requested,Nominee Name,Sponsoring Org,Nominated By,Sanctioned Role (Analyze-Patch / Test / Stage),Tier (0/1/2/3),Need-to-Know Justification,Gate 1 Need-to-Know (Y/N),Gate 2 Able-to-Contribute (Y/N),Prerequisites Complete (Y/N),Exclusion Check Done (Y/N),Approved By,Access Granted Date,Scope (repo / channel),Expiry (PD / case close),Revoked Date,Revocation Reason,Notes
+AKR-2026-0042,2026-08-04,Jane Doe,Example Corp,F. Perron (SIRT case lead),Analyze-Patch,1,libfoo maintainer-side expert; needed to develop the fix,Y,Y,Y,Y,C. Robinson (SIRT case lead),2026-08-04,gh:akrites/case-0042 + #case-0042,PD (target 2026-09-15),,,Standing member of libfoo WG
+,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,
