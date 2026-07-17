@@ -60,8 +60,7 @@ Each tier receives only the TLP-classified material its task requires: TLP:RED a
 
 **Levels.**
 1. **SIRT case lead.** Adjusts priority, pulls in additional Tier 1 SMEs, or reads a party in earlier — all within existing tier definitions.
-2. **TOC.** Cross-cutting or contested calls: vertical-vs-industry severity conflicts, broad-scope resourcing, or spinning up a new Working Group.
-3. **Governing Board.** Policy or legal matters: finder patch/customer obligations, antitrust, and government or critical-infrastructure coordination.
+2. **Governing Board.** Policy or legal matters: finder patch/customer obligations, antitrust, and government or critical-infrastructure coordination.
 
 **Severity changes.** If the score rises, read-in may widen or accelerate; if it falls, it may narrow or slow. Either way the change is recorded with rationale, and the embargo and PD date are re-evaluated.
 
@@ -76,12 +75,12 @@ Each tier receives only the TLP-classified material its task requires: TLP:RED a
 Exceptions are handled case-by-case; each is time-bounded, justified, approved by the named authority, and logged.
 
 - **Additional SME at project request.** The maintainer may request that a specific SME be read in; the SIRT admits them at the appropriate tier.
-- **Delegated read-in.** A coordinating body (e.g., CISA) or a maintainer may nominate who to loop in, within limits set by the SIRT. Delegates must still meet all prerequisites.
+- **Delegated read-in.** A coordinating body (e.g., CISA, ENISA) or a maintainer may nominate who to loop in, within limits set by the SIRT. Delegates must still meet all prerequisites.
 - **Early or broader read-in** for severe or broad-scope issues — handled via escalation (§4), time-bounded.
 - **Finder with a patch and customer obligations.** Sharing a fix before disclosure or upstream engagement is discouraged but cannot be prohibited. It must be declared to the SIRT; risks and consequences are documented; the Governing Board sets the governing policy.
 - **Early mitigations/workarounds.** Expected to be shared when patch development will exceed the agreed embargo or disclosure window.
-- **Maintainer of Last Resort / time-bounded hardened fork.** Only with TOC approval.
-- **Government / critical-infrastructure / telco coordination without pre-disclosure.** A TOC determination; consistent with the standing decision not to pre-disclose to any single government.
+- **Maintainer of Last Resort / time-bounded hardened fork.** Only with SIRT+WG approval.
+- **Government / critical-infrastructure / telco coordination without pre-disclosure.** A SIRT+WG determination; consistent with the standing decision not to pre-disclose to any single government.
 
 ---
 
@@ -100,12 +99,11 @@ Exceptions are handled case-by-case; each is time-bounded, justified, approved b
 | **SIRT case lead** | Assigns tiers; grants and revokes read-in; Level-1 escalation; coordinates breaches. |
 | **Finder & maintainer** | Consulted on the read-in list, embargo, and PD. The maintainer sets the final fix and PD date. |
 | **Working Group** | Nominates SMEs; requests escalation for its domain or vertical. |
-| **TOC** | Cross-cutting severity and vertical calls; MoLR approval; new WG spin-up; grey-area cases. |
 | **Governing Board** | Policy and legal exceptions (finder obligations, antitrust, government coordination). |
 
 ---
 
-## Open items to confirm with the TOC / Governing Board
+## Open items to confirm with the Governing Board
 
 - Default read-in **lead times** for Tier 2 and Tier 3.
 - The **RACI** of actions permitted at each tier.
