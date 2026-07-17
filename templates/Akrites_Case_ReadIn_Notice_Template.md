@@ -91,7 +91,7 @@ Access to all three requires hardware-key two-factor authentication.
 
 ## 7. Acknowledgment
 
-By continuing to participate in this case, you confirm that you:
+By adding your name via a PR to the Knowers_File.md for this working group, you are agreeing to participate in this case, and you confirm that you:
 
 1. Understand and will apply the **TLP handling** rules in §1.
 2. Will communicate about this case **only with the named parties** in §2, via the **channels** in §4.
