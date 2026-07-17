@@ -4,7 +4,7 @@
 
 ---
 
-**You are being read into a restricted vulnerability case.** Please read this notice in full before taking any action. Your continued participation confirms your agreement to the terms below.
+**You are being read into a restricted vulnerability case.** You have passed verification confirming you have expertise relevant to this disclosure and that you are able to contribute.  Please read this notice in full before taking any action. Your continued participation confirms your agreement to the terms below.
 
 | Field | Detail |
 |---|---|
