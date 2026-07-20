@@ -6,19 +6,22 @@
 
 **You are being read into a restricted vulnerability case.** You have passed verification confirming you have expertise relevant to this disclosure and that you are able to contribute.  Please read this notice in full before taking any action. Your continued participation confirms your agreement to the terms below.
 
+*Please reply to this message, acknowledging receipt of this email so that your provisioning to the team resources listed below can be completed.  Please also include your GitHub ID so you can be added to any associated private repositories this group will be using.*
+
 | Field | Detail |
 |---|---|
 | **Case ID** | {{CASE_ID}} |
 | **Read-in recipient** | {{NAME}} |
 | **Sponsoring organization** | {{ORG}} |
-| **Your role in this case** | {{ROLE — analyze / produce patch · test patch · stage patch}} |
+| **Your role in this case** | {{ROLE — SIRT ·KNOWER · analyze / produce patch · test patch · stage patch}} |
 | **Your tier** | {{TIER 0/1/2/3}} |
 | **Read-in date** | {{DATE}} |
 | **Embargo / public disclosure target** | {{PD_DATE}} |
 | **Access expires** | At public disclosure or case close |
 | **SIRT case lead (your point of contact)** | {{LEAD_NAME}} — {{LEAD_CONTACT}} |
 
-**What this case concerns (brief, need-to-know only):** {{ONE_LINE_SCOPE}}
+**What this case concerns (brief, need-to-know only):** 
+{{ONE_LINE_SCOPE}}
 
 ---
 
