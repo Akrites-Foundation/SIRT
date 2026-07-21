@@ -3,8 +3,9 @@
 > **How to use.** The SIRT case lead completes the fields in `{{…}}` and the read-in list in §2, then sends this to the person being read in (email, the case mailing list, or as the pinned first message in the case Slack channel and GitHub repo). Delete this instruction block before sending.
 
 ---
+You have passed verification confirming you have expertise relevant to this disclosure and that you are able to contribute.
 
-**You are being read into a restricted vulnerability case.** You have passed verification confirming you have expertise relevant to this disclosure and that you are able to contribute.  Please read this notice in full before taking any action. Your continued participation confirms your agreement to the terms below.
+**You are being read into a restricted vulnerability case.** Please read this notice in full before taking any action. To participate you must accept the terms contained in this Read-In Notice, the Akrites charter, and policies. To document your acceptance, reply to this email indicating your acceptance. Your continued participation confirms your continued adherence to the terms below.
 
 *Please reply to this message, acknowledging receipt of this email so that your provisioning to the team resources listed below can be completed.  Please also include your GitHub ID so you can be added to any associated private repositories this group will be using.*
 
@@ -27,7 +28,7 @@
 
 ## 1. Data classification — Traffic Light Protocol (TLP)
 
-This case is governed by the **FIRST Traffic Light Protocol (TLP 2.0)**. Every piece of case information carries a TLP label that tells you exactly how far you may share it. **When in doubt, treat information as TLP:RED and ask the SIRT case lead.**
+This case is governed by the **FIRST Traffic Light Protocol (TLP 2.0)**. Every piece of case information carries a TLP label that tells you exactly how far you may share it. What information you receive is scoped to your tier per the Tier Policy. **When in doubt, treat information as TLP:RED and ask the SIRT case lead.**
 
 | Label | What it means for you |
 |---|---|
@@ -87,7 +88,6 @@ Access to all three requires hardware-key two-factor authentication.
 
 - **Nothing** about this case is public until the disclosure date in the header. This includes the fix, the finding, and the fact that a case exists.
 - If you learn of a **suspected or actual embargo break**, notify the SIRT case lead **immediately** — the SIRT coordinates all breach response.
-- An embargo break results in **removal from the program.**
 - Your access **expires automatically** at public disclosure or case close.
 
 ---
@@ -100,5 +100,6 @@ By adding your name via a PR to the Knowers_File.md for this working group, you 
 2. Will communicate about this case **only with the named parties** in §2, via the **channels** in §4.
 3. Will route any **additional read-in requests through the SIRT** (§3).
 4. Will comply with the **embargo** and report any suspected break (§6).
+5. Acknowledge that violating or breaking the embargo will result in you and potentially your employer's **removal from the program.**
 
 *Questions about this notice go to the SIRT case lead listed in the header — not to anyone outside the read-in list.*
