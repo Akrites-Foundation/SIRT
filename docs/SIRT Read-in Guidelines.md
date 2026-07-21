@@ -17,7 +17,7 @@ If a person cannot do at least one of these, they are **not** read in. Being an 
 
 | Sanctioned contribution | What it means |
 |---|---|
-| **Analyze / produce a patch** | Validate the finding and develop the fix (or a workaround/alternative). |
+| **Analyze / produce a patch** | Validate the finding and develop the fix (and a workaround/alternative whenever possible). |
 | **Test the patch** | Verify the fix resolves the issue without regressions, in a representative environment. |
 | **Stage the patch** | Pre-position the fix for a safe, rapid rollout (e.g., distributor, package registry, CDN). |
 
