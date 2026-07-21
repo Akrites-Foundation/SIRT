@@ -32,7 +32,7 @@ These extend the Akrites principles into the hard cases. Keep them in view; ever
 - **The fork is a new attack surface.** A hastily‑stood‑up fork with a lightly‑vetted new maintainer is exactly the `xz-utils` (CVE‑2024‑3094) failure mode. Treat MoLR onboarding and steward vetting as a security control, not a formality.
 - **Everything is embargoed until it isn't.** TLP governs every artifact and every party from intake to Public Disclosure (PD). Non-fix and unresponsiveness do **not** default a case to open.
 - **Document the trail.** Every contact attempt, every maintainer decision, every governance approval is recorded. The record is what makes an eventual fork, disclosure, or namespace petition defensible.
-
+- **How can we help?** Maintainers may be unresponsive due to volume of vulns, we always provide the option of preference engagement (fork or be available to assist in the volume). This allows us to continue protection to downstream.
 ---
 
 ## 3. The engagement clock — contact and escalation protocol
