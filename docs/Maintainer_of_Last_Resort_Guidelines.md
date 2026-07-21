@@ -79,6 +79,8 @@ The project *wants* to do the right thing. Your job is to remove friction, not t
 
 **Do:**
 - Offer a **fully qualified bundle**: vulnerability detail, reproducible PoC/PoV, a proposed patch, and tests. Maintainers should be *reviewing a solution*, not solving cold.
+- Suggest enabling PVR: this is our default preference for collaboratively developing a solution that allows  "Start a temporary private fork" to be leveraged to submit the patch against.
+
 - Offer to **stand up a private channel** for them (e.g. help enable GitHub/GitLab private security advisories, or run the embargoed thread inside the SIRT's hardened enclave under TLP:AMBER+STRICT).
 - Offer to **run the coordination overhead**: CVE assignment (via the appropriate CNA — see §9), advisory drafting, CVSS/CWE/SSVC/EPSS enrichment, VEX generation, distro and downstream notification, and PD messaging support.
 - **Let them keep control and credit.** They approve/revise the patch; they set or negotiate the disclosure date; they own their project's public messaging; credit is theirs.
