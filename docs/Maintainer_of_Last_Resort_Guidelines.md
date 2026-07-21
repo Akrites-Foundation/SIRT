@@ -99,7 +99,7 @@ A reachable maintainer's decision not to fix is a **legitimate exercise of their
 
 - **Formally EOL / unsupported branch** — the maintainer has published an end‑of‑life for the affected version. Clean signal.
 - **Feature‑complete, still "supported" in principle** — maintainer considers the code done and won't touch it for this class of issue.
-- **WONTFIX on the merits** — maintainer disputes severity, considers it out of the threat model, or judges the fix cost unjustified.
+- **WONTFIX on the merits** — maintainer disputes severity, considers it out of the threat model, user configuration and advised against in docs, or judges the fix cost unjustified.
 
 **Do:**
 - **Record the maintainer's position in their own words**, with date and rationale (Appendix B). This becomes part of the advisory.
