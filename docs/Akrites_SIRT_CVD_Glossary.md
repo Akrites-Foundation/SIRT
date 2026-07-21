@@ -11,7 +11,6 @@ Entries within each section are ordered alphabetically. See **[Contributing to t
 | Term | Definition |
 |---|---|
 | **Akrites** | The neutral, Linux Foundation–hosted Security Incident Response Team program coordinating vulnerability response across upstream open source projects. |
-| **Customer Zero** | The first-served constituency — Akrites members — followed by package repositories, upstream maintainers, coordinators (CISA/ENISA), FIRST, and other partners. |
 | **Front door** | The single, maintainer-facing intake path (the SIRT API) that consolidates reports so upstream projects aren't approached through many uncoordinated channels. |
 | **Governing Board (GB)** | The program's governing body; owns policy- and legal-level decisions. |
 | **PSIRT** | Product Security Incident Response Team — a vendor's or project's own product-security response function; Akrites coordinates with these. |
