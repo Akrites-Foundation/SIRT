@@ -238,3 +238,20 @@ A candidate Steward should demonstrate:
 
 ---
 
+## Appendix A — One-page timeline summary
+
+```
+T0 ──▶ +5d ──▶ +10d ──▶ +15d ──▶ ~+30d (decision) ──▶ scenario path
+ │      │        │         │            │
+ att1   att2     eco       coord        classify §5
+                 escalate  handoff       │
+                                         ├─ 5.1 assist in place  ─────────▶ maintainer ships fix
+                                         ├─ 5.2 non-fix ─▶ advisory+VEX (+mitigation) (±§6 if critical)
+                                         └─ 5.3 unresponsive
+                                              ├─ alive  ─▶ registry transfer (PEP541/npm)
+                                              ├─ dead   ─▶ §6 MoLR (TOC) + §7 steward search
+                                              └─ suspect─▶ security incident + clean-room fork + heightened vetting
+
+§6 MoLR: reserved namespace · signed/2-person · security-only scope · time-bounded ─▶ sunset:
+   steward confirmed | maintainer returns | registry transfer | software retired | wind-down EOL advisory
+```
