@@ -222,7 +222,7 @@ A candidate Steward should demonstrate:
 - **Default posture:** TLP:RED at intake → TLP:AMBER+STRICT for case/patch material during remediation → step down to TLP:GREEN/CLEAR only at PD, per the SIRT's standard model. Non‑fix and unresponsiveness do **not** relax this.
 - **Escalation messages** to third parties (§3) carry the *minimum* — existence of a finding and a coordination problem — never technical detail, until those parties are formally read into the case circle under TLP.
 - **Attribution and credit** to the original maintainer/Finder persist through forks and steward transitions unless a party opts out.
-- **Public messaging at PD** should be neutral and factual about the project's status ("unmaintained," "EOL per maintainer," "maintainer unreachable") — never disparaging. The goal is downstream safety and a healthy handoff, not blame.
+- **Public messaging at PD** must be neutral and factual about the project's status ("unmaintained," "EOL per maintainer," "maintainer unreachable") — never disparaging. The goal is downstream safety and a healthy handoff, not blame.
 
 ---
 
