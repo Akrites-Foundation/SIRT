@@ -32,10 +32,13 @@ Entries within each section are ordered alphabetically. See **[Contributing to t
 | **Deviation notice** | A published record where Akrites' assessment (e.g., severity or root cause) differs from an existing public score — sharing the evidence rather than disputing the CNA. |
 | **Embargo** | The agreed period of confidentiality before public disclosure, during which only read-in parties know of the issue. Akrites' working default is 30 days, deferring to the upstream project's own policy. |
 | **Finder / Co-finder** | The party (or parties) who discovered and reported the vulnerability; co-finder rules govern shared attribution. |
+| **IR** | Incident Response. |
 | **Least privilege** | The principle that access is scoped to only what a role needs; members see only the WGs they belong to, and only SIRT staff have cross-cutting visibility. |
 | **Mitigation / workaround** | A non-patch means of reducing risk (e.g., a configuration change or firewall rule) when no fix is yet available. |
 | **MoLR (Maintainer of Last Resort)** | A carefully bounded arrangement in which a WG stewards or forks an unmaintained project to ship a fix; requires TOC approval. |
 | **PD (Public Disclosure)** | The point at which a vulnerability and its fix become public. |
+| **POC** | Proof of Concept - a controlled demonstration or set of instructions that proves a reported software flaw is real and exploitable, typically used by security teams to validate risks, reproduce issues, and test patches. [TechTarget](https://www.techtarget.com/searchsecurity/definition/proof-of-concept-PoC-exploit) |
+| **POV** | Proof of Vulnerability - Proof of Vulnerability (PoV) is an executable test case, input, or script that definitively confirms a theoretical security flaw is real, reproducible, and exploitable in a specific environment. In the context of vulnerability response and management, it serves as concrete, hands-on evidence that an identified software weakness can be triggered to compromise a system's confidentiality, integrity, or availability. [arXiv](https://arxiv.org/html/2607.12316v1) |
 | **Read-in** | Granting a named individual access to a specific case or WG after they clear the need-to-know and contribution gates. |
 | **Steward / LTS** | A party that takes on long-term support or maintenance of a project; the preferred alternative to Akrites acting as MoLR. |
 | **Synchronized disclosure** | Coordinating parties so the fix, advisory, and disclosure land together rather than piecemeal. |
