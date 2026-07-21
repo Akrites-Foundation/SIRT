@@ -1,6 +1,6 @@
 # Akrites Read-In Process — Working Groups & Disclosures - DRAFT v0.1
 
-**Purpose.** Define how people are granted access to vulnerability Working Groups (WGs) and to individual pre-disclosure cases. Access is tightly restricted to parties with a genuine need to know who can also meaningfully move a fix forward.
+**Purpose.** Define how people are granted access to vulnerability Working Groups (WGs) and to individual pre-disclosure cases. Access is tightly restricted to parties with a genuine need-to-know who can also meaningfully move a fix forward.
 
 **Guiding rule.** Least privilege, always. A person is read in only to the specific WG or case they are contributing to, only for as long as their task requires, and never across WGs. Only Akrites staff hold cross-cutting visibility.
 
