@@ -28,7 +28,7 @@ These extend the Akrites principles into the hard cases. Keep them in view; ever
 
 - **Downstream protection is the goal, not upstream compliance.** A maintainer's silence or refusal does not relieve you of the duty to protect the people running the software. But it also does not entitle you to seize the project.
 - **Right to fork comes from the license, not from the SIRT.** Confirm the license permits your intended action before you touch code. Trademark is separate from copyright — see §9.
-- **Least self-help.** Prefer legitimate registry/namespace transfer processes over unilateral publishing. Prefer helping the maintainer act over acting for them. Escalate only as far as the situation forces you.
+- **Least self-help.** Prefer legitimate registry/namespace transfer processes over unilateral publishing. Prefer helping the maintainer act over acting for them. Escalate only as far as the situation requires of you. (Procedures for escalation TBD)
 - **The fork is a new attack surface.** A hastily‑stood‑up fork with a lightly‑vetted new maintainer is exactly the `xz-utils` (CVE‑2024‑3094) failure mode. Treat MoLR onboarding and steward vetting as a security control, not a formality.
 - **Everything is embargoed until it isn't.** TLP governs every artifact and every party from intake to Public Disclosure (PD). Non-fix and unresponsiveness do **not** default a case to open.
 - **Document the trail.** Every contact attempt, every maintainer decision, every governance approval is recorded. The record is what makes an eventual fork, disclosure, or namespace petition defensible.
