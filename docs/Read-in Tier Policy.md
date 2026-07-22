@@ -56,7 +56,7 @@ Each tier receives only the TLP-classified material its task requires: TLP:RED a
 
 ## 4. Escalation path
 
-**Triggers.** A change in severity (CVSS rising or falling), scope or blast radius, criticality to a specific vertical (e.g., a CVSS-6 that is critical for telco), a member or Working Group request, or a need for additional resources.
+**Triggers.** A change in severity (CVSS rising or falling), scope or blast radius, criticality to a specific vertical (e.g., a vulnerability that is critical for telco), a member or Working Group request, or a need for additional resources.
 
 **Levels.**
 1. **SIRT case lead.** Adjusts priority, pulls in additional Tier 1 SMEs, or reads a party in earlier — all within existing tier definitions.
