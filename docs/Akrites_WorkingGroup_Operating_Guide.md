@@ -25,7 +25,7 @@ Keep these rules front of mind:
 - **Work stays private.** Everything lives in your WG's private repo until the SIRT and maintainer coordinate taking it Upstream at disclosure. Nothing goes to the public project, a public fork, or anywhere else beforehand.
 - **No sensitive artifacts in chat.** Never put exploit code, PoCs, or patches in Slack. Those belong in the private repository using Akrites infrastructure.
 - **Keep it in the environment.** Don't copy Case Material to personal machines or accounts. While sharing **TLP:AMBER+STRICT** within your org, make sure to follow all the company required security controls for handling information of the highest sensitivity level. Every action is logged.
-- **Embargo breaks = removal from the program.** Report any suspected break to the SIRT immediately.
+- **Embargo breaks = immediate access suspension.** Report any suspected break to the SIRT immediately. Cases will be escalated to the GB for considering permanent removal from the program.
 
 
 ---
