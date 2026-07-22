@@ -24,7 +24,7 @@ Keep these rules front of mind:
 - **Named parties only.** Discuss a case only with the people read into *that case*. If someone isn't read in, you cannot discuss the Case with them. They don't exist as far as the Case is concerned. Follow the [URL: Read In Policy] to have someone read in, enabling you to discuss the Case with them.
 - **Work stays private.** Everything lives in your WG's private repo until the SIRT and maintainer coordinate taking it Upstream at disclosure. Nothing goes to the public project, a public fork, or anywhere else beforehand.
 - **No sensitive artifacts in chat.** Never put exploit code, PoCs, or patches in Slack. Those belong in the private repository using Akrites infrastructure.
-- **Keep it in the environment.** Don't copy Case Material to personal machines or accounts. Every action is logged.
+- **Keep it in the environment.** Don't copy Case Material to personal machines or accounts. While sharing **TLP:AMBER+STRICT** within your org, make sure to follow all the company required security controls for handling information of the highest sensitivity level. Every action is logged.
 - **Embargo breaks = removal from the program.** Report any suspected break to the SIRT immediately.
 
 
