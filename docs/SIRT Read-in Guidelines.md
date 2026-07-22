@@ -91,7 +91,7 @@ Every grant and revocation is logged with justification and approver. Read-in li
 
 ## Open items to confirm with the TOC / Governing Board
 
-- **Approver of record** and whether the Finder or maintainer holds a veto on additions.
+- **Approver of record** and whether the Finder or maintainer have suggestions to put a veto on additions.
 - **Default read-in lead times** per tier.
 - **Delegation rules** — how far a coordinating body (e.g., CISA) or a maintainer may extend read-in on the SIRT's behalf.
 - **RACI per tier** — the specific actions each tier may take (to be developed).
