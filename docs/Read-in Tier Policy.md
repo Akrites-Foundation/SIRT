@@ -96,7 +96,7 @@ Exceptions are handled case-by-case; each is time-bounded, justified, approved b
 
 | Body | Authority |
 |---|---|
-| **SIRT case lead** | Assigns tiers; grants and revokes read-in; Level-1 escalation; coordinates breaches. |
+| **SIRT case lead** | Assigns tiers; grants and revokes read-in; Level-1 escalation; coordinates breaches. In edge cases and where delays are beyond expected SLAs (e.g., 24 hours for Critical/High issues), Tier placement and escalation decisions may be performed by WG Lead in concurrence with other SIRT members.  |
 | **Finder & maintainer** | Consulted on the read-in list, embargo, and PD. The maintainer sets the final fix and PD date. |
 | **Working Group** | Nominates SMEs; requests escalation for its domain or vertical. |
 | **Governing Board** | Policy and legal exceptions (finder obligations, antitrust, government coordination). |
