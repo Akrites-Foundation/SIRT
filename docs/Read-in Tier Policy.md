@@ -88,7 +88,7 @@ Exceptions are handled case-by-case; each is time-bounded, justified, approved b
 
 - If an embargo is broken, the **SIRT coordinates** and notifies affected participants and members, depending on what was broken and how.
 - Any member who discovers a breach **must promptly notify the SIRT.**
-- An embargo break results in **removal from the program.**
+- **Embargo breaks = immediate access suspension.** Report any suspected break to the SIRT immediately. Cases will be escalated to the GB for considering permanent removal from the program.**
 
 ---
 
