@@ -84,7 +84,7 @@ A lightweight version of the Case workflow loop:
 6. **Report to the SIRT** — notify the SIRT that the Case is ready for a Vulnerability Disclosure Report and Upstream maintainer engagement.
 7. **SIRT and Upstream Hand-off** — the SIRT and maintainer take the Case to the Upstream project; your WG assists as needed.
 
-**You do not contact the Upstream maintainer directly.** The SIRT is the single point of contact to Upstream. Your WG prepares everything privately; the SIRT engages the Upstream project.
+**You do not contact the Upstream maintainer directly.** The SIRT is the single point of contact to Upstream. Your WG prepares everything privately; the SIRT engages the Upstream project with co-coordination with relevant WG members involved in affected upstream operations, as appropriate.
 
 ---
 
