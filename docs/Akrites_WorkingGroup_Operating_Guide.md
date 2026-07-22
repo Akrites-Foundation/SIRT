@@ -78,7 +78,7 @@ A lightweight version of the Case workflow loop:
 
 1. **Validate & dedupe** — confirm it's real and not already handled.
 2. **Analyze** — characterize the flaw, affected versions, and impact; set a preliminary severity.
-3. **Build the fix** — develop the patch and/or a mitigation in a private branch.
+3. **Build the fix** — develop the patch and/or a mitigation in a private branch. It must be authored under compatible open-source licenses and adhere to SIRT contributing guidelines (such as requiring DCO / Signed-off-by) to guarantee frictionless upstream adoption.
 4. **Test** — verify the fix resolves the issue and introduces no regressions or new vulnerabilities.
 5. **Prepare a draft CVD rollout plan** if the WG has a proposed read-in list, embargo, and public disclosure date target, prepare an update for the SIRT with the WGs recommendations.
 6. **Report to the SIRT** — notify the SIRT that the Case is ready for a Vulnerability Disclosure Report and Upstream maintainer engagement.
