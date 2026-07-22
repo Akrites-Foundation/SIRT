@@ -33,7 +33,7 @@ Read-in maps to the tiered-disclosure model. Later tiers are read in **later** a
 | Maintainer | Owns the fix and final PD decision | Tier 0 | Earliest |
 | WG analyst / patch author (SME) | Analyze and produce the patch | Tier 1 | When analysis/patch work begins |
 | Patch tester (SME) | Test the patch | Tier 1 | When a testable alpha exists |
-| Distribution / staging party | Stage the fix ahead of PD | Tier 2 / 3 | Latest — minimum lead time for a safe rollout |
+| Distribution / staging party | Stage the fix ahead of PD | Tier 2 / 3 | Latest — minimum lead time for a safe rollout, but sufficient and aligned with standardized, pre-agreed embargo lead times (e.g., 7–14 days prior to public disclosure) to ensure synchronized patch availability. |
 
 ---
 
