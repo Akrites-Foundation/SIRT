@@ -66,7 +66,7 @@ No prerequisite, no access — even if both gates in §1 are met.
 WG membership is durable read-in scoped to a **domain** rather than a single case, and follows the same rules:
 
 - Both gates in §1 apply, evaluated against the WG's focus area; all §3 prerequisites required.
-- The member's expertise is entered in the Security Rolodex so the SIRT knows who to pull into future cases.
+- The member's expertise is entered in the Security Rolodex so the SIRT understands who is available to pull into future cases.  Access is always gated by the SIRT and the particulars or a given incident.
 - Access is limited to **that WG's** workspace only — never cross-WG.
 - Membership is reviewed periodically and removed when the member is no longer contributing.
 
