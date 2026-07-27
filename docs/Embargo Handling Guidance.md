@@ -90,7 +90,7 @@ The kernel security team treats its list as a fix-development channel, not a dis
 Where a kernel or broader OSS issue needs distribution vendors prepared before PD, coordination flows through the private `linux-distros` list, with public disclosure on `oss-security`. Key rules:
 
 - **Maximum embargo is 14 days. Do not ask for longer.** Windows shorter than 7 days are preferred; the reasonable minimum is 1 day, and a few hours can be acceptable in extreme cases.
-- For **Linux kernel** issues specifically, you must notify the **kernel security team first, wait for the fix, and only then** notify `linux-distros` or `oss-security`.
+- For **Linux kernel** issues specifically, you must notify the **kernel security team first, wait for the fix, and only then** notify `linux-distros` or `oss-security`.  The linux-distros list should ONLY be contacted **after** a Linux kernel fix is in a **publicly released kernel version**.
 - The reporter **must** post publicly on `oss-security` within 14 days of contacting the list, **whether or not a patch is ready.** So don't engage `linux-distros` until a patch exists.
 - Everything sent to `(linux-)distros` becomes public at disclosure — post nothing that can't eventually be public.
 - Vendors generally prefer to publish updates Tuesday–Thursday (the historical policy allowed stretching a window to ~19 days only to land disclosure on a Monday/Tuesday when reported late in the week).
