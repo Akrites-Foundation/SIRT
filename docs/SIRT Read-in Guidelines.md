@@ -93,6 +93,6 @@ Every grant and revocation is logged with justification and approver. Read-in li
 
 - **Approver of record** and whether the Finder or maintainer have suggestions to put a veto on additions.
 - **Default read-in lead times** per tier.
-- **Delegation rules** — how far a coordinating body (e.g., CISA) or a maintainer may extend read-in on the SIRT's behalf.
+- **Delegation rules** — need to develp read-in rules and enfocce that the SIRT must approve all expansions of the Knowers of an issue.
 - **RACI per tier** — the specific actions each tier may take (to be developed).
 - **Antitrust documentation** to cover early read-in of competing members.
