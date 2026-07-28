@@ -47,7 +47,7 @@ These principles, drawn largely from long-standing coordination practice, guide 
 
 ## 3. The coordinated lifecycle
 
-Each phase below notes what happens, then what "good" looks like for the parties with an active role in it.
+Each phase below notes what happens, then what "good" looks like for the parties with an active role in it. This guide captures the conceptual process, not the specific mechanics of how these are achieved through automation and agentic workflows (as appropriate). 
 
 ### Phase 1 — Discovery & Reporting
 A vulnerability is found and reported into a single intake path (the "front door"), so the project isn't approached through many uncoordinated channels.
