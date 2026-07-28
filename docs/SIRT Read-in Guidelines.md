@@ -70,7 +70,9 @@ WG membership is durable read-in scoped to a **domain** rather than a single cas
 - Access is limited to **that WG's** workspace only — never cross-WG.
 - Membership is reviewed periodically and removed when the member is no longer contributing.
 
-Standing membership does **not** grant automatic read-in to every case in the WG; case-level access still follows §4, though it can be near-instant for active members.
+Standing membership does **not** grant automatic read-in to every case in the WG; case-level access still follows §4, though it can be near-instant for active members. 
+
+We will identify "active members" criteria as we start working on real cases. But the expectation is that engineers validated for a standing Working Group once and are recognized for their contributions and domain expertise, will get read-in approvals quickly and without additional paperwork. Whereas requests for the new members or those who were unresponsive and didn't contribute for a long time, are expected to follow the full  §4 vetting.
 
 ---
 
