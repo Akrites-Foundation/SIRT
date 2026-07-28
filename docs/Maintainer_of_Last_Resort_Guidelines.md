@@ -15,7 +15,7 @@ This document governs what your PSIRT (acting as a Finder/coordinator and CNA) a
 1. **No capacity or tooling** — the project wants to fix the issue but has no private reporting channel, no security contact, no CI/release capacity, or no bandwidth to ingest and act on a qualified report.
 2. **Deliberate non-fix (EOL / feature-complete / WONTFIX)** — the maintainer is reachable and decides the affected branch will not be patched.
 3. **Unresponsive** — no contact is established within the escalation window, for any reason (lost interest, moved on, dead project, maintainer unreachable, or worse — a compromised or hostile maintainer).
-
+4. **Potential Conflict** - maintainer is known and contact can be established, but the same maintainer has direct ties into Akrites (Global Board, TOC or other WG). Conflict must be ruled out, otherwise it would be considered to be stalled.
 It also defines the **Maintainer of Last Resort (MoLR)** function: a time‑bounded, governed fork the SIRT may stand up when scenario 3 (and sometimes 2) leaves widely‑depended‑on critical software unpatched, and the **Stewardship transition** process for handing that fork to a durable long‑term owner.
 
 Out of scope: the mechanics of triage, dedup, and severity scoring already covered by the standard SIRT intake process. This picks up at the point where **the upstream handoff is the problem**.
