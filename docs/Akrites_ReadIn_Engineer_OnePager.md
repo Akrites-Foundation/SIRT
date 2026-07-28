@@ -28,7 +28,7 @@ You've been tapped to help resolve a confidential vulnerability under embargo. T
 
 - **Personal OPSEC.** You may be targeted *because* you're read in. Watch for phishing and social engineering, lock your screen, and don't discuss the case where you can be overheard.
 - **Material Non-Public Information (MNPI).** Vulnerability details can be MNPI — do not trade on them or pass them to anyone who might.
-- **Conflicts of interest.** Tell the SIRT if you have one (e.g., you maintain the affected project or have a competitive tie).
+- **Conflicts of interest.** Tell the SIRT if you have one (e.g., you have a competitive tie). Please also disclose to the SIRT if you are the maintainer of the project for transparency.
 - **At case close.** Delete local copies and stop work. Your access ends at public disclosure.
 
 ## Your case contacts
