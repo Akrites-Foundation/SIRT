@@ -60,7 +60,7 @@ Each tier receives only the TLP-classified material its task requires: TLP:RED a
 
 **Levels.**
 1. **SIRT case lead.** Adjusts priority, pulls in additional Tier 1 SMEs, or reads a party in earlier — all within existing tier definitions.
-2. **Governing Board.** Policy or legal matters: finder patch/customer obligations, antitrust, and government or critical-infrastructure coordination.
+2. **Governing Board.** Policy or legal matters: finder patch/customer obligations, antitrust, and government or critical-infrastructure coordination. Exception: _Nothing in this policy restricts members from making disclosures strictly required to comply with applicable laws, regulations, or binding administrative frameworks (e.g., CRA, NIS2, DORA, FedRAMP). In such mandatory cases, members do not need GB approval but MUST notify the Board as soon as legally and practically permissible, provided such notification is not prohibited by law._
 
 **Severity changes.** If the score rises, read-in may widen or accelerate; if it falls, it may narrow or slow. Either way the change is recorded with rationale, and the embargo and PD date are re-evaluated.
 
