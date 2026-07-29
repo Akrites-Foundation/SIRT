@@ -96,7 +96,7 @@ Self-serve for the day-to-day. Bring in the SIRT for:
 - Dedupe or cross-WG questions (the same library that may implicate or overlap with another WG)
 - Requesting an embargo or disclosure-window extension
 - A disputed finding, a rejected patch, or any disagreement you can't resolve in the WG
-- Handing a case off for Upstream engagement
+- Handing a case off for Upstream engagement if no project maintainer already involved.
 - A suspected or actual embargo break — **notify the SIRT immediately**
 
 ---
