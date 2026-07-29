@@ -90,7 +90,7 @@ We will identify "active members" criteria as we start working on real cases. Bu
 
 ## 7. Audit
 
-Every grant and revocation is logged with justification and approver. Read-in lists are reviewed against least privilege at each case, and member identities are protected from disclosure (anti-doxxing) throughout.
+Every grant and revocation is logged with justification and approver. All Read-ins will be sent from the SIRT and must be acknowledged by the involved party prior to granting access.  Read-in lists are reviewed against least privilege at each case, and member identities are protected from disclosure (anti-doxxing) throughout.
 
 ---
 
