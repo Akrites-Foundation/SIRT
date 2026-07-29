@@ -6,12 +6,13 @@
 
 ---
 
-## 1. The read-in test — both gates must be true
+## 1. The read-in test — all gates must be true
 
-A candidate is read in only if **both** are satisfied:
+A candidate is read in only if **all** are satisfied:
 
 - **Gate 1 — Need to know.** This specific case (or WG domain) genuinely requires this person.
 - **Gate 2 — Able to contribute** in one of the three sanctioned roles below.
+- **Gate 3 - Vetted Person** Is a known, vetted engineer from a member organization or designated upstream security team engineer.
 
 If a person cannot do at least one of these, they are **not** read in. Being an affected user or a generally interested member is not sufficient — consumers are served at public disclosure (PD), not before.
 
