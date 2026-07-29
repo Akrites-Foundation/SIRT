@@ -47,6 +47,7 @@ Every person, regardless of tier, must first have:
 3. **Signed agreements on file** — embargo/NDA, the Akrites Code of Conduct, and the antitrust acknowledgment.
 4. **A sponsor** — a member organization vouching for them, or a delegated authority (e.g., a coordinating body such as CISA, or the affected maintainer) nominating them for a specific case.
 5. **Emergency Read-In** the SIRT can grant temporary, time-bounded access to an external SME sponsored directly by an active maintainer or Premier Member, using fast electronic agreements (if possible) and software-based TOTP/MFA for up to 72 hours while hardware key logistics are processed.
+6. **Authorization** from the SIRT and access granted to the incident.
 No prerequisite, no access — even if both gates in §1 are met.
 
 ---
