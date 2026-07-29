@@ -209,7 +209,7 @@ A candidate Steward should demonstrate:
 
 ### 7.4 Decision and handoff
 
-- The **TOC (or a delegated Stewardship panel) approves** the Steward, recording the vetting outcome (Appendix E).
+- The **TOC (or a delegated Stewardship panel) approves** the Steward with consultation from the Akrites member OSPO representatives, recording the vetting outcome (Appendix E).
 - Handoff transfers: repository ownership, release/signing authority (rotated to the Steward's keys — never share the SIRT's), namespace (reserved or, if a registry transfer succeeded, original), advisory/CVE context, and open case material under appropriate TLP.
 - The SIRT publishes a **Stewardship Transition Notice** and updates all advisories/VEX to point to the new canonical source.
 - **No steward found?** Default to immediate wind-down (§6.5). Publish an EOL advisory directing downstream consumers to migrate off, set a short EOL window (max 30–60 days), and archive the repository. MoLR renewal is prohibited by default and requires explicit leadership approval under defined extenuating circumstances. Document the good-faith search effort in the sunset record.
