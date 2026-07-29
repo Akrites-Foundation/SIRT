@@ -28,7 +28,7 @@ Automated intake (dedup, severity estimation, routing) sits within Tier 0 and re
 
 ## 2. Criteria for tier inclusion
 
-Every candidate must first clear the read-in process (need-to-know + a sanctioned contribution + prerequisites). This policy then assigns a tier based on **the person's role in resolving this specific case and the minimum information and lead time that role requires.**
+Every candidate must first clear the read-in process (need-to-know + a sanctioned contribution + prerequisites). This policy is used to auto-assigns a tier based on **the person's role in resolving this specific case and the minimum information and lead time that role requires.**
 
 | Tier | You belong here if… |
 |---|---|
