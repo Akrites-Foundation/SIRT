@@ -37,7 +37,7 @@ Community leaders are responsible for clarifying and enforcing our standards of 
 Community leaders have the right and responsibility to remove, edit, or reject comments, commits, code, wiki edits, issues, and other contributions that are not aligned to this Code of Conduct, and will communicate reasons for moderation decisions when appropriate. 
 
 ## Scope 
-This Code of Conduct applies within all community spaces, when an individual is officially representing the community in public spaces, and when a Akrites’ participant's words or actions are directed at or are about the Akrites Community, Akrites’ efforts, or another Akrites’ participant in the context of an Akrites’ activity. Examples of representing our community include using an official e-mail address, posting via an official social media account, or acting as an appointed representative at an online or offline event. 
+This Code of Conduct applies within all community spaces, when an individual is officially representing the community in public spaces, and when an Akrites’ participant's words or actions are directed at or are about the Akrites Community, Akrites’ efforts, or another Akrites participant in the context of an Akrites activity. Examples of representing our community include using an official email address, posting via an official social media account, or acting as an appointed representative at an online or offline event. 
 
 ## Integrity of Investigations
 Providing knowingly false or misleading information in connection to a Code of Conduct investigation or intentionally tampering with the investigation is prohibited. Retaliating against a person because they reported an incident or provided information about an incident as a witness is also prohibited. 
