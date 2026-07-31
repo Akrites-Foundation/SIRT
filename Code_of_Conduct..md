@@ -15,7 +15,7 @@ Examples of behavior that contributes to a positive environment for our communit
 Examples of unacceptable behavior include: 
 - The use of sexualized language or imagery, and sexual attention or advances of any kind 
 - Trolling, insulting or derogatory comments, and personal or political attacks
-- Using Akrites or its community spaces for political campaigning or promotion of political causes unrelated to the foundation’s Mission, Charter, and scope.
+- Using Akrites-controlled spaces primarily for unrelated political campaigning, or presenting personal political views as endorsed by Akrites.
 - Public or private harassment; including but not limited to violence, threatening violence or harassment, or encouraging others to engage in violent or harassing behavior. 
 - Publishing others’ private information, such as a physical or email address, without their explicit permission 
 - Stalking or following someone without their consent.
