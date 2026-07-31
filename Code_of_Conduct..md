@@ -48,6 +48,9 @@ Instances of abusive, harassing, or otherwise unacceptable behavior may be repor
 All community leaders are obligated to respect the privacy and security of the reporter of any incident. 
 
 ## Enforcement Guidelines 
+
+Where reasonably necessary to protect participants or preserve the integrity of an investigation, community leaders may impose proportionate interim measures, such as temporary access restrictions, no-contact directions, changes to moderation permissions, or temporary recusal from community duties. Interim measures are precautionary and do not constitute a finding that a violation occurred.
+
 Community leaders will follow these Community Impact Guidelines in determining the consequences for any action they deem in violation of this Code of Conduct:
 1. Correction 
 Community Impact: Use of inappropriate language or other behavior deemed unprofessional or unwelcome in the community.
