@@ -45,7 +45,7 @@ Providing knowingly false or misleading information in connection to a Code of C
 ## Enforcement 
 Instances of abusive, harassing, or otherwise unacceptable behavior may be reported to the community leaders responsible for enforcement at conduct@akrites.org. Subject to safety, privacy, and legal considerations, a person accused of misconduct will be informed of the substance of the allegations and given a reasonable opportunity to respond before a final decision is made.
 
-All community leaders are obligated to respect the privacy and security of the reporter of any incident. 
+Information will be shared only with those who reasonably need it to assess, investigate, or respond to the report. Absolute confidentiality cannot be guaranteed, but the Foundation will take reasonable steps to protect the privacy and safety of everyone involved and to store investigation records securely.
 
 ## Enforcement Guidelines 
 
