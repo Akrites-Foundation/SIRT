@@ -40,7 +40,7 @@ Community leaders have the right and responsibility to remove, edit, or reject c
 This Code of Conduct applies within all community spaces, when an individual is officially representing the community in public spaces, and when an Akrites’ participant's words or actions are directed at or are about the Akrites Community, Akrites’ efforts, or another Akrites participant in the context of an Akrites activity. Examples of representing our community include using an official email address, posting via an official social media account, or acting as an appointed representative at an online or offline event. 
 
 ## Integrity of Investigations
-Providing knowingly false or misleading information in connection to a Code of Conduct investigation or intentionally tampering with the investigation is prohibited. Retaliating against a person because they reported an incident or provided information about an incident as a witness is also prohibited. 
+Providing knowingly false or misleading information in connection to a Code of Conduct investigation or intentionally tampering with the investigation is prohibited. Retaliating against a person because they reported an incident or provided information about an incident as a witness is also prohibited. A report made in good faith will not constitute a violation merely because it is unsubstantiated, mistaken, or cannot be proven.
 
 ## Enforcement 
 Instances of abusive, harassing, or otherwise unacceptable behavior may be reported to the community leaders responsible for enforcement at conduct@akrites.org. Subject to safety, privacy, and legal considerations, a person accused of misconduct will be informed of the substance of the allegations and given a reasonable opportunity to respond before a final decision is made.
