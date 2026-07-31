@@ -34,6 +34,8 @@ We aim to acknowledge reports within three business days. Investigation and reso
 ## Enforcement Responsibilities 
 For the purposes of this Code, “community leaders” means the members of the Akrites Code of Conduct Committee designated by the Foundation to receive reports, conduct or commission investigations, and determine appropriate outcomes.
 
+Anyone involved in handling a report must disclose any actual or reasonably perceived conflict of interest and recuse themselves where their impartiality could reasonably be questioned. Reports involving a community leader will be referred to an appropriate alternative decision-maker who is not involved in the matter.
+
 Community leaders have the right and responsibility to remove, edit, or reject comments, commits, code, wiki edits, issues, and other contributions that are not aligned to this Code of Conduct, and will communicate reasons for moderation decisions when appropriate. 
 
 ## Scope 
