@@ -36,7 +36,7 @@ For the purposes of this Code, “community leaders” means the members of the 
 
 Anyone involved in handling a report must disclose any actual or reasonably perceived conflict of interest and recuse themselves where their impartiality could reasonably be questioned. Reports involving a community leader will be referred to an appropriate alternative decision-maker who is not involved in the matter.
 
-Community leaders have the right and responsibility to remove, edit, or reject comments, commits, code, wiki edits, issues, and other contributions that are not aligned to this Code of Conduct, and will communicate reasons for moderation decisions when appropriate. 
+Community leaders may remove, edit, or reject comments, commits, code, wiki edits, issues, and other contributions that are not aligned with this Code of Conduct. Where reasonably possible and consistent with privacy and safety considerations, they will explain the basis for moderation decisions to the affected person.
 
 ## Scope 
 This Code of Conduct applies within all community spaces, when an individual is officially representing the community in public spaces, and when an Akrites’ participant's words or actions are directed at or are about the Akrites Community, Akrites’ efforts, or another Akrites participant in the context of an Akrites activity. Examples of representing our community include using an official email address, posting via an official social media account, or acting as an appointed representative at an online or offline event. 
