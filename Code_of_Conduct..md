@@ -52,7 +52,7 @@ All community leaders are obligated to respect the privacy and security of the r
 Where reasonably necessary to protect participants or preserve the integrity of an investigation, community leaders may impose proportionate interim measures, such as temporary access restrictions, no-contact directions, changes to moderation permissions, or temporary recusal from community duties. Interim measures are precautionary and do not constitute a finding that a violation occurred.
 
 Community leaders will follow these Community Impact Guidelines in determining the consequences for any action they deem in violation of this Code of Conduct:
-1. Correction 
+1. **Correction**
 Community Impact: Use of inappropriate language or other behavior deemed unprofessional or unwelcome in the community.
 Consequence: A private, written warning from community leaders, providing clarity around the nature of the violation and an explanation of why the behavior was inappropriate. A public apology may be requested.
 2. **Warning**
