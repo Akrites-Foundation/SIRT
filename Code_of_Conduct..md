@@ -25,7 +25,7 @@ Examples of unacceptable behavior include:
 ## Reporting
 For incidents occurring in the Akrites community, contact conduct@akrites.org.
 
-You can expect a response within three business days. When reporting a potential Code of Conduct violation, please include the following information in your report:
+We aim to acknowledge reports within three business days. Investigation and resolution times will depend on the complexity and urgency of the matter. Where appropriate, the reporter will receive periodic status updates. When reporting a potential Code of Conduct violation, please include the following information in your report:
 - Names of the people involved (or if names are unknown, use descriptions and any identifiable info such as appearance, role, username, or handle), including the person who you believe violated the Code of Conduct and any witnesses.
 - Description of the incident, including the events that occurred, the date and time, and location or community space where the incident occurred.
 - The portion(s) of the CoC you believe to be violated.
