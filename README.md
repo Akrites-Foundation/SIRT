@@ -45,14 +45,13 @@ To develop a cohort of trustworthy, vendor-neutral, vetted, well-orchestrated an
   from another open-source project’s security vulnerabilities
 
 ## Get Involved
-
-- <!-- Official communications occur on the [OSSF OSS-SIRT Mailing list](https://lists.openssf.org/g/openssf-sig-osssirt/topics).  
+<!-- Official communications occur on the [OSSF OSS-SIRT Mailing list](https://lists.openssf.org/g/openssf-sig-osssirt/topics).  
   [Manage your subscriptions to Open SSF mailing lists](https://lists.openssf.org/g/main/subgroups) -->
-- Slack Channels - 
-  General Discussion (NOT FOR REPORTING VULNERABILITIES)- [Akrites SIRT working group](https://akritesfoundation.slack.com/archives/C0BG2D5QQ12)
+- Slack Channels (invite only)
+   - [General Discussion (NOT FOR REPORTING VULNERABILITIES)](https://akritesfoundation.slack.com/archives/C0BG2D5QQ12)
+- [Akrites SIRT working group](https://akritesfoundation.slack.com/archives/C0BG2D5QQ12)
 
 ### Quick Start
-
 - Areas that need contributions
 - Comments/feedback on the plan or services you'd like to see the OSS-SIRT offer
 - Where to file issues - [https://github.com/Akrites-Foundation/SIRT/issues](https://github.com/Akrites-Foundation/SIRT/issues)
@@ -63,17 +62,15 @@ To develop a cohort of trustworthy, vendor-neutral, vetted, well-orchestrated an
  ### Project Maintainers
 - [CRob](https://github.com/SecurityCRob)
 - [Francis](u269c), Akrites SIRT Director
-- OSS-SIRT Team Lead
+- OSS-SIRT Team Lead (TBD)
 
 ### Project Collaborators
  
-
 
 ### Project Contributors
  
 
 **Intellectual Property**
-
 
 
 **Antitrust Policy Notice**
