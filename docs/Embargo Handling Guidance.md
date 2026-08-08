@@ -27,7 +27,7 @@ The SIRT operates a **default embargo of 30 calendar days** from the point a fin
 3. **A timeline negotiated with the maintainer** for this specific case, where no published policy exists.
 4. **The SIRT 30-day default**, used only when none of the above applies (typically an unmaintained or policy-less project).
 
-Practically: the case owner records which of these four applies at the start of Coordination and sets the PD date accordingly. If the applicable upstream timeline is *shorter* than 30 days, the SIRT uses the shorter one. If a project explicitly permits *longer* (rare, and mostly for cross-vendor hardware/microarchitectural issues), the SIRT may follow it with TOC awareness.
+Practically: the case owner records which of these four applies at the start of Coordination and sets the PD date accordingly. If the applicable upstream timeline is *shorter* than 30 days, the SIRT uses the shorter one. If a project explicitly permits *longer* (rare, and mostly for cross-vendor hardware/microarchitectural issues), the SIRT may follow it with Technical Oversight Committee (TOC) awareness.
 
 ### Why 30 days as the default (and why it flexes down so often)
 
