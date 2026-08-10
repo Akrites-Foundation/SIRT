@@ -17,7 +17,7 @@ problem.** Use one of the private channels below.
 ### Preferred — GitHub private vulnerability reporting
 
 Use the **"Report a vulnerability"** button on this repository's **Security**
-tab. This keeps the report private, lets us collaborate with you on a draft
+tab, use it to submit your report privately. This allows us to
 advisory, and supports private patch development. This is our preferred intake
 whenever the project is on GitHub.
 
