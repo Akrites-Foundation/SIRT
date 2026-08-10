@@ -8,7 +8,7 @@ You've been tapped to help resolve a confidential vulnerability under embargo. T
 - **Named parties only.** Discuss the case only with the people on the read-in list. If someone else needs to help, ask the SIRT to read them in — **never loop anyone in yourself or with explicit acknowledgement of the Case Lead.**
 - **No signaling.** Do nothing in public that hints the issue exists: no telltale commits, branches, issues, PRs, mailing-list questions, blog/social posts, or conference teasers. Most leaks are accidental.
 - **Keep it contained.** Work only inside the provided environment (repo, channel). No copying to personal machines or accounts. **No exploit code, PoCs, or sensitive files in chat** — those live in the case repo.
-
+- **In case of leaks**, accidental or not, please inform the Case Lead right away.
 ## How to conduct yourself
 
 - **Stay in scope.** Work only the assigned finding. If you spot something new or adjacent, **report it — don't chase it.**
