@@ -30,7 +30,7 @@ If the button is not available, use the email reporting channel below.
 ### Alternative — encrypted email
 
 If GitHub reporting is unavailable, email
-**SIRT@Akrites.dev**. The address supports transport
+**[SIRT@Akrites.dev](sirt@akrites.dev)**. The address supports transport
 encryption (MTA-STS / STARTTLS); for end-to-end protection you may use our
 OpenPGP key linked from the policy page. We would rather receive your report
 than have you blocked by encryption — when in doubt, send it.
