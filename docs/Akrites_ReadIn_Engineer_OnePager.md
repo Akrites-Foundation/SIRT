@@ -31,11 +31,6 @@ You've been tapped to help resolve a confidential vulnerability under embargo. T
 - **Conflicts of interest.** Tell the SIRT if you have one (e.g., you have a competitive tie). Please also disclose to the SIRT if you are the maintainer of the project for transparency.
 - **At case close.** Delete local copies and stop work. Your access ends at public disclosure.
 
-## Your case contacts
-
-- **SIRT case lead:** {{NAME}} — {{CONTACT}}
-- **Slack channel:** {{#CHANNEL}}  ·  **Mailing list:** {{LIST}}  ·  **Repo:** {{REPO}}
-
 ---
 
 *Questions go to the SIRT case lead — never to anyone outside the read-in list. Aligned with established coordinated-disclosure practice: the CERT/CC Guide to Coordinated Vulnerability Disclosure, FIRST's TLP and multi-party coordination guidance, and ISO/IEC 29147 & 30111.*
