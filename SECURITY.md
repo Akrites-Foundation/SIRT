@@ -9,6 +9,11 @@ keep our users safe.
 lifecycle, embargo handling, and timelines — is published at:
 **https://sirt.linuxfoundation.org/security/policy** -->
 
+## Scope and supported versions
+
+This policy applies to security vulnerabilities in code and configurations maintained by Akrites in this repository.
+
+Support and remediation decisions depend on the affected upstream project, the versions maintained in this repository, and the practical availability of a fix. Please report suspected vulnerabilities even if you are unsure whether the affected version is currently supported.
 ## Reporting a vulnerability
 
 **Please do not open a public issue, pull request, or discussion for a security
