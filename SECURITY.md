@@ -1,7 +1,8 @@
 # Security Policy - DRAFT v.0.1
 
 The Akrites Security Incident Response Team (**Akrites-SIRT**) coordinates the
-disclosure of security vulnerabilities for this project. Thank you for helping
+disclosure of security vulnerabilities affecting Akrites-maintained
+code and configurations in this repository. Thank you for helping
 keep our users safe.
 
 <!-- Our full **Coordinated Vulnerability Disclosure (CVD) Policy** — including our
