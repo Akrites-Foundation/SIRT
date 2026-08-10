@@ -123,7 +123,7 @@ Working *with* projects — not around them — is the heart of good coordinatio
 
 ## 5. Troubleshooting — when things go sideways
 
-- **Unresponsive, unmaintained, or overwhelmed maintainer.** Distinguish the three: keep trying to re-establish contact with an unresponsive but active project; for a genuinely unmaintained one, escalate the response ladder — (1) the maintainer fixes from the disclosure package; (2) the Coordinator publishes a patch; (3) a working group forks or stewards as a carefully bounded last resort (Maintainer of Last Resort), only with oversight approval.
+- **Unresponsive, unmaintained, or overwhelmed maintainer.** Distinguish the three: keep trying to re-establish contact with an unresponsive but active project; for a genuinely unmaintained one, escalate the response ladder — (1) the maintainer fixes from the disclosure package; (2) the Coordinator publishes a patch; (3) a working group forks or stewards as a carefully bounded last resort: [Maintainer of Last Resort](https://github.com/Akrites-Foundation/SIRT/blob/main/docs/Maintainer_of_Last_Resort_Guidelines.md), only with oversight approval.
 - **Disputed finding or rejected patch.** Handle it blamelessly. If the project declines to act and the risk is real, a deviation notice can document the Coordinator's position without attacking the maintainer.
 - **Leak or broken embargo.** Coordinate the response based on what leaked and how; notify affected parties; consider accelerating disclosure. Establish up front that participants must report suspected breaks immediately.
 - **Active exploitation in the wild.** Strong signal to accelerate the timeline — defenders need the fix now.
