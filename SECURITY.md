@@ -18,7 +18,7 @@ problem.** Use one of the private channels below.
 
 Use the **"Report a vulnerability"** button on this repository's **Security**
 tab, use it to submit your report privately. This allows us to
-advisory, and supports private patch development. This is our preferred intake
+collaborate on a draft advisory and, where appropriate, develop a patch privately.
 whenever the project is on GitHub.
 
 ### Alternative — encrypted email
