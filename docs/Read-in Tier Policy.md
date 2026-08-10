@@ -17,7 +17,7 @@
 | Tier | Who | What they do | Information & TLP | Read-in timing |
 |---|---|---|---|---|
 | **Tier 0** | Reporter / Finder and the maintainer (plus automated intake) | Originate the report; own the fix and final disclosure decision | Full case detail; TLP:RED at intake | Earliest; longest duration |
-| **Tier 1** | Subject-matter experts (Akrites members) | Analyze, produce, and test the patch | Case material needed to build/test the fix; TLP:AMBER+STRICT | When analysis/testing begins |
+| **Tier 1** | Subject-matter experts (Akrites members) | Analyze, produce, and test the patch and associated documentation | Case material needed to build/test/document the fix; TLP:AMBER+STRICT | When analysis/testing begins |
 | **Tier 2** | Distribution partners / maintainer pre-disclosure rings | Prepare a coordinated downstream release | The fix and timing — not full research detail | Defined lead time before PD |
 | **Tier 3** | Second-order distributors (CDNs, package registries) | Pre-stage the fix for rapid propagation | The artifact and go-live time only | Latest; shortest window |
 | **Public** | Everyone | — | Fully public | Public disclosure (PD) |
@@ -88,7 +88,7 @@ Exceptions are handled case-by-case; each is time-bounded, justified, approved b
 
 - If an embargo is broken, the **SIRT coordinates** and notifies affected participants and members, depending on what was broken and how.
 - Any member who discovers a breach they **must notify the SIRT as soon as the embargo is suspected to be broken.**
-- **Embargo breaks = immediate access suspension.** Report any suspected break to the SIRT immediately. Cases will be escalated to the GB for considering permanent removal from the program.**
+- **Embargo breaks = immediate access suspension.** Report any suspected break to the SIRT immediately. Cases will be escalated to the GB for considering permanent removal from the program.
 
 ---
 
