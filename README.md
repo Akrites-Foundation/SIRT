@@ -52,15 +52,17 @@ To develop a cohort of trustworthy, vendor-neutral, vetted, well-orchestrated an
 - [Akrites SIRT working group](https://akritesfoundation.slack.com/archives/C0BG2D5QQ12)
 
 ### Quick Start
-- Areas that need contributions
+- [Akrites SIRT documentation](https://github.com/Akrites-Foundation/SIRT/tree/main/docs)
+- [Akrites SIRT templates](https://github.com/Akrites-Foundation/SIRT/tree/main/templates)
+#### Areas that need contributions
 - Comments/feedback on the plan or services you'd like to see the OSS-SIRT offer
 - Where to file issues - [https://github.com/Akrites-Foundation/SIRT/issues](https://github.com/Akrites-Foundation/SIRT/issues)
 
 ### Meeting times
-
+Community Meetings forthcoming
  
  ### Project Maintainers
-- [CRob](https://github.com/SecurityCRob)
+- [CRob](https://github.com/SecurityCRob), Akrites CTO
 - [Francis](u269c), Akrites SIRT Director
 - OSS-SIRT Team Lead (TBD)
 
@@ -70,10 +72,11 @@ To develop a cohort of trustworthy, vendor-neutral, vetted, well-orchestrated an
 ### Project Contributors
  
 
-**Intellectual Property**
+## Code of Conduct
+Project Akrites members pledge to follow the [Akrites Code of Conduct](https://github.com/Akrites-Foundation/SIRT/blob/main/Code_of_Conduct..md) in all of our activities and interactions.
 
 
-**Antitrust Policy Notice**
+## Antitrust Policy Notice
 
 Linux Foundation meetings involve participation by industry competitors, and it is the intention of the Linux Foundation to conduct all of its activities in accordance with applicable antitrust and competition laws. It is therefore extremely important that attendees adhere to meeting agendas, and be aware of, and not participate in, any activities that are prohibited under applicable US state, federal or foreign antitrust and competition laws.
 
