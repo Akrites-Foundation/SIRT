@@ -850,8 +850,8 @@ A few ground rules
 - Never post files, PoCs, or exploit code in Slack — use the designated case repo / encrypted
   file share. TLP:RED work does not happen in general Slack.
 - Access requires {hardware-backed 2FA / your org's vetting}; we'll walk you through provisioning.
-- We operate under the {OpenSSF Code of Conduct} and, for our upstream work, the Akrites
-  engagement Code of Conduct. Linux Foundation antitrust guidance applies to our meetings.
+- We operate under the [Akrites Code of Conduct](https://github.com/Akrites-Foundation/SIRT/blob/main/Code_of_Conduct..md)}
+and the Linux Foundation antitrust guidance applies to our meetings.
 
 Getting started this week
 1. Accept the Slack invite and say hello in #sirt.
