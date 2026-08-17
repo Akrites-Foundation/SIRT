@@ -799,6 +799,80 @@ Asks / recommendations to TOC-GB: {…}
 public. This is also where general statistics promised to members are shared.
 
 ---
+## Play 21 — General onboarding: reading an engineer into Akrites (welcome email)
+
+**When to use:** First-time welcome for an engineer joining the Akrites effort — *not* tied to any
+specific case. Orientation, resources, and expectations only. No case details.
+**Audience:** Newly added member engineers / participants.
+**Channel & TLP:** Signed email from a person; TLP:CLEAR/GREEN (contains no case material).
+
+**Template**
+
+```
+Subject: Welcome to Akrites — getting you set up
+
+Hi {Name},
+
+Welcome, and thank you for lending your time to Akrites. This note is your orientation — no
+active case here, just what Akrites is, where the resources live, and how we work together.
+
+What Akrites is
+Akrites (the Akrites SIRT, also "OSS-SIRT") is a neutral, non-profit operational partner that
+helps open source communities turn vulnerability reports into trusted fixes and actionable
+security intelligence. We coordinate; maintainers keep final authority over their projects,
+fixes, and disclosure timing. We contribute fixes — we don't impose process or tooling.
+
+How we operate (the short version)
+- Confidentiality first. We default to TLP:RED and share on a need-to-know basis (circles of
+  trust / Traffic Light Protocol).
+- Least privilege. You're read into only what you need, for as long as you need it.
+- Human-to-human. Upstream and coordinator relationships start person-to-person; we meet
+  communities where they are.
+- Technical contribution is the price of admission — your expertise is exactly why you're here.
+- Synchronized disclosure, coordinated through the SIRT as the single maintainer-facing front door.
+
+Public resources (open to everyone)
+- SIRT repository — policy, process, guidelines, and templates:
+  https://github.com/Akrites-Foundation/SIRT
+- {Website / pipeline}: {akrites.dev}
+Start with the README and the docs/ folder — the CVD process, embargo guidance, and comms
+templates all live there.
+
+Member-only resources (please keep access within the community)
+- Member Slack: https://akritesfoundation.slack.com/archives/C0BED9SLZ7W
+  (plus working-group channels: #sirt and #<your-wg>)
+- Member mailing list: {list address / signup}
+- Working-group private mailing list(s): {as applicable to your WG}
+- Tooling once provisioned: {Spyglass (your submissions & status), Watchful Eye (access console),
+  Open Door Policy DB (upstream engagement info)}
+
+A few ground rules
+- Never post files, PoCs, or exploit code in Slack — use the designated case repo / encrypted
+  file share. TLP:RED work does not happen in general Slack.
+- Access requires {hardware-backed 2FA / your org's vetting}; we'll walk you through provisioning.
+- We operate under the {OpenSSF Code of Conduct} and, for our upstream work, the Akrites
+  engagement Code of Conduct. Linux Foundation antitrust guidance applies to our meetings.
+
+Getting started this week
+1. Accept the Slack invite and say hello in #sirt.
+2. Skim the SIRT repo (README + docs/).
+3. {Confirm your working group / area of focus with {contact}.}
+4. Reply with your preferred contact address and GitHub handle so we can finish provisioning.
+
+Questions any time — just reply here or ping me in Slack.
+
+Welcome aboard,
+{Your name}
+Akrites SIRT
+```
+
+**Notes:** Keep this free of any case specifics — it's orientation only, so it can be sent broadly
+and reused. Confirm the correct member Slack channel/link and mailing-list addresses before sending;
+verify tool names/access match what's live. Send from a person, and offer a verification path if the
+recipient is new to Akrites. Pair with provisioning (2FA, repo access) rather than sending in
+isolation.
+
+---
 
 # Appendix A — Play index
 
@@ -825,6 +899,7 @@ public. This is also where general statistics promised to members are shared.
 | 18 | Blameless postmortem | Case team |
 | 19 | Escalation to TOC / Board | Governance |
 | 20 | Trend / periodic report | TOC / ecosystem |
+| 21 | General onboarding / welcome | New member engineers |
 
 # Appendix B — Open items for TOC / Board
 
