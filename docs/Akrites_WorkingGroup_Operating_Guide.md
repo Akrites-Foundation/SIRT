@@ -40,7 +40,7 @@ The SIRT provisions three private spaces for your WG: a **GitHub repository**, a
 * **Type of WG:** Technology or component, Sector or vertical, Critical incident, Clearinghouse coordination, or Enablement or practice
 * **Initial WG Chairperson** and if relevant, Co-Chair, along with their contact information
 * **Specific members** (and specific named engineers if known) the founding WG member(s) want to invite to participate
-* **Help Needed** - include a description of the engineering resources others could supply to help. E.g. an XYZ protocol developer, an ABC Protocol test engineer
+* **Help Needed** - include a description of the engineering resources others could supply to help. E.g. an XYZ protocol developer, an ABC Protocol test engineer.  Consider including upstream maintainers and/or security SMEs to this list.
 
 1. **Pick a Chair / Co-Chair** among yourselves to coordinate the WG. A rotating role is fine. This is an organizer and point-of-contact role, not a manager: Chairs keep the repo and read-in list tidy and act as the liaison to the SIRT.
 2. **Agree how you'll work** — a working cadence (e.g., async in the repo plus a short weekly sync), and who tends to take which role (analysis, patch authoring, testing).
