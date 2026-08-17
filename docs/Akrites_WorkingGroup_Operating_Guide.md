@@ -82,7 +82,7 @@ A lightweight version of the Case workflow loop:
 4. **Test** — verify the fix resolves the issue and introduces no regressions or new vulnerabilities.
 5. **Prepare a draft CVD rollout plan** if the WG has a proposed read-in list, embargo, and public disclosure date target, prepare an update for the SIRT with the WGs recommendations.
 6. **Report to the SIRT** — notify the SIRT that the Case is ready for a Vulnerability Disclosure Report and Upstream maintainer engagement.
-7. **SIRT and Upstream Hand-off** — the SIRT will take the Case to the Upstream project to get the upstream maintainer engaged with the issue; your WG assists as needed.
+7. **SIRT and Upstream Hand-off** — the SIRT will take the Case to the Upstream project to get the pstream maintainer engaged with the issue; your WG assists as needed.
 
 **You do not contact the Upstream maintainer directly.** The SIRT is the single point of contact to Upstream. Your WG prepares everything privately; the SIRT engages the Upstream project with co-coordination with relevant WG members involved in affected upstream operations, as appropriate.
 
