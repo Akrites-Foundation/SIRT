@@ -841,7 +841,7 @@ These shape the templates above and are still open from the F2F:
 
 # Appendix C — Companion documents
 
-- `acknowledgements-and-attribution.md` — attribution scenarios + AI-disclosure vocabulary (Play 7).
-- `Embargo Handling Guidance.md` — embargo mechanics (Plays 6, 12).
+- `[acknowledgements-and-attribution.md](https://github.com/Akrites-Foundation/SIRT/blob/main/docs/acknowledgements-and-attribution.md)` — attribution scenarios + AI-disclosure vocabulary (Play 7).
+- `[Embargo Handling Guidance.md](https://github.com/Akrites-Foundation/SIRT/blob/main/docs/Embargo%20Handling%20Guidance.md)` — embargo mechanics (Plays 6, 12).
 - OSS-SIRT Process (High Level); OSS-SIRT MVSR; steward-engagement taxonomy (Play 10).
 
