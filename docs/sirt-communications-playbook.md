@@ -521,7 +521,7 @@ is scarce and we're not here to add burden — we've done the analysis and draft
 If it helps, we can: label our fix as an "initial/proposed patch" for you to review; help with
 testing; or connect you with resources. If we don't hear back by {date}, our process asks us to
 consider next steps to protect users (which may include publishing a patch/mitigation for
-consumers). We'd much rather do this with you.
+consumers). We strongly prefer your involvement.
 
 You can verify us at {akrites.dev/verify}.
 — {name}, Akrites SIRT
