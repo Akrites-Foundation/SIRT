@@ -42,7 +42,7 @@ Each Part II play lists: **When to use**, **Audience**, **Channel & TLP**, **Tem
    then spun down.
 3. **Human-to-human first.** Initial upstream and coordinator outreach is from a person, not an
    automated system, except where the project declares a preference for automation. Bias toward the same human coordinating a given relationship to reduce lead
-   time. Move to automation only after a relationship is established.
+   time. Move to automation only after a relationship is established and project agrees.
 4. **People-to-people / "maintainer to maintainer."** We show up humble and useful. The
    maintainer keeps final authority over their project, fix, and disclosure timing. Akrites
    *contributes* fixes; it does not impose process or tooling.
