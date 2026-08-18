@@ -68,7 +68,7 @@ Each Part II play lists: **When to use**, **Audience**, **Channel & TLP**, **Tem
 | **TLP:CLEAR** | Public — only at/after PD. |
 
 Every message carries an explicit TLP marking in its header or first line. When in doubt, mark
-higher and ask.
+higher and ask. If message contains mixed levels, overall marking bears the most restrictive.
 
 ## 4. Authenticity & verification
 
