@@ -6,7 +6,7 @@
 **Companion docs:** `acknowledgements-and-attribution.md`, `Embargo Handling Guidance.md`, OSS-SIRT Process (High Level), OSS-SIRT MVSR
 
 > Spelling standard: **Akrites** (Akrites Foundation, Akrites SIRT). "OSS-SIRT" is a synonym.
-> Every outbound message is written as if it may be read back publicly, quoted by a maintainer, or produced in a postmortem.
+> Every outbound message is written as if it may be read back publicly, quoted by a maintainer, or produced in a postmortem; with or without context.
 
 ---
 
