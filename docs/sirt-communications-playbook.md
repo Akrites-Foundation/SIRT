@@ -569,7 +569,7 @@ reporting is relevant. Defer to upstream process where one exists.
 ## Play 12 — Embargo extension request / negotiation
 
 **When to use:** The fix needs more time than the default window (guideline: 30 days from owner
-confirmation; CRob's stated personal preference is shorter, but 30 is the negotiating default).
+confirmation; Akrites preference is shorter, but 30 is the negotiating default).
 **Audience:** Finder, maintainer, and any read-in parties affected by the date.
 **Channel & TLP:** Case channel; TLP:AMBER+STRICT.
 
