@@ -639,7 +639,7 @@ We hear that you {don't consider this a vulnerability | assess it differently}. 
 to override your judgment or dispute your CVE. Here's our reasoning and evidence: {concise
 technical basis}. 
 
-If we still see it differently after your response, our options are to record a **deviation
+If we cannot arrive at consensus after your response, we will record a **deviation
 notice** (our vector/description alongside yours, clearly attributed) rather than contest your
 record. What are we missing, or how would you like to proceed?
 — Akrites SIRT
