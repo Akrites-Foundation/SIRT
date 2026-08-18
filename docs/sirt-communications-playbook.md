@@ -55,7 +55,7 @@ Each Part II play lists: **When to use**, **Audience**, **Channel & TLP**, **Tem
 8. **Attribution is opt-in.** Credit finders and participants only as they've consented (see the
    companion attribution doc).
 9. **Traceable.** Every material communication is logged (chain-of-custody / event-of-interest);
-   assume it can be reproduced in a postmortem.
+   assume it can be reproduced in a postmortem, become public, or taken out of context.
 
 ## 3. TLP quick reference (as used by Akrites)
 
