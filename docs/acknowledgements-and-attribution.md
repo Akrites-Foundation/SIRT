@@ -3,7 +3,7 @@
 **Owner:** Akrites SIRT
 **Status:** Draft for TOC / Board review
 **Applies to:** Public Disclosure (PD) advisories coordinated by the Akrites SIRT
-**Related:** OSS-SIRT F2F — *PD Requirements → Acknowledgements & Attribution*; *Tiered Disclosure → Co-finder attribution*
+**Related:** OSS-SIRT F2F — *PD Requirements → Acknowledgements & Attribution*; *Tiered Disclosure → Co-finder attribution*; [AI and LLM Use Disclosure Policy](./ai-use-disclosure.md)
 
 > Spelling note: the standard is **Akrites** (Akrites Foundation, Akrites SIRT). "OSS-SIRT" is a synonym.
 
@@ -21,6 +21,13 @@ credited in Akrites-coordinated public advisories. It exists so that credit is:
 The finder's attribution preference is captured at intake and confirmed before PD. Once set, the
 default is TLP:RED until PD; it becomes public only in the final advisory.
 
+> **Relationship to the AI-use policy.** *Whether and how* AI tooling was used —
+> by the finder **and** by the SIRT — is governed by the
+> [AI and LLM Use Disclosure Policy](./ai-use-disclosure.md), which is the
+> authoritative source and defines the standard two-line advisory block. This
+> document governs *credit and attribution*, including the optional publishing of
+> specific tool/model names, and reuses the same controlled vocabulary.
+
 ---
 
 ## Core principles
@@ -32,7 +39,8 @@ default is TLP:RED until PD; it becomes public only in the final advisory.
    The Akrites default published line states that AI assisted discovery and/or patching.
    Specific model/tool names are published **only when the finder requests it**, drawn from the
    controlled vocabulary in [Appendix A](#appendix-a--controlled-vocabulary). Model-plus-harness
-   internals remain internal.
+   internals remain internal. AI use is disclosed for **both** the finder and the Akrites SIRT
+   (Coordinator) — see [Coordinator AI-use line](#coordinator-sirt-ai-use-line).
 4. **Coordinator credit.** Where no finder attribution is given, the advisory credits the
    **Akrites SIRT** as coordinator. Public advisories otherwise attribute information to the
    Akrites SIRT and Akrites Foundation.
@@ -55,16 +63,19 @@ Akrites SIRT.
 
 {Finder Name} identified the vulnerability{ and contributed the patch}.
 
-AI assistance: AI-assisted {discovery|patch development|discovery and patch development}.
-{Tools used: {tool/model names from the controlled vocabulary}.}
+AI use
+  - Finder: AI-assisted {discovery|patch development|discovery and patch development}.
+    {Tools used: {tool/model names from the controlled vocabulary}.}
+  - Coordinator (Akrites SIRT): {No AI tooling was used. / AI-assisted {phase(s)}, under human review.}
 ```
 
 **Field notes**
 
 - `Organization` is included only if the finder consents to naming their employer/affiliation.
-- The `AI assistance` line is required whenever AI materially assisted; state the phase(s).
+- The `Finder` AI line is required whenever AI materially assisted; state the phase(s).
 - `Tools used` is included **only at the finder's request**. Names must come from
   [Appendix A](#appendix-a--controlled-vocabulary). Harness/configuration details are never published.
+- The `Coordinator` AI line is always included (including the negative case) per the AI-use policy.
 
 **Filled example**
 
@@ -75,8 +86,9 @@ This issue was reported by Jordan Lee, ExampleSec, and coordinated through the A
 
 Jordan Lee identified the vulnerability and contributed the patch.
 
-AI assistance: AI-assisted discovery and patch development.
-Tools used: Claude Opus, Semgrep.
+AI use
+  - Finder: AI-assisted discovery and patch development. Tools used: Claude Opus, Semgrep.
+  - Coordinator (Akrites SIRT): AI-assisted triage and advisory drafting, under human review.
 ```
 
 ---
@@ -97,14 +109,16 @@ This issue was reported by {Clearinghouse Name} and coordinated through the Akri
 {Clearinghouse Name} reported this vulnerability on behalf of its constituency; individual
 reporters are not named at the reporter's request.
 
-AI assistance: AI-assisted {discovery|patch development|discovery and patch development}.
-{Tools used: {tool/model names from the controlled vocabulary}.}
+AI use
+  - Finder: AI-assisted {discovery|patch development|discovery and patch development}.
+    {Tools used: {tool/model names from the controlled vocabulary}.}
+  - Coordinator (Akrites SIRT): {No AI tooling was used. / AI-assisted {phase(s)}, under human review.}
 ```
 
 **Field notes**
 
 - The clearinghouse is the named finder; individual analysts are **not** named.
-- Include the AI line/tooling on the same rules as Scenario 1, if the clearinghouse requests it.
+- Include the finder AI line/tooling on the same rules as Scenario 1, if the clearinghouse requests it.
 - If the clearinghouse also wants Akrites credited only as coordinator (no clearinghouse name),
   fall through to Scenario 3.
 
@@ -118,7 +132,9 @@ This issue was reported by the Example National CERT and coordinated through the
 Example National CERT reported this vulnerability on behalf of its constituency; individual
 reporters are not named at the reporter's request.
 
-AI assistance: AI-assisted discovery.
+AI use
+  - Finder: AI-assisted discovery.
+  - Coordinator (Akrites SIRT): No AI tooling was used.
 ```
 
 ---
@@ -136,14 +152,17 @@ Acknowledgements
 This vulnerability was coordinated to disclosure by the Akrites SIRT. The reporter has
 requested to remain anonymous.
 
-{AI assistance: AI-assisted {discovery|patch development|discovery and patch development}.}
+AI use
+  - {Finder: AI-assisted {discovery|patch development|discovery and patch development}.}
+  - Coordinator (Akrites SIRT): {No AI tooling was used. / AI-assisted {phase(s)}, under human review.}
 ```
 
 **Field notes**
 
 - Do **not** name the finder, their organization, or a WG unless the finder later consents.
-- The AI line is included only if it can be stated without identifying the anonymous reporter
-  and the finder does not object; when in doubt, omit it.
+- The **Finder** AI line is included only if it can be stated without identifying the anonymous
+  reporter and the finder does not object; when in doubt, omit it.
+- The **Coordinator** AI line is always included — it does not implicate the reporter.
 - This is also the fallback when consent cannot be confirmed before PD.
 
 **Filled example**
@@ -153,6 +172,9 @@ Acknowledgements
 ----------------
 This vulnerability was coordinated to disclosure by the Akrites SIRT. The reporter has
 requested to remain anonymous.
+
+AI use
+  - Coordinator (Akrites SIRT): AI-assisted advisory drafting, under human review.
 ```
 
 ---
@@ -174,12 +196,26 @@ When more than one party reports the same issue:
 ## AI / tooling disclosure convention
 
 - **Default published line:** capability only — e.g., *"AI-assisted discovery and patch development."*
-- **Named tools/models:** published **only when the finder requests it**, and only from the
+- **Two subjects, always:** the advisory carries an AI-use line for the **finder** and one for the
+  **Coordinator (Akrites SIRT)**, including the negative case ("No AI tooling was used"). See the
+  [AI and LLM Use Disclosure Policy](./ai-use-disclosure.md) for the authoritative wording.
+- **Named tools/models:** published **only when the disclosing party requests it**, and only from the
   controlled vocabulary in [Appendix A](#appendix-a--controlled-vocabulary).
 - **Never published:** the specific model-plus-harness combination, prompts, scaffolding, or
   configuration. These are retained internally by the SIRT.
 - **Anti-gaming:** because publishing model names attracts vendor marketing, the SIRT reviews the
   tooling line before PD and may normalize vendor names to the controlled vocabulary.
+
+### Coordinator (SIRT) AI-use line
+
+The SIRT discloses its own AI use on the same capability basis as finders:
+
+- The `Coordinator (Akrites SIRT)` line is **present on every advisory**, using the negative form
+  where no AI tooling was used.
+- It describes SIRT phases such as intake triage/deduplication, analysis, patch development, test
+  generation, or advisory drafting — always with the note that the work was under human review.
+- SIRT AI use is confined to confidential, access-controlled tooling; the SIRT does not put case
+  material through public AI services.
 
 ---
 
@@ -190,10 +226,12 @@ Captured at intake, confirmed before PD (held TLP:RED until PD):
 - [ ] Attribution preference: **named** / **clearinghouse** / **anonymous**
 - [ ] If named: exact display name, and whether organization may be shown
 - [ ] Finder role: discovery / patch / both
-- [ ] AI assistance used? which phase(s)?
+- [ ] AI assistance used by finder? which phase(s)?
+- [ ] Finder tooling public or private/confidential? (affects embargo eligibility)
 - [ ] Publish specific tool/model names? if yes, list (validated against Appendix A)
 - [ ] Co-finder(s) present? each one's preference
 - [ ] Consent confirmed by finder before PD (record date)
+- [ ] SIRT AI use recorded for this case (phase[s], or "none")
 
 ---
 
@@ -222,3 +260,5 @@ review.
 - Ratify the **controlled vocabulary** and its governance/update cadence.
 - Confirm whether **WG-level credit** is offered by default when individuals decline.
 - Decide whether **date of first report** is included alongside acknowledgements in the advisory.
+- Confirm whether the **Coordinator AI-use line** appears on every advisory or only when AI
+  materially assisted (current draft: every advisory — aligns with the AI-use policy).
