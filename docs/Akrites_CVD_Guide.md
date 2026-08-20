@@ -1,5 +1,4 @@
 # Coordinated Vulnerability Disclosure — A Practical Guide
-
 *For the SIRT and anyone coordinating a vulnerability disclosure with upstream open source projects.*
 
 This guide offers practical advice for producing the best outcome for every party in a coordinated vulnerability disclosure (CVD): the **Finder**, the **Maintainer**, the **Consumer**, and the **Coordinator**. It is organized around the disclosure lifecycle, and at each step it calls out what "good" looks like for each party.
@@ -21,6 +20,7 @@ These principles, drawn largely from long-standing coordination practice, guide 
 - **Act ethically and neutrally.** The Coordinator is an honest broker, not an advocate for one side. Meet maintainers where they are; do not impose process or tooling on them.
 - **The maintainer has final say.** On the fix and the disclosure date, the upstream project decides. The Coordinator advises and facilitates; it does not override.
 - **Confidentiality and least privilege.** Information is handled under TLP and shared only with those who have a need to know and can move the fix forward.
+- **Be transparent about AI use.** Where AI/LLM tooling materially assisted — whether the Finder's or the Coordinator's — say so, at a capability level, in the case record and the advisory. AI use never removes human accountability, and public AI services are treated as non-confidential (see the [AI and LLM Use Disclosure Policy](https://github.com/Akrites-Foundation/SIRT/blob/main/docs/ai-use-disclosure.md)).
 - **Improve continuously.** Review each case blamelessly, capture what worked and what didn't, and feed it back into the process.
 
 ---
@@ -51,7 +51,7 @@ Each phase below notes what happens, then what "good" looks like for the parties
 
 ### Phase 1 — Discovery & Reporting
 A vulnerability is found and reported into a single intake path (the "front door"), so the project isn't approached through many uncoordinated channels.
-- **Finder:** submit a clear, reproducible report — affected component and versions, impact, and reproduction steps. Report privately; don't open a public issue or PR.
+- **Finder:** submit a clear, reproducible report — affected component and versions, impact, and reproduction steps. Report privately; don't open a public issue or PR. Note whether AI/LLM tooling assisted and whether it was public or confidential — public tooling can foreclose an embargo.
 - **Coordinator:** provide one obvious, low-friction way to report; acknowledge receipt quickly; treat the reporter with respect, not suspicion.
 - **Maintainer:** offer a supported private channel (e.g., a `SECURITY.md` and private vulnerability reporting) so reports don't arrive in public.
 
@@ -88,7 +88,7 @@ The fix is coordinated with the upstream project for merge and release. (See §4
 
 ### Phase 7 — Disclosure Preparation
 The advisory, identifier, and machine-readable data are prepared for release.
-- **Coordinator:** prepare the disclosure package (the VDR) and a machine-readable advisory (CSAF/VEX); favor indicators of compromise over public proof-of-concept; ensure a CVE (or equivalent) and accurate affected-version data.
+- **Coordinator:** prepare the disclosure package (the VDR) and a machine-readable advisory (CSAF/VEX); favor indicators of compromise over public proof-of-concept; ensure a CVE (or equivalent) and accurate affected-version data. Record the case's AI use — the Finder's and the SIRT's — and include the standard two-line AI-use block in the advisory.
 - **Maintainer:** review and approve the advisory; the project owns what is said about its code.
 - **Finder:** confirm credit as agreed.
 - **Consumer (staging parties):** finish pre-positioning so remediation can propagate quickly at PD.
@@ -140,6 +140,7 @@ Working *with* projects — not around them — is the heart of good coordinatio
 - Vulnerability Disclosure Report (VDR) and deviation-notice formats
 - Working Group operating guide and the new-engineer conduct one-pager
 - OpenSSF `SECURITY.md`, embargo-notification, and disclosure-notification templates
+- AI and LLM Use Disclosure Policy, Acknowledgements & Attribution guidance, and the intake template's AI-usage section
 
 **Authoritative sources this guide draws on**
 - OpenSSF *Guide to Coordinated Vulnerability Disclosure for OSS* (finder & maintainer guides, templates) — CC-BY-4.0: <https://github.com/ossf/oss-vulnerability-guide>
