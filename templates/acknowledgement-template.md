@@ -1,5 +1,6 @@
 # Acknowledgement Template (Discover / intake)
 
+
 The first reply OSS-SIRT sends a Finder. Goal: confirm receipt, set
 expectations, and signal confidentiality — within **2 business days** of
 receipt. Pick the variant matching the channel the report arrived on. Replace
@@ -32,6 +33,12 @@ What happens next:
 We are treating the details you sent as confidential (TLP:RED) and will not
 share them outside the people needed to resolve the issue until a public
 disclosure date is agreed.
+
+A note on AI tooling: our final advisory includes a short, capability-level line
+on any AI/LLM use — yours and ours. If you used AI tooling, it helps to know at
+which step and whether it was a public service or a private/confidential one:
+material run through a public, hosted AI service is not confidential and may not
+be eligible for an embargo.
 
 Please keep this conversation on this email thread. If anything material changes
 on your end — for example, you observe exploitation in the wild, or you intend
@@ -109,5 +116,8 @@ Policy: https://sirt.linuxfoundation.org/security/policy
 - `{{TRACKING_ID}}` — assigned at intake (runbook step 1).
 - `{{FINDER_NAME}}` / `{{FINDER_HANDLE}}` — as the Finder identified themselves.
 - Confirm the report is set to **TLP:RED** before replying.
+- Note the finder's AI-tooling answer (used / not used, public / confidential)
+  so embargo eligibility can be classified. See the
+  [AI and LLM Use Disclosure Policy](https://github.com/Akrites-Foundation/SIRT/blob/main/docs/ai-use-disclosure.md).
 - Start the clock: initial assessment is due within **10 business days**
   (Template 2a/2b).
