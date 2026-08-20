@@ -29,6 +29,8 @@ Entries within each section are ordered alphabetically. See **[Contributing to t
 
 | Term | Definition |
 |---|---|
+| **AI-assisted (discovery / analysis / patching)** | A capability-level label stating that AI/LLM tooling materially helped with a phase of the work. Published for both the finder and the SIRT; see [AI-Use Disclosure Policy](./ai-use-disclosure.md). |
+| **AI-use disclosure** | The requirement that every case records, and every advisory states, whether and how AI/LLM tooling was used — for both the finder and the Akrites SIRT (Coordinator), including an explicit "no AI tooling was used" where that applies. |
 | **Alpha patch** | An early candidate fix shared with the WG and finder for review and testing before broader coordination. |
 | **Blameless postmortem** | A no-fault review process used for hard cases such as a disputed finding, an unresponsive maintainer, or a rejected patch. |
 | **CVD** | Coordinated Vulnerability Disclosure — the practice of privately reporting a flaw, coordinating a fix under embargo, and disclosing publicly in a synchronized way. |
@@ -68,7 +70,10 @@ Entries within each section are ordered alphabetically. See **[Contributing to t
 
 | Term | Definition | Reference |
 |---|---|---|
+| **Assume-exposed** | Handling posture for material that may already have left a trusted boundary (e.g., pasted into a public AI service). Such a report is treated as having **no embargo available** and is coordinated on an accelerated basis. | — |
+| **Confidential AI tooling** | AI/LLM tooling that preserves confidentiality — self-hosted or enterprise models with contractual no-training and confidentiality terms, or the SIRT's own hardened analysis environment. Using it keeps the embargo option open. | — |
 | **Need-to-know** | The requirement that a person genuinely requires the information to perform a role in the case. | — |
+| **Public LLM tooling** | Public, hosted large-language-model services. Prompts and pasted material may be retained, logged, or used for training, so they are **not** confidential; a report developed with them is treated as assume-exposed. | — |
 | **PVR (Private Vulnerability Reporting)** | A project's supported private channel for receiving vulnerability reports (e.g., GitHub's PVR feature). Akrites encourages projects to enable it. | — |
 | **SBOM (Software Bill of Materials)** | A formal inventory of the components in a piece of software. | [cisa.gov/sbom](https://www.cisa.gov/sbom) |
 | **TLP (Traffic Light Protocol)** | A standard set of labels governing how far information may be shared. | [first.org/tlp](https://www.first.org/tlp/) |
