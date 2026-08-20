@@ -5,6 +5,11 @@ Pre-written messages for each communication point in the
 Replace every `{{PLACEHOLDER}}` before sending. Default handling for all
 pre-disclosure material is **TLP:RED**.
 
+Every embargoed notification and public advisory carries an **AI use** block
+stating, for both the Finder and OSS-SIRT, whether and how AI/LLM tooling was
+used. The wording, capability vocabulary, and rules are defined in the
+[AI and LLM Use Disclosure Policy](../docs/ai-use-disclosure.md).
+
 Quick map of which template to use when:
 
 | Lifecycle phase            | Template                          | Audience            |
@@ -21,6 +26,8 @@ Quick map of which template to use when:
 
 > Send within **2 business days** of receipt. If the report came via GitHub
 > private vulnerability reporting, reply on the advisory thread instead of email.
+> Include the AI-tooling paragraph only when the Finder indicated (or it is
+> unclear whether) AI tooling was used; drop it otherwise.
 
 ```
 Subject: [OSS-SIRT] Received your report — {{TRACKING_ID}}
@@ -39,6 +46,13 @@ What happens next:
 We are treating the details you sent as confidential (TLP:RED) and will not
 share them outside the people needed to resolve the issue until a public
 disclosure date is agreed.
+
+On AI tooling: we noted your report of {{AI usage / no AI usage}}. We publish a
+short, capability-level note of any AI/LLM use — yours and ours — in the final
+advisory. One thing to flag: material put through a public, hosted AI service is
+not confidential, so a report developed that way may not be eligible for an
+embargo. If you used AI tooling and can tell us whether it was a public service
+or a private/confidential one, that helps us plan the timeline correctly.
 
 Please continue this conversation on {{CHANNEL: this email thread / the GitHub
 advisory}}. If anything material changes on your end (for example, you observe
@@ -79,6 +93,12 @@ Next steps:
 Credit: we credit finders by default. Please tell us how you'd like to be
 named ({{name / handle / affiliation}}), or let us know if you prefer to
 remain anonymous.
+
+AI use: the final advisory will include a short, capability-level note of any
+AI/LLM tooling used — both yours and ours. Please confirm whether AI assisted
+your work and, if so, at which step (e.g., discovery, analysis, patch, testing).
+If you'd like specific tool/model names published, tell us which; otherwise we
+publish the capability only.
 
 Would you like to be added as a collaborator on the private fix so you can
 review it before release?
@@ -137,6 +157,12 @@ Description
 affected code path and the configurations/settings in which a deployment is or
 is NOT affected, so providers can judge their own exposure.}}
 
+AI use
+  - Finder: {{No AI tooling was used. / AI-assisted {phase(s)}. Tools: {names,
+    if the Finder consented}.}}
+  - Coordinator (OSS-SIRT): {{No AI tooling was used. / AI-assisted {phase(s)},
+    under human review.}}
+
 Mitigation / work-around
 {{Available work-around, or "none — patch required."}}
 
@@ -164,8 +190,10 @@ SIRT@Akrites.dev
 > populates the Security tab; also announce to {{security-announce list}} and,
 > for high-impact issues, the general community channel. Include the CVE ID and
 > link the OSV record. Structure follows a standard advisory template: title,
-> summary, identifiers, impact/status, mitigation, acknowledgement, references,
-> revision history.
+> summary, identifiers, impact/status, mitigation, acknowledgement, AI use,
+> references, revision history. The **AI use** block is required on every
+> advisory — include both lines, and use the negative form ("No AI tooling was
+> used.") where that applies.
 
 ```
 Title: {{CVE_ID}}: {{SHORT_DESCRIPTIVE_TITLE}} in {{PROJECT}}
@@ -199,9 +227,16 @@ Acknowledgements
 {{Reported by {{CREDIT}}. / Reported privately to OSS-SIRT.}}
 Thanks to all who assisted with validation and remediation.
 
+AI use
+  - Finder: {{No AI tooling was used. / AI-assisted {phase(s) — e.g., discovery,
+    patch development}. Tools: {names — only if the Finder consented}.}}
+  - Coordinator (OSS-SIRT): {{No AI tooling was used. / AI-assisted {phase(s) —
+    e.g., triage, advisory drafting}, under human review.}}
+
 References
   - Advisory: {{ADVISORY_URL}}
   - Patch / release: {{RELEASE_URL}}
+  - AI-use disclosure policy: https://sirt.linuxfoundation.org/security/ai-use-disclosure
   - {{Additional links}}
 
 Revision history
