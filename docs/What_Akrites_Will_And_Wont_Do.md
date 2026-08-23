@@ -12,9 +12,13 @@ We want to hand you a finished security fix rather than a bug report: a written 
 
 If you want us to, we'll also handle the CVE, write the advisory, notify the Linux distributions and downstream projects that ship your code, and agree a disclosure date with you. You review it and you release it. The credit is yours. If you're buried, we'll keep doing that work for as long as you'll have us, with no cap and no bill.
 
-You are allowed to say no. "I'm not fixing this", "this version is end-of-life" and "I don't think this is a vulnerability" are all answers you're entitled to give about software you wrote. We'll publish an advisory so your users know where they stand, and leave you to it. We won't argue with you in public or call your decision negligent.
+You are allowed to say no. "I'm not fixing this", "this version is end-of-life" and "I don't think this is a vulnerability" are all answers you're entitled to give about software you wrote.
 
-If you say no, we'll offer to print your reasoning in the advisory word for word. The advisory is going to describe your decision either way, and you're better placed than we are to explain it: that the configuration has been documented as unsupported for years, that the affected code path needs a flag nobody sets, or that you just don't agree with our assessment. Write it however you like, put your name on it or don't, and we'll show you the finished advisory before it goes out. Say no to that too and we'll drop it.
+If you tell us it isn't a vulnerability, or that it's just a bug, we treat that as the start of a conversation rather than the end of one. We'll send you the reproduction, the code path we think is reachable, and the deployment assumptions we made, and we'll ask what would change your mind. We'll take a call if you'd rather talk it through. **We might be the ones who are wrong**, and sometimes we are: you wrote the software and you know things about how it's used that we don't. If you convince us, we close the case, tell the reporter why, withdraw the CVE if one was reserved, and that's the end of it. No advisory, no write-up, no consolation prize.
+
+If we still disagree after all that, we'll publish an advisory so your users know where they stand. You'll hear that from us first: what we think, why, and the date. We won't spring it on you, we won't argue with you in public, and we won't call your decision negligent. We also won't hold a publication date over you to get a fix out of you, because the deadline isn't a bargaining chip.
+
+At that point we'll offer to print your reasoning in the advisory word for word. It's going to describe your decision either way, and you're better placed than we are to explain it: that the configuration has been documented as unsupported for years, that the affected code path needs a flag nobody sets, or that you just don't agree with our assessment. Write it however you like, put your name on it or don't, and we'll show you the finished advisory before it goes out. Say no to that too and we'll drop it.
 
 ---
 

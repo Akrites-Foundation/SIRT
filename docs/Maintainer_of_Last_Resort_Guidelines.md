@@ -19,7 +19,7 @@
 This document governs what your PSIRT (acting as a Finder/coordinator and CNA) and the Akrites SIRT do when a coordinated vulnerability disclosure (CVD) toward an upstream open source project **stalls**. There are three stall conditions:
 
 1. **No capacity or tooling.** The project wants to fix the issue but has no private reporting channel, no security contact, no CI/release capacity, or no bandwidth to ingest and act on a qualified report.
-2. **Deliberate non-fix (EOL / feature-complete / WONTFIX).** The maintainer is reachable and decides the affected branch will not be patched.
+2. **Deliberate non-fix (EOL / feature-complete / WONTFIX).** The maintainer is reachable and, after a technical exchange on the merits, decides the affected branch will not be patched. A first "I don't think this is a vulnerability" is not this condition. It is the start of a conversation (§5.2.1), and the case is not a stall until that conversation has run.
 3. **Unresponsive.** No contact is established within the escalation window, for any reason: lost interest, moved on, dead project, maintainer unreachable, or a compromised or hostile maintainer.
 
 Conflicts of interest are not a stall condition. §6.2 handles them by recusal at the point of decision.
@@ -51,6 +51,7 @@ These extend the Akrites principles into the hard cases. Keep them in view; ever
 - **Prefer the patch to the fork.** Carrying code creates an open-ended commitment and expands the scope of Akrites. The cheapest durable fix is usually an upstream dependency migration by an intermediate maintainer (§8.4).
 - **A fork is a new attack surface.** A fork stood up in a hurry, under a new maintainer nobody vetted, is the `xz-utils` (CVE-2024-3094) failure mode. Treat MoLR onboarding and steward vetting as a security control.
 - **Severity accelerates mitigation. Severity never accelerates a property judgment.** Exploitation pressure compresses the disclosure clock. It does not compress the finding that a maintainer has abandoned their project (§3.2).
+- **A disagreement is a technical problem before it is a disclosure problem.** When a maintainer says the finding isn't a vulnerability, the first move is to exchange evidence and try to resolve it, not to start drafting (§5.2.1). We may be wrong, and a SIRT that never concedes a case is not listening.
 - **Everything is embargoed until it isn't.** TLP governs every artifact and every party from intake to Public Disclosure (PD). Non-fix and unresponsiveness do **not** default a case to open.
 - **Document the trail.** Record every contact attempt, maintainer decision, governance approval, and recusal. The record is what makes a later release or disclosure defensible.
 - **How can we help?** A maintainer drowning in report volume is offered help with the volume: triage, patch authorship, coordination, release engineering, for as long as they want it. They are never offered a fork. Do not present a takeover to a responsive maintainer as a form of assistance.
@@ -102,7 +103,8 @@ Once contact resolves or fails, classify and route. "Track B on the table" never
 | Signal observed | Scenario | Primary path (Track A) | Track B on the table? |
 |---|---|---|---|
 | Maintainer engages, wants fix, lacks channel/CI/bandwidth | §5.1 Capacity gap | **Assist in place.** Do the coordination work *for* them, for as long as they want it | **No.** A capacity gap is met by supplying capacity |
-| Maintainer engages, declines to fix (EOL / feature-complete / WONTFIX), clearly stated | §5.2 Deliberate non-fix | **Respect and protect downstream:** advisory, VEX, downstream mitigation | Only on the §6.1 entry test, which requires that no other party will carry the patch |
+| Maintainer engages, disputes the finding ("not a vulnerability" / "just a bug") | §5.2.1 Technical disagreement | **Resolve it on the merits.** Exchange evidence, offer a call, get a second opinion, and be prepared to close the case as not-a-vulnerability | **No.** Not a stall condition until §5.2.1 has run |
+| Maintainer engages, declines to fix (EOL / feature-complete / WONTFIX) after §5.2.1 | §5.2 Deliberate non-fix | **Respect and protect downstream:** advisory, VEX, downstream mitigation | Only on the §6.1 entry test, which requires that no other party will carry the patch |
 | No contact by decision point; project shows life elsewhere | §5.3a Silent but alive | Continue escalation; intermediate-maintainer outreach (§8.4) | No. The abandonment clock has restarted |
 | No contact anywhere for 90 days or more; §3.2 finding signed | §5.3b Abandoned | §6 last-resort release, plus §7 stewardship search | Yes, subject to §6.1 |
 | Maintainer unreachable **and** signals of compromise/hostility | §5.3c Suspect | **Security incident.** Do not hand over credentials; treat as adversarial | Yes, with heightened vetting |
@@ -134,7 +136,42 @@ The project *wants* to do the right thing. Remove friction, and do not take over
 
 A reachable maintainer's decision not to fix is a **legitimate exercise of their authority**, and these guidelines honor it. Your obligation shifts to protecting the people still running the code.
 
-**First, pin down which kind of non-fix it is.** This changes the downstream story:
+#### 5.2.1 First, engage on the merits
+
+**A maintainer who says "this isn't a vulnerability" or "that's just a bug" has opened a technical conversation.** Have that conversation, in full, before anyone treats the case as a non-fix. Publishing an advisory over a disagreement nobody tried to resolve is the fastest way to make Akrites something maintainers route around.
+
+Most of these disagreements are real and resolvable, and they come in recognizable shapes:
+
+- **A different threat model.** They assume the process boundary, the deployment shape, or the trust level of an input differs from what we assumed. One of us is wrong about how the software gets used, and it is worth finding out which.
+- **A reachability question.** They believe the code path is unreachable, gated behind a flag, or already excluded by a documented configuration. We believe we can reach it.
+- **A severity or exploitability gap.** Both sides agree on the behavior and disagree about what it costs. This is often the "it's just a bug" case.
+- **A definitional disagreement.** Whether a crash, a resource exhaustion, or a documented-but-dangerous default is a vulnerability at all. Reasonable engineers land in different places here, and no CVE rule settles it for them.
+
+**Do the work that could change either mind:**
+
+- **Send the evidence, and not the conclusion.** A working reproduction against a default configuration, the reachability trace, the exact versions and build flags. "We rate this 8.1" persuades nobody; a script that runs on their machine usually does.
+- **State the threat model we assumed, and invite them to correct it.** Much of the time they know something about deployment reality that we don't, and that is the whole disagreement.
+- **Ask what would change their mind**, and then go get it if it is gettable. A reachable PoC, a real-world configuration that hits the path, a downstream consumer who is exposed.
+- **Offer a live conversation.** A 30-minute call resolves what a fortnight of issue comments will not, and it is a better use of everyone's time.
+- **Bring a second opinion in before escalating, and not after.** Where the disagreement holds, have an analyst outside the case team review both positions. Do this while it can still change our own answer.
+
+**Be willing to lose the argument.** The maintainer wrote the software and has context we do not. If they are right, say so plainly, close the case as not-a-vulnerability or reclassify it as a plain bug, tell the Finder why, withdraw or reject any CVE already reserved, and thank the maintainer for the time. Record the outcome the same way we would record a confirmed finding, because it is one. **Track how often this happens (§11).** A SIRT that never concedes is not being rigorous; it is not listening.
+
+**Never use disclosure as leverage.** "Fix it or we publish" turns a technical disagreement into a threat, and the disclosure clock is not a negotiating instrument. Where the disagreement persists and we still intend to publish, say so plainly and early, explain the reasoning, give the date, and offer the verbatim-rationale option below. The maintainer should learn our position from us, well before they learn it from an advisory.
+
+**Time-box it without rushing it.** Keep the §3.1 clock running, and treat an active technical exchange as a normal reason to extend the disclosure date, on the same footing as a maintainer who needs longer to ship a fix. An engaged maintainer means the case is back in ordinary CVD (§3.1), and it is not a §5.2 non-fix while the conversation is live.
+
+**Three outcomes, and only one of them reaches the rest of §5.2:**
+
+1. **They persuade us.** Close it. No advisory, no CVE, and a note to the Finder explaining the reasoning.
+2. **We persuade them.** Back to §5.1, and offer whatever help they want in shipping the fix.
+3. **The disagreement holds after a genuine attempt.** Now it is a non-fix, and the rest of §5.2 applies.
+
+Record which of the three it was, what was exchanged, and what the maintainer said, in the Appendix B record. That record is what shows a later reader that the advisory came after an argument rather than instead of one.
+
+#### 5.2.2 Once the disagreement is settled
+
+**Pin down which kind of non-fix it is.** This changes the downstream story:
 
 - **Formally EOL or unsupported branch.** The maintainer has published an end-of-life for the affected version. Clean signal.
 - **Feature-complete, still "supported" in principle.** The maintainer considers the code done and won't touch it for this class of issue.
@@ -158,6 +195,7 @@ A reachable maintainer's decision not to fix is a **legitimate exercise of their
   - the maintainer blessing a fork, a transfer to a foundation, or a successor.
 
 **Don't:**
+- Don't reach this subsection without running §5.2.1. An advisory over an unexamined disagreement is a failure of the process, whatever the CVSS score says.
 - Don't reframe a clear WONTFIX as "unresponsive" to justify a release. The §5.3 machinery exists for silence, and not for disagreement.
 - Don't treat maintainer disagreement as a defect of character in public messaging (§9).
 - Don't publish into the original namespace under any circumstance (§8).
@@ -393,6 +431,7 @@ That work is maintainer outreach with a prepared patch, which is what the SIRT i
 - **Publish nothing about project status pre-PD**, and never publish "critical + unmaintained + unpatched" in one breath (§7.1).
 - **Attribution and credit** to the original maintainer and Finder persist through last-resort releases and steward transitions unless a party opts out.
 - **Public messaging at PD** stays neutral and factual about the project's status ("unmaintained", "EOL per maintainer", "maintainer unreachable"). Never disparage, never speculate about why a maintainer went silent, and never frame a WONTFIX as negligence. The goal is downstream safety and a healthy handoff.
+- **Tell the maintainer before you tell anyone else.** Where a disagreement stands unresolved and we intend to publish, the maintainer hears our position, our reasoning, and the date from us first (§5.2.1). Never let disclosure read as a threat, and never present a publication date as the consequence of their refusal.
 - **A maintainer who accepted the §5.2 offer speaks for themselves in the advisory.** Reproduce their statement as approved, attribute it as they asked, and place the SIRT's own assessment beside it rather than around it. Editing a maintainer's words into agreement with our conclusion, or burying them below it, breaks the offer.
 - **The maintainer-facing companion is the public voice of this document.** Where external communications and the companion diverge, the companion wins.
 
@@ -423,6 +462,7 @@ Measure the promise the launch made, which is fix delivery, and instrument the f
 - Intermediate-maintainer migrations landed (§8.4), and dependent trees remediated per migration.
 
 **Function-health metrics:**
+- Disputed findings resolved by technical exchange (§5.2.1), split three ways: the maintainer persuaded us, we persuaded the maintainer, the disagreement held. **A SIRT that never lands in the first bucket is not listening**, so watch that count rather than a target.
 - Steward placement rate, and median time from entry to steward confirmation.
 - Engagements open past term. **Target: zero.**
 - Handback latency from verified maintainer contact to completed reclaim (§6.8). Target 14 days or less.
