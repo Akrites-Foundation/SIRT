@@ -5,7 +5,7 @@ Project status notice / steward call (template)
 **Distribution rules — check before sending:**
 - [ ] TLP:AMBER+STRICT to the case circle. Never TLP:CLEAR while a fix is pre-PD.
 - [ ] Sent only to named, solicited channels: distros carrying the package, dependent projects, foundations/funders, Akrites members, known contributors from the project's history.
-- [ ] Does **not** state "critical + unmaintained + unpatched" in combination — in any artifact, at any time.
+- [ ] Does **not** state "critical + unmaintained + unpatched" in combination — in any artifact, at any time. Any one of the three is publishable on its own; together they name a high-value target, confirm nobody is watching it, and confirm the hole is still open. State status and steward criteria; say nothing about exposure.
 - [ ] Candidates are solicited, not self-nominated. Self-selection into an abandoned high-value project is the attack vector.
 - [ ] Declared intent (§7.6) checked first — a registered nomination is contacted before any other candidate; a registered "do not fork" ends the case at advisory + VEX + §8 routing.
 

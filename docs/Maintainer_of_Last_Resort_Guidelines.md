@@ -293,7 +293,7 @@ A public "critical, unmaintained, seeking steward" call does two harmful things 
 - **Do not broadcast.** Run the steward search through targeted, named channels: distros carrying the package, projects that depend on it, foundations and funders (OpenSSF, STF, Alpha-Omega), Akrites members, and known contributors from the project's history.
 - **Prefer solicited candidates with prior standing.** Self-selection into an unmaintained high-value project is the attack vector.
 - **Timing.** Publish nothing about the project's status while a fix is pre-PD. Any public notice waits until the fix is out.
-- **Never publish "critical + unmaintained + unpatched" in one breath**, in any artifact, at any time. A public notice issued after PD describes status and steward criteria, and says nothing about exposure.
+- **Never publish "critical + unmaintained + unpatched" in one breath**, in any artifact, at any time. Each fact is publishable on its own. Together they name a high-value target, confirm nobody is watching it, and confirm the hole is still open, which is the whole of an attacker's targeting problem solved in one sentence. A public notice issued after PD describes status and steward criteria, and says nothing about exposure.
 - **The internal notice** (Appendix D) goes TLP:AMBER+STRICT to the case circle and states the project name and status; the release location and term, if one exists; downstream impact and dependency footprint; the steward criteria and process; and the contact point and deadline for expressions of interest.
 
 ### 7.2 Steward criteria
