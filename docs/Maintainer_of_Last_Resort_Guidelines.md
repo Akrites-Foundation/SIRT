@@ -141,7 +141,11 @@ A reachable maintainer's decision not to fix is a **legitimate exercise of their
 - **WONTFIX on the merits.** The maintainer disputes severity, considers it outside the threat model or a user configuration the docs already advise against, or judges the fix cost unjustified.
 
 **Do:**
-- **Record the maintainer's position in their own words**, with date and rationale (Appendix B). It becomes part of the advisory.
+- **Record the maintainer's position in their own words**, with date and rationale (Appendix B).
+- **Offer to publish that rationale verbatim in the advisory.** The advisory will describe the maintainer's decision either way, so the choice is between their account of it and ours. Offer them the first. Ask whether they want a statement carried word-for-word, invite them to write one for that purpose rather than reusing a line from the case thread, and let them pick the attribution: named, project or team, or unattributed. Show them the final wording in place before publication.
+  - The offer is genuine, so honor a decline without argument and record it. Reproduce an accepted statement exactly as approved, and never trim it to fit a template or paraphrase it into a summary field.
+  - A verbatim rationale is worth more to downstream than our characterization of it. "This configuration has been documented as unsupported since 2019" and "the affected parser is unreachable unless you enable `--legacy`" are operational facts a reader can act on, and they arrive with the authority of the person who wrote the code.
+  - The offer stands even where the SIRT disagrees with the reasoning. Publish it alongside our own assessment rather than in place of it, and let the reader weigh both (§9).
 - **Issue an advisory anyway.** An unfixed vulnerability is the one downstream users most need to hear about. Assign the CVE through the appropriate CNA (§10) and publish through OSV/CVE/EUVD.
 - **Publish a VEX statement** conveying the true state: affected, `fix_status: will_not_fix`, plus any mitigation. Downstream scanners and SBOM tooling depend on it to make risk decisions.
 - **Offer a downstream mitigation or configuration workaround** even where no code fix will land: a compensating control, a hardened default, or a patch consumers can apply locally.
@@ -389,6 +393,7 @@ That work is maintainer outreach with a prepared patch, which is what the SIRT i
 - **Publish nothing about project status pre-PD**, and never publish "critical + unmaintained + unpatched" in one breath (§7.1).
 - **Attribution and credit** to the original maintainer and Finder persist through last-resort releases and steward transitions unless a party opts out.
 - **Public messaging at PD** stays neutral and factual about the project's status ("unmaintained", "EOL per maintainer", "maintainer unreachable"). Never disparage, never speculate about why a maintainer went silent, and never frame a WONTFIX as negligence. The goal is downstream safety and a healthy handoff.
+- **A maintainer who accepted the §5.2 offer speaks for themselves in the advisory.** Reproduce their statement as approved, attribute it as they asked, and place the SIRT's own assessment beside it rather than around it. Editing a maintainer's words into agreement with our conclusion, or burying them below it, breaks the offer.
 - **The maintainer-facing companion is the public voice of this document.** Where external communications and the companion diverge, the companion wins.
 
 ---
@@ -464,7 +469,7 @@ T0 ──────────────────────── 90 d
 
 ## Appendix B: Maintainer position record
 
-[`templates/Maintainer non-fix record .md`](../templates/Maintainer%20non-fix%20record%20.md) captures a §5.2 non-fix in the maintainer's own words: date, channel, verbatim statement, rationale, which kind of non-fix (EOL / feature-complete / WONTFIX), affected versions, and the maintainer's position on downstream mitigation and on a third party carrying the patch.
+[`templates/Maintainer non-fix record .md`](../templates/Maintainer%20non-fix%20record%20.md) captures a §5.2 non-fix in the maintainer's own words: date, channel, verbatim statement, rationale, which kind of non-fix (EOL / feature-complete / WONTFIX), affected versions, and the maintainer's position on downstream mitigation and on a third party carrying the patch. It also records the offer to publish their rationale verbatim in the advisory: whether it was made, whether it was accepted or declined, the approved text, and the attribution they chose.
 
 ## Appendix C: MoLR approval record
 
