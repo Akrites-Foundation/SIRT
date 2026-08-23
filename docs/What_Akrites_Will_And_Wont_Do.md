@@ -50,7 +50,7 @@ We aim to finish the handback within **14 days** of confirming it's you, and con
 
 You get the patches with their advisory links, the pull requests already sitting on your repo, the test results and the CVE records. You get no obligations with them. Keep what's useful and bin the rest.
 
-If you'd rather the release disappeared, say so and we'll mark it deprecated and point it at your own releases. We won't unpublish it. People are resolving against it, and pulling a package out from under them is a supply-chain incident of our own making. The advisories stay up too: the bug was real, and your users' history isn't ours to rewrite.
+If you'd rather the release disappeared, say so and we'll mark it deprecated and point it at your own releases. We won't unpublish it unless a legal order requires it or the artifact itself is confirmed compromised. People are resolving against it, and pulling a package out from under them is a supply-chain incident of our own making. The advisories stay up too: the bug was real, and your users' history isn't ours to rewrite.
 
 ---
 
