@@ -19,9 +19,10 @@ STEP 1 -- Technical disagreement on the merits (§5.2.1). Complete before anythi
           CVE withdrawn / rejected / never reserved:
     [ ] We persuaded them -> return to §5.1, offer help shipping the fix. STOP HERE.
     [ ] Disagreement held after a genuine attempt -> continue below.
+    [ ] No dispute was raised; maintainer directly declined (EOL / feature-complete) -> continue below.
   Maintainer told of our intent to publish, with reasoning and date, before any third party (date):
 
-STEP 2 -- Non-fix classification (§5.2.2). Only reachable via the third outcome above.
+STEP 2 -- Non-fix classification (§5.2.2). Reachable via either "continue below" outcome above.
 Type: [ ] Formal EOL  [ ] Feature-complete  [ ] WONTFIX-on-merits
 Maintainer's final position (verbatim quote + link):
 Stated rationale:
