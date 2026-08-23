@@ -34,7 +34,7 @@ This document describes two tracks that must not be allowed to blur into one ano
 **The Maintainer of Last Resort (MoLR) function is hospice, not adoption.** The public Akrites commitment is that fixes to the latest version reach everyone in a timely fashion. That is a *fix-delivery* promise, not a maintenance promise. Accordingly:
 
 - **The unit of work is the vulnerability, not the package.** Akrites adopts a CVE, not a project. An approval covers *this fix*; a second vulnerability in the same package is a fresh entry decision with a fresh approval record (fast-pathed under §6.2.1, not waived).
-- **What Akrites ships is a last-resort security release, not a maintained fork.** The function keeps its name — it is in the press release, the open letter, and the public record, and renaming it now costs more than it buys. The *artifact* is what gets named narrowly, and §6.3's definition does the work the name will not.
+- **What Akrites ships is a security release, not a maintained fork.** The name of the *function* is not changed by this document. What is defined narrowly is the *artifact*, and §6.3 does that work.
 
 Out of scope: the mechanics of triage, dedup, and severity scoring already covered by the standard SIRT intake process. This picks up at the point where **the upstream handoff is the problem**.
 
