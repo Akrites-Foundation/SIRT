@@ -1,6 +1,6 @@
 Project status notice / steward call (template)
 
-*Per §7.1 of the MoLR Guidelines. **Internal, solicited distribution only.** v0.1's public "seeking steward" broadcast is withdrawn: a public "critical, unmaintained, seeking steward" call is a targeting list for adversaries and a recruiting funnel for the persona §7.3 exists to screen out.*
+*Per §7.1 of the MoLR Guidelines. **Internal, solicited distribution only** — there is no public variant. A public "critical, unmaintained, seeking steward" call is a targeting list for adversaries and a recruiting funnel for the persona §7.3 exists to screen out.*
 
 **Distribution rules — check before sending:**
 - [ ] TLP:AMBER+STRICT to the case circle. Never TLP:CLEAR while a fix is pre-PD.

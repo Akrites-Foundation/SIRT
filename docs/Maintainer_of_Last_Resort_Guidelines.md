@@ -59,7 +59,7 @@ These extend the Akrites principles into the hard cases. Keep them in view; ever
 
 ## 3. The two clocks
 
-Two separate clocks run in these cases, and v0.1 conflated them. The **disclosure clock** governs how fast downstream gets protected. The **abandonment clock** governs when Akrites is entitled to conclude that a project has no maintainer. They start together and run at different speeds, and the first must never be allowed to drive the second.
+Two separate clocks run in these cases, and they must not be conflated. The **disclosure clock** governs how fast downstream gets protected. The **abandonment clock** governs when Akrites is entitled to conclude that a project has no maintainer. They start together and run at different speeds, and the first must never be allowed to drive the second.
 
 *Unit convention: "business days" excludes weekends and the public holidays of the SIRT's operating jurisdiction. "Days" without qualification means calendar days. Where a stage is expressed in business days and a downstream stage in calendar days, log both the elapsed business days and the calendar date so the record is unambiguous.*
 
@@ -164,7 +164,7 @@ No contact established by the decision point despite the full §3.1 protocol. Sp
 
 **5.3a Silent but alive** (recent commits/releases elsewhere, active elsewhere but not on security): the §3.2 clock has restarted and there is no abandonment finding available. Keep escalating through the ecosystem and funders, keep the advisory and VEX current, and shift effort to the routing work in §8 — particularly intermediate-maintainer outreach, which does not require the original maintainer's participation at all.
 
-> **Akrites does not petition for a transfer of the package name.** v0.1 described registry abandonment processes (PEP 541, the npm dispute policy, and their equivalents) as "the legitimate route into the original namespace." That path is closed — see §8 for the commitment and the reasoning. Where a maintainer *wishes* to transfer their project, Akrites facilitates transfer to a durable steward or foundation and takes no custodial role. Where a third party independently pursues a registry process, Akrites does not initiate, sponsor, or advocate for it, and will supply factual case information only if the registry requests it.
+> **Akrites does not petition for a transfer of the package name.** Registry abandonment and dispute processes — PEP 541, the npm package-dispute policy, and their equivalents — are not a route Akrites uses, however well they fit the facts of a case. See §8 for the commitment and the reasoning. Where a maintainer *wishes* to transfer their project, Akrites facilitates transfer to a durable steward or foundation and takes no custodial role. Where a third party independently pursues a registry process, Akrites does not initiate, sponsor, or advocate for it, and will supply factual case information only if the registry requests it.
 
 **5.3b Demonstrably abandoned/dead** (§3.2 finding signed: no activity across repo, releases, registry account, and contact for ≥90 days; contributors and co-maintainers canvassed): test §6.1 for a **last-resort security release** and, in parallel, launch **§7 stewardship** to find a durable owner.
 
@@ -210,7 +210,7 @@ Per-CVE approval bounds the *obligation*, not the *artifact*. Requiring a full T
 - **Structure.** The published artifact is a build of *(frozen upstream commit + N patches)*. Each patch maps to exactly one advisory and is individually reviewable, revertible, and tested. Stacking is append-only and auditable rather than divergent.
 - **Draw the line at the carry, not the patches.** The cost is never the patch — it is what happens *between* patches, when the runtime EOLs, a transitive dependency is yanked, and the CI base image disappears. The boundary: **build tooling, CI configuration, and the pinned toolchain may change as needed to produce a signed artifact; library source outside the patch series and the public API surface may not.** When a signed build can no longer be produced within the bounded effort defined at approval, **that is a sunset trigger (§6.7), not a project.**
 - **Scope discipline.** Security fixes and the minimum required to keep them building and releasing — not features. Feature drift converts a bridge into a competing project and undermines the eventual handoff.
-- **Namespace.** Publish under an Akrites-controlled namespace that does not impersonate the original (§8). Publishing into the *original* namespace is prohibited without exception. **The naming convention itself is deliberately left open in this draft**: it must be settled per registry rather than declared once, because namespacing support, sorting rules, and reserved-prefix policies differ by ecosystem (crates.io, for example, has no namespaces at all). v0.1's proposed `akrites-molr/<project>` is withdrawn — carrying "last resort" in the package name publishes a judgment on the maintainer and ages badly. Whatever is chosen must be neutral, stable across a change of publisher, and resolvable by the advisory pointers in §8.1.
+- **Namespace.** Publish under an Akrites-controlled namespace that does not impersonate the original (§8). Publishing into the *original* namespace is prohibited without exception. **The naming convention itself is deliberately left open**: it must be settled per registry rather than declared once, because namespacing support, sorting rules, and reserved-prefix policies differ by ecosystem (crates.io, for example, has no namespaces at all). Whatever is chosen must be neutral, stable across a change of publisher, and resolvable by the advisory pointers in §8.1. It must not characterize the project or its maintainer — a package name is not the place to publish a judgment, and one that reads as a verdict ages badly once the facts move on.
 - **Versioning.** The scheme must sort monotonically as patches stack **and** must never shadow or outrank a real release if the maintainer returns. This differs by ecosystem — npm precedence rules ignore build metadata such as `+akrites.1`, and prerelease suffixes sort *below* the base version — so it is settled per registry and recorded in the approval, not declared once here.
 - **Clear labeling.** README, registry description, and advisory state plainly that this is a temporary last-resort security release for an unmaintained/abandoned/EOL project, why it exists, who runs it, and the sunset plan. Link the original project and its status.
 
@@ -288,7 +288,7 @@ The last-resort release exists to *buy time to find a real owner*. This section 
 
 ### 7.1 Steward search — solicit, do not broadcast
 
-A public "critical, unmaintained, seeking steward" call is two bad things at once: a targeting list for adversaries, and a recruiting funnel for the exact persona §7.3 warns about. v0.1's public Project Status Notice created the `xz` opportunity two sections after describing it. It is withdrawn.
+A public "critical, unmaintained, seeking steward" call is two bad things at once: a targeting list for adversaries, and a recruiting funnel for the exact persona §7.3 warns about. It is not a channel Akrites uses.
 
 - **Do not broadcast.** The steward search is conducted through targeted, named channels: distros carrying the package, projects that depend on it, foundations and funders (OpenSSF, STF, Alpha-Omega), Akrites members, and known contributors from the original project's history.
 - **Prefer solicited candidates with prior standing** over self-nominated volunteers. Self-selection into an unmaintained high-value project is the attack vector, not the talent pool.
@@ -321,7 +321,7 @@ A candidate steward should demonstrate:
 
 ### 7.5 No steward found — freeze, never withdraw
 
-v0.1 required downstream to migrate off within 30–60 days. That is not achievable for a widely deployed transitive dependency, and unpublishing a package that consumers resolve against is its own supply-chain incident.
+A short migration deadline is not achievable for a widely deployed transitive dependency — downstream cannot re-architect on that timeline — and unpublishing a package that consumers resolve against is its own supply-chain incident.
 
 - **Wind-down freezes the artifact.** The last release stays **published, signed, immutable, and clearly marked "no further fixes"**, with the final advisory and the migration guidance attached. The *obligation* ends; the *artifact* does not.
 - **Never unpublish, delete, or yank** a last-resort release, in any registry, for any reason short of a legal order or a confirmed compromise of the artifact itself. This holds after handback (§6.8) and after retirement (§6.7).
@@ -476,7 +476,7 @@ The §3 contact and abandonment record is kept in [`templates/Contact_attempt_lo
 
 ## Appendix D — Internal project status notice
 
-[`templates/Project status notice .md`](../templates/Project%20status%20notice%20.md) — TLP:AMBER+STRICT notice to the case circle per §7.1, for solicited, named-channel distribution only. v0.1's public "seeking steward" broadcast is withdrawn.
+[`templates/Project status notice .md`](../templates/Project%20status%20notice%20.md) — TLP:AMBER+STRICT notice to the case circle per §7.1, for solicited, named-channel distribution only. There is no public variant.
 
 ## Appendix E — Steward vetting record
 
