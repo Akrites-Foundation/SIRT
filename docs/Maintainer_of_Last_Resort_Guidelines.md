@@ -8,7 +8,7 @@
 
 > **Companion document.** [What Akrites Will and Won't Do to Your Project](./What_Akrites_Will_And_Wont_Do.md) states these commitments in plain language for maintainers. The two documents ship together and must not contradict each other. Where they appear to, the companion's promises are the floor.
 
-**What changed in v0.2:** the unit of work is the vulnerability rather than the project (§1.2, §6.1); the deliverable is a patch series against a pinned upstream commit rather than a maintained branch (§6.3); Akrites will never petition for, accept, or hold a package namespace it did not create (§2, §5.3a, §8); §6.1 states the entry test as a negative; the abandonment clock is separate from the disclosure clock and floored at 90 days (§3.2); recusal replaces reclassification for conflicts of interest (§6.2); wind-down freezes the artifact rather than withdrawing it (§7.5).
+**What changed in v0.2:** the unit of work is the vulnerability rather than the project (§1.2, §6.1); the deliverable is a patch series against a pinned upstream commit rather than a maintained branch (§6.3); Akrites will never petition for, accept, or hold a package namespace it did not create (§2, §5.3a, §8); §6.1 states the entry test as a negative; the abandonment clock is separate from the disclosure clock and floored at 90 days (§3.2); a disputed finding gets a technical exchange on the merits before anyone calls it a non-fix, and the SIRT is expected to lose some of those arguments (§5.2.1); a maintainer who declines to fix is offered a verbatim rationale in the advisory (§5.2.2); recusal replaces reclassification for conflicts of interest (§6.2); wind-down freezes the artifact rather than withdrawing it (§7.5).
 
 ---
 
@@ -28,7 +28,7 @@ Conflicts of interest are not a stall condition. §6.2 handles them by recusal a
 
 Two tracks run through this document, and deadline pressure must not be allowed to blur them.
 
-- **Track A, upstream assistance (§§3–5).** Supplying the capacity, tooling, coordination, and disclosure machinery a maintainer lacks. This is the core Akrites product, and we expect it to resolve the large majority of cases. §11 measures whether it does. A capacity gap is met by supplying capacity; a disagreement is met by an advisory and a VEX.
+- **Track A, upstream assistance (§§3–5).** Supplying the capacity, tooling, coordination, and disclosure machinery a maintainer lacks. This is the core Akrites product, and we expect it to resolve the large majority of cases. §11 measures whether it does. A capacity gap is met by supplying capacity. A disputed finding is met by a technical exchange (§5.2.1), and by an advisory and a VEX where that exchange leaves the disagreement standing.
 - **Track B, last-resort action (§§6–7).** A rare, governed exception, entered only on the §6.1 entry test: **no party holds both the legal right and the demonstrated willingness to ship the fix.**
 
 **The Maintainer of Last Resort (MoLR) function delivers fixes. It does not adopt projects.** The public Akrites commitment is that fixes to the latest version reach everyone in a timely fashion. That commits Akrites to delivering a fix, and to nothing about maintenance. Two consequences:
@@ -51,7 +51,7 @@ These extend the Akrites principles into the hard cases. Keep them in view; ever
 - **Prefer the patch to the fork.** Carrying code creates an open-ended commitment and expands the scope of Akrites. The cheapest durable fix is usually an upstream dependency migration by an intermediate maintainer (§8.4).
 - **A fork is a new attack surface.** A fork stood up in a hurry, under a new maintainer nobody vetted, is the `xz-utils` (CVE-2024-3094) failure mode. Treat MoLR onboarding and steward vetting as a security control.
 - **Severity accelerates mitigation. Severity never accelerates a property judgment.** Exploitation pressure compresses the disclosure clock. It does not compress the finding that a maintainer has abandoned their project (§3.2).
-- **A disagreement is a technical problem before it is a disclosure problem.** When a maintainer says the finding isn't a vulnerability, the first move is to exchange evidence and try to resolve it, not to start drafting (§5.2.1). We may be wrong, and a SIRT that never concedes a case is not listening.
+- **A disagreement is a technical problem before it is a disclosure problem.** When a maintainer says the finding isn't a vulnerability, the first move is to exchange evidence and try to resolve it (§5.2.1). We may be wrong.
 - **Everything is embargoed until it isn't.** TLP governs every artifact and every party from intake to Public Disclosure (PD). Non-fix and unresponsiveness do **not** default a case to open.
 - **Document the trail.** Record every contact attempt, maintainer decision, governance approval, and recusal. The record is what makes a later release or disclosure defensible.
 - **How can we help?** A maintainer drowning in report volume is offered help with the volume: triage, patch authorship, coordination, release engineering, for as long as they want it. They are never offered a fork. Do not present a takeover to a responsive maintainer as a form of assistance.
@@ -81,6 +81,7 @@ Rules for the disclosure clock:
 - **Severity bends the clock without removing stages.** Active exploitation, high EPSS, or critical-infrastructure blast radius compresses the intervals, and may justify emergency distro-only pre-notification. A low-severity issue may extend them. Use SSVC to make and record that call, and never skip the *documentation* of an attempt.
 - **Log each attempt** with timestamp, channel, addressee, and outcome (Appendix A). "Read receipt but no reply" is a different fact from "bounced". Record which.
 - **A single acknowledgement returns the case to normal CVD.** If the maintainer engages at any stage, drop back to standard coordination, step into a supporting role, and stop the abandonment clock for good.
+- **A live technical exchange defers the decision point.** Where the maintainer is arguing the merits of the finding (§5.2.1), the decision point moves out to let the argument finish, on the same footing as a maintainer who needs longer to ship a fix. Record the new date and the reason. Publishing an advisory into the middle of a conversation you are still having is a failure of the process.
 - **Never disclose technical detail in escalation messages** beyond what least-privilege requires. "We have a qualified security finding in project X and cannot reach the maintainer" is enough to enlist a foundation's help without leaking the vulnerability.
 - **The decision point is not an abandonment finding.** It classifies the case and releases the advisory, VEX, and mitigation. Nothing at T0+30 authorizes Track B.
 
@@ -153,19 +154,19 @@ Most of these disagreements are real and resolvable, and they come in recognizab
 - **State the threat model we assumed, and invite them to correct it.** Much of the time they know something about deployment reality that we don't, and that is the whole disagreement.
 - **Ask what would change their mind**, and then go get it if it is gettable. A reachable PoC, a real-world configuration that hits the path, a downstream consumer who is exposed.
 - **Offer a live conversation.** A 30-minute call resolves what a fortnight of issue comments will not, and it is a better use of everyone's time.
-- **Bring a second opinion in before escalating, and not after.** Where the disagreement holds, have an analyst outside the case team review both positions. Do this while it can still change our own answer.
+- **Bring in a second opinion while it can still change our answer.** Have an analyst outside the case team review both positions before anyone drafts an advisory.
 
 **Be willing to lose the argument.** The maintainer wrote the software and has context we do not. If they are right, say so plainly, close the case as not-a-vulnerability or reclassify it as a plain bug, tell the Finder why, withdraw or reject any CVE already reserved, and thank the maintainer for the time. Record the outcome the same way we would record a confirmed finding, because it is one. **Track how often this happens (§11).** A SIRT that never concedes is not being rigorous; it is not listening.
 
 **Never use disclosure as leverage.** "Fix it or we publish" turns a technical disagreement into a threat, and the disclosure clock is not a negotiating instrument. Where the disagreement persists and we still intend to publish, say so plainly and early, explain the reasoning, give the date, and offer the verbatim-rationale option below. The maintainer should learn our position from us, well before they learn it from an advisory.
 
-**Time-box it without rushing it.** Keep the §3.1 clock running, and treat an active technical exchange as a normal reason to extend the disclosure date, on the same footing as a maintainer who needs longer to ship a fix. An engaged maintainer means the case is back in ordinary CVD (§3.1), and it is not a §5.2 non-fix while the conversation is live.
+**Time-box it without rushing it.** An active technical exchange defers the decision point (§3.1). An engaged maintainer means the case is back in ordinary CVD, and it is not a §5.2 non-fix while the conversation is live.
 
-**Three outcomes, and only one of them reaches the rest of §5.2:**
+**Three outcomes, and only one of them reaches §5.2.2:**
 
-1. **They persuade us.** Close it. No advisory, no CVE, and a note to the Finder explaining the reasoning.
+1. **They persuade us.** Close the case with no advisory. Withdraw or reject any CVE already reserved, and write to the Finder explaining the reasoning.
 2. **We persuade them.** Back to §5.1, and offer whatever help they want in shipping the fix.
-3. **The disagreement holds after a genuine attempt.** Now it is a non-fix, and the rest of §5.2 applies.
+3. **The disagreement holds after a genuine attempt.** Now it is a non-fix, and §5.2.2 applies.
 
 Record which of the three it was, what was exchanged, and what the maintainer said, in the Appendix B record. That record is what shows a later reader that the advisory came after an argument rather than instead of one.
 
@@ -175,7 +176,7 @@ Record which of the three it was, what was exchanged, and what the maintainer sa
 
 - **Formally EOL or unsupported branch.** The maintainer has published an end-of-life for the affected version. Clean signal.
 - **Feature-complete, still "supported" in principle.** The maintainer considers the code done and won't touch it for this class of issue.
-- **WONTFIX on the merits.** The maintainer disputes severity, considers it outside the threat model or a user configuration the docs already advise against, or judges the fix cost unjustified.
+- **WONTFIX on the merits.** After §5.2.1, the maintainer still disputes severity, considers the issue outside the threat model or confined to a user configuration the docs already advise against, or judges the fix cost unjustified.
 
 **Do:**
 - **Record the maintainer's position in their own words**, with date and rationale (Appendix B).
@@ -220,7 +221,7 @@ MoLR is the SIRT publishing a **time-bounded, clearly marked, governed security 
 
 ### 6.1 Entry test (all must hold)
 
-The entry test is a **negative**. MoLR requires *the absence of any party holding both the legal right and the demonstrated willingness to ship the fix.* Maintainer bandwidth is not an entry condition, so supply the bandwidth. Maintainer disagreement is not an entry condition, so publish an advisory and a VEX.
+The entry test is a **negative**. MoLR requires *the absence of any party holding both the legal right and the demonstrated willingness to ship the fix.* Maintainer bandwidth is not an entry condition, so supply the bandwidth. Maintainer disagreement is not an entry condition, so argue it on the merits (§5.2.1) and publish an advisory and a VEX if it still stands.
 
 1. **No willing rights-holder exists.** You ran and logged the §3.1 protocol in full, signed the §3.2 finding where applicable, and documented the §5 alternatives as exhausted or unavailable: assist-in-place, distro or downstream carry, a dependent project volunteering, an existing community successor, a maintainer-blessed transfer, and intermediate-maintainer migration (§8.4). Record each alternative as *asked and declined*, and never as *assumed unavailable*.
 2. **The software meets a published criticality threshold.** Evidence "critical" against published, versioned inputs, and attach them to the approval record: OpenSSF Criticality Score, count of distros carrying the package, direct and transitive dependent counts, and SBOM prevalence across Akrites members. Without a published threshold, the packages clearing the bar will skew toward the ones members depend on, and Akrites will be accused of that. Low-use abandonware gets an advisory and a VEX.
@@ -432,7 +433,7 @@ That work is maintainer outreach with a prepared patch, which is what the SIRT i
 - **Attribution and credit** to the original maintainer and Finder persist through last-resort releases and steward transitions unless a party opts out.
 - **Public messaging at PD** stays neutral and factual about the project's status ("unmaintained", "EOL per maintainer", "maintainer unreachable"). Never disparage, never speculate about why a maintainer went silent, and never frame a WONTFIX as negligence. The goal is downstream safety and a healthy handoff.
 - **Tell the maintainer before you tell anyone else.** Where a disagreement stands unresolved and we intend to publish, the maintainer hears our position, our reasoning, and the date from us first (§5.2.1). Never let disclosure read as a threat, and never present a publication date as the consequence of their refusal.
-- **A maintainer who accepted the §5.2 offer speaks for themselves in the advisory.** Reproduce their statement as approved, attribute it as they asked, and place the SIRT's own assessment beside it rather than around it. Editing a maintainer's words into agreement with our conclusion, or burying them below it, breaks the offer.
+- **A maintainer who accepted the §5.2.2 offer speaks for themselves in the advisory.** Reproduce their statement as approved, attribute it as they asked, and place the SIRT's own assessment beside it rather than around it. Editing a maintainer's words into agreement with our conclusion, or burying them below it, breaks the offer.
 - **The maintainer-facing companion is the public voice of this document.** Where external communications and the companion diverge, the companion wins.
 
 ---
@@ -462,7 +463,7 @@ Measure the promise the launch made, which is fix delivery, and instrument the f
 - Intermediate-maintainer migrations landed (§8.4), and dependent trees remediated per migration.
 
 **Function-health metrics:**
-- Disputed findings resolved by technical exchange (§5.2.1), split three ways: the maintainer persuaded us, we persuaded the maintainer, the disagreement held. **A SIRT that never lands in the first bucket is not listening**, so watch that count rather than a target.
+- Disputed findings resolved by technical exchange (§5.2.1), split three ways: the maintainer persuaded us, we persuaded the maintainer, the disagreement held. Watch the first count rather than setting a target for it.
 - Steward placement rate, and median time from entry to steward confirmation.
 - Engagements open past term. **Target: zero.**
 - Handback latency from verified maintainer contact to completed reclaim (§6.8). Target 14 days or less.
@@ -481,13 +482,18 @@ Measure the promise the launch made, which is fix delivery, and instrument the f
 ## Appendix A: One-page timeline summary
 
 ```
-DISCLOSURE CLOCK (severity-adjustable)
+DISCLOSURE CLOCK (severity-adjustable; a live §5.2.1 exchange defers the decision point)
 T0 ──▶ +5bd ──▶ +10bd ──▶ +15bd ──▶ ~+30d (decision point) ──▶ scenario path
  │      │        │         │            │
  att1   att2     eco       coord        classify §5 · advisory + VEX + mitigation ship here
                  escalate  handoff       │
                                          ├─ 5.1 capacity ──▶ assist in place ──▶ maintainer ships fix  [Track B: never]
-                                         ├─ 5.2 non-fix  ──▶ advisory + VEX + mitigation + §8.4 outreach
+                                         ├─ 5.2.1 dispute ──▶ exchange evidence · offer a call · 2nd opinion
+                                         │                     ├─ they persuade us ──▶ CLOSE, no advisory, CVE withdrawn
+                                         │                     ├─ we persuade them ──▶ back to 5.1
+                                         │                     └─ disagreement holds ──▶ 5.2.2
+                                         ├─ 5.2.2 non-fix ──▶ tell maintainer first · offer verbatim rationale
+                                         │                  ──▶ advisory + VEX + mitigation + §8.4 outreach
                                          └─ 5.3 unresponsive
                                               ├─ alive   ──▶ keep escalating + §8 routing (clock restarts)
                                               └─ suspect ──▶ security incident + clean-room build + §7.3 vetting
@@ -509,7 +515,7 @@ T0 ──────────────────────── 90 d
 
 ## Appendix B: Maintainer position record
 
-[`templates/Maintainer non-fix record .md`](../templates/Maintainer%20non-fix%20record%20.md) captures a §5.2 non-fix in the maintainer's own words: date, channel, verbatim statement, rationale, which kind of non-fix (EOL / feature-complete / WONTFIX), affected versions, and the maintainer's position on downstream mitigation and on a third party carrying the patch. It also records the offer to publish their rationale verbatim in the advisory: whether it was made, whether it was accepted or declined, the approved text, and the attribution they chose.
+[`templates/Maintainer non-fix record .md`](../templates/Maintainer%20non-fix%20record%20.md) runs in two steps. Step 1 records the §5.2.1 technical exchange: the nature of the disagreement, what each side sent the other, the second opinion, and which of the three outcomes it reached. Two of those outcomes stop the record there. Step 2 records the §5.2.2 non-fix itself: date, channel, verbatim statement, rationale, which kind of non-fix (EOL / feature-complete / WONTFIX), affected versions, the maintainer's position on downstream mitigation and on a third party carrying the patch, and the offer to publish their rationale verbatim, including whether it was accepted, the approved text, and the attribution they chose.
 
 ## Appendix C: MoLR approval record
 
