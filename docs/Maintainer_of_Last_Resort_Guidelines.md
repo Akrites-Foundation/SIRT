@@ -8,7 +8,7 @@
 
 > **Companion document.** [What Akrites Will and Won't Do to Your Project](./What_Akrites_Will_And_Wont_Do.md) is the plain-language, maintainer-facing statement of the commitments made here. The two documents are released together and must not contradict each other; where they appear to, the companion's promises are the floor.
 
-**What changed in v0.2:** the unit of work is now the *vulnerability*, not the project (§1.2, §6.1); the deliverable is a *patch series against a pinned upstream commit*, not a maintained branch (§6.3); Akrites will never petition for, accept, or hold a package namespace it did not create (§2, §5.3a, §8); the entry test is restated negatively (§6.1); the abandonment clock is decoupled from the disclosure clock and floored at 90 days (§3.2); conflicts of interest are handled by recusal rather than by reclassifying the case (§1.1, §6.2); wind-down freezes the artifact rather than withdrawing it (§7.5).
+**What changed in v0.2:** the unit of work is now the *vulnerability*, not the project (§1.2, §6.1); the deliverable is a *patch series against a pinned upstream commit*, not a maintained branch (§6.3); Akrites will never petition for, accept, or hold a package namespace it did not create (§2, §5.3a, §8); the entry test is restated negatively (§6.1); the abandonment clock is decoupled from the disclosure clock and floored at 90 days (§3.2); conflicts of interest are handled by recusal rather than by reclassifying the case (§6.2); wind-down freezes the artifact rather than withdrawing it (§7.5).
 
 ---
 
@@ -22,7 +22,7 @@ This document governs what your PSIRT (acting as a Finder/coordinator and CNA) a
 2. **Deliberate non-fix (EOL / feature-complete / WONTFIX)** — the maintainer is reachable and decides the affected branch will not be patched.
 3. **Unresponsive** — no contact is established within the escalation window, for any reason (lost interest, moved on, dead project, maintainer unreachable, or worse — a compromised or hostile maintainer).
 
-**Conflicts of interest are not a stall condition.** A maintainer with direct ties into Akrites (Global Board, TOC, or a WG), or an Akrites member whose product depends on the affected package and who is pushing for a particular outcome, creates a *decision-making* problem, not a *classification* problem. A responsive maintainer is a responsive maintainer regardless of their affiliation, and must never be routed toward last-resort machinery because Akrites cannot cleanly decide their case. The remedy is recusal and reassignment to an unconflicted decision-maker (§6.2), and disclosure of the conflict in the case record. Akrites-affiliated maintainers receive neither better nor worse treatment than strangers.
+Conflicts of interest are not a stall condition; they are handled by recusal at the point of decision (§6.2).
 
 ### 1.2 Two tracks, and the line between them
 
@@ -192,7 +192,7 @@ The entry test is stated as a **negative**: MoLR requires *the absence of any pa
 - **TOC (Technical Oversight Committee) approval is mandatory** and recorded (Appendix C). No unilateral SIRT releases.
 - The approval record states: entry-test evidence including the criticality inputs and the record of alternatives asked and declined, the license finding, the bounded-effort estimate, the capacity slot consumed, the term and sunset conditions, the retirement-review threshold status (§6.7), and the steward-search plan.
 - For 5.3c (suspect) cases, add a security/provenance sign-off.
-- **Conflict of interest is handled by recusal, not by reclassification (§1.1).** Any decision-maker with a personal tie to the maintainer or the project, and any decision-maker whose employer's product depends materially on the affected package, declares the interest and recuses from the vote. The case is reassigned to an unconflicted decision-maker; the classification of the case does not change. Recusals are recorded. The reciprocal case — an Akrites member advocating for a last-resort release on a package their product depends on — is a conflict of the same kind and is handled the same way.
+- **Conflict of interest is handled by recusal, not by reclassification.** Any decision-maker with a personal tie to the maintainer or the project, and any decision-maker whose employer's product depends materially on the affected package, declares the interest and recuses from the vote. The case is reassigned to an unconflicted decision-maker; the classification of the case does not change, and a responsive maintainer is never routed toward Track B because Akrites cannot cleanly decide their case. Recusals are recorded. The reciprocal case — an Akrites member advocating for a last-resort release on a package their product depends on — is a conflict of the same kind and is handled the same way.
 - **Interim approval authority.** Until the TOC is stood up, a named interim approver exercises TOC authority under this section, with an explicit sunset on the date the TOC's first quorate meeting is held. MoLR-specific composition and recusal rules are adopted at the same time. The first case decided will be the precedent every later case is measured against; it must not be decided ad hoc.
 
 #### 6.2.1 Successive vulnerabilities in the same package — fast path
