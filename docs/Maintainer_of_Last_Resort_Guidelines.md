@@ -28,7 +28,7 @@ Conflicts of interest are not a stall condition; they are handled by recusal at 
 
 This document describes two tracks that must not be allowed to blur into one another under deadline pressure.
 
-- **Track A — upstream assistance (§§3–5).** Supplying the capacity, tooling, coordination, and disclosure machinery a maintainer lacks. This is the core Akrites product and will cover the overwhelming majority of cases. A capacity gap is met by supplying capacity; a disagreement is met by an advisory and a VEX.
+- **Track A — upstream assistance (§§3–5).** Supplying the capacity, tooling, coordination, and disclosure machinery a maintainer lacks. This is the core Akrites product, and the expectation going in is that it resolves the large majority of cases — an expectation this document instruments (§11) rather than assumes. A capacity gap is met by supplying capacity; a disagreement is met by an advisory and a VEX.
 - **Track B — last-resort action (§§6–7).** A rare, governed exception, entered only when Track A has failed for the reason set out in the entry test at §6.1: **there is no party with both the legal right and the demonstrated willingness to ship the fix.**
 
 **The Maintainer of Last Resort (MoLR) function is hospice, not adoption.** The public Akrites commitment is that fixes to the latest version reach everyone in a timely fashion. That is a *fix-delivery* promise, not a maintenance promise. Accordingly:
@@ -423,7 +423,7 @@ Measure what the launch actually promised — fix delivery — and instrument th
 - Steward placement rate, and median time from entry to steward confirmation.
 - Engagements open past term (**target: zero**).
 - Handback latency from verified maintainer contact to completed reclaim (§6.8); target ≤14 days.
-- Cases resolved in Track A without ever testing §6.1 — expected to be the overwhelming majority.
+- Cases resolved in Track A without ever testing §6.1. Track A is expected to carry the large majority of cases; this metric is how we find out whether that holds, and a low or falling ratio is a signal to re-examine the model rather than the number.
 
 **Counter-metrics — these are supposed to go down:**
 - **Rising MoLR volume is a failure signal, not productivity.** More last-resort releases means upstream assistance and dependency migration are not working. Write this into the charter **before anyone's objectives or performance review depends on the number of engagements opened**.
