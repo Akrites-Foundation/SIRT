@@ -48,7 +48,8 @@ procedure; and the leak/break classification and response procedure.
 ## 2. The bright-line test
 
 > **A vulnerability is publicly disclosed when specific information about it is available to any
-> member of the public who did not agree to keep it confidential.**
+> member of the public who did not agree to keep it confidential.  Reflect upon the possibility
+> that a knowledgeable adversary could develop a working exploit from this.**
 
 Apply three questions:
 
