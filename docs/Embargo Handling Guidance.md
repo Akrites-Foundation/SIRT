@@ -1,12 +1,14 @@
-# Akrites SIRT — Embargo Handling Guidance - DRAFT 0.1
+# Akrites SIRT — Embargo Handling Guidance - DRAFT 0.2
 
 **Status:** Proposal / Draft for review
 
 
-**Applies to:** All vulnerability cases handled by the OSS-SIRT (Intake → Synchronized Disclosure)
+**Applies to:** All vulnerability cases handled by the Akrites SIRT (Intake → Synchronized Disclosure)
 
 
-**Relationship to existing docs:** Extends the *OSS-SIRT Process (High Level)* Coordination phase and the confidentiality principles in *Akrites: The SIRT*. Informed by the FIRST *Guidelines and Practices for Multi-Party Vulnerability Coordination and Disclosure*.
+**Relationship to existing docs:** Provides the operational detail for the Coordination phase of the [CVD Policy](../coordinated-vulnerability-disclosure-policy.md) (incorporated there by reference — see CVD Policy §6) and extends the confidentiality principles in *Akrites: The SIRT*. Informed by the FIRST *Guidelines and Practices for Multi-Party Vulnerability Coordination and Disclosure*.
+
+> **Naming:** **Akrites SIRT** (the Security Incident Response Team hosted by the Akrites Foundation) is the standard name used throughout. "OSS-SIRT" appears in some earlier materials as a synonym for the same body.
 
 ---
 
