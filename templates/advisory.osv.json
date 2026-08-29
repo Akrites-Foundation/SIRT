@@ -52,7 +52,7 @@
     }
   ],
   "references": [
-    { "type": "ADVISORY", "url": "https://oss-sirt.linuxfoundation.org/security/advisories/OSS-SIRT-0000-0000" },
+    { "type": "ADVISORY", "url": "https://sirt.akrites.dev/security/advisories/OSS-SIRT-0000-0000" },
     { "type": "FIX", "url": "https://github.com/ORG/REPO/commit/1111111111111111111111111111111111111111" },
     { "type": "WEB", "url": "https://github.com/ORG/REPO/releases/tag/v1.6.3" },
     { "type": "REPORT", "url": "https://github.com/ORG/REPO/security/advisories/GHSA-xxxx-xxxx-xxxx" }
@@ -64,8 +64,8 @@
       "type": "FINDER"
     },
     {
-      "name": "OSS-SIRT",
-      "contact": [ "mailto:security@oss-sirt.linuxfoundation.org" ],
+      "name": "Akrites SIRT",
+      "contact": [ "mailto:SIRT@Akrites.dev" ],
       "type": "COORDINATOR"
     }
   ],
