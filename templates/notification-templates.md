@@ -1,12 +1,12 @@
-# OSS-SIRT Notification Templates
+# Akrites SIRT Notification Templates
 
 Pre-written messages for each communication point in the
-[CVD Policy](./coordinated-vulnerability-disclosure-policy.md) lifecycle.
+[CVD Policy](../coordinated-vulnerability-disclosure-policy.md) lifecycle.
 Replace every `{{PLACEHOLDER}}` before sending. Default handling for all
 pre-disclosure material is **TLP:RED**.
 
 Every embargoed notification and public advisory carries an **AI use** block
-stating, for both the Finder and OSS-SIRT, whether and how AI/LLM tooling was
+stating, for both the Finder and the Akrites SIRT, whether and how AI/LLM tooling was
 used. The wording, capability vocabulary, and rules are defined in the
 [AI and LLM Use Disclosure Policy](../docs/ai-use-disclosure.md).
 
@@ -30,11 +30,11 @@ Quick map of which template to use when:
 > unclear whether) AI tooling was used; drop it otherwise.
 
 ```
-Subject: [OSS-SIRT] Received your report — {{TRACKING_ID}}
+Subject: [Akrites SIRT] Received your report — {{TRACKING_ID}}
 
 Hello {{FINDER_NAME}},
 
-Thank you for reporting this to OSS-SIRT. We've received your report and
+Thank you for reporting this to the Akrites SIRT. We've received your report and
 assigned it the tracking ID {{TRACKING_ID}}. A team member is reviewing it now.
 
 What happens next:
@@ -59,10 +59,10 @@ advisory}}. If anything material changes on your end (for example, you observe
 exploitation in the wild, or you intend to publish), please tell us right away.
 
 Our coordinated disclosure policy:
-https://oss-sirt.linuxfoundation.org/security/policy
+https://sirt.akrites.dev/security/policy
 
 Thank you,
-OSS-SIRT
+Akrites SIRT
 SIRT@Akrites.dev
 ```
 
@@ -76,7 +76,7 @@ SIRT@Akrites.dev
 **2a — Confirmed vulnerability**
 
 ```
-Subject: [OSS-SIRT] {{TRACKING_ID}} — confirmed, proceeding to remediation
+Subject: [Akrites SIRT] {{TRACKING_ID}} — confirmed, proceeding to remediation
 
 Hello {{FINDER_NAME}},
 
@@ -87,7 +87,7 @@ Next steps:
   - We are opening a private advisory and developing a fix.
   - We will request a CVE ID via {{CNA}}.
   - Proposed public disclosure target: {{PD_DATE}} (default planning window is
-    up to 90 days; we aim to disclose as soon as a fix can ship). Let us know if
+    up to 30 days; we aim to disclose as soon as a fix can ship). Let us know if
     this timing works for you.
 
 Credit: we credit finders by default. Please tell us how you'd like to be
@@ -103,13 +103,13 @@ publish the capability only.
 Would you like to be added as a collaborator on the private fix so you can
 review it before release?
 
-OSS-SIRT
+Akrites SIRT
 ```
 
 **2b — Not a vulnerability (bug / feature request / works-as-intended)**
 
 ```
-Subject: [OSS-SIRT] {{TRACKING_ID}} — assessment
+Subject: [Akrites SIRT] {{TRACKING_ID}} — assessment
 
 Hello {{FINDER_NAME}},
 
@@ -124,7 +124,7 @@ request at {{LINK}} is the best path.
 If we've misunderstood any part of your report, please reply — we're happy to
 take another look.
 
-OSS-SIRT
+Akrites SIRT
 ```
 
 ---
@@ -160,7 +160,7 @@ is NOT affected, so providers can judge their own exposure.}}
 AI use
   - Finder: {{No AI tooling was used. / AI-assisted {phase(s)}. Tools: {names,
     if the Finder consented}.}}
-  - Coordinator (OSS-SIRT): {{No AI tooling was used. / AI-assisted {phase(s)},
+  - Coordinator (Akrites SIRT): {{No AI tooling was used. / AI-assisted {phase(s)},
     under human review.}}
 
 Mitigation / work-around
@@ -174,11 +174,11 @@ What we ask of you
   - Prepare your update so you can ship promptly at public disclosure.
   - Keep this information TLP:RED until {{PD_DATE}}.
   - Reply to this thread with any patch problems or qualification issues —
-    someone on OSS-SIRT is monitoring for replies.
+    someone on the Akrites SIRT is monitoring for replies.
 
 Public disclosure date: {{PD_DATE}} {{TIME + TZ}}
 
-OSS-SIRT
+Akrites SIRT
 SIRT@Akrites.dev
 ```
 
@@ -224,19 +224,19 @@ Remediation
   - {{Work-around, if any, for users who cannot upgrade immediately.}}
 
 Acknowledgements
-{{Reported by {{CREDIT}}. / Reported privately to OSS-SIRT.}}
+{{Reported by {{CREDIT}}. / Reported privately to the Akrites SIRT.}}
 Thanks to all who assisted with validation and remediation.
 
 AI use
   - Finder: {{No AI tooling was used. / AI-assisted {phase(s) — e.g., discovery,
     patch development}. Tools: {names — only if the Finder consented}.}}
-  - Coordinator (OSS-SIRT): {{No AI tooling was used. / AI-assisted {phase(s) —
+  - Coordinator (Akrites SIRT): {{No AI tooling was used. / AI-assisted {phase(s) —
     e.g., triage, advisory drafting}, under human review.}}
 
 References
   - Advisory: {{ADVISORY_URL}}
   - Patch / release: {{RELEASE_URL}}
-  - AI-use disclosure policy: https://sirt.linuxfoundation.org/security/ai-use-disclosure
+  - AI-use disclosure policy: https://sirt.akrites.dev/security/ai-use-disclosure
   - {{Additional links}}
 
 Revision history
@@ -252,9 +252,9 @@ Revision history
 > a complete fix.
 
 ```
-Subject: [OSS-SIRT] {{CVE_ID}} in {{PROJECT}} — disclosure accelerated
+Subject: [Akrites SIRT] {{CVE_ID}} in {{PROJECT}} — disclosure accelerated
 
-OSS-SIRT is aware that information about {{CVE_ID}} in {{PROJECT}} has become
+The Akrites SIRT is aware that information about {{CVE_ID}} in {{PROJECT}} has become
 public ahead of the planned disclosure. To help users protect themselves, we
 are sharing the following now:
 
@@ -266,6 +266,6 @@ are sharing the following now:
 We will update this advisory as remediation becomes available:
 {{ADVISORY_URL}}
 
-OSS-SIRT
+Akrites SIRT
 SIRT@Akrites.dev
 ```
