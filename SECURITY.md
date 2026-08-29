@@ -1,13 +1,13 @@
 # Security Policy - DRAFT v.0.1
 
-The Akrites Security Incident Response Team (**Akrites-SIRT**) coordinates the
+The Akrites Security Incident Response Team (**Akrites SIRT**) coordinates the
 disclosure of security vulnerabilities affecting Akrites-maintained
 code and configurations in this repository. Thank you for helping
 keep our users safe.
 
 <!-- Our full **Coordinated Vulnerability Disclosure (CVD) Policy** — including our
 lifecycle, embargo handling, and timelines — is published at:
-**https://sirt.linuxfoundation.org/security/policy** -->
+**https://sirt.akrites.dev/security/policy** -->
 
 ## Scope and supported versions
 
@@ -30,7 +30,7 @@ If the button is not available, use the email reporting channel below.
 ### Alternative — encrypted email
 
 If GitHub reporting is unavailable, email
-**[SIRT@Akrites.dev](sirt@akrites.dev)**. The address supports transport
+**[SIRT@Akrites.dev](mailto:SIRT@Akrites.dev)**. The address supports transport
 encryption (MTA-STS / STARTTLS); for end-to-end protection you may use our
 OpenPGP key linked from the policy page. We would rather receive your report
 than have you blocked by encryption — when in doubt, send it.
@@ -53,19 +53,19 @@ Reports may be made anonymously, but we then cannot send you status updates.
 | Acknowledgement | Within **2 business days**                                      |
 | Initial triage  | Initial assessment within **10 business days**                  |
 | Communication   | Ongoing status updates through remediation                      |
-| Confidentiality | Embargoed reports handled as **TLP:RED** until public disclosure |
+| Confidentiality | Phased TLP per our CVD policy: **TLP:RED** at intake, **TLP:AMBER+STRICT** during remediation, **TLP:CLEAR** at public disclosure |
 | Credit          | Finder credited by default; anonymity honored on request        |
-| Disclosure      | Coordinated; default planning target is PD within **90 days**, negotiated shorter where a fix can ship sooner |
+| Disclosure      | Coordinated; default planning target is PD within **30 days** of a validated report, deferring to the upstream project's own disclosure policy; extension beyond 30 days requires explicit rationale |
 
 ## Our process at a glance
 
 We follow a nine-phase lifecycle:
 
 ```
-Discover → Triage → Validate → Coordination → Patch → Test → Document → Distribute → Disclose
+Discover → Deduplicate & Triage → Validate → Coordination → Patch → Test → Document → Distribute → Disclose
 ```
 
-Case details remain private (TLP:RED, need-to-know) through the embargo; the
+Case details remain private (phased TLP, need-to-know) through the embargo; the
 patch and full advisory are released together at Public Disclosure. The process
 itself is open and reviewable — see the policy linked above.
 
@@ -76,4 +76,4 @@ pursue or support legal action for such reports. This is not a bug bounty and
 confers no expectation of payment. Do not access more data than necessary, do
 not degrade service for others, and do not disclose before the agreed date.
 
-<!-- _Full policy: https://sirt.linuxfoundation.org/security/policy_ -->
+<!-- _Full policy: https://sirt.akrites.dev/security/policy_ -->
