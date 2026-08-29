@@ -5,7 +5,7 @@
 ---
 You have passed verification confirming you have expertise relevant to this disclosure and that you are able to contribute.
 
-**You are being read into a restricted vulnerability case.** Please read this notice in full before taking any action. To participate you must accept the terms contained in this Read-In Notice, the Akrites charter, and policies. To document your acceptance, reply to this email indicating your acceptance. Your continued participation confirms your continued adherence to the terms below.  Please review the additional details about the [Akrites SIRT Read-in process](https://github.com/Akrites-Foundation/SIRT/blob/main/docs/Akrites_ReadIn_Engineer_OnePager.md)
+**You are being read into a restricted vulnerability case.** Please read this notice in full before taking any action. To participate you must accept the terms contained in this Read-In Notice, the Akrites charter, and policies. To document your acceptance, reply to this email indicating your acceptance. Your continued participation confirms your continued adherence to the terms below.  Please review the additional details about the [Akrites SIRT Read-In One-Pager](https://github.com/Akrites-Foundation/SIRT/blob/main/docs/Akrites_ReadIn_Engineer_OnePager.md)
 
 *Please reply to this message, acknowledging receipt of this email so that your provisioning to the team resources listed below can be completed.  Please also include your GitHub ID so you can be added to any associated private repositories this group will be using.*
 
