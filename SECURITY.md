@@ -42,6 +42,10 @@ than have you blocked by encryption — when in doubt, send it.
 - Reproduction steps; proof-of-concept or screenshots if available
 - Impact and how the issue could be exploited
 - Any embargo/disclosure timing you would like us to honor
+- Whether AI/LLM tooling materially helped find or analyze the issue — a
+  report developed with public AI tooling must be treated as not having an
+  embargo available ([AI-Use Disclosure Policy](docs/ai-use-disclosure.md);
+  [Embargo Handling Guidance](docs/Embargo%20Handling%20Guidance.md))
 - Whether and how you wish to be credited
 
 Reports may be made anonymously, but we then cannot send you status updates.
