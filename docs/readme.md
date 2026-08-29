@@ -1,7 +1,7 @@
 # Akrites SIRT Policies, Processes, and Guidelines
 
 ## Policies
-- [Akrites Code of Conduct Policy](https://github.com/Akrites-Foundation/SIRT/blob/main/Code_of_Conduct..md)
+- [Akrites Code of Conduct Policy](https://github.com/Akrites-Foundation/SIRT/blob/main/Code_of_Conduct.md)
 - [SIRT AI Usage Policy](https://github.com/Akrites-Foundation/SIRT/blob/main/docs/ai-use-disclosure.md)
 - [SIRT Coordinated Disclosure Policy](https://github.com/Akrites-Foundation/SIRT/blob/main/coordinated-vulnerability-disclosure-policy.md)
 - [SIRT Read-in Tier Policy](https://github.com/Akrites-Foundation/SIRT/blob/main/docs/Read-in%20Tier%20Policy.md)
