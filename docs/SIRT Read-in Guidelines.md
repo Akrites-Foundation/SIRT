@@ -55,8 +55,8 @@ No prerequisite, no access — even if both gates in §1 are met.
 ## 4. Read-in workflow (per case)
 
 1. **Nominate.** The Finder, WG, maintainer, or delegated authority proposes a person and states which sanctioned role they will perform.
-2. **Verify.** The SIRT case lead confirms both gates (§1) and all prerequisites (§3), and checks the exclusion question: *is there anyone who should specifically not be read in?* (e.g., conflict, embargo sensitivity).
-3. **Approve.** The SIRT case lead approves; the Finder and maintainer are consulted on Tier 0/1 additions.
+2. **Verify.** The SIRT case coordinator confirms both gates (§1) and all prerequisites (§3), and checks the exclusion question: *is there anyone who should specifically not be read in?* (e.g., conflict, embargo sensitivity).
+3. **Approve.** The SIRT case coordinator approves; the Finder and maintainer are consulted on Tier 0/1 additions.
 4. **Grant scoped access.** Access is limited to that single case's private repo and comms channel — nothing else.
 5. **Log it.** Record in the case read-in log: who, sponsoring org, role, tier, approved by, and expiry.
 6. **Time-bound.** Set access to expire (see §6).

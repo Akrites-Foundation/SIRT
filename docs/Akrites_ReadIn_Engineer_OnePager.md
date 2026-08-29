@@ -1,6 +1,6 @@
 # You're Read Into a Vulnerability Case — Start Here
 
-You've been tapped to help resolve a confidential vulnerability under embargo. Thank you. This one-pager is everything you need to operate correctly. The single idea behind all of it: **reduce harm, and keep this secret until the fix is ready.** When unsure, stop and ask the SIRT case lead.
+You've been tapped to help resolve a confidential vulnerability under embargo. Thank you. This one-pager is everything you need to operate correctly. The single idea behind all of it: **reduce harm, and keep this secret until the fix is ready.** When unsure, stop and ask the SIRT case coordinator.
 
 ## Confidentiality Agreement / TLP language — non-negotiable
 
@@ -33,4 +33,4 @@ You've been tapped to help resolve a confidential vulnerability under embargo. T
 
 ---
 
-*Questions go to the SIRT case lead — never to anyone outside the read-in list. Aligned with established coordinated-disclosure practice: the CERT/CC Guide to Coordinated Vulnerability Disclosure, FIRST's TLP and multi-party coordination guidance, and ISO/IEC 29147 & 30111.*
+*Questions go to the SIRT case coordinator — never to anyone outside the read-in list. Aligned with established coordinated-disclosure practice: the CERT/CC Guide to Coordinated Vulnerability Disclosure, FIRST's TLP and multi-party coordination guidance, and ISO/IEC 29147 & 30111.*

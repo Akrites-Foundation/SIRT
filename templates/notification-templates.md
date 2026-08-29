@@ -186,7 +186,8 @@ SIRT@Akrites.dev
 
 ## 4. Public disclosure advisory (Disclose)
 
-> Publish at PD. For GitHub projects, publishing the draft Security Advisory
+> Publish at PD — the SIRT case coordinator is accountable for executing
+> publication. For GitHub projects, publishing the draft Security Advisory
 > populates the Security tab; also announce to {{security-announce list}} and,
 > for high-impact issues, the general community channel. Include the CVE ID and
 > link the OSV record. Structure follows a standard advisory template: title,

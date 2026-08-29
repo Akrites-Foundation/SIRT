@@ -1,6 +1,6 @@
 # Akrites Case Read-In Notice — TEMPLATE
 
-> **How to use.** The SIRT case lead completes the fields in `{{…}}` and the read-in list in §2, then sends this to the person being read in (email, the case mailing list, or as the pinned first message in the case Slack channel and GitHub repo). Delete this instruction block before sending.
+> **How to use.** The SIRT case coordinator completes the fields in `{{…}}` and the read-in list in §2, then sends this to the person being read in (email, the case mailing list, or as the pinned first message in the case Slack channel and GitHub repo). Delete this instruction block before sending.
 
 ---
 You have passed verification confirming you have expertise relevant to this disclosure and that you are able to contribute.
@@ -19,7 +19,7 @@ You have passed verification confirming you have expertise relevant to this disc
 | **Read-in date** | {{DATE}} |
 | **Embargo / public disclosure target** | {{PD_DATE}} |
 | **Access expires** | At public disclosure or case close |
-| **SIRT case lead (your point of contact)** | {{LEAD_NAME}} — {{LEAD_CONTACT}} |
+| **SIRT case coordinator (your point of contact)** | {{LEAD_NAME}} — {{LEAD_CONTACT}} |
 
 **What this case concerns (brief, need-to-know only):** 
 {{ONE_LINE_SCOPE}}
@@ -28,7 +28,7 @@ You have passed verification confirming you have expertise relevant to this disc
 
 ## 1. Data classification — Traffic Light Protocol (TLP)
 
-This case is governed by the **FIRST Traffic Light Protocol (TLP 2.0)**. Every piece of case information carries a TLP label that tells you exactly how far you may share it. What information you receive is scoped to your tier per the Tier Policy. **When in doubt, treat information as TLP:RED and ask the SIRT case lead.**
+This case is governed by the **FIRST Traffic Light Protocol (TLP 2.0)**. Every piece of case information carries a TLP label that tells you exactly how far you may share it. What information you receive is scoped to your tier per the Tier Policy. **When in doubt, treat information as TLP:RED and ask the SIRT case coordinator.**
 
 | Label | What it means for you |
 |---|---|
@@ -54,7 +54,7 @@ You are authorized to discuss this case **only** with the named individuals on t
 
 ## 3. Requesting additional read-ins
 
-If you believe another person is needed — for example, an additional expert to analyze, test, or stage the fix — **request it from the SIRT case lead. Do not loop anyone in yourself.** In your request, state: who, why they are needed, and which sanctioned role they will perform (analyze/patch, test, or stage). The SIRT verifies eligibility, reads the person in, and adds them to the list in §2. Only the SIRT grants access.
+If you believe another person is needed — for example, an additional expert to analyze, test, or stage the fix — **request it from the SIRT case coordinator. Do not loop anyone in yourself.** In your request, state: who, why they are needed, and which sanctioned role they will perform (analyze/patch, test, or stage). The SIRT verifies eligibility, reads the person in, and adds them to the list in §2. Only the SIRT grants access.
 
 ---
 
@@ -87,7 +87,7 @@ Access to all three requires hardware-key two-factor authentication.
 ## 6. Embargo & disclosure
 
 - **Nothing** about this case is public until the disclosure date in the header. This includes the fix, the finding, and the fact that a case exists.
-- If you learn of a **suspected or actual embargo break**, notify the SIRT case lead **immediately** — the SIRT coordinates all breach response.
+- If you learn of a **suspected or actual embargo break**, notify the SIRT case coordinator **immediately** — the SIRT coordinates all breach response.
 - Your access **expires automatically** at public disclosure or case close.
 
 ---
@@ -102,4 +102,4 @@ By adding your name via a PR to the Knowers_File.md for this working group, you 
 4. Will comply with the **embargo** and report any suspected break (§6).
 5. Acknowledge that violating or breaking the embargo will result in you and potentially your employer's **removal from the program.**
 
-*Questions about this notice go to the SIRT case lead listed in the header — not to anyone outside the read-in list.*
+*Questions about this notice go to the SIRT case coordinator listed in the header — not to anyone outside the read-in list.*
