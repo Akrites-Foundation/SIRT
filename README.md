@@ -1,11 +1,9 @@
 <!-- markdownlint-disable MD024 -->
 
 
-# Akrites Open Source Security Incident Response Team (OSS-SIRT)
+# Akrites Security Incident Response Team (Akrites SIRT)
 
-[![GitHub Super-Linter](https://github.com/ossf/sirt/workflows/Lint%20Code%20Base/badge.svg)](https://github.com/marketplace/actions/super-linter)
-
-The OSS-SIRT (Open Source Software Security Incident Response Team) is a group working within the Linux Foundation and broader open source ecosystem that is focused on creating secure vulnerability management capabilities within the open source ecosystem to ensure effective coordinated vulnerability disclosure practices (CVD) for all. The group will be a coordinated group of experts from across the industry who will be available to help
+The Akrites SIRT (Security Incident Response Team) is a group working within the Linux Foundation and broader open source ecosystem that is focused on creating secure vulnerability management capabilities within the open source ecosystem to ensure effective coordinated vulnerability disclosure practices (CVD) for all. The group will be a coordinated group of experts from across the industry who will be available to help
 open source maintainers with all aspects of remediating high-impact security vulnerabilities and related security emergencies
 
 ## Mission
@@ -33,7 +31,7 @@ This SIRT's motivation is to make available the incident response resources to a
 
 ## Objective/Scope
 
-To develop a cohort of trustworthy, vendor-neutral, vetted, well-orchestrated and experienced group of security professionals to assist the ecosystem quickly, efficinetly, and securely coordinate vulneratbiltiies disclosures discovered within open source software projects.
+To develop a cohort of trustworthy, vendor-neutral, vetted, well-orchestrated and experienced group of security professionals to assist the ecosystem quickly, efficiently, and securely coordinate vulnerability disclosures discovered within open source software projects.
 
 **_EXPRESSLY OUT OF SCOPE:_**
 
@@ -45,17 +43,16 @@ To develop a cohort of trustworthy, vendor-neutral, vetted, well-orchestrated an
   from another open-source project’s security vulnerabilities
 
 ## Get Involved
-<!-- Official communications occur on the [OSSF OSS-SIRT Mailing list](https://lists.openssf.org/g/openssf-sig-osssirt/topics).  
-  [Manage your subscriptions to Open SSF mailing lists](https://lists.openssf.org/g/main/subgroups) -->
 - Slack Channels (invite only)
    - [General Discussion (NOT FOR REPORTING VULNERABILITIES)](https://akritesfoundation.slack.com/archives/C0BG2D5QQ12)
 - [Akrites SIRT working group](https://akritesfoundation.slack.com/archives/C0BG2D5QQ12)
 
 ### Quick Start
-- [Akrites SIRT documentation](https://github.com/Akrites-Foundation/SIRT/tree/main/docs)
-- [Akrites SIRT templates](https://github.com/Akrites-Foundation/SIRT/tree/main/templates)
+- **Reporting a vulnerability?** Start with our [security policy](SECURITY.md).
+- [Akrites SIRT documentation](docs/readme.md)
+- [Akrites SIRT templates](templates/readme.md)
 #### Areas that need contributions
-- Comments/feedback on the plan or services you'd like to see the OSS-SIRT offer
+- Comments/feedback on the plan or services you'd like to see the Akrites SIRT offer
 - Where to file issues - [https://github.com/Akrites-Foundation/SIRT/issues](https://github.com/Akrites-Foundation/SIRT/issues)
 
 ### Meeting times
@@ -63,8 +60,8 @@ Community Meetings forthcoming
  
  ### Project Maintainers
 - [CRob](https://github.com/SecurityCRob), Akrites CTO
-- [Francis](u269c), Akrites SIRT Director
-- OSS-SIRT Team Lead (TBD)
+- [Francis](https://github.com/u269c), Akrites SIRT Director
+- Akrites SIRT Team Lead (TBD)
 
 ### Project Collaborators
  
