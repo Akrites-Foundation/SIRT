@@ -68,7 +68,7 @@ No prerequisite, no access — even if both gates in §1 are met.
 WG membership is durable read-in scoped to a **domain** rather than a single case, and follows the same rules:
 
 - Only Akrites members and their authorized and approved delegates are eligible for participation.
-- Contribution is a condition of membership.  Access is granted to those particpants that can actively collaborate to develop and vet a solution to a given issue.
+- Contribution is a condition of membership.  Access is granted to those participants that can actively collaborate to develop and vet a solution to a given issue.
 - All gates in §1 apply, evaluated against the WG's focus area; all §3 prerequisites required.
 - The member's expertise is entered in the Security Rolodex so the SIRT understands who is available to pull into future cases.  Access is always gated by the SIRT and the particulars of a given incident.
 - Access is limited to **that WG's** workspace only — never cross-WG.
@@ -99,6 +99,6 @@ Every grant and revocation is logged with justification and approver. All Read-i
 
 - **Approver of record** and whether the Finder or maintainer have suggestions to put a veto on additions.
 - **Default read-in lead times** per tier.
-- **Delegation rules** — need to develp read-in rules and enfocce that the SIRT must approve all expansions of the Knowers of an issue.
+- **Delegation rules** — need to develop read-in rules and enforce that the SIRT must approve all expansions of the Knowers of an issue.
 - **RACI per tier** — the specific actions each tier may take (to be developed).
 - **Antitrust documentation** to cover early read-in of competing members.

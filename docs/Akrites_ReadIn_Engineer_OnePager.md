@@ -5,7 +5,7 @@ You've been tapped to help resolve a confidential vulnerability under embargo. T
 ## Confidentiality Agreement / TLP language — non-negotiable
 
 - **Follow TLP.** Treat case material as **TLP:AMBER+STRICT** — share only *with the exact folks (no mailing lists) who need to know in order to fix/deploy/test the patches, within your organization*, never with clients, partners or third parties. If the material is **TLP:RED** — *your eyes only*, not even your own manager or teammates can get access. Under TLP:RED, "my org" does **not** mean "anyone at my org." When in doubt, treat it as TLP:RED and ask.
-- **Named parties only.** Discuss the case only with the people on the read-in list. If someone else needs to help, ask the SIRT to read them in — **never loop anyone in yourself or with explicit acknowledgement of the Case Lead.**
+- **Named parties only.** Discuss the case only with the people on the read-in list. If someone else needs to help, ask the SIRT to read them in — **never loop anyone in yourself without explicit acknowledgement of the Case Lead.**
 - **No signaling.** Do nothing in public that hints the issue exists: no telltale commits, branches, issues, PRs, mailing-list questions, blog/social posts, or conference teasers. Most leaks are accidental.
 - **Keep it contained.** Work only inside the provided environment (repo, channel). No copying to personal machines or accounts. **No exploit code, PoCs, or sensitive files in chat** — those live in the case repo.
 - **In case of leaks**, accidental or not, please inform the Case Lead right away.
