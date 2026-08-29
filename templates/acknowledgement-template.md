@@ -1,14 +1,14 @@
 # Acknowledgement Template (Discover / intake)
 
 
-The first reply OSS-SIRT sends a Finder. Goal: confirm receipt, set
+The first reply the Akrites SIRT sends a Finder. Goal: confirm receipt, set
 expectations, and signal confidentiality — within **2 business days** of
 receipt. Pick the variant matching the channel the report arrived on. Replace
 every `{{PLACEHOLDER}}` before sending.
 
 This is the standalone version of **Template 1** referenced in the
-[Intake Runbook](https://github.com/ossf/SIRT/blob/main/docs/intake-runbook.md) (step 1, Discover) and
-[Notification Templates](https://github.com/ossf/SIRT/blob/main/templates/notification-templates.md).
+Intake Runbook (step 1, Discover — proposed in [PR #8](https://github.com/Akrites-Foundation/SIRT/pull/8)) and
+[Notification Templates](./notification-templates.md).
 
 ---
 
@@ -17,11 +17,11 @@ This is the standalone version of **Template 1** referenced in the
 > Use when the report arrives via `SIRT@Akrites.dev`.
 
 ```
-Subject: [OSS-SIRT] Received your report — {{TRACKING_ID}}
+Subject: [Akrites SIRT] Received your report — {{TRACKING_ID}}
 
 Hello {{FINDER_NAME}},
 
-Thank you for reporting this to OSS-SIRT. We've received your report and
+Thank you for reporting this to the Akrites SIRT. We've received your report and
 assigned it the tracking ID {{TRACKING_ID}}. A team member is reviewing it now.
 
 What happens next:
@@ -45,10 +45,10 @@ on your end — for example, you observe exploitation in the wild, or you intend
 to publish — please tell us right away.
 
 Our coordinated disclosure policy:
-https://sirt.linuxfoundation.org/security/policy
+https://sirt.akrites.dev/security/policy
 
 Thank you,
-OSS-SIRT
+Akrites SIRT
 SIRT@Akrites.dev
 ```
 
@@ -80,9 +80,9 @@ we'll add you as a collaborator on the advisory.
 Please flag anything material right away — especially active exploitation or
 any plan to publish.
 
-Policy: https://oss-sirt.linuxfoundation.org/security/policy
+Policy: https://sirt.akrites.dev/security/policy
 
-— OSS-SIRT
+— Akrites SIRT
 ```
 
 ---
@@ -94,7 +94,7 @@ Policy: https://oss-sirt.linuxfoundation.org/security/policy
 > acknowledgement was attempted. There is no one to email.
 
 ```
-Subject: [OSS-SIRT] Report received — {{TRACKING_ID}}
+Subject: [Akrites SIRT] Report received — {{TRACKING_ID}}
 
 Thank you for your report. We've received it and assigned tracking ID
 {{TRACKING_ID}}, and a team member is reviewing it now. We're treating the
@@ -102,11 +102,11 @@ details as confidential (TLP:RED) until a coordinated disclosure date is agreed.
 
 Because the report did not include contact details, we're unable to send you
 status updates. If you'd like to follow the issue or be credited, you can reach
-us at security@oss-sirt.linuxfoundation.org and reference {{TRACKING_ID}}.
+us at SIRT@Akrites.dev and reference {{TRACKING_ID}}.
 
-Policy: https://sirt.linuxfoundation.org/security/policy
+Policy: https://sirt.akrites.dev/security/policy
 
-— OSS-SIRT
+— Akrites SIRT
 ```
 
 ---
