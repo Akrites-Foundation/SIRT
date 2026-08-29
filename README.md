@@ -70,7 +70,7 @@ Community Meetings forthcoming
  
 
 ## Code of Conduct
-Project Akrites members pledge to follow the [Akrites Code of Conduct](https://github.com/Akrites-Foundation/SIRT/blob/main/Code_of_Conduct..md) in all of our activities and interactions.
+Project Akrites members pledge to follow the [Akrites Code of Conduct](https://github.com/Akrites-Foundation/SIRT/blob/main/Code_of_Conduct.md) in all of our activities and interactions.
 
 
 ## Antitrust Policy Notice
