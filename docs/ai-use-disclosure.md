@@ -104,7 +104,6 @@ AI use
 ```
 AI use
   - Finder: No AI tooling was used.
-  - Finder: Not stated to preserve reporter anonymity
   - Coordinator (Akrites SIRT): No AI tooling was used.
 ```
 
