@@ -314,7 +314,7 @@ The release must be harder to compromise, and better verified, than the abandone
 
 ### 6.8 If the maintainer returns
 
-A returning maintainer who perceives Akrites in possession of their project is the likeliest way this function damages Akrites' standing, so handle it as a standing commitment rather than a case-by-case negotiation. The maintainer-facing companion mirrors these promises.
+A returning maintainer who perceives Akrites in possession of their project is the likeliest way this function damages Akrites' standing. Therefore, we are clear in all documentation relating to a security release that we have not claimed ownership of a project. We also treat it as a standing commitment to acknowledge a returning developer without case-by-case negotiations. The maintainer-facing companion mirrors these promises.
 
 - **The path for a returning maintainer to notify us is always open, low-friction, and unconditional.** It does not require the engagement to be near term end, it does not require the maintainer to explain their absence, and it is **never conditioned on the maintainer's security practices, release cadence, or willingness to adopt Akrites tooling.**
 - **Acknowledging a returning developer completes within a fixed window**, targeting 14 days from verified contact (for instance by means of activity by a maintainer in the repository, ideally by reviewing our previously deposited patches), and transfers **no obligations**. The maintainer inherits patches and advisory context, and no support commitment.
