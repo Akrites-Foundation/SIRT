@@ -42,15 +42,19 @@ It stops there. We don't take feature requests, review pull requests, triage bug
 
 ---
 
-## Getting your project back
+## When you return to your project
 
-Email us. There's no form, no appeal, and nobody here with the authority to say no. You don't have to explain where you were or justify anything, and we won't ask about your security practices, your release cadence or your tooling, because none of it is a condition of anything.
+If we couldn't reach you, Akrites has published a security release and an advisory for your project as described above. All of this under a separate name - we will not have taken over your project.
 
-We aim to finish the handback within **14 days** of confirming it's you, and confirming it's you is all that check does.
+The existence of our security release of course indicates that your project was unreachable and unmaintained. So, when you finally find time again to work on your project and would like to let us know that you are back, any activity **by your GitHub identity** in your repository is sufficient.
 
-You get the patches with their advisory links, the pull requests already sitting on your repo, the test results and the CVE records. You get no obligations with them. Keep what's useful and bin the rest.
+There's no form, no appeal, and nobody here with the authority to say no. You don't have to explain where you were or justify anything, and we won't ask about your security practices, your release cadence or your tooling, because none of it is a condition of anything.
 
-If you'd rather the release disappeared, say so and we'll mark it deprecated and point it at your own releases. We won't unpublish it unless a legal order requires it or the artifact itself is confirmed compromised. People are resolving against it, and pulling a package out from under them is a supply-chain incident of our own making. The advisories stay up too: the bug was real, and your users' history isn't ours to rewrite.
+A great way to show that you are back is to review - and maybe eventually merge - the PRs with our patches we opened in your repository.
+
+Once you are confirmed back, you get the patches with their advisory links, the test results, and the CVE records. You get no obligations with them. Keep what's useful and bin the rest.
+
+If you'd rather like the release disappeared, say so and we'll mark it deprecated and point it at your own releases. We won't unpublish it unless a legal order requires it or the artifact itself is confirmed compromised. People are resolving against it, and pulling a package out from under them is a supply-chain incident of our own making. The advisories stay up too: the bug was real, and your users' history isn't ours to rewrite.
 
 ---
 
