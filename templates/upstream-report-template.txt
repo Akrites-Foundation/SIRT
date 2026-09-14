@@ -1,0 +1,30 @@
+1. Description
+- High-level description of the vulnerability.
+- Impacted versions:
+   - <provide an exact commit ID or precise version rather than only a range.>
+
+2. Security Impact
+- CVSSv4:
+- Severity Assessment: (e.g. Critical / High / Medium / Low) - <reason articulated>
+  - [Optional] Threat Model Used*: Link to the threat model used if there is one
+
+## 3. Reproduction Steps
+- Attack Vector:
+- Steps to reproduce:
+   - Configuration: <prerequisites and conditions required for exploitation (e.g. default vs non-default config), which map directly onto the CVSS vector (attack complexity, privileges required, etc.).>
+   - Exploit: A working exploit exists and is available privately upon request. Exploit code is intentionally kept out of this report.
+
+4. Detailed Analysis
+<The impacted code, detailed, with files and lines cited.>
+
+5. Patch / Mitigation
+- If we have a patch; include the patch and `diff`,
+- otherwise, the mitigation we propose in either configuration or elsewhere.
+
+6. Embargo
+In the absence of default embargo values by your organization, we propose a twenty-one (21) day embargo on this finding before public disclosure on our end.
+
+7. Credit
+- Discovered by:
+   - name <email addresses>, organizations.
+- Discovery method: [Manual|LLM] <the model name and version used for the finding / scanning>
