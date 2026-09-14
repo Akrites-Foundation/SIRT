@@ -1,9 +1,8 @@
 # What Akrites Will and Won't Do to Your Project
 
-*A plain-language companion to the [Maintainer of Last Resort Guidelines](./Maintainer_of_Last_Resort_Guidelines.md). If the two ever disagree, the promises on this page win.*
+*The document is a non-binding, plain-language companion to the [Maintainer of Last Resort Guidelines](./Maintainer_of_Last_Resort_Guidelines.md). If the two ever disagree, the promises on this page win.*
 
 You maintain an open source project. Someone found a security bug in it and Akrites is trying to reach you. This page says what happens next.
-
 ---
 
 ## What we're asking for
