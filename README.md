@@ -62,6 +62,7 @@ Community Meetings forthcoming
 - [CRob](https://github.com/SecurityCRob), Akrites CTO
 - [Francis](https://github.com/u269c), Akrites SIRT Director
 - Akrites SIRT Team Lead (TBD)
+- [Christina](https://github.com/cfreeman-LF), Akrites PgM
 
 ### Project Collaborators
  
