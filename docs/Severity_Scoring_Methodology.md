@@ -24,7 +24,7 @@ the SIRT should do next.
 
 ---
 
-## Layer 1 — CVSS v4.0 (technical description)
+## Layer 1: CVSS v4.0 (technical description)
 
 CVSS v4.0 is the required baseline for all vulnerabilities coordinated to public
 disclosure. As committed in the CVD Policy (Section 9), the SIRT produces a
@@ -37,9 +37,6 @@ v4.0 vector and score for every case.
 - The full vector string is always published alongside the numeric score. The
   vector is often more informative than the number alone and allows downstream
   consumers to adjust for their environment.
-- **CVSS v3.1** may be included for legacy comparison where downstream consumers
-  or databases still require it. When included, it is clearly labeled as legacy.
-
 ### CVSS-BT (Threat metrics)
 
 > **Open decision:** Should Akrites publish CVSS-BT (Base + Threat) when exploit
@@ -84,12 +81,12 @@ documents:
 - Why the SIRT reached its conclusion.
 
 Deviation notes are published alongside the advisory. The goal is transparency,
-not dispute -- reasonable analysts can reach different conclusions when
+not dispute. Reasonable analysts can reach different conclusions when
 environmental assumptions differ.
 
 ---
 
-## Layer 2 — SIRT severity label (operational communication)
+## Layer 2: SIRT severity label (operational communication)
 
 A four-level severity label provides a concise, plain-language assessment for
 maintainers, consumers, and stakeholders who may not have a security background.
@@ -104,50 +101,56 @@ primary use case.
 ### Label definitions and CVSS guidance ranges
 
 The label reflects the analyst's holistic assessment. The CVSS ranges below are
-guidance, not mechanical cutoffs -- an analyst may assign a label above or below
+guidance, not mechanical cutoffs. An analyst may assign a label above or below
 the range when context warrants it, provided the rationale is documented.
 
 | Label | CVSS v4.0 guidance range | Description |
 | --- | --- | --- |
-| **Critical** | 9.0 -- 10.0 | Exploitation is straightforward and leads to complete compromise (e.g., unauthenticated RCE, full authentication bypass). Immediate coordinated response. |
-| **Important** | 7.0 -- 8.9 | Significant impact but exploitation requires meaningful preconditions (e.g., authenticated access, non-default configuration, user interaction). Urgent but not emergency response. |
-| **Moderate** | 4.0 -- 6.9 | Real but limited impact, or exploitability is significantly constrained. Normal coordination timeline. |
-| **Low** | 0.1 -- 3.9 | Minimal impact or requires conditions unlikely to occur in practice. Addressed as capacity allows. |
+| **Critical** | 9.0 to 10.0 | Exploitation is straightforward and leads to complete compromise (e.g., unauthenticated RCE, full authentication bypass). Immediate coordinated response. |
+| **Important** | 7.0 to 8.9 | Significant impact but exploitation requires meaningful preconditions (e.g., authenticated access, non-default configuration, user interaction). Urgent but not emergency response. |
+| **Moderate** | 4.0 to 6.9 | Real but limited impact, or exploitability is significantly constrained. Normal coordination timeline. |
+| **Low** | 0.1 to 3.9 | Minimal impact or requires conditions unlikely to occur in practice. Addressed as capacity allows. |
 
 ### When the label diverges from the CVSS range
 
-Common reasons an analyst may set the label outside the guidance range:
+The severity label describes the vulnerability's technical impact under stated
+assumptions. Contextual factors like ecosystem prevalence, deployment breadth,
+and active exploitation are strong signals for *response priority* (Layer 4,
+SSVC) rather than reasons to change the severity label itself.
 
-- **Ecosystem context.** A CVSS 6.8 in a library used by every container
-  orchestrator may warrant "Important" because of blast radius.
+An analyst may still set the label outside the CVSS guidance range when the
+technical impact assessment warrants it:
+
 - **Preconditions in practice.** A CVSS 9.1 that requires a rarely-enabled
   debug mode may warrant "Moderate" because the precondition is uncommon
   outside development environments.
-- **Active exploitation.** Evidence of in-the-wild exploitation may elevate a
-  label regardless of the base score.
+- **Compound impact.** A CVSS 6.5 that chains trivially with a common
+  misconfiguration to achieve full compromise may warrant "Important" based
+  on the realistic attack path.
 
 When the label diverges, the analyst documents the rationale in the case record.
 
 ---
 
-## Layer 3 — Exploit state (dynamic evidence field)
+## Layer 3: Exploit state (dynamic evidence field)
 
 Exploit state is tracked as a separate field, independent of both the CVSS score
 and the severity label. It changes over time as new evidence emerges.
 
-| Value | Meaning |
+| Value | Evidence boundary |
 | --- | --- |
-| **Active** | Confirmed exploitation in the wild, supported by credible reporting or direct observation. |
-| **Demonstrated** | A working exploit exists and has been demonstrated (e.g., in a controlled environment or security conference), but no evidence of in-the-wild use. |
-| **PoC** | Proof-of-concept code exists that demonstrates the vulnerability but may not be weaponized. |
-| **Theoretical** | The vulnerability is confirmed but no exploit or PoC is publicly known. |
-| **Unknown** | Exploit status has not been assessed or information is insufficient. |
+| **Active** | Credible evidence of in-the-wild exploitation: threat intelligence reporting, direct observation, or CISA KEV listing. |
+| **Demonstrated** | The SIRT, maintainer, or another trusted party has independently reproduced the security outcome in a controlled environment. |
+| **PoC** | An exploit artifact exists (code, writeup with sufficient detail) but has not been independently reproduced by the case team. |
+| **Theoretical** | Analysis confirms the flaw is exploitable, but no working exploit is known to the case team. Applies equally to public and embargoed cases. |
+| **Unknown** | Exploit status has not been assessed or available information is insufficient to determine a state. |
 
 ### Operational implications
 
 - **Active** or **Demonstrated** with a low-barrier exploit: strong signal to
-  accelerate the coordination timeline. Defenders need the fix now.
-- **PoC**: monitor for escalation; factor into the severity label assessment.
+  accelerate the coordination timeline (SSVC priority, not severity label).
+  Defenders need the fix now.
+- **PoC**: monitor for escalation to Demonstrated or Active.
 - **Theoretical** or **Unknown**: do not treat the absence of evidence as
   evidence of low risk. "Unknown" must never be read as "safe."
 
@@ -156,10 +159,10 @@ published advisory when relevant at PD.
 
 ---
 
-## Layer 4 — SSVC (internal triage prioritization)
+## Layer 4: SSVC (internal triage prioritization)
 
 The CISA/FIRST Stakeholder-Specific Vulnerability Categorization (SSVC) is used
-internally by the SIRT to determine response priority -- which cases to staff
+internally by the SIRT to determine response priority: which cases to staff
 first and how urgently. SSVC is not published externally.
 
 ### Decision tree: Coordinator
@@ -185,11 +188,21 @@ The Coordinator tree produces one of three action recommendations:
 
 ### Relationship to the severity label
 
-SSVC and the severity label answer different questions. A "Moderate" vulnerability
-in an essential, widely-deployed library may be SSVC "Act" because of mission
-prevalence and automatable exploitation. A "Critical" vulnerability in a niche
-component with no known exploitation may be SSVC "Track*". Both assessments are
-valid and serve different audiences.
+SSVC and the severity label answer different questions:
+
+- A "Moderate" vulnerability in a library used by every container orchestrator
+  may be SSVC "Act" because of mission prevalence and automatable exploitation.
+  The severity label stays "Moderate" (the technical impact has not changed),
+  but the response priority reflects the ecosystem-wide blast radius.
+- Evidence of active exploitation elevates SSVC priority, not the severity
+  label. Exploit state (Layer 3) captures this evidence; SSVC translates it
+  into a staffing decision.
+- A "Critical" vulnerability in a niche component with no known exploitation
+  may be SSVC "Track*". Both assessments are valid and serve different audiences.
+
+When exploit state changes (e.g., from Theoretical to Active), the SSVC
+assessment should be re-evaluated. The severity label typically does not change
+unless the technical understanding of the vulnerability itself has changed.
 
 ---
 
@@ -199,8 +212,8 @@ FIRST's Exploit Prediction Scoring System (EPSS) estimates the probability that
 a published CVE will be exploited in the next 30 days. It is a downstream
 prioritization signal, not a coordinator assessment tool:
 
-- EPSS requires a published CVE. Pre-disclosure cases -- the SIRT's primary
-  workload -- have no meaningful EPSS value.
+- EPSS requires a published CVE. Pre-disclosure cases, which make up the SIRT's
+  primary workload, have no meaningful EPSS value.
 - Missing EPSS data must never be interpreted as low risk.
 - EPSS may be useful to downstream consumers after PD for their own
   prioritization. The SIRT does not publish or endorse EPSS scores.
@@ -212,10 +225,9 @@ prioritization signal, not a coordinator assessment tool:
 The public advisory includes:
 
 - CVSS v4.0 vector string and numeric score (required).
-- CVSS v3.1 vector and score (when included for legacy comparison, labeled as such).
 - CVSS-BT supplementary score (when exploit maturity data is available, with
-  "as of" qualifier -- pending the open decision above).
-- SIRT severity label (Critical / Important / Moderate / Low -- pending the
+  "as of" qualifier; pending the open decision above).
+- SIRT severity label (Critical / Important / Moderate / Low; pending the
   open decision above).
 - Exploit state at time of disclosure.
 - CWE identifier for root cause.
@@ -235,7 +247,7 @@ When communicating severity:
 
 - Lead with the severity label and a plain-language description of what an
   attacker can achieve, not the CVSS number.
-- Explain preconditions honestly -- what configuration, access, or user
+- Explain preconditions honestly: what configuration, access, or user
   interaction is required.
 - If the maintainer disagrees with the assessment, treat it as a technical
   discussion, not a dispute. Document both perspectives.
@@ -249,19 +261,21 @@ When communicating severity:
   label exists precisely because context matters beyond what the formula
   captures.
 - **Inflation pressure.** External parties may pressure for a higher score.
-  Score what the evidence supports. If you are uncertain, err toward the
-  higher label and document the uncertainty.
+  Score what the evidence supports. When evidence is incomplete, mark the
+  label as provisional and document the assumptions and uncertainty rather
+  than defaulting to a higher label. Response priority (SSVC) can still
+  fail safe without inflating the severity claim.
 - **Stale exploit state.** Exploit state changes. What type of review cadence should we expect? 
 
 ---
 
 ## References
 
-- FIRST -- [CVSS v4.0 Specification](https://www.first.org/cvss/v4.0/specification-document)
-- FIRST -- [CVSS v4.0 Calculator](https://www.first.org/cvss/calculator/4.0)
-- CISA -- [SSVC Guide](https://www.cisa.gov/stakeholder-specific-vulnerability-categorization-ssvc)
-- FIRST -- [EPSS](https://www.first.org/epss/)
-- MITRE -- [CWE](https://cwe.mitre.org/)
+- FIRST: [CVSS v4.0 Specification](https://www.first.org/cvss/v4.0/specification-document)
+- FIRST: [CVSS v4.0 Calculator](https://www.first.org/cvss/calculator/4.0)
+- CISA: [SSVC Guide](https://www.cisa.gov/stakeholder-specific-vulnerability-categorization-ssvc)
+- FIRST: [EPSS](https://www.first.org/epss/)
+- MITRE: [CWE](https://cwe.mitre.org/)
 
 ---
 
