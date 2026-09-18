@@ -1,7 +1,5 @@
 # Akrites Read-In Tier Policy
 
-## This file was archived on 17sept2026 and replaced with https://github.com/Akrites-Foundation/SIRT/blob/main/docs/Akrites-Read-In-Policy.md
-
 **Owner:** Akrites SIRT · **Status:** Draft for Governing Board review · **Last updated:** 2026-08-24
 
 **Purpose.** This policy defines the read-in tiers referenced in the *[Akrites Read-In Process](https://github.com/Akrites-Foundation/SIRT/blob/main/docs/SIRT%20Read-in%20Guidelines.md)*, the criteria that place a person in one tier rather than another, and the paths for escalation and exceptions. It governs **who sees a pre-disclosure case, when, and with how much information.**
