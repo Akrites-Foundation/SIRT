@@ -1,9 +1,9 @@
-# OSS-SIRT Intake Runbook (one page) - DRAFT v0.1
+# Akrites SIRT Intake Runbook (one page) - DRAFT v0.1
 
 Step-by-step actions for the responder on duty, keyed to the nine-phase
-lifecycle in the [CVD Policy](https://github.com/ossf/SIRT/blob/main/coordinated-vulnerability-disclosure-policy.md).
+lifecycle in the [Akrites CVD Policy](docs/Akrites_CVD_Policy.md).
 Templates referenced below are in
-[notification-templates.md](https://github.com/ossf/SIRT/tree/main/templates). Default handling for
+`docs/notification-templates.md`. Default handling for
 all pre-disclosure material is **TLP:RED / need-to-know**.
 
 ```
@@ -26,9 +26,10 @@ Discover → Triage → Validate → Coordination → Patch → Test → Documen
 - Reproduce the issue; confirm affected versions and impact.
 - Open a **private** GitHub Security Advisory; add the Finder as collaborator if
   they wish to stay involved. Engage the Owner and any needed maintainers.
+- **AI Tooling Guardrail:** Ensure no case artifacts, PoCs, or code samples are submitted to external/cloud-hosted AI services during reproduction or analysis (`docs/ai-use-disclosure.md`).
 
 ### 4. Coordination — embargo & disclosure date
-- Identify read-in **Collaborators** (need-to-know only); formally read them in.
+- Identify read-in **Collaborators** (need-to-know only); formally read them in following `docs/Akrites-Read-In-Policy.md` and verify TLP:RED acknowledgment.
 - Decide whether an embargo is required; agree the **Public Disclosure (PD)**
   date with the Finder. Default planning window: **up to 90 days**; aim shorter.
 - Prepare the **leak contingency** (Template 5): what to tell Consumers if
@@ -38,6 +39,7 @@ Discover → Triage → Validate → Coordination → Patch → Test → Documen
 - Develop and test the fix on a private branch / temporary private fork so the
   fix isn't visible before users can apply it. Create a patch or work-around
   that addresses the **root cause (CWE)**.
+- **Avoid Public Leakage:** Do NOT trigger public CI/CD pipelines (e.g., public GitHub Actions runners) or commit to public branches, as public build logs and commits constitute a public disclosure (`docs/what-counts-as-public-disclosure.md`).
 
 ### 6. Test — verify
 - Run regression, smoke, and relevant tests; confirm the issue is resolved with
@@ -60,7 +62,7 @@ Discover → Triage → Validate → Coordination → Patch → Test → Documen
   release, and publish **Template 4** to release notes / security-announce; for
   high-impact issues, the general community channel too.
 - Reference the CVE ID; link the OSV record. Flip private patch branches public.
-- Credit the Finder per their preference. Reclassify case material from TLP:RED.
+- Credit the Finder and participating maintainers following `docs/acknowledgements-and-attribution.md`. Reclassify case material from TLP:RED and archive read-in coordination channels within 72 hours.
 
 ---
 
@@ -69,6 +71,8 @@ publish **Template 5** with whatever guidance helps Consumers protect
 themselves — even before a full fix is ready. Then resume from the current
 phase on an accelerated timeline.
 
-**Escalate to the OSS-SIRT lead when:** active exploitation in the wild, the
+**Escalate to the Akrites OSS-SIRT lead when:** active exploitation in the wild, the
 Finder intends to publish early, the issue spans multiple projects/vendors
 (multi-party coordination), or a PD date is at risk of slipping.
+
+
