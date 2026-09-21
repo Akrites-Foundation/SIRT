@@ -1,4 +1,4 @@
-# How to Report a Vulnerability to OSS-SIRT - DRAFT v0.1
+# How to Report a Vulnerability to Akrites OSS-SIRT - DRAFT v0.1
 
 A short guide for security researchers and users (we call you a **Finder**) who
 have found a potential security issue in a project OSS-SIRT coordinates. Thank
@@ -8,9 +8,7 @@ Full policy: https://sirt.linuxfoundation.org/security/policy
 
 ## 1. Please report privately — not in public
 
-Do **not** open a public issue, pull request, or discussion, and don't post
-details publicly, until we've agreed on a disclosure date together. Public
-details before a fix exists put users at risk.
+Do **not** open a public issue, pull request, or public discussion. Furthermore, do **not** run proof-of-concept tests or stage proposed fixes on public CI/CD runners (e.g., public GitHub Actions) or public repository forks before the agreed disclosure date. Per our disclosure policy, public CI output and unencrypted public commits constitute public disclosure and put users at risk.
 
 ## 2. Pick a channel
 
@@ -45,6 +43,8 @@ The more of the following you can answer, the faster we can validate and fix it
 - Whether it's **being exploited** in the wild.
 - Any **suggested fix or mitigation** (patches are very welcome).
 - Any **time constraints** (conference deadline, your own disclosure policy).
+- **Credit preferences** How you (and your organization) would like to be acknowledged in the security advisory (e.g., full name, handle, anonymous, or organization name/link; see `docs/acknowledgements-and-attribution.md`).
+- **AI assistance disclosure** Whether any part of the vulnerability analysis, code analysis, or proof-of-concept was generated using AI tools, in accordance with `docs/ai-use-disclosure.md`.
 - Whether you've **shared this with anyone else**, and when/how.
 - Whether you're open to a **call** to walk us through it.
 
@@ -61,7 +61,7 @@ English is preferred. A partial report is fine — send what you have.
 - We keep an **open dialogue**, share status, and coordinate the disclosure date
   with you. Our default planning window is up to **90 days**; we aim to disclose
   as soon as a fix can ship.
-- We **credit** you by default (or keep you anonymous on request).
+- We **credit** you in the final security advisory according to your requested preferences, following our standard format in `docs/acknowledgements-and-attribution.md`.
 
 ## 5. Safe harbor
 
