@@ -9,9 +9,9 @@
 
 ## 1. Purpose
 
-Working Groups are where Akrites does its core work: analyzing, patching, testing, and coordinating fixes for vulnerabilities in upstream open source projects. The Operating Guide tells WG members how to do that work. This policy defines who leads it, how they are selected, what authority they hold, and what happens when a WG is not functioning.
+This document defines the formal rules, voting rights, life cycle, and governance obligations for all Akrites Working Groups. In the event of any contradiction or inconsistency between this Policy and tactical operational documents (including Akrites_WorkingGroup_Operating_Guide.md), this Governance Policy takes precedence. 
 
-Without defined leadership roles and accountability, WGs stall. Vulnerabilities sit untriaged. Members wait for direction that does not arrive. This policy exists to prevent that.
+Working Groups are where Akrites does its core work: analyzing, patching, testing, and coordinating fixes for vulnerabilities in upstream open source projects. The Operating Guide tells WG members how to do that work. 
 
 ---
 
@@ -172,7 +172,7 @@ An ephemeral WG has a defined end condition stated at creation (the vulnerabilit
 
 ### 7.2 Standing WGs
 
-Standing WGs are reviewed annually by the Governing Board. The review considers:
+Standing WGs are reviewed every six months by the Governing Board. The review considers:
 
 - Whether the WG's scope is still relevant
 - Triage throughput and case outcomes over the review period
