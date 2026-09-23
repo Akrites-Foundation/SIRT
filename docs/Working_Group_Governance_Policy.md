@@ -21,11 +21,11 @@ Working Groups are organized by purpose. The type determines duration, scope, an
 
 | Type | Purpose | Expected duration | Examples |
 |------|---------|-------------------|----------|
-| **Technology or component** | Ongoing coverage of a critical upstream project or component family | Standing (reviewed annually) | Kernel, OpenSSL, Apache ecosystem |
-| **Sector or vertical** | Cross-cutting security concerns for a specific industry or deployment context | Standing (reviewed annually) | Critical infrastructure, automotive, telco |
+| **Technology or component** | Ongoing coverage of a critical upstream project or component family | Standing (reviewed every six months) | Kernel, OpenSSL, Apache ecosystem |
+| **Sector or vertical** | Cross-cutting security concerns for a specific industry or deployment context | Standing (reviewed every six months) | Critical infrastructure, automotive, telco |
 | **Critical incident** | Rapid response to a specific high-severity vulnerability or incident | Ephemeral (weeks to months) | A specific CVE requiring multi-party coordination |
 | **Clearinghouse coordination** | Cross-WG coordination, deduplication, and triage routing | Standing | The SIRT intake function |
-| **Enablement or practice** | Developing tooling, processes, and best practices for use across WGs | Standing (reviewed annually) | This "WG of WGs," shared CI/build tooling |
+| **Enablement or practice** | Developing tooling, processes, and best practices for use across WGs | Standing (reviewed every six months) | This "WG of WGs," shared CI/build tooling |
 
 These types originate from the Operating Guide's WG creation form. The distinction matters for lifecycle management (section 7): ephemeral WGs have a defined end condition, standing WGs have periodic reviews.
 
