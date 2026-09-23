@@ -1,5 +1,7 @@
 # Akrites Working Group — Member Operating Guide
 
+This guide outlines day-to-day administrative procedures, logistics, and workflows for Akrites Working Groups. All governance rules, voting thresholds, and role qualifications are governed by the Working Group Governance Policy. 
+
 A Working Group (WG) is a small, self-organizing team of read-in members who analyze, test, and build patches and mitigations for vulnerabilities in upstream open source projects — privately, before public disclosure. This guide is meant to let you **assemble and run your WG with minimal help from the SIRT**. Reach out to the SIRT only for the few things listed in §6; everything else is yours to run.
 
 ---
@@ -27,7 +29,6 @@ Keep these rules front of mind:
 - **Keep it in the environment.** Don't copy Case Material to personal machines or accounts. While sharing **TLP:AMBER+STRICT** within your org, make sure to follow all the company required security controls for handling information of the highest sensitivity level. Every action is logged.
 - **Embargo breaks = immediate access suspension.** Report any suspected break to the SIRT immediately. Cases will be escalated to the GB for considering permanent removal from the program.
 
-
 ---
 
 ## 2. Set up your Working Group (once)
@@ -42,9 +43,13 @@ The SIRT provisions three private spaces for your WG: a **GitHub repository**, a
 * **Specific members** (and specific named engineers if known) the founding WG member(s) want to invite to participate
 * **Help Needed** - include a description of the engineering resources others could supply to help. E.g. an XYZ protocol developer, an ABC Protocol test engineer.  Consider including upstream maintainers and/or security SMEs to this list.
 
-1. **Pick a Chair / Co-Chair** among yourselves to coordinate the WG. A rotating role is fine. This is an organizer and point-of-contact role, not a manager: Chairs keep the repo and read-in list tidy and act as the liaison to the SIRT.
-2. **Agree how you'll work** — a working cadence (e.g., async in the repo plus a short weekly sync), and who tends to take which role (analysis, patch authoring, testing).
-3. **Confirm everyone has access** — hardware-key 2FA is required for all three spaces.
+1. **Develop a Charter** Determine the purpose and scope of the WG.
+2. **Announce WG** Announce the WG internally to Akrites in #all-akrites and call for members as appropriate.
+3. **Pick a Chair / Co-Chair** among yourselves to coordinate the WG. A rotating role is fine. This is an organizer and point-of-contact role, not a manager: Chairs keep the repo and read-in list tidy and act as the liaison to the SIRT.
+       -Private WGs deal with sensitive material: Akrites SIRT director will act as initial chair until a chair can be selected.
+       -Public WGs: Akrites PgM will act as initial chair until a chair can be selected.
+4. **Agree how you'll work** — a working cadence (e.g., async in the repo plus a short weekly sync), and who tends to take which role (analysis, patch authoring, testing).
+5. **Confirm everyone has access** — hardware-key 2FA is required for all three spaces.
 
 ---
 
