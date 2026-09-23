@@ -107,7 +107,7 @@ AI use
   - Coordinator (Akrites SIRT): No AI tooling was used.
 ```
 
-For an **anonymous** Finder, the Finder line is included only if it can be stated without identifying the reporter and the reporter does not object; when in doubt, omit the Finder line but always keep the Coordinator line.
+For an **anonymous** Finder, the Finder line shall explicitly state "anonymous" and shall not be omitted, as omitting it could create ambiguity about whether the information is missing.
 
 ---
 
