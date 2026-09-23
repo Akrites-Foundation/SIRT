@@ -1,6 +1,6 @@
 # Akrites Read-In Policy
 
-**Status:** DRAFT v0.2 — for TOC / Governing Board review
+**Status:** DRAFT v0.3 — for TOC / Governing Board review - 2026-09-23
 **Supersedes:** *Akrites Read-In Process — Working Groups & Disclosures* (DRAFT v0.1) and *Akrites Read-In Tier Policy*. On ratification, both source documents are retired and this document is the single authoritative reference.
 **Applies to:** All Akrites vulnerability Working Groups (WGs) and all pre-disclosure cases handled by the Akrites SIRT.
 
@@ -129,9 +129,11 @@ Emergency Read-In relaxes the *mechanism* of prerequisites 2 and 3 — it does *
 |---|---|---|---|---|
 | **Tier 0** | Reporter / Finder and the maintainer (plus automated intake) | Originate the report; own the fix and the final disclosure decision | Full case detail; TLP:RED at intake | Earliest; longest duration |
 | **Tier 1** | Subject-matter experts (Akrites members) | Analyze, produce, and test the patch | Case material needed to build and test the fix; TLP:AMBER+STRICT | When analysis/testing begins |
+| **Tier 1.5** | Upstream Maintainer/Security Team (Non-Akrites members) | Analyze, produce, and test the patch | Case material needed to build and test the fix; TLP:AMBER+STRICT | When analysis/testing is ready to share with upstream |
 | **Tier 2** | Distribution partners / maintainer pre-disclosure rings | Prepare a coordinated downstream release | The fix and timing — not full research detail | Defined lead time before PD |
-| **Tier 3** | Second-order distributors (CDNs, package registries) | Pre-stage the fix for rapid propagation | The artifact and go-live time only | Latest; shortest window |
-| **Public** | Everyone | — | Fully public | Public disclosure (PD) |
+| **Tier 3** | Second-order distributors (CDNs, package registries) | Pre-stage the fix for rapid propagation | The artifact and go-live time only; TLP:AMBER| Latest; shortest window |
+| **Tier 3.5 (Optional)** | International Coordinators (as needed) | Pre-stage PD notificastions for rapid propagation | The artifact and go-live time only; TLP:AMBER| Latest; 24hr advanced notice |
+| **Public** | Everyone | — | Fully public; TLP:CLEAR | Public disclosure (PD) |
 
 Automated intake — deduplication, severity estimation, and routing — sits within Tier 0 and requires no SME.
 
