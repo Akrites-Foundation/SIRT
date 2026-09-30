@@ -31,6 +31,10 @@ We aim to acknowledge reports within three business days. Investigation and reso
 - The portion(s) of the CoC you believe to be violated.
 - If you have relevant documentary evidence, such as screenshots or photographs, please provide those with your support.
 
+If a conflict of interest exists involving the primary Code of Conduct administrators monitoring conduct@akrites.org, or if an individual is uncomfortable submitting a report through the standard address, reports may be escalated directly to Linux Foundation Operations and Legal Support at legal@linuxfoundation.org.
+
+To ensure proper oversight while strictly preserving confidentiality, high-level aggregated and anonymized summaries of Code of Conduct activity (such as the total number of incidents reported and high-level outcomes) will be presented to the Governing Board at each regularly scheduled board meeting.
+
 ## Enforcement Responsibilities 
 For the purposes of this Code, “community leaders” means the members of the Akrites Code of Conduct Committee designated by the Foundation to receive reports, conduct or commission investigations, and determine appropriate outcomes.
 
