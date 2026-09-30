@@ -1,6 +1,6 @@
 # Akrites SIRT Coordinated Vulnerability Disclosure (CVD) Policy - DRAFT v0.4
 
-**Status:** Draft v0.4
+**Status:** Draft v0.5
 **Owner:** Akrites SIRT (Security Incident Response Team)
 **Primary contact:** SIRT@Akrites.dev
 **Canonical URL:** https://sirt.akrites.dev/security/policy
@@ -349,6 +349,13 @@ This is where the "open process, private data" balance is enforced.
   disclosure and publish whatever guidance helps Consumers protect themselves,
   even if a full fix is not yet ready (see Section 9).
 
+| **Lifecycle stage** | **Description** | **Applicable TLP** |
+| --- | --- | --- |
+| 1. Intake & Automated Pipeline | Initial submission, automated deduplication, enrichment, and preliminary triage. Restricted to Finder and SIRT. | TLP:RED |
+| 2. Active Case (Human Verification) | Human-gated verification requiring SME/maintainer read-in and triage. | TLP:AMBER-STRICT |
+| 3. Broader Internal Coordination | "Multi-party coordination, fix preparation, and downstream patch verification. | TLP:AMBER |
+| 4. Public Disclosure | Advisory publication and upstream release. | TLP:CLEAR |
+
 ## 9. Actively exploited vulnerabilities
 
 Confirmed exploitation in the wild changes the calculus: defenders need
@@ -401,7 +408,7 @@ references the CVE ID(s). The SIRT case coordinator is accountable for
 executing publication. High-impact issues are also announced to the relevant
 community and security-announce channels. Where it does not aid attackers,
 exploit detail may be briefly withheld to give Consumers time to update. Finders
-are credited by default unless they request otherwise. Every advisory also
+are credited by default unless they request otherwise. Finders may designate their attribution preferences upon submission via API or portal settings: (a) Explicit Organizational Attribution, (b) Generic Akrites Attribution ('Discovered via Akrites SIRT'), or (c) Full Anonymity. Every advisory also
 carries an **AI-use statement** for both the Finder and the Akrites SIRT, per
 Section 13.
 
@@ -516,6 +523,7 @@ SIRT@Akrites.dev.
 | 0.2     | 2026-07-08 | Updated for Akrites. |
 | 0.3     | 2026-08-20 | Added AI/LLM tooling disclosure (§13, definitions, intake/embargo hooks, advisory statement). |
 | 0.4     | 2026-08-24 | Feedback pass: added coordinator role (§6), actively-exploited policy (§9), disputes/appeals (§15), intake/membership (§12); aligned 30-day embargo default and phased TLP; harmonized 9-phase lifecycle with the 4-stage pipeline (dedup made explicit, numbering fixed, mapping table); added CSAF 2.0 / VEX; consolidated naming to "Akrites SIRT" and contact to SIRT@Akrites.dev; fixed Read-in Tier Policy link. |
+| 0.5     | 2026-09-30 | Per discussions held at Board meeting on September 22. Updates surrounding TLP & Lifecycle Mapping and Attribution Preferences | 
 
 
 ## 17. References
