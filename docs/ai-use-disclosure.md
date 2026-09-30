@@ -98,6 +98,7 @@ AI use
   - Finder: AI-assisted discovery and patch development. Tools: Claude Opus, Semgrep.
   - Coordinator (Akrites SIRT): AI-assisted triage and advisory drafting, under human review.
 ```
+Human accountability remains paramount; all automated or AI-assisted outputs must undergo human verification before approval.
 
 **Filled example (neither used AI):**
 
@@ -108,6 +109,8 @@ AI use
 ```
 
 For an **anonymous** Finder, the Finder line shall explicitly state "anonymous" and shall not be omitted, as omitting it could create ambiguity about whether the information is missing.
+
+Additionally, where technical capability exists, model, version, and framework/harness metadata should be automatically attached at the report and API submission layer to track performance and support baseline benchmarking without requiring manual form entry or disclosing proprietary vendor configurations.
 
 ---
 
