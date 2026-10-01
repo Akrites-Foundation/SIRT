@@ -98,7 +98,7 @@ AI use
   - Finder: AI-assisted discovery and patch development. Tools: Claude Opus, Semgrep.
   - Coordinator (Akrites SIRT): AI-assisted triage and advisory drafting, under human review.
 ```
-Human accountability remains paramount; all automated or AI-assisted outputs must undergo human verification before approval.
+Human accountability remains paramount; all automated or AI-assisted systems must undergo human verification and approval before operating autonomously.
 
 **Filled example (neither used AI):**
 
