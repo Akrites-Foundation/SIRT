@@ -159,8 +159,8 @@ rollout phase — see Section 12).
 - **Communicate continuously** — we maintain an open dialogue, give status
   updates, and are transparent about anything that may delay resolution.
 - **Respect confidentiality** — we handle case material under TLP 2.0, starting
-  at **TLP:RED** at intake and tightening to need-to-know **TLP:AMBER+STRICT**
-  during remediation, reclassified to **TLP:CLEAR** at the agreed public date.
+  at **TLP:RED** at intake and tightening to need-to-know, **TLP:AMBER+STRICT**
+  during SIRT coordination, **TLP:AMBER** as we broaden internal coordination, reclassified to **TLP:CLEAR** at the agreed public date.
   We share only with those who need to know.
 - **Credit you** — by default we attribute findings to the Finder; we will
   honor requests for anonymity. We do not require nor can we provide an NDA.
@@ -289,6 +289,11 @@ Discover → Deduplicate & Triage → Validate → Coordination → Patch → Te
 9. **Disclose** — On the PD date, the vulnerability is publicly disclosed and the
    patch and all associated documentation are released.
 
+-  Internal processing time – The time it takes Akrites to assess, deduplicate, enrich, and coordinate the finding.
+-  Upstream disclosure period – The time period provided to the affected project after Akrites formally engages with it.
+
+The finder should be explicitly informed when the disclosure clock starts.
+
 ### Lifecycle phases mapped to the operational pipeline
 
 The nine lifecycle phases nest within the four operational stages of the SIRT's
@@ -308,9 +313,9 @@ This is where the "open process, private data" balance is enforced.
 - **Traffic Light Protocol (TLP 2.0).** Case material follows a phased TLP model
   rather than a single blanket label, so confidentiality scales appropriately as
   collaboration needs grow:
-  - **TLP:RED at intake** — the initial report is held for named recipients only.
-  - **TLP:AMBER+STRICT during patch development** — once a case is opened and
-    read-in Collaborators are engaged, case and patch material is shareable on a
+  - **TLP:RED at intake** — The initial report is held for named recipients only.
+  - **TLP:AMBER+STRICT Internal SIRT coordination** — Internal SIRT handling: initial triage, deduplication, enrichment and initial verification.
+  - **TLP:AMBER+STRICT during patch development** — Once the report leaves the automated pipeline and enters a human-gated stage requiring coordination, it is considered an   open case. Once a case is opened and read-in Collaborators are engaged, case and patch material is shareable on a
     need-to-know basis within participating organizations (excluding clients and
     third parties), enabling the collaboration a fix requires.
   - **TLP:CLEAR at Public Disclosure** — material is reclassified for open
@@ -331,9 +336,8 @@ This is where the "open process, private data" balance is enforced.
   confidential tooling. This is why AI use is captured at intake (Section 4.3).
   See the [Embargo Handling Guidance](docs/Embargo%20Handling%20Guidance.md) §4.3.
 - **Embargo duration.** The SIRT's default planning target is a PD within
-  **30 days** of a validated report, **deferring to the upstream project's own
-  disclosure policy** where one exists. The governing timeline is set by the
-  precedence hierarchy in the
+  **21 days** of a validated report, **deferring to the upstream project's own
+  disclosure policy** where one exists. The disclosure timeline may be extended when additional time is reasonably required to develop and coordinate a fix. The governing timeline is set by the precedence hierarchy in the
   [Embargo Handling Guidance](docs/Embargo%20Handling%20Guidance.md): a project's
   published policy or a coordinating list's cap takes precedence over the
   default, and where multiple parties are involved the tightest binding
@@ -342,7 +346,7 @@ This is where the "open process, private data" balance is enforced.
   commonly uses 45 days, and 90 days is the longest default entertained by major
   programs; the SIRT treats **90 days as an industry outer bound, not its own
   target.** Every day under embargo is a day of risk, so shorter is better when
-  feasible. Any embargo beyond 30 days requires explicit rationale and TOC
+  feasible. Any embargo beyond 21 days requires explicit rationale and TOC
   awareness (EHG §6).
 - **Leak contingency.** If an embargo breaks — for example the issue is
   published or exploited in the wild before PD — the SIRT may accelerate
@@ -523,7 +527,7 @@ SIRT@Akrites.dev.
 | 0.2     | 2026-07-08 | Updated for Akrites. |
 | 0.3     | 2026-08-20 | Added AI/LLM tooling disclosure (§13, definitions, intake/embargo hooks, advisory statement). |
 | 0.4     | 2026-08-24 | Feedback pass: added coordinator role (§6), actively-exploited policy (§9), disputes/appeals (§15), intake/membership (§12); aligned 30-day embargo default and phased TLP; harmonized 9-phase lifecycle with the 4-stage pipeline (dedup made explicit, numbering fixed, mapping table); added CSAF 2.0 / VEX; consolidated naming to "Akrites SIRT" and contact to SIRT@Akrites.dev; fixed Read-in Tier Policy link. |
-| 0.5     | 2026-09-30 | Per discussions held at Board meeting on September 22. Updates surrounding TLP & Lifecycle Mapping and Attribution Preferences | 
+| 0.5     | 2026-09-30 | Per discussions held at Board meeting on September 22. Updates surrounding TLP & Lifecycle Mapping, Embargo and Disclosure Timing, and Attribution Preferences | 
 
 
 ## 17. References
