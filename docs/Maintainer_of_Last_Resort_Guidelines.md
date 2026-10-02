@@ -160,7 +160,7 @@ Most of these disagreements are real and resolvable, and they come in recognizab
 
 **Never use disclosure as leverage.** "Fix it or we publish" turns a technical disagreement into a threat, and the disclosure clock is not a negotiating instrument. Where the disagreement persists and we still intend to publish, say so plainly and early, explain the reasoning, give the date, and offer the verbatim-rationale option below. The maintainer should learn our position from us, well before they learn it from an advisory.
 
-**Time-box it without rushing it.** An active technical exchange defers the decision point (§3.1). An engaged maintainer means the case is back in ordinary CVD, and it is not a §5.2 non-fix while the conversation is live.
+**Time-box it without rushing it.** An active technical exchange defers the decision point (§3.1). An engaged maintainer means the case is back in ordinary CVD, and it is not a §5.2 non-fix while the conversation is live. A live technical exchange defers the T0+30 decision point by a maximum of 30 additional calendar days (total T0+60), after which the SIRT must either resolve the case as 'not a vulnerability' or proceed to §5.2.2 publication.
 
 **Three outcomes, and only one of them reaches §5.2.2:**
 
@@ -367,7 +367,7 @@ A candidate steward should demonstrate:
 Downstream cannot re-architect around a short migration deadline for a widely deployed transitive dependency, and unpublishing a package that consumers resolve against creates its own supply-chain incident.
 
 - **Wind-down freezes the artifact.** The last release stays **published, signed, immutable, and marked "no further fixes"**, with the final advisory and migration guidance attached. The obligation ends and the artifact stays.
-- **Never unpublish, delete, or yank** a last-resort release, in any registry, short of a legal order or a confirmed compromise of the artifact. This holds after handback (§6.8) and after retirement (§6.7).
+- **Never unpublish, delete, or yank** a last-resort release, in any registry, short of a legal order or a confirmed compromise of the artifact. This holds after handback (§6.8) and after retirement (§6.7). As a strict exception to the non-unpublish policy, if an Akrites-authored patch introduces a critical security vulnerability or regression, Akrites will immediately issue a version deprecation or registry 'yank' (e.g., npm deprecate, cargo yank) while preserving the historical package metadata and issuing an urgent updated advisory.
 - **Publish an EOL advisory** for the release: what it fixed, what it will not fix, what consumers should migrate to, and who to contact.
 - **Archive the repository read-only**, with the patch series and build provenance intact so a future party can reproduce and continue from it.
 - **Document the good-faith search effort** in the sunset record. Renewing in place of winding down is prohibited by default and requires explicit TOC approval under §6.7.
