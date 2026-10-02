@@ -315,7 +315,7 @@ This is where the "open process, private data" balance is enforced.
   collaboration needs grow:
   - **TLP:RED at intake** — The initial report is held for named recipients only.
   - **TLP:AMBER+STRICT Internal SIRT coordination** — Internal SIRT handling: initial triage, deduplication, enrichment and initial verification.
-  - **TLP:AMBER+STRICT during patch development** — Once the report leaves the automated pipeline and enters a human-gated stage requiring coordination, it is considered an   open case. Once a case is opened and read-in Collaborators are engaged, case and patch material is shareable on a
+  - **TLP:AMBER during patch development** — Once the report leaves the automated pipeline and enters a human-gated stage requiring coordination, it is considered an   open case. Once a case is opened and read-in Collaborators are engaged, case and patch material is shareable on a
     need-to-know basis within participating organizations (excluding clients and
     third parties), enabling the collaboration a fix requires.
   - **TLP:CLEAR at Public Disclosure** — material is reclassified for open
