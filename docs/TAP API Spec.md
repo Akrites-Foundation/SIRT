@@ -86,7 +86,7 @@ allow newlines and tabs.
 
 **Errata:** `exploit` and `raw` can be GZip or BZip'd tar files, or Zip files, to supply multiple attachments. If you wish to supply extra details, like proofs-of-concept, draft patches, and similar, it's recommended that you use obvious naming conventions within such files (`exploit.c`, `fix.patch`, `fix/`, `exploit/`).
 
-**Errata:** `exploit`, `raw`, and their respective content type fields will be changing in a future release. One will either submit attachments as a new `attachments` JSON block, or RFC 2045 `multipart/mixed` uploads. Attachment names, descriptions, and content-types will be acquired as multipart headers. All attachments will be treated as sensitive.
+**Errata:** `exploit`, `raw`, and their respective content type fields will be changing in a future release. Attachments will be submitted either in a new `attachments` JSON block or as [RFC 2046](https://datatracker.ietf.org/doc/html/rfc2046#section-5.1.3) `multipart/mixed` uploads. For multipart uploads, attachment names, descriptions, and content types will be supplied in the part headers. All attachments will be treated as sensitive.
 
 ### Identity
 
@@ -173,7 +173,8 @@ Link: </v1/submissions/SUB-d2mhenw4iave42m4oe>; rel="monitor"
 }
 ```
 
-The receipt is the only handle on your submission — keep it. The `Link` header
+Until the Member Portal is available, the receipt is the only handle on your submission —
+keep it. The `Link` header
 ([RFC 8288](https://datatracker.ietf.org/doc/html/rfc8288)) carries that submission's status
 URL under `rel="monitor"` ([RFC 5989](https://datatracker.ietf.org/doc/html/rfc5989)) — the
 machine-readable form of the poll hint. The ref is root-relative, so resolve it against the
@@ -312,3 +313,5 @@ curl -sS "https://intake.tap.akrites.dev/v1/submissions/${RECEIPT}"
 - [RFC 9457](https://datatracker.ietf.org/doc/html/rfc9457) — problem details (error bodies)
 - [RFC 5989](https://datatracker.ietf.org/doc/html/rfc5989) — the `monitor` link relation
 - [RFC 8259](https://datatracker.ietf.org/doc/html/rfc8259) — JSON
+- [RFC 2046](https://datatracker.ietf.org/doc/html/rfc2046) — MIME media types (`multipart/mixed`)
+- [RFC 3339](https://datatracker.ietf.org/doc/html/rfc3339) — timestamps
