@@ -42,6 +42,17 @@ clearinghouse and coordinator (see Section 6). Where a vulnerability affects
 upstream or downstream open source projects, the SIRT coordinates disclosure with
 those communities as described in this policy.
 
+**Scope of CVE assignment.** The Akrites SIRT operates as a CVE Numbering
+Authority (CNA) with a defined scope, and reserves and assigns CVE IDs only for
+vulnerabilities that fall within that scope. The SIRT is not always the
+authoritative CNA: where the affected project or vendor is itself a CNA, or
+another CNA's scope covers the affected product, that CNA is responsible for
+reserving the CVE ID and publishing the CVE Record. The roles are kept
+separate — the SIRT's **coordination** role (Section 6) is distinct from the
+**CVE assignment** role of the authoritative CNA. When the SIRT defers to
+another CNA, it continues to coordinate the disclosure and works with that CNA so
+that a single CVE ID is used for the flaw.
+
 ## 3. Definitions
 
 ### Roles & access
@@ -82,6 +93,16 @@ those communities as described in this policy.
   ranked Low to Critical.
 - **Vulnerability Identifier** — A unique label (such as a CVE ID) used to track
   a flaw across the industry.
+- **CNA (CVE Numbering Authority)** — An organization authorized by the CVE
+  Program to assign CVE IDs and publish CVE Records for vulnerabilities within
+  its defined scope.
+- **CVE Reservation** — The act of a CNA reserving a CVE ID for a vulnerability
+  that is not yet public. The ID exists in a reserved state, with no public
+  details, until the CVE Record is published.
+- **CVE Assignment** — The act of a CNA associating a reserved CVE ID with a
+  specific vulnerability and publishing the CVE Record (description, affected
+  products and versions, references) to the CVE Program's database, normally at
+  Public Disclosure.
 
 ### Resolution & communication
 
@@ -133,6 +154,7 @@ If GitHub reporting is unavailable or unsuitable, email **SIRT@Akrites.dev**.
 To help us triage and reproduce quickly, please include where known:
 
 - The affected project, component, and version(s).
+- A link to the affected project's main website and/or source code repository.
 - The environment where the issue was observed (OS, architecture, platform,
   configuration).
 - Step-by-step reproduction details; proof-of-concept code or screenshots are
@@ -155,7 +177,10 @@ rollout phase — see Section 12).
 - **Acknowledge** receipt within **2 business days**.
 - **Triage and validate**, providing an initial assessment within
   **10 business days**, and confirm whether we consider the report a
-  vulnerability, a non-security bug, or expected behavior.
+  vulnerability, a non-security bug, or expected behavior. Where the issue is
+  within the scope of the Akrites SIRT CNA, we reserve a CVE ID and publish and
+  maintain the CVE Record in due time; otherwise we coordinate with the
+  authoritative CNA (see Section 2).
 - **Communicate continuously** — we maintain an open dialogue, give status
   updates, and are transparent about anything that may delay resolution.
 - **Respect confidentiality** — we handle case material under TLP 2.0, starting
@@ -255,7 +280,8 @@ Discover → Deduplicate & Triage → Validate → Coordination → Patch → Te
 
 3. **Validate** — The finding is confirmed or refuted and reproduced, and its
    severity and root cause are enriched (CWE, CVSS, blast radius). Additional
-   parties may be brought in to assist with review.
+   parties may be brought in to assist with review. A CVE ID is reserved for the
+   issue if it is within the scope of the Akrites SIRT CNA.
 
 4. **Coordination** — Trusted Collaborators with a need-to-know are read in to
    assist with remediation, distribution, and disclosure. The team determines
@@ -286,8 +312,10 @@ Discover → Deduplicate & Triage → Validate → Coordination → Patch → Te
    includes Security Advisory texts, patches, work-arounds and/or mitigations,
    or other collateral the Maintainer and Finder deem relevant.
 
-9. **Disclose** — On the PD date, the vulnerability is publicly disclosed and the
-   patch and all associated documentation are released.
+9. **Disclose** — On the PD date, the vulnerability is publicly disclosed, the
+   patch and all associated documentation are released, and the CVE Record is
+   published to the CVE Program's database (by the Akrites SIRT CNA, or by the
+   authoritative CNA when the issue is outside the SIRT's scope).
 
 ### Lifecycle phases mapped to the operational pipeline
 
@@ -381,7 +409,9 @@ has already set.
 - **Severity** is assessed with **CVSS v4.0** (current standard); **CVSS v3.1**
   may be included for comparison with legacy records.
 - **Root cause** is categorized using **CWE**.
-- A **CVE ID** is requested via the appropriate CVE Numbering Authority (CNA).
+- **CVE IDs** are reserved by the Akrites SIRT CNA when the vulnerability is
+  within its scope; otherwise the SIRT defers reservation to the authoritative
+  CNA (for example, when the affected project is itself a CNA). See Section 2.
 - **Machine-readable advisories.** Where possible the SIRT publishes structured,
   machine-readable records so Consumers and their tooling can automatically match
   advisories to the versions they run and judge exploitability:
