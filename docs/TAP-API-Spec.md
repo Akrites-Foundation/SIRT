@@ -36,10 +36,6 @@ Every `POST` must carry a submission token issued by Akrites:
 Authorization: Bearer <your-submission-token>
 ```
 
-`TAP-SUBMISSION-TOKEN: <your-submission-token>` is still accepted, but will be removed;
-move to `Authorization`. A request carrying both must carry the same token in each, or
-it is refused with a `400`.
-
 A `tap_v1_…` token expires at most a year after it was issued, and can be revoked
 sooner; if Akrites disables a member, all its tokens stop working. Any of these is
 then refused like an unrecognized token; ask Akrites for a new one.
@@ -366,7 +362,7 @@ A JSON body or multipart `report` part that is not UTF-8 is `malformed-json`.
 
 | Status | Meaning |
 |---|---|
-| `400` | `malformed-json`, `validation`, a body that could not be read, a malformed multipart body, malformed `Content-Type` parameters, or conflicting [submission tokens](#submission-token) (`about:blank`). |
+| `400` | `malformed-json`, `validation`, a body that could not be read, a malformed multipart body, or malformed `Content-Type` parameters (`about:blank`). |
 | `401` | Missing, unrecognized, expired or revoked [submission token](#submission-token), or one of a disabled member; the response does not say which. The body is not read. |
 | `403` | Cross-origin browser submission (`about:blank`), or a web firewall block (HTML). |
 | `404` | Unknown receipt, or unknown path. |
