@@ -9,13 +9,10 @@ accept JSON or `multipart/mixed`.
 
 ## Transport
 
-**TLS is required.** All requests must use `https://`. There is no plaintext listener and no
-HTTP-to-HTTPS redirect: a request to `http://` fails to connect. TLS 1.2 is the minimum
-version. Do not disable certificate verification.
-
-**Errata:** Port 80 currently accepts the connection and reads the request before closing it
-without a response, so a request to `http://` has already sent its token unencrypted. This
-will be fixed in a future release.
+**TLS is required.** All requests must use `https://`. There is no HTTP-to-HTTPS redirect: a
+request to `http://` is accepted and closed with no response, by which point its token has
+already been sent unencrypted. TLS 1.2 is the minimum version. Do not disable certificate
+verification.
 
 ---
 
