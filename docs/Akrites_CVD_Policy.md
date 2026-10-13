@@ -1,6 +1,6 @@
-# Akrites SIRT Coordinated Vulnerability Disclosure (CVD) Policy - DRAFT v0.4
+# Akrites SIRT Coordinated Vulnerability Disclosure (CVD) Policy - DRAFT v0.6
 
-**Status:** Draft v0.5
+**Status:** Draft v0.6
 **Owner:** Akrites SIRT (Security Incident Response Team)
 **Primary contact:** SIRT@Akrites.dev
 **Canonical URL:** https://sirt.akrites.dev/security/policy
@@ -174,22 +174,22 @@ rollout phase — see Section 12).
 
 ## 5. Our commitments to you
 
-- **Acknowledge** receipt within **2 business days**.
-- **Triage and validate**, providing an initial assessment within
-  **10 business days**, and confirm whether we consider the report a
+- **Acknowledge receipt:** within **2 business days**.
+- **Triage and validate:**, automated intake < 2 hours, with initial SIRT assessment within **10 business days**, and confirm whether we consider the report a
   vulnerability, a non-security bug, or expected behavior. Where the issue is
   within the scope of the Akrites SIRT CNA, we reserve a CVE ID and publish and
   maintain the CVE Record in due time; otherwise we coordinate with the
   authoritative CNA (see Section 2).
-- **Communicate continuously** — we maintain an open dialogue, give status
+- **Target Public Dsiclosure:** < 17 bd (Low/Medium), < 21 bd (High), or < 24 bd (Critical), incorporating a 15-business-day proposed embargo
+- **Communicate continuously:** — we maintain an open dialogue, give status
   updates, and are transparent about anything that may delay resolution.
-- **Respect confidentiality** — we handle case material under TLP 2.0, starting
+- **Respect confidentiality:** — we handle case material under TLP 2.0, starting
   at **TLP:RED** at intake and tightening to need-to-know, **TLP:AMBER+STRICT**
   during SIRT coordination, **TLP:AMBER** as we broaden internal coordination, reclassified to **TLP:CLEAR** at the agreed public date.
   We share only with those who need to know.
-- **Credit you** — by default we attribute findings to the Finder; we will
+- **Credit you:** — by default we attribute findings to the Finder; we will
   honor requests for anonymity. We do not require nor can we provide an NDA.
-- **Be transparent about AI use** — every advisory states, for both you and the
+- **Be transparent about AI use:** — every advisory states, for both you and the
   Akrites SIRT, whether and how AI/LLM tooling was used, at a capability level.
   See Section 13.
 
@@ -284,19 +284,21 @@ Discover → Deduplicate & Triage → Validate → Coordination → Patch → Te
    issue if it is within the scope of the Akrites SIRT CNA.
 
 4. **Coordination** — Trusted Collaborators with a need-to-know are read in to
-   assist with remediation, distribution, and disclosure. The team determines
-   whether an **embargo** is required and sets the **Public Disclosure (PD)**
-   date, and prepares for the contingency that the embargo breaks early —
+   assist with remediation, distribution, and disclosure. The team:
+   1) determines whether an **embargo** is required,
+   2) sets a standard **15-business-day embargo window** to upstream maintainers,
+   3) sets the **Public Disclosure (PD)** date, and
+   4) prepares for the contingency that the embargo breaks early —
    deciding what can be shared with Consumers to protect themselves if details
    leak before PD.
 
-5. **Patch** — The Owner and read-in Collaborators determine the best fix and
+6. **Patch** — The Owner and read-in Collaborators determine the best fix and
    create a patch or work-around that eliminates the root cause.
 
-6. **Test** — The patch is run through regression, smoke, and other testing to
+7. **Test** — The patch is run through regression, smoke, and other testing to
    confirm the vulnerability is resolved and no new regressions are introduced.
 
-7. **Document** — The vulnerability is documented for downstream consumption:
+8. **Document** — The vulnerability is documented for downstream consumption:
    a vulnerability identifier (CVE), the affected package/versions, the
    weakness/root cause (CWE), a severity estimate (CVSS v4.0, or CVSS v3.1 for
    legacy comparison), the actions Consumers should take, where to obtain the
@@ -304,7 +306,7 @@ Discover → Deduplicate & Triage → Validate → Coordination → Patch → Te
    relevant information. Optional collateral such as blogs, FAQs, or Q&As may
    also be produced.
 
-8. **Distribute** — The patch and related documentation are staged so that
+9. **Distribute** — The patch and related documentation are staged so that
    Consumers gain access to the upstream remediation at the same time (at PD)
    from a public repository (preferably the upstream project's delivery channel).
    Documentation is shared with read-in Collaborators so they can prepare
@@ -312,7 +314,7 @@ Discover → Deduplicate & Triage → Validate → Coordination → Patch → Te
    includes Security Advisory texts, patches, work-arounds and/or mitigations,
    or other collateral the Maintainer and Finder deem relevant.
 
-9. **Disclose** — On the PD date, the vulnerability is publicly disclosed, the
+10. **Disclose** — On the PD date, the vulnerability is publicly disclosed, the
    patch and all associated documentation are released, and the CVE Record is
    published to the CVE Program's database (by the Akrites SIRT CNA, or by the
    authoritative CNA when the issue is outside the SIRT's scope).
@@ -363,9 +365,12 @@ This is where the "open process, private data" balance is enforced.
   basis; parties who need to preserve the embargo option must use private,
   confidential tooling. This is why AI use is captured at intake (Section 4.3).
   See the [Embargo Handling Guidance](docs/Embargo%20Handling%20Guidance.md) §4.3.
-- **Embargo duration.** The SIRT's default planning target is a PD within
-  **21 days** of a validated report, **deferring to the upstream project's own
-  disclosure policy** where one exists. The disclosure timeline may be extended when additional time is reasonably required to develop and coordinate a fix. The governing timeline is set by the precedence hierarchy in the
+- **Embargo duration.** The SIRT's default upstream embargo is 15 business days (bd). Accounting for intake/de-deuplication/enrichment, severity-based fix development and upstream hand-off, the total target window from report receipt to Public Disclosure (PD) is:
+  - Severity-Tiered Total Time to Public Disclosure (PD):
+    - Low / Medium Severity: Total time to PD is **< 17 business days** (Intake/Enrichment < 2 hours + SIRT Upstream hand-off ≤ 2 bd + Fix Development & Coordinated Disclosure 15 bd)
+    - High Severity: Total time to PD is **< 21 business days** (Intake/Enrichment < 2 hours + Fix Development ≤ 4 bd + SIRT Upstream hand-off ≤ 2 bd + Coordinated Disclosure 15 bd)
+    - Critical Severity: Total time to PD is **< 24 business days** (Intake/Enrichment < 2 hours + Fix Development ≤ 7 bd + SIRT Upstream hand-off ≤ 2 bd + Coordinated Disclosure 15 bd)
+- Akrites SIRT will always **defer to the upstream project's own disclosure policy** where one exists. The disclosure timeline may be extended when additional time is reasonably required to develop and coordinate a fix. The governing timeline is set by the precedence hierarchy in the
   [Embargo Handling Guidance](docs/Embargo%20Handling%20Guidance.md): a project's
   published policy or a coordinating list's cap takes precedence over the
   default, and where multiple parties are involved the tightest binding
@@ -557,7 +562,8 @@ SIRT@Akrites.dev.
 | 0.2     | 2026-07-08 | Updated for Akrites. |
 | 0.3     | 2026-08-20 | Added AI/LLM tooling disclosure (§13, definitions, intake/embargo hooks, advisory statement). |
 | 0.4     | 2026-08-24 | Feedback pass: added coordinator role (§6), actively-exploited policy (§9), disputes/appeals (§15), intake/membership (§12); aligned 30-day embargo default and phased TLP; harmonized 9-phase lifecycle with the 4-stage pipeline (dedup made explicit, numbering fixed, mapping table); added CSAF 2.0 / VEX; consolidated naming to "Akrites SIRT" and contact to SIRT@Akrites.dev; fixed Read-in Tier Policy link. |
-| 0.5     | 2026-09-30 | Per discussions held at Board meeting on September 22. Updates surrounding TLP & Lifecycle Mapping, Embargo and Disclosure Timing, and Attribution Preferences | 
+| 0.5     | 2026-09-30 | Per discussions held at Board meeting on September 22. Updates surrounding TLP & Lifecycle Mapping, Embargo and Disclosure Timing, and Attribution Preferences |
+| 0.6     | 2026-10-13 | Updates to deafult time to PD |
 
 
 ## 17. References
