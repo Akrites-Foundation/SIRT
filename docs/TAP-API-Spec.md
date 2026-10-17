@@ -2,8 +2,9 @@
 
 Submit vulnerability reports to the Akrites pipeline and check their status.
 
-There is one submission endpoint plus a status endpoint. Both return JSON; submissions
-accept JSON or `multipart/mixed`.
+There is one submission endpoint plus two status endpoints, by receipt and by
+[`external_id`](#external-id). All return JSON; submissions accept JSON or
+`multipart/mixed`.
 
 ---
 
@@ -27,7 +28,8 @@ verification.
 
 ## Submission token
 
-Every `POST` must carry a submission token issued by Akrites:
+Every `POST`, and every lookup by `external_id`, must carry a submission token issued by
+Akrites:
 
 ```
 Authorization: Bearer <your-submission-token>
@@ -56,6 +58,11 @@ The status endpoint. Returns the latest status change, e.g. `{"at":"2026-09-25T1
 lets a submission be read via this endpoint. Anyone who has it can read the status. A receipt that
 does not exist returns `404`.
 
+### `GET /v1/external-ids/{external_id}`
+
+The same status, found by the [`external_id`](#external-id) your member filed the report
+under, with the `receipt` to poll from then on. These external IDs are unique to your member account.
+
 Members will also be able to get report status information from the Member Portal when it is
 available, without the need for receipts.
 
@@ -67,9 +74,9 @@ For JSON submissions, use `Content-Type: application/json`. Parsing is strict:
 **unknown fields are rejected**, as is a key repeated at the top level or within an
 attachment, and the body must be exactly one JSON document. Provide either `purl`, or both
 `ecosystem` and `software`. All strings must be valid UTF-8.
-Metadata fields reject control characters, newlines and tabs included. The encrypted
-payloads, `exploit`, `raw` and an attachment's `data`, may contain them, using JSON escapes
-when submitted as JSON; a binary [content type](#content-types) is sent as base64 instead.
+Metadata fields reject control characters, newlines and tabs included. An attachment's
+`data`, which is encrypted, may contain them, using JSON escapes when submitted as JSON; a
+binary [content type](#content-types) is sent as base64 instead.
 
 ### Core
 
@@ -77,21 +84,86 @@ when submitted as JSON; a binary [content type](#content-types) is sent as base6
 |---|---|---|---|
 | `purl` | string | ≤512 B | [package-url](https://github.com/package-url/purl-spec), e.g. `pkg:npm/lodash@4.17.20`. Stored in canonical form (the `pkg:` scheme and type are case-folded, encoding normalized). **Required** unless both `ecosystem` and `software` are supplied. |
 | `software` | string | 1–256 B | **Required** when `purl` is absent. e.g. `openssl`, `kubernetes`|
-| `ecosystem` | string | ≤128 B | **Required** when `purl` is absent. e.g. `npm`, `PyPI`, `Go`. |
+| `ecosystem` | string | ≤128 B | **Required** when `purl` is absent. One of the [ecosystems](#ecosystems), e.g. `npm`, `PyPI`, `Go`. |
 | `versions` | string[] | ≤64 entries, ≤64 B each | Affected versions, matching the software's version scheme. A versioned `purl` adds its version to these, under the same limits. |
 | `code_path` | string | ≤1024 B | Free-text affected function/lines; `affected_symbol` is preferred. |
-| `exploit` | string | ≤1 MiB | **DEPRECATED, use attachments instead.** Binary types are standard base64 with padding. **Sensitive: encrypted at rest and never logged.** |
-| `exploit_content_type` | string | [content type](#content-types) | **DEPRECATED, use attachments instead.** The media type of `exploit`. **Required** when `exploit` is present. |
 
-**Note:** If both are provided, `ecosystem` and `purl` must match, unless `ecosystem` has no purl type (`Linux`, `OSS-Fuzz`, `Android`, `GitHub Actions`, `Hardware`).
-
-**Errata:** Accepted `ecosystem` values will be aligned with the [ecosystems published by OSV](https://ossf.github.io/osv-schema/#defined-ecosystems) in a future release.
+**Note:** If both are provided, `ecosystem` and `purl` must match, unless `ecosystem` has no [purl type](#ecosystems).
 
 **Note:** Package-URL types must conform to the [specified types](https://github.com/package-url/purl-spec/tree/main/types).
 
-**Note:** `exploit` and `raw` are stored as attachments named `exploit` (type `exploit-proof-of-concept`) and `raw` (type `other`), after any you sent. They count toward the 16 attachments, and no attachment may download under the same name as either. Each draws a `deprecated_field` [warning](#202-accepted).
+**Note:** `exploit`, `raw`, `exploit_content_type`, `raw_content_type` and `raw_format` are retired. Sent with any value, `null` included, each is `field_not_allowed`; send the payload as an [attachment](#attachments).
 
 Over [`multipart/mixed`](#multipart-submissions), each attachment is an `attachment` part instead, its fields in the part's headers.
+
+### Ecosystems
+
+`ecosystem` must be a name in the table below: OSV's
+[defined ecosystems](https://ossf.github.io/osv-schema/#defined-ecosystems) as of this
+release, plus `Hardware`, which OSV does not define. It matches ignoring case, as do the
+alternative names in the second column; anything else is `unknown_ecosystem`.
+
+An ecosystem marked in the last column may be followed by a colon and the suffix OSV
+defines for it, such as a release (`Debian:11`) or a repository
+(`Maven:https://maven.google.com`). The suffix is optional even where OSV requires one, and
+is not checked against OSV's definition. A suffix on any other ecosystem is `unknown_ecosystem`.
+
+| Ecosystem | Also accepted | purl type | Suffix |
+|---|---|---|---|
+| `AlmaLinux` | `alma` | `rpm` | yes |
+| `Alpaquita` |  | `apk` | yes |
+| `Alpine` | `apk` | `apk` | yes |
+| `Android` |  |  |  |
+| `Azure Linux` |  | `rpm` | yes |
+| `BellSoft Hardened Containers` |  | `apk` | yes |
+| `Bioconductor` |  |  |  |
+| `Bitnami` |  | `bitnami` |  |
+| `Chainguard` |  | `apk` |  |
+| `CleanStart` |  |  |  |
+| `ConanCenter` | `conan` | `conan` |  |
+| `CRAN` | `r` | `cran` |  |
+| `crates.io` | `cargo`, `crates`, `rust` | `cargo` |  |
+| `Debian` | `deb` | `deb` | yes |
+| `Docker Hardened Images` |  |  |  |
+| `Echo` |  |  | yes |
+| `FreeBSD` |  |  | yes |
+| `GHC` |  |  |  |
+| `GitHub Actions` | `actions`, `github-actions` |  |  |
+| `Go` | `golang` | `golang` |  |
+| `Hackage` | `haskell`, `cabal` | `hackage` |  |
+| `Hardware` |  |  |  |
+| `Hex` | `elixir`, `erlang` | `hex` |  |
+| `Homebrew` |  | `brew` | yes |
+| `Julia` |  | `julia` |  |
+| `Kubernetes` |  |  |  |
+| `Linux` | `kernel`, `linux-kernel` |  |  |
+| `Mageia` |  | `rpm` | yes |
+| `Maven` | `java` | `maven` | yes |
+| `MinimOS` |  | `apk` |  |
+| `npm` | `node`, `nodejs` | `npm` |  |
+| `NuGet` | `.net`, `dotnet` | `nuget` |  |
+| `opam` |  | `opam` |  |
+| `openEuler` |  | `rpm` | yes |
+| `openSUSE` |  | `rpm` | yes |
+| `OSS-Fuzz` | `ossfuzz` |  |  |
+| `Packagist` | `composer`, `php` | `composer` | yes |
+| `Photon OS` | `photon` | `rpm` | yes |
+| `Pub` | `dart`, `flutter` | `pub` |  |
+| `PyPI` | `pip`, `python` | `pypi` |  |
+| `Raspberry Pi OS` |  | `deb` | yes |
+| `Red Hat` | `redhat`, `rhel` | `rpm` | yes |
+| `Red Hat Lightwell` |  |  | yes |
+| `Rocky Linux` | `rocky` | `rpm` | yes |
+| `Root` |  |  | yes |
+| `RubyGems` | `gem`, `gems`, `ruby` | `gem` |  |
+| `SUSE` |  | `rpm` | yes |
+| `SwiftURL` | `swift` | `swift` |  |
+| `TuxCare` |  |  | yes |
+| `Ubuntu` |  | `deb` | yes |
+| `vcpkg` |  | `vcpkg` |  |
+| `VSCode` |  | `vscode-extension` | yes |
+| `Wolfi` |  | `apk` |  |
+| `WordPress` |  |  | yes |
 
 ### Attachments
 
@@ -100,7 +172,7 @@ Over [`multipart/mixed`](#multipart-submissions), each attachment is an `attachm
 | Field | Type | Limit | Notes |
 |---|---|---|---|
 | `filename` | string | 1–255 B | **Required.** A file name, not a path: a `/` or `\`, a name of just `.` or `..`, or an invisible formatting character (such as a bidi override) is `invalid_filename`. Unique within the report by the name it downloads under: with its content type's [extension](#content-types) appended unless it already ends in it, ignoring case and Unicode form, so `poc` and `poc.txt`, both `text/plain`, are not. |
-| `data` | string | ≤1 MiB | **Required.** The file; binary types are standard base64 with padding. **Sensitive: encrypted at rest and never logged.** |
+| `data` | string | [body](#limits) | **Required.** The file; binary types are standard base64 with padding. **Sensitive: encrypted at rest and never logged.** |
 | `content_type` | string | [content type](#content-types) | **Required.** The media type of `data`. |
 | `description` | string | ≤1024 B | Optional, one line. An invisible formatting character is `control_characters`. |
 | `type` | string | — | `patch`, `exploit-proof-of-concept`, `reproducer`, `threat-model`, or `other`. Defaults to `other`. An OSV document is an `application/json` attachment of type `other`. |
@@ -117,13 +189,11 @@ stored in the clear, so keep exploit detail out of them.
 | `upstream_ids` | string[] | ≤16 entries, ≤128 B each | `CVE-YYYY-NNNN+`, `GHSA-xxxx-xxxx-xxxx`, or `PREFIX-token` (`OSV-`, `GO-`, `RUSTSEC-`, `PYSEC-`). |
 | `introduced_commit` | string | 7–64 hex chars | Full or short SHA. |
 | `fixed_commit` | string | 7–64 hex chars | Full or short SHA. |
-| `raw` | string | ≤1 MiB | **DEPRECATED, use attachments instead.** Binary types are standard base64 with padding. **Sensitive: encrypted at rest and never logged.** |
-| `raw_content_type` | string | [content type](#content-types) | **DEPRECATED, use attachments instead.** The media type of `raw`. **Required** when `raw` is present. |
 
 ### Content types
 
-Attachment `content_type`s, `exploit_content_type` and `raw_content_type`, and a multipart
-payload part's `Content-Type`, take one of these, shown with the extension a download gets:
+An attachment's `content_type`, or its multipart part's `Content-Type`, takes one of
+these, shown with the extension a download gets:
 `text/plain` (`.txt`), `text/markdown` (`.md`), `application/json` (`.json`),
 `application/pdf` (`.pdf`), `application/zip` (`.zip`), `application/gzip` (`.tar.gz`),
 `application/x-bzip2` (`.tar.bz2`), or `application/octet-stream` (`.bin`) for anything
@@ -149,6 +219,12 @@ A content type without its payload is `missing_field` on the payload.
 | `discovery_tooling` | string | ≤128 B | Freeform: the model and/or harness used to find the bug, e.g. `claude-opus-5-5 via Claude Code`. |
 | `email` | string | ≤256 B | Optional notification contact. Never echoed back in any response. |
 | `notify` | string | — | `off`, `final`, `milestones`, or `all`. Defaults to `milestones` when an email is given; without one, any value but `off` is `missing_field` on `email`. |
+
+### External ID
+
+| Field | Type | Limit | Notes |
+|---|---|---|---|
+| `external_id` | string | 1–64 B | Optional: your own id for the report, unique among your member's reports and compared byte for byte. Only letters, digits, `-`, `.`, `_` and `~` ([URI (RFC 3986)](https://datatracker.ietf.org/doc/html/rfc3986#section-2.3)'s unreserved characters), and not `.` or `..`, so that it is a [path segment](#get-v1external-idsexternal_id) as is; anything else is `invalid_external_id`. A report reusing one is refused with [`409`](#409-conflict) naming the receipt that holds it, so a resend after a lost response is never filed twice. |
 
 ### `enrichment`
 
@@ -186,7 +262,8 @@ control characters in its keys or strings; the fields below are the expected for
   "discovery_method": "ai-assisted",
   "discovery_tooling": "claude-opus-5-5 via Claude Code",
   "email": "reporter@example.org",
-  "notify": "milestones"
+  "notify": "milestones",
+  "external_id": "scan-2026-10-16-0042"
 }
 ```
 
@@ -201,13 +278,14 @@ arrive in any order:
 
 | Part | Contents |
 |---|---|
-| `report` | Required `application/json` report object, with `exploit`, `raw`, their content type fields, and `attachments` omitted. |
-| `exploit` | **Deprecated**: folded into an attachment, with a `deprecated_field` warning, as the JSON field is. Optional payload bytes, up to 1 MiB. The part's `Content-Type` is the payload's [content type](#content-types). |
-| `raw` | **Deprecated**: folded into an attachment, with a `deprecated_field` warning, as the JSON field is. Optional payload bytes, up to 1 MiB. The part's `Content-Type` is the payload's [content type](#content-types). |
-| `attachment` | Optional, repeatable up to 16: one [attachment](#attachments), up to 1 MiB. The bytes are the file, never base64. `Content-Disposition`'s `filename` is the attachment's `filename`, `Content-Type` its `content_type`, and the optional `Content-Description` and `Content-Akrites-Type` its `description` and `type`. |
+| `report` | Required `application/json` report object, with `attachments` omitted. |
+| `attachment` | Optional, repeatable up to 16: one [attachment](#attachments), up to the [body](#limits). The bytes are the file, never base64. `Content-Disposition`'s `filename` is the attachment's `filename`, `Content-Type` its `content_type`, and the optional `Content-Description` and `Content-Akrites-Type` its `description` and `type`. |
 
-Unknown parts, a repeated part other than `attachment`, payload, content type and
-`attachments` fields inside `report` (even empty or null), repeated `Content-Disposition`,
+An `exploit` or `raw` part, even empty, is `field_not_allowed` on its name, as the
+[retired](#core) field in `report` is.
+
+Unknown parts, a repeated part other than `attachment`, an `attachments` field inside
+`report` (even empty or null), repeated `Content-Disposition`,
 `Content-Type`, `Content-Transfer-Encoding`, `Content-Description` or
 `Content-Akrites-Type` headers, and `Content-*` headers other than those and
 `Content-Length` are rejected with `400`, as are `Content-Description` and
@@ -215,22 +293,19 @@ Unknown parts, a repeated part other than `attachment`, payload, content type an
 only in its part's headers. `Content-Transfer-Encoding` may be absent, `binary`, `8bit`,
 or `7bit`; other values, including `base64` and `quoted-printable`, are rejected with
 `400`. The report follows the same strict JSON and metadata validation rules as a JSON
-submission. A nonempty payload part without a `Content-Type` is `missing_field` on
-`exploit_content_type`, `raw_content_type` or `attachments[i].content_type`, rather than
-MIME's `text/plain` default. Empty `exploit` and `raw` parts are treated as absent, along
-with their `Content-Type`; an empty `attachment` part is `missing_field` on
-`attachments[i].data`. A repeated `filename`, or RFC 2231's `filename*`, is rejected with
+submission. An `attachment` part without a `Content-Type` is `missing_field` on
+`attachments[i].content_type`, rather than MIME's `text/plain` default, and an empty one
+is `missing_field` on `attachments[i].data`. A repeated `filename`, or RFC 2231's `filename*`, is rejected with
 `400` on any part; other than an attachment's, filenames are ignored.
 
 An `attachment` part is judged by the same rules as a JSON attachment, Unicode included:
 send a non-ASCII `filename` or `Content-Description` as raw UTF-8, quoting the `filename`
 (`filename="pocé.c"`); RFC 2231 and RFC 2047 encodings are not decoded. `attachments[i]`
-counts `attachment` parts in body order; `exploit` and `raw`, if sent, are filed after
-them. A violation of an attachment's metadata names the `attachments[i]` field, and its
-reason names the header.
+counts `attachment` parts in body order. A violation of an attachment's metadata names the
+`attachments[i]` field, and its reason names the header.
 
-The audit record preserves the report part's JSON, adding markers for nonempty encrypted
-payloads and an `attachments` array for the `attachment` parts, each with its metadata
+The audit record preserves the report part's JSON, adding an `attachments` array for the
+`attachment` parts, each with its metadata
 canonicalized and its marker as `data`. Other part headers and the boundaries are not stored;
 each payload's declared content type is stored with the encrypted payload. Acceptance still requires the report
 and all encrypted payloads to be committed together.
@@ -268,25 +343,38 @@ Link: </v1/submissions/SUB-d2mhenw4iave42m4oe>; rel="monitor"
 }
 ```
 
-Until the Member Portal is available, the receipt is the only handle on your submission —
-keep it. The `Link` header
-([RFC 8288](https://datatracker.ietf.org/doc/html/rfc8288)) carries that submission's status
-URL under `rel="monitor"` ([RFC 5989](https://datatracker.ietf.org/doc/html/rfc5989)) — the
-machine-readable form of the poll hint. The ref is root-relative, so resolve it against the
-host you submitted to. The `message` field says the same thing in prose — prefer the header
-for automation. Poll with backoff rather than in a tight loop.
+To track your submissions before the Member Portal is available, either keep the `receipt`
+from the submission response, or send your own [`external_id`](#external-id) with each
+submission. An `external_id` is treated as an idempotency key: a duplicate submission is
+rejected with a [`409 Conflict`](#409-conflict) naming the original `receipt`.
 
-A report that used a deprecated field is still accepted, and the body adds `warnings`, shaped
-like the [error entries](#errors) without `also_field`:
+Either way, the response's `Link` header ([RFC 8288](https://datatracker.ietf.org/doc/html/rfc8288)),
+marked `rel="monitor"` ([RFC 5989](https://datatracker.ietf.org/doc/html/rfc5989)), is where
+to monitor the submission's status. The ref is root-relative, so resolve it against the host
+you submitted to. The `message` field says the same thing in prose — prefer the header for
+automation. Poll with backoff rather than in a tight loop.
 
+See [`GET /v1/submissions/{receipt}`](#get-v1submissionsreceipt) and
+[`GET /v1/external-ids/{external_id}`](#get-v1external-idsexternal_id) for each way to
+monitor a submission.
+
+### `409 Conflict`
+
+```
+Link: </v1/submissions/SUB-d2mhenw4iave42m4oe>; rel="monitor"
+```
 ```json
-"warnings": [
-  {"code": "deprecated_field", "field": "exploit", "reason": "exploit is deprecated; send it as an attachment instead"}
-]
+{
+  "type": "tag:akrites.dev,2026-07:problem/duplicate-external-id",
+  "title": "Duplicate external_id",
+  "status": 409,
+  "detail": "external_id is already filed; see receipt",
+  "receipt": "SUB-d2mhenw4iave42m4oe"
+}
 ```
 
-`deprecated_field` is the only warning code. Like the error codes, it is never renamed or
-repurposed. The key is absent when there is nothing to warn about.
+Your member already filed a report with this `external_id`, under `receipt`. Nothing from
+this request was stored.
 
 ### Status
 
@@ -303,7 +391,7 @@ repurposed. The key is absent when there is nothing to warn about.
 | `status` | `queued`, `processing`, `done` |
 | `at` | [RFC 3339](https://datatracker.ietf.org/doc/html/rfc3339) timestamp of the last change to `status` |
 
-**Errata:** Dedupe outcome and resulting `vuln` information will be available in a future release.
+**Errata:** Dedupe outcome will be available in a future release.
 
 **Note:** Full status information (when available) requires both the receipt and a submission token from the same member as the original submission.
 
@@ -328,12 +416,13 @@ as `application/problem+json`:
 
 `type` is a URI, but not a link - it is meant to be machine-readable. `title` and `detail` are prose for
 humans. Most errors are `about:blank` — the status is all there is to act on, and `detail` says what
-happened. Two types say more:
+happened. Three types say more:
 
 | `type` | Status | Meaning |
 |---|---|---|
 | `tag:akrites.dev,2026-07:problem/malformed-json` | `400` | The body, or a multipart `report` part, is not exactly one JSON report. `detail` names the kind of failure, and the field for a wrong-typed value. |
 | `tag:akrites.dev,2026-07:problem/validation` | `400`, `413` | The report parsed but failed validation. `errors` lists every violation, not only the first, though one may mask others, such as the entries of a list over its limit. |
+| `tag:akrites.dev,2026-07:problem/duplicate-external-id` | `409` | The [`external_id`](#external-id) is already filed; `receipt` names the report holding it. |
 
 Each entry in `errors`:
 
@@ -349,10 +438,9 @@ The codes are `missing_field`, `field_too_large`, `too_many_items`, `invalid_utf
 `purl_ecosystem_mismatch`, `invalid_reference`, `invalid_commit`, `invalid_upstream_id`,
 `invalid_symbol_line`, `invalid_notify`, `invalid_email`, `invalid_repo_url`,
 `invalid_content_type`, `field_not_allowed`, `structure_too_deep`, `invalid_filename`,
-`invalid_attachment_type`, and `invalid_base64`. An attachment that
+`invalid_attachment_type`, `invalid_base64`, and `invalid_external_id`. An attachment that
 [downloads under the same name](#attachments) as another is `invalid_filename`, with
-`also_field` naming the first, or `exploit` or `raw` for the name a deprecated payload is
-stored under. The size codes (`field_too_large`, `too_many_items`, `structure_too_deep`)
+`also_field` naming the first. The size codes (`field_too_large`, `too_many_items`, `structure_too_deep`)
 make the response a `413`.
 
 A JSON body or multipart `report` part that is not UTF-8 is `malformed-json`.
@@ -362,13 +450,15 @@ A JSON body or multipart `report` part that is not UTF-8 is `malformed-json`.
 | `400` | `malformed-json`, `validation`, a body that could not be read, a malformed multipart body, or malformed `Content-Type` parameters (`about:blank`). |
 | `401` | Missing, unrecognized, expired or revoked [submission token](#submission-token), or one of a disabled member; the response does not say which. The body is not read. |
 | `403` | Cross-origin browser submission (`about:blank`), or a web firewall block (HTML). |
-| `404` | Unknown receipt, or unknown path. |
+| `404` | Unknown receipt, an `external_id` your member has not filed, or unknown path. |
 | `405` | Wrong method for the path; `Allow` names the right one. |
 | `408` | The body did not arrive in time. Nothing was stored; resend. |
-| `413` | Body over the request body limit (`about:blank`), or an oversize field (`validation`). |
+| `409` | [`duplicate-external-id`](#409-conflict). Nothing was stored. |
+| `413` | Body or metadata over its [limit](#limits) (`about:blank`), or an oversize field (`validation`). |
 | `415` | `Content-Type` is neither `application/json` nor `multipart/mixed`. The body is not read. |
 | `429` | Rate limit exceeded. The window is a fixed hour, not a rolling bucket — back off exponentially. |
-| `503` | Pipeline saturated or unavailable, or `exploit`, `raw` or an attachment could not be encrypted. **Your report was not stored.** Honor `Retry-After` and resubmit. A `503` to a status poll says nothing about the report; poll again. |
+| `500` | The report passed validation but could not be encrypted, a fault on our side. **Your report was not stored.** Resubmitting the same report fails the same way. |
+| `503` | Pipeline saturated or unavailable, or an attachment could not be encrypted. **Your report was not stored.** Honor `Retry-After` and resubmit. A `503` to a status poll says nothing about the report; poll again. |
 
 ---
 
@@ -376,17 +466,18 @@ A JSON body or multipart `report` part that is not UTF-8 is `malformed-json`.
 
 | | Limit |
 |---|---|
-| Request body | 3 MiB |
-| `exploit` | 1 MiB |
-| `raw` | 1 MiB |
-| `attachments` | 16, each `data` 1 MiB |
+| Request body | 64 MiB |
+| Metadata | 3 MiB |
+| Each attachment's `data` | the request body |
+| `attachments` | 16 |
+| Upload | 240 s after the token is accepted |
 
-For JSON submissions, payload limits count bytes in the decoded strings, before any
-base64 is decoded and line breaks included, so each base64-encoded payload can carry at
-most 768 KiB of binary data. Multipart payload and attachment limits count each part's
-bytes, allowing the full 1 MiB of binary data. The body limit includes metadata, JSON escaping, and any multipart headers and
-boundaries, so a request can exceed it even when each field is within its limit. It also
-bounds the payloads together: a report cannot carry 16 attachments of 1 MiB.
+Payloads may fill the body. Everything else counts as metadata: the other fields, keys,
+JSON punctuation and whitespace, and any multipart headers, boundaries and `report` part. A
+JSON payload's size is its string as sent, quotes and base64 included, so JSON carries
+under 48 MiB of binary; send large files as [multipart](#multipart-submissions) parts,
+which are the bytes themselves. A full 64 MiB body needs about 2.2 Mbps to arrive in time;
+one that does not gets `408`.
 
 ---
 
@@ -413,6 +504,13 @@ Then poll:
 
 ```bash
 curl -sS "https://intake.tap.akrites.dev/v1/submissions/${RECEIPT}"
+```
+
+Or, for a report filed with an `external_id`:
+
+```bash
+curl -sS https://intake.tap.akrites.dev/v1/external-ids/scan-2026-10-16-0042 \
+  -H "Authorization: Bearer $TAP_SUBMISSION_TOKEN"
 ```
 
 ---
