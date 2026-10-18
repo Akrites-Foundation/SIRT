@@ -54,17 +54,23 @@ Command-line clients do not need to send an `Origin` header.
 
 ### `GET /v1/submissions/{receipt}`
 
-The status endpoint. Returns the latest status change, e.g. `{"at":"2026-09-25T16:00:13Z","receipt":"SUB-wfd5rx5u64ffq5e2pm","status":"done"}`. **The receipt is the proof-of-submission** — holding one is what
-lets a submission be read via this endpoint. Anyone who has it can read the status. A receipt that
-does not exist returns `404`.
+The status endpoint. Returns the latest status change, e.g.
+`{"at":"2026-09-25T16:00:13Z","receipt":"SUB-wfd5rx5u64ffq5e2pm","status":"done"}`.
+**The receipt is a proof-of-submission** — holding one is what lets a
+submission be read via this endpoint. Anyone who has it can read the status.
+A receipt that does not exist returns `404`.
+
+Members will also be able to get report status information from the Member Portal when it is
+available, without the need for receipts.
 
 ### `GET /v1/external-ids/{external_id}`
 
 The same status, found by the [`external_id`](#external-id) your member filed the report
-under, with the `receipt` to poll from then on. These external IDs are unique to your member account.
+under. These external IDs are unique to your member account. The response carries the
+`receipt`, so later polls can use the status endpoint without a token.
 
 Members will also be able to get report status information from the Member Portal when it is
-available, without the need for receipts.
+available, without the need for external IDs.
 
 ---
 
