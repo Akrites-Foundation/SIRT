@@ -27,6 +27,8 @@ The first one matters most: we will not ask for your package name, and we will n
 
 The rest follow from it. We won't publish to your namespace, so nothing we build can turn up as a new version of your package. We won't use your project's name or logo; whatever we publish is labelled as ours and points back at yours. We'll credit you in every advisory and every handoff. And if you come back, you get your project back, on the terms below.
 
+Akrites will not solicit or accept bug bounty payments for any vulnerabilities it reports to upstream projects or organizations, even where those reports qualify for an existing bounty program.
+
 ---
 
 ## If we can't reach you
