@@ -1,10 +1,10 @@
-# Akrites SIRT Coordinated Vulnerability Disclosure (CVD) Policy - DRAFT v0.6
+# Akrites SIRT Coordinated Vulnerability Disclosure (CVD) Policy - v1.0
 
-**Status:** Draft v0.6
+**Status:** Board-approved v1.0
 **Owner:** Akrites SIRT (Security Incident Response Team)
 **Primary contact:** SIRT@Akrites.dev
 **Canonical URL:** https://sirt.akrites.dev/security/policy
-**Last updated:** 2026-08-24
+**Last updated:** 2026-10-20
 
 > **Naming:** **Akrites SIRT** — the Security Incident Response Team hosted by the
 > Akrites Foundation — is the standard name used throughout this document.
@@ -564,6 +564,7 @@ SIRT@Akrites.dev.
 | 0.4     | 2026-08-24 | Feedback pass: added coordinator role (§6), actively-exploited policy (§9), disputes/appeals (§15), intake/membership (§12); aligned 30-day embargo default and phased TLP; harmonized 9-phase lifecycle with the 4-stage pipeline (dedup made explicit, numbering fixed, mapping table); added CSAF 2.0 / VEX; consolidated naming to "Akrites SIRT" and contact to SIRT@Akrites.dev; fixed Read-in Tier Policy link. |
 | 0.5     | 2026-09-30 | Per discussions held at Board meeting on September 22. Updates surrounding TLP & Lifecycle Mapping, Embargo and Disclosure Timing, and Attribution Preferences |
 | 0.6     | 2026-10-13 | Updates to deafult time to PD |
+| 1.0     | 2026-10-20 | Board approved with minor notes from GKunz. |
 
 
 ## 17. References
