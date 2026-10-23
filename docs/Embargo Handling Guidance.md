@@ -1,4 +1,4 @@
-# Akrites SIRT — Embargo Handling Guidance - DRAFT 0.2
+# Akrites SIRT — Embargo Handling Guidance - DRAFT 0.3
 
 **Status:** Proposal / Draft for review
 
@@ -20,7 +20,7 @@ It exists to give the SIRT a predictable, defensible default while making one th
 
 ## 2. Core principle: the default is a starting point, not the rule
 
-The SIRT operates a **default embargo of 30 calendar days** from the point a finding is validated and ownership is assigned (end of the *Deduplicate & validate* phase). This gives a consistent planning baseline for Finders, members, and downstream stakeholders when no other timeline applies.
+The SIRT proposes a standard upstream embargo of 15 business days from the point a finding is validated and handed off to upstream maintainers. Accounting for automated intake, fix development, and hand-off SLOs, the total target time to Public Disclosure (PD) is < 17 business days for Low/Medium severity, < 21 business days for High severity, and < 24 business days for Critical severity.
 
 **The default yields to the upstream project in every case where the project has its own policy.** The order of precedence the SIRT follows is:
 
@@ -119,7 +119,7 @@ Some projects run scheduled release trains rather than per-issue embargoes — e
 5. **TLP throughout.** The embargo is enforced technically and procedurally via TLP 2.0 (TLP:RED at intake, TLP:AMBER+STRICT for case/patch material) and least-privilege read-in, consistent with the Akrites confidentiality framework.
 6. **Set Finder expectations at intake.** Confirm the Finder understands the timeline is governed by the project/list (§4.1), that duplicate reports may exist and alter the window (§4.2), and classify the report's **embargo eligibility** based on the tooling used — reports developed with public LLMs are treated as having **no embargo available** (§4.3).
 7. **Handle duplicates transparently.** When deduplication surfaces overlapping reports, inform the affected reporters that a duplicate exists (without leaking another Finder's confidential detail), and account for any embargo already set — or foreclosed — by a parallel discloser or Coordinator.
-8. **Unmaintained / unresponsive projects.** Where no policy and no responsive maintainer exist, the 30-day default applies as the working clock. If the project remains unresponsive, escalate per the intake process (new steward, or — with TOC approval and time-bounding — a hardened fork / full disclosure), with advisories and CVEs issued through the Linux Foundation's CNA authority.  This will be detailed in additional guideance for the SIRT and members.
+8. **Unmaintained / unresponsive projects.** Where no policy and no responsive maintainer exist, the 15-business-day proposed embargo applies as the working clock. If the project remains unresponsive, escalate per the intake process (new steward, or — with TOC approval and time-bounding — a hardened fork / full disclosure), with advisories and CVEs issued through the Linux Foundation's CNA authority.  This will be detailed in additional guideance for the SIRT and members.
 9. **Document deviations.** Any embargo longer than 30 days (only expected for cross-vendor hardware/microarchitectural issues) requires explicit rationale and TOC awareness.
 
 ## 7. Summary table
@@ -131,11 +131,11 @@ Some projects run scheduled release trains rather than per-issue embargoes — e
 | OpenSSL | ~7-day prenotify; ≤~1 month total | Support short prenotification cadence |
 | Fixed-cadence projects | Project-defined (e.g., 72h, quarterly) | Align PD to project's release window |
 | Project with a published policy (general) | As published | Defer to it |
-| No policy / unmaintained project | **30 days (SIRT default)** | Use default; escalate if unresponsive |
+| No policy / unmaintained project | **15 business days (SIRT proposed embargo)** | Use 15 bd proposed embargo (< 17–24 bd total PD target); escalate if unresponsive |
 | Finder's preferred window | N/A — does not govern | Align to project/list; Finder plans accordingly (§4.1) |
 | Duplicate / parallel disclosure | Set (or foreclosed) by another party | Inform both reporters; work within any existing embargo (§4.2) |
 | Report developed with public LLM tooling | **None — assume exposed** | Handle on accelerated / assume-exposed basis (§4.3) |
 
 ---
 
-*This is a draft proposal for review by the SIRT and TOC. Referenced upstream policies are summarized from their published sources and are subject to change; verify the live policy for each project when handling a case.*
+*This is a draft proposal for review by the Akrites SIRT. Referenced upstream policies are summarized from their published sources and are subject to change; verify the live policy for each project when handling a case.*
