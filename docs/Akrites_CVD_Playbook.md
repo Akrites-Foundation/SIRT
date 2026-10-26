@@ -69,7 +69,7 @@ The confirmed issue is assessed for severity and urgency, and resources are allo
 
 ### Phase 4 — Read-in & Embargo
 The people who will work the case are read in, and the embargo and target public-disclosure (PD) date are set.
-- **Coordinator:** read in only those with a need to know who can analyze, patch, test, or stage the fix, at the least-privileged tier sufficient for their role; issue each a read-in notice; propose an embargo. Default to **30 days, deferring to the project's own policy**, with a defined path to extend for good cause.
+- **Coordinator:** read in only those with a need to know who can analyze, patch, test, or stage the fix, at the least-privileged tier sufficient for their role; issue each a read-in notice; propose an embargo. Offer a standard **15-business-day proposed embargo** (targeting total time to Public Disclosure of < 17 bd Low/Med, < 21 bd High, < 24 bd Critical), deferring to the project's own policy, with a defined path to extend for good cause.
 - **Maintainer:** the project holds final authority over the PD date; the embargo defers to its policy where one exists.
 - **Finder:** agree to the embargo and settle attribution preferences (including co-finder handling and declining credit).
 - **Consumer (distribution/staging parties):** read in late and narrowly, only as needed to pre-position a fix.
