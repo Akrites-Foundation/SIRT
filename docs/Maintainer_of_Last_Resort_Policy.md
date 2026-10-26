@@ -1,7 +1,7 @@
 # Akrites SIRT Maintainer of Last Resort Policy and Guidelines
 
 **Status:** Consolidated Official Policy & Guidelines  
-**Applies to:** Akrites SIRT, Working Groups, Technical Oversight Committee (TOC), and Upstream Maintainers  
+**Applies to:** Akrites SIRT, Working Groups, and Upstream Maintainers  
 **Companion / Precedence Note:** This document combines the formal operational framework for Maintainer of Last Resort (MoLR) actions with the plain-language maintainer commitments (*"What Akrites Will and Won't Do to Your Project"*). The plain-language commitments in Part I constitute the non-negotiable floor for all SIRT actions and take precedence over technical operations.
 
 ---
@@ -107,7 +107,6 @@ Track B requires a signed entry test confirming all six criteria:
 6. **Per-CVE Approval**: Approval is granted specifically for one CVE ID.
 
 ### 5.2 Approval Authority & Recusal
-* **TOC Approval**: Formal approval by the Technical Oversight Committee (TOC) is required. (Interim: 2 named approvers until TOC is fully seated).
 * **Mandatory Recusal**: Any decision-maker with a commercial, personal, or organizational dependency on the affected package must recuse themselves from voting.
 
 ### 5.3 The Artifact: Patch Series on a Pinned Commit
