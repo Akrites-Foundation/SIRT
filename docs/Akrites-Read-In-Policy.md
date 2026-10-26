@@ -1,6 +1,6 @@
 # Akrites Read-In Policy
 
-**Status:** DRAFT v0.4 — for TOC / Governing Board review - 2026-09-23
+**Status:** DRAFT v0.5 — for Governing Board review
 **Supersedes:** *Akrites Read-In Process — Working Groups & Disclosures* (DRAFT v0.1) and *Akrites Read-In Tier Policy*. On ratification, both source documents are retired and this document is the single authoritative reference.
 **Applies to:** All Akrites vulnerability Working Groups (WGs) and all pre-disclosure cases handled by the Akrites SIRT.
 
@@ -232,7 +232,7 @@ Criteria for "active member" will be defined as the SIRT works real cases (Appen
 
 **Severity changes.** If the score rises, read-in may widen or accelerate; if it falls, it may narrow or slow. Either way the change is recorded with rationale, and the embargo and PD date are re-evaluated.
 
-**Extension requests.** Any party may request an embargo or coordination-window extension through the SIRT. The default embargo is **30 days**, always deferring to the upstream project's own policy, and may be extended for the greater good. The SIRT decides in consultation with the Finder and the maintainer.
+**Extension requests.** Any party may request an embargo or coordination-window extension through the SIRT. The proposed upstream embargo is **15 business days** (total target time to PD of < 17 bd Low/Med, < 21 bd High, < 24 bd Critical), always deferring to the upstream project's own policy, and may be extended for the greater good. The SIRT decides in consultation with the Finder and the maintainer.
 
 **Anti-gaming.** Every escalation requires a stated justification and is logged. Severity re-scores are documented as deviation notices. **No party may escalate solely to gain earlier or broader access.** Escalation never waives a gate — it may change the tier or timing of an admitted person, or prompt a fresh nomination, but a new person still clears §2 and §3.
 
