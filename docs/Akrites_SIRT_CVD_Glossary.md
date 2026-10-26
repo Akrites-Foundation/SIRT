@@ -35,7 +35,7 @@ Entries within each section are ordered alphabetically. See **[Contributing to t
 | **Blameless postmortem** | A no-fault review process used for hard cases such as a disputed finding, an unresponsive maintainer, or a rejected patch. |
 | **CVD** | Coordinated Vulnerability Disclosure — the practice of privately reporting a flaw, coordinating a fix under embargo, and disclosing publicly in a synchronized way. |
 | **Deviation notice** | A published record where Akrites' assessment (e.g., severity or root cause) differs from an existing public score — sharing the evidence rather than disputing the CNA. |
-| **Embargo** | The agreed period of confidentiality before public disclosure, during which only read-in parties know of the issue. Akrites' working default is 30 days, deferring to the upstream project's own policy. |
+| **Embargo** | The agreed period of confidentiality before public disclosure, during which only read-in parties know of the issue. Akrites' proposed upstream embargo is 15 business days (leading to a total target time to PD of < 17 bd Low/Med, < 21 bd High, < 24 bd Critical), deferring to the upstream project's own policy. |
 | **Finder / Co-finder** | The party (or parties) who discovered and reported the vulnerability; co-finder rules govern shared attribution. |
 | **IR** | Incident Response. |
 | **Least privilege** | The principle that access is scoped to only what a role needs; members see only the WGs they belong to, and only SIRT staff have cross-cutting visibility. |
