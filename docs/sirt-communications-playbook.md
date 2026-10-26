@@ -568,8 +568,7 @@ reporting is relevant. Defer to upstream process where one exists.
 
 ## Play 12 — Embargo extension request / negotiation
 
-**When to use:** The fix needs more time than the default window (guideline: 30 days from owner
-confirmation; Akrites preference is shorter, but 30 is the negotiating default).
+**When to use:** The fix needs more time than the default window (guideline: 15 business days proposed upstream embargo; total target time to PD of < 17 bd Low/Med, < 21 bd High, < 24 bd Critical).
 **Audience:** Finder, maintainer, and any read-in parties affected by the date.
 **Channel & TLP:** Case channel; TLP:AMBER+STRICT.
 
@@ -905,7 +904,7 @@ isolation.
 
 These shape the templates above and are still open from the F2F:
 
-- Confirm the **default embargo window** (30-day guideline) and the standard **extension** principle.
+- Confirm the **proposed embargo window** (15 business days / 17–24 bd total PD target) and the standard **extension** principle.
 - Define the **co-finder attribution cutoff** (referenced in Plays 7 and 13).
 - Ratify the **read-in delegation** model and whether maintainers may veto read-ins.
 - Decide **MoLR/fork** authority and triggers (Play 15).
