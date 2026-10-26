@@ -27,8 +27,7 @@ procedure; and the leak/break classification and response procedure.
   PD can be **intentional** (our coordinated release) or **unintentional** (a leak/break). Once
   information is genuinely public, it is public regardless of how it got there.
 - **Embargo / confidentiality arrangement:** an agreement that named parties will hold vulnerability
-  information privately until an agreed time or trigger. Default working window is 30 days from owner
-  confirmation, negotiable and deferring to upstream (see Embargo Handling Guidance).
+  information privately until an agreed time or trigger. Default proposed upstream embargo is **15 business days (bd)** from owner hand-off (targeting total time to PD of < 17 bd Low/Med, < 21 bd High, < 24 bd Critical), negotiable and deferring to upstream (see Embargo Handling Guidance).
 - **Coordinated Release Date (CRD):** the pre-agreed date/time for intentional PD, set when the fix
   is available and an identifier is assigned.
 - **Tiered / read-in sharing:** sharing with specific trusted parties under a confidentiality
