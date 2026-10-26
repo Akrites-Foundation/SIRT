@@ -1,4 +1,4 @@
-# Akrites SIRT Intake Runbook (one page) - DRAFT v0.1
+# Akrites SIRT Intake Runbook (one page) - DRAFT v0.2
 
 Step-by-step actions for the responder on duty, keyed to the nine-phase
 lifecycle in the [Akrites CVD Policy](docs/Akrites_CVD_Policy.md).
@@ -30,8 +30,7 @@ Discover → Triage → Validate → Coordination → Patch → Test → Documen
 
 ### 4. Coordination — embargo & disclosure date
 - Identify read-in **Collaborators** (need-to-know only); formally read them in following `docs/Akrites-Read-In-Policy.md` and verify TLP:RED acknowledgment.
-- Decide whether an embargo is required; agree the **Public Disclosure (PD)**
-  date with the Finder. Default planning window: **up to 90 days**; aim shorter.
+- Decide whether an embargo is required; agree the **Public Disclosure (PD)** date with the Finder. Proposed upstream embargo: 15 business days (total target time to PD: **< 17 bd** Low/Med, **< 21 bd** High, **< 24 bd** Critical).
 - Prepare the **leak contingency** (Template 5): what to tell Consumers if
   details surface early.
 
