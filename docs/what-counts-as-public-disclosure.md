@@ -1,7 +1,7 @@
 # What Counts as Public Disclosure — Process & Guidelines
 
 **Owner:** Akrites SIRT
-**Status:** Draft for TOC / Board review
+**Status:** Draft for Board review
 **Tracking:** [Akrites-Foundation/SIRT #23](https://github.com/Akrites-Foundation/SIRT/issues/23)
 **Audience:** Akrites members, WGs, SIRT staff, and ecosystem participants
 **Companion docs:** `sirt-communications-playbook.md` (Play 5 public disclosure, Play 6 embargo break), `Embargo Handling Guidance.md`, `acknowledgements-and-attribution.md`
@@ -262,7 +262,7 @@ flowchart TD
 
 ---
 
-## 7. Open items for TOC / Board
+## 7. Open items for Board
 
 - **Ratify the PD definition and bright-line test** (§2) and add key terms to the repo glossary
   (per the F2F action to define disclosure on the repo).
