@@ -1,6 +1,6 @@
-# Akrites SIRT Coordinated Vulnerability Disclosure (CVD) Policy - v1.1
+# Akrites SIRT Coordinated Vulnerability Disclosure (CVD) Policy - v1.2
 
-**Status:** Board-approved v1.1
+**Status:** Board-approved v1.2 - pending Governing Board approval (last Board-approved version: v1.0, 2026-10-20)
 **Owner:** Akrites SIRT (Security Incident Response Team)
 **Primary contact:** SIRT@Akrites.dev
 **Canonical URL:** https://sirt.akrites.dev/security/policy
@@ -124,7 +124,7 @@ that a single CVE ID is used for the flaw.
   patch, test, score, translate, or document a vulnerability.
 - **AI-use disclosure** — A capability-level statement, published for both the
   Finder and the Akrites SIRT, of whether and how AI tooling was used in a case.
-  See Section 13 and the [AI and LLM Use Disclosure Policy](docs/ai-use-disclosure.md).
+  See Section 13 and the [AI and LLM Use Disclosure Policy](ai-use-disclosure.md).
 
 ## 4. How to report a vulnerability
 
@@ -133,11 +133,9 @@ for you.
 
 ### 4.1 Preferred: GitHub private vulnerability reporting
 
-Whenever the affected project is on GitHub, **please use GitHub's private
-vulnerability reporting** ("Report a vulnerability" on the repository's
-**Security** tab). This keeps the report, the discussion, and any temporary
-private fork in one place, and lets us add you as a collaborator on the draft
-advisory so you can stay involved through remediation.
+If the affected project has its own private vulnerability reporting, you should report there directly; that report goes to the project's maintainers, not to Akrites. If you would like Akrites to coordinate, tell us at SIRT@Akrites.dev and reference the project's advisory.
+
+To report to the Akrites SIRT directly, use private vulnerability reporting on the SIRT repository: https://github.com/Akrites-Foundation/SIRT/security/advisories/new. This keeps the report and discussion private and lets us add you as a collaborator on the draft advisory so you can stay involved through remediation.
 
 ### 4.2 Alternative: encrypted email
 
@@ -175,20 +173,17 @@ rollout phase — see Section 12).
 ## 5. Our commitments to you
 
 - **Acknowledge receipt:** within **2 business days**.
-- **Triage and validate:**, automated intake < 2 hours, with initial SIRT assessment within **10 business days**, and confirm whether we consider the report a
+- **Triage and validate:**, automated intake within 2 hours, and an initial SIRT assessment within **10 business days** confirming whether we consider the report a
   vulnerability, a non-security bug, or expected behavior. Where the issue is
-  within the scope of the Akrites SIRT CNA, we reserve a CVE ID and publish and
+  within the scope of the the authoritative CNA, we reserve a CVE ID and publish and
   maintain the CVE Record in due time; otherwise we coordinate with the
   authoritative CNA (see Section 2).
-- **Target Public Dsiclosure:** < 17 bd (Low/Medium), < 21 bd (High), or < 24 bd (Critical), incorporating a 15-business-day proposed embargo
+- **Target Public Dsiclosure:** ≤ 17 business days (Low/Medium), ≤ 21 bd (High), or ≤ 24 bd (Critical) from receipt, incorporating a 15-business-day proposed upstream embargo (see Section 8)
 - **Communicate continuously:** — we maintain an open dialogue, give status
   updates, and are transparent about anything that may delay resolution.
-- **Respect confidentiality:** — we handle case material under TLP 2.0, starting
-  at **TLP:RED** at intake and tightening to need-to-know, **TLP:AMBER+STRICT**
-  during SIRT coordination, **TLP:AMBER** as we broaden internal coordination, reclassified to **TLP:CLEAR** at the agreed public date.
-  We share only with those who need to know.
-- **Credit you:** — by default we attribute findings to the Finder; we will
-  honor requests for anonymity. We do not require nor can we provide an NDA.
+- **Respect confidentiality:** — we handle case material under TLP 2.0: **TLP:RED** at intake, **TLP:AMBER+STRICT** during verification and remediation, **TLP:AMBER** for downstream staging, and **TLP:CLEAR** at the agreed public date (see the table in Section 8). We share only with those who need to know.
+- **Credit you:** — by default we credit the Finder under the name or handle they reported with, confirm the credit line with them before disclosure, and honor any request for anonymity (see Section 11).
+- **No NDA:** — we do not ask Finders to sign a non-disclosure agreement, and we cannot sign one on behalf of an Owner. Collaborators who are read in accept a confidentiality and embargo acknowledgement (the Read-In Notice).
 - **Be transparent about AI use:** — every advisory states, for both you and the
   Akrites SIRT, whether and how AI/LLM tooling was used, at a capability level.
   See Section 13.
@@ -249,13 +244,13 @@ In practice this means:
   scaled to severity and patch complexity), including the CVE ID, description,
   affected versions, how the patch will be made available, and the PD date. The
   tiered pre-disclosure model is described in the
-  [Read-in Tier Policy](docs/Read-in%20Tier%20Policy.md).
+  [Read-In Policy](Akrites-Read-In-Policy.md).
 
 The operational detail for these activities during the Coordination phase —
 determining the governing timeline, setting PD to the shortest applicable
 window, setting Finder expectations at intake, and handling duplicates
 transparently — is specified in the
-[Embargo Handling Guidance](docs/Embargo%20Handling%20Guidance.md) (§6, Operating
+[Embargo Handling Guidance](Embargo%20Handling%20Guidance.md) (§6, Operating
 rules for the SIRT), incorporated here by reference.
 
 ## 7. The vulnerability lifecycle
@@ -281,7 +276,7 @@ Discover → Deduplicate & Triage → Validate → Coordination → Patch → Te
 3. **Validate** — The finding is confirmed or refuted and reproduced, and its
    severity and root cause are enriched (CWE, CVSS, blast radius). Additional
    parties may be brought in to assist with review. A CVE ID is reserved for the
-   issue if it is within the scope of the Akrites SIRT CNA.
+   issue if it is within the scope of the the authoritative CNA.
 
 4. **Coordination** — Trusted Collaborators with a need-to-know are read in to
    assist with remediation, distribution, and disclosure. The team:
@@ -292,13 +287,13 @@ Discover → Deduplicate & Triage → Validate → Coordination → Patch → Te
    deciding what can be shared with Consumers to protect themselves if details
    leak before PD.
 
-6. **Patch** — The Owner and read-in Collaborators determine the best fix and
+5. **Patch** — The Owner and read-in Collaborators determine the best fix and
    create a patch or work-around that eliminates the root cause.
 
-7. **Test** — The patch is run through regression, smoke, and other testing to
+6. **Test** — The patch is run through regression, smoke, and other testing to
    confirm the vulnerability is resolved and no new regressions are introduced.
 
-8. **Document** — The vulnerability is documented for downstream consumption:
+7. **Document** — The vulnerability is documented for downstream consumption:
    a vulnerability identifier (CVE), the affected package/versions, the
    weakness/root cause (CWE), a severity estimate (CVSS v4.0, or CVSS v3.1 for
    legacy comparison), the actions Consumers should take, where to obtain the
@@ -306,7 +301,7 @@ Discover → Deduplicate & Triage → Validate → Coordination → Patch → Te
    relevant information. Optional collateral such as blogs, FAQs, or Q&As may
    also be produced.
 
-9. **Distribute** — The patch and related documentation are staged so that
+8. **Distribute** — The patch and related documentation are staged so that
    Consumers gain access to the upstream remediation at the same time (at PD)
    from a public repository (preferably the upstream project's delivery channel).
    Documentation is shared with read-in Collaborators so they can prepare
@@ -314,15 +309,15 @@ Discover → Deduplicate & Triage → Validate → Coordination → Patch → Te
    includes Security Advisory texts, patches, work-arounds and/or mitigations,
    or other collateral the Maintainer and Finder deem relevant.
 
-10. **Disclose** — On the PD date, the vulnerability is publicly disclosed, the
+9. **Disclose** — On the PD date, the vulnerability is publicly disclosed, the
    patch and all associated documentation are released, and the CVE Record is
-   published to the CVE Program's database (by the Akrites SIRT CNA, or by the
+   published to the CVE Program's database (by the the authoritative CNA, or by the
    authoritative CNA when the issue is outside the SIRT's scope).
 
--  Internal processing time – The time it takes Akrites to assess, deduplicate, enrich, and coordinate the finding.
--  Upstream disclosure period – The time period provided to the affected project after Akrites formally engages with it.
+-  **Internal processing time** — the time Akrites takes to assess, deduplicate, enrich, and coordinate the finding.
+-  **Upstream disclosure period** — the time provided to the affected project after Akrites formally engages with it (default 15 business days).
 
-The finder should be explicitly informed when the disclosure clock starts.
+The SIRT tells the Finder, in writing, the date the upstream disclosure period starts.
 
 ### Lifecycle phases mapped to the operational pipeline
 
@@ -334,25 +329,27 @@ processing pipeline:
 | 1. Deduplication (intake) | 1 Discover · 2 Deduplicate & Triage |
 | 2. Enrichment (CWE, CVSS, blast radius; validate & assign ownership) | 3 Validate |
 | 3. Fix development | 4 Coordination · 5 Patch · 6 Test |
-| 4. Disclosure management (AVID) | 7 Document · 8 Distribute · 9 Disclose |
+| 4. Disclosure management | 7 Document · 8 Distribute · 9 Disclose |
 
 ## 8. Embargo and confidentiality handling
 
 This is where the "open process, private data" balance is enforced.
 
-- **Traffic Light Protocol (TLP 2.0).** Case material follows a phased TLP model
-  rather than a single blanket label, so confidentiality scales appropriately as
-  collaboration needs grow:
-  - **TLP:RED at intake** — The initial report is held for named recipients only.
-  - **TLP:AMBER+STRICT Internal SIRT coordination** — Internal SIRT handling: initial triage, deduplication, enrichment and initial verification.
-  - **TLP:AMBER during patch development** — Once the report leaves the automated pipeline and enters a human-gated stage requiring coordination, it is considered an   open case. Once a case is opened and read-in Collaborators are engaged, case and patch material is shareable on a
-    need-to-know basis within participating organizations (excluding clients and
-    third parties), enabling the collaboration a fix requires.
-  - **TLP:CLEAR at Public Disclosure** — material is reclassified for open
-    sharing at PD.
+- **Traffic Light Protocol (TLP 2.0).** Case material follows a phased TLP model so
+  confidentiality scales with collaboration needs. Labels have their
+  [FIRST TLP 2.0](https://www.first.org/tlp/) meanings:
+
+  | Phase | Who has access | TLP |
+  | --- | --- | --- |
+  | Intake & automated pipeline (submission, deduplication, enrichment, preliminary triage) | Finder and SIRT (Tier 0) | **TLP:RED** — named recipients only |
+  | Verification & remediation (human verification, patch development and testing, upstream maintainer engagement) | Read-in Tiers 1, 1.5 and 2 | **TLP:AMBER+STRICT** — recipient organization only, need-to-know |
+  | Downstream staging (second-order distributors, international coordinators) | Read-in Tiers 3 and 3.5 | **TLP:AMBER** — recipient organization and its clients, need-to-know; no onward sharing to other organizations |
+  | Public Disclosure | Everyone | **TLP:CLEAR** |
+
   Material is never redistributed beyond what its current TLP label permits
-  without the Owner's explicit consent. This mirrors the enforcement model in the
-  [Embargo Handling Guidance](docs/Embargo%20Handling%20Guidance.md) (§6).
+  without the Owner's explicit consent. Tier definitions are in the
+  [Read-In Policy](Akrites-Read-In-Policy.md).
+
 - **Need-to-know and read-in.** Access to embargoed details is restricted to the
   individuals required to resolve the issue. Collaborators are formally read in
   and are expected to maintain confidentiality until PD.
@@ -364,14 +361,15 @@ This is where the "open process, private data" balance is enforced.
   **no embargo available** and is handled on an accelerated / assume-exposed
   basis; parties who need to preserve the embargo option must use private,
   confidential tooling. This is why AI use is captured at intake (Section 4.3).
-  See the [Embargo Handling Guidance](docs/Embargo%20Handling%20Guidance.md) §4.3.
-- **Embargo duration.** The SIRT's default upstream embargo is 15 business days (bd). Accounting for intake/de-deuplication/enrichment, severity-based fix development and upstream hand-off, the total target window from report receipt to Public Disclosure (PD) is:
+  See the [Embargo Handling Guidance](Embargo%20Handling%20Guidance.md) §4.3.
+- **Embargo duration.** The SIRT's default upstream embargo is 15 business days (bd). Accounting for intake/dedeuplication/enrichment, severity-based fix development and upstream hand-off, the total target window from report receipt to Public Disclosure (PD) is:
   - Severity-Tiered Total Time to Public Disclosure (PD):
-    - Low / Medium Severity: Total time to PD is **< 17 business days** (Intake/Enrichment < 2 hours + SIRT Upstream hand-off ≤ 2 bd + Fix Development & Coordinated Disclosure 15 bd)
-    - High Severity: Total time to PD is **< 21 business days** (Intake/Enrichment < 2 hours + Fix Development ≤ 4 bd + SIRT Upstream hand-off ≤ 2 bd + Coordinated Disclosure 15 bd)
-    - Critical Severity: Total time to PD is **< 24 business days** (Intake/Enrichment < 2 hours + Fix Development ≤ 7 bd + SIRT Upstream hand-off ≤ 2 bd + Coordinated Disclosure 15 bd)
+    - Low / Medium Severity: Total time to PD is **≤ 17 business days** (Intake/Enrichment < 2 hours + SIRT Upstream hand-off ≤ 2 bd + Fix Development & Coordinated Disclosure 15 bd)
+    - High Severity: Total time to PD is **≤ 21 business days** (Intake/Enrichment < 2 hours + Fix Development ≤ 4 bd + SIRT Upstream hand-off ≤ 2 bd + Coordinated Disclosure 15 bd)
+    - Critical Severity: Total time to PD is **≤ 24 business days** (Intake/Enrichment < 2 hours + Fix Development ≤ 7 bd + SIRT Upstream hand-off ≤ 2 bd + Coordinated Disclosure 15 bd)
+  *The longer totals for High and Critical reflect SIRT fix development *before* hand-off, so the upstream maintainer receives a validated patch; they do not lengthen the 15-bd upstream window. Actively exploited or exposed issues follow Section 9 instead.
 - Akrites SIRT will always **defer to the upstream project's own disclosure policy** where one exists. The disclosure timeline may be extended when additional time is reasonably required to develop and coordinate a fix. The governing timeline is set by the precedence hierarchy in the
-  [Embargo Handling Guidance](docs/Embargo%20Handling%20Guidance.md): a project's
+  [Embargo Handling Guidance](Embargo%20Handling%20Guidance.md): a project's
   published policy or a coordinating list's cap takes precedence over the
   default, and where multiple parties are involved the tightest binding
   constraint governs the synchronized window. For reference, industry norms vary
@@ -379,19 +377,11 @@ This is where the "open process, private data" balance is enforced.
   commonly uses 45 days, and 90 days is the longest default entertained by major
   programs; the SIRT treats **90 days as an industry outer bound, not its own
   target.** Every day under embargo is a day of risk, so shorter is better when
-  feasible. Any embargo beyond 21 days requires explicit rationale and TOC
-  awareness (EHG §6).
+  feasible. Any Public Disclosure later than the severity target above requires explicit written rationale and Governing Board awareness (EHG §6).
 - **Leak contingency.** If an embargo breaks — for example the issue is
   published or exploited in the wild before PD — the SIRT may accelerate
   disclosure and publish whatever guidance helps Consumers protect themselves,
   even if a full fix is not yet ready (see Section 9).
-
-| **Lifecycle stage** | **Description** | **Applicable TLP** |
-| --- | --- | --- |
-| 1. Intake & Automated Pipeline | Initial submission, automated deduplication, enrichment, and preliminary triage. Restricted to Finder and SIRT. | TLP:RED |
-| 2. Active Case (Human Verification) | Human-gated verification requiring SME/maintainer read-in and triage. | TLP:AMBER-STRICT |
-| 3. Broader Internal Coordination | "Multi-party coordination, fix preparation, and downstream patch verification. | TLP:AMBER |
-| 4. Public Disclosure | Advisory publication and upstream release. | TLP:CLEAR |
 
 ## 9. Actively exploited vulnerabilities
 
@@ -414,7 +404,7 @@ CISA's Known Exploited Vulnerabilities (KEV) catalog — it moves to an
   embargo without unanimous agreement, consistent with the harm-reduction
   principle and the leak-contingency handling in Section 8.
 - **Escalation.** Disputes over accelerating a timeline follow the dispute and
-  appeals path in Section 15, with the Board as the escalation point.
+  appeals path in Section 15, with the Governing Board as the final escalation point.
 
 This accelerated track overrides the default and project-deferred timelines in
 Section 8; it does not override a shorter timeline a project or coordinating list
@@ -425,7 +415,7 @@ has already set.
 - **Severity** is assessed with **CVSS v4.0** (current standard); **CVSS v3.1**
   may be included for comparison with legacy records.
 - **Root cause** is categorized using **CWE**.
-- **CVE IDs** are reserved by the Akrites SIRT CNA when the vulnerability is
+- **CVE IDs** are reserved by the the authoritative CNA when the vulnerability is
   within its scope; otherwise the SIRT defers reservation to the authoritative
   CNA (for example, when the affected project is itself a CNA). See Section 2.
 - **Machine-readable advisories.** Where possible the SIRT publishes structured,
@@ -446,8 +436,8 @@ publishing the Security Advisory), releases the patched version(s), and
 references the CVE ID(s). The SIRT case coordinator is accountable for
 executing publication. High-impact issues are also announced to the relevant
 community and security-announce channels. Where it does not aid attackers,
-exploit detail may be briefly withheld to give Consumers time to update. Finders
-are credited by default unless they request otherwise. Finders may designate their attribution preferences upon submission via API or portal settings: (a) Explicit Organizational Attribution, (b) Generic Akrites Attribution ('Discovered via Akrites SIRT'), or (c) Full Anonymity. Every advisory also
+exploit detail may be briefly withheld to give Consumers time to update. Finders are credited by default under the name or handle they reported with, unless they request otherwise. At intake (and again before PD) a Finder may choose: (a) **named** — individual and, if they wish, organization; (b) **clearinghouse** — the reporting organization only; or (c) **anonymous** — no Finder credit, with the Akrites SIRT credited as coordinator. If the SIRT cannot confirm the choice before PD, it uses the name or handle as submitted and never names an organization without consent. The wording of each option is in the [Acknowledgements & Attribution Guidance](acknowledgements-and-attribution.md). 
+Every advisory also
 carries an **AI-use statement** for both the Finder and the Akrites SIRT, per
 Section 13.
 
@@ -468,8 +458,7 @@ given time depend on that rollout. Three classes of reporter are distinguished:
 The current rollout sequences these as **member reports first → clearinghouse
 reports next → unsolicited / public reports in the final phase**. Until a class
 is opened, reports outside the active class(es) may be deferred or handled
-manually; the SIRT states the currently active intake modes at the Canonical URL.
-Anonymous reporting is not available in the earliest phase and opens with the
+manually; the SIRT states the currently active intake modes at the Canonical URL. As of {date}, intake is open to member reports; unsolicited / public reports are planned to open by the end of 2026. Anonymous reporting is not available in the earliest phase and opens with the
 unsolicited / public class.
 
 **Technical contribution is the price of admission.** For member and
@@ -477,7 +466,7 @@ working-group reports, intake and read-in carry an expectation that the reportin
 party contributes meaningfully to resolving the case — analysis, a patch, tests,
 or staging — rather than only reporting. This keeps the coordination model
 sustainable and underpins read-in access under the tiered model (see the
-[Read-in Tier Policy](docs/Read-in%20Tier%20Policy.md)).
+[Read-In Policy](Akrites-Read-In-Policy.md).
 
 ## 13. AI and LLM tooling disclosure
 
@@ -504,7 +493,7 @@ stakeholder has to guess, we disclose AI use plainly and consistently.
 
 The authoritative rules, the standard advisory wording, and the controlled
 vocabulary are maintained in the
-[AI and LLM Use Disclosure Policy](docs/ai-use-disclosure.md).
+[AI and LLM Use Disclosure Policy](ai-use-disclosure.md).
 
 ## 14. Safe harbor
 
@@ -530,15 +519,14 @@ documented, good-faith path:
 2. **Request an independent review.** If that does not resolve it, either party
    may request a formal review by a SIRT case coordinator not involved in
    the original decision.
-3. **Escalate to the Technical Oversight Committee (TOC).** Unresolved technical
+3. **Escalate to the SIRT Director, then the Governing Board.** Unresolved technical
    or process disputes — contested severity, disclosure timing, or a decision not
-   to act — may be escalated to the TOC, whose determination is final for
-   technical and process matters. Policy- or legal-level questions are referred
+   to act — may be escalated to the SIRT Director, and from there to the Governing Board, whose determination is final. Policy- or legal-level questions are referred
    to the Governing Board.
 
 **Response times.** The SIRT acknowledges an appeal within **3 business days** and
 works to resolve it within **10 business days**; where a matter needs longer (for
-example, Board scheduling), the SIRT tells the parties and gives a revised
+example, Governing Board scheduling), the SIRT tells the parties and gives a revised
 timeframe.
 
 Escalation never removes a party's own rights: a Finder retains the ability to
@@ -563,9 +551,10 @@ SIRT@Akrites.dev.
 | 0.3     | 2026-08-20 | Added AI/LLM tooling disclosure (§13, definitions, intake/embargo hooks, advisory statement). |
 | 0.4     | 2026-08-24 | Feedback pass: added coordinator role (§6), actively-exploited policy (§9), disputes/appeals (§15), intake/membership (§12); aligned 30-day embargo default and phased TLP; harmonized 9-phase lifecycle with the 4-stage pipeline (dedup made explicit, numbering fixed, mapping table); added CSAF 2.0 / VEX; consolidated naming to "Akrites SIRT" and contact to SIRT@Akrites.dev; fixed Read-in Tier Policy link. |
 | 0.5     | 2026-09-30 | Per discussions held at Board meeting on September 22. Updates surrounding TLP & Lifecycle Mapping, Embargo and Disclosure Timing, and Attribution Preferences |
-| 0.6     | 2026-10-13 | Updates to deafult time to PD |
+| 0.6     | 2026-10-13 | Updates to default time to PD |
 | 1.0     | 2026-10-20 | Board approved with minor notes from GKunz. |
 | 1.1     | 2026-10-27 | Removal of TOC from document |
+| 1.2     | 2026-10-27 | Fixed links and phase numbering; single TLP table (RED/AMBER+STRICT/AMBER/CLEAR); removed remaining TOC references; clarified ≤ PD targets; aligned credit default, NDA statement, reporting channel and CNA wording. |
 
 
 ## 17. References
@@ -581,4 +570,4 @@ SIRT@Akrites.dev.
 - OASIS — [*Common Security Advisory Framework (CSAF) 2.0*](https://docs.oasis-open.org/csaf/csaf/v2.0/csaf-v2.0.html)
 - CISA — [*Vulnerability Exploitability eXchange (VEX)*](https://www.cisa.gov/resources-tools/resources/vulnerability-exploitability-exchange-vex-use-cases)
 - [RFC 9116 — *A File Format to Aid in Security Vulnerability Disclosure* (`security.txt`)](https://datatracker.ietf.org/doc/rfc9116/)
-- Akrites — [*AI and LLM Use Disclosure Policy*](docs/ai-use-disclosure.md)
+- Akrites — [*AI and LLM Use Disclosure Policy*](ai-use-disclosure.md)
