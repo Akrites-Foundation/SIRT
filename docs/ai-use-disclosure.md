@@ -1,7 +1,7 @@
 # AI and LLM Use Disclosure Policy
 
 **Owner:** Akrites SIRT
-**Status:** Draft for TOC / Board review
+**Status:** Draft for Board review
 **Applies to:** All Akrites SIRT–coordinated cases — reports from Finders and work performed by the SIRT and its Working Groups (WGs)
 **Related:** [CVD Policy](../coordinated-vulnerability-disclosure-policy.md) · [Acknowledgements & Attribution Guidance](./acknowledgements-and-attribution.md) · [Embargo Handling Guidance](./Embargo%20Handling%20Guidance.md) (§4.3) · [Notification Templates](../templates/notification-templates.md) · [Intake Template](../templates/vulnerability-report-intake-template.md)
 
