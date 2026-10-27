@@ -1,8 +1,7 @@
 # Akrites Read-In Policy
 
-**Status:** DRAFT v0.5 — for Governing Board review
-**Supersedes:** *Akrites Read-In Process — Working Groups & Disclosures* (DRAFT v0.1) and *Akrites Read-In Tier Policy*. On ratification, both source documents are retired and this document is the single authoritative reference.
-**Applies to:** All Akrites vulnerability Working Groups (WGs) and all pre-disclosure cases handled by the Akrites SIRT.
+**Status:** DRAFT v0.6 — for Governing Board review
+**Scope:** All Akrites vulnerability Working Groups (WGs) and all pre-disclosure cases handled by the Akrites SIRT.
 
 ---
 
@@ -60,7 +59,7 @@ Need-to-know must be **demonstrable and case-specific**, not inferred from role,
 
 - Being an affected user, downstream consumer, or customer of the affected component.
 - General interest, situational awareness, or a desire to "stay informed."
-- Membership in Akrites, in the TOC, or in a Working Group, taken on its own.
+- Membership in Akrites, on the Board, or in a Working Group, taken on its own.
 - Seniority, job title, or executive sponsorship on its own.
 - Commercial advantage, procurement, or customer-communication needs.
 
@@ -227,7 +226,7 @@ Criteria for "active member" will be defined as the SIRT works real cases (Appen
 **Levels.**
 
 1. **SIRT case lead.** Adjusts priority, pulls in additional Tier 1 SMEs, or reads a party in earlier — all within existing tier definitions.
-2. **TOC.** Cross-cutting or contested calls: vertical-versus-industry severity conflicts, broad-scope resourcing, or spinning up a new Working Group.
+2. **.** Cross-cutting or contested calls: vertical-versus-industry severity conflicts, broad-scope resourcing, or spinning up a new Working Group.
 3. **Governing Board.** Policy and legal matters: finder patch and customer obligations, antitrust, and government or critical-infrastructure coordination.
 
 **Severity changes.** If the score rises, read-in may widen or accelerate; if it falls, it may narrow or slow. Either way the change is recorded with rationale, and the embargo and PD date are re-evaluated.
@@ -249,8 +248,8 @@ Exceptions are handled case-by-case. Each is time-bounded, justified, approved b
 | **Early or broader read-in** for severe or broad-scope issues | Handled via escalation (§9); time-bounded. | Per §9 level |
 | **Finder with a patch and customer obligations** | Sharing a fix before disclosure or upstream engagement is discouraged but cannot be prohibited. It must be declared to the SIRT; risks and consequences are documented. | Governing Board sets governing policy |
 | **Early mitigations / workarounds** | Expected to be shared when patch development will exceed the agreed embargo or disclosure window. | SIRT |
-| **Maintainer of Last Resort / time-bounded hardened fork** | Permitted only with TOC approval. | TOC |
-| **Government / critical-infrastructure / telco coordination without pre-disclosure** | A TOC determination, consistent with the standing decision **not to pre-disclose to any single government**. | TOC |
+| **Maintainer of Last Resort / time-bounded hardened fork** | Permitted only with Board approval. | Board |
+| **Government / critical-infrastructure / telco coordination without pre-disclosure** | A Board determination, consistent with the standing decision **not to pre-disclose to any single government**. | Board |
 
 ---
 
@@ -282,7 +281,7 @@ Exceptions are handled case-by-case. Each is time-bounded, justified, approved b
 | **SIRT case lead** | Assigns tiers; grants and revokes read-in; Level-1 escalation; coordinates breach response. |
 | **Finder & maintainer** | Consulted on the read-in list, embargo, and PD. The maintainer sets the final fix and PD date. |
 | **Working Group** | Nominates SMEs; requests escalation for its domain or vertical. |
-| **TOC** | Cross-cutting severity and vertical calls; Maintainer-of-Last-Resort approval; new WG spin-up; grey-area cases. |
+| **Board** | Cross-cutting severity and vertical calls; Maintainer-of-Last-Resort approval; new WG spin-up; grey-area cases. |
 | **Governing Board** | Policy and legal exceptions — finder obligations, antitrust, government coordination. |
 
 ---
@@ -293,16 +292,16 @@ Items carried forward from both source documents, deduplicated, with the body th
 
 | # | Open item | Detail | Owner |
 |---|---|---|---|
-| 1 | **Default read-in lead times per tier** | Fix the standard lead time for Tier 2 and Tier 3 before PD. A working figure of 7–14 days appears in the source material (§4.1) but is not ratified. | TOC |
-| 2 | **RACI per tier** | Define the specific actions each tier may take, and by whom, as a companion document to this policy. | TOC |
-| 3 | **Delegation rules and limits** | How far a coordinating body (e.g., CISA) or a maintainer may extend read-in; enforce that the SIRT must approve **all** expansions of the set of Knowers. | TOC |
-| 4 | **Approver of record; Finder/maintainer veto** | Confirm the approver of record, and whether the Finder or maintainer may veto — rather than merely be consulted on — additions. | TOC |
-| 5 | **Tier 1 sub-staging** | Whether Tier 1 should split into separate *analyze* and *test* sub-stages with distinct read-in timing. | TOC |
+| 1 | **Default read-in lead times per tier** | Fix the standard lead time for Tier 2 and Tier 3 before PD. A working figure of 7–14 days appears in the source material (§4.1) but is not ratified. | Board |
+| 2 | **RACI per tier** | Define the specific actions each tier may take, and by whom, as a companion document to this policy. | Board |
+| 3 | **Delegation rules and limits** | How far a coordinating body (e.g., CISA) or a maintainer may extend read-in; enforce that the SIRT must approve **all** expansions of the set of Knowers. | Board |
+| 4 | **Approver of record; Finder/maintainer veto** | Confirm the approver of record, and whether the Finder or maintainer may veto — rather than merely be consulted on — additions. | Board |
+| 5 | **Tier 1 sub-staging** | Whether Tier 1 should split into separate *analyze* and *test* sub-stages with distinct read-in timing. | Board |
 | 6 | **"Active member" criteria** | Define what qualifies a standing WG member as active, and therefore eligible for the accelerated §7 path. | SIRT, informed by real cases |
 | 7 | **Finder patch / customer-obligation policy** | Governing policy for a Finder who holds a patch and has customer obligations before disclosure. | Governing Board |
 | 8 | **Antitrust documentation** | Documentation covering early or broad read-in of competing members. | Governing Board |
-| 9 | **Gate 3 vetting standard** | Whether identity verification requires a documented standard (e.g., employer attestation, identity proofing level) beyond sponsor vouching. *(New — surfaced by codifying Gate 3.)* | TOC |
-| 10 | **Emergency Read-In ceiling** | Whether the 72-hour Emergency Read-In window may be extended, by whom, and how many times. *(New — surfaced during merge.)* | SIRT / TOC |
+| 9 | **Gate 3 vetting standard** | Whether identity verification requires a documented standard (e.g., employer attestation, identity proofing level) beyond sponsor vouching. *(New — surfaced by codifying Gate 3.)* | Board |
+| 10 | **Emergency Read-In ceiling** | Whether the 72-hour Emergency Read-In window may be extended, by whom, and how many times. *(New — surfaced during merge.)* | SIRT / Board |
 
 ---
 
