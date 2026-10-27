@@ -31,9 +31,15 @@ Each Part II play lists: **When to use**, **Audience**, **Channel & TLP**, **Tem
 | **Members** | Akrites member orgs, WG participants | Trusted, need-to-know; least privilege | Member Slack, member mailing list, dashboard/API |
 | **External security SMEs** | Read-in experts not on staff | Time-boxed, scoped to the case; spun down after | Case channel, case repo |
 | **Upstream maintainers / developers** | Project owners receiving a report | Humble, human-to-human, "maintainer keeps authority" | PVR, security.txt contact, direct email (signed) |
-| **Coordinators / clearinghouses** | CISA, ENISA, FIRST, national CERTs, trusted vendor programs | Peer coordinator; balanced, no single-government favoritism | Established coordinator channels, signed email |
+| **Coordinators / Clearinghouses / Strategic Partners** | CISA, ENISA, FIRST, national CERTs, vendor SIRTs, IT-ISACs | Peer coordinator; balanced, no single-government favoritism | Established coordinator channels, partner API, signed email |
 | **General public** | Downstream consumers, press, ecosystem | Clear, accurate, machine-readable, no exploitation aid | Akrites website, GHSA/OSV, VEX feed, SIREN |
 
+### 1.1 Intake Priority Tiers
+Intake processing by the SIRT pipeline enforces three prioritized tiers:
+* **P0 — Members**: Highest intake processing priority reserved for Akrites member organizations.
+* **P1 — Strategic Partners**: Dedicated tier for strategic partners (government security teams, vendor SIRTs, ISACs).
+* **P2 — Public**: Internet-public intake processing.
+  
 ## 2. Core principles
 
 1. **Confidentiality first and foremost.** Default to TLP:RED at intake. Share up a tier only
@@ -98,8 +104,8 @@ Impersonation is a real risk; make Akrites easy to verify and hard to spoof.
 | Remediation / patch work | Private case repo, analyst workbench | AMBER+STRICT |
 | Member awareness (no specifics) | Member mailing list / member Slack | AMBER / GREEN |
 | Read-in SME coordination | Case channel (time-boxed) | RED / AMBER+STRICT |
+| Strategic Partner & Coordinator Engagement | Partner API / dedicated signed email | TLP:AMBER+STRICT → TLP:AMBER |
 | Upstream engagement | PVR / signed email / security.txt contact | RED → AMBER |
-| Coordinator engagement | Established coordinator channel, signed email | AMBER |
 | Public advisory | Website, GHSA, OSV→CVE/EUVD, VEX feed, SIREN | CLEAR |
 
 **Hard rules:** no files or exploit code on Slack; no WG TLP:RED work conducted in general Slack;
@@ -535,30 +541,57 @@ stewards/forks.
 
 ---
 
-## Play 11 — Coordinator / clearinghouse engagement (CISA, ENISA, FIRST, CERTs)
+## Play 11 — Strategic Partner & Coordinator Engagement (CISA, ENISA, FIRST, Vendor SIRTs)
 
-**When to use:** Coordinating with or receiving a report from a clearinghouse/coordinator.
-**Audience:** The coordinator.
-**Channel & TLP:** Established coordinator channel, signed email; TLP:AMBER.
+**When to use:** Coordinating ingress and egress with strategic partners (government security teams, vendor SIRTs, IT-ISACs, and regional CERTs).
+
+**Audience:** Strategic Partners & Coordinators.
+
+**Channel & TLP:** Established coordinator channels, dedicated partner email, or partner intake API. Begins at **TLP:AMBER+STRICT**, relaxing to **TLP:AMBER**.
+
+### 1. Ingress Priority
+Partner submissions enter the pipeline at **Priority P1** (below P0 Member reports, above P2 Public reports).
+
+### 2. Downstream Disclosure Flow (Egress)
+* **Prerequisite Gate**: Outbound contact with strategic partners occurs **only after** a working patch exists AND is confirmed/verified by Akrites members/SIRT (via automated or manual test pass).
+* **Parallel Contact**: Outbound notification is issued to Strategic Partners in parallel with upstream maintainer outreach.
+* **Neutered Report Shape**: Partners receive a sanitized report containing the vulnerability classification, affected `purl`/version bounds, CVSS vector/severity, and patch verification status. Detailed exploitation aids and weaponized PoCs are omitted.
+* **TLP Progression**: Partners are engaged at **TLP:AMBER+STRICT**. Upon receipt and internal queuing, the classification relaxes to **TLP:AMBER** so partners can prepare notifications for their internal teams and trusted lists (e.g., national CSIRTs).
+
+### 3. Partner Responsibilities
+* Respect active case embargoes.
+* Confirm patch validity in partner environments.
+* Triage internally and route to correct technical response teams.
+* Prepare downstream advisories for partner constituencies. *(Downstream software propagation and package rollout remain out-of-scope for Akrites).*
+
+### 4. No Single-Government Pre-Disclosure Rule
+Per Akrites policy, notifications are issued concurrently to all peer partner entities without single-government pre-disclosure.
 
 **Template**
 
-```
-Subject: [Akrites SIRT] Coordination on {tracking-id} ({TLP:AMBER})
+```http
+Subject: [Akrites SIRT] Strategic Partner Coordination — {tracking-id} (TLP:AMBER+STRICT)
 
-Hi {Coordinator},
+Hi {Partner/Coordinator},
 
-{Acknowledging your report of {issue} | Reaching out to coordinate on {issue}}. Proposed handling:
-- Roles: {who does what}
-- Read-in: {who needs access; delegation is yours to decide on your side}
-- Disclosure timing: proposed {date}, deferring to upstream where they have a process.
-- Attribution: {per your preference — named clearinghouse or coordinator-only}.
+We are reaching out to coordinate on a validated finding affecting {purl / component}.
 
-Note on our principles: we don't pre-disclose to any single government — if we notify one, we
-notify all comparable parties. {If relevant: CRA Article 14 considerations for ENISA reporting.}
+Key Case Details (Sanitized):
+- Tracking ID: {tracking-id}
+- Severity: {CVSS Vector} ({Severity Band})
+- Affected Versions: {version bounds}
+- Patch Status: Verified fix available in private branch
 
-What timing and channel work best on your side?
+Coordination Plan:
+- Ingress/Egress Tier: P1 Strategic Partner
+- Current TLP: TLP:AMBER+STRICT (moving to TLP:AMBER upon receipt)
+- Proposed Public Disclosure (PD): {Target Date}, deferring to upstream policy.
+- Single-Government Rule: Per Akrites policy, notifications are issued concurrently to all peer partner entities without single-government pre-disclosure.
+
+Please confirm receipt, internal triage assignment, and your designated case contact.
+
 — Akrites SIRT
+
 ```
 
 **Notes:** Stay balanced — no favoring one government/coordinator. Cite CRA Article 14 where ENISA
