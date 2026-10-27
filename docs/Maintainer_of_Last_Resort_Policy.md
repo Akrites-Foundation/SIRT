@@ -163,6 +163,6 @@ T0 ──▶ T0+5bd (Widen) ──▶ T0+10bd (Ecosystem) ──▶ T0+15bd (Coo
 Track A: Upstream Assistance                                                   Track B: Last-Resort Action
 ├── Capacity Gap ──▶ Assist in place & build patch                              ├── Requires 90-Day Silence Floor
 ├── Disagreement ──▶ Technical exchange ──▶ Verbatim rationale                  ├── Signed §6.1 Entry Test
-└── Unresponsive ──▶ Intermediate maintainer migration                         ├── TOC Approval & Recusal
+└── Unresponsive ──▶ Intermediate maintainer migration                         ├── Board Approval & Recusal
                                                                                 └── Patch Series on Pinned Commit
 ```
