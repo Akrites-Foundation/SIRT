@@ -19,7 +19,6 @@ Entries within each section are ordered alphabetically. Instructions for proposi
 | **PSIRT** | Product Security Incident Response Team — a vendor's or project's own product-security response function; Akrites coordinates with these. |
 | **SIG** | Special Interest Group — a group formed around technology surrounding a WG's focus area. |
 | **SIRT** | Security Incident Response Team — the Akrites staff and infrastructure that coordinate intake, disclosure, and upstream engagement. (The "Incident" mandate — coordinated response to large "celebrity" incidents — is planned to come online later.) |
-| **TOC** | Technical Oversight Committee — sets technical direction and rules on cross-cutting and grey-area decisions. |
 | **Upstream** | the original open source project for the software being worked on. |
 | **Working Group (WG)** | A small, private, self-organizing team of read-in members that analyzes, tests, and patches vulnerabilities in a specific domain. |
 
@@ -40,7 +39,7 @@ Entries within each section are ordered alphabetically. Instructions for proposi
 | **IR** | Incident Response. |
 | **Least privilege** | The principle that access is scoped to only what a role needs; members see only the WGs they belong to, and only SIRT staff have cross-cutting visibility. |
 | **Mitigation / workaround** | A non-patch means of reducing risk (e.g., a configuration change or firewall rule) when no fix is yet available. |
-| **MoLR (Maintainer of Last Resort)** | A carefully bounded arrangement in which a WG stewards or forks an unmaintained project to ship a fix; requires TOC approval. |
+| **MoLR (Maintainer of Last Resort)** | A carefully bounded arrangement in which a WG stewards or forks an unmaintained project to ship a fix; requires Board approval. |
 | **PD (Public Disclosure)** | The point at which a vulnerability and its fix become public. |
 | **POC** | Proof of Concept - a controlled demonstration or set of instructions that proves a reported software flaw is real and exploitable, typically used by security teams to validate risks, reproduce issues, and test patches. [TechTarget](https://www.techtarget.com/searchsecurity/definition/proof-of-concept-PoC-exploit) |
 | **POV** | Proof of Vulnerability - Proof of Vulnerability (PoV) is an executable test case, input, or script that definitively confirms a theoretical security flaw is real, reproducible, and exploitable in a specific environment. In the context of vulnerability response and management, it serves as concrete, hands-on evidence that an identified software weakness can be triggered to compromise a system's confidentiality, integrity, or availability. [arXiv](https://arxiv.org/html/2607.12316v1) |
