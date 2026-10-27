@@ -1,7 +1,7 @@
 # Acknowledgements & Attribution Guidance
 
 **Owner:** Akrites SIRT
-**Status:** Draft for TOC / Board review
+**Status:** Draft for Board review
 **Applies to:** Public Disclosure (PD) advisories coordinated by the Akrites SIRT
 **Related:** OSS-SIRT F2F — *PD Requirements → Acknowledgements & Attribution*; *Tiered Disclosure → Co-finder attribution*; [AI and LLM Use Disclosure Policy](./ai-use-disclosure.md)
 
