@@ -1,4 +1,4 @@
-c # Akrites SIRT Communications Playbook
+# Akrites SIRT Communications Playbook
 
 **Owner:** Akrites SIRT
 **Status:** Draft for Board review
