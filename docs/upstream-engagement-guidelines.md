@@ -1,7 +1,7 @@
 # Akrites SIRT — Upstream Engagement Guidelines
 
 **Owner:** Akrites SIRT
-**Status:** Draft for TOC / Board review
+**Status:** Draft for Board review
 **Audience:** SIRT coordinators and WG engineers who engage upstream projects
 **Companion docs:** `sirt-communications-playbook.md` (Plays 9, 10, 15, 17), `acknowledgements-and-attribution.md`, `Embargo Handling Guidance.md`, steward-engagement taxonomy
 
@@ -276,7 +276,7 @@ Who to call:
 **Companion plays:** upstream first-contact (Play 9), unresponsive/overwhelmed (Play 10),
 MoLR/fork publication (Play 15), rejected patch (Play 17) — all in `sirt-communications-playbook.md`.
 
-**Open items for TOC / Board:**
+**Open items for Board:**
 
 - Ratify the **Akrites upstream-engagement Code of Conduct** referenced in 1.2.
 - Confirm **MoLR/fork authority and triggers** (Section 2.4) and the archived-project fork policy.
