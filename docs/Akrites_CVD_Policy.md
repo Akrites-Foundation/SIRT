@@ -1,10 +1,10 @@
-# Akrites SIRT Coordinated Vulnerability Disclosure (CVD) Policy - v1.0
+# Akrites SIRT Coordinated Vulnerability Disclosure (CVD) Policy - v1.1
 
-**Status:** Board-approved v1.0
+**Status:** Board-approved v1.1
 **Owner:** Akrites SIRT (Security Incident Response Team)
 **Primary contact:** SIRT@Akrites.dev
 **Canonical URL:** https://sirt.akrites.dev/security/policy
-**Last updated:** 2026-10-20
+**Last updated:** 2026-10-27
 
 > **Naming:** **Akrites SIRT** — the Security Incident Response Team hosted by the
 > Akrites Foundation — is the standard name used throughout this document.
@@ -414,7 +414,7 @@ CISA's Known Exploited Vulnerabilities (KEV) catalog — it moves to an
   embargo without unanimous agreement, consistent with the harm-reduction
   principle and the leak-contingency handling in Section 8.
 - **Escalation.** Disputes over accelerating a timeline follow the dispute and
-  appeals path in Section 15, with the TOC as the escalation point.
+  appeals path in Section 15, with the Board as the escalation point.
 
 This accelerated track overrides the default and project-deferred timelines in
 Section 8; it does not override a shorter timeline a project or coordinating list
@@ -538,7 +538,7 @@ documented, good-faith path:
 
 **Response times.** The SIRT acknowledges an appeal within **3 business days** and
 works to resolve it within **10 business days**; where a matter needs longer (for
-example, TOC scheduling), the SIRT tells the parties and gives a revised
+example, Board scheduling), the SIRT tells the parties and gives a revised
 timeframe.
 
 Escalation never removes a party's own rights: a Finder retains the ability to
@@ -565,6 +565,7 @@ SIRT@Akrites.dev.
 | 0.5     | 2026-09-30 | Per discussions held at Board meeting on September 22. Updates surrounding TLP & Lifecycle Mapping, Embargo and Disclosure Timing, and Attribution Preferences |
 | 0.6     | 2026-10-13 | Updates to deafult time to PD |
 | 1.0     | 2026-10-20 | Board approved with minor notes from GKunz. |
+| 1.1     | 2026-10-27 | Removal of TOC from document |
 
 
 ## 17. References
