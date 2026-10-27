@@ -1,7 +1,7 @@
-# Akrites SIRT Communications Playbook
+c # Akrites SIRT Communications Playbook
 
 **Owner:** Akrites SIRT
-**Status:** Draft for TOC / Board review
+**Status:** Draft for Board review
 **Audience:** SIRT staff and coordinators; referenced by WGs and read-in participants
 **Companion docs:** `acknowledgements-and-attribution.md`, `Embargo Handling Guidance.md`, OSS-SIRT Process (High Level), OSS-SIRT MVSR
 
@@ -425,7 +425,7 @@ WG-level credit may substitute for individuals where appropriate. Record the con
 
 **When to use:** The case needs an SME, WG, tiered partner, or the Finder/maintainer requests
 someone be looped in.
-**Audience:** Two directions — (a) the person/org to be read in; (b) approvers (SIRT/TOC as needed)
+**Audience:** Two directions — (a) the person/org to be read in; (b) approvers (SIRT as needed)
 and the parties who must be informed (Finder, WG, maintainer).
 **Channel & TLP:** Case channel; TLP:RED. Read-in is need-to-know, validated, and can be delegated
 (e.g., a coordinator decides whom to loop in); the maintainer may weigh in on read-ins.
@@ -439,7 +439,7 @@ Requesting read-in for: {name / org / role}
 Reason / expertise needed: {why they're essential now}
 Scope of access: {what they'll see — full case? patch only? tier {n} material?}
 Duration: {time-boxed to {milestone/date}, then spun down}
-Requested by: {name}. Approver: {SIRT / TOC if tiered}. Informed parties: Finder{, WG}{, maintainer}.
+Requested by: {name}. Approver: {SIRT}. Informed parties: Finder{, WG}{, maintainer}.
 
 Least-privilege check: is there a narrower scope that still works? {yes/no}
 ```
@@ -511,7 +511,7 @@ first engagement.
 ## Play 10 — Unresponsive / unmaintained / overwhelmed maintainer
 
 **When to use:** Contact info exists but the project doesn't respond, or is unmaintained/overwhelmed.
-**Audience:** Maintainer (escalating attempts), then internal/TOC for next steps.
+**Audience:** Maintainer (escalating attempts), then internal for next steps.
 **Channel & TLP:** Same as Play 9, escalating; TLP:RED.
 
 **Escalating follow-up template**
@@ -685,7 +685,7 @@ Feeds the future dispute-resolution process (incl. CNA-LR scenarios).
 
 ## Play 15 — Maintainer-of-last-resort / patch or fork publication notice
 
-**When to use:** Upstream can't/won't act and the group/TOC has approved publishing a patch or
+**When to use:** Upstream can't/won't act and the group/Board has approved publishing a patch or
 stewarding/forking.
 **Audience:** Public + members; maintainer informed as a courtesy if reachable.
 **Channel & TLP:** Website/GH + advisory channels; TLP:CLEAR at publication.
@@ -706,7 +706,7 @@ applicable.}
 Fix: {patch/commit/fork link}   Advisory: {refs}
 ```
 
-**Notes:** Last resort only, with explicit group/TOC decision. Order of preference: maintainer fixes
+**Notes:** Last resort only, with explicit group/Board decision. Order of preference: maintainer fixes
 → publish patch file → WG steward/fork. Frame as "initial/proposed" and invite the maintainer back
 in. Avoid implying ongoing maintenance you won't provide.
 
@@ -730,7 +730,7 @@ Reminder of principle: we do not pre-disclose to any single government. Read-ins
 validated, and time-boxed. Decision and rationale to be logged.
 ```
 
-**Notes:** Default authority is the maintainer; otherwise the Board/TOC decides. "Learn to be
+**Notes:** Default authority is the maintainer; otherwise the Board decides. "Learn to be
 comfortable in the grey." Never convert a critical-infra read-in into single-government
 pre-disclosure.
 
@@ -751,7 +751,7 @@ The maintainer has declined our proposed patch because {reason}. Options on the 
 - Revise to match their code style / approach: {owner}
 - Offer a mitigation/workaround for users while upstream develops their own fix
 - If upstream won't fix and users are exposed: escalate to the MoLR discussion (Play 15) with
-  TOC input
+  Board input
 
 Finder/WG input by {date}?
 ```
@@ -784,11 +784,11 @@ Reusable comms/templates to update: {…}
 
 ---
 
-## Play 19 — Internal escalation to TOC / Board
+## Play 19 — Internal escalation to Board
 
 **When to use:** A decision exceeds SIRT authority (MoLR, major deviation, cross-sector timing,
 policy gaps).
-**Audience:** TOC / Governing Board.
+**Audience:** Governing Board.
 **Channel & TLP:** Internal governance channel; TLP:RED.
 
 **Template**
@@ -920,20 +920,20 @@ isolation.
 | 7 | Acknowledgement preference | Finder |
 | 8 | Read-in resource request | SME / approvers |
 | 9 | Upstream first-contact | Maintainer |
-| 10 | Unresponsive / unmaintained / overwhelmed | Maintainer / TOC |
+| 10 | Unresponsive / unmaintained / overwhelmed | Maintainer / Board |
 | 11 | Coordinator / clearinghouse | Coordinator |
 | 12 | Embargo extension | Finder / maintainer |
 | 13 | Duplicate / co-finder | Finder |
 | 14 | Dispute / deviation notice | Maintainer |
 | 15 | MoLR patch / fork publication | Public |
-| 16 | Critical-infra read-in | Requestor / TOC |
+| 16 | Critical-infra read-in | Requestor / Board |
 | 17 | Rejected patch | Finder / WG |
 | 18 | Blameless postmortem | Case team |
-| 19 | Escalation to TOC / Board | Governance |
-| 20 | Trend / periodic report | TOC / ecosystem |
+| 19 | Escalation to Board | Governance |
+| 20 | Trend / periodic report | ecosystem |
 | 21 | General onboarding / welcome | New member engineers |
 
-# Appendix B — Open items for TOC / Board
+# Appendix B — Open items for Board
 
 These shape the templates above and are still open from the F2F:
 
