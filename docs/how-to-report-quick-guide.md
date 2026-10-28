@@ -1,4 +1,4 @@
-# How to Report a Vulnerability to Akrites OSS-SIRT - DRAFT v0.2
+# How to Report a Vulnerability to Akrites SIRT - DRAFT v0.2
 
 A short guide for security researchers and users (we call you a **Finder**) who
 have found a potential security issue in an open source project. Thank
