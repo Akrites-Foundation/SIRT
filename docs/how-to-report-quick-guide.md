@@ -1,10 +1,10 @@
-# How to Report a Vulnerability to Akrites OSS-SIRT - DRAFT v0.1
+# How to Report a Vulnerability to Akrites SIRT - DRAFT v0.2
 
 A short guide for security researchers and users (we call you a **Finder**) who
-have found a potential security issue in a project OSS-SIRT coordinates. Thank
+have found a potential security issue in an open source project. Thank
 you — reporting it is a real favor to the project and its users.
 
-Full policy: https://sirt.linuxfoundation.org/security/policy
+Full policy: [Akrites CVD Policy](Akrites_CVD_Policy.md) 
 
 ## 1. Please report privately — not in public
 
@@ -12,18 +12,17 @@ Do **not** open a public issue, pull request, or public discussion. Furthermore,
 
 ## 2. Pick a channel
 
-- **Preferred — GitHub private vulnerability reporting.** On the affected
-  repository, go to the **Security** tab and choose **"Report a vulnerability."**
-  This keeps everything private and lets us add you to the draft advisory so you
-  can stay involved.
-- **Alternative — encrypted email.** Write to
-  **security@oss-sirt.linuxfoundation.org**. The address supports transport
-  encryption (MTA-STS / STARTTLS); for end-to-end protection you can use our
-  OpenPGP key linked from the policy page. Hold any proof-of-concept until a
-  secure channel is established. If encryption is a barrier, send it anyway —
-  we'd rather have the report.
+- **Preferred — GitHub private vulnerability reporting to Akrites.** Open
+  https://github.com/Akrites-Foundation/SIRT/security/advisories/new. This keeps
+  everything private and lets us add you to the draft advisory so you can stay
+  involved. (Reporting on the affected project's own Security tab reaches that
+  project's maintainers, not Akrites.)
+- **Alternative — email.** Write to **SIRT@Akrites.dev**. The address supports
+  transport encryption (MTA-STS / STARTTLS). Hold any proof-of-concept until a
+  secure channel is established (GitHub private reporting counts as one). If
+  encryption is a barrier, send the description anyway — we'd rather have the report.
 
-You may report **anonymously**, but then we can't send you status updates.
+Anonymous reporting opens with public intake (see CVD Policy §12); anonymous reporters can't receive status updates.
 
 ## 3. Tell us what you found
 
@@ -43,8 +42,8 @@ The more of the following you can answer, the faster we can validate and fix it
 - Whether it's **being exploited** in the wild.
 - Any **suggested fix or mitigation** (patches are very welcome).
 - Any **time constraints** (conference deadline, your own disclosure policy).
-- **Credit preferences** How you (and your organization) would like to be acknowledged in the security advisory (e.g., full name, handle, anonymous, or organization name/link; see `docs/acknowledgements-and-attribution.md`).
-- **AI assistance disclosure** Whether any part of the vulnerability analysis, code analysis, or proof-of-concept was generated using AI tools, in accordance with `docs/ai-use-disclosure.md`.
+- **Credit preferences** How you (and your organization) would like to be acknowledged in the security advisory (e.g., full name, handle, anonymous, or organization name/link; see [Acknowledgements & Attribution Guidance](acknowledgements-and-attribution.md)).
+- **AI assistance disclosure** Whether any part of the vulnerability analysis, code analysis, or proof-of-concept was generated using AI tools, in accordance with [AI and LLM Use Disclosure Policy](ai-use-disclosure.md), and whether the tooling was a public hosted service or private/confidential (public tooling means no embargo is available).
 - Whether you've **shared this with anyone else**, and when/how.
 - Whether you're open to a **call** to walk us through it.
 
@@ -56,12 +55,9 @@ English is preferred. A partial report is fine — send what you have.
 - We **triage and validate** and send an initial assessment within
   **10 business days**: confirmed vulnerability, non-security bug, or expected
   behavior (with our reasoning — correct us if we got it wrong).
-- We treat your report as confidential (**TLP:RED**) and keep details among a
-  need-to-know group until the agreed public disclosure date.
-- We keep an **open dialogue**, share status, and coordinate the disclosure date
-  with you. Our default planning window is up to **90 days**; we aim to disclose
-  as soon as a fix can ship.
-- We **credit** you in the final security advisory according to your requested preferences, following our standard format in `docs/acknowledgements-and-attribution.md`.
+- We treat your report as confidential — **TLP:RED** at intake, then shared under **TLP:AMBER+STRICT** only with those fixing it — until the agreed public disclosure date.
+- We keep an **open dialogue**, share status, and coordinate the disclosure date with you. We propose a **15-business-day** upstream embargo and target public disclosure within 17 (Low/Medium), 21 (High) or 24 (Critical) business days of your report, always deferring to the affected project's own policy.
+- We **credit** you by default under the name or handle you reported with, unless you ask to stay anonymous (see [Acknowledgements & Attribution Guidance](acknowledgements-and-attribution.md)).
 
 ## 5. Safe harbor
 
