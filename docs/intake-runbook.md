@@ -53,7 +53,7 @@ Discover → Deduplicate & Triage → Validate → Coordination → Patch → Te
 - Stage patch + documentation so all Consumers get the fix at PD.
 - If an embargo list applies, send **Template 3 (Embargoed notification)** to
   read-in providers, typically **1–30 working days** before PD. Monitor replies
-  for qualification problems. Prefer a **Mon–Wed** PD; avoid holidays.
+  for qualification problems. Prefer a **Tue-Thu** PD; avoid holidays.
 
 ### 9. Disclose — go public  ⏱ on the PD date
 - Publish the GitHub Security Advisory (populates the Security tab), cut the
