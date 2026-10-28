@@ -1,9 +1,9 @@
 # Acknowledgements & Attribution Guidance
 
 **Owner:** Akrites SIRT
-**Status:** Draft for Board review
+**Status:** Draft for Governing Board review
 **Applies to:** Public Disclosure (PD) advisories coordinated by the Akrites SIRT
-**Related:** OSS-SIRT F2F — *PD Requirements → Acknowledgements & Attribution*; *Tiered Disclosure → Co-finder attribution*; [AI and LLM Use Disclosure Policy](./ai-use-disclosure.md)
+**Related:** [CVD Policy §11](./Akrites_CVD_Policy.md); [AI and LLM Use Disclosure Policy](./ai-use-disclosure.md)
 
 > Spelling note: the standard is **Akrites** (Akrites Foundation, Akrites SIRT). "OSS-SIRT" is a synonym.
 
@@ -14,7 +14,7 @@
 This document defines how finders, their organizations, tooling, and coordinators are
 credited in Akrites-coordinated public advisories. It exists so that credit is:
 
-- **Given where wanted** and **honored where declined** — attribution is opt-in and finder-controlled.
+- **Given by default** and **honored where declined** — Finders are credited unless they ask not to be, and they control the form of credit.
 - **Consistent** across advisories, so downstream consumers and maintainers know what each line means.
 - **Resistant to gaming** — a controlled vocabulary and a review gate keep AI-vendor marketing out of the credit line.
 
@@ -32,7 +32,7 @@ default is TLP:RED until PD; it becomes public only in the final advisory.
 
 ## Core principles
 
-1. **Attribution is opt-in.** No finder or participant is named without explicit consent.
+1. **Credit by default, consent for detail.** Finders are credited by default under the name or handle they reported with; anonymity is honored on request. Organizations, co-finders' and participants' names appear only with explicit consent.
 2. **Individuals vs. groups.** Where an individual declines but the work is attributable to a
    working group (WG), the WG may be credited without naming its members.
 3. **AI assistance is disclosed by capability; specifics are optional and finder-driven.**
@@ -153,17 +153,16 @@ This vulnerability was coordinated to disclosure by the Akrites SIRT. The report
 requested to remain anonymous.
 
 AI use
-  - {Finder: AI-assisted {discovery|patch development|discovery and patch development}.}
+  - Finder (anonymous): {AI-assisted {phase(s)}. | No AI tooling was used. | AI use not disclosed.}
   - Coordinator (Akrites SIRT): {No AI tooling was used. / AI-assisted {phase(s)}, under human review.}
 ```
 
 **Field notes**
 
 - Do **not** name the finder, their organization, or a WG unless the finder later consents.
-- The **Finder** AI line is included only if it can be stated without identifying the anonymous
-  reporter and the finder does not object; when in doubt, omit it.
+- The **Finder** AI line is always present. If stating the Finder's AI use could identify the reporter, write "Finder (anonymous): AI use not disclosed."
 - The **Coordinator** AI line is always included — it does not implicate the reporter.
-- This is also the fallback when consent cannot be confirmed before PD.
+- If consent cannot be confirmed before PD, use Scenario 1 with the name or handle as submitted (no organization) — see CVD Policy §11.
 
 **Filled example**
 
@@ -174,6 +173,7 @@ This vulnerability was coordinated to disclosure by the Akrites SIRT. The report
 requested to remain anonymous.
 
 AI use
+  - Finder (anonymous): AI use not disclosed.
   - Coordinator (Akrites SIRT): AI-assisted advisory drafting, under human review.
 ```
 
@@ -186,7 +186,7 @@ When more than one party reports the same issue:
 - Each consenting co-finder is credited using the applicable scenario block above.
 - Co-finders are honored **up to the attribution cutoff** — the point in the timeline after which
   additional independent reports are recorded but not added to the published advisory. The cutoff
-  (e.g., patch-ready, or PD date) is set by policy per the F2F "co-finder attribution cutoff" action.
+  (e.g., patch-ready, or PD date) is set by policy (open item below).
 - A declining co-finder is omitted entirely; their preference does not affect other finders' credit.
 - Where co-finders are members of a WG, the WG may be credited in place of individuals per
   Principle 2.
@@ -254,7 +254,7 @@ review.
 
 ---
 
-## Open items (from F2F, for Board/TOC)
+## Open items (for Governing Board)
 
 - Set the concrete **co-finder attribution cutoff** trigger/point in time.
 - Ratify the **controlled vocabulary** and its governance/update cadence.
