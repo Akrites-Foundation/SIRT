@@ -178,7 +178,7 @@ rollout phase — see Section 12).
   within the scope of the the authoritative CNA, we reserve a CVE ID and publish and
   maintain the CVE Record in due time; otherwise we coordinate with the
   authoritative CNA (see Section 2).
-- **Target Public Dsiclosure:** ≤ 17 business days (Low/Medium), ≤ 21 bd (High), or ≤ 24 bd (Critical) from receipt, incorporating a 15-business-day proposed upstream embargo (see Section 8)
+- **Target Public Disclosure:** ≤ 17 business days (Low/Medium), ≤ 21 bd (High), or ≤ 24 bd (Critical) from receipt, incorporating a 15-business-day proposed upstream embargo (see Section 8)
 - **Communicate continuously:** — we maintain an open dialogue, give status
   updates, and are transparent about anything that may delay resolution.
 - **Respect confidentiality:** — we handle case material under TLP 2.0: **TLP:RED** at intake, **TLP:AMBER+STRICT** during verification and remediation, **TLP:AMBER** for downstream staging, and **TLP:CLEAR** at the agreed public date (see the table in Section 8). We share only with those who need to know.
