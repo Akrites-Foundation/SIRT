@@ -4,7 +4,7 @@
 # Akrites Security Incident Response Team (Akrites SIRT)
 
 The Akrites SIRT (Security Incident Response Team) is a group working within the Linux Foundation and broader open source ecosystem that is focused on creating secure vulnerability management capabilities within the open source ecosystem to ensure effective coordinated vulnerability disclosure practices (CVD) for all. The group will be a coordinated group of experts from across the industry who will be available to help
-open source maintainers with all aspects of remediating high-impact security vulnerabilities and related security emergencies
+open source maintainers with all aspects of remediating high-impact security vulnerabilities and related security emergencies.
 
 ## Mission
 
@@ -43,9 +43,9 @@ To develop a cohort of trustworthy, vendor-neutral, vetted, well-orchestrated an
   from another open-source project’s security vulnerabilities
 
 ## Get Involved
-- Slack Channels (invite only)
-   - [General Discussion (NOT FOR REPORTING VULNERABILITIES)](https://akritesfoundation.slack.com/archives/C0BG2D5QQ12)
-- [Akrites SIRT working group](https://akritesfoundation.slack.com/archives/C0BG2D5QQ12)
+- Slack (invite only):
+   - [General discussion](https://akritesfoundation.slack.com/archives/C0BG2D5QQ12) — **not for reporting vulnerabilities**
+   - [Member channel](https://akritesfoundation.slack.com/archives/C0BED9SLZ7W)
 
 ### Quick Start
 - **Reporting a vulnerability?** Start with our [security policy](SECURITY.md).
@@ -58,16 +58,16 @@ To develop a cohort of trustworthy, vendor-neutral, vetted, well-orchestrated an
 ### Meeting times
 Community Meetings forthcoming
  
- ### Project Maintainers
+### Project Maintainers
 - [CRob](https://github.com/SecurityCRob), Akrites CTO
 - [Francis](https://github.com/u269c), Akrites SIRT Director
 - Akrites SIRT Team Lead (TBD)
 
 ### Project Collaborators
- 
+TBD 
 
 ### Project Contributors
- 
+TBD
 
 ## Code of Conduct
 Project Akrites members pledge to follow the [Akrites Code of Conduct](https://github.com/Akrites-Foundation/SIRT/blob/main/Code_of_Conduct.md) in all of our activities and interactions.
