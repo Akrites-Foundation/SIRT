@@ -34,7 +34,7 @@ Working Groups are organized by purpose. The type dictates duration, scope, lead
 The Chair is an organizer and point of contact, not a manager. Responsibilities include:
 * **Triage Decisions**: Maintaining and driving a visible vulnerability triage queue, prioritizing which vulnerabilities the WG works on next.
 * **Read-In Nominations**: Nominating new members to the SIRT for read-in when the WG needs additional expertise.
-* **Coordination with the SIRT**: Acting as the primary liaison between the WG and the SIRT case lead. Reporting status, escalating blockers, and ensuring hand-off checklists are complete before cases move to upstream engagement.
+* **Coordination with the SIRT**: Acting as the primary liaison between the WG and the SIRT case coordinator. Reporting status, escalating blockers, and ensuring hand-off checklists are complete before cases move to upstream engagement.
 * **Keeping the WG Functional**: Maintaining the private repository and read-in list, ensuring the agreed working cadence is followed, and flagging inactive members.
 * **Escalation**: Raising issues the WG cannot resolve internally: disputed findings, cross-WG overlaps, resource shortfalls, or cases that may require Maintainer of Last Resort (MoLR) consideration.
 
@@ -163,9 +163,8 @@ Each WG Chair reports the following counts to the SIRT weekly (or on an agreed c
 * Count of cases handed off to the SIRT for upstream engagement.
 * Any active blockers or resource shortfalls.
 
-#### 8.2 Governing Board & TOC Interfaces
+#### 8.2 Governing Board Interface
 * **SIRT to Board**: The SIRT provides periodic summaries covering WG triage throughput, stall escalations, Chair vacancies, and creation/archival actions.
-* **Transition to TOC**: When the Technical Oversight Committee (TOC) is fully constituted, decision-making authority for standing WG creation, 6-month reviews, stall escalations, and Chair removals will transfer from the Governing Board to the TOC.
 
 ---
 
@@ -181,12 +180,12 @@ Each WG Chair reports the following counts to the SIRT weekly (or on an agreed c
 * **Upstream**: The original open-source project owning the software being worked on.
 
 #### 9.2 Non-Negotiable Ground Rules
-1. **Strict TLP Handling**: Treat all Case Material as **TLP:AMBER+STRICT** (shareable only within your organization on a need-to-know basis). Treat Finder and Intake Material as **TLP:RED** (named recipients only).
+1. **Strict TLP Handling**: Treat Finder and Intake Material as **TLP:RED** (named recipients only). Treat Case Material as **TLP:AMBER+STRICT** (your organization only, need-to-know). See the TLP table in CVD Policy §8.
 2. **Named Parties Only**: Discuss a case *only* with individuals explicitly read into that specific case. Un-read-in individuals do not exist with respect to the case.
 3. **Work Stays Private**: All technical artifacts reside in the WG's private repository until formal upstream coordination at public disclosure. Never commit fixes to public forks or branches ahead of time.
 4. **No Sensitive Artifacts in Chat or Email**: Never paste exploit code, PoCs, or raw patches into Slack or unencrypted email. Use private repository attachments.
 5. **Environment Containment & 2FA**: Hardware-key 2FA is required for repository, Slack, and mailing list access. Do not copy Case Material to personal accounts or unapproved local machines.
-6. **Immediate Embargo Break Escalation**: Report any suspected or actual embargo break to the SIRT immediately. Embargo breaches result in immediate access suspension and referral to the Governing Board for permanent program removal.
+6. **Immediate Embargo Break Escalation**: Report any suspected or actual embargo break to the SIRT immediately. Embargo breaches result in immediate access suspension; the Governing Board decides on permanent removal (Read-In Policy §11).
 
 ---
 
@@ -195,18 +194,18 @@ Each WG Chair reports the following counts to the SIRT weekly (or on an agreed c
 The SIRT provisions three private spaces for each new WG: a **GitHub repository**, a **Slack channel** (`#wg-<name>`), and a **mailing list**.
 
 #### Setup Checklist
-0. **Submit Notification**: Email **`SIRT@Akrites.dev`** with the subject `New-Akrites-WG` containing:
-   * WG Name, Purpose/Charter, and Scope.
+0. **Develop Charter**: Define the formal purpose and domain boundary.
+1. **Submit Notification**: Email **`SIRT@Akrites.dev`** with the subject `New-Akrites-WG` containing:
+   * WG Name, the DRAFT charter, and Scope.
    * WG Type (Technology, Sector, Critical Incident, Clearinghouse, or Enablement).
    * Initial Chair and Co-Chair names and contact details.
    * Member invitation list and specific engineering resource needs (e.g., protocol developers, test engineers).
-1. **Develop Charter**: Define the formal purpose and domain boundary.
-2. **Announce Internally**: Post an announcement in `#all-akrites` calling for qualified member participation.
-3. **Establish Initial Leadership**:
-   * *Private WGs*: Akrites SIRT Director acts as initial Chair until selection (§4) completes.
-   * *Public WGs*: Akrites Program Manager acts as initial Chair until selection (§4) completes.
-4. **Agree on Cadence**: Establish working norms (e.g., async repository tracking plus short weekly syncs) and assign functional roles (analysis, patching, testing).
-5. **Verify Access**: Ensure all members complete hardware-key 2FA setup.
+3. **Announce Internally**: Post an announcement in `#all-akrites` calling for qualified member participation.
+4. **Establish Initial Leadership**:
+   * *Private WGs*: a WG whose workspace holds pre-disclosure case material (all vulnerability WGs). Akrites SIRT Director (foundation staff) acts as initial Chair until selection (§4) completes.
+   * *Public WGs*: an Enablement or Practice WG that handles no embargoed material. Akrites Program Manager (foundation staff) acts as initial Chair until selection (§4) completes.
+5. **Agree on Cadence**: Establish working norms (e.g., async repository tracking plus short weekly syncs) and assign functional roles (analysis, patching, testing).
+6. **Verify Access**: Ensure all members complete hardware-key 2FA setup.
 
 ---
 
@@ -233,7 +232,7 @@ Working Group members **cannot** add individuals directly to repositories, Slack
 5. **Build the Fix**: Develop patches or mitigations in private branches under open-source compatible licenses, adhering to DCO / Signed-off-by requirements for frictionless upstream adoption.
 6. **Test**: Run regression tests to verify the fix resolves the root cause without introducing regressions.
 7. **Draft CVD Rollout Plan**: Formulate recommendations for embargo window, target Public Disclosure (PD) date, and read-in list.
-8. **Hand-Off to SIRT**: Notify the SIRT that the case is ready for Vulnerability Disclosure Report (VDR) generation and upstream engagement.
+8. **Hand-Off to SIRT**: Notify the SIRT that the case is ready for the Vulnerability Disclosure Report (VDR — the disclosure package sent upstream; see the Glossary) and upstream engagement.
 
 > ⚠️ **Strict Boundary**: Working Group members **do not contact upstream maintainers directly**. The SIRT acts as the single point of contact to upstream maintainers, co-coordinating with relevant WG members as appropriate.
 
