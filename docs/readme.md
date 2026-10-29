@@ -24,6 +24,7 @@
 - [SIRT CVD Guide](https://github.com/Akrites-Foundation/SIRT/blob/main/docs/Akrites_CVD_Guide.md)
 - [SIRT Glossary](https://github.com/Akrites-Foundation/SIRT/blob/main/docs/Akrites_SIRT_CVD_Glossary.md)
 - [SIRT Upstream Engagement Guidelines](https://github.com/Akrites-Foundation/SIRT/blob/main/docs/upstream-engagement-guidelines.md)
+- [Linux kernel upstream engagement guidelines](linux-kernel-upstream-engagement-guidelines.md)
 - [SIRT What Counts as Public Disclosure guidelines](https://github.com/Akrites-Foundation/SIRT/blob/main/docs/what-counts-as-public-disclosure.md)
 
 ## Presentations

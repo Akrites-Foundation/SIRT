@@ -95,6 +95,8 @@ humans in the loop carries real credibility risk.
   than firing individual reports.
 - Where a project has its **own mature CVD/CNA process**, defer to it; we add our perspective (and
   can record a deviation notice) without trying to take over.
+- For Linux kernel cases, follow the [Linux kernel upstream engagement guidelines](linux-kernel-upstream-engagement-guidelines.md)
+  for report routing, patch review, confidentiality, and fix delivery.
 
 ### 1.7 Escalate needs, not just findings
 

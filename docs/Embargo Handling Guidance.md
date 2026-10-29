@@ -47,7 +47,7 @@ The embargo is set by the disclosure environment of the *affected project*, not 
 
 When a report is shared with the SIRT, we will **always attempt to follow the affected upstream project's (or coordinating list's) disclosure requirements.** That governing timeline may be **shorter or longer than the window the Finder would prefer**:
 
-- It is often **shorter** than a Finder might expect — the Linux kernel works to ~7 days from fix-ready, `linux-distros` caps at 14, and OpenSSL prenotifies for ~7 (see §5). A Finder hoping for a longer runway to prepare a write-up or conference talk should not count on it.
+- It is often **shorter** than a Finder might expect — upstream projects and coordinating lists may allow only days for release deferral or prenotification (see §5). A Finder hoping for a longer runway to prepare a write-up or conference talk should not count on it.
 - It can occasionally be **longer** — for example, cross-vendor hardware/microarchitectural issues sometimes carry multi-month embargoes.
 
 **Finders should plan accordingly.** By reporting to the SIRT, a Finder accepts that the disclosure timeline will be aligned to the project/list rules and the maintainer's authority, and may not match the Finder's own desired schedule. Where a Finder has a hard constraint (e.g., a planned publication date), raise it at intake so the SIRT can factor it into negotiation — but the project's requirements and maintainer approval remain controlling.
@@ -81,23 +81,26 @@ This aligns with the Akrites first principle that an undisclosed vulnerability i
 
 These illustrate how much real embargo windows vary, and why deferring to the project is the rule rather than the exception. Timelines below reflect the projects' published policies as of mid-2026; **always re-check the live policy, as these change.**
 
-### Linux kernel (`security@kernel.org`)
+### Linux kernel
 
-The kernel security team treats its list as a fix-development channel, not a disclosure channel, and runs one of the tightest timelines in the ecosystem. Once a robust fix exists, publication of the fix may be deferred only at the reporter's or an affected party's request for **up to 7 calendar days from the start of the release process, extendable to 14 days only exceptionally** where criticality justifies it. The only accepted reason for deferral is QA and large-scale rollout logistics. The team does not assign CVEs or sign NDAs, and considers "get the bug fixed" its sole interest.
-
-**SIRT implication:** for kernel issues, the 30-day default is irrelevant — the SIRT works to the 7-day (max 14-day) window and notifies the kernel security team **first**, before any distros or public list.
+Follow the [Linux kernel upstream engagement guidelines](linux-kernel-upstream-engagement-guidelines.md)
+and the kernel policies linked there for report routing, release deferral,
+confidentiality, distribution coordination, and CVE assignment. Record the
+agreed release timing and publication permissions in the case file.
 
 ### Openwall `linux-distros` and `oss-security` lists
 
-Where a kernel or broader OSS issue needs distribution vendors prepared before PD, coordination flows through the private `linux-distros` list, with public disclosure on `oss-security`. Key rules:
+For issues eligible for private distribution coordination, use `linux-distros`, with public disclosure on `oss-security`. Public issues go to `oss-security`. Key rules:
 
 - **Maximum embargo is 14 days. Do not ask for longer.** Windows shorter than 7 days are preferred; the reasonable minimum is 1 day, and a few hours can be acceptable in extreme cases.
-- For **Linux kernel** issues specifically, you must notify the **kernel security team first, wait for the fix, and only then** notify `linux-distros` or `oss-security`.  The linux-distros list should ONLY be contacted **after** a Linux kernel fix is in a **publicly released kernel version**.
+- For **Linux kernel** issues, follow the [kernel-specific coordination sequence](linux-kernel-upstream-engagement-guidelines.md#22-coordinate-with-distributions-in-the-right-order)
+  before contacting distributions.
 - The reporter **must** post publicly on `oss-security` within 14 days of contacting the list, **whether or not a patch is ready.** So don't engage `linux-distros` until a patch exists.
 - Everything sent to `(linux-)distros` becomes public at disclosure — post nothing that can't eventually be public.
-- Vendors generally prefer to publish updates Tuesday–Thursday (the historical policy allowed stretching a window to ~19 days only to land disclosure on a Monday/Tuesday when reported late in the week).
+- Vendors generally prefer to publish updates Tuesday–Thursday.
 
-**SIRT implication:** these lists hard-cap the embargo well below the SIRT default. For any multi-distro Linux issue, plan to the ≤14-day `linux-distros` clock and treat the kernel-first ordering as mandatory.
+**SIRT implication:** when using `linux-distros`, plan to its ≤14-day clock from
+the initial post and assign responsibility for the required public follow-up.
 
 ### OpenSSL
 
@@ -115,7 +118,7 @@ Some projects run scheduled release trains rather than per-issue embargoes — e
 1. **Determine the governing timeline at the start of Coordination** and record it in the case (which of the four precedence tiers in §2 applies, and the source URL/policy it came from).
 2. **Set PD to the shortest applicable timeline.** When multiple parties/components are involved with different windows, the tightest binding constraint (e.g., a `linux-distros` 14-day cap, or a project that has already committed to a date) governs the synchronized window.
 3. **Maintainer authority is final.** The SIRT proposes and negotiates; the maintainer approves or revises the PD date for their project. The SIRT does not extend an embargo past what the project or a coordinating list permits.
-4. **Prepare for embargo break from day one.** Per the FIRST guidance and the Coordination phase of the SIRT process, hold ready an interim advisory and consumer-protection guidance so that if the embargo leaks or an in-the-wild exploit appears, the SIRT can move immediately to accelerated or full disclosure. Recent kernel cases (multiple 2026 embargo collapses driven by AI-accelerated independent discovery) show this is now a routine contingency, not an edge case.
+4. **Prepare for embargo break from day one.** Per the FIRST guidance and the Coordination phase of the SIRT process, hold ready an interim advisory and consumer-protection guidance so that if the embargo leaks or an in-the-wild exploit appears, the SIRT can move immediately to accelerated or full disclosure.
 5. **TLP throughout.** The embargo is enforced technically and procedurally via TLP 2.0 (TLP:RED at intake, TLP:AMBER+STRICT for case/patch material) and least-privilege read-in, consistent with the Akrites confidentiality framework.
 6. **Set Finder expectations at intake.** Confirm the Finder understands the timeline is governed by the project/list (§4.1), that duplicate reports may exist and alter the window (§4.2), and classify the report's **embargo eligibility** based on the tooling used — reports developed with public LLMs are treated as having **no embargo available** (§4.3).
 7. **Handle duplicates transparently.** When deduplication surfaces overlapping reports, inform the affected reporters that a duplicate exists (without leaking another Finder's confidential detail), and account for any embargo already set — or foreclosed — by a parallel discloser or Coordinator.
@@ -126,8 +129,8 @@ Some projects run scheduled release trains rather than per-issue embargoes — e
 
 | Source of timeline | Typical embargo | SIRT action |
 |---|---|---|
-| Linux kernel security team | ≤7 days from fix ready (14 exceptional) | Notify kernel team first; work to their window |
-| Openwall `linux-distros` / `oss-security` | ≤14 days (7 preferred); must go public in 14 | Kernel-first ordering; engage only with patch in hand |
+| Linux kernel | See [kernel release timing](linux-kernel-upstream-engagement-guidelines.md#21-agree-release-timing-and-permissions) | Follow the kernel-specific reporting and coordination guidance |
+| Openwall `linux-distros` / `oss-security` | ≤14 days (7 preferred); must go public in 14 | Select the list by disclosure status; follow §5 for kernel-specific coordination |
 | OpenSSL | ~7-day prenotify; ≤~1 month total | Support short prenotification cadence |
 | Fixed-cadence projects | Project-defined (e.g., 72h, quarterly) | Align PD to project's release window |
 | Project with a published policy (general) | As published | Defer to it |
