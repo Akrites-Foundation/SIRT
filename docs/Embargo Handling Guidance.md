@@ -99,7 +99,7 @@ For issues eligible for private distribution coordination, use `linux-distros`, 
 - Everything sent to `(linux-)distros` becomes public at disclosure — post nothing that can't eventually be public.
 - Vendors generally prefer to publish updates Tuesday–Thursday.
 
-**SIRT implication:** when using `linux-distros`, plan to its ≤14-day clock from
+**SIRT implication:** when using `linux-distros`, plan based on its ≤14-day clock from
 the initial post and assign responsibility for the required public follow-up.
 
 ### OpenSSL
