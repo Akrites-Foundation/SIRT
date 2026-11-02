@@ -27,7 +27,7 @@ When the Akrites SIRT reaches out regarding a security issue in an open-source p
 Maintainers go quiet for many valid life reasons (illness, bereavement, job changes, lost access). Akrites will **never** declare a project abandoned until it has been silent across all attempted channels for **at least 90 calendar days**. Any sign of life (a commit, issue comment, or registry login signal) resets the 90-day clock completely.
 
 ### 5. Returning Maintainer Guarantees
-* **Unconditional Handback**: If a maintainer returns after a last-resort security release has been issued, any activity by their verified identity (e.g., in their repository) immediately reclaims full ownership.
+* **Unconditional Precedence**: Akrites never holds ownership of a project. If a maintainer returns after a last-resort security release, any activity by their verified identity (e.g., in their repository) immediately ends the MoLR engagement, and the maintainer's releases take precedence.
 * **Zero Friction**: The returning maintainer does not need to justify their absence, explain their security practices, or adopt Akrites tooling. They inherit all patch PRs, test artifacts, and advisory context with zero obligations.
 * **Deprecation / Redirection**: If a returning maintainer requests that a last-resort release be taken down, Akrites marks the release as deprecated and redirects users to the maintainer's official releases. (Historical releases and advisories remain published to prevent supply-chain breakage and maintain security history).
 
@@ -70,15 +70,15 @@ This policy governs SIRT actions when coordinated vulnerability disclosure (CVD)
 
 | Clock | Purpose | Speed / Controls |
 | :--- | :--- | :--- |
-| **Disclosure Clock** | Governs how quickly downstream users are protected via advisories and mitigations. | **SSVC-adjustable** based on severity, EPSS, and active exploitation. Default decision point at **T0 + ~30 calendar days**. |
+| **Disclosure Clock** | Governs how quickly downstream users are protected via advisories and mitigations. | **SSVC-adjustable** based on severity, EPSS, and active exploitation. Default decision point at **T0 + 15 business days**, aligned with the CVD Policy's 15-business-day upstream window. |
 | **Abandonment Clock** | Governs when Akrites may conclude a project is abandoned and eligible for Track B. | **Hard floor: 90 calendar days of total silence** across all channels. Insensitive to severity or exploit pressure. |
 
 ### 3.1 Disclosure Clock Contact & Escalation Protocol
 * **Attempt 1 (T0)**: Private report via preferred channel (`SECURITY.md`, GitHub PVR, security email).
-* **Attempt 2 (T0 + 5 business days)**: Re-send and widen to commit-history maintainer emails and package registry contacts.
-* **Attempt 3 (T0 + 10 business days)**: Escalate to umbrella organizations, foundations (STF, OpenSSF, Alpha-Omega), and distro security teams.
-* **Coordinator Handoff (T0 + 15 business days)**: Bring in neutral coordinators (CERT/CC, VINCE, CNA-LR).
-* **Decision Point (T0 + ~30 calendar days)**: Classify into a scenario and publish advisory, VEX, and mitigation.
+* **Attempt 2 (T0 + 3 business days)**: Re-send and widen to commit-history maintainer emails and package registry contacts.
+* **Attempt 3 (T0 + 7 business days)**: Escalate to umbrella organizations, foundations (STF, OpenSSF, Alpha-Omega), and distro security teams.
+* **Coordinator Handoff (T0 + 10 business days)**: Bring in neutral coordinators (CERT/CC, VINCE, CNA-LR).
+* **Decision Point (T0 + 15 business days)**: Classify into a scenario and publish advisory, VEX, and mitigation per the CVD Policy.
 
 ---
 
@@ -86,12 +86,12 @@ This policy governs SIRT actions when coordinated vulnerability disclosure (CVD)
 
 | Signal Observed | Scenario | Primary Path (Track A) | Track B (MoLR) Status |
 | :--- | :--- | :--- | :--- |
-| Maintainer engages; lacks CI/bandwidth | **§5.1 Capacity Gap** | Assist in place; supply triage, patches, and release engineering. | **No.** Capacity gaps are met with capacity. |
-| Maintainer disputes finding | **§5.2.1 Technical Disagreement** | Exchange evidence, run PoC, offer call. Concede if maintainer is right. | **No.** Not a stall condition while live. |
-| Maintainer declines to fix after exchange | **§5.2 Deliberate Non-Fix** | Publish advisory, VEX (`will_not_fix`), verbatim rationale, and workarounds. | **Only** if no downstream party will carry the fix. |
-| Unresponsive; project active elsewhere | **§5.3a Silent but Alive** | Continue escalation; pursue intermediate maintainer migration. | **No.** Silence is not total; clock restarts. |
-| Total silence across all channels ≥ 90 days | **§5.3b Abandoned** | Perform §6 last-resort security release and parallel §7 steward search. | **Yes**, subject to §6.1 entry test. |
-| Unreachable + indicators of compromise | **§5.3c Suspect / Compromised** | Treat as security incident; clean-room build from known-good commit. | **Yes**, with heightened provenance vetting. |
+| Maintainer engages; lacks CI/bandwidth | **Capacity Gap** (§1.1) | Assist in place; supply triage, patches, and release engineering. | **No.** Capacity gaps are met with capacity. |
+| Maintainer disputes finding | **Technical Disagreement** (Part I §2) | Exchange evidence, run PoC, offer call. Concede if maintainer is right. | **No.** Not a stall condition while live. |
+| Maintainer declines to fix after exchange | **Deliberate Non-Fix** (§1.1) | Publish advisory, VEX (status affected, no fix planned), verbatim rationale, and workarounds. | **Only** if no downstream party will carry the fix. |
+| Unresponsive; project active elsewhere | **Silent but Alive** | Continue escalation; pursue intermediate maintainer migration. | **No.** Silence is not total; clock restarts. |
+| Total silence across all channels ≥ 90 days | **Abandoned** | Perform §5 last-resort security release and parallel Part III §1 steward search. | **Yes**, subject to §5.1 entry test. |
+| Unreachable + indicators of compromise | **Suspect / Compromised** | Treat as security incident; clean-room build from known-good commit. | **Yes**, with heightened provenance vetting. |
 
 ---
 
@@ -101,12 +101,13 @@ This policy governs SIRT actions when coordinated vulnerability disclosure (CVD)
 Track B requires a signed entry test confirming all six criteria:
 1. **Absence of Alternatives**: All Track A options (assist in place, distro carry, community successor, maintainer-blessed transfer, intermediate migration) are documented as asked and declined.
 2. **Published Criticality Threshold**: The package meets published, objective criticality metrics (e.g., OpenSSF Criticality Score, dependent tree counts, member SBOM prevalence).
-3. **Permissive License**: Open-source license explicitly permits redistribution.
+3. **License Permits Redistribution**: The open-source license explicitly permits redistribution of modified code; any copyleft obligations (Part IV §1) can be met.
 4. **Bounded Patch Series**: Fix is deliverable as a patch series against a pinned upstream commit.
 5. **Capacity Slot Available**: Akrites maintains a strict cap on concurrent MoLR engagements; a slot must be available.
 6. **Per-CVE Approval**: Approval is granted specifically for one CVE ID.
 
 ### 5.2 Approval Authority & Recusal
+* **Approval**: Track B requires approval by the **Governing Board** (or a MoLR subcommittee the Governing Board designates in writing), granted per CVE and recorded in the MoLR decision record template.
 * **Mandatory Recusal**: Any decision-maker with a commercial, personal, or organizational dependency on the affected package must recuse themselves from voting.
 
 ### 5.3 The Artifact: Patch Series on a Pinned Commit
@@ -133,7 +134,7 @@ If an engagement ends or no steward is found, Akrites **freezes the artifact** (
 
 ### 3. Machine-Readable Routing Without Taking Namespaces
 To ensure downstream users receive security fixes without Akrites taking package names:
-* **OSV & VEX Pointers**: All advisories publish machine-readable `"fixed_in_different_package"` VEX pointers.
+* **OSV & VEX Pointers**: Advisories publish machine-readable pointers to the replacement package: OSV records list it as a reference, and VEX statements carry status affected with an action statement naming the Akrites-namespace package that contains the fix.
 * **Distro Integration**: Fixes are routed directly to Linux distribution security teams (Debian, Red Hat, Alpine, etc.).
 * **Intermediate Maintainer Migration**: SIRT works with high-leverage upstream libraries to update their dependency specs to point to the secure patch or alternative package, resolving exposure for thousands of downstream projects at once.
 
@@ -142,7 +143,7 @@ To ensure downstream users receive security fixes without Akrites taking package
 # Part IV: Legal, Licensing, & Metrics
 
 ### 1. Licensing & Trademark Boundaries
-* **Copyright**: Permissive licenses (MIT/BSD/Apache-2.0) permit patch redistribution. Copyleft (GPL/LGPL) requirements (source availability, notice retention, DCO sign-offs) must be strictly fulfilled.
+* **Copyright**: Permissive licenses (MIT/BSD/Apache-2.0) permit patch redistribution. Copyleft (GPL/LGPL) requirements (source availability, license and notice retention, marking of modifications) must be strictly fulfilled. Commits also carry DCO sign-offs per Akrites practice.
 * **Trademark**: Copyright licenses do not grant trademark rights. MoLR releases must **never** use original project logos or trademarked names as the release identity.
 
 ### 2. Metrics & Counter-Metrics
@@ -154,15 +155,15 @@ To ensure downstream users receive security fixes without Akrites taking package
 ## Appendix A: One-Page Lifecycle & Decision Flow
 
 ```
-DISCLOSURE CLOCK (Severity-adjustable; T0+30d default decision point)
-T0 ──▶ T0+5bd (Widen) ──▶ T0+10bd (Ecosystem) ──▶ T0+15bd (Coordinators) ──▶ T0+30d (Decision)
+DISCLOSURE CLOCK (Severity-adjustable; T0+15bd default decision point)
+T0 ──▶ T0+3bd (Widen) ──▶ T0+7bd (Ecosystem) ──▶ T0+10bd (Coordinators) ──▶ T0+15bd (Decision)
                                                                                   │
   ┌───────────────────────────────────────────────────────────────────────────────┴──────────────┐
   │                                                                                              │
   ▼                                                                                              ▼
 Track A: Upstream Assistance                                                   Track B: Last-Resort Action
 ├── Capacity Gap ──▶ Assist in place & build patch                              ├── Requires 90-Day Silence Floor
-├── Disagreement ──▶ Technical exchange ──▶ Verbatim rationale                  ├── Signed §6.1 Entry Test
-└── Unresponsive ──▶ Intermediate maintainer migration                         ├── Board Approval & Recusal
+├── Disagreement ──▶ Technical exchange ──▶ Verbatim rationale                  ├── Signed Entry Test (§5.1)
+└── Unresponsive ──▶ Intermediate maintainer migration                         ├── Governing Board Approval & Recusal
                                                                                 └── Patch Series on Pinned Commit
 ```
