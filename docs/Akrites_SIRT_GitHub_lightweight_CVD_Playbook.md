@@ -3,6 +3,8 @@
 
 This process is a lightweight, manual version of the broader [CVD](Akrites_CVD_Playbook.md) process. It is meant to be temporary, and only to be used as a stopgap when we need to operate outside of The Akrites Pipeline ("TAP").
 
+> **All repositories used by this process are private.** Never open a vulnerability issue in a public repository; the only exception is a finding triaged as \action: public-intake-report` (below).`
+
 ---
 ## Principles
 
@@ -16,9 +18,9 @@ This process is a lightweight, manual version of the broader [CVD](Akrites_CVD_P
 <summary>Involved Parties, Definitions and Tools used by the process</summary>
 
 ## Parties involved
-- **OSS SIRT** ("The SIRT"): A persistent "`SIRT-Team`" is available as a reviewer, assignee or just tagging in GitHub.
+- **Akrites SIRT** ("The SIRT"): A persistent "`SIRT-Team`" is available as a reviewer, assignee or just tagging in GitHub.
 - **Akrites Members WG Rotations** ("The Rotation"): A member-staffed rotation is responsible for triaging, daily, the issue list in github.
-- **Working Group Members**: subject matter experts who can both weigh in and help with vulnerabilties.
+- **Working Group Members**: subject matter experts who can both weigh in and help with vulnerabilities.
 
 ## Tools assisting this process
 - **GitHub**: 
@@ -35,10 +37,11 @@ We rely on the following labels, and their definitions:
 
 | Label | When to use | Responsible party for action |
 | --- | --- | --- |
-| `action: need-triage` | This label should not stick for long, and is used to explicitly force the Rotation to look and triaging an issue asap. | Rotation |
+| `action: need-triage` | This label should not stick for long, and is used to explicitly force the Rotation to look at and triage an issue asap. | Rotation |
+| `action: need-SME-review` | First-pass SME review when the Rotation can't decide alone. | Rotation, Working Group Members |
 | `action: need-additional-SME-review` | We need subject matter experts to weigh in more in this issue. This could mean we are not aligned on what the severity is, or what we need to do on this. | Rotation, Working Group Members | 
 | `action: need-more-artifacts` | We need more information or artifacts to this report. Typically used when we need patches or proof of concept attached. | Finder |
-| `action: public-intake-report` | For post-triaged issues which are not severe enough to warrant a private reporting. This includes hardening and such bugs. | SIRT |
+| `action: public-intake-report` | For post-triaged issues that are not vulnerabilities (hardening, defense-in-depth, non-security bugs) and can be filed publicly upstream. Anything that is a vulnerability goes through the private path. | SIRT |
 | `action: ready-for-submission` | Ready for sending to the project upstream. | SIRT |
 | `submitted: not-acknowledged-yet` | Sent up, but yet to be getting a receipt... this could be normal, but we want to make sure we do not let those linger | SIRT |
 | `submitted: delayed-upstream-acceptance` | issue is reported upstream, but seem stuck on something, somewhere... subjective, but should get attention once tagged. | SIRT |
@@ -97,6 +100,8 @@ flowchart TD
 | **<= 3 days**: | The maximum number of days we will keep something in our queue. |
 | **7 days**: | The number of days after which we will ping upstream again on un-ack'd messages from Akrites. |
 
+These internal SLOs sit inside the public commitments in the CVD Policy §5 (acknowledge within 2 business days; initial assessment within 10).
+
 </details>
 
 ## Manual Process in GitHub
@@ -104,15 +109,15 @@ At the high level, this process exists to allow us to ensure we do not drop vuln
 
 **Daily**
 - The Rotation checks the issues in the queue
-- The SIRT ensures anything tagged with `action: ready-for-submission` or `action: submit-public-issue` is reported upstream accordingly
+- The SIRT ensures anything tagged with action: ready-for-submissionoraction: public-intake-report is reported upstream accordingly
 
-### Responsibiltiies of the groups
+### Responsibilities of the groups
 **The Rotation** ensures...
 - the queue is getting attention every day
     - If there are tagged issues needing attention, they should get it
         - escalate or fetch experts on the slack channel as needed
         - if escalation is not working out, escalate to the SIRT
-- issues get good questions and comments when unclear or missing informations based on the [UPSTREAM REPORT TEMPLATE](../templates/upstream-report-template.txt).
+- issues get good questions and comments when unclear or missing information based on the [UPSTREAM REPORT TEMPLATE](../templates/upstream-report-template.txt).
 
 **The SIRT** ensures...
 - all reporting `action:` labels are acted upon daily
@@ -120,7 +125,7 @@ At the high level, this process exists to allow us to ensure we do not drop vuln
 - Escalations from the Rotation are handled swiftly
 
 **The Akrites Working Groups Members** ensure...
-- a response is provided, or find The Right SME to get involved when needed or requested by the Rotation (when issues are tagged with `action: need-additionnal-SME-review` or similar)
+- a response is provided, or find The Right SME to get involved when needed or requested by the Rotation (when issues are tagged with `action: need-SME-review or `action: need-additional-SME-review` or similar)
 - the issues reported are well-formed
     - we want to base this on the [UPSTREAM REPORT TEMPLATE](../templates/upstream-report-template.txt).
     - the reported issues are within the project's Threat Model
