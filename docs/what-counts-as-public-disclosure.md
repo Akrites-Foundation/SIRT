@@ -4,7 +4,7 @@
 **Status:** Draft for Board review
 **Tracking:** [Akrites-Foundation/SIRT #23](https://github.com/Akrites-Foundation/SIRT/issues/23)
 **Audience:** Akrites members, WGs, SIRT staff, and ecosystem participants
-**Companion docs:** `sirt-communications-playbook.md` (Play 5 public disclosure, Play 6 embargo break), `Embargo Handling Guidance.md`, `acknowledgements-and-attribution.md`
+**Companion docs:** [Communications Playbook](sirt-communications-playbook.md) (Play 5 public disclosure, Play 6 embargo break), [Embargo Handling Guidance](Embargo%20Handling%20Guidance.md), [Acknowledgements & Attribution](acknowledgements-and-attribution.md)
 
 > Spelling standard: **Akrites** (Akrites Foundation, Akrites SIRT). "OSS-SIRT" is a synonym.
 
@@ -27,7 +27,7 @@ procedure; and the leak/break classification and response procedure.
   PD can be **intentional** (our coordinated release) or **unintentional** (a leak/break). Once
   information is genuinely public, it is public regardless of how it got there.
 - **Embargo / confidentiality arrangement:** an agreement that named parties will hold vulnerability
-  information privately until an agreed time or trigger. Default proposed upstream embargo is **15 business days (bd)** from owner hand-off (targeting total time to PD of < 17 bd Low/Med, < 21 bd High, < 24 bd Critical), negotiable and deferring to upstream (see Embargo Handling Guidance).
+  information privately until an agreed time or trigger. Default proposed upstream embargo is **15 business days (bd)** from owner hand-off (targeting total time to PD of ≤ 17 bd Low/Med, ≤ 21 bd High, ≤ 24 bd Critical), negotiable and deferring to upstream (see Embargo Handling Guidance).
 - **Coordinated Release Date (CRD):** the pre-agreed date/time for intentional PD, set when the fix
   is available and an identifier is assigned.
 - **Tiered / read-in sharing:** sharing with specific trusted parties under a confidentiality
@@ -94,11 +94,7 @@ left guessing. Coordinate with the maintainer on describing the issue.
 
 ### 3.4 "If we found it, others can" (LLM/fuzzer-discoverable)
 
-Per prior guidance: something found with a **public LLM or fuzzer** is not treated as a secret in
-the same way a privately-held finding is — reproducibility lowers the value of secrecy. This
-**reduces the strength of an embargo argument**, but it does **not** by itself constitute public
-disclosure. PD still requires that specific information has actually been made public (§2). Use this
-factor when weighing timelines and acceleration decisions, not as a definition of PD.
+Something found with a public LLM or fuzzer is not treated as a secret in the same way as a privately held finding. Under the CVD Policy §8 and the Embargo Handling Guidance §4.3, a report developed with public AI tooling has no embargo available and is handled on an accelerated, assume-exposed basis. That rule concerns embargo eligibility. It does not mean the vulnerability has been publicly disclosed: PD still requires that specific information has actually been made public (§2). Use reproducibility when weighing timelines and acceleration, not as a definition of PD.
 
 ### 3.5 Partial vs. full exposure
 
@@ -114,14 +110,13 @@ This is the planned, intentional crossing of the public boundary on the Coordina
 
 ### 4.1 Preconditions (all should be true before CRD)
 
-- **Identifier assigned.** Nothing is published without a CVE (or equivalent) identifier — every
-  issue through Akrites carries one.
+- **Identifier assigned.** Nothing is published without a CVE (or equivalent) identifier.
 - **Fix or mitigation available.** A fixed version, fixed commit, and/or deployable
   workaround/mitigation exists. If the full fix isn't ready in time, mitigations are shared rather
   than slipping silently.
 - **Maintainer alignment.** The maintainer has set (or agreed to) the final fix and PD date; we
   defer to upstream where they have a process.
-- **Machine-readable data ready.** CSAF VEX and OSV records, precise affected/fixed versions
+- **Machine-readable data ready.** An OSV record (and CSAF/VEX where the SIRT publishes them), precise affected/fixed versions
   (tested), and references prepared alongside the human-readable advisory.
 - **Attribution confirmed.** Finder acknowledgement preference recorded (see attribution doc).
 - **Tiered obligations satisfied.** Any Tier 2+ pre-positioning is complete.
@@ -140,7 +135,7 @@ Coordinated PD readiness — {tracking-id}
 [ ] Fixed version / fixed commit confirmed  (or mitigation ready)
 [ ] Maintainer agreed fix + date
 [ ] Affected/fixed versions tested and precise
-[ ] CSAF VEX + OSV record staged
+[ ] OSV record staged (CSAF VEX where applicable)
 [ ] CVSS vector (not just score) prepared; deviation notice if scores conflict
 [ ] Acknowledgement block finalized (finder preference)
 [ ] Member notice + SIREN drafted
@@ -200,14 +195,14 @@ CRD but increase monitoring and readiness.
    comms.
 2. **Internal flash** to the case team — use Play 6, Step 1. Assign a decision owner and a deadline.
 3. **Assess & classify** per §5.3–5.4. Snapshot the evidence.
-4. **Decide: accelerate or hold.** Decision owner is the SIRT; escalate to TOC/Board for
+4. **Decide: accelerate or hold.** Decision owner is the SIRT case coordinator; escalate to the SIRT Director, and to the Governing Board for
    high-impact/critical-infra timing calls.
 5. **Notify affected parties** — maintainer and coordinators (Play 6, Step 2), and read-in finders
    (Play 3). Balanced coordinator notice; **no single-government pre-disclosure.**
 6. **If accelerating:** finalize the best-available advisory (fix or mitigation status stated
    honestly) and publish via Play 5. Fire the member notice/SIREN in parallel.
 7. **If holding:** document why, raise monitoring, and confirm the CRD still stands with all parties.
-8. **Record & learn:** log the break on the project **Security Card** (including any upstream/partner
+8. **Record & learn:** record the break in the case file (and, once the Governing Board approves its governance, on the project **Security Card**) (including any upstream/partner
    mishandling for future risk weighting) and run a **blameless postmortem** (Play 18).
 
 ### 5.6 Roles
@@ -217,7 +212,7 @@ CRD but increase monitoring and readiness.
 - **Maintainer:** consulted; retains authority over their fix; timing may be overridden only to
   protect users after a confirmed public break.
 - **Coordinators/clearinghouses:** notified in balanced fashion; may delegate their own read-ins.
-- **TOC/Board:** decide high-impact/critical-infra acceleration and any policy deviations.
+- **SIRT Director / Governing Board:** decide high-impact/critical-infra acceleration (Director) and policy deviations (Governing Board).
 
 ---
 
@@ -256,13 +251,13 @@ flowchart TD
     I -- No --> J[Publish mitigations +<br/>advisory, fix to follow]
     H --> K[Play 5 publish + notify parties<br/>no single-gov pre-disclosure]
     J --> K
-    F --> L[Log on Security Card + postmortem]
-    K --> L
+    F --> L[Record in case file + postmortem]
+    K --> L[Record in case file + postmortem]
 ```
 
 ---
 
-## 7. Open items for Board
+## 7. Open items for Governing Board
 
 - **Ratify the PD definition and bright-line test** (§2) and add key terms to the repo glossary
   (per the F2F action to define disclosure on the repo).
