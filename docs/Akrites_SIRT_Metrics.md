@@ -1,6 +1,6 @@
 # Akrites SIRT Metrics — Proposal
 
-**Status:** Draft v0.1 — for review by the Governing Board and extended SIRT members
+**Status:** Draft v0.2 — for Governing Board review
 **Owner:** Policy/Process work stream (CRob)
 **Scope:** A lean starter set of metrics, measurable in the near term and tied to the 30/60/90 goals. A fuller "north-star" catalog can follow in a later phase.
 
@@ -46,6 +46,9 @@ Audience key: **I** = internal team · **B** = Board/members · **P** = public. 
 | Regressions introduced by our patches (goal: 0) | Quality guardrail | I · B | Near | Oct 15: no-regression goal |
 | Embargo integrity (% clean / incident count) | Integrity guardrail | I · B · P* | Now | Ongoing |
 | Automation ratio; capacity vs. demand | Efficiency/resourcing | I · B | Near | Ongoing (lightest weight) |
+| Acknowledgement within 2 business days (% of reports) | Commitment (SECURITY.md) | I · B · P | Now | Ongoing |
+| Initial assessment within 10 business days (%) | Commitment (SECURITY.md) | I · B · P | Now | Ongoing |
+| PD within severity target (≤ 17/21/24 bd) (%) | Commitment (CVD Policy §5) | I · B · P* | Near | Ongoing |
 
 \* Public sees an aggregated or qualitative form only.
 
@@ -94,15 +97,17 @@ This preserves the member-value signal without exposing anyone's dependency map.
 
 ## Phasing (tied to 30/60/90)
 
-- **By ~Aug 15:** stand up the internal counters the tooling already supports — intake, dedup rate, disclosures, projects supported, active WGs, embargo integrity.
-- **By ~Sept 15:** add throughput and cycle-time views — dedup counts/percentages, median time-to-fix (with regressions), patches-in-pipeline.
-- **By ~Oct 15:** report the outcome and impact headlines — disclosures completed (~50 target), upstream fixes merged, ≥1 downstream remediation case — and publish the first public cut alongside the blog and maintainer testimonials.
+- **2026-08-15 — internal counters** (intake, dedup rate, disclosures, projects supported, active WGs, embargo integrity): {met / partly met / not met — note}.
+- **2026-09-15 — throughput and cycle-time views**: {status}.
+- **2026-10-15 — outcome headlines and first public cut** (~50 disclosures, upstream fixes merged, ≥1 downstream case): {status}.
+- **Next milestone:** {date} — {what}, owner {name}.
 
 ---
 
-## Open questions for the Board
+## Open questions for the Governing Board
 
 - Reporting **cadence and format** for the Board/member cut (e.g., monthly summary vs. live dashboard).
 - Whether **severity weighting** for impact metrics uses CVSS, EPSS, or a blended model.
 - Who **approves the public cut** each period against the confidentiality gate.
 - Any metric the Board wants elevated to a **headline** that isn't in this starter set.
+- Who owns the case-lifecycle data store that these metrics are computed from?
