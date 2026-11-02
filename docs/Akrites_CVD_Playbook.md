@@ -49,6 +49,9 @@ These principles, drawn largely from long-standing coordination practice, guide 
 
 Each phase below notes what happens, then what "good" looks like for the parties with an active role in it. This guide captures the conceptual process, not the specific mechanics of how these are achieved through automation and agentic workflows (as appropriate). 
 
+> **Mapping to the CVD Policy lifecycle.** This guide's phases group the policy's nine phases for practical use:
+> Discovery & Reporting = *Discover*; Validation & Triage = *Deduplicate & Triage* + *Validate*; Prioritization = *Validate* (severity); Read-in & Embargo = *Coordination*; Remediation = *Patch* + *Test*; Upstream Engagement = *Coordination* (upstream hand-off); Disclosure Preparation = *Document* + *Distribute*; Public Disclosure = *Disclose*; Post-Disclosure = after *Disclose*.
+
 ### Phase 1 — Discovery & Reporting
 A vulnerability is found and reported into a single intake path (the "front door"), so the project isn't approached through many uncoordinated channels.
 - **Finder:** submit a clear, reproducible report — affected component and versions, impact, and reproduction steps. Report privately; don't open a public issue or PR. Note whether AI/LLM tooling assisted and whether it was public or confidential — public tooling can foreclose an embargo.
@@ -69,7 +72,7 @@ The confirmed issue is assessed for severity and urgency, and resources are allo
 
 ### Phase 4 — Read-in & Embargo
 The people who will work the case are read in, and the embargo and target public-disclosure (PD) date are set.
-- **Coordinator:** read in only those with a need to know who can analyze, patch, test, or stage the fix, at the least-privileged tier sufficient for their role; issue each a read-in notice; propose an embargo. Offer a standard **15-business-day proposed embargo** (targeting total time to Public Disclosure of < 17 bd Low/Med, < 21 bd High, < 24 bd Critical), deferring to the project's own policy, with a defined path to extend for good cause.
+- **Coordinator:** read in only those with a need to know who can analyze, patch, test, or stage the fix, at the least-privileged tier sufficient for their role; issue each a read-in notice; propose an embargo. Offer a standard **15-business-day proposed embargo** (targeting total time to Public Disclosure of ≤ 17 bd Low/Med, ≤ 21 bd High, ≤ 24 bd Critical), deferring to the project's own policy, with a defined path to extend for good cause.
 - **Maintainer:** the project holds final authority over the PD date; the embargo defers to its policy where one exists.
 - **Finder:** agree to the embargo and settle attribution preferences (including co-finder handling and declining credit).
 - **Consumer (distribution/staging parties):** read in late and narrowly, only as needed to pre-position a fix.
@@ -88,7 +91,7 @@ The fix is coordinated with the upstream project for merge and release. (See §4
 
 ### Phase 7 — Disclosure Preparation
 The advisory, identifier, and machine-readable data are prepared for release.
-- **Coordinator:** prepare the disclosure package (the VDR) and a machine-readable advisory (CSAF/VEX); favor indicators of compromise over public proof-of-concept; ensure a CVE (or equivalent) and accurate affected-version data. Record the case's AI use — the Finder's and the SIRT's — and include the standard two-line AI-use block in the advisory.
+- **Coordinator:** prepare the disclosure package (the VDR) and machine-readable advisory data (OSV, plus CSAF/VEX where published); favor indicators of compromise over public proof-of-concept; ensure a CVE (or equivalent) and accurate affected-version data. Record the case's AI use — the Finder's and the SIRT's — and include the standard two-line AI-use block in the advisory.
 - **Maintainer:** review and approve the advisory; the project owns what is said about its code.
 - **Finder:** confirm credit as agreed.
 - **Consumer (staging parties):** finish pre-positioning so remediation can propagate quickly at PD.
@@ -114,7 +117,7 @@ Working *with* projects — not around them — is the heart of good coordinatio
 
 - **Meet maintainers where they are.** Adapt to the project's workflow and tools; don't impose yours. Many maintainers are volunteers with limited time.
 - **First contact is human-to-human.** Reach a real person before any automation. Use the project's stated security contact or private reporting channel; if none exists, gently encourage adopting one.
-- **Keep a profile of engagement rules per project** (the Open Door Policy database): how each project prefers to be contacted, its disclosure policy, and its embargo norms.
+- **Keep a profile of engagement rules per project** (the Open Door Policy database — see the Glossary): how each project prefers to be contacted, its disclosure policy, and its embargo norms.
 - **Operate under a Code of Conduct for engagement** — respectful, non-coercive, and distinct from any general community code.
 - **Respect authority and tempo.** The maintainer decides the fix and the date. If parties move at different speeds, pace the coordination to the constraints rather than forcing a schedule.
 - **Reduce burden.** Bring a validated report and, where possible, a tested patch — arrive with a solution, not just a problem.
@@ -123,7 +126,7 @@ Working *with* projects — not around them — is the heart of good coordinatio
 
 ## 5. Troubleshooting — when things go sideways
 
-- **Unresponsive, unmaintained, or overwhelmed maintainer.** Distinguish the three: keep trying to re-establish contact with an unresponsive but active project; for a genuinely unmaintained one, escalate the response ladder — (1) the maintainer fixes from the disclosure package; (2) the Coordinator publishes a patch; (3) a working group forks or stewards as a carefully bounded last resort: [Maintainer of Last Resort](https://github.com/Akrites-Foundation/SIRT/blob/main/docs/Maintainer_of_Last_Resort_Guidelines.md), only with oversight approval.
+- **Unresponsive, unmaintained, or overwhelmed maintainer.** Distinguish the three: keep trying to re-establish contact with an unresponsive but active project; for a genuinely unmaintained one, escalate the response ladder — (1) the maintainer fixes from the disclosure package; (2) the Coordinator publishes a patch; (3) a per-CVE Maintainer of Last Resort release as a carefully bounded last resort, only with Governing Board approval: [Maintainer of Last Resort Policy](Maintainer_of_Last_Resort_Policy.md).
 - **Disputed finding or rejected patch.** Handle it blamelessly. If the project declines to act and the risk is real, a deviation notice can document the Coordinator's position without attacking the maintainer.
 - **Leak or broken embargo.** Coordinate the response based on what leaked and how; notify affected parties; consider accelerating disclosure. Establish up front that participants must report suspected breaks immediately.
 - **Active exploitation in the wild.** Strong signal to accelerate the timeline — defenders need the fix now.
@@ -136,9 +139,9 @@ Working *with* projects — not around them — is the heart of good coordinatio
 ## 6. Templates & references
 
 **Companion templates & internal artifacts**
-- Read-in notice, read-in process, and tier policy (case access control)
-- Vulnerability Disclosure Report (VDR) and deviation-notice formats
-- Working Group operating guide and the new-engineer conduct one-pager
+- [Read-In Policy](Akrites-Read-In-Policy.md), [Read-In Notice template](../templates/Akrites_Case_ReadIn_Notice_Template.md), [read-in log](../templates/Akrites_ReadIn_Log_CASE.csv)
+- VDR and deviation-notice formats *(to be published)*
+- [Working Group guide](Working_Group_Governance_and_Operations.md) and the [engineer read-in one-pager](Akrites_ReadIn_Engineer_OnePager.md)
 - OpenSSF `SECURITY.md`, embargo-notification, and disclosure-notification templates
 - AI and LLM Use Disclosure Policy, Acknowledgements & Attribution guidance, and the intake template's AI-usage section
 
