@@ -3,7 +3,7 @@
 **Owner:** Akrites SIRT
 **Status:** Draft for Board review
 **Applies to:** All Akrites SIRT–coordinated cases — reports from Finders and work performed by the SIRT and its Working Groups (WGs)
-**Related:** [CVD Policy](../coordinated-vulnerability-disclosure-policy.md) · [Acknowledgements & Attribution Guidance](./acknowledgements-and-attribution.md) · [Embargo Handling Guidance](./Embargo%20Handling%20Guidance.md) (§4.3) · [Notification Templates](../templates/notification-templates.md) · [Intake Template](../templates/vulnerability-report-intake-template.md)
+**Related:** [CVD Policy](./Akrites_CVD_Policy.md) · [Acknowledgements & Attribution Guidance](./acknowledgements-and-attribution.md) · [Embargo Handling Guidance](./Embargo%20Handling%20Guidance.md) (§4.3) · [Notification Templates](../templates/notification-templates.md) · [Intake Template](../templates/vulnerability-report-intake-template.md)
 
 > Spelling note: the standard is **Akrites** (Akrites Foundation, Akrites SIRT). "OSS-SIRT" is a synonym.
 
@@ -15,7 +15,7 @@ Artificial-intelligence tooling — most notably large language models (LLMs) �
 
 The goal is straightforward: a Finder, Maintainer, Consumer, or downstream provider reading an Akrites case or advisory should never have to guess whether AI contributed to the discovery, analysis, fix, or write-up. We state it plainly — whether AI was used or not — for both the **Finder** and the **Coordinator (Akrites SIRT)**.
 
-This document is the authoritative source for AI-use disclosure. The CVD Policy, CVD Guide, glossary, intake template, and notification templates all point here.
+This document is the authoritative source for AI-use disclosure. The CVD Policy, CVD Playbook, glossary, intake template, and notification templates all point here.
 
 ---
 
@@ -98,7 +98,7 @@ AI use
   - Finder: AI-assisted discovery and patch development. Tools: Claude Opus, Semgrep.
   - Coordinator (Akrites SIRT): AI-assisted triage and advisory drafting, under human review.
 ```
-Human accountability remains paramount; all automated or AI-assisted systems must undergo human verification and approval before operating autonomously.
+AI-assisted output is always reviewed and approved by a named human before it is used in a case or published (see Core principle 3).
 
 **Filled example (neither used AI):**
 
@@ -108,7 +108,7 @@ AI use
   - Coordinator (Akrites SIRT): No AI tooling was used.
 ```
 
-For an **anonymous** Finder, the Finder line shall explicitly state "anonymous" and shall not be omitted, as omitting it could create ambiguity about whether the information is missing.
+For an **anonymous** Finder, the Finder line is never omitted. If stating the Finder's AI use could help identify them, use: "Finder (anonymous): AI use not disclosed." Otherwise use the normal wording, prefixed "Finder (anonymous):".
 
 Additionally, where technical capability exists, model, version, and framework/harness metadata should be automatically attached at the report and API submission layer to track performance and support baseline benchmarking without requiring manual form entry or disclosing proprietary vendor configurations.
 
@@ -146,7 +146,7 @@ The SIRT holds itself to the same standard: sensitive case material is only put 
 
 ---
 
-## Open items (for Board / TOC)
+## Open items (for Governing Board)
 
 - Ratify the controlled capability vocabulary and the cadence for updating the publishable tool/model list.
 - Confirm whether the Coordinator AI-use line is published on **every** advisory or only when AI materially assisted (current draft: every advisory, including the negative case).
@@ -154,4 +154,4 @@ The SIRT holds itself to the same standard: sensitive case material is only put 
 
 ---
 
-*This is a draft proposal for review by the SIRT and TOC.*
+*This is a draft proposal for review by the SIRT and the Governing Board.*
