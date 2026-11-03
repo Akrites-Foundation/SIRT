@@ -1,9 +1,12 @@
 # Akrites SIRT Notification Templates
 
 Pre-written messages for each communication point in the
-[CVD Policy](../coordinated-vulnerability-disclosure-policy.md) lifecycle.
-Replace every `{{PLACEHOLDER}}` before sending. Default handling for all
-pre-disclosure material is **TLP:RED**.
+[CVD Policy](../docs/Akrites_CVD_Policy.md) lifecycle.
+Replace every `{{PLACEHOLDER}}` before sending. Pre-disclosure material follows
+the phased TLP model in CVD Policy §8: **TLP:RED** at intake (Finder and SIRT),
+**TLP:AMBER+STRICT** during verification and remediation (read-in Tiers 1, 1.5
+and 2), **TLP:AMBER** for downstream staging (Tiers 3 and 3.5), and
+**TLP:CLEAR** at Public Disclosure.
 
 Every embargoed notification and public advisory carries an **AI use** block
 stating, for both the Finder and the Akrites SIRT, whether and how AI/LLM tooling was
@@ -27,7 +30,8 @@ Quick map of which template to use when:
 > Send within **2 business days** of receipt. If the report came via GitHub
 > private vulnerability reporting, reply on the advisory thread instead of email.
 > Include the AI-tooling paragraph only when the Finder indicated (or it is
-> unclear whether) AI tooling was used; drop it otherwise.
+> > unclear whether) AI tooling was used; drop it otherwise.
+> If the report has no reply address, keep a copy in the case record to show acknowledgement was attempted.
 
 ```
 Subject: [Akrites SIRT] Received your report — {{TRACKING_ID}}
@@ -44,14 +48,15 @@ What happens next:
     disclosure date.
 
 We are treating the details you sent as confidential (TLP:RED) and will not
-share them outside the people needed to resolve the issue until a public
-disclosure date is agreed.
+share them outside the people needed to resolve the issue. As the case moves
+forward, access widens only as far as our policy allows, and nothing is public
+until the Public Disclosure date.
 
 On AI tooling: we noted your report of {{AI usage / no AI usage}}. We publish a
 short, capability-level note of any AI/LLM use — yours and ours — in the final
 advisory. One thing to flag: material put through a public, hosted AI service is
-not confidential, so a report developed that way may not be eligible for an
-embargo. If you used AI tooling and can tell us whether it was a public service
+not confidential, so a report developed that way is treated as having no
+embargo available and is handled on an accelerated basis. If you used AI tooling and can tell us whether it was a public service
 or a private/confidential one, that helps us plan the timeline correctly.
 
 Please continue this conversation on {{CHANNEL: this email thread / the GitHub
@@ -59,7 +64,7 @@ advisory}}. If anything material changes on your end (for example, you observe
 exploitation in the wild, or you intend to publish), please tell us right away.
 
 Our coordinated disclosure policy:
-https://sirt.akrites.dev/security/policy
+https://github.com/Akrites-Foundation/SIRT/blob/main/docs/Akrites_CVD_Policy.md
 
 Thank you,
 Akrites SIRT
@@ -84,15 +89,23 @@ We've reproduced the issue and confirmed it is a security vulnerability in
 {{PROJECT}} {{AFFECTED_VERSIONS}}. Thank you — this is a real finding.
 
 Next steps:
-  - We are opening a private advisory and developing a fix.
+  - We are opening a private advisory and {{developing a fix before hand-off to
+    the upstream maintainers (High / Critical) / handing the finding to the
+    upstream maintainers to develop a fix (Low / Medium)}}.
   - We will request a CVE ID via {{CNA}}.
-  - Proposed public disclosure target: {{PD_DATE}} (default planning window is
-    up to 30 days; we aim to disclose as soon as a fix can ship). Let us know if
+  - The upstream disclosure period starts on {{UPSTREAM_START_DATE}}. Our
+    default is 15 business days from that date, unless {{PROJECT}}'s own
+    disclosure policy sets a different timeline, which we follow.
+  - Proposed Public Disclosure target: {{PD_DATE}} (our target from receipt is
+    {{≤ 17 / ≤ 21 / ≤ 24}} business days for {{Low–Medium / High / Critical}}
+    severity; we aim to disclose as soon as a fix can ship). Let us know if
     this timing works for you.
 
-Credit: we credit finders by default. Please tell us how you'd like to be
-named ({{name / handle / affiliation}}), or let us know if you prefer to
-remain anonymous.
+Credit: by default we credit you under the name or handle you reported with.
+You can instead choose (a) named — your name and, if you wish, your
+organization; (b) clearinghouse — your organization only; or (c) anonymous —
+no Finder credit. Let us know before {{PD_DATE}} if you'd like something other
+than the default.
 
 AI use: the final advisory will include a short, capability-level note of any
 AI/LLM tooling used — both yours and ours. Please confirm whether AI assisted
@@ -131,16 +144,29 @@ Akrites SIRT
 
 ## 3. Embargoed notification (Coordination → Distribute)
 
-> Sent to read-in providers/downstreams on the embargo list, typically
-> **1–30 working days before PD**, scaled to severity and patch complexity.
-> Avoid releasing into weekends/holidays; prefer Mon–Wed disclosure.
+> Sent to read-in providers/downstreams on the embargo list. Timing and TLP
+> follow the recipient's read-in tier
+> ([Read-In Policy §4](../docs/Akrites-Read-In-Policy.md#4-the-tiers-at-a-glance)):
+>
+> | Recipient | Tier | TLP | Lead time before PD |
+> | --- | --- | --- | --- |
+> | Distribution partners / maintainer pre-disclosure rings | 2 | **AMBER+STRICT** | Working figure 7–14 days |
+> | Second-order distributors (registries, CDNs, downstream distributions) | 3 | **AMBER** | Working figure 7–14 days; the minimum consistent with a safe rollout |
+> | International coordinators / strategic partners | 3.5 | **AMBER** | At most 24 hours |
+>
+> The 7–14 day figure is still a working figure (Read-In Policy Appendix A,
+> item 1) and must fit inside the case's PD target. Avoid releasing into
+> weekends/holidays; prefer Mon–Wed disclosure.
 
 ```
-Subject: [TLP:RED][EMBARGO until {{PD_DATE}}] {{CVE_ID}} in {{PROJECT}}
+Subject: [TLP:{{AMBER+STRICT / AMBER}}][EMBARGO until {{PD_DATE}}] {{CVE_ID}} in {{PROJECT}}
 
-CONFIDENTIAL — TLP:RED. Do not redistribute outside your organization's
-need-to-know responders. Public disclosure is embargoed until {{PD_DATE}}
-{{TIME + TZ}}.
+CONFIDENTIAL — TLP:{{AMBER+STRICT / AMBER}}.
+{{AMBER+STRICT: Share only within your organization, on a need-to-know basis —
+not with clients, partners, or any third party.}}
+{{AMBER: Share only within your organization and with its clients, on a
+need-to-know basis — no onward sharing to other organizations.}}
+Public disclosure is embargoed until {{PD_DATE}} {{TIME + TZ}}.
 
 Summary
   - Identifier: {{CVE_ID}}
@@ -172,7 +198,8 @@ package version, advisory link.}}
 
 What we ask of you
   - Prepare your update so you can ship promptly at public disclosure.
-  - Keep this information TLP:RED until {{PD_DATE}}.
+  - Keep this information within its TLP:{{AMBER+STRICT / AMBER}} limits until
+    {{PD_DATE}}.
   - Reply to this thread with any patch problems or qualification issues —
     someone on the Akrites SIRT is monitoring for replies.
 
@@ -237,7 +264,7 @@ AI use
 References
   - Advisory: {{ADVISORY_URL}}
   - Patch / release: {{RELEASE_URL}}
-  - AI-use disclosure policy: https://sirt.akrites.dev/security/ai-use-disclosure
+  - AI-use disclosure policy: https://github.com/Akrites-Foundation/SIRT/blob/main/docs/ai-use-disclosure.md
   - {{Additional links}}
 
 Revision history
@@ -250,10 +277,14 @@ Revision history
 
 > Use if the issue is published or exploited before PD. Disclosure may be
 > accelerated; publish whatever helps Consumers protect themselves even without
-> a complete fix.
+> a complete fix. If exploitation in the wild is confirmed, the target is
+> actionable guidance within **7 days** of confirmation
+> ([CVD Policy §9](../docs/Akrites_CVD_Policy.md#9-actively-exploited-vulnerabilities)).
+> This notice is public (TLP:CLEAR) and, like every advisory, carries the AI use
+> block.
 
 ```
-Subject: [Akrites SIRT] {{CVE_ID}} in {{PROJECT}} — disclosure accelerated
+Subject: [TLP:CLEAR][Akrites SIRT] {{CVE_ID}} in {{PROJECT}} — disclosure accelerated
 
 The Akrites SIRT is aware that information about {{CVE_ID}} in {{PROJECT}} has become
 public ahead of the planned disclosure. To help users protect themselves, we
@@ -263,6 +294,11 @@ are sharing the following now:
   - Status: {{patch available at {{LINK}} / patch in progress, ETA {{DATE}}}}
   - Interim mitigation: {{WORK-AROUND, or specific configurations that reduce
     exposure}}
+
+AI use
+  - Finder: {{No AI tooling was used. / AI-assisted {phase(s)}.}}
+  - Coordinator (Akrites SIRT): {{No AI tooling was used. / AI-assisted {phase(s)},
+    under human review.}}
 
 We will update this advisory as remediation becomes available:
 {{ADVISORY_URL}}
