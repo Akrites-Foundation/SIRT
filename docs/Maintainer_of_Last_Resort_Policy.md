@@ -24,7 +24,7 @@ When the Akrites SIRT reaches out regarding a security issue in an open-source p
 3. **No Bug Bounty Claims**: Akrites does not solicit or accept bug bounty payments for vulnerabilities reported to upstream projects.
 
 ### 4. 90-Day Silence Floor
-Maintainers go quiet for many valid life reasons (illness, bereavement, job changes, lost access). Akrites will **never** declare a project abandoned until it has been silent across all attempted channels for **at least 90 calendar days**. Any sign of life (a commit, issue comment, or registry login signal) resets the 90-day clock completely.
+Maintainers go quiet for many valid life reasons (illness, bereavement, job changes, lost access). Akrites will **never** declare a project abandoned until it has been silent across all attempted channels for **at least 90 calendar days**, inclusive of verifiable, documented contact attempts made by a trusted 3rd party coordinator (e.g, an Akrites member) prior to Akrites escalation. Any sign of life (a commit, issue comment, or registry login signal) normally resets the 90-day clock, but there can be exceptions provided by justifiable urgency/criticality analysis conducted by SIRT or trusted 3rd party coordinator.  
 
 ### 5. Returning Maintainer Guarantees
 * **Unconditional Precedence**: Akrites never holds ownership of a project. If a maintainer returns after a last-resort security release, any activity by their verified identity (e.g., in their repository) immediately ends the MoLR engagement, and the maintainer's releases take precedence.
@@ -71,7 +71,7 @@ This policy governs SIRT actions when coordinated vulnerability disclosure (CVD)
 | Clock | Purpose | Speed / Controls |
 | :--- | :--- | :--- |
 | **Disclosure Clock** | Governs how quickly downstream users are protected via advisories and mitigations. | **SSVC-adjustable** based on severity, EPSS, and active exploitation. Default decision point at **T0 + 15 business days**, aligned with the CVD Policy's 15-business-day upstream window. |
-| **Abandonment Clock** | Governs when Akrites may conclude a project is abandoned and eligible for Track B. | **Hard floor: 90 calendar days of total silence** across all channels. Insensitive to severity or exploit pressure. |
+| **Abandonment Clock** | Governs when Akrites may conclude a project is abandoned and eligible for Track B. | **Hard floor: 90 calendar days of total silence** across all channels. This period may retroactively begin at T0 of a trusted third party's disclosure clock, provided proof of initial contact attempts is submitted. Insensitive to severity or exploit pressure. |
 
 ### 3.1 Disclosure Clock Contact & Escalation Protocol
 * **Attempt 1 (T0)**: Private report via preferred channel (`SECURITY.md`, GitHub PVR, security email).
@@ -105,6 +105,7 @@ Track B requires a signed entry test confirming all six criteria:
 4. **Bounded Patch Series**: Fix is deliverable as a patch series against a pinned upstream commit.
 5. **Capacity Slot Available**: Akrites maintains a strict cap on concurrent MoLR engagements; a slot must be available.
 6. **Per-CVE Approval**: Approval is granted specifically for one CVE ID.
+7. **Chain of Custody for Prior Silence**: If relying on a trusted party's communication attempts to satisfy the 90-day floor, the submitter must provide a complete log of contact attempts."
 
 ### 5.2 Approval Authority & Recusal
 * **Approval**: Track B requires approval by the **Governing Board** (or a MoLR subcommittee the Governing Board designates in writing), granted per CVE and recorded in the MoLR decision record template.
