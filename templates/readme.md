@@ -7,7 +7,6 @@ where a template and the policy disagree, the policy governs.
 ## Finder-facing
 
 - [Vulnerability report intake template](vulnerability-report-intake-template.md) — what a Finder sends us
-- [Acknowledgement template](acknowledgement-template.md) — the first reply the SIRT sends a Finder (email, GitHub, and no-contact variants)
 
 ## Case communications
 
