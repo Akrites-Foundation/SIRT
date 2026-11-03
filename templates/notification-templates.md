@@ -63,7 +63,7 @@ advisory}}. If anything material changes on your end (for example, you observe
 exploitation in the wild, or you intend to publish), please tell us right away.
 
 Our coordinated disclosure policy:
-[https://sirt.akrites.dev/security/policy](https://github.com/Akrites-Foundation/SIRT/blob/main/docs/Akrites_CVD_Policy.md)
+https://github.com/Akrites-Foundation/SIRT/blob/main/docs/Akrites_CVD_Policy.md
 
 Thank you,
 Akrites SIRT
