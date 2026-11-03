@@ -30,7 +30,8 @@ Quick map of which template to use when:
 > Send within **2 business days** of receipt. If the report came via GitHub
 > private vulnerability reporting, reply on the advisory thread instead of email.
 > Include the AI-tooling paragraph only when the Finder indicated (or it is
-> unclear whether) AI tooling was used; drop it otherwise.
+> > unclear whether) AI tooling was used; drop it otherwise.
+> If the report has no reply address, keep a copy in the case record to show acknowledgement was attempted.
 
 ```
 Subject: [Akrites SIRT] Received your report — {{TRACKING_ID}}
