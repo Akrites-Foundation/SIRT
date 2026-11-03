@@ -30,7 +30,7 @@ If your project has a published disclosure policy, we follow it. Otherwise, we p
 
 ## 7. Credit
 - Discovered by:
-     - <name or handle, as the Finder chose to be credited; organization only with the Finder's consent>
+   - <name or handle, as the Finder chose to be credited; organization only with the Finder's consent>
 - AI use (capability level, per the Akrites AI and LLM Use Disclosure Policy):
    - Finder: <No AI tooling was used. / AI-assisted {phase(s)}. Tools: {names, only if the Finder consented}.>
    - Coordinator (Akrites SIRT): <No AI tooling was used. / AI-assisted {phase(s)}, under human review.>
