@@ -100,7 +100,7 @@ This policy governs SIRT actions when coordinated vulnerability disclosure (CVD)
 ### 5.1 Mandatory Entry Test (All Must Hold)
 Track B requires a signed entry test confirming all six criteria:
 1. **Absence of Alternatives**: All Track A options (assist in place, distro carry, community successor, maintainer-blessed transfer, intermediate migration) are documented as asked and declined.
-2. **Published Criticality Threshold**: The package meets published, objective criticality metrics (e.g., OpenSSF Criticality Score, dependent tree counts, member SBOM prevalence or otherwise justifiable criticality).
+2. **Published Criticality Threshold**: The package meets published, objective criticality metrics (e.g., OpenSSF Criticality Score, dependent tree counts, member SBOM prevalence), or a documented criticality justification recorded in the MoLR decision record and accepted by the approver.
 3. **License Permits Redistribution**: The open-source license explicitly permits redistribution of modified code; any copyleft obligations (Part IV §1) can be met.
 4. **Bounded Patch Series**: Fix is deliverable as a patch series against a pinned upstream commit.
 5. **Capacity Slot Available**: Akrites maintains a strict cap on concurrent MoLR engagements; a slot must be available.
