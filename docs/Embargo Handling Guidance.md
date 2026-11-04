@@ -1,12 +1,10 @@
 # Akrites SIRT — Embargo Handling Guidance - DRAFT 0.4
 
-**Status:** DRAFT 0.4 — operational guidance incorporated by reference in the CVD Policy; for Governing Board review.
+**Status:** DRAFT 0.4 — operational guidance incorporated by reference in the CVD Policy.
 
 **Applies to:** All vulnerability cases handled by the Akrites SIRT (Intake → Synchronized Disclosure)
 
-**Relationship to existing docs:** rovides the operational detail for the Coordination phase of the [CVD Policy](Akrites_CVD_Policy.md) (incorporated there by reference — see CVD Policy §6) and the [Read-In Policy](Akrites-Read-In-Policy.md).
-
-> **Naming:** **Akrites SIRT** (the Security Incident Response Team hosted by the Akrites Foundation) is the standard name used throughout. "OSS-SIRT" appears in some earlier materials as a synonym for the same body.
+**Relationship to existing docs:** Provides the operational detail for the Coordination phase of the [CVD Policy](Akrites_CVD_Policy.md) (incorporated there by reference — see CVD Policy §6) and the [Read-In Policy](Akrites-Read-In-Policy.md).
 
 ---
 
@@ -117,7 +115,7 @@ Some projects run scheduled release trains rather than per-issue embargoes — e
 5. **TLP throughout.** The embargo is enforced technically and procedurally via TLP 2.0 — TLP:RED at intake, TLP:AMBER+STRICT for verification and remediation, TLP:AMBER for downstream staging, TLP:CLEAR at PD (CVD Policy §8) — and least-privilege read-in.
 6. **Set Finder expectations at intake.** Confirm the Finder understands the timeline is governed by the project/list (§4.1), that duplicate reports may exist and alter the window (§4.2), and classify the report's **embargo eligibility** based on the tooling used — reports developed with public LLMs are treated as having **no embargo available** (§4.3).
 7. **Handle duplicates transparently.** When deduplication surfaces overlapping reports, inform the affected reporters that a duplicate exists (without leaking another Finder's confidential detail), and account for any embargo already set — or foreclosed — by a parallel discloser or Coordinator.
-8. **Unmaintained / unresponsive projects.** Where no policy and no responsive maintainer exist, the 15-business-day proposed embargo applies as the working clock. If the project remains unresponsive, escalate per the intake process (new steward, or — with Board approval and time-bounding — a hardened fork / full disclosure), with advisories issued per the [Maintainer of Last Resort Policy](Maintainer_of_Last_Resort_Policy.md) and CVEs issued through the Akrites SIRT CNA authority.  This will be detailed in additional guidance for the SIRT and members.
+8. **Unmaintained / unresponsive projects.** Where no policy and no responsive maintainer exist, the 15-business-day proposed embargo applies as the working clock. If the project remains unresponsive, follow the [Maintainer of Last Resort Policy](Maintainer_of_Last_Resort_Policy.md): escalate per its disclosure clock, publish advisories and VEX at the decision point, and — only with Governing Board approval — a last-resort security release (a patch series, not a fork). CVEs are issued through the Akrites SIRT CNA authority.
 9. **Document deviations.** Any Public Disclosure later than the CVD Policy's severity target (≤ 17/21/24 bd) requires explicit written rationale and Governing Board awareness.
 
 ## 7. Summary table
