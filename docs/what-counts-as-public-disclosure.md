@@ -28,10 +28,10 @@ procedure; and the leak/break classification and response procedure.
   information is genuinely public, it is public regardless of how it got there.
 - **Embargo / confidentiality arrangement:** an agreement that named parties will hold vulnerability
   information privately until an agreed time or trigger. Default proposed upstream embargo is **15 business days (bd)** from owner hand-off (targeting total time to PD of ≤ 17 bd Low/Med, ≤ 21 bd High, ≤ 24 bd Critical), negotiable and deferring to upstream (see Embargo Handling Guidance).
-- **Coordinated Release Date (CRD):** the pre-agreed date/time for intentional PD, set when the fix
-  is available and an identifier is assigned.
+- **PD date (Coordinated Release Date, CRD):** the pre-agreed date/time for intentional PD, set when the fix
+  is available and an identifier is assigned. Other Akrites documents call this the PD date.
 - **Tiered / read-in sharing:** sharing with specific trusted parties under a confidentiality
-  obligation (TLP:RED/AMBER). This is **not** public disclosure — it is a controlled disclosure
+  obligation (TLP:RED, TLP:AMBER+STRICT or TLP:AMBER, per CVD Policy §8). This is **not** public disclosure — it is a controlled disclosure
   *boundary*, distinct from the public boundary.
 - **Disclosure boundary vs. tier:** a *tier* is who is read in; a *boundary* is the line between
   confidential and public. Crossing the public boundary is PD; moving between tiers is not.
@@ -79,7 +79,7 @@ alone.
 
 ### 3.2 Does NOT count as public disclosure
 
-- Read-in / tiered sharing with trusted parties under confidentiality (TLP:RED/AMBER).
+- Read-in / tiered sharing with trusted parties under confidentiality (TLP:RED, TLP:AMBER+STRICT or TLP:AMBER, per CVD Policy §8).
 - Sharing the disclosure packet with the maintainer or a coordinator under embargo.
 - Internal Akrites case material, dashboards, or member-only notices that omit specifics.
 - General awareness notices to members that give only a category and severity band (Play 4).
@@ -195,8 +195,8 @@ CRD but increase monitoring and readiness.
    comms.
 2. **Internal flash** to the case team — use Play 6, Step 1. Assign a decision owner and a deadline.
 3. **Assess & classify** per §5.3–5.4. Snapshot the evidence.
-4. **Decide: accelerate or hold.** Decision owner is the SIRT case coordinator; escalate to the SIRT Director, and to the Governing Board for
-   high-impact/critical-infra timing calls.
+4. **Decide: accelerate or hold.** Decision owner is the SIRT case coordinator; escalate to the SIRT Director for
+   high-impact/critical-infra timing calls, and to the Governing Board for policy deviations or disputes (CVD Policy §15).
 5. **Notify affected parties** — maintainer and coordinators (Play 6, Step 2), and read-in finders
    (Play 3). Balanced coordinator notice; **no single-government pre-disclosure.**
 6. **If accelerating:** finalize the best-available advisory (fix or mitigation status stated
@@ -210,7 +210,7 @@ CRD but increase monitoring and readiness.
 - **Discoverer (anyone):** notify SIRT immediately; do not act publicly.
 - **SIRT:** coordinate, classify, decide accelerate/hold, own all outbound comms.
 - **Maintainer:** consulted; retains authority over their fix; timing may be overridden only to
-  protect users after a confirmed public break.
+  protect users after a confirmed public break or confirmed active exploitation (CVD Policy §9).
 - **Coordinators/clearinghouses:** notified in balanced fashion; may delegate their own read-ins.
 - **SIRT Director / Governing Board:** decide high-impact/critical-infra acceleration (Director) and policy deviations (Governing Board).
 
