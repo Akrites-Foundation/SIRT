@@ -2,7 +2,7 @@
 
 Step-by-step actions for the responder on duty, keyed to the nine-phase
 lifecycle in the [Akrites CVD Policy](Akrites_CVD_Policy.md).
-Templates referenced below are in [`templates/notification-templates.md`](../templates/notification-templates.md). Default handling for pre-disclosure material follows the phased TLP table in CVD Policy §8 (TLP:RED at intake).
+Templates referenced below are in [`templates/notification-templates.md`](../templates/notification-templates.md). Default handling for pre-disclosure material follows the phased TLP table in CVD Policy §8 (TLP:RED at intake).  For the reasoning behind each step and what a good outcome looks like for each party, see the [CVD Playbook](Akrites_CVD_Playbook.md).
 
 ```
 Discover → Deduplicate & Triage → Validate → Coordination → Patch → Test → Document → Distribute → Disclose
@@ -16,9 +16,9 @@ Discover → Deduplicate & Triage → Validate → Coordination → Patch → Te
 - Send **Template 1 (Acknowledgement)**. Set the report to TLP:RED.
 
 ### 2. Deduplicate & Triage — is it new, and is it a security issue?
-- Check for duplicates against cases in flight; if duplicate, merge and send Play 13 (co-finder).
+- Check for duplicates against cases in flight; if duplicate, merge and send [Play 13 (co-finder)](sirt-communications-playbook.md#play-13--duplicate--co-finder-notification).
 - Compare against prior risk assessments, threat models, and bug bars.
-- Decide: vulnerability / non-security bug / feature request / works-as-intended.
+- Decide: vulnerability / non-security bug (including feature requests) / works-as-intended.
 - Send **Template 2a or 2b**. If not a vulnerability, explain reasoning and close.
 
 ### 3. Validate — confirm & reproduce
@@ -29,7 +29,7 @@ Discover → Deduplicate & Triage → Validate → Coordination → Patch → Te
 
 ### 4. Coordination — embargo & disclosure date
 - Identify read-in **Collaborators** (need-to-know only); formally read them in following the [Read-In Policy](Akrites-Read-In-Policy.md) and log each acceptance of the Read-In Notice.
-- Decide whether an embargo is required; agree the **Public Disclosure (PD)** date with the Finder. Proposed upstream embargo: 15 business days (total target time to PD: **≤ 17 bd** Low/Med, **≤ 21 bd** High, **≤ 24 bd** Critical).
+- Decide whether an embargo is required; propose the **Public Disclosure (PD)** date to the maintainer, who has final say, and keep the Finder informed — tell the Finder in writing the date the upstream disclosure period starts (CVD Policy §7). Proposed upstream embargo: 15 business days (total target time to PD: **≤ 17 bd** Low/Med, **≤ 21 bd** High, **≤ 24 bd** Critical).
 - Prepare the **leak contingency** (Template 5): what to tell Consumers if
   details surface early.
 
@@ -44,7 +44,7 @@ Discover → Deduplicate & Triage → Validate → Coordination → Patch → Te
   no new regressions. Prepare (but do not cut) the release.
 
 ### 7. Document — advisory & identifiers
-- Request a **CVE ID** via the Akrites SIRT CNA (MITRE is CNA of last resort).
+- Determine the authoritative CNA (CVD Policy §2). If the issue is in the Akrites SIRT CNA's scope, reserve the **CVE ID** there; otherwise coordinate with the authoritative CNA (MITRE is CNA of last resort).
 - Capture: affected/fixed versions, CWE, **CVSS v4.0** score (v3.1 for legacy
   comparison), Consumer actions, and patch location.
 - Draft the advisory (**Template 4**) and a machine-readable **OSV** record.
@@ -52,8 +52,8 @@ Discover → Deduplicate & Triage → Validate → Coordination → Patch → Te
 ### 8. Distribute — stage for simultaneous availability
 - Stage patch + documentation so all Consumers get the fix at PD.
 - If an embargo list applies, send **Template 3 (Embargoed notification)** to
-  read-in providers, typically **1–30 working days** before PD. Monitor replies
-  for qualification problems. Prefer a **Tue-Thu** PD; avoid holidays.
+    read-in providers at the lead time for their tier (Tiers 2–3 typically 7–14 days, Tier 3.5 at most 24 hours before PD). Monitor replies
+  for qualification problems. Prefer a **Tue–Thu** PD; avoid holidays.
 
 ### 9. Disclose — go public  ⏱ on the PD date
 - Publish the GitHub Security Advisory (populates the Security tab), cut the
