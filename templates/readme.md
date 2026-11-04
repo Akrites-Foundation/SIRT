@@ -27,6 +27,5 @@ Used with the [Maintainer of Last Resort Policy](../docs/Maintainer_of_Last_Reso
 - [Contact attempt log](Contact_attempt_log.md) — disclosure and abandonment clocks
 - [Maintainer non-fix record](<Maintainer non-fix record .md>)
 - [MoLR decision record](<MoLR decision record .md>)
-- [Project status notice / steward call](<Project status notice .md>)
-- [Steward vetting & approval record](<Steward vetting & approval record .md>)
+- [Stewardship records](stewardship-records.md) — project status notice / steward call, and steward vetting & approval record
 
