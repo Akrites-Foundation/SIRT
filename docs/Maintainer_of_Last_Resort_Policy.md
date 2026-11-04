@@ -109,7 +109,7 @@ Track B requires a signed entry test confirming all six criteria:
 
 ### 5.2 Approval Authority & Recusal
 * **Approval**: Track B requires approval by the **Governing Board** (or a MoLR subcommittee the Governing Board designates in writing), granted per CVE and recorded in the MoLR decision record template.
-* **Mandatory Recusal**: Any decision-maker with a commercial, personal, or organizational dependency on the affected package must recuse themselves from voting, except when acting as the primary submitter presenting the technical risk assessment and Track A exhaustion evidence to the Board.
+* **Mandatory Recusal**: Any decision-maker with a commercial, personal, or organizational dependency on the affected package must recuse themselves from voting. A conflicted primary submitter may present the technical risk assessment and Track A exhaustion evidence to the Board, but does not vote.
 
 ### 5.3 The Artifact: Patch Series on a Pinned Commit
 * **Structure**: The delivered artifact is a clean build of `(frozen upstream commit + N security patches)`.
