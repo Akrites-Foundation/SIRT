@@ -73,4 +73,4 @@ phase on an accelerated timeline.
 Finder intends to publish early, the issue spans multiple projects/vendors
 (multi-party coordination), or a PD date is at risk of slipping.
 
-
+If the Director declares a Critical Situation, run the case under the [Crit-Sit Playbook](critical_situation_playbook.md).
