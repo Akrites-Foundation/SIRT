@@ -3,7 +3,7 @@
 **Owner:** Akrites SIRT
 **Status:** Draft for Akrites SIRT review
 **Audience:** SIRT staff and coordinators; referenced by WGs and read-in participants
-**Companion docs:** [Acknowledgements & Attribution](acknowledgements-and-attribution.md), [Embargo Handling Guidance](Embargo%20Handling%20Guidance.md), [CVD Policy](Akrites_CVD_Policy.md), [Read-In Policy](Akrites-Read-In-Policy.md)
+**Companion docs:** [Attribution and AI-Use Disclosure Policy](ai-use-disclosure.md), [Embargo Handling Guidance](Embargo%20Handling%20Guidance.md), [CVD Policy](Akrites_CVD_Policy.md), [Read-In Policy](Akrites-Read-In-Policy.md)
 
 > Every outbound message is written as if it may be read back publicly, quoted by a maintainer, or produced in a postmortem; with or without context.
 
@@ -74,8 +74,14 @@ Intake processing by the SIRT pipeline enforces three prioritized tiers:
 | **TLP:GREEN** | Community/peer sharing, not public. **Not used for case material before PD** (CVD Policy §8); use for non-case material such as postmortem summaries and trend reports. |
 | **TLP:CLEAR** | Public — only at/after PD. |
 
-Every message carries an explicit TLP marking in its header or first line. When in doubt, mark
-higher and ask. If message contains mixed levels, overall marking bears the most restrictive.
+Every message carries an explicit TLP label written as FIRST TLP 2.0 specifies: in capitals with no spaces (e.g., `TLP:AMBER+STRICT`), placed directly before the information it covers, and — for email — in the subject line. When in doubt, mark higher and ask. If a message contains mixed levels, the overall marking is the most restrictive.
+
+Standard forms:
+
+```
+Subject: [TLP:RED] {Project/Component} — private vulnerability coordination ({tracking-id})
+TLP:AMBER+STRICT — Private vulnerability information. Share only with the read-in list for {case-id}.
+```
 
 ## 4. Authenticity & verification
 
@@ -348,7 +354,7 @@ full-detail leaks usually do. Capture the break in the postmortem (Play "Blamele
 **When to use:** At intake and again before PD, to confirm attribution preference.
 **Audience:** Finder (each co-finder individually).
 **Channel & TLP:** Case/intake channel; TLP:RED.
-**Companion:** `acknowledgements-and-attribution.md` (scenarios 1–3, controlled AI vocabulary).
+**Companion:** `ai-use-disclosure.md` (scenarios 1–3, controlled AI vocabulary).
 
 **Template**
 
@@ -896,7 +902,7 @@ These shape the templates above and are still open from the F2F:
 
 # Appendix C — Companion documents
 
-- [Acknowledgements & Attribution](acknowledgements-and-attribution.md) — attribution scenarios + AI-disclosure vocabulary (Play 7).
+- [Attribution and AI-Use Disclosure Policy](ai-use-disclosure.md) — attribution scenarios + AI-disclosure vocabulary (Play 7).
 - [Embargo Handling Guidance](Embargo%20Handling%20Guidance.md) — embargo mechanics (Plays 6, 12).
 - [Upstream Engagement Guidelines](upstream-engagement-guidelines.md) and [MoLR Policy](Maintainer_of_Last_Resort_Policy.md) (Plays 10, 15).
 
