@@ -18,7 +18,7 @@ These principles, drawn largely from long-standing coordination practice, guide 
 - **Avoid surprise.** Surprised parties make defensive, adversarial choices. Tell people what to expect, and keep them informed as things change.
 - **Reward good behavior.** You cannot force every party to share your values or rules. It works better to make cooperation easy and rewarding than to punish missteps.
 - **Act ethically and neutrally.** The Coordinator is an honest broker, not an advocate for one side. Meet maintainers where they are; do not impose process or tooling on them.
-- **The maintainer has final say.** On the fix and the disclosure date, the upstream project decides. The Coordinator advises and facilitates; it does not override.
+- **The maintainer has final say.** On the fix and the disclosure date, the upstream project decides. The Coordinator advises and facilitates; it does not override — except where active exploitation or a public embargo break requires acceleration to protect users (CVD Policy §9).
 - **Confidentiality and least privilege.** Information is handled under TLP and shared only with those who have a need to know and can move the fix forward.
 - **Be transparent about AI use.** Where AI/LLM tooling materially assisted — whether the Finder's or the Coordinator's — say so, at a capability level, in the case record and the advisory. AI use never removes human accountability, and public AI services are treated as non-confidential (see the [AI and LLM Use Disclosure Policy](https://github.com/Akrites-Foundation/SIRT/blob/main/docs/ai-use-disclosure.md)).
 - **Improve continuously.** Review each case blamelessly, capture what worked and what didn't, and feed it back into the process.
@@ -114,11 +114,13 @@ Deployment is supported and the case is reviewed.
 ## 4. Upstream engagement practices
 
 Working *with* projects — not around them — is the heart of good coordination.
+The full practice is in the [Upstream Engagement Guidelines](upstream-engagement-guidelines.md); the essentials:
 
 - **Meet maintainers where they are.** Adapt to the project's workflow and tools; don't impose yours. Many maintainers are volunteers with limited time.
 - **First contact is human-to-human.** Reach a real person before any automation. Use the project's stated security contact or private reporting channel; if none exists, gently encourage adopting one.
 - **Keep a profile of engagement rules per project** (the Open Door Policy database — see the Glossary): how each project prefers to be contacted, its disclosure policy, and its embargo norms.
 - **Operate under a Code of Conduct for engagement** — respectful, non-coercive, and distinct from any general community code.
+- **Follow the engagement practices in the Upstream Engagement Guidelines** — respectful, non-coercive, and distinct from any general community code.
 - **Respect authority and tempo.** The maintainer decides the fix and the date. If parties move at different speeds, pace the coordination to the constraints rather than forcing a schedule.
 - **Reduce burden.** Bring a validated report and, where possible, a tested patch — arrive with a solution, not just a problem.
 
@@ -132,7 +134,7 @@ Working *with* projects — not around them — is the heart of good coordinatio
 - **Active exploitation in the wild.** Strong signal to accelerate the timeline — defenders need the fix now.
 - **Independent discovery / co-finders.** If more than one party found it, coordinate attribution and consider that the secret may not hold — accelerate if needed.
 - **Hype and branding pressure.** A branded vulnerability is not more dangerous; keep prioritization based on risk, and keep messaging proportionate.
-- **Embargo extension requests.** Any party may request one through the Coordinator, who decides in consultation with the Finder and maintainer, weighing the harm-reduction principle.
+- **Embargo extension requests.** Any party may request one through the Coordinator; the maintainer decides, with the Coordinator advising and consulting the Finder, weighing the harm-reduction principle.
 
 ---
 
@@ -140,6 +142,7 @@ Working *with* projects — not around them — is the heart of good coordinatio
 
 **Companion templates & internal artifacts**
 - [Read-In Policy](Akrites-Read-In-Policy.md), [Read-In Notice template](../templates/Akrites_Case_ReadIn_Notice_Template.md), [read-in log](../templates/Akrites_ReadIn_Log_CASE.csv)
+- [Intake Runbook](intake-runbook.md) — the on-duty, step-by-step checklist for each phase
 - VDR and deviation-notice formats *(to be published)*
 - [Working Group guide](Working_Group_Governance_and_Operations.md) and the [engineer read-in one-pager](Akrites_ReadIn_Engineer_OnePager.md)
 - OpenSSF `SECURITY.md`, embargo-notification, and disclosure-notification templates
