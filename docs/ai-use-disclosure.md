@@ -78,7 +78,17 @@ Use these high-level phrases to describe *how and when* AI assisted. Combine as 
 - **Intake triage / deduplication** — classifying, routing, or de-duplicating incoming reports
 
 If a disclosing party's usage does not fit a listed phase, the SIRT normalizes it to the nearest phrase or holds it for review rather than inventing new public language.
-insert-B-tool-names.md
+
+### Publishable tool / model names
+
+Only entries on the Akrites-maintained list may appear in a published `Tools:` line; unlisted requests are normalized or held for review.
+
+| Category | Example published names |
+| --- | --- |
+| LLMs / assistants | *(maintained list — e.g., model family + tier)* |
+| SAST / analysis | *(maintained list)* |
+| Fuzzing | *(maintained list)* |
+| Other tooling | *(maintained list)* |
 
 ---
 
@@ -115,7 +125,151 @@ For an **anonymous** Finder, the Finder line is never omitted. If stating the Fi
 
 Where technical capability exists, model, version, and framework/harness metadata may be captured at the report and API submission layer for internal benchmarking — only with the submitter's knowledge (stated at intake) and never published. This does not replace the Finder's own disclosure.
 
-insert-A-credit-and-scenarios.md
+## Credit and attribution
+
+### Principles
+
+1. **Credit by default, consent for detail.** Finders are credited by default under the name or handle they reported with; anonymity is honored on request. Organizations, co-finders' and participants' names appear only with explicit consent.
+2. **Individuals vs. groups.** Where an individual declines but the work is attributable to a working group (WG), the WG may be credited without naming its members.
+3. **Coordinator credit.** Where no finder attribution is given, the advisory credits the **Akrites SIRT** as coordinator. Public advisories otherwise attribute information to the Akrites SIRT and Akrites Foundation.
+4. **Co-finders are honored** up to the attribution cutoff (see [Co-finder handling](#co-finder-handling)).
+5. **Preferences are confidential until PD.** The finder's attribution preference is captured at intake and confirmed before PD; it is held TLP:RED and becomes public only in the final advisory.
+
+### The three attribution choices
+
+Per CVD Policy §11, a Finder chooses one of:
+
+- **Named** — individual and, if they wish, organization (Scenario 1).
+- **Clearinghouse** — the reporting organization only (Scenario 2).
+- **Anonymous** — no Finder credit; the Akrites SIRT is credited as coordinator (Scenario 3).
+
+If the Finder **never stated a preference** and it cannot be confirmed before PD, the SIRT uses the name or handle as submitted and never names an organization without consent (CVD Policy §11). **An explicit request for anonymity always stands.**
+
+### Co-finder handling
+
+When more than one party reports the same issue:
+
+- Each consenting co-finder is credited using the applicable scenario block below.
+- Co-finders are honored **up to the attribution cutoff** — the point in the timeline after which additional independent reports are recorded but not added to the published advisory. The cutoff (e.g., patch-ready, or PD date) is set by policy (open item below).
+- A declining co-finder is omitted entirely; their preference does not affect other finders' credit.
+- Where co-finders are members of a WG, the WG may be credited in place of individuals per Principle 2.
+
+### Acknowledgement scenarios
+
+Every advisory's **Acknowledgements** section uses one of the three scenarios below, followed by the standard AI use block above.
+
+#### Scenario 1 — Named finder (name, optional organization, optional tools)
+
+Use when the finder consents to being named and, optionally, wants the tools used in finding and/or patching recorded.
+
+```
+Acknowledgements
+----------------
+This issue was reported by {Finder Name}{, {Organization}} and coordinated through the
+Akrites SIRT.
+
+{Finder Name} identified the vulnerability{ and contributed the patch}.
+
+AI use
+  - Finder: AI-assisted {discovery|patch development|discovery and patch development}.
+    {Tools: {tool/model names from the controlled vocabulary}.}
+  - Coordinator (Akrites SIRT): {No AI tooling was used. / AI-assisted {phase(s)}, under human review.}
+```
+
+**Field notes**
+
+- `Organization` is included only if the finder consents to naming their employer/affiliation.
+- The `Finder` AI line is required whenever AI materially assisted; state the phase(s).
+- `Tools:` is included **only at the finder's request**, from the [controlled vocabulary](#controlled-capability-vocabulary-how--when). Harness/configuration details are never published.
+
+**Filled example**
+
+```
+Acknowledgements
+----------------
+This issue was reported by Jordan Lee, ExampleSec, and coordinated through the Akrites SIRT.
+
+Jordan Lee identified the vulnerability and contributed the patch.
+
+AI use
+  - Finder: AI-assisted discovery and patch development. Tools: {LLM assistant}, {SAST tool}.
+  - Coordinator (Akrites SIRT): AI-assisted triage and advisory drafting, under human review.
+```
+
+#### Scenario 2 — Clearinghouse credited as the finder
+
+Use when the reporting entity is a clearinghouse/coordinator (e.g., a national CERT such as CISA or ENISA, or a trusted vendor program) that wants to be named as the finder rather than an individual analyst.
+
+```
+Acknowledgements
+----------------
+This issue was reported by {Clearinghouse Name} and coordinated through the Akrites SIRT.
+
+{Clearinghouse Name} reported this vulnerability on behalf of its constituency; individual
+reporters are not named at the reporter's request.
+
+AI use
+  - Finder: AI-assisted {discovery|patch development|discovery and patch development}.
+    {Tools: {tool/model names from the controlled vocabulary}.}
+  - Coordinator (Akrites SIRT): {No AI tooling was used. / AI-assisted {phase(s)}, under human review.}
+```
+
+**Field notes**
+
+- The clearinghouse is the named finder; individual analysts are **not** named.
+- Include the finder tooling on the same rules as Scenario 1, if the clearinghouse requests it.
+- If the clearinghouse also wants Akrites credited only as coordinator (no clearinghouse name), use Scenario 3.
+
+**Filled example**
+
+```
+Acknowledgements
+----------------
+This issue was reported by the Example National CERT and coordinated through the Akrites SIRT.
+
+Example National CERT reported this vulnerability on behalf of its constituency; individual
+reporters are not named at the reporter's request.
+
+AI use
+  - Finder: AI-assisted discovery.
+  - Coordinator (Akrites SIRT): No AI tooling was used.
+```
+
+#### Scenario 3 — Anonymous finder (Akrites SIRT credited as coordinator)
+
+Use when the finder declines any credit. The advisory names only the Akrites SIRT as the coordinating body.
+
+```
+Acknowledgements
+----------------
+This vulnerability was coordinated to disclosure by the Akrites SIRT. The reporter has
+requested to remain anonymous.
+
+AI use
+  - Finder (anonymous): {AI-assisted {phase(s)}. | No AI tooling was used. | AI use not disclosed.}
+  - Coordinator (Akrites SIRT): {No AI tooling was used. / AI-assisted {phase(s)}, under human review.}
+```
+
+**Field notes**
+
+- Do **not** name the finder, their organization, or a WG unless the finder later consents. An explicit request for anonymity always stands — the "name as submitted" fallback never applies here.
+- The **Finder** AI line is always present. If stating the Finder's AI use could identify the reporter, write "Finder (anonymous): AI use not disclosed."
+- The **Coordinator** AI line is always included — it does not implicate the reporter.
+
+**Filled example**
+
+```
+Acknowledgements
+----------------
+This vulnerability was coordinated to disclosure by the Akrites SIRT. The reporter has
+requested to remain anonymous.
+
+AI use
+  - Finder (anonymous): AI use not disclosed.
+  - Coordinator (Akrites SIRT): AI-assisted advisory drafting, under human review.
+```
+
+---
 
 ---
 
@@ -141,7 +295,19 @@ The SIRT holds itself to the same standard: sensitive case material is only put 
 | **Embargoed notification** | [Notification Template 3](../templates/notification-templates.md) | Read-in providers see the AI-use block so they can weigh exposure |
 | **Public disclosure** | [Notification Template 4](../templates/notification-templates.md) + advisory | The standard two-line AI-use block is published |
 
-insert-C-intake-checklist.md
+### Attribution intake checklist
+
+Captured at intake, confirmed before PD (held TLP:RED until PD):
+
+- [ ] Attribution preference: **named** / **clearinghouse** / **anonymous**
+- [ ] If named: exact display name, and whether organization may be shown
+- [ ] Finder role: discovery / patch / both
+- [ ] AI assistance used by finder? which phase(s)?
+- [ ] Finder tooling public or private/confidential? (affects embargo eligibility)
+- [ ] Publish specific tool/model names? if yes, list (validated against the controlled vocabulary)
+- [ ] Co-finder(s) present? each one's preference
+- [ ] Consent confirmed by finder before PD (record date)
+- [ ] SIRT AI use recorded for this case (phase[s], or "none")
 
 ---
 
