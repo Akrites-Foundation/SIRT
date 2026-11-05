@@ -55,7 +55,7 @@ You are authorized to discuss this case **only** with the named individuals on t
 
 ## 3. Requesting additional read-ins
 
-If you believe another person is needed — for example, an additional expert to analyze, test, or stage the fix — **request it from the SIRT case coordinator. Do not loop anyone in yourself.** In your request, state: who, why they are needed, and which sanctioned role they will perform (analyze/patch, test, or stage). The SIRT verifies eligibility, reads the person in, and adds them to the list in §2. Only the SIRT grants access.
+If you believe another person is needed — for example, an additional expert to analyze, test, or stage the fix — **request it from the SIRT case coordinator. Do not loop anyone in yourself.** In your request, state: who, their organization, why they are needed, what information they need, and which sanctioned role they will perform (analyze/patch, test, or stage). Share nothing with them until the SIRT confirms they are read in. The SIRT verifies eligibility, reads the person in, and adds them to the list in §2. Only the SIRT grants access.
 
 ---
 
