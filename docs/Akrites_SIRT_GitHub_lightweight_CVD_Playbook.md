@@ -3,14 +3,14 @@
 
 This process is a lightweight, manual version of the broader [CVD](Akrites_CVD_Playbook.md) process. It is meant to be temporary, and only to be used as a stopgap when we need to operate outside of The Akrites Pipeline ("TAP").
 
-> **All repositories used by this process are private.** Never open a vulnerability issue in a public repository; the only exception is a finding triaged as \action: public-intake-report` (below).`
+> **All repositories used by this process are private.** Never open a vulnerability issue in a public repository; the only exception is a finding triaged as `action: public-intake-report` (below).
 
 ---
 ## Principles
 
 - **Lean**: this is not a heavy, administrative process. It is laser-focused on operation.
 - **Temporary**: we are not using this for long periods of time.
-- **flexibility**: while this is a written process, we acknowledge and understand that the need for operating outside of a structured automation requires us to adapt. This process is able to do that.
+- **Flexibility**: while this is a written process, we acknowledge and understand that the need for operating outside of a structured automation requires us to adapt. This process is able to do that.
 
 ---
 
@@ -21,6 +21,8 @@ This process is a lightweight, manual version of the broader [CVD](Akrites_CVD_P
 - **Akrites SIRT** ("The SIRT"): A persistent "`SIRT-Team`" is available as a reviewer, assignee or just tagging in GitHub.
 - **Akrites Members WG Rotations** ("The Rotation"): A member-staffed rotation is responsible for triaging, daily, the issue list in github.
 - **Working Group Members**: subject matter experts who can both weigh in and help with vulnerabilities.
+
+> The Rotation and WG members see pre-disclosure material, so each must be a standing WG member read in under the [Read-In Policy](Akrites-Read-In-Policy.md) §7. Issues in these repositories are TLP:RED at intake and TLP:AMBER+STRICT once shared with the WG.
 
 ## Tools assisting this process
 - **GitHub**: 
@@ -45,7 +47,7 @@ We rely on the following labels, and their definitions:
 | `action: ready-for-submission` | Ready for sending to the project upstream. | SIRT |
 | `submitted: not-acknowledged-yet` | Sent up, but yet to be getting a receipt... this could be normal, but we want to make sure we do not let those linger | SIRT |
 | `submitted: delayed-upstream-acceptance` | issue is reported upstream, but seem stuck on something, somewhere... subjective, but should get attention once tagged. | SIRT |
-| `submitted: accepted-upstream` | Submission was accepted upstream, we can close our issue. | - |
+| `submitted: accepted-upstream` | Submission was accepted upstream. Keep the issue open until the **Before closing** checklist below is complete. | SIRT |
 | `blocked: EMBARGOED` | Issue under special embargo, it stays here for now. | SIRT |
 
 ### Labels Workflow
@@ -58,7 +60,7 @@ flowchart TD
     triage -->|report missing something| artifacts["action: need-more-artifacts"]
     triage -->|plausible vuln, but need extra eyes| sme["action: need-SME-review"]
     triage -->|invalid / duplicate / wontfix| label-before-close[Apply the right label - 'invalid'/'duplicate'/'wontfix'] --> closed
-    triage -->|a security issue, but no need for private reporting| hardening["action: public-intake-report"]
+    triage -->|not a vulnerability: hardening / non-security bug| hardening["action: public-intake-report"]
     triage -->|clearly a vuln, well formed report| ready
 
     artifacts -->|reporter supplies detail| triage
@@ -98,7 +100,8 @@ flowchart TD
 | **<= 1 day**: | **The Rotation** will perform a review of their queue every business day. |
 | | **The SIRT** will respond to assigned tasks within 1 business day. |
 | **<= 3 days**: | The maximum number of days we will keep something in our queue. |
-| **7 days**: | The number of days after which we will ping upstream again on un-ack'd messages from Akrites. |
+| **3 days**: | Re-send to upstream on un-ack'd reports, widening contacts (MoLR Policy Part II §3.1). |
+| **7 days**: | Escalate un-ack'd reports (umbrella org, foundations, distro security teams) and log every attempt in the [contact attempt log](../templates/Contact_attempt_log.md). |
 
 These internal SLOs sit inside the public commitments in the CVD Policy §5 (acknowledge within 2 business days; initial assessment within 10).
 
@@ -109,7 +112,7 @@ At the high level, this process exists to allow us to ensure we do not drop vuln
 
 **Daily**
 - The Rotation checks the issues in the queue
-- The SIRT ensures anything tagged with action: ready-for-submissionoraction: public-intake-report is reported upstream accordingly
+- The SIRT ensures anything tagged with `action: ready-for-submission` or `action: public-intake-report` is reported upstream accordingly
 
 ### Responsibilities of the groups
 **The Rotation** ensures...
@@ -125,8 +128,15 @@ At the high level, this process exists to allow us to ensure we do not drop vuln
 - Escalations from the Rotation are handled swiftly
 
 **The Akrites Working Groups Members** ensure...
-- a response is provided, or find The Right SME to get involved when needed or requested by the Rotation (when issues are tagged with `action: need-SME-review or `action: need-additional-SME-review` or similar)
+- a response is provided, or find The Right SME to get involved when needed or requested by the Rotation (when issues are tagged with `action: need-SME-review` or `action: need-additional-SME-review` or similar)
 - the issues reported are well-formed
     - we want to base this on the [UPSTREAM REPORT TEMPLATE](../templates/upstream-report-template.txt).
     - the reported issues are within the project's Threat Model
         - these can be fetched online for the most part.
+
+### Before closing an issue
+Accepted upstream is not the end of the case. Close only when:
+- [ ] Public Disclosure has happened, on the date the maintainer set (CVD Policy §8)
+- [ ] A CVE is assigned by the authoritative CNA (CVD Policy §2) and the advisory is published ([Notification Template 4](../templates/notification-templates.md))
+- [ ] The Finder is credited per their choice and the AI-use block is included ([Attribution and AI-Use Disclosure Policy](ai-use-disclosure.md))
+- [ ] Read-in access for the case is revoked (Read-In Policy §8)
