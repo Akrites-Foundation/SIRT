@@ -156,7 +156,7 @@ Akrites SIRT
 >
 > The 7–14 day figure is still a working figure (Read-In Policy Appendix A,
 > item 1) and must fit inside the case's PD target. Avoid releasing into
-> weekends/holidays; prefer Mon–Wed disclosure.
+> weekends/holidays; prefer Tue–Thu disclosure.
 
 ```
 Subject: [TLP:{{AMBER+STRICT / AMBER}}][EMBARGO until {{PD_DATE}}] {{CVE_ID}} in {{PROJECT}}
