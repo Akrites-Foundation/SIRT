@@ -19,7 +19,6 @@
 - [TAP Intake API (members)](TAP-API-Spec.md)
 
 ## Guidelines
-- [How to Report — quick guide for Finders](how-to-report-quick-guide.md)
 - [CVD Playbook](Akrites_CVD_Playbook.md)
 - [Communications Playbook](sirt-communications-playbook.md)
 - [Upstream Engagement Guidelines](upstream-engagement-guidelines.md)
