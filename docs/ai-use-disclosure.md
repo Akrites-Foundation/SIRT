@@ -125,6 +125,8 @@ For an **anonymous** Finder, the Finder line is never omitted. If stating the Fi
 
 Where technical capability exists, model, version, and framework/harness metadata may be captured at the report and API submission layer for internal benchmarking — only with the submitter's knowledge (stated at intake) and never published. This does not replace the Finder's own disclosure.
 
+---
+
 ## Credit and attribution
 
 ### Principles
@@ -268,8 +270,6 @@ AI use
   - Finder (anonymous): AI use not disclosed.
   - Coordinator (Akrites SIRT): AI-assisted advisory drafting, under human review.
 ```
-
----
 
 ---
 
