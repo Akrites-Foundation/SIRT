@@ -4,7 +4,7 @@
 **Status:** Draft for Board review
 **Tracking:** [Akrites-Foundation/SIRT #23](https://github.com/Akrites-Foundation/SIRT/issues/23)
 **Audience:** Akrites members, WGs, SIRT staff, and ecosystem participants
-**Companion docs:** [Communications Playbook](sirt-communications-playbook.md) (Play 5 public disclosure, Play 6 embargo break), [Embargo Handling Guidance](Embargo%20Handling%20Guidance.md), [Acknowledgements & Attribution](acknowledgements-and-attribution.md)
+**Companion docs:** [Communications Playbook](sirt-communications-playbook.md) (Play 5 public disclosure, Play 6 embargo break), [Embargo Handling Guidance](Embargo%20Handling%20Guidance.md), [Attribution and AI-Use Disclosure Policy](ai-use-disclosure.md)
 
 > Spelling standard: **Akrites** (Akrites Foundation, Akrites SIRT). "OSS-SIRT" is a synonym.
 
@@ -275,5 +275,5 @@ flowchart TD
 - Embargo break comms templates: `sirt-communications-playbook.md` **Play 6**.
 - Read-in finder updates / postmortem: **Play 3**, **Play 18**.
 - Embargo windows and extensions: `Embargo Handling Guidance.md`.
-- Attribution at PD: `acknowledgements-and-attribution.md`.
+- Attribution at PD: [Attribution and AI-Use Disclosure Policy](ai-use-disclosure.md).
 
