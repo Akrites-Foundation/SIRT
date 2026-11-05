@@ -106,7 +106,7 @@ The vulnerability and its remediation are released publicly, in sync.
 ### Phase 9 — Post-Disclosure & Retrospective
 Deployment is supported and the case is reviewed.
 - **Consumer:** deploy the fix or mitigation promptly.
-- **Coordinator:** support deployment, capture metrics, and run a blameless retrospective; feed lessons back into the process.
+- **Coordinator:** support deployment, capture [metrics](Akrites_SIRT_Metrics.md), and run a blameless retrospective; feed lessons back into the process.
 - **Maintainer & Finder:** recognized for the outcome; input welcomed into the retrospective.
 
 ---
@@ -146,7 +146,7 @@ The full practice is in the [Upstream Engagement Guidelines](upstream-engagement
 - VDR and deviation-notice formats *(to be published)*
 - [Working Group guide](Working_Group_Governance_and_Operations.md) and the [engineer read-in one-pager](Akrites_ReadIn_Engineer_OnePager.md)
 - OpenSSF `SECURITY.md`, embargo-notification, and disclosure-notification templates
-- AI and LLM Use Disclosure Policy, Acknowledgements & Attribution guidance, and the intake template's AI-usage section
+- [Attribution and AI-Use Disclosure Policy](ai-use-disclosure.md), and the intake template's "AI / LLM tooling used" section
 
 **Authoritative sources this guide draws on**
 - OpenSSF *Guide to Coordinated Vulnerability Disclosure for OSS* (finder & maintainer guides, templates) — CC-BY-4.0: <https://github.com/ossf/oss-vulnerability-guide>
