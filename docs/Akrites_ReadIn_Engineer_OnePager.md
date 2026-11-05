@@ -4,7 +4,7 @@ You've been tapped to help resolve a confidential vulnerability under embargo. T
 
 ## Confidentiality Agreement / TLP language — non-negotiable
 
-- **Follow TLP.** Treat case material as **TLP:AMBER+STRICT** — share only *with the exact folks (no mailing lists) who need to know in order to fix/deploy/test the patches, within your organization*, never with clients, partners or third parties. If the material is **TLP:RED** — *your eyes only*, not even your own manager or teammates can get access. Under TLP:RED, "my org" does **not** mean "anyone at my org." When in doubt, treat it as TLP:RED and ask.
+- **Follow TLP.** Treat case material as **TLP:AMBER+STRICT** (unless an item is marked otherwise — e.g., TLP:RED finder material) — share only *with the exact folks (no mailing lists) who need to know in order to fix/deploy/test the patches, within your organization*, never with clients, partners or third parties. If the material is **TLP:RED** — *your eyes only*, not even your own manager or teammates can get access. Under TLP:RED, "my org" does **not** mean "anyone at my org." When in doubt, treat it as TLP:RED and ask.
 - **Named parties only.** Discuss the case only with the people on the read-in list. If someone else needs to help, ask the SIRT to read them in — **never loop anyone in yourself — only the SIRT case coordinator can read someone in.**
 - **No signaling.** Do nothing in public that hints the issue exists: no telltale commits, branches, issues, PRs, mailing-list questions, blog/social posts, or conference teasers. Most leaks are accidental.
 - **Keep it contained.** Work only inside the provided environment (repo, channel). No copying to personal machines or accounts. **No exploit code, PoCs, or sensitive files in chat** — those live in the case repo.
@@ -30,7 +30,7 @@ You've been tapped to help resolve a confidential vulnerability under embargo. T
 - **Personal OPSEC.** You may be targeted *because* you're read in. Watch for phishing and social engineering, lock your screen, and don't discuss the case where you can be overheard.
 - **Material Non-Public Information (MNPI).** Vulnerability details can be MNPI — do not trade on them or pass them to anyone who might.
 - **Conflicts of interest.** Tell the SIRT if you have one (e.g., you have a competitive tie). Please also disclose to the SIRT if you are the maintainer of the project for transparency.
-- **At case close.** Delete local copies and stop work. Your access ends at public disclosure.
+- **At case close.** Delete local copies and stop work. Your access ends at public disclosure or case close, whichever comes first.
 
 ---
 
