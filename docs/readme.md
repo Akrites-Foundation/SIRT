@@ -5,7 +5,7 @@
 - [Coordinated Vulnerability Disclosure (CVD) Policy](Akrites_CVD_Policy.md)
 - [Read-In Policy](Akrites-Read-In-Policy.md)
 - [Maintainer of Last Resort (MoLR) Policy](Maintainer_of_Last_Resort_Policy.md)
-- [AI and LLM Use Disclosure Policy](ai-use-disclosure.md)
+- [Attribution and AI-Use Disclosure Policy](ai-use-disclosure.md)
 - [Code of Conduct](../Code_of_Conduct.md)
 
 ## Processes
@@ -23,13 +23,11 @@
 - [Communications Playbook](sirt-communications-playbook.md)
 - [Upstream Engagement Guidelines](upstream-engagement-guidelines.md)
 - [What Counts as Public Disclosure](what-counts-as-public-disclosure.md)
-- [Acknowledgements and Attribution](acknowledgements-and-attribution.md)
 - [Glossary](Akrites_SIRT_CVD_Glossary.md) — includes how to contribute terms
 
 ## Templates
 - [Templates index](../templates/readme.md)
 
-## Presentations, audits, and archive
+## Presentations and audits
 - [Public presentations](presentations/)
 - [Documentation audits](audits/)
-- [Archived documents](archived_documentation/)
