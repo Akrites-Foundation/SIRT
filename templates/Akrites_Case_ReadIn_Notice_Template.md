@@ -5,21 +5,21 @@
 ---
 You have passed verification confirming you have expertise relevant to this disclosure and that you are able to contribute.
 
-**You are being read into a restricted vulnerability case.** Please read this notice in full before taking any action. To participate you must accept the terms contained in this Read-In Notice, the Akrites charter, and policies. To document your acceptance, reply to this email indicating your acceptance. Your continued participation confirms your continued adherence to the terms below.  Please review the additional details about the [Akrites SIRT Read-In One-Pager](https://github.com/Akrites-Foundation/SIRT/blob/main/docs/Akrites_ReadIn_Engineer_OnePager.md)
+**You are being read into a restricted vulnerability case.** Please read this notice in full before taking any action. To participate you must accept the terms of this Read-In Notice, the [Akrites Read-In Policy](https://github.com/Akrites-Foundation/SIRT/blob/main/docs/Akrites-Read-In-Policy.md), the [Akrites Code of Conduct](https://github.com/Akrites-Foundation/SIRT/blob/main/Code_of_Conduct.md), and the Linux Foundation [Antitrust Policy](https://www.linuxfoundation.org/antitrust-policy). Please also review the [Akrites SIRT Read-In One-Pager](https://github.com/Akrites-Foundation/SIRT/blob/main/docs/Akrites_ReadIn_Engineer_OnePager.md).
 
-*Please reply to this message, acknowledging receipt of this email so that your provisioning to the team resources listed below can be completed.  Please also include your GitHub ID so you can be added to any associated private repositories this group will be using.*
+**To accept, reply to this message stating that you accept this notice (see §7), and include your GitHub ID.** Access to the case resources below is enabled only after the SIRT receives your acceptance. Your continued participation confirms your continued adherence to these terms.
 
 | Field | Detail |
 |---|---|
 | **Case ID** | {{CASE_ID}} |
 | **Read-in recipient** | {{NAME}} |
 | **Sponsoring organization** | {{ORG}} |
-| **Your role in this case** | {{ROLE — SIRT ·KNOWER · analyze / produce patch · test patch · stage patch}} |
-| **Your tier** | {{TIER 0/1/2/3}} |
+| **Your role in this case** | {{ROLE — analyze / produce patch · test patch · stage patch · maintainer / upstream security team · pre-stage PD notifications}} |
+| **Your tier** | {{TIER 0 / 1 / 1.5 / 2 / 3 / 3.5}} |
 | **Read-in date** | {{DATE}} |
 | **Embargo / public disclosure target** | {{PD_DATE}} |
 | **Access expires** | At public disclosure or case close |
-| **SIRT case coordinator (your point of contact)** | {{LEAD_NAME}} — {{LEAD_CONTACT}} |
+| **SIRT case coordinator (your point of contact)** | {{COORDINATOR_NAME}} — {{COORDINATOR_CONTACT}} |
 
 **What this case concerns (brief, need-to-know only):** 
 {{ONE_LINE_SCOPE}}
@@ -28,12 +28,13 @@ You have passed verification confirming you have expertise relevant to this disc
 
 ## 1. Data classification — Traffic Light Protocol (TLP)
 
-This case is governed by the **FIRST Traffic Light Protocol (TLP 2.0)**. Every piece of case information carries a TLP label that tells you exactly how far you may share it. What information you receive is scoped to your tier per the Tier Policy. **When in doubt, treat information as TLP:RED and ask the SIRT case coordinator.**
+This case is governed by the **FIRST Traffic Light Protocol (TLP 2.0)**. Every piece of case information carries a TLP label that tells you exactly how far you may share it. What information you receive is scoped to your tier per the [Read-In Policy §4](https://github.com/Akrites-Foundation/SIRT/blob/main/docs/Akrites-Read-In-Policy.md#4-the-tiers-at-a-glance). **When in doubt, treat information as TLP:RED and ask the SIRT case coordinator.**
 
 | Label | What it means for you |
 |---|---|
 | **TLP:RED** | For **your eyes only**. Do not share with anyone — including others inside your own organization — unless the SIRT reads them in. Most intake and finder material is TLP:RED. |
-| **TLP:AMBER+STRICT** | Share **only within your organization**, strictly on a need-to-know basis. **Not** with clients, partners, or any third party. This is the default for case and remediation material. |
+| **TLP:AMBER+STRICT** | Share **only within your organization**, strictly on a need-to-know basis. **Not** with clients, partners, or any third party. This is the default for case and remediation material (Tiers 1, 1.5 and 2). |
+| **TLP:AMBER** | Share only within your organization **and with its clients**, on a need-to-know basis. No onward sharing to other organizations. Used for downstream staging material (Tiers 3 and 3.5). |
 
 TLP:GREEN and TLP:CLEAR do **not** apply to this case until after public disclosure. If any item is unmarked, treat it as TLP:AMBER+STRICT at minimum. The authoritative definitions are published by FIRST at first.org.
 
@@ -94,12 +95,12 @@ Access to all three requires hardware-key two-factor authentication.
 
 ## 7. Acknowledgment
 
-By adding your name via a PR to the Knowers_File.md for this working group, you are agreeing to participate in this case, and you confirm that you:
+By replying to accept this notice, you agree to participate in this case and confirm that you:
 
 1. Understand and will apply the **TLP handling** rules in §1.
 2. Will communicate about this case **only with the named parties** in §2, via the **channels** in §4.
 3. Will route any **additional read-in requests through the SIRT** (§3).
 4. Will comply with the **embargo** and report any suspected break (§6).
-5. Acknowledge that violating or breaking the embargo will result in you and potentially your employer's **removal from the program.**
+5. Understand that an embargo break results in **immediate suspension of your access**, that the Akrites Governing Board decides on permanent removal (for you and potentially your sponsoring organization), and that an accidental break you promptly self-report is reviewed blamelessly ([Read-In Policy §11](https://github.com/Akrites-Foundation/SIRT/blob/main/docs/Akrites-Read-In-Policy.md#11-embargo-breaches)).
 
 *Questions about this notice go to the SIRT case coordinator listed in the header — not to anyone outside the read-in list.*

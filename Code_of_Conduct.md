@@ -53,6 +53,8 @@ Instances of abusive, harassing, or otherwise unacceptable behavior may be repor
 
 Information will be shared only with those who reasonably need it to assess, investigate, or respond to the report. Absolute confidentiality cannot be guaranteed, but the Foundation will take reasonable steps to protect the privacy and safety of everyone involved and to store investigation records securely.
 
+Where an interim measure or outcome restricts a participant's access to Akrites spaces, the Code of Conduct Committee notifies the SIRT Director, who suspends or revokes the participant's read-in and Working Group access under the Read-In Policy (§8). Only the access decision is shared with the SIRT — not the details of the report.
+
 ## Enforcement Guidelines 
 
 Where reasonably necessary to protect participants or preserve the integrity of an investigation, community leaders may impose proportionate interim measures, such as temporary access restrictions, no-contact directions, changes to moderation permissions, or temporary recusal from community duties. Interim measures are precautionary and do not constitute a finding that a violation occurred.

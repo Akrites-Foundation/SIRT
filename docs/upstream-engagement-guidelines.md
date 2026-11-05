@@ -3,9 +3,7 @@
 **Owner:** Akrites SIRT
 **Status:** Draft for Board review
 **Audience:** SIRT coordinators and WG engineers who engage upstream projects
-**Companion docs:** `sirt-communications-playbook.md` (Plays 9, 10, 15, 17), `acknowledgements-and-attribution.md`, `Embargo Handling Guidance.md`, steward-engagement taxonomy
-
-> Spelling standard: **Akrites** (Akrites Foundation, Akrites SIRT). "OSS-SIRT" is a synonym.
+**Companion docs:** [Communications Playbook](sirt-communications-playbook.md) (Plays 9, 10, 15, 17), [Acknowledgements & Attribution](acknowledgements-and-attribution.md), [Embargo Handling Guidance](Embargo%20Handling%20Guidance.md), [Maintainer of Last Resort Policy](Maintainer_of_Last_Resort_Policy.md)
 
 ## Purpose
 
@@ -18,7 +16,7 @@ security practices so the next issue is easier for everyone. Three sections:
 3. **Leave-behind resources** — tools, training, and templates to hand maintainers.
 
 Guiding stance throughout: **we contribute, we don't impose.** The maintainer keeps final authority
-over their project, their fix, and their timing. We meet each community where it is.
+over their project and their fix, and we work to their timeline — the only exception is active exploitation or a public embargo break, where CVD Policy §9 allows acceleration to protect users. We meet each community where it is.
 
 ---
 
@@ -27,7 +25,7 @@ over their project, their fix, and their timing. We meet each community where it
 ### 1.1 Do your homework before you knock (recon)
 
 Before first contact, build a picture of the project's security posture and the right way in.
-Automate this where possible (it feeds the "Security Card") but confirm with human judgment:
+Automate this where possible (it would feed the proposed "Security Card" once the Governing Board approves its governance) but confirm with human judgment:
 
 - **Reporting channel:** Is Private Vulnerability Reporting (PVR) enabled? Is there a
   `SECURITY.md`, a `security.txt`, or a `SECURITY-INSIGHTS.yml`? Run OpenSSF **Disclosure Check**
@@ -38,8 +36,8 @@ Automate this where possible (it feeds the "Security Card") but confirm with hum
   expectations, test suite, local build steps, and code style.
 - **Project state:** are issues and security fixes being actively addressed? (This distinguishes a
   slow-but-alive project from an unmaintained one — see Section 2.)
-- **Reputation flags:** any history of mishandling reports or breaching embargoes (record on the
-  Security Card).
+- **Prior handling:** any public record of how the project has handled past reports or embargoes,
+  noted in the case file only — we don't keep reputation scores on maintainers.
 
 ### 1.2 First impressions are everything
 
@@ -50,8 +48,8 @@ Automate this where possible (it feeds the "Security Card") but confirm with hum
   website and in `security.txt`; sign outreach with S/MIME or GPG; offer a verification link.
 - **Maintainer-to-maintainer tone.** Humble, appreciative, concise. Acknowledge their time is
   scarce and that we're here to help, not to add burden or take over.
-- **Lead with a Code of Conduct for engagement.** Share the Akrites upstream-engagement CoC
-  (distinct from the Foundation's general CoC) so maintainers know exactly what to expect from us.
+- **Set expectations up front.** Tell maintainers what they can expect from us — the commitments in
+  [MoLR Policy Part I](Maintainer_of_Last_Resort_Policy.md) (what we offer, what we will never do, and that they keep authority). A dedicated upstream-engagement Code of Conduct is pending Board ratification.
 
 ### 1.3 Deliver an excellent report
 
@@ -71,8 +69,7 @@ Quality of the packet directly sets the pace. Model the report on what maintaine
 
 - Label contributions as an **"initial/proposed patch"** and explicitly invite the maintainer to
   refine or replace it.
-- We do **not** impose timelines. The embargo/PD window is a guideline we negotiate (default 30
-  days from owner confirmation), and we defer to upstream where they have their own process.
+- We do **not** impose timelines. The embargo/PD window is a guideline we negotiate (a proposed 15-business-day upstream embargo), and we defer to upstream where they have their own process.   The narrow exceptions — confirmed exploitation or a public break — are in CVD Policy §9 and the public-disclosure guidance §5.
 - Confirm the fix with the maintainer where possible rather than assuming; respect their final call
   on the fix and the disclosure date.
 
@@ -85,7 +82,7 @@ humans in the loop carries real credibility risk.
   harness internals stay internal (see attribution doc).
 - Respect **no-AI-content** policies. Have a short FAQ/Q&A ready for maintainers who are wary, and
   never bury a project in automated reports.
-- Prioritize **Critical/Important** findings for first engagement to establish a positive track
+- Prioritize **Critical/High** findings for first engagement to establish a positive track
   record before bringing lower-severity volume.
 
 ### 1.6 Prolific maintainers and special cases
@@ -128,7 +125,7 @@ may be ignoring what looks like spam.
 | **Overwhelmed** | Afloat but nothing is a priority | Sporadic activity, backlog growth, solo maintainer signals |
 | **Mature/Stable (false-dead)** | Slow by design; "nothing is broken" | Responds eventually; not accepting features; low but real activity |
 
-Use LFX's continuous project-state validation and the steward-engagement taxonomy to make this call
+Use LFX's continuous project-state validation and the project-state table above to make this call
 consistently rather than by gut feel. Number of open issues alone is **not** a verdict.
 
 ### 2.3 The escalation ladder (timers, not tantrums)
@@ -154,18 +151,15 @@ Order of preference (least intervention first — takeovers/forks demand real ca
 1. **Maintainer fixes** based on our disclosure package. *(Always the goal.)*
 2. **Akrites publishes a patch file / mitigation** so consumers can protect themselves, framed as an
    initial/proposed fix and inviting the maintainer back in at any time.
-3. **WG steward/fork** — a time-bounded hardened fork, with **TOC/Board approval**, as a last
-   resort.
+3. **Maintainer of Last Resort** — a per-CVE security release under an Akrites-controlled namespace, with **Governing Board approval**, as a last resort ([MoLR Policy](Maintainer_of_Last_Resort_Policy.md)).
 
 Mechanics and cautions:
 
-- If the repo is **active but unresponsive**, a public PR with the fix lets consumers benefit and
-  invites the maintainer to merge.
-- If the repo is **archived**, you can't PR — a public fork is required, which risks *looking* like
-  we've adopted maintenance (feature requests, expectations). Treat forking as a deliberate group
-  decision, not a reflex.
-- **Stay out of binaries/builds** unless the group establishes trusted build infrastructure; default
-  to source patches and mitigations. Don't create walled gardens.
+- If the repo is **active but unresponsive**, a public PR with the fix lets consumers benefit and invites the maintainer to merge — but a public PR **is public disclosure**; open it only at or after PD.
+- If the repo is **archived**, you can't PR. Don't fork: publish the patch file and mitigation (step 2 above), and if a
+  release is genuinely needed, it goes through the MoLR Policy (step 3) — never a general-purpose fork that looks
+  like we've adopted maintenance.
+- **Stay out of binaries/builds** by default; ship source patches and mitigations. The only exception is an approved MoLR release, which uses the MoLR Policy's signed, provenance-attested build gates.
 - Align emergency-release handling with community norms (e.g., the Maven Central "care" / emergency
   release policy) rather than inventing our own where a standard exists.
 - If a patch time exceeds the window, **share mitigations/workarounds** rather than slipping silently.
@@ -174,8 +168,7 @@ Mechanics and cautions:
 
 Every unresponsive-path action is framed as consumer protection, *not* a takeover. Explicitly invite
 the maintainer to adopt, refine, or replace our work, and to reclaim their project at any time. Log
-the full attempt history for the postmortem and the Security Card (including any embargo/mishandling
-behavior for future reference).
+the full attempt history in the [contact attempt log](../templates/Contact_attempt_log.md) for the postmortem.
 
 ---
 
@@ -253,7 +246,7 @@ Akrites Security Starter Kit — {project}
 
 Quick wins (this week):
 [ ] Enable GitHub Private Vulnerability Reporting
-[ ] Add a SECURITY.md (template attached)
+[ ] Add a SECURITY.md (OpenSSF template: https://github.com/ossf/oss-vulnerability-guide)
 [ ] Publish a security.txt
 
 Next steps (this month):
@@ -276,13 +269,11 @@ Who to call:
 ## Appendix — cross-references & open items
 
 **Companion plays:** upstream first-contact (Play 9), unresponsive/overwhelmed (Play 10),
-MoLR/fork publication (Play 15), rejected patch (Play 17) — all in `sirt-communications-playbook.md`.
+MoLR release publication (Play 15), rejected patch (Play 17) — all in `sirt-communications-playbook.md`.
 
-**Open items for Board:**
+**Open items for Governing Board:**
 
 - Ratify the **Akrites upstream-engagement Code of Conduct** referenced in 1.2.
-- Confirm **MoLR/fork authority and triggers** (Section 2.4) and the archived-project fork policy.
 - Decide whether Akrites ever provides **binaries** or source/patches only (Section 2.4).
-- Confirm the **default embargo window** and extension principle referenced in 1.4.
 - Approve the **Security Starter Kit** contents and maintain the resource list as links evolve.
 
