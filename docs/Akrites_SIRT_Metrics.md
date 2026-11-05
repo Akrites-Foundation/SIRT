@@ -43,14 +43,34 @@ Audience key: **I** = internal team · **B** = Board/members · **P** = public. 
 | Maintainer experience & testimonials | Trust | B · P* | Near (qualitative) | Oct 15: blog stories |
 | Reports processed & dedup rate (%) | Throughput | I · B | Now | Sept 15: dedup counts/% |
 | Median time: report → fix *(shown with regressions)* | Speed + quality | I · B · P* | Near | Sept 15: patches in pipeline |
-| Regressions introduced by our patches (goal: 0) | Quality guardrail | I · B | Near | Oct 15: no-regression goal |
+| Regressions introduced by our patches (goal: 0) | Quality guardrail | I · B · P* | Near | Oct 15: no-regression goal |
 | Embargo integrity (% clean / incident count) | Integrity guardrail | I · B · P* | Now | Ongoing |
 | Automation ratio; capacity vs. demand | Efficiency/resourcing | I · B | Near | Ongoing (lightest weight) |
 | Acknowledgement within 2 business days (% of reports) | Commitment (SECURITY.md) | I · B · P | Now | Ongoing |
 | Initial assessment within 10 business days (%) | Commitment (SECURITY.md) | I · B · P | Now | Ongoing |
 | PD within severity target (≤ 17/21/24 bd) (%) | Commitment (CVD Policy §5) | I · B · P* | Near | Ongoing |
+| Actionable guidance within 7 days of confirmed exploitation (%) | Commitment (CVD Policy §9) | I · B · P* | Near | Ongoing |
+| Appeals acknowledged within 3 bd / resolved within 10 bd (%) | Commitment (CVD Policy §15) | I · B | Now | Ongoing |
+| Known-affected consumers on a fixed version at 30 / 90 days post-PD | Outcome (MoLR Policy Part IV §2) | I · B | Later | — |
+| MoLR engagements (count) — **rising = failure signal** | Counter-metric (MoLR Policy Part IV §2) | I · B | Now | Ongoing |
 
 \* Public sees an aggregated or qualitative form only.
+
+
+### Metric definitions
+
+Every time-based metric is measured in **business days** unless stated, from the case record. A case counts once, in the period its stop event falls.
+
+| Metric | Start event | Stop event | Notes / exclusions |
+|---|---|---|---|
+| Acknowledgement within 2 bd | Report received on any intake channel | Acknowledgement (Notification Template 1) sent | Denominator: reports with a reply channel |
+| Initial assessment within 10 bd | Report received | Triage assessment (Template 2a/2b) sent | — |
+| PD within severity target | Report received | Public Disclosure (advisory published) | Severity band = the band assigned at enrichment. Cases on a longer timeline under the upstream project's own policy (CVD Policy §8) and accelerated cases (§9) are reported separately, not as misses. There is no "clock pause." |
+| Median time: report → fix | Report received | Fixed release or merged upstream fix publicly available | "Fix availability" in the public cut means the same stop event |
+| Actionable guidance after exploitation | Active exploitation confirmed | Guidance or mitigation published | Target 7 calendar days (CVD Policy §9) |
+| Embargo integrity | — | — | % of cases reaching PD with no embargo break, as classified in [What Counts as Public Disclosure](what-counts-as-public-disclosure.md) §5 |
+| Upstream fixes merged | — | Fix merged upstream | % = merged ÷ coordinated disclosures completed in the period |
+| Downstream remediation enabled; automation ratio | — | — | *To be defined before first Board report* |
 
 ---
 
@@ -68,7 +88,7 @@ Kept deliberately simple and credible — five numbers plus stories:
 1. Vulnerabilities coordinated to disclosure (period total)
 2. Upstream fixes shipped
 3. Projects / maintainers supported
-4. Median time from report to fix availability
+4. Median time from report to fix availability, shown with regressions introduced by our patches
 5. % of coordinations completed with no embargo incident
 
 …accompanied by maintainer testimonials and ecosystem success stories. **Excluded from the public tier:** anything live or embargoed, member identities, per-project unfixed counts, throughput internals, efficiency figures, and any SBOM detail.
