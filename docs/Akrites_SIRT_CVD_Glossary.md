@@ -20,7 +20,7 @@ Entries within each section are ordered alphabetically. Instructions for proposi
 | **SIG** | Special Interest Group — a group formed around technology surrounding a WG's focus area. |
 | **SIRT** | Security Incident Response Team — the Akrites staff and infrastructure that coordinate intake, disclosure, and upstream engagement. (The "Incident" mandate — coordinated response to large "celebrity" incidents — is planned to come online later.) |
 | **SIRT case coordinator** | The SIRT staff member accountable for a case: evaluates read-ins, assigns tiers, runs the timeline, and executes publication. |
-| **SIRT Director** | Leads the Akrites SIRT; second escalation level above the case coordinator. |
+| **SIRT Director** | Leads the Akrites SIRT; the escalation point after the case coordinator and an independent coordinator review, before the Governing Board (CVD Policy §15). |
 | **Upstream** | the original open source project for the software being worked on. |
 | **Working Group (WG)** | A small, private, self-organizing team of read-in members that analyzes, tests, and patches vulnerabilities in a specific domain. |
 
@@ -30,27 +30,29 @@ Entries within each section are ordered alphabetically. Instructions for proposi
 
 | Term | Definition |
 |---|---|
-| **AI-assisted (discovery / analysis / patching)** | A capability-level label stating that AI/LLM tooling materially helped with a phase of the work. Published for both the finder and the SIRT; see [AI-Use Disclosure Policy](./ai-use-disclosure.md). |
+| **AI-assisted (discovery / analysis / patching)** | A capability-level label stating that AI/LLM tooling materially helped with a phase of the work. Published for both the finder and the SIRT; see [Attribution and AI-Use Disclosure Policy](./ai-use-disclosure.md). |
 | **AI-use disclosure** | The requirement that every case records, and every advisory states, whether and how AI/LLM tooling was used — for both the finder and the Akrites SIRT (Coordinator), including an explicit "no AI tooling was used" where that applies. |
 | **Alpha patch** | An early candidate fix shared with the WG and finder for review and testing before broader coordination. |
 | **Blameless postmortem** | A no-fault review process used for hard cases such as a disputed finding, an unresponsive maintainer, or a rejected patch. |
 | **CVD** | Coordinated Vulnerability Disclosure — the practice of privately reporting a flaw, coordinating a fix under embargo, and disclosing publicly in a synchronized way. |
 | **Deviation notice** | A published record where Akrites' assessment (e.g., severity or root cause) differs from an existing public score — sharing the evidence rather than disputing the CNA. |
 | **Embargo** | The agreed period of confidentiality before public disclosure, during which only read-in parties know of the issue. Akrites' proposed upstream embargo is 15 business days (leading to a total target time to PD of ≤ 17 bd Low/Med, ≤ 21 bd High, ≤ 24 bd Critical), deferring to the upstream project's own policy. |
-| **Finder / Co-finder** | The party (or parties) who discovered and reported the vulnerability; co-finder rules govern shared attribution. |
+| **Finder / Co-finder** | The party (or parties) who discovered and reported the vulnerability; co-finder rules govern shared attribution — see the [Attribution and AI-Use Disclosure Policy](./ai-use-disclosure.md). |
+| **Hand-off (upstream)** | The point at which the SIRT formally engages the affected project with the validated finding. It starts the 15-business-day upstream disclosure period; the Finder is told the date in writing (CVD Policy §7). |
 | **IR** | Incident Response. |
 | **Least privilege** | The principle that access is scoped to only what a role needs; members see only the WGs they belong to, and only SIRT staff have cross-cutting visibility. |
 | **Mitigation / workaround** | A non-patch means of reducing risk (e.g., a configuration change or firewall rule) when no fix is yet available. |
 | **MoLR (Maintainer of Last Resort)** | A governed, per-CVE exception in which Akrites ships a security fix for an abandoned project under an Akrites-controlled namespace. It does not adopt or maintain the project. Requires Governing Board approval. See the [MoLR Policy](./Maintainer_of_Last_Resort_Policy.md). |
-| **PD (Public Disclosure)** | The point at which a vulnerability and its fix become public. |
+| **PD (Public Disclosure)** | The point at which meaningful information about a vulnerability becomes available to the general public without restriction — intentionally (the coordinated release on the PD date) or unintentionally (a leak or embargo break). See [What Counts as Public Disclosure](./what-counts-as-public-disclosure.md). |
+| **PD date (Coordinated Release Date, CRD)** | The pre-agreed date and time for intentional public disclosure, set once a fix is available and an identifier assigned. |
 | **POC** | Proof of Concept - a controlled demonstration or set of instructions that proves a reported software flaw is real and exploitable, typically used by security teams to validate risks, reproduce issues, and test patches. [TechTarget](https://www.techtarget.com/searchsecurity/definition/proof-of-concept-PoC-exploit) |
 | **POV** | Proof of Vulnerability - Proof of Vulnerability (PoV) is an executable test case, input, or script that definitively confirms a theoretical security flaw is real, reproducible, and exploitable in a specific environment. In the context of vulnerability response and management, it serves as concrete, hands-on evidence that an identified software weakness can be triggered to compromise a system's confidentiality, integrity, or availability. [arXiv](https://arxiv.org/html/2607.12316v1) |
 | **Read-in** | Granting a named individual access to a specific case or WG after they clear the Three-Gate Test (need-to-know, capacity to contribute, vetted identity) and the prerequisites. See the [Read-In Policy](./Akrites-Read-In-Policy.md). |
 | **SIREN** | The OpenSSF's public threat-intelligence mailing list ([announced May 2024](https://openssf.org/blog/2024/05/20/enhancing-open-source-security-introducing-siren-by-openssf/); modeled on oss-security), staffed and funded by the OpenSSF: a post-disclosure channel for sharing active threat activity affecting open source at large — exploitation campaigns, TTPs, and indicators of compromise (for example, spearphishing campaigns using fake GitHub token-renewal notices). The SIRT fires a SIREN post alongside the member notice at PD. |
 | **Steward / LTS** | A party that takes on long-term support or maintenance of a project; the preferred alternative to Akrites acting as MoLR. |
 | **Synchronized disclosure** | Coordinating parties so the fix, advisory, and disclosure land together rather than piecemeal. |
-| **Technical contribution ("price of admission")** | The requirement that read-in members meaningfully help analyze, patch, test, or stage a fix — not merely observe. |
-| **Tier 0 / 1 / 1.5 / 2 / 3 / 3.5** | The read-in tiers: **0** Finder & SIRT; **1** SME patch authors/testers; **1.5** upstream maintainer/security team (non-member); **2** distribution partners / pre-disclosure rings; **3** second-order distributors (CDNs, registries); **3.5** international coordinators (≤ 24 h before PD). |
+| **Technical contribution ("price of admission")** | The expectation (CVD Policy §12) that members, reporters, and read-in members, contribute meaningfully — analysis, a patch, tests, or staging — rather than only reporting or observing. |
+| **Tier 0 / 1 / 1.5 / 2 / 3 / 3.5** | The read-in tiers: **0** Finder & SIRT; **1** SME patch authors/testers; **1.5** upstream maintainer/security team of the affected project (member or not); **2** distribution partners / pre-disclosure rings; **3** second-order distributors (CDNs, registries); **3.5** international coordinators (≤ 24 h before PD). |
 | **Tiered disclosure** | Reading parties in across staged tiers (0–3.5), each later tier seeing less and being read in later. |
 | **VDR (Vulnerability Disclosure Report)** | The package the SIRT prepares to drive maintainer engagement and disclosure. |
 
@@ -60,10 +62,12 @@ Entries within each section are ordered alphabetically. Instructions for proposi
 
 | Term | Definition |
 |---|---|
+| **Clearinghouse** | A trusted external coordinator (e.g., a national CERT) or vendor program that reports to or through the SIRT on behalf of others. Also a reporter class in CVD Policy §12, and a credit option in which the organization is named as finder without its individual analysts. |
 | **CNA (CVE Numbering Authority)** | An organization authorized to assign CVE IDs within its scope. |
 | **Consumer / end user** | The party who must act on a disclosure once public; served at public disclosure, not before. |
+| **Coordinator** | The neutral party facilitating a CVD case — for Akrites cases, the Akrites SIRT (individually, the SIRT case coordinator). Appears as "Coordinator (Akrites SIRT)" in advisory AI-use lines. |
 | **Distribution / staging party** | A downstream distributor (e.g., package registry, CDN) read in late to pre-stage a fix for rapid propagation (Tier 2/3). |
-| **Maintainer** | The upstream owner of the affected project; retains final say on the fix and disclosure timing. |
+| **Maintainer** | The upstream owner of the affected project; retains final say on the fix and disclosure timing, except where active exploitation or a public embargo break requires acceleration (CVD Policy §9). |
 | **Owner** | The maintainer, security team, or organization responsible for a project's code and its security posture. The Akrites SIRT is usually the coordinator, not the Owner. See CVD Policy §3. |
 | **SME** | Subject-Matter Expert — a member with domain expertise who analyzes, produces, or tests fixes (typically Tier 1). |
 
