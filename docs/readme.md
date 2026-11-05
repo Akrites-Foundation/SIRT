@@ -11,6 +11,7 @@
 ## Processes
 - [Intake Runbook](intake-runbook.md)
 - [Critical Situation (Crit-Sit) Playbook](critical_situation_playbook.md)
+- [Embargo Handling Guidance](Embargo%20Handling%20Guidance.md)
 - [GitHub Lightweight CVD Playbook (temporary manual process)](Akrites_SIRT_GitHub_lightweight_CVD_Playbook.md)
 - [Working Group Governance and Operations](Working_Group_Governance_and_Operations.md)
 - [Engineer Read-In One-Pager](Akrites_ReadIn_Engineer_OnePager.md)
