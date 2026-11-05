@@ -362,7 +362,7 @@ This is where the "open process, private data" balance is enforced.
   basis; parties who need to preserve the embargo option must use private,
   confidential tooling. This is why AI use is captured at intake (Section 4.3).
   See the [Embargo Handling Guidance](Embargo%20Handling%20Guidance.md) §4.3.
-- **Embargo duration.** The SIRT's default upstream embargo is 15 business days (bd). Accounting for intake/deuplication/enrichment, severity-based fix development and upstream hand-off, the total target window from report receipt to Public Disclosure (PD) is:
+- **Embargo duration.** The SIRT's default upstream embargo is 15 business days (bd). Accounting for intake/deduplication/enrichment, severity-based fix development and upstream hand-off, the total target window from report receipt to Public Disclosure (PD) is:
   - Severity-Tiered Total Time to Public Disclosure (PD):
     - Low / Medium Severity: Total time to PD is **≤ 17 business days** (Intake/Enrichment < 2 hours + SIRT Upstream hand-off ≤ 2 bd + Fix Development & Coordinated Disclosure 15 bd)
     - High Severity: Total time to PD is **≤ 21 business days** (Intake/Enrichment < 2 hours + Fix Development ≤ 4 bd + SIRT Upstream hand-off ≤ 2 bd + Coordinated Disclosure 15 bd)
