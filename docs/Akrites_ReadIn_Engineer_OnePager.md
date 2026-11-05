@@ -6,9 +6,10 @@ You've been tapped to help resolve a confidential vulnerability under embargo. T
 
 - **Follow TLP.** Treat case material as **TLP:AMBER+STRICT** (unless an item is marked otherwise — e.g., TLP:RED finder material) — share only *with the exact folks (no mailing lists) who need to know in order to fix/deploy/test the patches, within your organization*, never with clients, partners or third parties. If the material is **TLP:RED** — *your eyes only*, not even your own manager or teammates can get access. Under TLP:RED, "my org" does **not** mean "anyone at my org." When in doubt, treat it as TLP:RED and ask.
 - **Named parties only.** Discuss the case only with the people on the read-in list. If someone else needs to help, ask the SIRT to read them in — **never loop anyone in yourself — only the SIRT case coordinator can read someone in.**
+- **Being nearby is not being read in.** Sharing a company, team, project, Slack workspace, mailing list, or GitHub organization with someone does not make them read in — only the people on this case's read-in list are.
 - **No signaling.** Do nothing in public that hints the issue exists: no telltale commits, branches, issues, PRs, mailing-list questions, blog/social posts, or conference teasers. Most leaks are accidental.
-- **Keep it contained.** Work only inside the provided environment (repo, channel). No copying to personal machines or accounts. **No exploit code, PoCs, or sensitive files in chat** — those live in the case repo.
-- **In case of leaks**, accidental or not, inform the SIRT case coordinator right away.
+- **Keep it contained.** Work only inside the provided environment (repo, channel). No copying to personal machines or accounts. **No exploit code, PoCs, or sensitive files in chat** — those live in the case repo.  Never put case material into unapproved places: personal email or cloud storage, paste sites, public or unapproved chat channels, ticketing systems, scanners, or AI tools not approved for the case (public AI services are never approved).
+- **In case of leaks or mistakes** — wrong person, wrong channel, or possible exposure — inform the SIRT case coordinator right away. Don't quietly delete or recall it first; the SIRT needs to see what was exposed.
   
 ## How to conduct yourself
 
