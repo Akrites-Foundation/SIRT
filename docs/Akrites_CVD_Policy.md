@@ -1,4 +1,4 @@
-# Akrites SIRT Coordinated Vulnerability Disclosure (CVD) Policy - v1.2
+# Akrites SIRT Coordinated Vulnerability Disclosure (CVD) Policy - v1.3
 
 **Status:** Board-approved version: v1.0, 2026-10-20
 **Owner:** Akrites SIRT (Security Incident Response Team)
@@ -124,7 +124,7 @@ that a single CVE ID is used for the flaw.
   patch, test, score, translate, or document a vulnerability.
 - **AI-use disclosure** — A capability-level statement, published for both the
   Finder and the Akrites SIRT, of whether and how AI tooling was used in a case.
-  See Section 13 and the [AI and LLM Use Disclosure Policy](ai-use-disclosure.md).
+  See Section 13 and the [Attribution and AI-Use Disclosure Policy](ai-use-disclosure.md).
 
 ## 4. How to report a vulnerability
 
@@ -143,7 +143,7 @@ If GitHub reporting is unavailable or unsuitable, email **SIRT@Akrites.dev**.
 
 - The intake address supports hop-to-hop transport encryption (MTA-STS /
   STARTTLS). For end-to-end protection of especially sensitive details, you may
-  encrypt to our OpenPGP key published at the Canonical URL above.
+  encrypt to our OpenPGP key once it is published at the Canonical URL; until then, use GitHub private vulnerability reporting for especially sensitive details.
 - We would rather receive the report than have you struggle with encryption —
   if in doubt, send it.
 
@@ -173,9 +173,9 @@ rollout phase — see Section 12).
 ## 5. Our commitments to you
 
 - **Acknowledge receipt:** within **2 business days**.
-- **Triage and validate:**, automated intake within 2 hours, and an initial SIRT assessment within **10 business days** confirming whether we consider the report a
+- **Triage and validate:** automated intake within 2 hours, and an initial SIRT assessment within **10 business days** confirming whether we consider the report a
   vulnerability, a non-security bug, or expected behavior. Where the issue is
-  within the scope of the the authoritative CNA, we reserve a CVE ID and publish and
+  within the Akrites SIRT's CNA scope, we reserve a CVE ID and publish and
   maintain the CVE Record in due time; otherwise we coordinate with the
   authoritative CNA (see Section 2).
 - **Target Public Disclosure:** ≤ 17 business days (Low/Medium), ≤ 21 bd (High), or ≤ 24 bd (Critical) from receipt, incorporating a 15-business-day proposed upstream embargo (see Section 8)
@@ -276,7 +276,7 @@ Discover → Deduplicate & Triage → Validate → Coordination → Patch → Te
 3. **Validate** — The finding is confirmed or refuted and reproduced, and its
    severity and root cause are enriched (CWE, CVSS, blast radius). Additional
    parties may be brought in to assist with review. A CVE ID is reserved for the
-   issue if it is within the scope of the the authoritative CNA.
+   issue if it is within the Akrites SIRT's CNA scope; otherwise by the authoritative CNA (Section 2).
 
 4. **Coordination** — Trusted Collaborators with a need-to-know are read in to
    assist with remediation, distribution, and disclosure. The team:
@@ -311,7 +311,7 @@ Discover → Deduplicate & Triage → Validate → Coordination → Patch → Te
 
 9. **Disclose** — On the PD date, the vulnerability is publicly disclosed, the
    patch and all associated documentation are released, and the CVE Record is
-   published to the CVE Program's database (by the the authoritative CNA, or by the
+   published to the CVE Program's database (by the Akrites SIRT as CNA, or by the
    authoritative CNA when the issue is outside the SIRT's scope).
 
 -  **Internal processing time** — the time Akrites takes to assess, deduplicate, enrich, and coordinate the finding.
@@ -362,12 +362,12 @@ This is where the "open process, private data" balance is enforced.
   basis; parties who need to preserve the embargo option must use private,
   confidential tooling. This is why AI use is captured at intake (Section 4.3).
   See the [Embargo Handling Guidance](Embargo%20Handling%20Guidance.md) §4.3.
-- **Embargo duration.** The SIRT's default upstream embargo is 15 business days (bd). Accounting for intake/dedeuplication/enrichment, severity-based fix development and upstream hand-off, the total target window from report receipt to Public Disclosure (PD) is:
+- **Embargo duration.** The SIRT's default upstream embargo is 15 business days (bd). Accounting for intake/deduplication/enrichment, severity-based fix development and upstream hand-off, the total target window from report receipt to Public Disclosure (PD) is:
   - Severity-Tiered Total Time to Public Disclosure (PD):
     - Low / Medium Severity: Total time to PD is **≤ 17 business days** (Intake/Enrichment < 2 hours + SIRT Upstream hand-off ≤ 2 bd + Fix Development & Coordinated Disclosure 15 bd)
     - High Severity: Total time to PD is **≤ 21 business days** (Intake/Enrichment < 2 hours + Fix Development ≤ 4 bd + SIRT Upstream hand-off ≤ 2 bd + Coordinated Disclosure 15 bd)
     - Critical Severity: Total time to PD is **≤ 24 business days** (Intake/Enrichment < 2 hours + Fix Development ≤ 7 bd + SIRT Upstream hand-off ≤ 2 bd + Coordinated Disclosure 15 bd)
-  *The longer totals for High and Critical reflect SIRT fix development *before* hand-off, so the upstream maintainer receives a validated patch; they do not lengthen the 15-bd upstream window. Actively exploited or exposed issues follow Section 9 instead.
+  The longer totals for High and Critical reflect SIRT fix development *before* hand-off, so the upstream maintainer receives a validated patch; they do not lengthen the 15-bd upstream window. Actively exploited or exposed issues follow Section 9 instead.
 - Akrites SIRT will always **defer to the upstream project's own disclosure policy** where one exists. The disclosure timeline may be extended when additional time is reasonably required to develop and coordinate a fix. The governing timeline is set by the precedence hierarchy in the
   [Embargo Handling Guidance](Embargo%20Handling%20Guidance.md): a project's
   published policy or a coordinating list's cap takes precedence over the
@@ -415,7 +415,7 @@ has already set.
 - **Severity** is assessed with **CVSS v4.0** (current standard); **CVSS v3.1**
   may be included for comparison with legacy records.
 - **Root cause** is categorized using **CWE**.
-- **CVE IDs** are reserved by the the authoritative CNA when the vulnerability is
+- **CVE IDs** are reserved by the Akrites SIRT (as CNA) when the vulnerability is
   within its scope; otherwise the SIRT defers reservation to the authoritative
   CNA (for example, when the affected project is itself a CNA). See Section 2.
 - **Machine-readable advisories.** Where possible the SIRT publishes structured,
@@ -436,7 +436,7 @@ publishing the Security Advisory), releases the patched version(s), and
 references the CVE ID(s). The SIRT case coordinator is accountable for
 executing publication. High-impact issues are also announced to the relevant
 community and security-announce channels. Where it does not aid attackers,
-exploit detail may be briefly withheld to give Consumers time to update. Finders are credited by default under the name or handle they reported with, unless they request otherwise. At intake (and again before PD) a Finder may choose: (a) **named** — individual and, if they wish, organization; (b) **clearinghouse** — the reporting organization only; or (c) **anonymous** — no Finder credit, with the Akrites SIRT credited as coordinator. If the SIRT cannot confirm the choice before PD, it uses the name or handle as submitted and never names an organization without consent. The wording of each option is in the [Acknowledgements & Attribution Guidance](acknowledgements-and-attribution.md). 
+exploit detail may be briefly withheld to give Consumers time to update. Finders are credited by default under the name or handle they reported with, unless they request otherwise. At intake (and again before PD) a Finder may choose: (a) **named** — individual and, if they wish, organization; (b) **clearinghouse** — the reporting organization only; or (c) **anonymous** — no Finder credit, with the Akrites SIRT credited as coordinator. If the SIRT cannot confirm the choice before PD, it uses the name or handle as submitted and never names an organization without consent. The wording of each option is in the [Attribution and AI-Use Disclosure Policy](ai-use-disclosure.md).
 Every advisory also
 carries an **AI-use statement** for both the Finder and the Akrites SIRT, per
 Section 13.
@@ -458,7 +458,7 @@ given time depend on that rollout. Three classes of reporter are distinguished:
 The current rollout sequences these as **member reports first → clearinghouse
 reports next → unsolicited / public reports in the final phase**. Until a class
 is opened, reports outside the active class(es) may be deferred or handled
-manually; the SIRT states the currently active intake modes at the Canonical URL. As of {date}, intake is open to member reports; unsolicited / public reports are planned to open by the end of 2026. Anonymous reporting is not available in the earliest phase and opens with the
+manually; the SIRT states the currently active intake modes at the Canonical URL. Intake is currently open to member reports; unsolicited / public reports are planned to open by the end of 2026. Anonymous reporting is not available in the earliest phase and opens with the
 unsolicited / public class.
 
 **Technical contribution is the price of admission.** For member and
@@ -466,7 +466,7 @@ working-group reports, intake and read-in carry an expectation that the reportin
 party contributes meaningfully to resolving the case — analysis, a patch, tests,
 or staging — rather than only reporting. This keeps the coordination model
 sustainable and underpins read-in access under the tiered model (see the
-[Read-In Policy](Akrites-Read-In-Policy.md).
+[Read-In Policy](Akrites-Read-In-Policy.md)).
 
 ## 13. AI and LLM tooling disclosure
 
@@ -493,7 +493,7 @@ stakeholder has to guess, we disclose AI use plainly and consistently.
 
 The authoritative rules, the standard advisory wording, and the controlled
 vocabulary are maintained in the
-[AI and LLM Use Disclosure Policy](ai-use-disclosure.md).
+[Attribution and AI-Use Disclosure Policy](ai-use-disclosure.md).
 
 ## 14. Safe harbor
 
@@ -555,6 +555,7 @@ SIRT@Akrites.dev.
 | 1.0     | 2026-10-20 | Board approved with minor notes from GKunz. |
 | 1.1     | 2026-10-27 | Removal of TOC from document |
 | 1.2     | 2026-10-27 | Fixed links and phase numbering; single TLP table (RED/AMBER+STRICT/AMBER/CLEAR); removed remaining TOC references; clarified ≤ PD targets; aligned credit default, NDA statement, reporting channel and CNA wording. |
+| 1.3     | 2026-11-05 | Editorial only — no change to policy substance: Acknowledgements & Attribution Guidance merged into the Attribution and AI-Use Disclosure Policy (§11 link and AI-use link text updated); CNA wording corrected (§5, §7, §10); intake-status placeholder removed (§12); OpenPGP key availability stated accurately (§4.2); typo and markdown fixes. |
 
 
 ## 17. References
@@ -570,4 +571,4 @@ SIRT@Akrites.dev.
 - OASIS — [*Common Security Advisory Framework (CSAF) 2.0*](https://docs.oasis-open.org/csaf/csaf/v2.0/csaf-v2.0.html)
 - CISA — [*Vulnerability Exploitability eXchange (VEX)*](https://www.cisa.gov/resources-tools/resources/vulnerability-exploitability-exchange-vex-use-cases)
 - [RFC 9116 — *A File Format to Aid in Security Vulnerability Disclosure* (`security.txt`)](https://datatracker.ietf.org/doc/rfc9116/)
-- Akrites — [*AI and LLM Use Disclosure Policy*](ai-use-disclosure.md)
+- Akrites — [*Attribution and AI-Use Disclosure Policy*](ai-use-disclosure.md)
