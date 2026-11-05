@@ -3,7 +3,7 @@
 **Owner:** Akrites SIRT
 **Status:** Draft for Board review
 **Audience:** SIRT coordinators and WG engineers who engage upstream projects
-**Companion docs:** [Communications Playbook](sirt-communications-playbook.md) (Plays 9, 10, 15, 17), [Acknowledgements & Attribution](acknowledgements-and-attribution.md), [Embargo Handling Guidance](Embargo%20Handling%20Guidance.md), [Maintainer of Last Resort Policy](Maintainer_of_Last_Resort_Policy.md)
+**Companion docs:** [Communications Playbook](sirt-communications-playbook.md) (Plays 9, 10, 15, 17), [Attribution and AI-Use Disclosure Policy](ai-use-disclosure.md), [Embargo Handling Guidance](Embargo%20Handling%20Guidance.md), [Maintainer of Last Resort Policy](Maintainer_of_Last_Resort_Policy.md)
 
 ## Purpose
 
