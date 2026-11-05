@@ -106,7 +106,7 @@ The vulnerability and its remediation are released publicly, in sync.
 ### Phase 9 — Post-Disclosure & Retrospective
 Deployment is supported and the case is reviewed.
 - **Consumer:** deploy the fix or mitigation promptly.
-- **Coordinator:** support deployment, capture metrics, and run a blameless retrospective; feed lessons back into the process.
+- **Coordinator:** support deployment, capture [metrics](Akrites_SIRT_Metrics.md), and run a blameless retrospective; feed lessons back into the process.
 - **Maintainer & Finder:** recognized for the outcome; input welcomed into the retrospective.
 
 ---
