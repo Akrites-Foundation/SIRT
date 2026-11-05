@@ -1,11 +1,10 @@
 # Akrites SIRT Communications Playbook
 
 **Owner:** Akrites SIRT
-**Status:** Draft for Governing Board review
+**Status:** Draft for Akrites SIRT review
 **Audience:** SIRT staff and coordinators; referenced by WGs and read-in participants
 **Companion docs:** [Acknowledgements & Attribution](acknowledgements-and-attribution.md), [Embargo Handling Guidance](Embargo%20Handling%20Guidance.md), [CVD Policy](Akrites_CVD_Policy.md), [Read-In Policy](Akrites-Read-In-Policy.md)
 
-> Spelling standard: **Akrites** (Akrites Foundation, Akrites SIRT). "OSS-SIRT" is a synonym.
 > Every outbound message is written as if it may be read back publicly, quoted by a maintainer, or produced in a postmortem; with or without context.
 
 ---
@@ -72,7 +71,7 @@ Intake processing by the SIRT pipeline enforces three prioritized tiers:
 | **TLP:RED** | Named recipients only. Intake and the automated pipeline (Tier 0). No forwarding. |
 | **TLP:AMBER+STRICT** | Recipient's organization only, need-to-know. Verification and remediation material (Tiers 1, 1.5, 2). |
 | **TLP:AMBER** | Recipient's organization and its clients, need-to-know. Downstream staging (Tiers 3, 3.5). No onward sharing to other organizations. |
-| **TLP:GREEN** | Community/peer sharing within the ecosystem, not public (e.g., sanitized member notices). |
+| **TLP:GREEN** | Community/peer sharing, not public. **Not used for case material before PD** (CVD Policy §8); use for non-case material such as postmortem summaries and trend reports. |
 | **TLP:CLEAR** | Public — only at/after PD. |
 
 Every message carries an explicit TLP marking in its header or first line. When in doubt, mark
@@ -104,7 +103,7 @@ Impersonation is a real risk; make Akrites easy to verify and hard to spoof.
 | --- | --- | --- |
 | New case intake / triage | Case repo (private GH), case channel | RED |
 | Remediation / patch work | Private case repo, analyst workbench | AMBER+STRICT |
-| Member awareness (no specifics) | Member mailing list / member Slack | AMBER / GREEN |
+| Member awareness (no specifics) | Member mailing list / member Slack | AMBER |
 | Read-in SME coordination | Case channel (time-boxed) | RED / AMBER+STRICT |
 | Strategic Partner & Coordinator Engagement | Partner API / dedicated signed email | TLP:AMBER (≤ 24 h before PD, Tier 3.5) |
 | Upstream engagement | PVR / signed email / security.txt contact | AMBER+STRICT (Tier 1.5) |
@@ -136,31 +135,7 @@ Elements of a SIRT-ready finding (see the intake template; a report is accepted 
 specifics of the finding; potential impact; PoC/PoV; proposed patch; unit test validating the fix;
 tools & techniques used.
 
-**Template**
-
-```
-Subject: [Akrites SIRT] Report received — {tracking-id} (TLP:RED)
-
-Hi {Finder},
-
-Thank you — we've received your report on {component/project} and it's now tracked as
-{tracking-id}. Your submission included everything we need to move quickly: description,
-impact, PoC, a proposed patch, and a validating test.
-
-What happens next:
-1. Deduplication and validation against work already in flight.
-2. Routing to the appropriate working group / SME as needed.
-3. We'll confirm the coordination path and expected next update by {date}.
-
-Two quick questions so we handle this the way you want:
-- How would you like to be acknowledged at disclosure? (see Play 7)
-- Any customer/constraint-driven timing needs we should know about now?
-
-We'll hold everything TLP:RED until we agree otherwise. You can reach the case team at
-{case-contact}.
-
-— Akrites SIRT
-```
+**Template:** use [Notification Template 1 — Acknowledgement](../templates/notification-templates.md#1-acknowledgement-discover--intake).
 
 **Notes:** Kick off the SLA acknowledgement clock here. Do not confirm it *is* a valid
 vulnerability yet — say validation is underway.
@@ -189,9 +164,8 @@ you add the following? The more complete the packet, the faster we can help:
 - [ ] {e.g., tools & techniques used, including any AI assistance}
 - [ ] {e.g., purl / exact package identifier}
 
-If it's easier, here's our reporting guide: {link}. No rush to be perfect — send what you have
-and we'll iterate. We'll pause the clock on our side until we hear back, and hold everything
-TLP:RED.
+If it's easier, here's how to report: https://github.com/Akrites-Foundation/SIRT/blob/main/SECURITY.md. No rush to be perfect — send what you have
+and we'll iterate. Everything stays confidential (TLP:RED at intake).
 
 — Akrites SIRT
 ```
@@ -278,7 +252,7 @@ maintainer sets the final PD and fix.
 
 **When to use:** Giving members situational awareness before PD without disclosing the vuln.
 **Audience:** Members (broad) or a WG.
-**Channel & TLP:** Member mailing list / member Slack; TLP:AMBER or GREEN.
+**Channel & TLP:** Member mailing list / member Slack; TLP:AMBER.
 
 **Template**
 
@@ -317,28 +291,7 @@ target. Members receive a special notice again at PD (Play 5 companion).
 **Audience:** General public + members (member notice in parallel).
 **Channel & TLP:** Website, GHSA, OSV (→ CVE-LIST/EUVD), CSAF VEX feed, SIREN; TLP:CLEAR.
 
-**Template (advisory body)**
-
-```
-{Component} — {short title} ({CVE-ID})
-
-Summary: {1–2 sentences: what it is, who is affected, what to do}.
-
-Affected versions: {precise, tested ranges}
-Fixed in: {version(s)} / Fixed commit: {hash}
-Severity: {CVSS vector string} ({band}). {If applicable: deviation notice — our assessment
-differs from the maintainer's; see below.}
-
-Impact: {common impact, not weakness jargon where possible}
-Mitigations / workarounds: {deployable steps, if any}
-Detection / IOCs: {indicators — default to IOCs, not PoC}
-
-Coordination: This issue was coordinated to disclosure by the Akrites SIRT.
-{Acknowledgements block — insert the chosen scenario from acknowledgements-and-attribution.md}
-
-Timeline: {optional — first report date; key milestones}
-References: {GHSA, OSV, CVE, project advisory, patch}
-```
+**Template:** use [Notification Template 4 — Public disclosure advisory](../templates/notification-templates.md#4-public-disclosure-advisory-disclose). Where they apply, also include: a deviation notice if our severity assessment differs from the maintainer's; **Detection / IOCs** (prefer IOCs over PoC); and a short **Timeline**.
 
 **Notes:** Publish machine-readable data (CSAF VEX, OSV) alongside human-readable. Do **not** publish
 PoC/exploit code; prefer IOCs. Attribute coordination to the Akrites SIRT / Akrites Foundation.
@@ -383,8 +336,7 @@ forward. We'll finalize the fix/advisory as quickly as possible and coordinate t
 with you. Current proposal: {accelerate to {date/time}} / {publish now}. Your input by {time}?
 ```
 
-**Step 3 — accelerated public notice (if warranted):** use Play 5, noting the fix/mitigation
-status honestly even if not everything is final.
+**Step 3 — accelerated public notice (if warranted):** use [Notification Template 5 — Embargo-break notice](../templates/notification-templates.md#5-embargo-break-notice-early-leak-contingency)
 
 **Notes:** Match the response to the break — existence-only leaks may not warrant full acceleration;
 full-detail leaks usually do. Capture the break in the postmortem (Play "Blameless postmortem").
@@ -491,7 +443,7 @@ Hi {Maintainer},
 
 I'm {name}, a coordinator with the Akrites SIRT — a neutral, non-profit team that helps open
 source projects turn vulnerability reports into trusted fixes. You keep full authority over your
-project, the fix, and the timing; we're here to make this easier, not to impose anything.
+project and the fix, and we work to your timeline wherever we can; we're here to make this easier, not to impose anything.
 
 We have a validated report affecting {project}. We've prepared a complete package: description,
 impact, a reproducer, and an initial/proposed patch you're welcome to refine or replace. We'd
@@ -514,7 +466,7 @@ first engagement.
 
 **When to use:** Contact info exists but the project doesn't respond, or is unmaintained/overwhelmed.
 **Audience:** Maintainer (escalating attempts), then internal for next steps.
-**Channel & TLP:** Same as Play 9, escalating; TLP:RED.
+**Channel & TLP:** Same as Play 9, escalating; TLP:AMBER+STRICT (Tier 1.5).
 
 **Escalating follow-up template**
 
@@ -537,8 +489,7 @@ You can verify us at {akrites.dev/verify}.
 
 **Notes:** Distinguish **unmaintained** (nothing touched), **unresponsive** (silent but active
 elsewhere), and **overwhelmed** (afloat, not prioritizing). Be transparent about *why* we want to
-help and earn trust. MoLR decisions are last-resort and require Governing Board approval (see Play 15 and the MoLR Policy). Preference order: maintainer fixes → Akrites publishes patch file → WG
-stewards/forks.
+help and earn trust. MoLR decisions are last-resort and require Governing Board approval (see Play 15 and the MoLR Policy). Preference order: maintainer fixes → advisory + mitigation for consumers → last-resort security release (patch series, Governing Board approval) → steward search. Akrites never forks a project or takes a package name (MoLR Policy Part I §3).
 
 ---
 
@@ -619,7 +570,7 @@ those on the original timeline while the full fix completes. Any objections or c
 (customer obligations, tiered partners) by {date}?
 ```
 
-**Notes:** Extensions are for "the greater good" and are negotiated, not imposed. If patch timeexceeds the window, share **mitigations/workarounds** rather than slipping silently. A PD later than the CVD Policy severity target requires written rationale and Governing Board awareness.
+**Notes:** Extensions are for "the greater good" and are negotiated, not imposed. If patch time exceeds the window, share **mitigations/workarounds** rather than slipping silently. A PD later than the CVD Policy severity target requires written rationale and Governing Board awareness.
 
 ---
 
@@ -682,7 +633,7 @@ Feeds the future dispute-resolution process (incl. CNA-LR scenarios).
 
 ---
 
-## Play 15 — Maintainer-of-last-resort / patch or fork publication notice
+## Play 15 — Maintainer-of-last-resort / last-resort security release notice
 
 **When to use:** Upstream can't/won't act and the Governing Board has approved a MoLR security release (or the SIRT has decided to publish a patch file / mitigation).
 **Audience:** Public + members; maintainer informed as a courtesy if reachable.
@@ -694,18 +645,17 @@ Feeds the future dispute-resolution process (incl. CNA-LR scenarios).
 {Project} — coordinated fix published by the Akrites SIRT ({CVE-ID})
 
 Because {project} is currently {unmaintained | unresponsive to coordinated outreach}, and to
-protect downstream users, the Akrites SIRT is publishing {an initial/proposed patch | a
-time-bounded hardened fork} for this issue after {n} coordinated attempts between {dates}.
+protect downstream users, the Akrites SIRT is publishing {an initial/proposed patch | a last-resort security release (patch series on a pinned commit)} for this issue after {n} coordinated attempts between {dates}.
 
 This is a consumer-protection measure, not a takeover. We welcome the maintainer to adopt, refine,
 or replace this fix at any time, and we will defer to upstream. {Steward/LTS invitation, if
 applicable.}
 
-Fix: {patch/commit/fork link}   Advisory: {refs}
+Fix: {patch/commit/release link}   Advisory: {refs}
 ```
 
 **Notes:** Last resort only, with an explicit Governing Board decision for any MoLR release. Order of preference: maintainer fixes
-→ publish patch file → WG steward/fork. Frame as "initial/proposed" and invite the maintainer back
+→ publish patch file → last-resort security release → steward search. Frame as "initial/proposed" and invite the maintainer back
 in. Avoid implying ongoing maintenance you won't provide.
 
 ---
@@ -923,7 +873,7 @@ isolation.
 | 12 | Embargo extension | Finder / maintainer |
 | 13 | Duplicate / co-finder | Finder |
 | 14 | Dispute / deviation notice | Maintainer |
-| 15 | MoLR patch / fork publication | Public |
+| 15 | MoLR patch / release publication | Public |
 | 16 | Critical-infra read-in | Requestor / Board |
 | 17 | Rejected patch | Finder / WG |
 | 18 | Blameless postmortem | Case team |
