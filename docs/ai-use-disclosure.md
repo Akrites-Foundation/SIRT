@@ -1,11 +1,11 @@
-# AI and LLM Use Disclosure Policy
+# Attribution and AI-Use Disclosure Policy
 
 **Owner:** Akrites SIRT
 **Status:** Draft for Board review
-**Applies to:** All Akrites SIRT–coordinated cases — reports from Finders and work performed by the SIRT and its Working Groups (WGs)
-**Related:** [CVD Policy](./Akrites_CVD_Policy.md) · [Acknowledgements & Attribution Guidance](./acknowledgements-and-attribution.md) · [Embargo Handling Guidance](./Embargo%20Handling%20Guidance.md) (§4.3) · [Notification Templates](../templates/notification-templates.md) · [Intake Template](../templates/vulnerability-report-intake-template.md)
+**Applies to:** All Akrites SIRT–coordinated cases and the advisories they produce — reports from Finders and work performed by the SIRT and its Working Groups (WGs)
+**Related:** [CVD Policy](./Akrites_CVD_Policy.md) · [Embargo Handling Guidance](./Embargo%20Handling%20Guidance.md) (§4.3) · [Notification Templates](../templates/notification-templates.md) · [Intake Template](../templates/vulnerability-report-intake-template.md)
 
-> Spelling note: the standard is **Akrites** (Akrites Foundation, Akrites SIRT). "OSS-SIRT" is a synonym.
+> This document combines the former *AI and LLM Use Disclosure Policy* and *Acknowledgements & Attribution Guidance* into one source.
 
 ---
 
@@ -14,6 +14,8 @@
 Artificial-intelligence tooling — most notably large language models (LLMs) — is now used routinely across the vulnerability lifecycle, by both the researchers who report to us and by the SIRT itself. This document defines a single, consistent rule for **telling every stakeholder when AI tooling was used, and giving them a high-level statement of how and when it was used.**
 
 The goal is straightforward: a Finder, Maintainer, Consumer, or downstream provider reading an Akrites case or advisory should never have to guess whether AI contributed to the discovery, analysis, fix, or write-up. We state it plainly — whether AI was used or not — for both the **Finder** and the **Coordinator (Akrites SIRT)**.
+
+It also defines how Finders, their organizations, co-finders, Working Groups, and the Coordinator are **credited** in advisories: by default, honoring any request not to be named, and consistently across advisories.
 
 This document is the authoritative source for AI-use disclosure. The CVD Policy, CVD Playbook, glossary, intake template, and notification templates all point here.
 
@@ -26,7 +28,7 @@ This policy covers AI/LLM tooling used to **discover, reproduce, analyze, triage
 1. **Finders** — AI tooling a reporter used before or during their report.
 2. **The Akrites SIRT and its Working Groups** — AI tooling the SIRT uses while coordinating, analyzing, patching, or drafting materials for a case.
 
-It applies regardless of who owns or hosts the tool (public service, enterprise/self-hosted model, or the SIRT's own analysis environment). It does **not** require publishing prompts, model-plus-harness internals, scaffolding, or configuration — those remain internal (see [Confidentiality](#confidentiality-public-ai-tools-and-embargo-eligibility) and the Acknowledgements guidance).
+It applies regardless of who owns or hosts the tool (public service, enterprise/self-hosted model, or the SIRT's own analysis environment). It does **not** require publishing prompts, model-plus-harness internals, scaffolding, or configuration — those remain internal (see [Confidentiality](#confidentiality-public-ai-tools-and-embargo-eligibility)).
 
 ---
 
@@ -34,7 +36,7 @@ It applies regardless of who owns or hosts the tool (public service, enterprise/
 
 1. **Disclose by default, both ways.** Every coordinated case records, and every public advisory states, AI use for **both** the Finder and the SIRT — including an explicit "no AI tooling was used" when that is the case. Silence is not a valid disclosure.
 
-2. **Capability-level, not marketing.** The default statement describes *what phase* AI assisted (e.g., "AI-assisted discovery and patch development"), drawn from the [controlled capability vocabulary](#controlled-capability-vocabulary-how--when). Specific model or tool names are published **only when the disclosing party requests it**, and only from the controlled vocabulary in the [Acknowledgements & Attribution Guidance](./acknowledgements-and-attribution.md). This keeps vendor branding out of the record.
+2. **Capability-level, not marketing.** The default statement describes *what phase* AI assisted (e.g., "AI-assisted discovery and patch development"), drawn from the [controlled capability vocabulary](#controlled-capability-vocabulary-how--when). Specific model or tool names are published **only when the disclosing party requests it**, and only from the controlled vocabulary in [Publishable tool / model names](#publishable-tool--model-names). This keeps vendor branding out of the record.
 
 3. **Human accountability is never transferred.** AI-assisted work is always reviewed and owned by a named human (the Finder for their report; a named WG member or SIRT staffer for SIRT work). Disclosing AI use documents a tool; it does not shift responsibility for the finding, the patch, or the advisory.
 
@@ -76,6 +78,7 @@ Use these high-level phrases to describe *how and when* AI assisted. Combine as 
 - **Intake triage / deduplication** — classifying, routing, or de-duplicating incoming reports
 
 If a disclosing party's usage does not fit a listed phase, the SIRT normalizes it to the nearest phrase or holds it for review rather than inventing new public language.
+insert-B-tool-names.md
 
 ---
 
@@ -95,7 +98,7 @@ AI use
 
 ```
 AI use
-  - Finder: AI-assisted discovery and patch development. Tools: Claude Opus, Semgrep.
+  - Finder: AI-assisted discovery and patch development. Tools: {LLM assistant}, {SAST tool}.
   - Coordinator (Akrites SIRT): AI-assisted triage and advisory drafting, under human review.
 ```
 AI-assisted output is always reviewed and approved by a named human before it is used in a case or published (see Core principle 3).
@@ -110,7 +113,9 @@ AI use
 
 For an **anonymous** Finder, the Finder line is never omitted. If stating the Finder's AI use could help identify them, use: "Finder (anonymous): AI use not disclosed." Otherwise use the normal wording, prefixed "Finder (anonymous):".
 
-Additionally, where technical capability exists, model, version, and framework/harness metadata should be automatically attached at the report and API submission layer to track performance and support baseline benchmarking without requiring manual form entry or disclosing proprietary vendor configurations.
+Where technical capability exists, model, version, and framework/harness metadata may be captured at the report and API submission layer for internal benchmarking — only with the submitter's knowledge (stated at intake) and never published. This does not replace the Finder's own disclosure.
+
+insert-A-credit-and-scenarios.md
 
 ---
 
@@ -130,18 +135,20 @@ The SIRT holds itself to the same standard: sensitive case material is only put 
 
 | Stage | Where | What |
 |---|---|---|
-| **Intake** | [Intake template](../templates/vulnerability-report-intake-template.md) "AI usage" section | Finder states whether/how AI was used, and whether tooling was public or confidential |
+| **Intake** | [Intake template](../templates/vulnerability-report-intake-template.md) "AI / LLM tooling used" and "Reporter" sections | Finder states whether/how AI was used, and whether tooling was public or confidential |
 | **Acknowledgement** | [Notification Template 1](../templates/notification-templates.md) | SIRT confirms it noted the Finder's AI use and explains the public-tool/embargo caveat if relevant |
 | **Triage / case record** | Case file | SIRT records both the Finder's and the SIRT's AI use; classifies embargo eligibility |
 | **Embargoed notification** | [Notification Template 3](../templates/notification-templates.md) | Read-in providers see the AI-use block so they can weigh exposure |
 | **Public disclosure** | [Notification Template 4](../templates/notification-templates.md) + advisory | The standard two-line AI-use block is published |
+
+insert-C-intake-checklist.md
 
 ---
 
 ## Governance
 
 - The **controlled vocabulary** (capability phrases and any publishable tool/model names) is maintained by the SIRT and updated without a policy revision; unlisted tool-name requests are normalized or held for review.
-- The SIRT **reviews the AI-use lines before public disclosure** and may normalize vendor names to the controlled vocabulary (anti-gaming gate).
+- The SIRT **reviews the acknowledgement and AI-use lines before public disclosure** and may normalize vendor names to the controlled vocabulary (anti-gaming gate).
 - This policy is maintained in the open; proposed changes are reviewed publicly. Only case-specific embargoed data is ever kept private.
 
 ---
@@ -151,6 +158,9 @@ The SIRT holds itself to the same standard: sensitive case material is only put 
 - Ratify the controlled capability vocabulary and the cadence for updating the publishable tool/model list.
 - Confirm whether the Coordinator AI-use line is published on **every** advisory or only when AI materially assisted (current draft: every advisory, including the negative case).
 - Decide whether SIRT AI use is itemized per phase in public advisories or summarized (current draft: capability-level, summarized).
+- Set the concrete **co-finder attribution cutoff** trigger/point in time.
+- Confirm whether **WG-level credit** is offered by default when individuals decline.
+- Decide whether **date of first report** is included alongside acknowledgements in the advisory.
 
 ---
 
