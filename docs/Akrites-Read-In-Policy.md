@@ -130,10 +130,10 @@ Emergency Read-In relaxes the *mechanism* of prerequisites 2 and 3 — it does *
 | Tier | Who | What they do | Information & TLP | Read-in timing |
 |---|---|---|---|---|
 | **Tier 0** | Reporter / Finder and the SIRT (plus automated intake) | Originate and coordinate the report | Full case detail; TLP:RED at intake | Earliest; longest duration |
-| **Tier 1** | Akrites SIRT | Human & LLM-assisted analysis to produce, and test the patch | Case material needed to build and test the fix; TLP:AMBER+STRICT | When analysis/testing begins |
-| **Tier 1.5** | Upstream Maintainer/Security Team (Non-Akrites members) | Human-brokered collaboration to analyze and validate vulnerability, produce and test the patch | Case material needed to build and test the fix; TLP:AMBER+STRICT | When analysis/testing is ready to share with upstream |
-| **Tier 2** | Distribution partners / maintainer pre-disclosure rings | Prepare a coordinated downstream release | The fix and timing — not full research detail; TLP:AMBER+STRICT | Defined lead time before PD |
-| **Tier 3** | Second-order distributors (CDNs, package registries, Linux Distributions and downstream distribution partners) | Pre-stage the fix for rapid propagation | The artifact and go-live time only; TLP:AMBER| Latest; shortest window |
+| **Tier 1** | Akrites analysts and patch authors (SMEs) | Human & LLM-assisted review of the case, gathering all data, and producing the patch | Case material needed to analyze the issue and build the fix; TLP:AMBER+STRICT | When case analysis begins |
+| **Tier 1.5** | Upstream maintainer / security team of the affected project (whether or not an Akrites member) | Human-brokered collaboration to analyze and validate vulnerability, produce the patch | Case material needed to build and test the fix; TLP:AMBER+STRICT | When analysis/testing is ready to share with upstream |
+| **Tier 2** | Patch testers; distribution partners / maintainer pre-disclosure rings | Test the patch; prepare a coordinated downstream release | The fix, what is needed to verify it, and the timing — not full research detail; TLP:AMBER+STRICT | When a testable patch exists (testers); defined lead time before PD (distribution) |
+| **Tier 3** | Second-order distributors (CDNs, package registries, Linux Distributions and downstream distribution partners) | Pre-stage the fix for rapid propagation | The artifact and go-live time only; TLP:AMBER | Latest; shortest window |
 | **Tier 3.5 (Optional)** | International Coordinators and Strategic Partners (as needed) | Pre-stage PD notifications for rapid propagation | The advisory and go-live time only; TLP:AMBER | Latest; at most 24 hours before PD |
 | **Public** | Everyone | — | Fully public; TLP:CLEAR | Public disclosure (PD) |
 
@@ -147,8 +147,8 @@ Automated intake — deduplication, severity estimation, and routing — sits wi
 |---|---|---|---|
 | Reporter / Finder | Provides the finding; may assist analysis | Tier 0 | Earliest, longest access |
 | WG analyst / patch author (SME) | Analyze and produce the patch | Tier 1 | When analysis/patch work begins |
-| Patch tester (SME)	| Test the patch | Tier 1 | When a testable alpha exists|
 | Maintainer / upstream security team | Owns the fix and the final PD decision | Tier 1.5 | When the analysis and proposed patch are ready to share with upstream |
+| Patch tester (SME)	| Test the patch | Tier 2 | When a testable patch exists |
 | Distribution / staging party | Stage the fix ahead of PD | Tier 2 / Tier 3 | Latest — the minimum lead time consistent with a safe rollout, aligned to standardized, pre-agreed embargo lead times *(working figure: 7–14 days before PD; see Appendix A, item 1)* |
 | International coordinator / strategic partner | Pre-stage PD notifications | Tier 3.5 | At most 24 hours before PD |
 | Affected user / interested member | — | None | Public disclosure |
@@ -162,9 +162,9 @@ Every candidate must first clear the Three-Gate Test (§2) and the Prerequisites
 | Tier | You belong here if… |
 |---|---|
 | **Tier 0** | You originated the report (Finder), or you are the SIRT coordinating it. You need full context from the start. |
-| **Tier 1** | You will analyze, write, or test the patch. You need code-level case material, read in when that work begins. |
-| **Tier 1.5** | You maintain the affected upstream code or run its security team and are not an Akrites member. You receive the analysis and proposed patch when they are ready to share upstream. |
-| **Tier 2** | You operate a distribution channel or pre-disclosure ring that must prepare a coordinated release. You need the fix and the timing, not the underlying research. |
+| **Tier 1** | You will review the case, gather the data, or write the patch. You need code-level case material, read in when analysis begins. |
+| **Tier 1.5** | You maintain the affected upstream code or run its security team. You receive the analysis and proposed patch when they are ready to share upstream. |
+| **Tier 2** | You will test the patch, or you operate a distribution channel or pre-disclosure ring that must prepare a coordinated release. You need the fix and the timing (and, for testing, what is needed to verify it), not the underlying research. |
 | **Tier 3** | You operate second-order distribution (CDN, registry) that must pre-stage for a rapid rollout. You need the artifact and the go-live time only. |
 | **Tier 3.5** | You are an international coordinator or strategic partner preparing your constituency's notification. You receive the advisory and go-live time only. |
 | **None** | You are an affected user or an interested member with no active role. You are served at public disclosure. |
@@ -239,7 +239,7 @@ Criteria for "active member" will be defined as the SIRT works real cases (Appen
 
 **Severity changes.** If the score rises, read-in may widen or accelerate; if it falls, it may narrow or slow. Either way the change is recorded with rationale, and the embargo and PD date are re-evaluated.
 
-**Extension requests.** Any party may request an embargo or coordination-window extension through the SIRT. The proposed upstream embargo is **15 business days** (total target time to PD of ≤ 17 bd Low/Med, ≤ 21 bd High, ≤ 24 bd Critical), always deferring to the upstream project's own policy, and may be extended for the greater good. The SIRT decides in consultation with the Finder and the maintainer.
+**Extension requests.** Any party may request an embargo or coordination-window extension through the SIRT. The proposed upstream embargo is **15 business days** (total target time to PD of ≤ 17 bd Low/Med, ≤ 21 bd High, ≤ 24 bd Critical), always deferring to the upstream project's own policy, and may be extended for the greater good. The maintainer decides, with the SIRT advising and consulting the Finder.
 
 **Anti-gaming.** Every escalation requires a stated justification and is logged. Severity re-scores are documented as deviation notices. **No party may escalate solely to gain earlier or broader access.** Escalation never waives a gate — it may change the tier or timing of an admitted person, or prompt a fresh nomination, but a new person still clears §2 and §3.
 
@@ -302,8 +302,8 @@ Items carried forward from both source documents, deduplicated, with the body th
 | 1 | **Default read-in lead times per tier** | Fix the standard lead time for Tier 2 and Tier 3 before PD. A working figure of 7–14 days appears in the source material (§4.1) but is not ratified. | Governing Board |
 | 2 | **RACI per tier** | Define the specific actions each tier may take, and by whom, as a companion document to this policy. | Governing Board |
 | 3 | **Delegation rules and limits** | How far a coordinating body (e.g., CISA) or a maintainer may extend read-in; enforce that the SIRT must approve **all** expansions of the set of Knowers. | Governing Board |
-| 4 | **Approver of record; Finder/maintainer veto** | Confirm the approver of record, and whether the Finder or maintainer may veto — rather than merely be consulted on — additions. | Governing Board |
-| 5 | **Tier 1 sub-staging** | Whether Tier 1 should split into separate *analyze* and *test* sub-stages with distinct read-in timing. | Governing Board |
+| 4 | **Approver of record; Finder/maintainer veto** | The approver of record is the SIRT case coordinator (§6). Open: whether the Finder or maintainer may veto — rather than merely be consulted on — additions. | Governing Board |
+| 5 | **Tier 1 sub-staging** | *Resolved:* testing moved to Tier 2. Tier 1 covers case review, data gathering, and patch creation; testers are read in at Tier 2 once a testable patch exists. | — |
 | 6 | **"Active member" criteria** | Define what qualifies a standing WG member as active, and therefore eligible for the accelerated §7 path. | SIRT, informed by real cases |
 | 7 | **Finder patch / customer-obligation policy** | Governing policy for a Finder who holds a patch and has customer obligations before disclosure. | Governing Board |
 | 8 | **Antitrust documentation** | Documentation covering early or broad read-in of competing members. | Governing Board |
@@ -328,6 +328,6 @@ Substantive reconciliations made in producing this document from the two source 
 | 7 | **7–14 day staging lead time marked provisional.** The Guidelines stated it inline; the Tier Policy listed it as an unresolved open item. | Retained the figure, flagged as unratified, and pointed at Appendix A item 1. |
 | 8 | **Spelling.** Both source documents use *Akrites*; the project workspace is titled *Akreites*. This document uses **Akrites** throughout. | Flagging for a decision on the canonical spelling. |
 | 9 | **Evidentiary tests added to each gate.** The "Satisfied by" and "Not satisfied by" criteria under Gates 1, 2, and 3 are **new**. The source documents stated each gate in a single sentence with no test for how it is judged. | Codifying the gates, as requested, requires a decision rule. These criteria are drawn from the sources' stated principles (least privilege; "consumers are served at PD"; contribution as a condition of membership) but are not verbatim from them. **Each bullet is a policy choice and should be read as a proposal, not as carried-forward text.** Items warranting particular attention: the Gate 1 written-nomination requirement; the Gate 1 exclusion of commercial/procurement/customer-communication needs; and the Gate 2 exclusion of internal-notification and incident-response-readiness rationales, which bars a common member expectation. |
-| 10 | **Gate 3 affiliation paths extended to three.** The source named two (member-org engineer; designated upstream security team engineer). A third — nominee of a delegated authority — was added. | Both sources elsewhere permit delegated nomination by a coordinating body or maintainer (Prereq 4; Exception "Delegated read-in"). Without a matching Gate 3 path, those provisions could not operate. |
+| 10 | **Gate 3 affiliation paths extended to four.** The source named two (member-org engineer; designated upstream security team engineer). A third — nominee of a delegated authority — was added. A fourth — the Finder of this case — was added later. | Both sources elsewhere permit delegated nomination by a coordinating body or maintainer (Prereq 4; Exception "Delegated read-in"). Without a matching Gate 3 path, those provisions could not operate. |
 | 11 | **"Gates and prerequisites still apply" added to two exception rows** (*Additional SME at project request*, *Delegated read-in*); **"escalation never waives a gate"** added to §9 anti-gaming; **"no gate may be waived"** added to §2.1. | The sources conditioned delegates on *prerequisites* only, leaving open whether exception and escalation paths could route around the gates. Stated explicitly. **Confirm this is the intended reading.** |
 | 12 | **Gate 2 timeline test** — "cannot within the case timeline" — and **Gate 3 exclusion-check scope** — adding prior embargo breach, sanctions, and legal bars to the source's "conflict, embargo sensitivity" — are new. | Reasonable extensions, but not source-derived. Confirm on review. |
