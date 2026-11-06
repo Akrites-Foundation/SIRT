@@ -45,8 +45,7 @@ Discover → Deduplicate & Triage → Validate → Coordination → Patch → Te
 
 ### 7. Document — advisory & identifiers
 - Determine the authoritative CNA (CVD Policy §2). If the issue is in the Akrites SIRT CNA's scope, reserve the **CVE ID** there; otherwise coordinate with the authoritative CNA (MITRE is CNA of last resort).
-- Capture: affected/fixed versions, CWE, **CVSS v4.0** score (v3.1 for legacy
-  comparison), Consumer actions, and patch location.
+- Capture: affected/fixed versions, CWE, **CVSS v4.0** score, Consumer actions, and patch location.
 - Draft the advisory (**Template 4**) and a machine-readable **OSV** record.
 
 ### 8. Distribute — stage for simultaneous availability
