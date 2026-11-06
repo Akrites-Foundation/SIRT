@@ -3,7 +3,7 @@
 **Owner:** Akrites SIRT
 **Status:** Draft for Akrites SIRT review
 **Audience:** SIRT staff, case coordinators, and Working Group members who build, run, or rely on AI-assisted tooling
-**Companion docs:** [Attribution and AI-Use Disclosure Policy](ai-use-disclosure.md), [CVD Policy](Akrites_CVD_Policy.md) (§8 confidentiality, §13 AI disclosure), [Intake Runbook](intake-runbook.md), [Maintainer of Last Resort Policy](Maintainer_of_Last_Resort_Policy.md) (Part II §5.4), [Communications Playbook](sirt-communications-playbook.md) (Play 18), [Metrics](Akrites_SIRT_Metrics.md)
+**Companion docs:** [Attribution and AI-Use Disclosure Policy](ai-use-disclosure.md), [CVD Policy](Akrites_CVD_Policy.md) (§8 confidentiality, §13 AI disclosure), [Intake Runbook](intake-runbook.md), [Maintainer of Last Resort Policy](Maintainer_of_Last_Resort_Policy.md) (Part II §5.4), [Communications Playbook](sirt-communications-playbook.md) (Play 18), [Metrics](Akrites_SIRT_Metrics.md), [Upstream Engagement Guidelines](upstream-engagement-guidelines.md)
 
 ---
 
@@ -83,7 +83,7 @@ For any tooling run by a third party:
 
 ## 6. Provenance and auditability
 
-Every AI-assisted output stored by the SIRT keeps internal provenance:
+Every AI-assisted output stored by the SIRT keeps internal provenance in an immutable (append-only) log:
 
 - model name, version, and checkpoint or build identifier;
 - generation settings (for example, temperature);
