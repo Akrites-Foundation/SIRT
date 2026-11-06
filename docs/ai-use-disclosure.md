@@ -316,6 +316,7 @@ Captured at intake, confirmed before PD (held TLP:RED until PD):
 - The **controlled vocabulary** (capability phrases and any publishable tool/model names) is maintained by the SIRT and updated without a policy revision; unlisted tool-name requests are normalized or held for review.
 - The SIRT **reviews the acknowledgement and AI-use lines before public disclosure** and may normalize vendor names to the controlled vocabulary (anti-gaming gate).
 - This policy is maintained in the open; proposed changes are reviewed publicly. Only case-specific embargoed data is ever kept private.
+- How the SIRT operates its own AI tooling — oversight by task class, patch verification, data handling, and failure response — is set out in the [AI Operations Guidelines](ai_operations_guidelines.md).
 
 ---
 
