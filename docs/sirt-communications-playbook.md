@@ -722,6 +722,7 @@ adapt rather than push. Keep it collaborative.
 - an AI or automation failure that reached a third party — for example, an AI-assisted patch that introduced a flaw, or a non-existent vulnerability reported upstream;
 - a missed CVD Policy commitment: acknowledgement (2 bd), initial assessment (10 bd), the severity PD target, or actionable guidance within 7 days of confirmed exploitation (§9);
 - any declared Critical Situation ([Crit-Sit Playbook](critical_situation_playbook.md), Phase 5).
+  
 **Audience:** Case team, WG; aggregate learnings to members/Governing Board.
 **Channel & TLP:** Internal; shareable summary TLP:GREEN.
 
