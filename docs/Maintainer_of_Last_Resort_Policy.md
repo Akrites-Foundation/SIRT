@@ -24,7 +24,7 @@ When the Akrites SIRT reaches out regarding a security issue in an open-source p
 3. **No Bug Bounty Claims**: Akrites does not solicit or accept bug bounty payments for vulnerabilities reported to upstream projects.
 
 ### 4. 90-Day Silence Floor
-Maintainers go quiet for many valid life reasons (illness, bereavement, job changes, lost access). Akrites will **never** declare a project abandoned until it has been silent across all attempted channels for **at least 90 calendar days**. Any sign of life (a commit, issue comment, or registry login signal) resets the 90-day clock completely.
+Maintainers go quiet for many valid life reasons (illness, bereavement, job changes, lost access). Akrites will **never** declare a project abandoned until it has been silent across all attempted channels for **at least 90 calendar days**. Any meaningful technical progress besides merely sign of life (a commit, issue comment, or registry login signal) resets the 90-day clock completely. But there can be exceptions provided by justifiable urgency/criticality analysis conducted by SIRT or trusted 3rd party coordinator.
 
 ### 5. Returning Maintainer Guarantees
 * **Unconditional Precedence**: Akrites never holds ownership of a project. If a maintainer returns after a last-resort security release, any activity by their verified identity (e.g., in their repository) immediately ends the MoLR engagement, and the maintainer's releases take precedence.
@@ -71,7 +71,7 @@ This policy governs SIRT actions when coordinated vulnerability disclosure (CVD)
 | Clock | Purpose | Speed / Controls |
 | :--- | :--- | :--- |
 | **Disclosure Clock** | Governs how quickly downstream users are protected via advisories and mitigations. | **SSVC-adjustable** based on severity, EPSS, and active exploitation. Default decision point at **T0 + 15 business days**, aligned with the CVD Policy's 15-business-day upstream window. |
-| **Abandonment Clock** | Governs when Akrites may conclude a project is abandoned and eligible for Track B. | **Hard floor: 90 calendar days of total silence** across all channels. Insensitive to severity or exploit pressure. |
+| **Abandonment Clock** | Governs when Akrites may conclude a project is abandoned and eligible for Track B. | **Hard floor: 90 calendar days of total silence** across all channels. This period may retroactively begin at T0 of a trusted third party's disclosure clock, provided proof of initial contact attempts is submitted. Insensitive to severity or exploit pressure. |
 
 ### 3.1 Disclosure Clock Contact & Escalation Protocol
 * **Attempt 1 (T0)**: Private report via preferred channel (`SECURITY.md`, GitHub PVR, security email).
@@ -89,7 +89,7 @@ This policy governs SIRT actions when coordinated vulnerability disclosure (CVD)
 | Maintainer engages; lacks CI/bandwidth | **Capacity Gap** (§1.1) | Assist in place; supply triage, patches, and release engineering. | **No.** Capacity gaps are met with capacity. |
 | Maintainer disputes finding | **Technical Disagreement** (Part I §2) | Exchange evidence, run PoC, offer call. Concede if maintainer is right. | **No.** Not a stall condition while live. |
 | Maintainer declines to fix after exchange | **Deliberate Non-Fix** (§1.1) | Publish advisory, VEX (status affected, no fix planned), verbatim rationale, and workarounds. | **Only** if no downstream party will carry the fix. |
-| Unresponsive; project active elsewhere | **Silent but Alive** | Continue escalation; pursue intermediate maintainer migration. | **No.** Silence is not total; clock restarts. |
+| Unresponsive; project active elsewhere | **Silent but Alive** | Continue escalation; pursue intermediate maintainer migration. | **No.** Silence is not total and there is meaningful progress; clock restarts. |
 | Total silence across all channels ≥ 90 days | **Abandoned** | Perform §5 last-resort security release and parallel Part III §1 steward search. | **Yes**, subject to §5.1 entry test. |
 | Unreachable + indicators of compromise | **Suspect / Compromised** | Treat as security incident; clean-room build from known-good commit. | **Yes**, with heightened provenance vetting. |
 
@@ -100,15 +100,16 @@ This policy governs SIRT actions when coordinated vulnerability disclosure (CVD)
 ### 5.1 Mandatory Entry Test (All Must Hold)
 Track B requires a signed entry test confirming all six criteria:
 1. **Absence of Alternatives**: All Track A options (assist in place, distro carry, community successor, maintainer-blessed transfer, intermediate migration) are documented as asked and declined.
-2. **Published Criticality Threshold**: The package meets published, objective criticality metrics (e.g., OpenSSF Criticality Score, dependent tree counts, member SBOM prevalence).
+2. **Published Criticality Threshold**: The package meets published, objective criticality metrics (e.g., OpenSSF Criticality Score, dependent tree counts, member SBOM prevalence), or a documented criticality justification recorded in the MoLR decision record and accepted by the approver.
 3. **License Permits Redistribution**: The open-source license explicitly permits redistribution of modified code; any copyleft obligations (Part IV §1) can be met.
 4. **Bounded Patch Series**: Fix is deliverable as a patch series against a pinned upstream commit.
 5. **Capacity Slot Available**: Akrites maintains a strict cap on concurrent MoLR engagements; a slot must be available.
 6. **Per-CVE Approval**: Approval is granted specifically for one CVE ID.
+7. **Chain of Custody for Prior Silence**: If relying on a trusted party's communication attempts to satisfy the 90-day floor, the submitter must provide a complete log of contact attempts."
 
 ### 5.2 Approval Authority & Recusal
 * **Approval**: Track B requires approval by the **Governing Board** (or a MoLR subcommittee the Governing Board designates in writing), granted per CVE and recorded in the MoLR decision record template.
-* **Mandatory Recusal**: Any decision-maker with a commercial, personal, or organizational dependency on the affected package must recuse themselves from voting.
+* **Mandatory Recusal**: Any decision-maker with a commercial, personal, or organizational dependency on the affected package must recuse themselves from voting. A conflicted primary submitter may present the technical risk assessment and Track A exhaustion evidence to the Board, but does not vote.
 
 ### 5.3 The Artifact: Patch Series on a Pinned Commit
 * **Structure**: The delivered artifact is a clean build of `(frozen upstream commit + N security patches)`.
