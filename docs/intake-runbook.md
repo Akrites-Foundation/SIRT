@@ -54,6 +54,7 @@ Discover → Deduplicate & Triage → Validate → Coordination → Patch → Te
 - If an embargo list applies, send **Template 3 (Embargoed notification)** to
     read-in providers at the lead time for their tier (Tiers 2–3 typically 7–14 days, Tier 3.5 at most 24 hours before PD). Monitor replies
   for qualification problems. Prefer a **Tue–Thu** PD; avoid holidays.
+- Confirm receipt from each staging recipient (Tiers 2–3.5); follow up directly with any who have not acknowledged. Non-response never delays PD.
 
 ### 9. Disclose — go public  ⏱ on the PD date
 - Publish the GitHub Security Advisory (populates the Security tab), cut the
