@@ -25,7 +25,7 @@ Discover → Deduplicate & Triage → Validate → Coordination → Patch → Te
 - Reproduce the issue; confirm affected versions and impact.
 - Open a **private** GitHub Security Advisory; add the Finder as collaborator if
   they wish to stay involved. Engage the Owner and any needed maintainers.
-- **AI Tooling Guardrail:** Put case artifacts, PoCs, and code only through confidential, access-controlled AI tooling (self-hosted, enterprise with contractual no-training/confidentiality terms, or the SIRT environment) — never public AI services ([AI-use policy](ai-use-disclosure.md)). Record the Finder's AI use and classify embargo eligibility.
+- **AI Tooling Guardrail:** Put case artifacts, PoCs, and code only through confidential, access-controlled AI tooling (self-hosted, enterprise with contractual no-training/confidentiality terms, or the SIRT environment) — never public AI services ([AI-use policy](ai-use-disclosure.md)). Record the Finder's AI use and classify embargo eligibility. Operational controls are in the [AI Operations Guidelines](ai_operations_guidelines.md).
 
 ### 4. Coordination — embargo & disclosure date
 - Identify read-in **Collaborators** (need-to-know only); formally read them in following the [Read-In Policy](Akrites-Read-In-Policy.md) and log each acceptance of the Read-In Notice.
