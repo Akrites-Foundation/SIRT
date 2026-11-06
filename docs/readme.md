@@ -20,6 +20,13 @@
 - [TAP Intake API (members)](TAP-API-Spec.md)
 
 ## Guidelines
+- [SIRT Acknowledgements and Attribution guidelines](https://github.com/Akrites-Foundation/SIRT/blob/main/docs/acknowledgements-and-attribution.md)
+- [SIRT Communications Playbook](https://github.com/Akrites-Foundation/SIRT/blob/main/docs/sirt-communications-playbook.md)
+- [SIRT CVD Guide](https://github.com/Akrites-Foundation/SIRT/blob/main/docs/Akrites_CVD_Guide.md)
+- [SIRT Glossary](https://github.com/Akrites-Foundation/SIRT/blob/main/docs/Akrites_SIRT_CVD_Glossary.md)
+- [SIRT Upstream Engagement Guidelines](https://github.com/Akrites-Foundation/SIRT/blob/main/docs/upstream-engagement-guidelines.md)
+- [Linux kernel upstream engagement guidelines](linux-kernel-upstream-engagement-guidelines.md)
+- [SIRT What Counts as Public Disclosure guidelines](https://github.com/Akrites-Foundation/SIRT/blob/main/docs/what-counts-as-public-disclosure.md)
 - [CVD Playbook](Akrites_CVD_Playbook.md)
 - [Communications Playbook](sirt-communications-playbook.md)
 - [Upstream Engagement Guidelines](upstream-engagement-guidelines.md)
