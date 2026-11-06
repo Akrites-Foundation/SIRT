@@ -175,7 +175,6 @@ Summary
   - Fixed versions: {{FIXED_VERSIONS}}
   - Weakness (root cause): {{CWE_ID}} — {{CWE_NAME}}
   - Severity: {{CVSS_V4_SCORE}} ({{CVSS_V4_VECTOR}})
-    [legacy: CVSS v3.1 {{CVSS_V31_SCORE}}]
   - Reporter credit: {{CREDIT or "withheld at reporter request"}}
 
 Description
@@ -237,7 +236,6 @@ Identifiers
 
 Severity
   - CVSS v4.0: {{SCORE}} ({{VECTOR}})
-  - CVSS v3.1 (legacy): {{SCORE}} ({{VECTOR}})
 
 Affected and fixed versions
   - Affected: {{AFFECTED_VERSIONS}}
