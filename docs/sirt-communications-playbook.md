@@ -717,8 +717,11 @@ adapt rather than push. Keep it collaborative.
 
 ## Play 18 — Blameless postmortem / lessons learned
 
-**When to use:** After resolution, especially for hard cases (breaches, disputes, unresponsive
-upstreams).
+**When to use:** After resolution of any case, especially hard ones. A postmortem is **required**, and is scheduled within 72 hours of the triggering event (or of PD, if later), when any of these occurs:
+- an embargo break or premature disclosure ([What Counts as Public Disclosure](what-counts-as-public-disclosure.md) §5);
+- an AI or automation failure that reached a third party — for example, an AI-assisted patch that introduced a flaw, or a non-existent vulnerability reported upstream;
+- a missed CVD Policy commitment: acknowledgement (2 bd), initial assessment (10 bd), the severity PD target, or actionable guidance within 7 days of confirmed exploitation (§9);
+- any declared Critical Situation ([Crit-Sit Playbook](critical_situation_playbook.md), Phase 5).
 **Audience:** Case team, WG; aggregate learnings to members/Governing Board.
 **Channel & TLP:** Internal; shareable summary TLP:GREEN.
 
@@ -727,14 +730,16 @@ upstreams).
 ```
 Subject: [Akrites SIRT] Postmortem — {tracking-id} (blameless)
 
-Timeline: {key dates}
+Trigger: {embargo break / AI-automation failure / missed commitment / Crit-Sit}
+Timeline: {key dates and times, UTC}
 What went well: {…}
 What was hard / what broke: {…}  (blameless — focus on process, not people)
-Process changes proposed: {…}
+Contributing factors: {systemic causes — tooling limits, unclear channels, process gaps}
+Corrective actions: {action — owner — due date — tracking issue}
 Reusable comms/templates to update: {…}
 ```
 
-**Notes:** Explicitly blameless. Feed changes back into this playbook and the process docs.
+**Notes:** Explicitly blameless — examine systems, not individuals. The SIRT case coordinator (the Incident Commander in a Crit-Sit) assembles the timeline from the case record, the read-in log, communication logs, and commit history. Corrective actions get an owner, a due date, and a tracking issue within 5 business days of the postmortem; track them in a **private** repository, or publicly only once sanitized and after PD, because details of an embargo failure can themselves leak case information. Feed changes back into this playbook and the process docs.
 
 ---
 
