@@ -25,7 +25,7 @@ Discover → Deduplicate & Triage → Validate → Coordination → Patch → Te
 - Reproduce the issue; confirm affected versions and impact.
 - Open a **private** GitHub Security Advisory; add the Finder as collaborator if
   they wish to stay involved. Engage the Owner and any needed maintainers.
-- **AI Tooling Guardrail:** Put case artifacts, PoCs, and code only through confidential, access-controlled AI tooling (self-hosted, enterprise with contractual no-training/confidentiality terms, or the SIRT environment) — never public AI services ([AI-use policy](ai-use-disclosure.md)). Record the Finder's AI use and classify embargo eligibility.
+- **AI Tooling Guardrail:** Put case artifacts, PoCs, and code only through confidential, access-controlled AI tooling (self-hosted, enterprise with contractual no-training/confidentiality terms, or the SIRT environment) — never public AI services ([AI-use policy](ai-use-disclosure.md)). Record the Finder's AI use and classify embargo eligibility. Operational controls are in the [AI Operations Guidelines](ai_operations_guidelines.md).
 
 ### 4. Coordination — embargo & disclosure date
 - Identify read-in **Collaborators** (need-to-know only); formally read them in following the [Read-In Policy](Akrites-Read-In-Policy.md) and log each acceptance of the Read-In Notice.
@@ -45,8 +45,7 @@ Discover → Deduplicate & Triage → Validate → Coordination → Patch → Te
 
 ### 7. Document — advisory & identifiers
 - Determine the authoritative CNA (CVD Policy §2). If the issue is in the Akrites SIRT CNA's scope, reserve the **CVE ID** there; otherwise coordinate with the authoritative CNA (MITRE is CNA of last resort).
-- Capture: affected/fixed versions, CWE, **CVSS v4.0** score (v3.1 for legacy
-  comparison), Consumer actions, and patch location.
+- Capture: affected/fixed versions, CWE, **CVSS v4.0** score, Consumer actions, and patch location.
 - Draft the advisory (**Template 4**) and a machine-readable **OSV** record.
 
 ### 8. Distribute — stage for simultaneous availability
@@ -54,6 +53,7 @@ Discover → Deduplicate & Triage → Validate → Coordination → Patch → Te
 - If an embargo list applies, send **Template 3 (Embargoed notification)** to
     read-in providers at the lead time for their tier (Tiers 2–3 typically 7–14 days, Tier 3.5 at most 24 hours before PD). Monitor replies
   for qualification problems. Prefer a **Tue–Thu** PD; avoid holidays.
+- Confirm receipt from each staging recipient (Tiers 2–3.5); follow up directly with any who have not acknowledged. Non-response never delays PD.
 
 ### 9. Disclose — go public  ⏱ on the PD date
 - Publish the GitHub Security Advisory (populates the Security tab), cut the
