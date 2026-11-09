@@ -1,10 +1,10 @@
-# Akrites SIRT Coordinated Vulnerability Disclosure (CVD) Policy - v1.3
+# Akrites SIRT Coordinated Vulnerability Disclosure (CVD) Policy - v1.4
 
 **Status:** Board-approved version: v1.0, 2026-10-20
 **Owner:** Akrites SIRT (Security Incident Response Team)
 **Primary contact:** SIRT@Akrites.dev
 **Canonical URL:** https://sirt.akrites.dev/security/policy
-**Last updated:** 2026-10-27
+**Last updated:** 2026-11-09
 
 > **Naming:** **Akrites SIRT** — the Security Incident Response Team hosted by the
 > Akrites Foundation — is the standard name used throughout this document.
@@ -504,7 +504,7 @@ quickly, and will not pursue or support legal action related to your report. Thi
 is not a bug bounty program and confers no expectation of payment. Activities
 must remain good faith: do not access more data than necessary to demonstrate the
 issue, do not degrade services for others, and do not publicly disclose details
-before the agreed PD date.
+before the agreed PD date. This commitment is made by the Linux Foundation.
 
 ## 15. Disputes and appeals
 
@@ -556,6 +556,7 @@ SIRT@Akrites.dev.
 | 1.1     | 2026-10-27 | Removal of TOC from document |
 | 1.2     | 2026-10-27 | Fixed links and phase numbering; single TLP table (RED/AMBER+STRICT/AMBER/CLEAR); removed remaining TOC references; clarified ≤ PD targets; aligned credit default, NDA statement, reporting channel and CNA wording. |
 | 1.3     | 2026-11-05 | Editorial only — no change to policy substance: Acknowledgements & Attribution Guidance merged into the Attribution and AI-Use Disclosure Policy (§11 link and AI-use link text updated); CNA wording corrected (§5, §7, §10); intake-status placeholder removed (§12); OpenPGP key availability stated accurately (§4.2); typo and markdown fixes. |
+| 1.4     | 2026-11-09 | Board decision D1: §14 names the Linux Foundation as the entity making the safe-harbor commitment. |
 
 
 ## 17. References
