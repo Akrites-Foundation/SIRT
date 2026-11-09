@@ -29,11 +29,10 @@ This playbook explains how member organizations and their people are added to Ak
 | --- | --- | --- | --- | --- |
 | **Public** | The public Akrites resources | Anyone | No onboarding | The [SIRT GitHub repository](https://github.com/Akrites-Foundation/SIRT); monthly blog posts on [akrites.org](https://akrites.org) |
 | **extended-sirt** | Committee and Mailing list in LFX | Named member engineers known to Akrites (board members and alternates only on request); Akrites staff | LFX | Monthly email updates; invitations to public Working Group meetings |
-| **PSIRT Leads** | The member organizations' Product Security Incident Response Team (PSIRT) leads | PSIRT leads and alternates; Akrites staff who work with them | Slack, LFX, GitHub | Access to designated repositories and Slack channels |
+| **PSIRT Leads** | Committee, mailing list, Slack channel, and bi-monthly meeting for member organizations' Product Security Incident Response Team (PSIRT) leads | PSIRT leads and alternates; Akrites staff who work with them | Slack, LFX, GitHub | Bi-monthly PSIRT Leads meeting; access to designated repositories and Slack channels. Case discussion requires read-in. |
 | **Premier Members - Governing Board** | The Governing Board | Each Premier member organization's designated board member and alternate; Akrites staff who support the board | LFX | Board meeting invitations; weekly updates on progress, metrics, and membership |
 | **General Members** | Information for General members | *To be defined after the November 2026 board meeting* | — | — |
 | **#all-akrites** | Slack channel | Named member engineers known to Akrites; interested non-members added by Akrites staff | Slack | General announcements and news. **No** Working Group meeting access |
-| **PSIRT Leads** | Committee, Mailing list, Slack channel, PSIRT Leads bi-monthly meeting | Named PSIRT Leads known to Akrites | Slack, LFX | Specific discussions on vulnerability cases as appropriate | 
 
 ---
 
@@ -45,9 +44,9 @@ Anyone can read the [SIRT GitHub repository](https://github.com/Akrites-Foundati
 
 ### extended-sirt
 
-- **What it is:** the main Akrites mailing list.
+- **What it is:** the main Akrites mailing list and LFX committee.
 - **Who is in it:** every named member engineer known to Akrites, and Akrites staff. Board members and alternates are added only if they ask.
-- **Onboarded through:** the Akrites Slack workspace and LFX (committees, mailing lists, and meetings).
+- **Onboarded through:** LFX (committee and mailing list).
 - **What you get:**
   - A monthly update by email.
   - Invitations to **public** Working Group meetings — Enablement or Practice WGs that handle no embargoed material ([WG Governance](Working_Group_Governance_and_Operations.md) §10). Private WGs, which hold case material, require WG membership through the Read-In Policy.
@@ -60,12 +59,13 @@ Anyone can read the [SIRT GitHub repository](https://github.com/Akrites-Foundati
   - Akrites staff who work with the PSIRT group, including program staff helping set up Working Groups.
 - **Onboarded through:** the Akrites Slack workspace, LFX (committees, mailing lists, and meetings), and GitHub (repository access).
 - **What to provide:** name, email, job title, company, and GitHub ID.
+- **Meetings:** a bi-monthly PSIRT Leads meeting. Case-specific discussion happens only with people read in to that case.
 - **What you get:**
   - Access to these repositories: *to be confirmed.*
   - Access to these Slack channels: *to be confirmed.*
   - **Case repositories are separate.** They are created per case, and access to each one is granted only through the Read-In Policy.
 
-### Premier Members - Governing Board 
+### Premier Members - Governing Board
 
 - **What it is:** the Akrites Governing Board.
 - **Who is in it:** the board member and alternate designated by each Premier member organization, and Akrites staff who support the board.
@@ -93,7 +93,7 @@ The member organization provides, through its Akrites staff contact:
 
 - [ ] **Board representative and alternate** (Premier members) — for the Governing Board group.
 - [ ] **PSIRT lead and alternate** — for the PSIRT Leads group, with name, email, job title, company, and GitHub ID.
-- [ ] **Named member engineers** who should receive Akrites communication, available engineers to work on cases as appropriate — for extended-sirt and #all-akrites.
+- [ ] **Named member engineers** who should receive Akrites communication, and engineers available to work on cases — for extended-sirt and #all-akrites. Case work follows the Working Group nomination path below.
 
 Akrites staff then onboard each person using the checklist in §5, and point anyone who will work on vulnerabilities to the Working Group nomination path ([WG Governance](Working_Group_Governance_and_Operations.md) §11) — WG membership and case access follow the [Read-In Policy](Akrites-Read-In-Policy.md).
 
@@ -122,15 +122,15 @@ Work through every step that applies to the person's groups (§1).
 
 ## 6. Offboarding
 
-- **A person leaves a member organization:** the member organization tells Akrites staff, who reverse the §5 checklist — remove the person from the roster's active list, LFX committees, mailing lists, and meetings, Specific slack channels (and the workspace, if they have no other reason to be there), and GitHub repositories or teams. Any case or Working Group access ends immediately (Read-In Policy §8, departure from the sponsoring organization).
+- **A person leaves a member organization:** the member organization tells Akrites staff, who reverse the §5 checklist — remove the person from the roster's active list, LFX committees, mailing lists, and meetings, specific Slack channels (and the workspace, if they have no other reason to be there), and GitHub repositories or teams. Any case or Working Group access ends immediately (Read-In Policy §8, departure from the sponsoring organization).
 - **A member organization leaves Akrites:** Akrites staff do the same for all of its people in member-only groups. Ongoing cases they are read in to are handled case by case by the SIRT case coordinator.
 - **Periodic review:** Akrites staff check the roster, LFX lists, Slack, and GitHub against current membership at least once a year.
-- Note: Individual must remove themselves from all-akrites slack as it is open to quests.
+- **#all-akrites is open to guests,** so leaving a member organization does not remove someone from it. Staff remove them only if they are leaving the Slack workspace; otherwise they may leave the channel themselves.
 
 ---
 
 ## 7. Open items
 
-- List the repositories and Slack channels the PSIRT leads group can access.
-- Define the General member after the November 2026 board meeting.
+- List the repositories and Slack channels the PSIRT Leads group can access.
+- Define the General member group after the November 2026 board meeting.
 - Set how long onboarding details (name, email, title, GitHub ID) are kept after someone leaves — part of the wider data-retention question for the Governing Board.
