@@ -7,6 +7,12 @@ code and assists open source maintainers in resolving security findings. We welc
 Our full **Coordinated Vulnerability Disclosure (CVD) Policy** — including our
 lifecycle, embargo handling, and timelines — is published at [docs/Akrites_CVD_Policy.md](docs/Akrites_CVD_Policy.md) 
 
+## Who this policy is for
+
+This policy covers reports from the public. **Akrites member organizations should not use this process.** Member engineers report through the member intake process, available from their Akrites SIRT contact.
+
+**Intake status:** Akrites is opening intake in stages (CVD Policy §12). Public reporting is planned to open by the end of 2026. Until then, reports received through the channel below may be deferred or handled manually.
+
 ## Scope and supported versions
 
 This policy covers (1) security vulnerabilities in open source projects that you would like the Akrites SIRT to coordinate, and (2) vulnerabilities in code and configuration maintained by Akrites itself.
@@ -18,13 +24,7 @@ Support and remediation decisions depend on the affected upstream project, the v
 Please **do not** open public GitHub issues, pull requests, or public discussions for security vulnerabilities. Do not trigger public CI/CD pipelines or create public forks containing proof-of-concept exploit code prior to coordinated disclosure.
 
 ### Preferred Channel: GitHub Private Vulnerability Reporting
-To report to the Akrites SIRT, open a private report on this repository: **Security** tab → **"Report a vulnerability"** (direct link: https://github.com/Akrites-Foundation/SIRT/security/advisories/new). This creates a private draft advisory where you can collaborate directly with the team. If the affected project has its own private vulnerability reporting, you may report to it directly instead — that report reaches the project's maintainers, not Akrites. Tell us at SIRT@Akrites.dev if you would also like Akrites to coordinate.
-
-### Alternative Channel: Encrypted Email
-If GitHub Private Vulnerability Reporting is unavailable, send your report to **SIRT@Akrites.dev**.
-* The address supports transport encryption (MTA-STS / STARTTLS).
-* End-to-end encryption: our OpenPGP key will be published at https://sirt.akrites.dev/.well-known/pgp-key.txt with its fingerprint in this file. Until then, use GitHub private vulnerability reporting for sensitive details.
-* Anonymous reports will be accepted once public intake opens (see CVD Policy §12); anonymous reporters cannot receive status updates.
+To report to the Akrites SIRT, open a private report on this repository: **Security** tab → **"Report a vulnerability"** (direct link: https://github.com/Akrites-Foundation/SIRT/security/advisories/new). This creates a private draft advisory where you can collaborate directly with the team. If the affected project has its own private vulnerability reporting, you may report to it directly instead — that report reaches the project's maintainers, not Akrites. If you would also like Akrites to coordinate, open a report here as well.
 
 ## What to Include in Your Report
 To help us validate and reproduce the issue quickly, please include:
@@ -39,7 +39,7 @@ To help us validate and reproduce the issue quickly, please include:
 * **Suggested fix**: Any patch or mitigation you have — patches are very welcome.
 * **Availability**: Whether you're open to a call to walk us through it. A partial report is fine; a fill-in [intake template](templates/vulnerability-report-intake-template.md) is available.
 
-## What to Expect (Public SLAs)
+## What to Expect
 
 | Stage           | Commitment                                                      |
 | --------------- | --------------------------------------------------------------- |
@@ -51,7 +51,7 @@ To help us validate and reproduce the issue quickly, please include:
 | Disclosure      | Coordinated with maintainers and finders under a proposed **15-business-day** upstream embargo; target ≤ 17/21/24 business days from receipt for Low–Medium/High/Critical |
 
 ## If you can't reach us, or we go quiet
-If you believe the process has stalled, re-send to **SIRT@Akrites.dev** noting your tracking ID. If you disagree with how your report was handled, see the disputes and appeals path in [CVD Policy §15](docs/Akrites_CVD_Policy.md). If the vulnerability is being actively exploited, tell us immediately so we can accelerate.
+If you believe the process has stalled, add a comment to your private report, or email **SIRT@Akrites.dev** with your report link. If you disagree with how your report was handled, see the disputes and appeals path in [CVD Policy §15](docs/Akrites_CVD_Policy.md). If the vulnerability is being actively exploited, tell us immediately so we can accelerate.
 
 ## Our process at a glance
 We follow a nine-phase lifecycle:
