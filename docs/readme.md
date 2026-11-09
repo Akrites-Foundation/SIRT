@@ -13,6 +13,7 @@
 - [Critical Situation (Crit-Sit) Playbook](critical_situation_playbook.md)
 - [AI Operations Guidelines](ai_operations_guidelines.md)
 - [Severity Scoring Guidelines](severity_scoring_guidelines.md)
+- [Member Onboarding Playbook](member_onboarding_playbook.md)
 - [Embargo Handling Guidance](Embargo%20Handling%20Guidance.md)
 - [GitHub Lightweight CVD Playbook (temporary manual process)](Akrites_SIRT_GitHub_lightweight_CVD_Playbook.md)
 - [Working Group Governance and Operations](Working_Group_Governance_and_Operations.md)
