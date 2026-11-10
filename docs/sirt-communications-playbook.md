@@ -36,10 +36,10 @@ Each Part II play lists: **When to use**, **Audience**, **Channel & TLP**, **Tem
 ### 1.1 Intake Priority Tiers
 Intake processing by the SIRT pipeline enforces three prioritized tiers:
 * **P0 — Members**: Highest intake processing priority reserved for Akrites member organizations.
-* **P1 — Strategic Partners**: Dedicated tier for strategic partners (government security teams, vendor SIRTs, ISACs).
+* **P1 — Strategic Partners**: Dedicated tier for strategic partners (government security teams, vendor SIRTs, ISACs) and trusted OSS security teams (for example, the Linux kernel or ASF security teams) reporting an issue in another project.
 * **P2 — Public**: Internet-public intake processing.
 
-* Priority affects processing order only. Every report receives the commitments in the CVD Policy §5, and the currently open reporter classes are set by CVD Policy §12.
+* Priority affects processing order only. Every report receives the commitments in the CVD Policy §5, and the currently open reporter classes are set by CVD Policy §12. A report with confirmed active exploitation goes first, whatever its tier (CVD Policy §9). The full rules are in the [Intake Runbook](intake-runbook.md#prioritization).
   
 ## 2. Core principles
 
