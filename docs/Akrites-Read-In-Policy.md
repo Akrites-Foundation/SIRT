@@ -1,6 +1,6 @@
 # Akrites Read-In Policy
 
-**Status:** DRAFT v0.7 — for Governing Board review
+**Status:** Draft — for Governing Board review (v0.8)
 **Scope:** All Akrites vulnerability Working Groups (WGs) and all pre-disclosure cases handled by the Akrites SIRT.
 
 ---
@@ -24,7 +24,7 @@ It answers two questions in sequence:
 | **Minimum sufficient access** | A person is placed in the highest-numbered (least-privileged, latest) tier that still lets them do their job. |
 | **No issue is dropped** | Severity is a routing and priority signal — never a filter for dropping a confirmed vulnerability. |
 | **Everything is time-bounded and logged** | Every placement, escalation, and exception is justified, approved by a named authority, and recorded in the case read-in log. |
-| **Consumers are served at public disclosure** | Being an affected user or a generally interested member is not a basis for read-in. |
+| **Consumers are served at public disclosure** | Being an affected user or a generally interested member engineer is not a basis for read-in. |
 
 ---
 
@@ -37,7 +37,6 @@ It answers two questions in sequence:
 | **Disclosure boundary** | What information exists or is shared at a given point in the case. Related to, but distinct from, tier — some activities cannot be performed without a disclosure (you cannot test a patch you have not been given). |
 | **Case read-in log** | The authoritative per-case record of every grant, change, and revocation. |
 | **Sponsor** | A member organization vouching for an individual, or a delegated authority nominating them for a specific case. |
-| **Knowers** | The complete set of individuals read in to a given case at any point in time. |
 
 ---
 
@@ -85,7 +84,7 @@ Need-to-know must be **demonstrable and case-specific**, not inferred from role,
 
 **Satisfied by all of:**
 
-1. **Verified named individual.** A real, named human — never a shared, role, team, or distribution account.
+1. **Verified named individual.** A real, named human — never a shared, role, team, or distribution account. Identity is verified by the sponsor's vouching plus an employer email address.
 2. **Confirmed affiliation.** The person is one of the following:
    - an engineer of an Akrites member organization, or that member's authorized and approved delegate;
    - an engineer of a designated upstream security team for the affected project; or
@@ -111,7 +110,7 @@ Every person, regardless of tier, must have all of the following before access i
 
 1. **A verified, named identity** — an individual, never a shared or role account.
 2. **Hardware-key 2FA** enabled on the Akrites environment.
-3. **Agreements on file** — acceptance of the Read-In Notice (embargo and confidentiality acknowledgement), the Akrites Code of Conduct, and the antitrust acknowledgment.
+3. **Agreements on file** — acceptance of the Read-In Notice (embargo and confidentiality acknowledgement), the Akrites Code of Conduct, and the antitrust acknowledgment under the [Linux Foundation Antitrust Policy](https://www.linuxfoundation.org/antitrust-policy).
 4. **A sponsor** — a member organization vouching for them, or a delegated authority (e.g., a coordinating body such as CISA, or the affected maintainer) nominating them for a specific case.
 5. **Authorization from the SIRT**, and access granted to the specific incident.
 
@@ -119,7 +118,7 @@ Every person, regardless of tier, must have all of the following before access i
 
 ### 3.1 Emergency Read-In
 
-The SIRT may grant **temporary, time-bounded** access to an external SME sponsored directly by an active maintainer or an Akrites member organization, using fast electronic agreements where possible and software-based TOTP/MFA, for **up to 72 hours** while hardware-key logistics are processed.
+The SIRT may grant **temporary, time-bounded** access to an external SME sponsored directly by an active maintainer or an Akrites member organization, using fast electronic agreements where possible and software-based TOTP/MFA, for **up to 72 hours** while hardware-key logistics are processed. Sponsorship is not limited by membership level.
 
 Emergency Read-In relaxes the *mechanism* of prerequisites 2 and 3 — it does **not** relax the Three-Gate Test, the sponsor requirement, the exclusion check, or logging. Access lapses automatically at 72 hours unless the full prerequisites are complete.
 
@@ -139,7 +138,7 @@ Emergency Read-In relaxes the *mechanism* of prerequisites 2 and 3 — it does *
 
 Automated intake — deduplication, severity estimation, and routing — sits within Tier 0 and requires no SME.
 
-**Maintainer authority does not depend on tier.** The upstream maintainer or security team is read in at Tier 1.5 but always holds final authority over the fix and the Public Disclosure date.
+**Maintainer authority does not depend on tier.** The upstream maintainer or security team is read in at Tier 1.5 but always holds final authority over the fix and the Public Disclosure date; the SIRT Director is the SIRT's final decision point (CVD Policy §8).
 
 ### 4.1 Party-to-tier mapping
 
@@ -149,9 +148,9 @@ Automated intake — deduplication, severity estimation, and routing — sits wi
 | WG analyst / patch author (SME) | Analyze and produce the patch | Tier 1 | When analysis/patch work begins |
 | Maintainer / upstream security team | Owns the fix and the final PD decision | Tier 1.5 | When the analysis and proposed patch are ready to share with upstream |
 | Patch tester (SME)	| Test the patch | Tier 2 | When a testable patch exists |
-| Distribution / staging party | Stage the fix ahead of PD | Tier 2 / Tier 3 | Latest — the minimum lead time consistent with a safe rollout, aligned to standardized, pre-agreed embargo lead times *(working figure: 7–14 days before PD; see Appendix A, item 1)* |
+| Distribution / staging party | Stage the fix ahead of PD | Tier 2 / Tier 3 | Latest — the minimum lead time consistent with a safe rollout: typically 7–14 days before PD (CVD Policy §7) |
 | International coordinator / strategic partner | Pre-stage PD notifications | Tier 3.5 | At most 24 hours before PD |
-| Affected user / interested member | — | None | Public disclosure |
+| Affected user / interested member engineer | — | None | Public disclosure |
 
 ---
 
@@ -167,7 +166,7 @@ Every candidate must first clear the Three-Gate Test (§2) and the Prerequisites
 | **Tier 2** | You will test the patch, or you operate a distribution channel or pre-disclosure ring that must prepare a coordinated release. You need the fix and the timing (and, for testing, what is needed to verify it), not the underlying research. |
 | **Tier 3** | You operate second-order distribution (CDN, registry) that must pre-stage for a rapid rollout. You need the artifact and the go-live time only. |
 | **Tier 3.5** | You are an international coordinator or strategic partner preparing your constituency's notification. You receive the advisory and go-live time only. |
-| **None** | You are an affected user or an interested member with no active role. You are served at public disclosure. |
+| **None** | You are an affected user or an interested member engineer with no active role. You are served at public disclosure. |
 
 **Placement rules.**
 
@@ -188,7 +187,7 @@ A detailed **RACI** — the specific actions each tier may take, and by whom —
 
 1. **Nominate.** The Finder, WG, maintainer, or delegated authority proposes a person and states which sanctioned role they will perform.
 2. **Verify.** The SIRT case coordinator evaluates and records **each of the three gates** (§2), confirms all prerequisites (§3), and completes the exclusion check.
-3. **Approve.** The SIRT case coordinator approves. The Finder and maintainer are consulted on Tier 0, 1 and 1.5 additions.
+3. **Approve.** The SIRT case coordinator approves. The Finder and maintainer are consulted on Tier 0, 1 and 1.5 additions; they do not hold a veto.
 4. **Assign tier.** The SIRT case coordinator applies §5 and records the rationale for the tier chosen.
 5. **Acknowledge.** The read-in is sent from the SIRT and must be acknowledged by the individual **before** access is enabled.
 6. **Grant scoped access.** Access is limited to that single case's private repository and communications channel — nothing else.
@@ -201,20 +200,20 @@ A detailed **RACI** — the specific actions each tier may take, and by whom —
 
 WG membership is durable read-in scoped to a **domain** rather than a single case, and follows the same rules.
 
-- Only Akrites members and their authorized and approved delegates are eligible to participate.
+- Only member engineers — employees of Akrites member organizations and their authorized and approved delegates — are eligible to participate.
 - **Contribution is a condition of membership.** Access is granted to participants who can actively collaborate to develop and vet a solution to a given issue.
 - **All three gates in §2 apply**, evaluated against the WG's focus area; all §3 prerequisites are required.
-- The member's expertise is entered in the **Security Rolodex** so the SIRT understands who is available to pull into future cases. Access is always gated by the SIRT and the particulars of a given incident.
+- The WG member's expertise is entered in the **Security Rolodex** so the SIRT understands who is available to pull into future cases. Access is always gated by the SIRT and the particulars of a given incident.
 - Access is limited to **that WG's** workspace only — never cross-WG.
-- Membership is reviewed periodically and removed when the member is no longer contributing.
+- Membership is reviewed periodically and removed when the WG member is no longer contributing.
 
-**Standing membership does not grant automatic read-in to every case in the WG.** Case-level access still follows §6, though it can be near-instant for active members.
+**Standing membership does not grant automatic read-in to every case in the WG.** Case-level access still follows §6, though it can be near-instant for active WG members.
 
-**The accelerated path for active members.** An engineer already validated for a standing WG, and recognized for their contributions and domain expertise, is expected to receive read-in approval quickly and without additional paperwork. Concretely, for an active member the SIRT case coordinator may rely on the standing WG record to satisfy **Gate 2** (capacity, already assessed for the domain) and **Gate 3** (identity and affiliation, already verified), and on the existing §3 prerequisites on file. **Gate 1 is always assessed fresh**, against the specific case, and the exclusion check is always re-run. This is a reduction in paperwork, not a waiver of a gate (§2.1).
+**The accelerated path for active WG members.** An engineer already validated for a standing WG, and recognized for their contributions and domain expertise, is expected to receive read-in approval quickly and without additional paperwork. Concretely, for an active member the SIRT case coordinator may rely on the standing WG record to satisfy **Gate 2** (capacity, already assessed for the domain) and **Gate 3** (identity and affiliation, already verified), and on the existing §3 prerequisites on file. **Gate 1 is always assessed fresh**, against the specific case, and the exclusion check is always re-run. This is a reduction in paperwork, not a waiver of a gate (§2.1).
 
-New members, and members who have been unresponsive or non-contributing for an extended period, follow the full §6 vetting.
+New WG members, and WG members who have been unresponsive or non-contributing for an extended period, follow the full §6 vetting.
 
-Criteria for "active member" will be defined as the SIRT works real cases (Appendix A, item 6).
+Criteria for "active WG member" will be defined as the SIRT works real cases (Appendix A, item 6).
 
 ---
 
@@ -235,11 +234,11 @@ Criteria for "active member" will be defined as the SIRT works real cases (Appen
 
 1. **SIRT case coordinator.** Adjusts priority, pulls in additional Tier 1 SMEs, or reads a party in earlier — all within existing tier definitions.
 2. **SIRT Director** Cross-cutting or contested calls: vertical-versus-industry severity conflicts, broad-scope resourcing, or spinning up an ephemeral Working Group (standing WGs require Governing Board approval).
-3. **Governing Board.** Policy and legal matters: finder patch and customer obligations, antitrust, and government or critical-infrastructure coordination.
+3. **Governing Board.** Policy and legal matters: antitrust, and government or critical-infrastructure coordination.
 
 **Severity changes.** If the score rises, read-in may widen or accelerate; if it falls, it may narrow or slow. Either way the change is recorded with rationale, and the embargo and PD date are re-evaluated.
 
-**Extension requests.** Any party may request an embargo or coordination-window extension through the SIRT. The proposed upstream embargo is **15 business days** (total target time to PD of ≤ 17 bd Low/Med, ≤ 21 bd High, ≤ 24 bd Critical), always deferring to the upstream project's own policy, and may be extended for the greater good. The maintainer decides, with the SIRT advising and consulting the Finder.
+**Extension requests.** Any party may request an embargo or coordination-window extension through the SIRT. The proposed upstream embargo is **15 business days** (total target time to PD of ≤ 17 bd Low/Med, ≤ 21 bd High, ≤ 24 bd Critical), always deferring to the upstream project's own policy, and may be extended for the greater good. The maintainer decides, with the SIRT advising and consulting the Finder; the SIRT Director is the SIRT's final decision point (CVD Policy §8).
 
 **Anti-gaming.** Every escalation requires a stated justification and is logged. Severity re-scores are documented as deviation notices. **No party may escalate solely to gain earlier or broader access.** Escalation never waives a gate — it may change the tier or timing of an admitted person, or prompt a fresh nomination, but a new person still clears §2 and §3.
 
@@ -252,9 +251,9 @@ Exceptions are handled case-by-case. Each is time-bounded, justified, approved b
 | Exception | Handling | Authority |
 |---|---|---|
 | **Additional SME at project request** | The maintainer may request that a specific SME be read in; the SIRT admits them at the appropriate tier. Gates and prerequisites still apply. | SIRT |
-| **Delegated read-in** | A coordinating body (e.g., CISA) or a maintainer may nominate who to loop in, within limits set by the SIRT. Delegates must still meet all gates and prerequisites. | SIRT (limits — Appendix A, item 3) |
+| **Delegated read-in** | A coordinating body (e.g., CISA) or a maintainer may nominate people to read in. The SIRT approves every addition, and nominees must still meet all gates and prerequisites. | SIRT |
 | **Early or broader read-in** for severe or broad-scope issues | Handled via escalation (§9); time-bounded. | Per §9 level |
-| **Finder with a patch and customer obligations** | Sharing a fix before disclosure or upstream engagement is discouraged but cannot be prohibited. It must be declared to the SIRT; risks and consequences are documented. | Governing Board sets governing policy |
+| **Finder with a patch and customer obligations** | Sharing a fix before disclosure or upstream engagement is discouraged but cannot be prohibited. It must be declared to the SIRT; risks and consequences are documented. The SIRT respects the Finder's timeframe for meeting its customer obligations and coordinates the case timeline with it. | SIRT |
 | **Early mitigations / workarounds** | Expected to be shared when patch development will exceed the agreed embargo or disclosure window. | SIRT |
 | **Maintainer of Last Resort / time-bounded hardened fork** | Permitted only with Governing Board approval. | Governing Board |
 | **Government / critical-infrastructure / telco coordination without pre-disclosure** | A Governing Board determination, consistent with the standing decision **not to pre-disclose to any single government**. | Governing Board |
@@ -264,7 +263,7 @@ Exceptions are handled case-by-case. Each is time-bounded, justified, approved b
 ## 11. Embargo breaches
 
 - If an embargo is broken, the **SIRT coordinates** the response and notifies affected participants and members, depending on what was broken and how.
-- Any member who discovers a breach **must promptly notify the SIRT**.
+- Anyone read in to the case — participant, WG member, or staff — who discovers a breach **must promptly notify the SIRT**.
 - SIRT escalates the violation to the Akrites Governing Board.
 - **An embargo break results in immediate suspension of access.** The Governing Board decides on permanent removal. An accidental break that the participant promptly self-reports is reviewed blamelessly.
 - The Akrites Governing Board holds final authority for permanent revocation or further administrative action.
@@ -277,7 +276,7 @@ Exceptions are handled case-by-case. Each is time-bounded, justified, approved b
 - The **gate-by-gate determination** is part of the record for every read-in, including failed nominations.
 - All read-ins are sent from the SIRT and must be **acknowledged by the involved party before access is granted**.
 - Read-in lists are reviewed against least privilege at each case.
-- **Member identities are protected from disclosure (anti-doxxing) throughout.**
+- **Participant and member identities are protected from disclosure (anti-doxxing) throughout.**
 
 ---
 
@@ -289,7 +288,7 @@ Exceptions are handled case-by-case. Each is time-bounded, justified, approved b
 | **SIRT Director** | Level-2 escalation: cross-cutting severity and vertical calls; broad-scope resourcing; ephemeral WG spin-up. |
 | **Finder & maintainer** | Consulted on the read-in list, embargo, and PD. The maintainer sets the final fix and PD date. |
 | **Working Group** | Nominates SMEs; requests escalation for its domain or vertical. |
-| **Governing Board** | Policy and legal exceptions — finder obligations, antitrust, government coordination; Maintainer-of-Last-Resort approval; standing WG creation; permanent removal after a breach; grey-area cases. |
+| **Governing Board** | Policy and legal exceptions — antitrust, government coordination; Maintainer-of-Last-Resort approval; standing WG creation; permanent removal after a breach; grey-area cases. |
 
 ---
 
@@ -299,16 +298,6 @@ Items carried forward from both source documents, deduplicated, with the body th
 
 | # | Open item | Detail | Owner |
 |---|---|---|---|
-| 1 | **Default read-in lead times per tier** | Fix the standard lead time for Tier 2 and Tier 3 before PD. A working figure of 7–14 days appears in the source material (§4.1) but is not ratified. | Governing Board |
-| 2 | **RACI per tier** | Define the specific actions each tier may take, and by whom, as a companion document to this policy. | Governing Board |
-| 3 | **Delegation rules and limits** | How far a coordinating body (e.g., CISA) or a maintainer may extend read-in; enforce that the SIRT must approve **all** expansions of the set of Knowers. | Governing Board |
-| 4 | **Approver of record; Finder/maintainer veto** | The approver of record is the SIRT case coordinator (§6). Open: whether the Finder or maintainer may veto — rather than merely be consulted on — additions. | Governing Board |
-| 5 | **Tier 1 sub-staging** | *Resolved:* testing moved to Tier 2. Tier 1 covers case review, data gathering, and patch creation; testers are read in at Tier 2 once a testable patch exists. | — |
-| 6 | **"Active member" criteria** | Define what qualifies a standing WG member as active, and therefore eligible for the accelerated §7 path. | SIRT, informed by real cases |
-| 7 | **Finder patch / customer-obligation policy** | Governing policy for a Finder who holds a patch and has customer obligations before disclosure. | Governing Board |
-| 8 | **Antitrust documentation** | Documentation covering early or broad read-in of competing members. | Governing Board |
-| 9 | **Gate 3 vetting standard** | Whether identity verification requires a documented standard (e.g., employer attestation, identity proofing level) beyond sponsor vouching. *(New — surfaced by codifying Gate 3.)* | Governing Board |
-| 10 | **Emergency Read-In ceiling** | Whether the 72-hour Emergency Read-In window may be extended, by whom, and how many times. *(New — surfaced during merge.)* | SIRT / Governing Board |
-| 11 | **Emergency Read-In sponsors** | Whether Emergency Read-In sponsorship should be limited to a membership level. | Governing Board |
+| 2 | **RACI per tier** | Define the specific actions each tier may take, and by whom, as a companion document to this policy. | Akrites SIRT, companion document |
 ---
 
