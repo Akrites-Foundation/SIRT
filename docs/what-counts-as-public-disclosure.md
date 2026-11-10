@@ -202,7 +202,7 @@ CRD but increase monitoring and readiness.
 6. **If accelerating:** finalize the best-available advisory (fix or mitigation status stated
    honestly) and publish via Play 5. Fire the member notice/SIREN in parallel.
 7. **If holding:** document why, raise monitoring, and confirm the CRD still stands with all parties.
-8. **Record & learn:** record the break in the case file (and, once the Governing Board approves its governance, on the project **Security Card**) (including any upstream/partner
+8. **Record & learn:** record the break in the case file (including any upstream/partner
    mishandling for future risk weighting) and run a **blameless postmortem** (Play 18).
 
 ### 5.6 Roles
