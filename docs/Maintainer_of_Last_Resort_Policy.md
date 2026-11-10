@@ -1,8 +1,9 @@
-# Akrites SIRT Maintainer of Last Resort Policy and Guidelines
+# Akrites SIRT Maintainer of Last Resort (MoLR) Policy
 
-**Status:** Consolidated Official Policy & Guidelines  
-**Applies to:** Akrites SIRT, Working Groups, and Upstream Maintainers  
-**Companion / Precedence Note:** This document combines the formal operational framework for Maintainer of Last Resort (MoLR) actions with the plain-language maintainer commitments (*"What Akrites Will and Won't Do to Your Project"*). The plain-language commitments in Part I constitute the non-negotiable floor for all SIRT actions and take precedence over technical operations.
+**Status:** Draft — for Governing Board review (v1.0)
+**Applies to:** Akrites SIRT, Working Groups, and Upstream Maintainers
+**Companion doc:** [MoLR Guidelines and Procedures](molr_guidelines_and_procedures.md) — how the SIRT carries out this policy, step by step.
+**Precedence:** The plain-language commitments in Part I are the non-negotiable floor for all SIRT actions and take precedence over the rest of this policy and over the Guidelines and Procedures.
 
 ---
 
@@ -13,18 +14,21 @@ When the Akrites SIRT reaches out regarding a security issue in an open-source p
 * **The Deliverable**: A written explanation of the problem, a working reproduction (failing unit test / PoC), a proposed patch, and regression tests.
 * **Full Coordination Support**: If desired by the maintainer, Akrites handles CVE reservation, advisory drafting, downstream distro notification, and synchronized disclosure timing—at zero cost and with no obligations.
 * **Maintainer Authority**: The creator and maintainer retain final authority over their codebase. Maintainers may decline a fix, state that a version is End-of-Life (EOL), or dispute a finding ("WONTFIX" or "not a vulnerability").
+* **End-of-Life Branches**: If you declare a branch end-of-life but do not dispute the vulnerability, Akrites may — only with Governing Board approval, and only after telling you in advance — publish a security release for that branch under its own namespace (Part II §4). A WONTFIX or a disputed finding never leads to an Akrites release.
 
 ### 2. Disagreements & Verbatim Rationale
-* **Technical Exchange**: If a maintainer believes a report is not a vulnerability, Akrites engages in a good-faith technical exchange on the merits (sharing reachability traces, deployment assumptions, and reproductions). If the maintainer persuades Akrites, the case is closed, no advisory is created, and reserved CVEs are withdrawn.
+* **Technical Exchange**: If a maintainer believes a report is not a vulnerability, Akrites engages in a good-faith technical exchange on the merits. If the maintainer persuades Akrites, the case is closed, no advisory is created, and reserved CVEs are withdrawn.
 * **Verbatim Rationale**: If a technical disagreement persists and Akrites proceeds with an advisory, the maintainer is offered the right to print their exact, word-for-word reasoning in the public advisory. Akrites will show the finished wording to the maintainer prior to publication and will never edit or paraphrase the maintainer's statement.
 
 ### 3. Absolute "Won't Do" Boundaries
 1. **Never Take a Package Name**: Akrites will **never** ask for, petition for, or accept custody of an upstream package namespace on any registry (npm, PyPI, Maven Central, crates.io, etc.), under any circumstances—including through registry abandonment or dispute policies.
 2. **Never Impersonate or Shadow**: Akrites will never publish into an original project's namespace or use an upstream project's name or logo. All security releases are clearly labeled as Akrites security patches and point back to the original project.
 3. **No Bug Bounty Claims**: Akrites does not solicit or accept bug bounty payments for vulnerabilities reported to upstream projects.
+4. **Never a Custodian or Owner**: Akrites does not take ownership of projects, long-term or otherwise, and is not a custodian for un-owned or abandoned projects.
+5. **Never Choose Your Successor**: Akrites does not select, appoint, or approve new maintainers or stewards for a project.
 
 ### 4. 90-Day Silence Floor
-Maintainers go quiet for many valid life reasons (illness, bereavement, job changes, lost access). Akrites will **never** declare a project abandoned until it has been silent across all attempted channels for **at least 90 calendar days**. Any sign of life (a commit, issue comment, or registry login signal) resets the 90-day clock completely.
+Maintainers go quiet for many valid life reasons (illness, bereavement, job changes, lost access). Akrites will **never** declare a project abandoned until it has been silent across all attempted channels for **at least 90 calendar days**. Any sign of life (a commit, issue comment, or registry login signal) resets the 90-day clock completely. There are no exceptions for urgency or severity: urgent issues are handled through advisories and mitigations under the disclosure clock, never by shortening this floor.
 
 ### 5. Returning Maintainer Guarantees
 * **Unconditional Precedence**: Akrites never holds ownership of a project. If a maintainer returns after a last-resort security release, any activity by their verified identity (e.g., in their repository) immediately ends the MoLR engagement, and the maintainer's releases take precedence.
@@ -36,7 +40,7 @@ Maintainers can pre-register their emergency preferences in their `SECURITY.md` 
 
 ---
 
-# Part II: Governance & Operational Framework
+# Part II: Governance Framework
 
 ## 1. Purpose & Scope
 
@@ -71,14 +75,14 @@ This policy governs SIRT actions when coordinated vulnerability disclosure (CVD)
 | Clock | Purpose | Speed / Controls |
 | :--- | :--- | :--- |
 | **Disclosure Clock** | Governs how quickly downstream users are protected via advisories and mitigations. | **SSVC-adjustable** based on severity, EPSS, and active exploitation. Default decision point at **T0 + 15 business days**, aligned with the CVD Policy's 15-business-day upstream window. |
-| **Abandonment Clock** | Governs when Akrites may conclude a project is abandoned and eligible for Track B. | **Hard floor: 90 calendar days of total silence** across all channels. Insensitive to severity or exploit pressure. |
+| **Abandonment Clock** | Governs when Akrites may conclude a project is abandoned and eligible for Track B. Does not apply to the EOL-branch path (§4), which never declares a project abandoned. | **Hard floor: 90 calendar days of total silence** across all channels. This period may begin at the T0 of a trusted third party's contact attempts, provided a complete log of those attempts is submitted (see §3.2). Insensitive to severity or exploit pressure. |
 
-### 3.1 Disclosure Clock Contact & Escalation Protocol
-* **Attempt 1 (T0)**: Private report via preferred channel (`SECURITY.md`, GitHub PVR, security email).
-* **Attempt 2 (T0 + 3 business days)**: Re-send and widen to commit-history maintainer emails and package registry contacts.
-* **Attempt 3 (T0 + 7 business days)**: Escalate to umbrella organizations, foundations (STF, OpenSSF, Alpha-Omega), and distro security teams.
-* **Coordinator Handoff (T0 + 10 business days)**: Bring in neutral coordinators (CERT/CC, VINCE, CNA-LR).
-* **Decision Point (T0 + 15 business days)**: Classify into a scenario and publish advisory, VEX, and mitigation per the CVD Policy.
+### 3.1 Disclosure Clock Contact & Escalation
+The SIRT works a fixed contact and escalation ladder from T0 to the T0 + 15 business-day decision point, recording every attempt. The ladder is set out in the [Guidelines and Procedures](molr_guidelines_and_procedures.md#1-contact-and-escalation-ladder).
+
+### 3.2 Trusted Third-Party Clock Start
+* **Who qualifies**: For now, a trusted third party is an **active Akrites member organization**. Other coordinators (for example, a government CERT) will be defined once Akrites accepts reports from outside its membership.
+* **Evidence required**: A complete log of the third party's contact attempts, covering the same channels as the escalation ladder in §3.1. Without it, the clock starts at the SIRT's own T0.
 
 ---
 
@@ -88,55 +92,60 @@ This policy governs SIRT actions when coordinated vulnerability disclosure (CVD)
 | :--- | :--- | :--- | :--- |
 | Maintainer engages; lacks CI/bandwidth | **Capacity Gap** (§1.1) | Assist in place; supply triage, patches, and release engineering. | **No.** Capacity gaps are met with capacity. |
 | Maintainer disputes finding | **Technical Disagreement** (Part I §2) | Exchange evidence, run PoC, offer call. Concede if maintainer is right. | **No.** Not a stall condition while live. |
-| Maintainer declines to fix after exchange | **Deliberate Non-Fix** (§1.1) | Publish advisory, VEX (status affected, no fix planned), verbatim rationale, and workarounds. | **Only** if no downstream party will carry the fix. |
+| Maintainer declines to fix after exchange (WONTFIX or disputed finding) | **Deliberate Non-Fix** (§1.1) | Publish advisory, VEX (status affected, no fix planned), verbatim rationale, and workarounds; offer the proposed patch to downstream parties (see Guidelines and Procedures). | **No.** The maintainer is reachable and has decided. |
+| Maintainer declares the affected branch EOL, does not dispute the vulnerability, and fixes it in supported versions | **EOL Branch** (§1.1) | As for Deliberate Non-Fix; point users to the supported versions. | **Only** if no downstream party will carry the fix, subject to §5.1 (EOL-branch path). |
 | Unresponsive; project active elsewhere | **Silent but Alive** | Continue escalation; pursue intermediate maintainer migration. | **No.** Silence is not total; clock restarts. |
-| Total silence across all channels ≥ 90 days | **Abandoned** | Perform §5 last-resort security release and parallel Part III §1 steward search. | **Yes**, subject to §5.1 entry test. |
+| Total silence across all channels ≥ 90 days | **Abandoned** | Perform §5 last-resort security release; Part III applies. | **Yes**, subject to §5.1 entry test. |
 | Unreachable + indicators of compromise | **Suspect / Compromised** | Treat as security incident; clean-room build from known-good commit. | **Yes**, with heightened provenance vetting. |
 
 ---
 
-## 5. Track B: Maintainer of Last Resort (MoLR) Execution
+## 5. Track B: Maintainer of Last Resort (MoLR)
 
 ### 5.1 Mandatory Entry Test (All Must Hold)
-Track B requires a signed entry test confirming all six criteria:
+Track B requires a signed entry test confirming all seven criteria:
 1. **Absence of Alternatives**: All Track A options (assist in place, distro carry, community successor, maintainer-blessed transfer, intermediate migration) are documented as asked and declined.
-2. **Published Criticality Threshold**: The package meets published, objective criticality metrics (e.g., OpenSSF Criticality Score, dependent tree counts, member SBOM prevalence).
+2. **Published Criticality Threshold**: The package meets published, objective criticality metrics (e.g., OpenSSF Criticality Score, dependent tree counts, member SBOM prevalence), or a documented criticality justification recorded in the MoLR decision record and accepted by the approver.
 3. **License Permits Redistribution**: The open-source license explicitly permits redistribution of modified code; any copyleft obligations (Part IV §1) can be met.
 4. **Bounded Patch Series**: Fix is deliverable as a patch series against a pinned upstream commit.
 5. **Capacity Slot Available**: Akrites maintains a strict cap on concurrent MoLR engagements; a slot must be available.
 6. **Per-CVE Approval**: Approval is granted specifically for one CVE ID.
+7. **Chain of Custody for Prior Silence**: If relying on a trusted third party's contact attempts to satisfy the 90-day floor, the submitter provides a complete log of those attempts (§3.2).
+
+**EOL-branch path.** For an EOL branch (§4), criteria 1–6 apply and criterion 7 is replaced by: the maintainer's end-of-life statement on record; confirmation that the maintainer does not dispute the vulnerability; the fix available in the project's supported versions; documented absence of any downstream party willing to carry the fix; and advance notice to the maintainer, with the offer of verbatim rationale (Part I §2). The release covers only the end-of-life branch. A "do not fork" preference (Part I §6) still blocks it.
 
 ### 5.2 Approval Authority & Recusal
 * **Approval**: Track B requires approval by the **Governing Board** (or a MoLR subcommittee the Governing Board designates in writing), granted per CVE and recorded in the MoLR decision record template.
-* **Mandatory Recusal**: Any decision-maker with a commercial, personal, or organizational dependency on the affected package must recuse themselves from voting.
+* **Mandatory Recusal**: Any decision-maker with a commercial, personal, or organizational dependency on the affected package must recuse themselves from voting. A conflicted primary submitter may present the technical risk assessment and Track A exhaustion evidence to the Board, but does not vote.
 
-### 5.3 The Artifact: Patch Series on a Pinned Commit
-* **Structure**: The delivered artifact is a clean build of `(frozen upstream commit + N security patches)`.
-* **Scope Discipline**: Build configuration and toolchains may be updated to produce a signed build, but library source outside the patch series and public API surface may not be altered.
-* **Naming & Versioning**: Published under an Akrites-controlled namespace using ecosystem-specific, non-shadowing version strings.
-* **Closed Inbound Channels**: Pull requests and general issue trackers are disabled on MoLR repositories (except for patch-regression reports) to prevent scope creep into an unfunded support desk.
+### 5.3 The Artifact
+The deliverable is a clean build of a frozen upstream commit plus the approved security patches, published under an Akrites-controlled namespace and never into the original project's namespace. The artifact rules are in the [Guidelines and Procedures](molr_guidelines_and_procedures.md#4-the-artifact-patch-series-on-a-pinned-commit).
 
-### 5.4 Release Integrity & Correctness Gates
-Before any MoLR security release is published, it must pass all release gates:
-* **Integrity**: Clean-room build, signed commits/artifacts using per-engagement keys, SLSA build provenance, and two-person publish controls.
-* **Correctness**: Upstream test suite passes, downstream consumer sample tests pass, **public API surface diff is empty** against the pinned commit, and two named human reviewers sign off (disclosing any AI assistance).
+### 5.4 Release Integrity & Correctness
+No MoLR security release is published until it passes every integrity and correctness gate in the [Guidelines and Procedures](molr_guidelines_and_procedures.md#5-release-integrity--correctness-gates), including two named human reviewers who disclose any AI assistance.
 
 ---
 
-# Part III: Stewardship Transition & Downstream Routing
+## 6. Limits of a MoLR Engagement
 
-### 1. Stewardship Search & Vetting
-* **Solicited Search**: Akrites conducts targeted outreach to distros, dependent projects, foundations, and known past contributors. Akrites **never broadcasts** `"critical unmaintained package"` publicly, as this creates an attacker targeting list.
-* **Vetting (Reference Threat: `xz` / CVE-2024-3094)**: Candidate stewards must undergo identity verification, contribution history checks, signed commit enforcement, and staged co-maintenance before full handoff.
+* **Operational donation, not ownership**: A MoLR engagement is an operational donation by Akrites of **up to 12 months**, counted from the first last-resort security release. Akrites does not take long-term ownership of any project.
+* **Not a custodian**: Akrites is not a custodian for un-owned or abandoned projects. When the engagement ends, the artifact is frozen (Part III §2).
+* **No steward approval**: Akrites does not select, appoint, or approve successor maintainers or stewards. It may help a project's community find candidates (Part III §1).
+* **No term limits**: Engagements are bounded by the 12-month donation, not by counts of fixes or renewals.
+* **Ends early on return**: A returning maintainer ends the engagement immediately (Part I §5).
+
+---
+
+# Part III: Wind-Down & Downstream Routing
+
+### 1. Successor Maintainers
+Akrites may help a project's community find a successor through targeted outreach, but never broadcasts that a package is unmaintained and never selects or approves the successor. How the SIRT supports a search is in the [Guidelines and Procedures](molr_guidelines_and_procedures.md#7-successor-maintainers).
 
 ### 2. Freeze on Wind-Down
-If an engagement ends or no steward is found, Akrites **freezes the artifact** (published, signed, immutable, marked `"no further fixes"`). Akrites **never unpublishes, deletes, or yanks** a security release, as doing so breaks downstream builds and causes supply-chain incidents.
+If an engagement ends or no successor emerges, Akrites **freezes the artifact** (published, signed, immutable, marked `"no further fixes"`). Akrites **never unpublishes, deletes, or yanks** a security release, as doing so breaks downstream builds and causes supply-chain incidents.
 
-### 3. Machine-Readable Routing Without Taking Namespaces
-To ensure downstream users receive security fixes without Akrites taking package names:
-* **OSV & VEX Pointers**: Advisories publish machine-readable pointers to the replacement package: OSV records list it as a reference, and VEX statements carry status affected with an action statement naming the Akrites-namespace package that contains the fix.
-* **Distro Integration**: Fixes are routed directly to Linux distribution security teams (Debian, Red Hat, Alpine, etc.).
-* **Intermediate Maintainer Migration**: SIRT works with high-leverage upstream libraries to update their dependency specs to point to the secure patch or alternative package, resolving exposure for thousands of downstream projects at once.
+### 3. Routing Without Taking Namespaces
+Downstream users are routed to fixes through machine-readable advisories (OSV, VEX), Linux distribution security teams, and intermediate maintainers — never by taking package names. The routing steps are in the [Guidelines and Procedures](molr_guidelines_and_procedures.md#6-publishing-and-downstream-routing).
 
 ---
 
@@ -152,18 +161,8 @@ To ensure downstream users receive security fixes without Akrites taking package
 
 ---
 
-## Appendix A: One-Page Lifecycle & Decision Flow
+## Change history
 
-```
-DISCLOSURE CLOCK (Severity-adjustable; T0+15bd default decision point)
-T0 ──▶ T0+3bd (Widen) ──▶ T0+7bd (Ecosystem) ──▶ T0+10bd (Coordinators) ──▶ T0+15bd (Decision)
-                                                                                  │
-  ┌───────────────────────────────────────────────────────────────────────────────┴──────────────┐
-  │                                                                                              │
-  ▼                                                                                              ▼
-Track A: Upstream Assistance                                                   Track B: Last-Resort Action
-├── Capacity Gap ──▶ Assist in place & build patch                              ├── Requires 90-Day Silence Floor
-├── Disagreement ──▶ Technical exchange ──▶ Verbatim rationale                  ├── Signed Entry Test (§5.1)
-└── Unresponsive ──▶ Intermediate maintainer migration                         ├── Governing Board Approval & Recusal
-                                                                                └── Patch Series on Pinned Commit
-```
+| Version | Date | Description |
+| ------- | ---------- | -------------- |
+| 1.0 | 2026-11-10 | Split into this policy and the [MoLR Guidelines and Procedures](molr_guidelines_and_procedures.md); operational detail moved there. Incorporates [PR #183](https://github.com/Akrites-Foundation/SIRT/pull/183) by Roman Zhukov (trusted third-party clock start, chain-of-custody criterion, criticality justification, recusal). Adds: 12-month operational donation, no ownership or custody, no steward approval, no term limits, no urgency exception to the 90-day floor, Track B after a deliberate non-fix only for an end-of-life branch whose vulnerability the maintainer does not dispute (EOL-branch path). Prepared for first Governing Board review. |
