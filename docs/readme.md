@@ -14,6 +14,7 @@
 - [AI Operations Guidelines](ai_operations_guidelines.md)
 - [Severity Scoring Guidelines](severity_scoring_guidelines.md)
 - [Member Onboarding Playbook](member_onboarding_playbook.md)
+- [MoLR Guidelines and Procedures](molr_guidelines_and_procedures.md)
 - [Embargo Handling Guidance](Embargo%20Handling%20Guidance.md)
 - [GitHub Lightweight CVD Playbook (temporary manual process)](Akrites_SIRT_GitHub_lightweight_CVD_Playbook.md)
 - [Working Group Governance and Operations](Working_Group_Governance_and_Operations.md)
@@ -58,6 +59,7 @@
 | [CVD Policy](Akrites_CVD_Policy.md) | Governing Board | Board-reviewed — v1.0, 2026-10-20 (later edits reported to the Board) |
 | [Read-In Policy](Akrites-Read-In-Policy.md) | Governing Board | Draft — for Governing Board review |
 | [MoLR Policy](Maintainer_of_Last_Resort_Policy.md) | Governing Board | Draft — for Governing Board review |
+| [MoLR Guidelines and Procedures](molr_guidelines_and_procedures.md) | SIRT Director | Draft — for Akrites SIRT review |
 | [Security Policy](../SECURITY.md) | SIRT Director | Draft — for Akrites SIRT review |
 | [Attribution and AI-Use Disclosure Policy](ai-use-disclosure.md) | SIRT Director | Draft — for Akrites SIRT review |
 | [Intake Runbook](intake-runbook.md) | SIRT Director | Draft — for Akrites SIRT review |
