@@ -1,4 +1,6 @@
-# Akrites SIRT Intake Runbook (one page) - DRAFT v0.3
+# Akrites SIRT Intake Runbook (one page) - DRAFT v0.4
+
+**Status:** Draft — for Akrites SIRT review
 
 Step-by-step actions for the responder on duty, keyed to the nine-phase
 lifecycle in the [Akrites CVD Policy](Akrites_CVD_Policy.md).
@@ -19,10 +21,12 @@ Discover → Deduplicate & Triage → Validate → Coordination → Patch → Te
 - Check for duplicates against cases in flight; if duplicate, merge and send [Play 13 (co-finder)](sirt-communications-playbook.md#play-13--duplicate--co-finder-notification).
 - Compare against prior risk assessments, threat models, and bug bars.
 - Decide: vulnerability / non-security bug (including feature requests) / works-as-intended.
+- Set the **priority**: source tier, a provisional SSVC outcome, and any active-exploitation override ([Prioritization](#prioritization)). Record them in the case record.
 - Send **Template 2a or 2b**. If not a vulnerability, explain reasoning and close.
 
 ### 3. Validate — confirm & reproduce
 - Reproduce the issue; confirm affected versions and impact.
+- Confirm or adjust the SSVC outcome now that impact is known ([Prioritization](#prioritization)).
 - Open a **private** GitHub Security Advisory; add the Finder as collaborator if
   they wish to stay involved. Engage the Owner and any needed maintainers.
 - **AI Tooling Guardrail:** Put case artifacts, PoCs, and code only through confidential, access-controlled AI tooling (self-hosted, enterprise with contractual no-training/confidentiality terms, or the SIRT environment) — never public AI services ([AI-use policy](ai-use-disclosure.md)). Record the Finder's AI use and classify embargo eligibility. Operational controls are in the [AI Operations Guidelines](ai_operations_guidelines.md).
@@ -61,6 +65,32 @@ Discover → Deduplicate & Triage → Validate → Coordination → Patch → Te
   high-impact issues, the general community channel too.
 - Reference the CVE ID; link the OSV record. Flip private patch branches public.
 - Credit the Finder and participating maintainers following the [Attribution and AI-Use Disclosure Policy](ai-use-disclosure.md). Reclassify case material to TLP:CLEAR and archive read-in coordination channels within 72 hours.
+
+---
+
+## Prioritization
+
+Every confirmed vulnerability is worked. Priority sets the **order**, never whether a report is handled ([Read-In Policy](Akrites-Read-In-Policy.md) — no issue is dropped).
+
+**1. Source tier sets the processing order.**
+
+| Tier | Reporter |
+| --- | --- |
+| **P0** | Akrites member organizations |
+| **P1** | Strategic partners (government security teams, vendor SIRTs, ISACs) and trusted OSS security teams (for example, the Linux kernel or ASF security teams) reporting an issue in a project other than their own |
+| **P2** | The public, once public intake opens ([CVD Policy §12](Akrites_CVD_Policy.md)) |
+
+A trusted OSS security team reporting a vulnerability in **its own** project is acting as the maintainer: help in place, with no queue position.
+
+**2. Active exploitation goes first.** A report with confirmed exploitation in the wild moves to the front, whatever its tier, onto the accelerated track (CVD Policy §9: actionable guidance within 7 days). Escalate to the SIRT Director.
+
+**3. Within a tier: SSVC outcome, then age.** Order by SSVC outcome — **Act → Attend → Track\* → Track** ([Severity Scoring Guidelines](severity_scoring_guidelines.md), Layer 4) — then oldest first. Set a provisional outcome at triage (step 2) and confirm it after validation (step 3).
+
+**4. Needs info.** A report missing what triage or validation needs (for example, the affected project and version, or steps to reproduce) moves to **Needs info**. Ask the Finder for what is missing. The report rejoins its tier when the information arrives, ordered from that date.
+
+**5. Source and validation.** A report from a trusted team may need less effort to validate, but every report is reproduced before coordination (step 3).
+
+Record the tier, the SSVC outcome, any active-exploitation override, and any time in Needs info in the case record.
 
 ---
 
