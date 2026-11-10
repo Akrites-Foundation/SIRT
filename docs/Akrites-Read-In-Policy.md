@@ -213,7 +213,7 @@ WG membership is durable read-in scoped to a **domain** rather than a single cas
 
 New WG members, and WG members who have been unresponsive or non-contributing for an extended period, follow the full §6 vetting.
 
-Criteria for "active WG member" will be defined as the SIRT works real cases (Appendix A, item 6).
+Criteria for "active WG member" will be defined in [Working Group Governance and Operations](Working_Group_Governance_and_Operations.md) as the SIRT works real cases.
 
 ---
 
