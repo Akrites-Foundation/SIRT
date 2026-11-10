@@ -110,7 +110,7 @@ When exploit state changes after PD, update the advisory's exploit-state field w
 
 ## 4. Layer 4 — SSVC priority (internal only)
 
-The SIRT uses CISA's **Stakeholder-Specific Vulnerability Categorization (SSVC)** decision tree to decide response priority — which cases to staff first, and how urgently. SSVC results are **never published**.
+The SIRT uses CISA's **Stakeholder-Specific Vulnerability Categorization (SSVC)** decision tree to decide response priority — which cases to staff first, and how urgently. SSVC results are **never published**. How the SSVC outcome combines with the report's source tier is set out in the [Intake Runbook](intake-runbook.md#prioritization).
 
 | Decision point | Question |
 | --- | --- |
@@ -182,4 +182,3 @@ Many upstream maintainers are security-capable but not security specialists. Whe
 ## Open items
 
 - Confirm the post-PD review cadence (weekly for 30 days for Critical and High; monthly automated sweep) once tooling exists to support it.
-- Align the report prioritization process ([issue #26](https://github.com/Akrites-Foundation/SIRT/issues/26)) with the SSVC outcomes above.
