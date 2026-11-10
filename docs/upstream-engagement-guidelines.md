@@ -1,7 +1,7 @@
 # Akrites SIRT — Upstream Engagement Guidelines
 
 **Owner:** Akrites SIRT
-**Status:** Draft for Board review
+**Status:** Draft — for Akrites SIRT review
 **Audience:** SIRT coordinators and WG engineers who engage upstream projects
 **Companion docs:** [Communications Playbook](sirt-communications-playbook.md) (Plays 9, 10, 15, 17), [Attribution and AI-Use Disclosure Policy](ai-use-disclosure.md), [Embargo Handling Guidance](Embargo%20Handling%20Guidance.md), [Maintainer of Last Resort Policy](Maintainer_of_Last_Resort_Policy.md)
 
@@ -25,7 +25,7 @@ over their project and their fix, and we work to their timeline — the only exc
 ### 1.1 Do your homework before you knock (recon)
 
 Before first contact, build a picture of the project's security posture and the right way in.
-Automate this where possible (it would feed the proposed "Security Card" once the Governing Board approves its governance) but confirm with human judgment:
+Automate this where possible, but confirm with human judgment:
 
 - **Reporting channel:** Is Private Vulnerability Reporting (PVR) enabled? Is there a
   `SECURITY.md`, a `security.txt`, or a `SECURITY-INSIGHTS.yml`? Run OpenSSF **Disclosure Check**
@@ -49,7 +49,7 @@ Automate this where possible (it would feed the proposed "Security Card" once th
 - **Maintainer-to-maintainer tone.** Humble, appreciative, concise. Acknowledge their time is
   scarce and that we're here to help, not to add burden or take over.
 - **Set expectations up front.** Tell maintainers what they can expect from us — the commitments in
-  [MoLR Policy Part I](Maintainer_of_Last_Resort_Policy.md) (what we offer, what we will never do, and that they keep authority). A dedicated upstream-engagement Code of Conduct is pending Board ratification.
+  [MoLR Policy Part I](Maintainer_of_Last_Resort_Policy.md) (what we offer, what we will never do, and that they keep authority). These commitments serve as the Akrites upstream-engagement code of conduct.
 
 ### 1.3 Deliver an excellent report
 
@@ -133,7 +133,7 @@ automation:
 
 1. **Polite re-contact** on the verified channel, restating that we've done the analysis and drafted
    a fix, and offering help (testing, resources, PVR enablement). Reference Play 10.
-2. **Alternate channel / delegate.** Try a second contact or ask a member who knows the project to
+2. **Alternate channel / delegate.** Try a second contact or ask a member engineer who knows the project to
    make a warm introduction.
 3. **Offer to reduce their burden.** Label our work "initial/proposed patch," offer to help with
    testing, or connect them to scoped support (foundation/registry/steward candidates).
@@ -237,7 +237,7 @@ appetite. Links verified August 2026.
 
 ### 3.7 Akrites "Security Starter Kit" — suggested leave-behind bundle
 
-A one-page handoff the coordinator can tailor per project. Suggested contents:
+A one-page handoff the coordinator can tailor per project. The Akrites SIRT owns the kit and reviews its links whenever this document is reviewed. Suggested contents:
 
 ```
 Akrites Security Starter Kit — {project}
@@ -269,9 +269,9 @@ Who to call:
 **Companion plays:** upstream first-contact (Play 9), unresponsive/overwhelmed (Play 10),
 MoLR release publication (Play 15), rejected patch (Play 17) — all in `sirt-communications-playbook.md`.
 
-**Open items for Governing Board:**
+**Decisions (2026-11-10)** — decided by the SIRT Director under the document approval rules (decision D2):
 
-- Ratify the **Akrites upstream-engagement Code of Conduct** referenced in 1.2.
-- Decide whether Akrites ever provides **binaries** or source/patches only (Section 2.4).
-- Approve the **Security Starter Kit** contents and maintain the resource list as links evolve.
+- **Code of conduct:** no separate document. The commitments in MoLR Policy Part I serve as the upstream-engagement code of conduct (§1.2).
+- **Binaries:** Akrites ships source and patches only, except Governing Board–approved MoLR releases (§2.4).
+- **Security Starter Kit:** owned by the Akrites SIRT, which reviews its links whenever this document is reviewed (§3.7).
 
