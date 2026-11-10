@@ -1,7 +1,7 @@
 # What Counts as Public Disclosure — Process & Guidelines
 
 **Owner:** Akrites SIRT
-**Status:** Draft for Board review
+**Status:** Draft — for Akrites SIRT review
 **Tracking:** [Akrites-Foundation/SIRT #23](https://github.com/Akrites-Foundation/SIRT/issues/23)
 **Audience:** Akrites members, WGs, SIRT staff, and ecosystem participants
 **Companion docs:** [Communications Playbook](sirt-communications-playbook.md) (Play 5 public disclosure, Play 6 embargo break), [Embargo Handling Guidance](Embargo%20Handling%20Guidance.md), [Attribution and AI-Use Disclosure Policy](ai-use-disclosure.md)
@@ -140,7 +140,7 @@ Coordinated PD readiness — {tracking-id}
 [ ] Acknowledgement block finalized (finder preference)
 [ ] Member notice + SIREN drafted
 [ ] References assembled (advisory, patch, project links)
-[ ] First-report date decided (publish? per policy)
+[ ] First-report date included (published unless the Finder objects)
 [ ] Go/no-go owner and time confirmed
 ```
 
@@ -154,7 +154,7 @@ independent public discovery.
 
 ### 5.1 Golden rule
 
-**The SIRT coordinates the response to any break.** Anyone — member, WG, SME, maintainer — who
+**The SIRT coordinates the response to any break.** Anyone — member engineer, WG member, SME, maintainer — who
 discovers or suspects a break **must notify the SIRT immediately** and must **not** respond publicly
 or independently. How we react depends on *what* leaked and *how*.
 
@@ -195,8 +195,8 @@ CRD but increase monitoring and readiness.
    comms.
 2. **Internal flash** to the case team — use Play 6, Step 1. Assign a decision owner and a deadline.
 3. **Assess & classify** per §5.3–5.4. Snapshot the evidence.
-4. **Decide: accelerate or hold.** Decision owner is the SIRT case coordinator; escalate to the SIRT Director for
-   high-impact/critical-infra timing calls, and to the Governing Board for policy deviations or disputes (CVD Policy §15).
+4. **Decide: accelerate or hold.** Decision owner is the SIRT case coordinator; escalate to the SIRT Director, who makes the
+   final decision, for high-impact/critical-infra timing calls or disputes (CVD Policy §15). Inform the Governing Board of any policy deviation.
 5. **Notify affected parties** — maintainer and coordinators (Play 6, Step 2), and read-in finders
    (Play 3). Balanced coordinator notice; **no single-government pre-disclosure.**
 6. **If accelerating:** finalize the best-available advisory (fix or mitigation status stated
@@ -212,7 +212,8 @@ CRD but increase monitoring and readiness.
 - **Maintainer:** consulted; retains authority over their fix; timing may be overridden only to
   protect users after a confirmed public break or confirmed active exploitation (CVD Policy §9).
 - **Coordinators/clearinghouses:** notified in balanced fashion; may delegate their own read-ins.
-- **SIRT Director / Governing Board:** decide high-impact/critical-infra acceleration (Director) and policy deviations (Governing Board).
+- **SIRT Director:** makes the final accelerate/hold decision, including high-impact/critical-infra timing and disputes.
+- **Governing Board:** informed of any policy deviation.
 
 ---
 
@@ -257,17 +258,16 @@ flowchart TD
 
 ---
 
-## 7. Open items for Governing Board
+## 7. Decisions (2026-11-10)
 
-- **Ratify the PD definition and bright-line test** (§2) and add key terms to the repo glossary
-  (per the F2F action to define disclosure on the repo).
-- Confirm treatment of **silent patches** as partial PD and the follow-up obligation (§3.3).
-- Confirm the **"reproducible ≠ public"** stance and how heavily reproducibility weighs in
-  acceleration (§3.4).
-- Approve the **break classification/decision matrix** and who holds accelerate/hold authority
-  (§5.3–5.4).
-- Decide whether **first-report date** is published in advisories (§4.3).
-- Confirm the **mandatory-notification** rule for anyone discovering a break (§5.1).
+Decided by the SIRT Director under the document approval rules (decision D2):
+
+- **PD definition and bright-line test** (§1–§2) are adopted. Key terms are to be added to the [Glossary](Akrites_SIRT_CVD_Glossary.md).
+- **Silent patches** are treated as partial public disclosure, with the follow-up obligation in §3.3.
+- **"Reproducible ≠ public"** (§3.4): reproducibility weighs on timelines and acceleration, but does not by itself mean PD.
+- **Break matrix and decision authority** (§5.3–5.6): the SIRT case coordinator decides accelerate or hold; the SIRT Director makes the final decision; the Governing Board is informed of policy deviations.
+- **First-report date** is published in advisories unless the Finder objects (§4.3).
+- **Mandatory notification:** anyone who discovers or suspects a break must notify the SIRT immediately (§5.1).
 
 ## 8. Cross-references
 
