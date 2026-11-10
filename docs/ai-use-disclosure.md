@@ -1,7 +1,7 @@
 # Attribution and AI-Use Disclosure Policy
 
 **Owner:** Akrites SIRT
-**Status:** Draft for Board review
+**Status:** Draft — for Akrites SIRT review
 **Applies to:** All Akrites SIRT–coordinated cases and the advisories they produce — reports from Finders and work performed by the SIRT and its Working Groups (WGs)
 **Related:** [CVD Policy](./Akrites_CVD_Policy.md) · [Embargo Handling Guidance](./Embargo%20Handling%20Guidance.md) (§4.3) · [Notification Templates](../templates/notification-templates.md) · [Intake Template](../templates/vulnerability-report-intake-template.md)
 
@@ -132,10 +132,11 @@ Where technical capability exists, model, version, and framework/harness metadat
 ### Principles
 
 1. **Credit by default, consent for detail.** Finders are credited by default under the name or handle they reported with; anonymity is honored on request. Organizations, co-finders' and participants' names appear only with explicit consent.
-2. **Individuals vs. groups.** Where an individual declines but the work is attributable to a working group (WG), the WG may be credited without naming its members.
+2. **Individuals vs. groups.** Where an individual declines but the work is attributable to a working group (WG), the WG is credited by default, without naming its members.
 3. **Coordinator credit.** Where no finder attribution is given, the advisory credits the **Akrites SIRT** as coordinator. Public advisories otherwise attribute information to the Akrites SIRT and Akrites Foundation.
 4. **Co-finders are honored** up to the attribution cutoff (see [Co-finder handling](#co-finder-handling)).
 5. **Preferences are confidential until PD.** The finder's attribution preference is captured at intake and confirmed before PD; it is held TLP:RED and becomes public only in the final advisory.
+6. **First-report date.** Advisories state the date the issue was first reported to the Akrites SIRT, unless the Finder objects.
 
 ### The three attribution choices
 
@@ -152,9 +153,9 @@ If the Finder **never stated a preference** and it cannot be confirmed before PD
 When more than one party reports the same issue:
 
 - Each consenting co-finder is credited using the applicable scenario block below.
-- Co-finders are honored **up to the attribution cutoff** — the point in the timeline after which additional independent reports are recorded but not added to the published advisory. The cutoff (e.g., patch-ready, or PD date) is set by policy (open item below).
+- Co-finders are honored **up to the attribution cutoff** — the point in the timeline after which additional independent reports are recorded but not added to the published advisory. The cutoff is the date the PD date is agreed.
 - A declining co-finder is omitted entirely; their preference does not affect other finders' credit.
-- Where co-finders are members of a WG, the WG may be credited in place of individuals per Principle 2.
+- Where co-finders are members of a WG, the WG is credited in place of individuals per Principle 2.
 
 ### Acknowledgement scenarios
 
@@ -168,7 +169,7 @@ Use when the finder consents to being named and, optionally, wants the tools use
 Acknowledgements
 ----------------
 This issue was reported by {Finder Name}{, {Organization}} and coordinated through the
-Akrites SIRT.
+Akrites SIRT. { First reported on {YYYY-MM-DD}.}
 
 {Finder Name} identified the vulnerability{ and contributed the patch}.
 
@@ -205,7 +206,7 @@ Use when the reporting entity is a clearinghouse/coordinator (e.g., a national C
 ```
 Acknowledgements
 ----------------
-This issue was reported by {Clearinghouse Name} and coordinated through the Akrites SIRT.
+This issue was reported by {Clearinghouse Name} and coordinated through the Akrites SIRT.{ First reported on {YYYY-MM-DD}.}
 
 {Clearinghouse Name} reported this vulnerability on behalf of its constituency; individual
 reporters are not named at the reporter's request.
@@ -245,7 +246,7 @@ Use when the finder declines any credit. The advisory names only the Akrites SIR
 Acknowledgements
 ----------------
 This vulnerability was coordinated to disclosure by the Akrites SIRT. The reporter has
-requested to remain anonymous.
+requested to remain anonymous. { First reported on {YYYY-MM-DD}.}
 
 AI use
   - Finder (anonymous): {AI-assisted {phase(s)}. | No AI tooling was used. | AI use not disclosed.}
@@ -307,28 +308,31 @@ Captured at intake, confirmed before PD (held TLP:RED until PD):
 - [ ] Publish specific tool/model names? if yes, list (validated against the controlled vocabulary)
 - [ ] Co-finder(s) present? each one's preference
 - [ ] Consent confirmed by finder before PD (record date)
+- [ ] First-report date: published unless the finder objects (record any objection)
 - [ ] SIRT AI use recorded for this case (phase[s], or "none")
 
 ---
 
 ## Governance
 
-- The **controlled vocabulary** (capability phrases and any publishable tool/model names) is maintained by the SIRT and updated without a policy revision; unlisted tool-name requests are normalized or held for review.
+- The **controlled vocabulary** (capability phrases and any publishable tool/model names) is maintained by the SIRT and updated without a policy revision; unlisted tool-name requests are normalized or held for review. The SIRT reviews the vocabulary and the publishable tool/model list **quarterly**, and whenever a tool-name request is held for review.
 - The SIRT **reviews the acknowledgement and AI-use lines before public disclosure** and may normalize vendor names to the controlled vocabulary (anti-gaming gate).
 - This policy is maintained in the open; proposed changes are reviewed publicly. Only case-specific embargoed data is ever kept private.
 - How the SIRT operates its own AI tooling — oversight by task class, patch verification, data handling, and failure response — is set out in the [AI Operations Guidelines](ai_operations_guidelines.md).
 
 ---
 
-## Open items (for Governing Board)
+## Decisions (2026-11-10)
 
-- Ratify the controlled capability vocabulary and the cadence for updating the publishable tool/model list.
-- Confirm whether the Coordinator AI-use line is published on **every** advisory or only when AI materially assisted (current draft: every advisory, including the negative case).
-- Decide whether SIRT AI use is itemized per phase in public advisories or summarized (current draft: capability-level, summarized).
-- Set the concrete **co-finder attribution cutoff** trigger/point in time.
-- Confirm whether **WG-level credit** is offered by default when individuals decline.
-- Decide whether **date of first report** is included alongside acknowledgements in the advisory.
+Decided by the SIRT Director under the document approval rules (decision D2):
+
+- **Vocabulary and tool list:** the controlled capability vocabulary is adopted; the SIRT reviews it and the publishable tool/model list quarterly ([Governance](#governance)).
+- **Coordinator AI-use line:** published on every advisory, including "No AI tooling was used."
+- **Summary, not itemized:** SIRT AI use is stated at capability level, not per phase in detail.
+- **Co-finder cutoff:** the date the PD date is agreed ([Co-finder handling](#co-finder-handling)).
+- **WG credit:** a WG is credited by default when individuals decline (Credit principle 2).
+- **First-report date:** published unless the Finder objects (Credit principle 6; decision D8).
 
 ---
 
-*This is a draft proposal for review by the SIRT and the Governing Board.*
+*This is a draft for review by the Akrites SIRT and approval by the SIRT Director.*
