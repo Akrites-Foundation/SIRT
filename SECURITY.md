@@ -66,7 +66,7 @@ itself is open and reviewable — see the policy linked above.
 
 ## Safe harbor
 If you make a good-faith effort to comply with this policy during your research, we consider your research authorized, will work with you to resolve the issue, and will not pursue or support legal action related to your report. This is not a bug bounty program and confers no expectation of financial payment.
-This commitment is made by {"The Akrites Foundation, a Linux Foundation project"}
+This commitment is made by the Linux Foundation.
 
 **Safe Harbor Requirements**:
 * Do not access or modify more data than necessary to demonstrate the issue.
