@@ -1,6 +1,6 @@
-# Akrites SIRT — Embargo Handling Guidance - DRAFT 0.4
+# Akrites SIRT — Embargo Handling Guidance - DRAFT 0.5
 
-**Status:** DRAFT 0.4 — operational guidance incorporated by reference in the CVD Policy.
+**Status:** Draft — for Akrites SIRT review. Operational guidance incorporated by reference in the CVD Policy.
 
 **Applies to:** All vulnerability cases handled by the Akrites SIRT (Intake → Synchronized Disclosure)
 
@@ -110,7 +110,7 @@ Some projects run scheduled release trains rather than per-issue embargoes — e
 0. **Automation first.** The SIRT pipeline provides the reporting structure, workflow, and timers; these rules govern the human decisions within it.
 1. **Determine the governing timeline at the start of Coordination** and record it in the case (which of the four precedence tiers in §2 applies, and the source URL/policy it came from).
 2. **Set PD to the shortest applicable timeline.** When multiple parties/components are involved with different windows, the tightest binding constraint (e.g., a `linux-distros` 14-day cap, or a project that has already committed to a date) governs the synchronized window.
-3. **Maintainer authority is final.** The SIRT proposes and negotiates; the maintainer approves or revises the PD date for their project. The SIRT does not extend an embargo past what the project or a coordinating list permits.
+3. **The maintainer decides the PD date.** The SIRT proposes and negotiates, and consults the Finder; the maintainer approves or revises the PD date for their project. The SIRT does not extend an embargo past what the project or a coordinating list permits. The SIRT Director is the final decision point for the SIRT where the parties cannot agree or a case would run past its severity target (CVD Policy §8).
 4. **Prepare for embargo break from day one.** Per the FIRST guidance and the Coordination phase of the SIRT process, hold ready an interim advisory and consumer-protection guidance so that if the embargo leaks or an in-the-wild exploit appears, the SIRT can move immediately to accelerated or full disclosure. Recent kernel cases (multiple 2026 embargo collapses driven by AI-accelerated independent discovery) show this is now a routine contingency, not an edge case.
 5. **TLP throughout.** The embargo is enforced technically and procedurally via TLP 2.0 — TLP:RED at intake, TLP:AMBER+STRICT for verification and remediation, TLP:AMBER for downstream staging, TLP:CLEAR at PD (CVD Policy §8) — and least-privilege read-in.
 6. **Set Finder expectations at intake.** Confirm the Finder understands the timeline is governed by the project/list (§4.1), that duplicate reports may exist and alter the window (§4.2), and classify the report's **embargo eligibility** based on the tooling used — reports developed with public LLMs are treated as having **no embargo available** (§4.3).
