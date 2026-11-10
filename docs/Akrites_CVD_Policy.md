@@ -1,10 +1,10 @@
-# Akrites SIRT Coordinated Vulnerability Disclosure (CVD) Policy - v1.4
+# Akrites SIRT Coordinated Vulnerability Disclosure (CVD) Policy - v1.5
 
 **Status:** Board-reviewed — v1.0, 2026-10-20 (later edits reported to the Board)
 **Owner:** Akrites SIRT (Security Incident Response Team)
 **Primary contact:** SIRT@Akrites.dev
 **Canonical URL:** https://sirt.akrites.dev/security/policy
-**Last updated:** 2026-11-09
+**Last updated:** 2026-11-10
 
 > **Naming:** **Akrites SIRT** — the Security Incident Response Team hosted by the
 > Akrites Foundation — is the standard name used throughout this document.
@@ -240,8 +240,8 @@ In practice this means:
 - A single CVE ID is used to describe the same flaw in unmodified code across
   vendors, so Consumers can understand their exposure.
 - Where agreed with the participants, the SIRT provides advance notice to
-  downstream providers under embargo (typically 1–30 working days before PD,
-  scaled to severity and patch complexity), including the CVE ID, description,
+  downstream providers under embargo (typically 7–14 days before PD for Tier 2–3
+  staging parties, and at most 24 hours before PD for Tier 3.5 coordinators), including the CVE ID, description,
   affected versions, how the patch will be made available, and the PD date. The
   tiered pre-disclosure model is described in the
   [Read-In Policy](Akrites-Read-In-Policy.md).
@@ -368,7 +368,7 @@ This is where the "open process, private data" balance is enforced.
     - High Severity: Total time to PD is **≤ 21 business days** (Intake/Enrichment < 2 hours + Fix Development ≤ 4 bd + SIRT Upstream hand-off ≤ 2 bd + Coordinated Disclosure 15 bd)
     - Critical Severity: Total time to PD is **≤ 24 business days** (Intake/Enrichment < 2 hours + Fix Development ≤ 7 bd + SIRT Upstream hand-off ≤ 2 bd + Coordinated Disclosure 15 bd)
   The longer totals for High and Critical reflect SIRT fix development *before* hand-off, so the upstream maintainer receives a validated patch; they do not lengthen the 15-bd upstream window. Actively exploited or exposed issues follow Section 9 instead.
-- Akrites SIRT will always **defer to the upstream project's own disclosure policy** where one exists. The disclosure timeline may be extended when additional time is reasonably required to develop and coordinate a fix. The governing timeline is set by the precedence hierarchy in the
+- Akrites SIRT will always **defer to the upstream project's own disclosure policy** where one exists. The disclosure timeline may be extended when additional time is reasonably required to develop and coordinate a fix. The upstream maintainer decides the PD date, including any extension; the SIRT advises, negotiates the date, and consults the Finder. Actively exploited issues follow Section 9. The SIRT Director is the final decision point for the SIRT: where the parties cannot agree, or a case would run past its severity target, the Director decides. The governing timeline is set by the precedence hierarchy in the
   [Embargo Handling Guidance](Embargo%20Handling%20Guidance.md): a project's
   published policy or a coordinating list's cap takes precedence over the
   default, and where multiple parties are involved the tightest binding
@@ -557,7 +557,7 @@ SIRT@Akrites.dev.
 | 1.2     | 2026-10-27 | Fixed links and phase numbering; single TLP table (RED/AMBER+STRICT/AMBER/CLEAR); removed remaining TOC references; clarified ≤ PD targets; aligned credit default, NDA statement, reporting channel and CNA wording. |
 | 1.3     | 2026-11-05 | Editorial only — no change to policy substance: Acknowledgements & Attribution Guidance merged into the Attribution and AI-Use Disclosure Policy (§11 link and AI-use link text updated); CNA wording corrected (§5, §7, §10); intake-status placeholder removed (§12); OpenPGP key availability stated accurately (§4.2); typo and markdown fixes. |
 | 1.4     | 2026-11-09 | Board decision D1: §14 names the Linux Foundation as the entity making the safe-harbor commitment. |
-
+| 1.5     | 2026-11-10 | Decision D3: §8 states the maintainer decides the PD date, with the SIRT Director as the SIRT's final decision point. Decision D4: §7 downstream lead time set to 7–14 days (Tiers 2–3) and at most 24 hours (Tier 3.5), matching the Read-In Policy. Reported to the Governing Board. |
 
 ## 17. References
 
