@@ -75,3 +75,4 @@
 | [Upstream Engagement Guidelines](upstream-engagement-guidelines.md) | SIRT Director | Draft — for Akrites SIRT review |
 | [What Counts as Public Disclosure](what-counts-as-public-disclosure.md) | SIRT Director | Draft — for Akrites SIRT review |
 | [Glossary](Akrites_SIRT_CVD_Glossary.md) | SIRT Director | Draft — for Akrites SIRT review |
+| [Member Onboarding Playbook](member_onboarding_playbook.md) | SIRT Director | Draft — for Akrites SIRT review |

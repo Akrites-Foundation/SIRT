@@ -1,6 +1,6 @@
-# Akrites SIRT Metrics — Proposal
+# Akrites SIRT Metrics
 
-**Status:** Draft v0.2 — for Governing Board review
+**Status:** Draft — for Akrites SIRT review
 **Owner:** Policy/Process work stream (CRob)
 **Scope:** A lean starter set of metrics, measurable in the near term and tied to the 30/60/90 goals. A fuller "north-star" catalog can follow in a later phase.
 
@@ -80,10 +80,10 @@ Every time-based metric is measured in **business days** unless stated, from the
 The full-resolution, real-time view for the SIRT team: intake volume and sources, dedup rate, queue depth and backlog age, time-in-stage across the workflow, cycle time, WG capacity and active cases, rework and rejected-patch rates, regressions introduced, and embargo near-misses and extension requests. This tier may include live and case-identifying detail because it stays with SIRT staff.
 
 ### Board / members — "value & health"
-An aggregated, periodic view: disclosures completed, upstream fixes merged, downstream remediation enabled (severity-weighted), coverage, median time-to-fix trend (with regressions), automation ratio, embargo integrity, risk posture (aging embargoes, unmaintained-project exposure, MoLR cases), and capacity vs. demand. No live embargoed detail; no individual member identification beyond a member's own data.
+An aggregated **weekly update**: disclosures completed, upstream fixes merged, downstream remediation enabled (weighted by severity label — Critical / High / Medium / Low, per the [Severity Scoring Guidelines](severity_scoring_guidelines.md)), coverage, median time-to-fix trend (with regressions), automation ratio, embargo integrity, risk posture (aging embargoes, unmaintained-project exposure, MoLR cases), and capacity vs. demand. No live embargoed detail; no individual member identification beyond a member's own data.
 
 ### Public — "trust, aggregate, safe"
-Kept deliberately simple and credible — five numbers plus stories:
+Kept deliberately simple and credible — five numbers plus stories. The SIRT Director approves each period's public cut against the confidentiality gate.
 
 1. Vulnerabilities coordinated to disclosure (period total)
 2. Upstream fixes shipped
@@ -124,10 +124,11 @@ This preserves the member-value signal without exposing anyone's dependency map.
 
 ---
 
-## Open questions for the Governing Board
+## Decisions (2026-11-10)
 
-- Reporting **cadence and format** for the Board/member cut (e.g., monthly summary vs. live dashboard).
-- Whether **severity weighting** for impact metrics uses CVSS, EPSS, or a blended model.
-- Who **approves the public cut** each period against the confidentiality gate.
-- Any metric the Board wants elevated to a **headline** that isn't in this starter set.
-- Who owns the case-lifecycle data store that these metrics are computed from?
+Decided by the SIRT Director under the document approval rules (decision D2):
+
+- **Cadence and format:** for now, the Board / member view is sent as a weekly written update, alongside progress and membership news.
+- **Severity weighting:** impact metrics are weighted by the severity label (Critical / High / Medium / Low) from the [Severity Scoring Guidelines](severity_scoring_guidelines.md). EPSS is not used, because embargoed cases have no EPSS value.
+- **Public cut:** the SIRT Director approves each period's public cut against the confidentiality gate.
+- **Data store owner:** the SIRT Director owns the case-lifecycle data store these metrics are computed from.
