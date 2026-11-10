@@ -1,41 +1,104 @@
-# MoLR decision record (template)
+---
+name: MoLR case
+about: One issue per Maintainer of Last Resort engagement. Open in SIRT-private only.
+title: "[MoLR] <project> <versions>"
+labels: ["molr"]
+---
 
-*Per §6.2 of the MoLR Guidelines. One record per CVE — an open engagement on the same package does not pre-authorize a new fix.*
+<!--
+MoLR case issue template.
+Source of truth: Akrites-Foundation/SIRT templates/. Copy into SIRT-private/.github/ISSUE_TEMPLATE/molr-case.md.
+Never open this issue in a public repository: it names the staffing Member and pre-public details.
+Steps follow docs/molr_guidelines_and_procedures.md. Tick boxes as you go; link evidence inline.
+-->
 
-```
-Case ID / CVE (this approval covers this CVE only):
-Existing open MoLR engagement on this package? (Y/N — if Y, use fast path §6.2.1)
---
-ENTRY TEST (§6.1 — all six must hold)
-1. No willing rights-holder. Parties ASKED and DECLINED (name, date, response):
-   [ ] maintainer (or §3.2 finding signed)  [ ] distros  [ ] downstream consumers
-   [ ] dependent projects  [ ] existing successor project  [ ] foundation/funder
-   [ ] intermediate maintainers (§8.4)
-2. Criticality evidence (attach): OpenSSF Criticality Score ___ | distros carrying ___
-   | direct dependents ___ | transitive dependents ___ | member SBOM prevalence ___
-   Published threshold met? (Y/N)
-3. License finding (SPDX ID, redistribution permitted Y/N, obligations), recorded before code touched:
-4. Bounded patch series feasible? Pinned upstream commit/tag: ___ Bounded-effort estimate: ___
-5. Capacity slot available? (open engagements ___ / published cap ___)
-6. This CVE approved (not the package):
---
-ARTIFACT
-Publishing namespace (Akrites-controlled; original namespace prohibited §8.0):
-Versioning scheme + per-registry sorting check (monotonic, never outranks a real upstream release):
-Release gate owners (§6.4): upstream suite ___ | downstream suites selected ___
-   | API-diff check ___ | reproducibility ___ | 2 named reviewers ___ | AI involvement disclosed (Y/N)
-Upstream PRs to be opened at PD (§6.5) — repo/target:
-Inbound channels closed (§6.3.2): [ ] issues [ ] PRs [ ] auto-close template deployed
---
-TERM AND EXIT
-Term (start / end / renewals used):
-Retirement threshold status (§6.7): fixes shipped ___ / 3 · renewals used ___ / 2
-Sunset triggers:
-Steward-search plan + owner (§7.1 — solicited channels only, no broadcast):
---
-GOVERNANCE
-Security/provenance sign-off (required for 5.3c):
-Conflicts declared / recusals (§6.2):
-TOC approval (names / date)  [or interim approver + sunset date]:
-Fast-path approval (§6.2.1): SIRT lead ___ + non-recused TOC member ___ / date:
-```
+## Case
+
+- **Project / repo:** <!-- upstream URL -->
+- **Affected versions:**
+- **Route:** <!-- Unresponsive (past the abandonment floor) | End-of-life refusal -->
+- **Advisory / CVE:** <!-- links -->
+- **Case coordinator:** @
+
+## Step 0 — Entry check
+
+**Project health assessment**
+- [ ] Last commit: <!-- date, link -->
+- [ ] Last release: <!-- version, date -->
+- [ ] Maintainer activity across repo, registry, email, social: <!-- summary -->
+- [ ] `SECURITY.md` present? Security contact? <!-- Y/N, link -->
+- [ ] License: <!-- SPDX ID --> — redistribution of modified code permitted? Obligations met?
+- [ ] Dependents and criticality: <!-- dependents count, distros shipping it, member SBOM prevalence, or written justification -->
+
+**Eligibility**
+- [ ] Out of support: <!-- unresponsive since <date> (floor reached <date>) | EOL statement: link -->
+- [ ] Outreach tried and failed: <!-- contact attempt log link, or non-fix record link -->
+- [ ] Distributions and downstream projects asked to carry the fix, and declined: <!-- who, when -->
+- [ ] Bounded patch series on a pinned commit is feasible: <!-- commit/tag -->
+- [ ] Capacity slot free: <!-- open engagements / cap -->
+
+**"Do not fork"**
+- [ ] `SECURITY.md` and Akrites records checked: <!-- none | preference found: link -->
+- [ ] If found: Director's critical-infrastructure override recorded below, and maintainer told before Step 1
+
+**Staffing** *(internal — never published)*
+- [ ] Member: <!-- company -->
+- [ ] Engineer: @<!-- handle --> · Backup: @<!-- handle -->
+- [ ] Both read in under the Read-In Policy: <!-- dates -->
+- [ ] Written 12-month commitment: <!-- link to internal record -->
+- [ ] Member's dependency on the package (conflict): <!-- none | summary --> — this Member does not approve or sign off its own releases
+
+**Approval**
+- [ ] SIRT Director approves: @<!-- handle -->, <!-- date -->
+- [ ] Override (only if "do not fork" found): <!-- reason, or n/a -->
+
+**Notices**
+- [ ] M1 to maintainer (≥ 14 days before Step 3): <!-- date, addresses -->
+- [ ] S1 in `#sirt-disclosures`: <!-- date -->
+
+## Step 1 — Repo and staffing
+
+- [ ] Private repo created: `akrites-molr/<project>-molr` from pinned commit <!-- sha -->
+- [ ] Engineers added; branch protection, signed commits, two-person publish set up
+- [ ] Internal registry entry added (status `Preparing`)
+- [ ] B1 sent to the Board: <!-- date -->
+
+## Step 2 — Fork patched
+
+- [ ] Patch series applied: <!-- PR/commit links -->
+- [ ] Upstream backlog triaged: security items carried <!-- links --> · hand-over list for next home <!-- link -->
+- [ ] Release gates passed (integrity + correctness, two named reviewers, AI disclosure): <!-- reviewers, links -->
+- [ ] GHSA on MoLR repo: <!-- link -->
+- [ ] Advisory, OSV, VEX updated with pointer: <!-- links -->
+- [ ] CVE requested if none existed: <!-- link or n/a -->
+
+## Step 3 — Fork public
+
+- [ ] Repo public with README header
+- [ ] Signed source release tagged: <!-- link -->
+- [ ] Registry publish: <!-- no | yes, under Akrites name: <name> -->
+- [ ] Patches offered upstream: <!-- links -->
+- [ ] Downstream routing (distros, intermediate maintainers): <!-- who -->
+- [ ] Public org page updated
+- [ ] Registry: `Active` · **Start:** <!-- date of first release --> · **Planned end:** <!-- start + 12 months -->
+- [ ] M2 to maintainer · S2 in `#sirt-disclosures`: <!-- dates -->
+
+## During the engagement
+
+- [ ] M3 "Your options" sent by month 9: <!-- date -->
+- Additional fixes (each approved by the SIRT Director):
+  - <!-- date — advisory — approval -->
+- Member changes / withdrawal: <!-- none | date, replacement or freeze -->
+
+## Outcome
+
+- [ ] **Option 1** — transferred on request to <!-- org/URL -->
+- [ ] **Option 2** — patches back upstream, our repo archived
+- [ ] **Option 3** — patches back upstream, repo archived, support agreement <!-- link, until date -->
+- [ ] **Freeze** — M5 sent ≥ 30 days before <!-- date -->; repo archived, "no further fixes"
+- [ ] **Maintainer returned** on <!-- date --> — chose Option 2 / 3; M6 sent
+
+- [ ] M4 / M5 / M6 sent · S3 in `#sirt-disclosures`
+- [ ] Advisories point to the final location
+- [ ] Registry and public org page updated
+- [ ] Issue closed
