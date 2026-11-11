@@ -66,7 +66,7 @@ The report is confirmed, deduplicated against work already in flight, and scoped
 
 ### Phase 3 — Prioritization
 The confirmed issue is assessed for severity and urgency, and resources are allocated.
-- **Coordinator:** use severity (e.g., CVSS) and exploitability (e.g., EPSS) as routing and pacing signals — never as a filter to drop a real issue. Note where a "medium" is critical for a specific sector. If your assessment differs from an existing public score, prepare a deviation notice rather than a dispute.
+- **Coordinator:** use severity (CVSS v4.0 and the severity label) and exploit evidence (exploit state and SSVC priority — see the [Severity Scoring Guidelines](severity_scoring_guidelines.md)) as routing and pacing signals — never as a filter to drop a real issue. The order in which reports are worked is set in the [Intake Runbook](intake-runbook.md#prioritization). Note where a "medium" is critical for a specific sector. If your assessment differs from an existing public score, prepare a deviation notice rather than a dispute.
 - **Maintainer:** weigh real-world impact and the cost of a fix.
 - **Finder:** provide context on impact and exploitability.
 
