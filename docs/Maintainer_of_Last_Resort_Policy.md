@@ -14,7 +14,7 @@ When the Akrites SIRT reaches out regarding a security issue in an open-source p
 * **The Deliverable**: A written explanation of the problem, a working reproduction (failing unit test / PoC), a proposed patch, and regression tests.
 * **Full Coordination Support**: If desired by the maintainer, Akrites handles CVE reservation, advisory drafting, downstream distro notification, and synchronized disclosure timing—at zero cost and with no obligations.
 * **Maintainer Authority**: The creator and maintainer retain final authority over their codebase. Maintainers may decline a fix, state that a version is End-of-Life (EOL), or dispute a finding ("WONTFIX" or "not a vulnerability").
-* **End-of-Life Branches**: If you declare a branch end-of-life but do not dispute the vulnerability, Akrites may — only with Governing Board approval, and only after telling you in advance — publish a security release for that branch under its own namespace (Part II §4). A WONTFIX or a disputed finding never leads to an Akrites release.
+* **End-of-Life Branches**: If you declare a branch end-of-life but do not dispute the vulnerability, Akrites may — only with SIRT Director approval, and only after telling you in advance — publish a security release for that branch under its own namespace (Part II §4). A WONTFIX or a disputed finding never leads to an Akrites release.
 
 ### 2. Disagreements & Verbatim Rationale
 * **Technical Exchange**: If a maintainer believes a report is not a vulnerability, Akrites engages in a good-faith technical exchange on the merits. If the maintainer persuades Akrites, the case is closed, no advisory is created, and reserved CVEs are withdrawn.
@@ -31,12 +31,12 @@ When the Akrites SIRT reaches out regarding a security issue in an open-source p
 Maintainers go quiet for many valid life reasons (illness, bereavement, job changes, lost access). Akrites will **never** declare a project abandoned until it has been silent across all attempted channels for **at least 90 calendar days**. Any sign of life (a commit, issue comment, or registry login signal) resets the 90-day clock completely. There are no exceptions for urgency or severity: urgent issues are handled through advisories and mitigations under the disclosure clock, never by shortening this floor.
 
 ### 5. Returning Maintainer Guarantees
-* **Unconditional Precedence**: Akrites never holds ownership of a project. If a maintainer returns after a last-resort security release, any activity by their verified identity (e.g., in their repository) immediately ends the MoLR engagement, and the maintainer's releases take precedence.
+* **Unconditional Precedence**: Akrites never holds ownership of a project. If a maintainer returns at any point in a MoLR engagement, any activity by their verified identity (e.g., in their repository) immediately hands control back to them: Akrites stops all release work, and the maintainer's releases take precedence. The maintainer then chooses how to continue: take everything back, or take it back with time-limited support from an Akrites Member.
 * **Zero Friction**: The returning maintainer does not need to justify their absence, explain their security practices, or adopt Akrites tooling. They inherit all patch PRs, test artifacts, and advisory context with zero obligations.
 * **Deprecation / Redirection**: If a returning maintainer requests that a last-resort release be taken down, Akrites marks the release as deprecated and redirects users to the maintainer's official releases. (Historical releases and advisories remain published to prevent supply-chain breakage and maintain security history).
 
 ### 6. Pre-Registered Intent (`SECURITY.md`)
-Maintainers can pre-register their emergency preferences in their `SECURITY.md` or via Akrites. If a maintainer explicitly registers a **"do not fork"** preference, Akrites will strictly honor it: no last-resort release will ever be created, and Akrites will focus entirely on advisories, mitigations, and helping downstream consumers migrate off the dependency.
+Maintainers can pre-register their emergency preferences in their `SECURITY.md` or via Akrites. If a maintainer explicitly registers a **"do not fork"** preference, Akrites will honor it: no last-resort release will be created, and Akrites will focus on advisories, mitigations, and helping downstream consumers migrate off the dependency. The only exception is critical infrastructure on which many others depend: the SIRT Director may record an override, with the reason, and the maintainer is told before anything is created. The maintainer can still take the project back at any time (§5).
 
 ---
 
@@ -112,11 +112,11 @@ Track B requires a signed entry test confirming all seven criteria:
 6. **Per-CVE Approval**: Approval is granted specifically for one CVE ID.
 7. **Chain of Custody for Prior Silence**: If relying on a trusted third party's contact attempts to satisfy the 90-day floor, the submitter provides a complete log of those attempts (§3.2).
 
-**EOL-branch path.** For an EOL branch (§4), criteria 1–6 apply and criterion 7 is replaced by: the maintainer's end-of-life statement on record; confirmation that the maintainer does not dispute the vulnerability; the fix available in the project's supported versions; documented absence of any downstream party willing to carry the fix; and advance notice to the maintainer, with the offer of verbatim rationale (Part I §2). The release covers only the end-of-life branch. A "do not fork" preference (Part I §6) still blocks it.
+**EOL-branch path.** For an EOL branch (§4), criteria 1–6 apply and criterion 7 is replaced by: the maintainer's end-of-life statement on record; confirmation that the maintainer does not dispute the vulnerability; the fix available in the project's supported versions; documented absence of any downstream party willing to carry the fix; and advance notice to the maintainer, with the offer of verbatim rationale (Part I §2). The release covers only the end-of-life branch. A "do not fork" preference (Part I §6) still blocks it, subject only to the critical-infrastructure exception in Part I §6.
 
 ### 5.2 Approval Authority & Recusal
-* **Approval**: Track B requires approval by the **Governing Board** (or a MoLR subcommittee the Governing Board designates in writing), granted per CVE and recorded in the MoLR decision record template.
-* **Mandatory Recusal**: Any decision-maker with a commercial, personal, or organizational dependency on the affected package must recuse themselves from voting. A conflicted primary submitter may present the technical risk assessment and Track A exhaustion evidence to the Board, but does not vote.
+* **Approval**: Track B requires approval by the **SIRT Director**, for each engagement and for each additional vulnerability fixed during it, recorded in the MoLR case issue. The **Governing Board is informed** of every new engagement.
+* **Mandatory Recusal**: Any approver with a commercial, personal, or organizational dependency on the affected package must recuse. If the SIRT Director is conflicted, the Akrites CTO approves. A Member staffing the engagement may have a dependency on the package, but it does not approve the engagement or sign off its own releases.
 
 ### 5.3 The Artifact
 The deliverable is a clean build of a frozen upstream commit plus the approved security patches, published under an Akrites-controlled namespace and never into the original project's namespace. The artifact rules are in the [Guidelines and Procedures](molr_guidelines_and_procedures.md#4-the-artifact-patch-series-on-a-pinned-commit).
@@ -131,8 +131,9 @@ No MoLR security release is published until it passes every integrity and correc
 * **Operational donation, not ownership**: A MoLR engagement is an operational donation by Akrites of **up to 12 months**, counted from the first last-resort security release. Akrites does not take long-term ownership of any project.
 * **Not a custodian**: Akrites is not a custodian for un-owned or abandoned projects. When the engagement ends, the artifact is frozen (Part III §2).
 * **No steward approval**: Akrites does not select, appoint, or approve successor maintainers or stewards. It may help a project's community find candidates (Part III §1).
+* **Transfer on request**: When an engagement ends, Akrites may transfer its MoLR repository to a party that asks to carry it. This is a transfer, not an appointment; the original maintainer is notified, and MoLR repositories never stay in Akrites' organization after the engagement ends.
 * **No term limits**: Engagements are bounded by the 12-month donation, not by counts of fixes or renewals.
-* **Ends early on return**: A returning maintainer ends the engagement immediately (Part I §5).
+* **Ends early on return**: A returning maintainer takes control back immediately and chooses how to continue (Part I §5).
 
 ---
 
@@ -166,3 +167,4 @@ Downstream users are routed to fixes through machine-readable advisories (OSV, V
 | Version | Date | Description |
 | ------- | ---------- | -------------- |
 | 1.0 | 2026-11-10 | Split into this policy and the [MoLR Guidelines and Procedures](molr_guidelines_and_procedures.md); operational detail moved there. Incorporates [PR #183](https://github.com/Akrites-Foundation/SIRT/pull/183) by Roman Zhukov (trusted third-party clock start, chain-of-custody criterion, criticality justification, recusal). Adds: 12-month operational donation, no ownership or custody, no steward approval, no term limits, no urgency exception to the 90-day floor, Track B after a deliberate non-fix only for an end-of-life branch whose vulnerability the maintainer does not dispute (EOL-branch path). Prepared for first Governing Board review. |
+| 1.1 (draft) | 2026-11-10 | Approval of Track B moves to the SIRT Director, with the Governing Board informed (§5.2). "Do not fork" gains a critical-infrastructure exception decided by the SIRT Director, with advance notice to the maintainer (Part I §6). A returning maintainer takes control back and chooses how to continue (Part I §5). Adds transfer on request at the end of an engagement (§6). Aligns with the [MoLR Guidelines and Procedures](molr_guidelines_and_procedures.md) v0. |
