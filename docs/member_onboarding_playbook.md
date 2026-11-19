@@ -3,7 +3,7 @@
 **Owner:** Akrites SIRT (with Linux Foundation program staff)
 **Status:** Draft for Akrites SIRT review
 **Audience:** Akrites staff who onboard people, and member organizations joining Akrites
-**Companion docs:** [Glossary](Akrites_SIRT_CVD_Glossary.md) (member, member engineer, WG member, Akrites staff), [Read-In Policy](Akrites-Read-In-Policy.md), [Communications Playbook](sirt-communications-playbook.md) (Play 21), [Metrics](Akrites_SIRT_Metrics.md)
+**Companion docs:** [Glossary](Akrites_SIRT_CVD_Glossary.md) (member, member engineer, Akrites staff), [Read-In Policy](Akrites-Read-In-Policy.md), [Communications Playbook](sirt-communications-playbook.md) (Play 21), [Metrics](Akrites_SIRT_Metrics.md)
 
 ---
 
@@ -113,11 +113,11 @@ Akrites staff then onboard each person using the checklist in §7. Anyone who wi
 
 1. The member organization's PSIRT lead (or Akrites staff contact) sends the person's name, email, job title, company, GitHub ID, and the groups they need.
 2. Akrites staff confirm the person works for, or is an approved delegate of, the member organization.
-3. Akrites staff onboard the person using the checklist in §5.
+3. Akrites staff onboard the person using the checklist in §7.
 
 ---
 
-## 7. Staff checklist — onboarding a new member organization or new member 
+## 7. Staff checklist — onboarding a new member organization or new member
 
 Work through every step that applies to the person's groups (§1).
 
