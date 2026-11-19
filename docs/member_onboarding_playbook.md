@@ -132,7 +132,84 @@ Work through every step that applies to the person's groups (§1).
 
 ---
 
-## 8. Offboarding
+## 8. SIRT operations onboarding
+
+Administrative onboarding (§5–§7) gives a member engineer general Akrites communication only. Before a member engineer can start vulnerability triage and review, they must also complete SIRT operations onboarding. This step is separate from administrative onboarding and is run by Akrites SIRT staff.
+
+### 8.1 Requirements
+
+A member engineer is ready for SIRT operations onboarding when all of the following are true:
+
+- [ ] They have been administratively onboarded (§7 checklist complete).
+- [ ] They have been read in under the [Read-In Policy](Akrites-Read-In-Policy.md). Read-in is what grants access to `#sirt-ops-eng` and to the repositories that carry case material.
+- [ ] Akrites SIRT staff have confirmed which repositories and issues they will work on, based on their skills and capacity.
+
+### 8.2 What the SIRT provides
+
+Once the requirements are met, Akrites SIRT staff provide the engineer with:
+
+1. **A Getting Started guide** (template in §8.3) that explains the workflow, work packages, timelines, and scope.
+2. **A prioritized issue list** matched to the engineer's skills and capacity.
+3. **Access to the specific repositories** for those issues, granted through the [Read-In Policy](Akrites-Read-In-Policy.md), so that triage can begin.
+
+The SIRT is the engineer's main contact. Engineers can reach their SIRT contact directly on Slack, or engage the wider team in the `#sirt-ops-eng` channel.
+
+### 8.3 Getting Started guide template
+
+SIRT staff send the guide below, filling in the engineer's name and the prioritized issue list.
+
+---
+
+> Welcome, `<engineer name>`.
+>
+> This guide covers how to get started, and a prioritized list of issues for your review is attached. You can reach me directly on Slack, or engage the Akrites SIRT in the [#sirt-ops-eng](https://akritesfoundation.slack.com/archives/C0CDZ3DGP7D) channel. Thank you for your help, and welcome aboard.
+>
+> #### Getting started
+>
+> **Process and scope.** Read the full workflow in the [Lightweight CVD Process Documentation](Akrites_SIRT_GitHub_lightweight_CVD_Playbook.md). Each issue (ACT-) should already contain an automated severity assessment, a candidate patch, and a draft report. Your main task is human verification, organized into four work packages:
+>
+> | Work package | Focus | What you do |
+> |---|---|---|
+> | **A. Severity verification** | Is the finding real, and how bad is it? | Verify reachability, the vulnerability, CVSS, CWE, and affected versions. |
+> | **B. Patch review** | Does the candidate fix work? | Check the candidate patch for fix completeness, buildability, and regressions. |
+> | **C. Report review** | Is the draft report ready to send? | Review the maintainer draft report for accuracy, formatting, and compliance. |
+> | **D. Fix authoring** | No usable patch exists. | Write a minimal, production-grade fix with regression tests. |
+>
+> **Target timelines**
+>
+> | Work package | Target |
+> |---|---|
+> | A, B, C | Complete within 2 business days. |
+> | D | Complete within 5 business days. Escalate blockers to Akrites within 1 business day. |
+>
+> **Out of scope.** Akrites SIRT handles all upstream communication. Please do not:
+>
+> - Contact maintainers directly.
+> - Make public disclosures.
+> - Assign CVEs independently.
+> - Submit to bug bounty programs.
+>
+> **Extra capacity.** If you have additional bandwidth, you can assess other non-prioritized issues in your assigned repositories. Findings can be bundled into the upstream report through the SIRT.
+
+---
+
+### 8.4 Staff checklist: SIRT operations onboarding
+
+- [ ] **Confirm prerequisites.** Administrative onboarding (§7) is complete and the engineer is read in under the [Read-In Policy](Akrites-Read-In-Policy.md).
+- [ ] **Assess fit.** Identify the engineer's skills and capacity, and choose the repositories and issues that match.
+- [ ] **Grant access.** Through the Read-In Policy, give the engineer access to the specific repositories for their issues, and add them to `#sirt-ops-eng` if not already done at read-in.
+- [ ] **Build the prioritized issue list.** Rank the issues for the engineer.
+- [ ] **Send the Getting Started guide.** Use the §8.3 template with the engineer's name and issue list.
+- [ ] **Add to the SIRT Internal Dashboard.** Add the engineer to the dashboard so SIRT staff can manage and track their activity.
+
+### 8.5 Offboarding and changes
+
+- When the engineer's read-in ends, or they leave the member organization, staff remove their repository access and `#sirt-ops-eng` membership as described in §9.
+- If the engineer's repositories or issues change, SIRT staff update their access and send a revised issue list.
+
+---
+
+## 9. Offboarding
 
 - **A person leaves a member organization:** the member organization tells Akrites staff, who reverse the §7 checklist — remove the person from the roster's active list, LFX committees, mailing lists, and meetings, member-only Slack channels (`#psirt-leads`, `#sirt-disclosures`, `#sirt-ops-eng`, and the workspace if they have no other reason to be there), and the [Akrites-Foundation GitHub organization](https://github.com/Akrites-Foundation). Any case access ends immediately (Read-In Policy §8, departure from the sponsoring organization).
 - **A read-in ends:** when a member engineer is no longer read in, Akrites staff remove them from `#sirt-ops-eng`.
@@ -142,7 +219,7 @@ Work through every step that applies to the person's groups (§1).
 
 ---
 
-## 9. Open items
+## 10. Open items
 
 - Define the General member group after the November 2026 board meeting.
 - Set how long onboarding details (name, email, title, GitHub ID) are kept after someone leaves — part of the wider data-retention question for the Governing Board.
