@@ -172,7 +172,7 @@ A standing WG is warranted when:
 ### 9.3 Co-Chairs and interim Chairs
 
 * **Co-Chairs**: Every standing WG must have a Co-Chair, and the Co-Chair must be from a different member organization than the Chair.
-* **Interim Chairs**: When a WG has no Chair or Co-Chair (due to vacancy, removal, or new WG formation), the SIRT designates an Interim Chair from among existing WG members. Interim appointments are time-bounded to **30 days**, during which a permanent Chair selection must be completed. If no Chair is selected within 30 days, the SIRT escalates to the Governing Board.
+* **Interim Chairs**: When a WG has no Chair or Co-Chair (due to vacancy, removal, or new WG formation), the SIRT Director or Technical PgM Director designates an Interim Chair from among existing WG members. Interim appointments are time-bounded to **30 days**, during which a permanent Chair selection must be completed. If no Chair is selected within 30 days, the SIRT escalates to the Governing Board.
 
 ### 9.4 Chair selection, terms & diversity
 
