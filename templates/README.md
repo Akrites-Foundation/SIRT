@@ -17,8 +17,8 @@ where a template and the policy disagree, the policy governs.
 ## Read-in and working groups
 
 - [Case read-in notice](case-read-in-notice-template.md) — sent to each person read into a case; see the [Read-In Policy](../docs/policies/read-in-policy.md)
-- [Case read-in log (CSV)](Akrites_ReadIn_Log_CASE.csv)
-- [WG membership register (CSV)](Akrites_WG_Membership_Register.csv)
+- [Case read-in log (CSV)](case-read-in-log-template.csv)
+- [WG membership register (CSV)](wg-membership-register-template.csv)
 - [Vulnerability finding issue template](vulnerability-finding-issue-template.md) — opened in a Working Group's private repository
 
 ## Unresponsive projects and Maintainer of Last Resort

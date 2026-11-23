@@ -44,34 +44,42 @@ Entries within each section are ordered alphabetically. Instructions for proposi
 |---|---|
 | **AI class (A / B / C)** | The oversight level for an AI-assisted task: **A** triage (sampling audit), **B** analysis (human review before sharing), **C** generation (full verification and named human sign-off). See the [AI Operations Guidelines](../guidelines/ai-operations-guidelines.md). |
 | **AI-assisted (discovery / analysis / patching)** | A capability-level label stating that AI/LLM tooling materially helped with a phase of the work. Published for both the finder and the SIRT; see [Attribution and AI-Use Disclosure Policy](../policies/attribution-and-ai-use-disclosure-policy.md). |
-| **AI-use disclosure** | The requirement that every case records, and every advisory states, whether and how AI/LLM tooling was used — for both the finder and the Akrites SIRT (Coordinator), including an explicit "no AI tooling was used" where that applies. |
+| <a id="ai-use-disclosure"></a>**AI-use disclosure** | The requirement that every case records, and every advisory states, whether and how AI/LLM tooling was used — for both the finder and the Akrites SIRT (Coordinator), including an explicit "no AI tooling was used" where that applies. |
 | **Alpha patch** | An early candidate fix shared with the WG and finder for review and testing before broader coordination. |
 | **Blameless postmortem** | A no-fault review focused on systems rather than individuals. Required after an embargo break, an AI or automation failure, a missed CVD Policy commitment, or a Crit-Sit — see [Communications Playbook](../playbooks/communications-playbook.md) Play 18. |
+| <a id="case-read-in-log"></a>**Case read-in log** | The authoritative per-case record of every read-in grant, change, and revocation. See the [Read-In Procedure](../procedures/read-in-procedure.md). |
 | **CVD** | Coordinated Vulnerability Disclosure — the practice of privately reporting a flaw, coordinating a fix under embargo, and disclosing publicly in a synchronized way. |
 | **Deviation notice** | A short note published with the advisory when the SIRT's severity assessment differs materially from another party's published score, stating which metrics and assumptions differ — sharing the evidence rather than disputing the other party. See the [Severity Scoring Guidelines](../guidelines/severity-scoring-guidelines.md). |
-| **Embargo** | The agreed period of confidentiality before public disclosure, during which only read-in parties know of the issue. Akrites' proposed upstream embargo is 15 business days (leading to a total target time to PD of ≤ 17 bd Low/Med, ≤ 21 bd High, ≤ 24 bd Critical), deferring to the upstream project's own policy. |
+| <a id="disclosure-boundary"></a>**Disclosure boundary** | What information exists or is shared at a given point in the case. Related to, but distinct from, tier — some activities cannot be performed without a disclosure (you cannot test a patch you have not been given). |
+| <a id="documentation"></a>**Documentation** | The advisories, release notes, and mitigation instructions that explain a vulnerability and how to fix it. |
+| <a id="embargo"></a>**Embargo** | The agreed period of confidentiality before public disclosure, during which only read-in parties know of the issue. Akrites' proposed upstream embargo is 15 business days (leading to a total target time to PD of ≤ 17 bd Low/Med, ≤ 21 bd High, ≤ 24 bd Critical), deferring to the upstream project's own policy. |
 | **Exploit state** | A separate, changing record of real-world exploitation evidence: **Active**, **Demonstrated**, **PoC**, **Theoretical**, or **Unknown** ("Unknown" never means safe). See the [Severity Scoring Guidelines](../guidelines/severity-scoring-guidelines.md). |
-| **Finder / Co-finder** | The party (or parties) who discovered and reported the vulnerability; co-finder rules govern shared attribution — see the [Attribution and AI-Use Disclosure Policy](../policies/attribution-and-ai-use-disclosure-policy.md). |
+| <a id="finder"></a>**Finder / Co-finder** | The individual or organization that discovers a potential security flaw and reports it. When more than one party discovered and reported it, they are co-finders; co-finder rules govern shared attribution — see the [Attribution and AI-Use Disclosure Policy](../policies/attribution-and-ai-use-disclosure-policy.md). |
 | **Hand-off (upstream)** | The point at which the SIRT formally engages the affected project with the validated finding. It starts the 15-business-day upstream disclosure period; the Finder is told the date in writing (CVD Policy §7). |
 | **IR** | Incident Response. |
 | **Least privilege** | The principle that access is scoped to only what a role needs; members see only the WGs they belong to, and only SIRT staff have cross-cutting visibility. |
-| **Mitigation / workaround** | A non-patch means of reducing risk (e.g., a configuration change or firewall rule) when no fix is yet available. |
+| <a id="workaround"></a>**Mitigation / workaround** | A non-patch means of reducing risk (e.g., a configuration change or firewall rule) when no fix is yet available. |
 | **MoLR (Maintainer of Last Resort)** | A governed, per-CVE exception in which Akrites ships a security fix for an abandoned project under an Akrites-controlled namespace. It does not adopt or maintain the project. Requires Governing Board approval. See the [MoLR Policy](../policies/molr-policy.md). |
-| **PD (Public Disclosure)** | The point at which meaningful information about a vulnerability becomes available to the general public without restriction — intentionally (the coordinated release on the PD date) or unintentionally (a leak or embargo break). See [Public Disclosure Guidelines](../guidelines/public-disclosure-guidelines.md). |
+| <a id="patch"></a>**Patch** | A code-level fix that eliminates the root cause. |
+| <a id="pd"></a>**PD (Public Disclosure)** | The point at which meaningful information about a vulnerability becomes available to the general public without restriction — intentionally (the coordinated release on the PD date) or unintentionally (a leak or embargo break). See [Public Disclosure Guidelines](../guidelines/public-disclosure-guidelines.md). |
 | **PD date (Coordinated Release Date, CRD)** | The pre-agreed date and time for intentional public disclosure, set once a fix is available and an identifier assigned. |
 | **POC** | Proof of Concept - a controlled demonstration or set of instructions that proves a reported software flaw is real and exploitable, typically used by security teams to validate risks, reproduce issues, and test patches. [TechTarget](https://www.techtarget.com/searchsecurity/definition/proof-of-concept-PoC-exploit) |
+| <a id="potential-vulnerability"></a>**Potential vulnerability** | A bug or behavior that appears to be a security risk but has not yet been confirmed or triaged. |
 | **POV** | Proof of Vulnerability - Proof of Vulnerability (PoV) is an executable test case, input, or script that definitively confirms a theoretical security flaw is real, reproducible, and exploitable in a specific environment. In the context of vulnerability response and management, it serves as concrete, hands-on evidence that an identified software weakness can be triggered to compromise a system's confidentiality, integrity, or availability. [arXiv](https://arxiv.org/html/2607.12316v1) |
-| **Read-in** | Granting a named individual access to a specific case or WG after they clear the Three-Gate Test (need-to-know, capacity to contribute, vetted identity) and the prerequisites. See the [Read-In Policy](../policies/read-in-policy.md). |
+| <a id="read-in"></a>**Read-in** | A formal, logged, time-bounded grant of access to a specific case or WG workspace, to a named individual who has cleared the Three-Gate Test (need-to-know, capacity to contribute, vetted identity) and the prerequisites, acknowledged by the recipient before access is enabled. See the [Read-In Policy](../policies/read-in-policy.md). |
 | **Read-out notice** | The message sent at PD to everyone on a case's read-in list confirming the embargo has ended and their access has closed. See the [Critical Situation Playbook](../playbooks/crit-sit-playbook.md). |
+| <a id="root-cause"></a>**Root cause** | The underlying technical error or design flaw (often categorized as a CWE) that allows the vulnerability to exist. |
+| <a id="severity"></a>**Severity** | A measurement (typically CVSS) of impact and exploitability, ranked Low to Critical. See also *Severity label*. |
 | **Severity label** | The plain-language severity of a vulnerability — **Critical**, **High**, **Medium**, or **Low** — informed by its CVSS v4.0 score; it sets the case's PD target (CVD Policy §8). See the [Severity Scoring Guidelines](../guidelines/severity-scoring-guidelines.md). |
 | **SIREN** | The OpenSSF's public threat-intelligence mailing list ([announced May 2024](https://openssf.org/blog/2024/05/20/enhancing-open-source-security-introducing-siren-by-openssf/); modeled on oss-security), staffed and funded by the OpenSSF: a post-disclosure channel for sharing active threat activity affecting open source at large — exploitation campaigns, TTPs, and indicators of compromise (for example, spearphishing campaigns using fake GitHub token-renewal notices). The SIRT fires a SIREN post alongside the member notice at PD. |
 | **SSVC (Stakeholder-Specific Vulnerability Categorization)** | CISA's decision tree (outcomes Track, Track\*, Attend, Act) that the SIRT uses internally to set response priority. Never published. See the [Severity Scoring Guidelines](../guidelines/severity-scoring-guidelines.md). |
 | **Steward / LTS** | A party that takes on long-term support or maintenance of a project; the preferred alternative to Akrites acting as MoLR. |
 | **Synchronized disclosure** | Coordinating parties so the fix, advisory, and disclosure land together rather than piecemeal. |
 | **Technical contribution ("price of admission")** | The expectation (CVD Policy §12) that members, reporters, and read-in members, contribute meaningfully — analysis, a patch, tests, or staging — rather than only reporting or observing. |
-| **Tier 0 / 1 / 1.5 / 2 / 3 / 3.5** | The read-in tiers: **0** Finder & SIRT; **1** SME analysts/patch authors; **1.5** upstream maintainer/security team of the affected project (member or not); **2** patch testers, distribution partners / pre-disclosure rings; **3** second-order distributors (CDNs, registries); **3.5** international coordinators (≤ 24 h before PD). |
+| <a id="tier"></a>**Tier 0 / 1 / 1.5 / 2 / 3 / 3.5** | The read-in tiers: **0** Finder & SIRT; **1** SME analysts/patch authors; **1.5** upstream maintainer/security team of the affected project (member or not); **2** patch testers, distribution partners / pre-disclosure rings; **3** second-order distributors (CDNs, registries); **3.5** international coordinators (≤ 24 h before PD). |
 | **Tiered disclosure** | Reading parties in across staged tiers (0–3.5), each later tier seeing less and being read in later. |
 | **VDR (Vulnerability Disclosure Report)** | The package the SIRT prepares to drive maintainer engagement and disclosure. |
+| <a id="vulnerability"></a>**Vulnerability** | A validated weakness that can be exploited to compromise confidentiality, integrity, or availability. |
 
 ---
 
@@ -79,14 +87,16 @@ Entries within each section are ordered alphabetically. Instructions for proposi
 
 | Term | Definition |
 |---|---|
-| **Clearinghouse** | A trusted external coordinator (e.g., a national CERT) or vendor program that reports to or through the SIRT on behalf of others. Also a reporter class in CVD Policy §12, and a credit option in which the organization is named as finder without its individual analysts. |
-| **CNA (CVE Numbering Authority)** | An organization authorized to assign CVE IDs within its scope. |
-| **Consumer / end user** | The party who must act on a disclosure once public; served at public disclosure, not before. |
+| <a id="clearinghouse"></a>**Clearinghouse** | A trusted, verified organization acting as a neutral third party — a time-activated role adopted during pre-disclosure. It collects, normalizes, strips PII from, and distributes vulnerability reports, and handles embargoed vulnerabilities. At times Akrites functions as a clearinghouse; at other times a member organization can adopt the role by bringing vulnerability reports to Akrites. Also a trusted external coordinator (e.g., a national CERT) or vendor program that reports to or through the SIRT on behalf of others, a reporter class in CVD Policy §12, and a credit option in which the organization is named as finder without its individual analysts. |
+| <a id="cna"></a>**CNA (CVE Numbering Authority)** | An organization authorized to assign CVE IDs within its scope. |
+| <a id="collaborator"></a>**Collaborator** | A trusted third party (for example a downstream developer or a security expert) brought in to help validate or fix a vulnerability. |
+| <a id="consumer"></a>**Consumer / end user** | The party who must act on a disclosure once public; served at public disclosure, not before. |
 | **Coordinator** | The neutral party facilitating a CVD case — for Akrites cases, the Akrites SIRT (individually, the SIRT case coordinator). Appears as "Coordinator (Akrites SIRT)" in advisory AI-use lines. |
 | **Distribution / staging party** | A downstream distributor (e.g., package registry, CDN) read in late to pre-stage a fix for rapid propagation (Tier 2/3). |
 | **Maintainer** | The upstream owner of the affected project; retains final say on the fix and disclosure timing, except where active exploitation or a public embargo break requires acceleration (CVD Policy §9). |
-| **Owner** | The maintainer, security team, or organization responsible for a project's code and its security posture. The Akrites SIRT is usually the coordinator, not the Owner. See CVD Policy §3. |
+| <a id="owner"></a>**Owner** | The maintainer, security team, or organization responsible for a project's code and its ongoing security posture. For coordinated cases, the Akrites SIRT may act as Owner or, more commonly, as a neutral coordinator between Owners. |
 | **SME** | Subject-Matter Expert — a member with domain expertise who analyzes or produces fixes (Tier 1) or tests them (Tier 2). |
+| <a id="sponsor"></a>**Sponsor** | A member organization vouching for an individual, or a delegated authority nominating them for a specific case. |
 
 ---
 
@@ -94,9 +104,10 @@ Entries within each section are ordered alphabetically. Instructions for proposi
 
 | Term | Definition | Reference |
 |---|---|---|
+| <a id="ai-llm-tooling"></a>**AI / LLM tooling** | Artificial-intelligence tools, most notably large language models (LLMs), used to help discover, reproduce, analyze, triage, patch, test, score, translate, or document a vulnerability. | — |
 | **Assume-exposed** | Handling posture for material that may already have left a trusted boundary (e.g., pasted into a public AI service). Such a report is treated as having **no embargo available** and is coordinated on an accelerated basis. | — |
 | **Confidential AI tooling** | AI/LLM tooling that preserves confidentiality — self-hosted or enterprise models with contractual no-training and confidentiality terms, or the SIRT's own hardened analysis environment. Using it keeps the embargo option open. | — |
-| **Need-to-know** | The requirement that a person genuinely requires the information to perform a role in the case. | — |
+| <a id="need-to-know"></a>**Need-to-know** | The requirement that a person genuinely requires the information to perform a role in the case. | — |
 | **Public LLM tooling** | Public, hosted large-language-model services. Prompts and pasted material may be retained, logged, or used for training, so they are **not** confidential; a report developed with them is treated as assume-exposed. | — |
 | **PVR (Private Vulnerability Reporting)** | A project's supported private channel for receiving vulnerability reports (e.g., GitHub's PVR feature). Akrites encourages projects to enable it. | — |
 | **SBOM (Software Bill of Materials)** | A formal inventory of the components in a piece of software. | [cisa.gov/sbom](https://www.cisa.gov/sbom) |
@@ -113,13 +124,16 @@ Entries within each section are ordered alphabetically. Instructions for proposi
 | Term | Definition | Reference |
 |---|---|---|
 | **CSAF (Common Security Advisory Framework)** | An OASIS standard for machine-readable security advisories (and VEX). | [OASIS](https://www.oasis-open.org/) |
+| <a id="cve-assignment"></a>**CVE assignment** | The act of a CNA associating a reserved CVE ID with a specific vulnerability and publishing the CVE Record (description, affected products and versions, references) to the CVE Program's database, normally at Public Disclosure. | — |
 | **CVE (Common Vulnerabilities and Exposures)** | The global catalog of unique identifiers for publicly known vulnerabilities; operated by MITRE, sponsored by CISA. | [cve.org](https://www.cve.org/) |
+| <a id="cve-reservation"></a>**CVE reservation** | The act of a CNA reserving a CVE ID for a vulnerability that is not yet public. The ID exists in a reserved state, with no public details, until the CVE Record is published. | — |
 | **CVSS (Common Vulnerability Scoring System)** | An open framework for scoring vulnerability severity (0–10). Akrites publishes CVSS v4.0 (current since Nov 2023) and does not produce v3.1 scores. See the [Severity Scoring Guidelines](../guidelines/severity-scoring-guidelines.md). | [first.org/cvss](https://www.first.org/cvss/) |
 | **CWE (Common Weakness Enumeration)** | A community catalog of software and hardware weakness *types* (the class of flaw), distinct from a specific CVE instance. | [cwe.mitre.org](https://cwe.mitre.org/) |
 | **EPSS (Exploit Prediction Scoring System)** | A model estimating the probability that a published CVE will be exploited in the wild. Akrites does not use it for embargoed cases (there is no EPSS value before a CVE exists); it may inform priority once a CVE is public. See the [Severity Scoring Guidelines](../guidelines/severity-scoring-guidelines.md). | [first.org/epss](https://www.first.org/epss/) |
 | **KEV (Known Exploited Vulnerabilities)** | CISA's catalog of vulnerabilities with confirmed active exploitation. | [cisa.gov/kev](https://www.cisa.gov/known-exploited-vulnerabilities-catalog) |
 | **OSV** | An open, distributed database and schema for vulnerabilities in open source. | [osv.dev](https://osv.dev/) |
 | **VEX (Vulnerability Exploitability eXchange)** | A machine-readable statement of whether a product is actually affected by a given vulnerability; commonly expressed via CSAF. | [OASIS](https://www.oasis-open.org/) |
+| <a id="vulnerability-identifier"></a>**Vulnerability identifier** | A unique label (such as a CVE ID) used to track a flaw across the industry. | — |
 
 ---
 

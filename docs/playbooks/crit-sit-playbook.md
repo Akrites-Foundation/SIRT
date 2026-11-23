@@ -40,7 +40,7 @@ Anyone working a case may ask the Director to consider a declaration. The Case H
 | **SIRT Director** | SIRT Director | Declares and closes the Crit-Sit; decides high-impact timing calls; escalates to the Governing Board (CVD Policy §15). |
 | **Incident Commander (IC)** | The SIRT case coordinator for the case | Runs the operational flow; owns the timeline and status cadence; **approves all read-ins** (Read-In Policy §6). |
 | **Remediation Lead** | The upstream maintainer (Tier 1.5) or a Tier 1 WG analyst / patch author | Leads drafting and testing of the fix, privately. The maintainer keeps authority over the fix and release except where CVD Policy §9 requires acceleration. |
-| **Scribe** | A SIRT staff member named by the IC | Keeps the [case read-in log](../../templates/Akrites_ReadIn_Log_CASE.csv), Read-In Notice acknowledgements, the case timeline, and the current TLP state. Records read-ins; does **not** approve them. |
+| **Scribe** | A SIRT staff member named by the IC | Keeps the [case read-in log](../../templates/case-read-in-log-template.csv), Read-In Notice acknowledgements, the case timeline, and the current TLP state. Records read-ins; does **not** approve them. |
 | **Comms Lead** | A SIRT staff member named by the IC | Runs communication with the Finder, upstream maintainers, and pre-notification partners using the Communications Playbook and the [notification templates](../../templates/notification-templates.md). |
 
 One person may hold more than one role in a small Crit-Sit, but the IC and the Scribe should be different people.
@@ -116,7 +116,7 @@ The phases map to the nine-phase CVD lifecycle used in the Case Handling Procedu
 
 ## 5. Templates
 
-Read-in records use the existing [case read-in log](../../templates/Akrites_ReadIn_Log_CASE.csv) — set **Emergency Read-In (72h)** to Y where Read-In Policy §3.1 was used — and read-in acknowledgements use the [Case Read-In Notice](../../templates/case-read-in-notice-template.md). The two templates below are specific to a Crit-Sit.
+Read-in records use the existing [case read-in log](../../templates/case-read-in-log-template.csv) — set **Emergency Read-In (72h)** to Y where Read-In Policy §3.1 was used — and read-in acknowledgements use the [Case Read-In Notice](../../templates/case-read-in-notice-template.md). The two templates below are specific to a Crit-Sit.
 
 ### Template A — Crit-Sit declaration and status update
 

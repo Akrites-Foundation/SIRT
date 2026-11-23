@@ -7,7 +7,7 @@
 **Formerly titled:** Read-In Policy §6, and the procedural parts of §7–§11
 **Applies to:** SIRT case coordinators, and anyone nominating a person to a case or Working Group
 **Implements:** [Read-In Policy](../policies/read-in-policy.md). Where they conflict, the policy governs.
-**Related:** [Read-In Notice template](../../templates/case-read-in-notice-template.md), [case read-in log](../../templates/Akrites_ReadIn_Log_CASE.csv), [Read-In Engineer Quick Reference](../reference/read-in-engineer-quick-reference.md)
+**Related:** [Read-In Notice template](../../templates/case-read-in-notice-template.md), [case read-in log](../../templates/case-read-in-log-template.csv), [Read-In Engineer Quick Reference](../reference/read-in-engineer-quick-reference.md)
 
 ---
 
@@ -132,7 +132,7 @@ Use this when an upstream maintainer's published policy says they do not sign ND
 
 ## 9. The case read-in log
 
-Keep one log per case, using the [read-in log template](../../templates/Akrites_ReadIn_Log_CASE.csv). Record every grant, change and revocation. For each read-in include:
+Keep one log per case, using the [read-in log template](../../templates/case-read-in-log-template.csv). Record every grant, change and revocation. For each read-in include:
 
 - who, and the sponsoring organization;
 - role and tier, with the reason for the tier;

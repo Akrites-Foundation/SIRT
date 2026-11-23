@@ -19,7 +19,7 @@ Discover → Deduplicate & Triage → Validate → Coordination → Patch → Te
 - Confirm the channel: **GitHub private vulnerability reporting** (preferred) or
   `SIRT@Akrites.dev`. If it arrived the "wrong" way (public
   issue, wrong list), move it private and continue — don't penalize the Finder.
-- Assign a tracking ID and open the case record: reporter, date, project, claimed versions, current TLP label, disclosure status, maintainer contacts, and PD date (once set). Keep it current as the case moves; record each read-in in the [case read-in log](../../templates/Akrites_ReadIn_Log_CASE.csv).
+- Assign a tracking ID and open the case record: reporter, date, project, claimed versions, current TLP label, disclosure status, maintainer contacts, and PD date (once set). Keep it current as the case moves; record each read-in in the [case read-in log](../../templates/case-read-in-log-template.csv).
 - Send **Template 1 (Acknowledgement)**. Set the report to TLP:RED.
 
 ### 2. Deduplicate & Triage — is it new, and is it a security issue?
