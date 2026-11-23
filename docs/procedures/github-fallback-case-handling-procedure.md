@@ -29,7 +29,7 @@ This process is a lightweight, manual version of the broader [CVD](../processes/
 - **Akrites Members WG Rotations** ("The Rotation"): A member-staffed rotation is responsible for triaging, daily, the issue list in github.
 - **Working Group Members**: subject matter experts who can both weigh in and help with vulnerabilities.
 
-> The Rotation and WG members see pre-disclosure material, so each must be a standing WG member read in under the [Read-In Policy](../policies/read-in-policy.md) §7. Issues in these repositories are TLP:RED at intake and TLP:AMBER+STRICT once shared with the WG.
+> The Rotation and WG members see pre-disclosure material, so each must be read in under the [Read-In Policy](../policies/read-in-policy.md) and the [Read-In Procedure](read-in-procedure.md). Issues in these repositories are TLP:RED at intake and TLP:AMBER+STRICT once shared with the WG.
 
 ## Tools assisting this process
 - **GitHub**: 
