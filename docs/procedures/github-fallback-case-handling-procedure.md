@@ -26,8 +26,8 @@ This process is a lightweight, manual version of the broader [CVD](../processes/
 
 ## Parties involved
 - **Akrites SIRT** ("The SIRT"): A persistent "`SIRT-Team`" is available as a reviewer, assignee or just tagging in GitHub.
-- **Akrites Members WG Rotations** ("The Rotation"): A member-staffed rotation is responsible for triaging, daily, the issue list in github.
-- **Working Group Members**: subject matter experts who can both weigh in and help with vulnerabilities.
+- **Akrites SIRT staff on triage duty** ("The Rotation"): Akrites SIRT staff triage the issue list in GitHub every business day. The Rotation is staffed by SIRT staff, not by member engineers or a standing Working Group.
+- **Working Group Members**: subject matter experts in a Working Group convened for the case, who can both weigh in and help with vulnerabilities.
 
 > The Rotation and WG members see pre-disclosure material, so each must be read in under the [Read-In Policy](../policies/read-in-policy.md) and the [Read-In Procedure](read-in-procedure.md). Issues in these repositories are TLP:RED at intake and TLP:AMBER+STRICT once shared with the WG.
 
