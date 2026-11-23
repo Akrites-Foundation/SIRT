@@ -26,6 +26,7 @@ Titles follow `<Subject> <Type>`, and filenames follow `<subject>-<type>.md` in 
 - [CVD Process](processes/cvd-process.md)
 
 ## Procedures
+- [Read-In Procedure](procedures/read-in-procedure.md)
 - [Case Handling Procedure](procedures/case-handling-procedure.md)
 - [GitHub Fallback Case Handling Procedure (temporary manual process)](procedures/github-fallback-case-handling-procedure.md)
 - [Member Onboarding and Offboarding Procedure](procedures/member-onboarding-and-offboarding-procedure.md)
@@ -80,6 +81,7 @@ Titles follow `<Subject> <Type>`, and filenames follow `<subject>-<type>.md` in 
 | --- | --- | --- | --- |
 | [CVD Policy](policies/cvd-policy.md) | Policy | Governing Board | Board-reviewed — v1.0, 2026-10-20 (later edits reported to the Board) |
 | [Read-In Policy](policies/read-in-policy.md) | Policy | Governing Board | Draft — for Governing Board review |
+| [Read-In Procedure](procedures/read-in-procedure.md) | Procedure | SIRT Director | Draft — for Akrites SIRT review |
 | [Maintainer of Last Resort (MoLR) Policy](policies/molr-policy.md) | Policy | Governing Board | Draft — for Governing Board review |
 | [MoLR Procedure](procedures/molr-procedure.md) | Procedure | SIRT Director | Draft — for Akrites SIRT review |
 | [Security Policy](../SECURITY.md) | Policy | SIRT Director | Draft — for Akrites SIRT review |
