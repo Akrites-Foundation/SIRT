@@ -1,5 +1,7 @@
-# Akrites SIRT — AI Operations Guidelines
+# AI Operations Guidelines
 
+**Type:** Guidelines
+**Approver:** SIRT Director
 **Owner:** Akrites SIRT
 **Status:** Draft for Akrites SIRT review
 **Audience:** SIRT staff, case coordinators, and Working Group members who build, run, or rely on AI-assisted tooling

@@ -1,5 +1,8 @@
-# Akrites — Member Onboarding Playbook
+# Member Onboarding and Offboarding Procedure
 
+**Type:** Procedure
+**Approver:** SIRT Director
+**Formerly titled:** Member Onboarding Playbook
 **Owner:** Akrites SIRT (with Linux Foundation program staff)
 **Status:** Draft for Akrites SIRT review
 **Audience:** Akrites staff who onboard people, and member organizations joining Akrites

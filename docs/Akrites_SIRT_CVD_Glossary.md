@@ -1,4 +1,10 @@
-# Akrites SIRT & CVD Glossary
+# Glossary
+
+**Type:** Reference
+**Owner:** Akrites SIRT
+**Approver:** SIRT Director
+**Status:** Draft — for Akrites SIRT review
+**Formerly titled:** Akrites SIRT & CVD Glossary
 
 A shared vocabulary for the Akrites SIRT program and for Coordinated Vulnerability Disclosure (CVD) more broadly. Program-specific terms reflect current Akrites usage and may evolve as policies are ratified; for external standards, the linked source is authoritative.
 

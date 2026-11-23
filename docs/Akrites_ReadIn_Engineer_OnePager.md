@@ -1,4 +1,10 @@
-# You're Read Into a Vulnerability Case — Start Here
+# Read-In Engineer Quick Reference
+
+**Type:** Reference
+**Owner:** Akrites SIRT
+**Approver:** SIRT Director
+**Status:** Draft — for Akrites SIRT review
+**Formerly titled:** You're Read Into a Vulnerability Case — Start Here
 
 You've been tapped to help resolve a confidential vulnerability under embargo. Thank you. This one-pager is everything you need to operate correctly. The single idea behind all of it: **reduce harm, and keep this secret until the fix is ready.** When unsure, stop and ask the SIRT case coordinator.
 

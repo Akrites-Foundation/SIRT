@@ -1,4 +1,11 @@
-# Akrites GitHub Lightweight CVD Playbook
+# GitHub Fallback Case Handling Procedure
+
+**Type:** Procedure
+**Owner:** Akrites SIRT
+**Approver:** SIRT Director
+**Status:** Draft — for Akrites SIRT review
+**Formerly titled:** GitHub Lightweight CVD Playbook
+
 *Temporary, manual process for the SIRT on how to manage and coordinate disclosures outside of the automation pipeline.*
 
 This process is a lightweight, manual version of the broader [CVD](Akrites_CVD_Playbook.md) process. It is meant to be temporary, and only to be used as a stopgap when we need to operate outside of The Akrites Pipeline ("TAP").

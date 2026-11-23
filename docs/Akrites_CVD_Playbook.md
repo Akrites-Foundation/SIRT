@@ -1,4 +1,11 @@
-# Akrites Coordinated Vulnerability Disclosure Playbook — A Practical Guide
+# CVD Process
+
+**Type:** Process
+**Owner:** Akrites SIRT
+**Approver:** SIRT Director
+**Status:** Draft — for Akrites SIRT review
+**Formerly titled:** CVD Playbook — A Practical Guide
+
 *For the SIRT and anyone coordinating a vulnerability disclosure with upstream open source projects.*
 
 This guide offers practical advice for producing the best outcome for every party in a coordinated vulnerability disclosure (CVD): the **Finder**, the **Maintainer**, the **Consumer**, and the **Coordinator**. It is organized around the disclosure lifecycle, and at each step it calls out what "good" looks like for each party.

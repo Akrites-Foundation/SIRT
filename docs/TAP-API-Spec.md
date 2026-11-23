@@ -1,4 +1,10 @@
-# TAP Intake API
+# TAP Intake API Specification
+
+**Type:** Reference
+**Owner:** Akrites SIRT
+**Approver:** SIRT Director
+**Status:** Draft — for Akrites SIRT review
+**Formerly titled:** TAP Intake API
 
 Submit vulnerability reports to the Akrites pipeline and check their status.
 

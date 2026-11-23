@@ -1,5 +1,8 @@
-# Akrites SIRT Coordinated Vulnerability Disclosure (CVD) Policy - v1.5
+# CVD Policy
 
+**Type:** Policy
+**Approver:** Governing Board
+**Version:** 1.5
 **Status:** Board-reviewed — v1.0, 2026-10-20 (later edits reported to the Board)
 **Owner:** Akrites SIRT (Security Incident Response Team)
 **Primary contact:** SIRT@Akrites.dev
