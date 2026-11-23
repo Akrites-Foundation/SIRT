@@ -107,8 +107,8 @@ flowchart TD
 | **<= 1 day**: | **The Rotation** will perform a review of their queue every business day. |
 | | **The SIRT** will respond to assigned tasks within 1 business day. |
 | **<= 3 days**: | The maximum number of days we will keep something in our queue. |
-| **3 days**: | Re-send to upstream on un-ack'd reports, widening contacts (MoLR Policy Part II §3.1). |
-| **7 days**: | Escalate un-ack'd reports (umbrella org, foundations, distro security teams) and log every attempt in the [contact attempt log](../../templates/contact-attempt-log.md). |
+| **3 days**: | Re-send to upstream on un-ack'd reports, widening contacts (steps 2 and 3 of the [MoLR Procedure ladder](molr-procedure.md#contact-and-escalation-ladder)). |
+| **7 days**: | Escalate un-ack'd reports (umbrella org, foundations, distro security teams) and log every attempt in the [contact attempt log](../../templates/contact-attempt-log.md). The full ladder is in the [MoLR Procedure](molr-procedure.md#contact-and-escalation-ladder). |
 
 These internal SLOs sit inside the public commitments in the CVD Policy §5 (acknowledge within 2 business days; initial assessment within 10).
 

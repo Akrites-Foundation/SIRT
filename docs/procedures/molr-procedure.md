@@ -113,13 +113,32 @@ flowchart TB
     S0 --> S1 --> S2 --> S3
 ```
 
-## How a case gets here
+## Contact and escalation ladder
 
 <a id="1-contact-and-escalation-ladder"></a>
+<a id="contact-and-escalation-ladder"></a>
+
+This is the one place the ladder is written down. The other docs link here. Timing rules (the T0 + 15 business-day decision point and the 90-day abandonment floor) are set by the [MoLR Policy](../policies/molr-policy.md); this section gives the steps. Record every attempt, as it happens, in the [contact attempt log](../../templates/contact-attempt-log.md).
+
+Before you start, check you have the right person: re-check `SECURITY.md`, PVR, `security.txt`, `OWNERS`/`CODEOWNERS`, `Stewards.md`, LFX listings and member contacts, and confirm our message looks legitimate (signed, verifiable). Silence is often a bad address, not an absent maintainer. To tell unmaintained, unresponsive and overwhelmed apart, see [Upstream Engagement Guidelines](../guidelines/upstream-engagement-guidelines.md) §2.2.
+
+| Step | When | Action | Who |
+|---|---|---|---|
+| 1. First contact | T0 | Send the private report through the project's published channel (`SECURITY.md`, PVR or security email). Log it. | SIRT case coordinator |
+| 2. Re-send, widen contacts | 3 business days with no acknowledgement | Re-send on a second verified channel: commit-history emails, registry contacts, or a warm introduction from a member engineer who knows the project. Use [Play 10](../playbooks/communications-playbook.md). Offer to reduce their burden: label our work an "initial/proposed patch", offer testing help, offer PVR enablement. | SIRT case coordinator |
+| 3. Escalate | 7 business days with no acknowledgement | Go to the umbrella organization, foundations and distro security teams. Log every attempt. | SIRT case coordinator |
+| 4. Hand off and warn | Before the decision point | Hand off to a coordinator (CERT/CC, VINCE, CNA-LR) where one applies. Tell the maintainer plainly, in writing, that if we hear nothing by the decision point we will consider next steps to protect users, and give them the chance to respond first. | SIRT case coordinator |
+| 5. Decision point | T0 + 15 business days | Move to the disclosure clock actions: advisory, VEX and source patch publish as usual. MoLR becomes possible only after the abandonment floor. | SIRT Director decides; Governing Board approves any last-resort release |
+
+Any reply moves the case back to normal coordination. Any sign of life restarts the abandonment floor.
+
+Keep the framing as consumer protection, not a takeover. Invite the maintainer to adopt, refine or replace our work, and to reclaim their project at any time.
+
+## How a case gets here
 
 MoLR only starts after normal coordinated disclosure has failed. Two routes lead here.
 
-1. **Unresponsive or abandoned project.** Run the contact ladder in [Policy Part II §3.1](../policies/molr-policy.md) and log every attempt in the [contact attempt log](../../templates/contact-attempt-log.md). The advisory, VEX, and source patch publish on the disclosure clock as usual. MoLR becomes possible only after the abandonment floor in [Policy Part I §4](../policies/molr-policy.md). Any sign of life resets it.
+1. **Unresponsive or abandoned project.** Run the [contact and escalation ladder](#contact-and-escalation-ladder) and log every attempt in the [contact attempt log](../../templates/contact-attempt-log.md). The advisory, VEX, and source patch publish on the disclosure clock as usual. MoLR becomes possible only after the abandonment floor in [Policy Part I §4](../policies/molr-policy.md). Any sign of life resets it.
 2. **End-of-life refusal.** The maintainer declined to patch an affected branch because it is end-of-life, doesn't dispute the vulnerability, and has fixed it in supported versions. Record their answer in the [Maintainer non-fix record](<../../templates/maintainer-non-fix-record.md>) and offer them the verbatim rationale.
 
 A disputed finding or a WONTFIX on a supported version **never** leads here ([Policy Part II §4](../policies/molr-policy.md)). Handle it with an advisory, VEX, and mitigations. Communications: Plays 10, 14 and 17 in the [Communications Playbook](../playbooks/communications-playbook.md).

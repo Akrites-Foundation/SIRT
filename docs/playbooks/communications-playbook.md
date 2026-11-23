@@ -394,7 +394,7 @@ You can verify us at {akrites.dev/verify}.
 — {name}, Akrites SIRT
 ```
 
-**Notes:** Distinguish **unmaintained** (nothing touched), **unresponsive** (silent but active
+**Notes:** The steps and timing for each attempt are in the [MoLR Procedure](../procedures/molr-procedure.md#contact-and-escalation-ladder); this play supplies the wording. Distinguish **unmaintained** (nothing touched), **unresponsive** (silent but active
 elsewhere), and **overwhelmed** (afloat, not prioritizing). Be transparent about *why* we want to
 help and earn trust. MoLR decisions are last-resort and require Governing Board approval (see Play 15 and the MoLR Policy). Preference order: maintainer fixes → advisory + mitigation for consumers → last-resort security release (patch series, Governing Board approval) → steward search. Akrites never forks a project or takes a package name (MoLR Policy Part I §3).
 
