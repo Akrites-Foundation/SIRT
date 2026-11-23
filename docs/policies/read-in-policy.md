@@ -119,6 +119,8 @@ Every person, regardless of tier, must have all of the following before access i
 
 **Finders.** A Finder (Tier 0) needs prerequisites 1, 3 and 5 only; hardware-key 2FA is required only if the Finder is given access to the case repository or channel.
 
+**Upstream maintainers (Tier 1.5).** An upstream maintainer or security team member needs prerequisites 1, 3 and 5 only. Hardware-key 2FA is required only if they are given access to an Akrites case repository or channel. Where prerequisite 3 cannot be met because the project's published policy does not allow its maintainers to sign agreements, see §10.
+
 ### 3.1 Emergency Read-In
 
 The SIRT may grant **temporary, time-bounded** access to an external SME sponsored directly by an active maintainer or an Akrites member organization, using fast electronic agreements where possible and software-based TOTP/MFA, for **up to 72 hours** while hardware-key logistics are processed. Sponsorship is not limited by membership level.
@@ -253,6 +255,7 @@ Exceptions are handled case-by-case. Each is time-bounded, justified, approved b
 | **Early or broader read-in** for severe or broad-scope issues | Handled via escalation (§9); time-bounded. | Per §9 level |
 | **Finder with a patch and customer obligations** | Sharing a fix before disclosure or upstream engagement is discouraged but cannot be prohibited. It must be declared to the SIRT; risks and consequences are documented. The SIRT respects the Finder's timeframe for meeting its customer obligations and coordinates the case timeline with it. | SIRT |
 | **Early mitigations / workarounds** | Expected to be shared when patch development will exceed the agreed embargo or disclosure window. | SIRT |
+| **Upstream maintainer who cannot sign the Read-In Notice** | Where the project's published policy says its maintainers do not sign NDAs or acknowledgements, the SIRT records the project's own confidentiality and embargo terms in the case read-in log and sends the Read-In Notice for information only. The SIRT shares only what those terms allow. The Three-Gate Test, the exclusion check, tier placement, logging and expiry all still apply. | SIRT |
 | **Maintainer of Last Resort / time-bounded hardened fork** | Permitted only with Governing Board approval. | Governing Board |
 | **Government / critical-infrastructure / telco coordination without pre-disclosure** | A Governing Board determination, consistent with the standing decision **not to pre-disclose to any single government**. | Governing Board |
 

@@ -107,6 +107,16 @@ The exceptions the policy allows, and who approves each, are in the policy (§10
 3. Get approval from the named authority. Gates and prerequisites still apply unless the policy table says otherwise.
 4. Log the exception, the approver and the expiry in the case read-in log.
 
+### Upstream maintainer who cannot sign the Read-In Notice
+
+Use this when an upstream maintainer's published policy says they do not sign NDAs or acknowledgements.
+
+1. Find the project's published policy and confirm it says so. Keep a link or copy in the case.
+2. Record the project's own confidentiality and embargo terms in the case read-in log, next to the maintainer's entry.
+3. Send the [Read-In Notice](../../templates/case-read-in-notice-template.md) **for information only**, and say so in the message.
+4. Share only what those terms allow. If they do not cover something, do not share it. Ask the SIRT Director.
+5. Complete the Three-Gate Test, the exclusion check, tier placement, logging and expiry as in §2. Enable hardware-key 2FA only if they are given access to an Akrites case repository or channel.
+
 ---
 
 ## 8. Responding to an embargo breach
