@@ -39,6 +39,7 @@ Discover → Deduplicate & Triage → Validate → Coordination → Patch → Te
 ### 4. Coordination — embargo & disclosure date
 - Identify read-in **Collaborators** (need-to-know only); formally read them in following the [Read-In Policy](Akrites-Read-In-Policy.md) and log each acceptance of the Read-In Notice.
 - Decide whether an embargo is required; propose the **Public Disclosure (PD)** date to the maintainer, who has final say, and keep the Finder informed — tell the Finder in writing the date the upstream disclosure period starts (CVD Policy §7). Proposed upstream embargo: 15 business days (total target time to PD: **≤ 17 bd** Low/Med, **≤ 21 bd** High, **≤ 24 bd** Critical).
+- Record the agreed release trigger or date, who is participating, and the publication permissions agreed with the Finder and upstream. Align the advisory to the upstream release.
 - Prepare the **leak contingency** (Template 5): what to tell Consumers if
   details surface early.
 
@@ -70,6 +71,22 @@ Discover → Deduplicate & Triage → Validate → Coordination → Patch → Te
   high-impact issues, the general community channel too.
 - Reference the CVE ID; link the OSV record. Flip private patch branches public.
 - Credit the Finder and participating maintainers following the [Attribution and AI-Use Disclosure Policy](ai-use-disclosure.md). Reclassify case material to TLP:CLEAR and archive read-in coordination channels within 72 hours.
+
+### Case checkpoints
+Give each open item an owner and a next action, and mark items that do not apply as not applicable.
+
+**Before upstream engagement**
+- [ ] Reproduction evidence and the upstream version are recorded, and a technical follow-up owner is named.
+- [ ] Maintainers, recipients and the delivery channel are confirmed, with encrypted delivery agreed for private patches and reproducers.
+
+**Before sending a patch**
+- [ ] The patch is tested, with before-and-after results recorded ([AI Operations Guidelines](ai_operations_guidelines.md) §2 for AI-drafted patches).
+- [ ] Authorship, sign-offs and any AI-assistance disclosure are checked.
+- [ ] The actual recipients, including any addresses added automatically, match the agreed disclosure scope.
+
+**Before public follow-up and closure**
+- [ ] Release timing, publication permissions and the order of distribution notices are checked.
+- [ ] Released versions and the CVE status are recorded.
 
 ---
 
