@@ -79,7 +79,7 @@ These illustrate how much real embargo windows vary, and why deferring to the pr
 
 ### Linux kernel (`security@kernel.org`)
 
-The kernel security team treats its list as a fix-development channel, not a disclosure channel, and runs one of the tightest timelines in the ecosystem. Once a robust fix exists, publication of the fix may be deferred only at the reporter's or an affected party's request for **up to 7 calendar days from the start of the release process, extendable to 14 days only exceptionally** where criticality justifies it. The only accepted reason for deferral is QA and large-scale rollout logistics. The team does not assign CVEs or sign NDAs, and considers "get the bug fixed" its sole interest.
+The kernel security team treats its list as a fix-development channel, not a disclosure channel, and runs one of the tightest timelines in the ecosystem. Once a robust fix exists, publication of the fix may be deferred only at the reporter's or an affected party's request for **up to 7 calendar days from the start of the release process, extendable to 14 days only exceptionally** where criticality justifies it. The only accepted reason for deferral is QA and large-scale rollout logistics. The security team does not sign NDAs and considers "get the bug fixed" its sole interest. CVEs are assigned separately by the kernel's own CNA process after fixes reach the stable trees, so reporting and fixing do not wait on an identifier. Private reports, discussions and reporter identities stay confidential after the fix is published unless the reporter permits otherwise.
 
 **SIRT implication:** for kernel issues, the SIRT default is irrelevant — the SIRT works to the 7-day (max 14-day) window and notifies the kernel security team **first**, before any distros or public list.
 
@@ -88,12 +88,12 @@ The kernel security team treats its list as a fix-development channel, not a dis
 Where a kernel or broader OSS issue needs distribution vendors prepared before PD, coordination flows through the private `linux-distros` list, with public disclosure on `oss-security`. Key rules:
 
 - **Maximum embargo is 14 days. Do not ask for longer.** Windows shorter than 7 days are preferred; the reasonable minimum is 1 day, and a few hours can be acceptable in extreme cases.
-- For **Linux kernel** issues specifically, you must notify the **kernel security team first, wait for the fix, and only then** notify `linux-distros` or `oss-security`.  Do not contact linux-distros about a kernel issue until the kernel security team has a fix; follow the kernel team's and linux-distros' current guidance on whether that fix must already be public.
-- The reporter **must** post publicly on `oss-security` within 14 days of contacting the list, **whether or not a patch is ready.** So don't engage `linux-distros` until a patch exists.
+- **Start a list's clock only when the project can meet it.** The list's deadline begins at the first post and does not pause for the project's merge or release process. Contact the list only once the affected project has accepted a fix that can be public before the deadline. The project's own security contacts are always engaged first. For **Linux kernel** issues, this means contacting `linux-distros` only after the fix is in a publicly released kernel version; a fix that is merely written, or not yet merged, is not enough.
+- The reporter **must** post publicly on `oss-security` within 14 days of contacting the list, **whether or not a patch is ready.** So don't engage `linux-distros` until a patch exists. Before posting, agree the public disclosure date with the project, agree what the distributions must finish inside the window, and name the person who owns the public post.
 - Everything sent to `(linux-)distros` becomes public at disclosure — post nothing that can't eventually be public.
 - Vendors generally prefer to publish updates Tuesday–Thursday (the historical policy allowed stretching a window to ~19 days only to land disclosure on a Monday/Tuesday when reported late in the week).
 
-**SIRT implication:** these lists hard-cap the embargo well below the SIRT default. For any multi-distro Linux issue, plan to the ≤14-day `linux-distros` clock and treat the kernel-first ordering as mandatory.
+**SIRT implication:** these lists hard-cap the embargo well below the SIRT default. For any multi-distro Linux issue, plan to the ≤14-day `linux-distros` clock and treat the project-first ordering as mandatory.
 
 ### OpenSSL
 
@@ -108,7 +108,7 @@ Some projects run scheduled release trains rather than per-issue embargoes — e
 ## 6. Operating rules for the SIRT
 
 0. **Automation first.** The SIRT pipeline provides the reporting structure, workflow, and timers; these rules govern the human decisions within it.
-1. **Determine the governing timeline at the start of Coordination** and record it in the case (which of the four precedence tiers in §2 applies, and the source URL/policy it came from).
+1. **Determine the governing timeline at the start of Coordination** and record it in the case (which of the four precedence tiers in §2 applies, and the source URL/policy it came from). Also record the agreed release trigger or date, who is participating, and the publication permissions granted by the Finder and the project.
 2. **Set PD to the shortest applicable timeline.** When multiple parties/components are involved with different windows, the tightest binding constraint (e.g., a `linux-distros` 14-day cap, or a project that has already committed to a date) governs the synchronized window.
 3. **The maintainer decides the PD date.** The SIRT proposes and negotiates, and consults the Finder; the maintainer approves or revises the PD date for their project. The SIRT does not extend an embargo past what the project or a coordinating list permits. The SIRT Director is the final decision point for the SIRT where the parties cannot agree or a case would run past its severity target (CVD Policy §8).
 4. **Prepare for embargo break from day one.** Per the FIRST guidance and the Coordination phase of the SIRT process, hold ready an interim advisory and consumer-protection guidance so that if the embargo leaks or an in-the-wild exploit appears, the SIRT can move immediately to accelerated or full disclosure. Recent kernel cases (multiple 2026 embargo collapses driven by AI-accelerated independent discovery) show this is now a routine contingency, not an edge case.
@@ -117,6 +117,8 @@ Some projects run scheduled release trains rather than per-issue embargoes — e
 7. **Handle duplicates transparently.** When deduplication surfaces overlapping reports, inform the affected reporters that a duplicate exists (without leaking another Finder's confidential detail), and account for any embargo already set — or foreclosed — by a parallel discloser or Coordinator.
 8. **Unmaintained / unresponsive projects.** Where no policy and no responsive maintainer exist, the 15-business-day proposed embargo applies as the working clock. If the project remains unresponsive, follow the [Maintainer of Last Resort Policy](Maintainer_of_Last_Resort_Policy.md): escalate per its disclosure clock, publish advisories and VEX at the decision point, and — only with Governing Board approval — a last-resort security release (a patch series, not a fork). CVEs are issued through the Akrites SIRT CNA authority.
 9. **Document deviations.** Any Public Disclosure later than the CVD Policy's severity target (≤ 17/21/24 bd) requires explicit written rationale and Governing Board awareness.
+10. **Upstream confidentiality terms govern that project's case.** Some projects cannot or will not sign NDAs or acknowledgements, and some treat AI-assisted findings as public. Where the upstream project's policy sets such terms, follow them, record them in the case, and let them take precedence over the SIRT's embargo-eligibility defaults (§4.3). Do not publish a reporter's private report, correspondence or identity beyond the agreed advisory without their permission, and obtain permission for each intended publication.
+11. **Never hold a fix for a CVE ID.** The authoritative CNA (CVD Policy §2) assigns on its own process and timing. Reporting, fixing and coordination proceed in parallel.
 
 ## 7. Summary table
 

@@ -61,6 +61,14 @@ Quality of the packet directly sets the pace. Model the report on what maintaine
   not exploitation aids.
 - **Include:** clear software description, specific finding, potential impact, reproducer, a
   proposed patch, and a validating unit test. (Mirror the intake data elements.)
+- **State the impact as an engineer can act on it.** Give the attacker's starting privileges, the
+  affected resource, and the security boundary crossed, under realistic conditions (configuration,
+  scope, required access).
+- **Pin down the versions.** Give the exact version or commit, separate confirmed-affected versions
+  from suspected ranges, name the introducing change where known, and link existing reports or fixes.
+- **Confirm it belongs to this upstream.** Route vendor-only changes and out-of-tree components to
+  their own maintainers rather than to the main project.
+- **Name a technical follow-up owner** who can answer review questions and re-run tests.
 - **Fit their house style.** Patches that match the project's conventions get merged faster;
   collect style/build info during recon so fixes land cleanly.
 - Reference Daniel Stenberg's guidance on excellent vulnerability reports as a shared standard.
