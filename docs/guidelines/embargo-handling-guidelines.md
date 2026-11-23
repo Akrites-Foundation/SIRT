@@ -5,6 +5,7 @@
 **Version:** 0.5
 **Formerly titled:** Embargo Handling Guidance
 **Status:** Draft — for Akrites SIRT review. Operational guidance incorporated by reference in the CVD Policy.
+**Binding parts:** §6 (Operating rules for the SIRT) is binding on the SIRT, because the CVD Policy §6 incorporates it by reference. All other sections are guidance. If this document conflicts with the CVD Policy, the policy governs.
 
 **Applies to:** All vulnerability cases handled by the Akrites SIRT (Intake → Synchronized Disclosure)
 
@@ -110,6 +111,8 @@ OpenSSL's stated principle is that **embargoes should be measured in days and we
 Some projects run scheduled release trains rather than per-issue embargoes — e.g., short fixed windows tied to a CVE issuance (72 hours is used by some projects), or quarterly critical-patch cadences with a ~5-day advance pre-release notice used by large vendors. Where a project has a cadence, the SIRT aligns the PD to the next appropriate release window rather than imposing its own date.
 
 ## 6. Operating rules for the SIRT
+
+**These rules are binding on the SIRT.** The CVD Policy §6 incorporates this section by reference.
 
 0. **Automation first.** The SIRT pipeline provides the reporting structure, workflow, and timers; these rules govern the human decisions within it.
 1. **Determine the governing timeline at the start of Coordination** and record it in the case (which of the four precedence tiers in §2 applies, and the source URL/policy it came from). Also record the agreed release trigger or date, who is participating, and the publication permissions granted by the Finder and the project.

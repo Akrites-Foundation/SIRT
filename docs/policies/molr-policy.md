@@ -80,7 +80,7 @@ This policy governs SIRT actions when coordinated vulnerability disclosure (CVD)
 | **Abandonment Clock** | Governs when Akrites may conclude a project is abandoned and eligible for Track B. Does not apply to the EOL-branch path (§4), which never declares a project abandoned. | **Hard floor: 90 calendar days of total silence** across all channels. This period may begin at the T0 of a trusted third party's contact attempts, provided a complete log of those attempts is submitted (see §3.2). Insensitive to severity or exploit pressure. |
 
 ### 3.1 Disclosure Clock Contact & Escalation
-The SIRT works a fixed contact and escalation ladder from T0 to the T0 + 15 business-day decision point, recording every attempt. The ladder is set out in the [Guidelines and Procedures](../procedures/molr-procedure.md).
+The SIRT works a fixed contact and escalation ladder from T0 to the T0 + 15 business-day decision point, recording every attempt. The ladder is set out in the [MoLR Procedure](../procedures/molr-procedure.md#contact-and-escalation-ladder).
 
 ### 3.2 Trusted Third-Party Clock Start
 * **Who qualifies**: For now, a trusted third party is an **active Akrites member organization**. Other coordinators (for example, a government CERT) will be defined once Akrites accepts reports from outside its membership.

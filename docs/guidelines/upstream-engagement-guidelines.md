@@ -138,19 +138,12 @@ consistently rather than by gut feel. Number of open issues alone is **not** a v
 
 ### 2.3 The escalation ladder (timers, not tantrums)
 
-Move deliberately, documenting each attempt. Timers are guidelines negotiated per case, not hard
-automation:
+The steps and timers are in the [MoLR Procedure](../procedures/molr-procedure.md#contact-and-escalation-ladder), which owns them. Use these as judgment guidance while you work through it:
 
-1. **Polite re-contact** on the verified channel, restating that we've done the analysis and drafted
-   a fix, and offering help (testing, resources, PVR enablement). Reference Play 10.
-2. **Alternate channel / delegate.** Try a second contact or ask a member engineer who knows the project to
-   make a warm introduction.
-3. **Offer to reduce their burden.** Label our work "initial/proposed patch," offer to help with
-   testing, or connect them to scoped support (foundation/registry/steward candidates).
-4. **State the fallback plainly.** If we still hear nothing by an agreed date, our process considers
-   next steps to protect users — say so honestly and give them the chance to respond first.
-5. **Publish to protect consumers** (see 2.4), only after documented failed attempts and the right
-   approvals.
+- Move deliberately and document each attempt in the [contact attempt log](../../templates/contact-attempt-log.md).
+- Lead with help. Say that we have done the analysis and drafted a fix, and offer testing, resources or PVR enablement, before mentioning any fallback.
+- Name the fallback plainly and give the maintainer the chance to respond first.
+- Publish to protect consumers (see 2.4) only after documented failed attempts and the right approvals.
 
 ### 2.4 Getting a fix to users when upstream won't act
 
