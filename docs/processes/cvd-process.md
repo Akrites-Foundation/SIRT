@@ -54,64 +54,69 @@ These principles, drawn largely from long-standing coordination practice, guide 
 
 ## 3. The coordinated lifecycle
 
-Each phase below notes what happens, then what "good" looks like for the parties with an active role in it. This guide captures the conceptual process, not the specific mechanics of how these are achieved through automation and agentic workflows (as appropriate). 
+The phases below are the nine phases of the [CVD Policy](../policies/cvd-policy.md) §7, which holds the canonical list. For each phase this guide notes what happens, then what "good" looks like for the parties with an active role in it. It captures the conceptual process, not the specific mechanics of how these are achieved through automation and agentic workflows (as appropriate). The step-by-step actions are in the [Case Handling Procedure](../procedures/case-handling-procedure.md).
 
-> **Mapping to the CVD Policy lifecycle.** This guide's phases group the policy's nine phases for practical use:
-> Discovery & Reporting = *Discover*; Validation & Triage = *Deduplicate & Triage* + *Validate*; Prioritization = *Validate* (severity); Read-in & Embargo = *Coordination*; Remediation = *Patch* + *Test*; Upstream Engagement = *Coordination* (upstream hand-off); Disclosure Preparation = *Document* + *Distribute*; Public Disclosure = *Disclose*; Post-Disclosure = after *Disclose*.
+```
+Discover → Deduplicate & Triage → Validate → Coordination → Patch → Test → Document → Distribute → Disclose
+```
 
-### Phase 1 — Discovery & Reporting
+### Phase 1 — Discover
 A vulnerability is found and reported into a single intake path (the "front door"), so the project isn't approached through many uncoordinated channels.
 - **Finder:** submit a clear, reproducible report — affected component and versions, impact, and reproduction steps. Report privately; don't open a public issue or PR. Note whether AI/LLM tooling assisted and whether it was public or confidential — public tooling can foreclose an embargo.
 - **Coordinator:** provide one obvious, low-friction way to report; acknowledge receipt quickly; treat the reporter with respect, not suspicion.
 - **Maintainer:** offer a supported private channel (e.g., a `SECURITY.md` and private vulnerability reporting) so reports don't arrive in public.
 
-### Phase 2 — Validation & Triage
-The report is confirmed, deduplicated against work already in flight, and scoped.
-- **Coordinator:** validate before acting; deduplicate early and automatically; give the benefit of the doubt to under-specified reports and ask for what's missing.
-- **Maintainer:** help confirm the issue is real and in scope.
-- **Finder:** assist with reproduction where needed.
+### Phase 2 — Deduplicate & Triage
+The report is deduplicated against work already in flight and scoped.
+- **Coordinator:** deduplicate early and automatically; give the benefit of the doubt to under-specified reports and ask for what's missing.
+- **Maintainer:** help decide whether the report is a vulnerability, a bug, or intended behavior.
+- **Finder:** respond to requests for missing detail.
 
-### Phase 3 — Prioritization
-The confirmed issue is assessed for severity and urgency, and resources are allocated.
-- **Coordinator:** use severity (CVSS v4.0 and the severity label) and exploit evidence (exploit state and SSVC priority — see the [Severity Scoring Guidelines](../guidelines/severity-scoring-guidelines.md)) as routing and pacing signals — never as a filter to drop a real issue. The order in which reports are worked is set in the [Case Handling Procedure](../procedures/case-handling-procedure.md). Note where a "medium" is critical for a specific sector. If your assessment differs from an existing public score, prepare a deviation notice rather than a dispute.
-- **Maintainer:** weigh real-world impact and the cost of a fix.
-- **Finder:** provide context on impact and exploitability.
+### Phase 3 — Validate
+The report is confirmed and reproduced, then assessed for severity and urgency, and resources are allocated.
+- **Coordinator:** validate before acting. Use severity (CVSS v4.0 and the severity label) and exploit evidence (exploit state and SSVC priority — see the [Severity Scoring Guidelines](../guidelines/severity-scoring-guidelines.md)) as routing and pacing signals — never as a filter to drop a real issue. The order in which reports are worked is set in the [Case Handling Procedure](../procedures/case-handling-procedure.md). Note where a "medium" is critical for a specific sector. If your assessment differs from an existing public score, prepare a deviation notice rather than a dispute.
+- **Maintainer:** help confirm the issue is real and in scope; weigh real-world impact and the cost of a fix.
+- **Finder:** assist with reproduction where needed, and provide context on impact and exploitability.
 
-### Phase 4 — Read-in & Embargo
-The people who will work the case are read in, and the embargo and target public-disclosure (PD) date are set.
-- **Coordinator:** read in only those with a need to know who can analyze, patch, test, or stage the fix, at the least-privileged tier sufficient for their role; issue each a read-in notice; propose an embargo. Offer a standard **15-business-day proposed embargo** (targeting total time to Public Disclosure of ≤ 17 bd Low/Med, ≤ 21 bd High, ≤ 24 bd Critical), deferring to the project's own policy, with a defined path to extend for good cause.
-- **Maintainer:** the project holds final authority over the PD date; the embargo defers to its policy where one exists.
-- **Finder:** agree to the embargo and settle attribution preferences (including co-finder handling and declining credit).
+### Phase 4 — Coordination
+The people who will work the case are read in, the embargo and target public-disclosure (PD) date are set, and the fix is coordinated with the upstream project. (See §4 for upstream engagement detail.)
+- **Coordinator:** read in only those with a need to know who can analyze, patch, test, or stage the fix, at the least-privileged tier sufficient for their role; issue each a read-in notice; propose an embargo. Offer a standard **15-business-day proposed embargo** (targeting total time to Public Disclosure of ≤ 17 bd Low/Med, ≤ 21 bd High, ≤ 24 bd Critical), deferring to the project's own policy, with a defined path to extend for good cause. Engage upstream human-to-human first; respect the maintainer's authority, tempo, and preferred workflow; be the single front door to the project.
+- **Maintainer:** the project holds final authority over the PD date; the embargo defers to its policy where one exists. Lead the fix and its release on terms that work for the project.
+- **Finder:** agree to the embargo and settle attribution preferences (including co-finder handling and declining credit). Stay informed; let the Coordinator handle project contact.
 - **Consumer (distribution/staging parties):** read in late and narrowly, only as needed to pre-position a fix.
 
-### Phase 5 — Remediation
-A patch and/or mitigation is developed and tested privately.
-- **Maintainer / working group:** develop the fix; where the maintainer wants help, subject-matter experts contribute patches and testing.
-- **Coordinator:** facilitate, supply expertise, and keep the work private until it's ready to move upstream; ensure the fix is tested for regressions.
-- **Finder:** verify the fix resolves the issue; offer a workaround for consumers if a full patch will take time.
+### Phase 5 — Patch
+A patch and/or mitigation is developed privately.
+- **Maintainer / working group:** develop the fix; where the maintainer wants help, subject-matter experts contribute patches.
+- **Coordinator:** facilitate, supply expertise, and keep the work private until it's ready to move upstream.
+- **Finder:** offer a workaround for consumers if a full patch will take time.
 
-### Phase 6 — Upstream Engagement
-The fix is coordinated with the upstream project for merge and release. (See §4 for detail.)
-- **Coordinator:** engage human-to-human first; respect the maintainer's authority, tempo, and preferred workflow; be the single front door to the project.
-- **Maintainer:** lead the fix and its release on terms that work for the project.
-- **Finder:** stay informed; let the Coordinator handle project contact.
+### Phase 6 — Test
+The patch is tested privately for regressions.
+- **Maintainer / working group:** run regression, smoke, and other testing to confirm the vulnerability is resolved and no new regressions are introduced.
+- **Coordinator:** ensure the fix is tested for regressions.
+- **Finder:** verify the fix resolves the issue.
 
-### Phase 7 — Disclosure Preparation
+### Phase 7 — Document
 The advisory, identifier, and machine-readable data are prepared for release.
 - **Coordinator:** prepare the disclosure package (the VDR) and machine-readable advisory data (OSV, plus CSAF/VEX where published); favor indicators of compromise over public proof-of-concept; ensure a CVE (or equivalent) and accurate affected-version data. Record the case's AI use — the Finder's and the SIRT's — and include the standard two-line AI-use block in the advisory.
 - **Maintainer:** review and approve the advisory; the project owns what is said about its code.
 - **Finder:** confirm credit as agreed.
+
+### Phase 8 — Distribute
+The patch and documentation are staged so remediation can propagate quickly at PD.
+- **Coordinator:** share documentation with read-in Collaborators so they can prepare consistent, tailored communications.
 - **Consumer (staging parties):** finish pre-positioning so remediation can propagate quickly at PD.
 
-### Phase 8 — Public Disclosure
+### Phase 9 — Disclose
 The vulnerability and its remediation are released publicly, in sync.
 - **Coordinator:** publish so the fix, advisory, and disclosure land together; keep messaging proportionate and free of hype.
 - **Maintainer:** ship the release and its advisory.
 - **Finder:** publish any write-up only after the coordinated release, consistent with the agreement.
 - **Consumer:** receive an actionable advisory and begin remediation.
 
-### Phase 9 — Post-Disclosure & Retrospective
-Deployment is supported and the case is reviewed.
+### After Disclose — deployment and retrospective
+Deployment is supported and the case is reviewed. This is not a CVD Policy phase; it follows Phase 9.
 - **Consumer:** deploy the fix or mitigation promptly.
 - **Coordinator:** support deployment, capture [metrics](../reference/metrics-framework.md), and run a blameless retrospective; feed lessons back into the process.
 - **Maintainer & Finder:** recognized for the outcome; input welcomed into the retrospective.
@@ -148,7 +153,7 @@ The full practice is in the [Upstream Engagement Guidelines](../guidelines/upstr
 ## 6. Templates & references
 
 **Companion templates & internal artifacts**
-- [Read-In Policy](../policies/read-in-policy.md), [Read-In Notice template](../../templates/case-read-in-notice-template.md), [read-in log](../../templates/Akrites_ReadIn_Log_CASE.csv)
+- [Read-In Policy](../policies/read-in-policy.md), [Read-In Notice template](../../templates/case-read-in-notice-template.md), [read-in log](../../templates/case-read-in-log-template.csv)
 - [Case Handling Procedure](../procedures/case-handling-procedure.md) — the on-duty, step-by-step checklist for each phase
 - VDR and deviation-notice formats *(to be published)*
 - [Working Group Governance Policy](../policies/wg-governance-policy.md), [Working Group Operating Procedure](../procedures/wg-operating-procedure.md) and the [engineer read-in one-pager](../reference/read-in-engineer-quick-reference.md)

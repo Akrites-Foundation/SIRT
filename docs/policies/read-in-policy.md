@@ -33,13 +33,7 @@ It answers two questions in sequence:
 
 ## 1. Definitions
 
-| Term | Definition |
-|---|---|
-| **Read-in** | A formal, logged, time-bounded grant of access to a specific case or WG workspace, acknowledged by the recipient before access is enabled. |
-| **Tier** | The band that determines *when* a person is read in and *how much* case material they receive. |
-| **Disclosure boundary** | What information exists or is shared at a given point in the case. Related to, but distinct from, tier — some activities cannot be performed without a disclosure (you cannot test a patch you have not been given). |
-| **Case read-in log** | The authoritative per-case record of every grant, change, and revocation. |
-| **Sponsor** | A member organization vouching for an individual, or a delegated authority nominating them for a specific case. |
+Definitions are kept in the [Glossary](../reference/glossary.md). This policy uses these terms with the meaning given there: [Read-in](../reference/glossary.md#read-in), [Tier](../reference/glossary.md#tier), [Disclosure boundary](../reference/glossary.md#disclosure-boundary), [Case read-in log](../reference/glossary.md#case-read-in-log), and [Sponsor](../reference/glossary.md#sponsor).
 
 ---
 

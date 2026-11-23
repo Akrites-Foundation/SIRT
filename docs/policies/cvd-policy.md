@@ -2,12 +2,12 @@
 
 **Type:** Policy
 **Approver:** Governing Board
-**Version:** 1.5
+**Version:** 1.6
 **Status:** Board-reviewed — v1.0, 2026-10-20 (later edits reported to the Board)
 **Owner:** Akrites SIRT (Security Incident Response Team)
 **Primary contact:** SIRT@Akrites.dev
 **Canonical URL:** https://sirt.akrites.dev/security/policy
-**Last updated:** 2026-11-10
+**Last updated:** 2026-11-23
 
 > **Naming:** **Akrites SIRT** — the Security Incident Response Team hosted by the
 > Akrites Foundation — is the standard name used throughout this document.
@@ -58,76 +58,12 @@ that a single CVE ID is used for the flaw.
 
 ## 3. Definitions
 
-### Roles & access
+Definitions for this policy are kept in the [Glossary](../reference/glossary.md), which is the single source for terms used across Akrites documents. The terms below are used in this policy with the meaning given there.
 
-- **Finder** — The individual or organization that discovers a potential
-  security flaw and reports it.
-- **Owner** — The maintainer, security team, or organization responsible for a
-  project's code and its ongoing security posture. For coordinated cases,
-  the Akrites SIRT may act as Owner or, more commonly, as a neutral coordinator
-  between Owners.
-- **Collaborator** — A trusted third party (for example a downstream developer
-  or a security expert) brought in to help validate or fix a vulnerability.
-- **Consumers** — The end users, organizations, and downstream developers who
-  use the software and must eventually apply fixes to stay secure.
-- **Need-to-Know** — The principle that access to sensitive information about a
-  vulnerability is restricted to only those individuals necessary for its
-  resolution.
-- **Read-In** — The formal process of briefing a Collaborator on the details of
-  a non-public vulnerability, normally accompanied by an agreement to maintain
-  confidentiality.
-- **Clearinghouse** — When a trusted, verified organization is functioning 
-  as a clearinghouse, it is playing the part of a neutral third party. This is 
-  a time-activated role adopted during pre-disclosure. They will collect, normalize, 
-  strip PII from, and distribute vulnerability reports. They will handle embargoed 
-  vulnerabilities. At times Akrites will function as a clearinghouse. At other 
-  times, each member organization can adopt the role of clearinghouse by bringing 
-  vulnerability reports to Akrites. 
-
-### Technical terms
-
-- **Potential Vulnerability** — A bug or behavior that appears to be a security
-  risk but has not yet been confirmed or triaged.
-- **Vulnerability** — A validated weakness that can be exploited to compromise
-  confidentiality, integrity, or availability.
-- **Root Cause** — The underlying technical error or design flaw (often
-  categorized as a CWE) that allows the vulnerability to exist.
-- **Severity** — A measurement (typically CVSS) of impact and exploitability,
-  ranked Low to Critical.
-- **Vulnerability Identifier** — A unique label (such as a CVE ID) used to track
-  a flaw across the industry.
-- **CNA (CVE Numbering Authority)** — An organization authorized by the CVE
-  Program to assign CVE IDs and publish CVE Records for vulnerabilities within
-  its defined scope.
-- **CVE Reservation** — The act of a CNA reserving a CVE ID for a vulnerability
-  that is not yet public. The ID exists in a reserved state, with no public
-  details, until the CVE Record is published.
-- **CVE Assignment** — The act of a CNA associating a reserved CVE ID with a
-  specific vulnerability and publishing the CVE Record (description, affected
-  products and versions, references) to the CVE Program's database, normally at
-  Public Disclosure.
-
-### Resolution & communication
-
-- **Patch** — A code-level fix that eliminates the root cause.
-- **Work-around** — A temporary mitigation (such as a configuration change) that
-  reduces risk without modifying source code.
-- **Embargo** — A period during which vulnerability details are kept
-  confidential among a small group of stakeholders to allow a fix to be
-  developed and staged.
-- **Public Disclosure (PD)** — The specific date and time when information about
-  a vulnerability is made available to the general public.
-- **Documentation** — The advisories, release notes, and mitigation
-  instructions that explain the vulnerability and how to fix it.
-
-### AI tooling
-
-- **AI / LLM tooling** — Artificial-intelligence tools, most notably large
-  language models (LLMs), used to help discover, reproduce, analyze, triage,
-  patch, test, score, translate, or document a vulnerability.
-- **AI-use disclosure** — A capability-level statement, published for both the
-  Finder and the Akrites SIRT, of whether and how AI tooling was used in a case.
-  See Section 13 and the [Attribution and AI-Use Disclosure Policy](attribution-and-ai-use-disclosure-policy.md).
+- **Roles & access:** [Finder](../reference/glossary.md#finder), [Owner](../reference/glossary.md#owner), [Collaborator](../reference/glossary.md#collaborator), [Consumers](../reference/glossary.md#consumer), [Need-to-Know](../reference/glossary.md#need-to-know), [Read-In](../reference/glossary.md#read-in), [Clearinghouse](../reference/glossary.md#clearinghouse).
+- **Technical terms:** [Potential Vulnerability](../reference/glossary.md#potential-vulnerability), [Vulnerability](../reference/glossary.md#vulnerability), [Root Cause](../reference/glossary.md#root-cause), [Severity](../reference/glossary.md#severity), [Vulnerability Identifier](../reference/glossary.md#vulnerability-identifier), [CNA (CVE Numbering Authority)](../reference/glossary.md#cna), [CVE Reservation](../reference/glossary.md#cve-reservation), [CVE Assignment](../reference/glossary.md#cve-assignment).
+- **Resolution & communication:** [Patch](../reference/glossary.md#patch), [Work-around](../reference/glossary.md#workaround), [Embargo](../reference/glossary.md#embargo), [Public Disclosure (PD)](../reference/glossary.md#pd), [Documentation](../reference/glossary.md#documentation).
+- **AI tooling:** [AI / LLM tooling](../reference/glossary.md#ai-llm-tooling), [AI-use disclosure](../reference/glossary.md#ai-use-disclosure) (see Section 13 and the [Attribution and AI-Use Disclosure Policy](attribution-and-ai-use-disclosure-policy.md)).
 
 ## 4. How to report a vulnerability
 
@@ -257,6 +193,8 @@ transparently — is specified in the
 rules for the SIRT), incorporated here by reference.
 
 ## 7. The vulnerability lifecycle
+
+**This section holds the canonical list of lifecycle phases.** The [CVD Process](../processes/cvd-process.md) and the [Case Handling Procedure](../procedures/case-handling-procedure.md) use these same nine phases and names; if they differ from this list, this list governs.
 
 The lifecycle below traces the **vulnerability's** journey. In most cases the
 Akrites SIRT acts as coordinator across these phases rather than as the Owner
@@ -561,6 +499,7 @@ SIRT@Akrites.dev.
 | 1.3     | 2026-11-05 | Editorial only — no change to policy substance: Acknowledgements & Attribution Guidance merged into the Attribution and AI-Use Disclosure Policy (§11 link and AI-use link text updated); CNA wording corrected (§5, §7, §10); intake-status placeholder removed (§12); OpenPGP key availability stated accurately (§4.2); typo and markdown fixes. |
 | 1.4     | 2026-11-09 | Board decision D1: §14 names the Linux Foundation as the entity making the safe-harbor commitment. |
 | 1.5     | 2026-11-10 | Decision D3: §8 states the maintainer decides the PD date, with the SIRT Director as the SIRT's final decision point. Decision D4: §7 downstream lead time set to 7–14 days (Tiers 2–3) and at most 24 hours (Tier 3.5), matching the Read-In Policy. Reported to the Governing Board. |
+| 1.6     | 2026-11-23 | Editorial only — no change to policy substance. §3: term definitions moved to the Glossary and replaced with links, so each term is defined in one place (definitions of Collaborator, Clearinghouse, Finder, Owner and others carried into the Glossary unchanged in meaning). §7: states that this section holds the canonical nine-phase list and that the CVD Process and Case Handling Procedure follow it. To be reported to the Governing Board. |
 
 ## 17. References
 
