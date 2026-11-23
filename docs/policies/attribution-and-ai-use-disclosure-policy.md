@@ -58,6 +58,8 @@ For each disclosing party (Finder and SIRT), a case captures three things:
 | **How / when (capability + phase)** | Required whenever AI materially assisted | "AI-assisted discovery and patch development." |
 | **Which specific tools/models** | Optional, and only at the disclosing party's request | "Tools: {from the controlled vocabulary}." |
 
+**Minor use counts.** "Whether AI was used" covers any use of AI/LLM tooling, including minor assistance such as spelling and grammar checks, autocomplete, and translation of a sentence. There is no threshold. Where AI only assisted in a minor way, the statement is "AI tooling was used." The how / when line is added only when AI materially assisted, as the table above says.
+
 What is **never** published: prompts, the specific model-plus-harness combination, scaffolding, or configuration. These are retained internally by the SIRT.
 
 ---
