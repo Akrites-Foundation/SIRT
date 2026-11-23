@@ -22,10 +22,11 @@ where a template and the policy disagree, the policy governs.
 
 ## Unresponsive projects and Maintainer of Last Resort
 
-Used with the [Maintainer of Last Resort Policy](../docs/Maintainer_of_Last_Resort_Policy.md).
+Used with the [Maintainer of Last Resort Policy](../docs/Maintainer_of_Last_Resort_Policy.md) and the [MoLR Guidelines and Procedures](../docs/molr_guidelines_and_procedures.md).
 
-- [Contact attempt log](Contact_attempt_log.md) — disclosure and abandonment clocks
+- [Contact attempt log](Contact_attempt_log.md) — every outreach attempt, signs of life, who was asked to carry the fix
 - [Maintainer non-fix record](<Maintainer non-fix record .md>)
-- [MoLR decision record](<MoLR decision record .md>)
+- [MoLR case issue template](<MoLR decision record .md>) — one issue per engagement, opened in `SIRT-private`
+- [MoLR communications](molr-communications.md) — maintainer emails (M1–M6), `#sirt-disclosures` notices, Board notice, README header, registry entries
 - [Stewardship records](stewardship-records.md) — project status notice / steward call, and steward vetting & approval record
 
