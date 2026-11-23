@@ -6,7 +6,7 @@
 **Owner:** Akrites SIRT (with Linux Foundation program staff)
 **Status:** Draft for Akrites SIRT review
 **Audience:** Akrites staff who onboard people, and member organizations joining Akrites
-**Companion docs:** [Glossary](Akrites_SIRT_CVD_Glossary.md) (member, member engineer, Akrites staff), [Read-In Policy](Akrites-Read-In-Policy.md), [Communications Playbook](sirt-communications-playbook.md) (Play 21), [Metrics](Akrites_SIRT_Metrics.md)
+**Companion docs:** [Glossary](../reference/glossary.md) (member, member engineer, Akrites staff), [Read-In Policy](../policies/read-in-policy.md), [Communications Playbook](../playbooks/communications-playbook.md) (Play 21), [Metrics](../reference/metrics-framework.md)
 
 ---
 
@@ -14,16 +14,16 @@
 
 This playbook explains how member organizations and their people are added to Akrites — which groups exist, who belongs in each, what to provide, and what Slack channels and GitHub access each person gets.
 
-**Onboarding is not read-in.** Onboarding gives access to general Akrites communication only. Access to a case, and to the channels and repositories that carry case material, is granted separately and only through the [Read-In Policy](Akrites-Read-In-Policy.md).
+**Onboarding is not read-in.** Onboarding gives access to general Akrites communication only. Access to a case, and to the channels and repositories that carry case material, is granted separately and only through the [Read-In Policy](../policies/read-in-policy.md).
 
 ### Terms used here
 
 - **Member organization** — an organization that has joined Akrites. On its own, "member" means the organization.
 - **Member engineer** — a person employed by a member organization, or its authorized and approved delegate.
-- **Read-In member engineer** — a member engineer who has been read in under the [Read-In Policy](Akrites-Read-In-Policy.md).
+- **Read-In member engineer** — a member engineer who has been read in under the [Read-In Policy](../policies/read-in-policy.md).
 - **Akrites staff** — Linux Foundation employees and contractors who run the program. The SIRT is staffed by Akrites staff.
 - **LFX** — the Linux Foundation's internal tool where Akrites staff organize committees, mailing lists, and meetings. Each group below that is "onboarded through LFX" has its own committee, mailing list, and meeting series there.
-- **Akrites Slack workspace** — the invite-only Slack workspace for Akrites discussion and announcements. Slack is never used to report vulnerabilities — see [SECURITY.md](../SECURITY.md).
+- **Akrites Slack workspace** — the invite-only Slack workspace for Akrites discussion and announcements. Slack is never used to report vulnerabilities — see [SECURITY.md](../../SECURITY.md).
 
 ---
 
@@ -46,7 +46,7 @@ Everyone onboarded to Akrites is invited to the Akrites Slack workspace and `#al
 | `#all-akrites` | Everyone onboarded (member engineers, PSIRT leads, board members, Akrites staff); interested non-members added by Akrites staff | At onboarding |
 | `#psirt-leads` | PSIRT leads and alternates; Akrites staff who work with them | At onboarding |
 | `#sirt-disclosures` | PSIRT leads and alternates; Akrites staff who work with them | At onboarding |
-| `#sirt-ops-eng` | Read-In member engineers; Akrites SIRT staff | After read-in, through the [Read-In Policy](Akrites-Read-In-Policy.md) — never at onboarding |
+| `#sirt-ops-eng` | Read-In member engineers; Akrites SIRT staff | After read-in, through the [Read-In Policy](../policies/read-in-policy.md) — never at onboarding |
 
 **Case channels are separate.** Each is created for a single case, and access is granted only through the Read-In Policy. Never post case information in `#all-akrites`.
 
@@ -93,7 +93,7 @@ Anyone can read the [SIRT GitHub repository](https://github.com/Akrites-Foundati
 - **What it is:** the Akrites Governing Board.
 - **Who is in it:** the board member and alternate designated by each Premier member organization, and Akrites staff who support the board.
 - **Onboarded through:** LFX (committees, mailing lists, and meetings) and an invitation to the Akrites Slack workspace (`#all-akrites` only; there is no board channel). Accepting is optional.
-- **What you get:** board meeting invitations, weekly email updates on progress, metrics, and membership changes, and `#all-akrites`. Updates follow the [Metrics](Akrites_SIRT_Metrics.md) confidentiality gate — no live embargoed case detail.
+- **What you get:** board meeting invitations, weekly email updates on progress, metrics, and membership changes, and `#all-akrites`. Updates follow the [Metrics](../reference/metrics-framework.md) confidentiality gate — no live embargoed case detail.
 - **Note:** membership level gives no additional access to case information.
 
 ### General members
@@ -110,7 +110,7 @@ The member organization provides, through its Akrites staff contact:
 - [ ] **PSIRT lead and alternate** — for the PSIRT Leads group, with name, email, job title, company, and GitHub ID.
 - [ ] **Named member engineers** who should receive Akrites communication or work on cases — with name, email, job title, company, and GitHub ID.
 
-Akrites staff then onboard each person using the checklist in §7. Anyone who will work on cases is read in separately under the [Read-In Policy](Akrites-Read-In-Policy.md), which is also when they are added to `#sirt-ops-eng`.
+Akrites staff then onboard each person using the checklist in §7. Anyone who will work on cases is read in separately under the [Read-In Policy](../policies/read-in-policy.md), which is also when they are added to `#sirt-ops-eng`.
 
 ## 6. Adding a person from an existing member organization
 
@@ -130,7 +130,7 @@ Work through every step that applies to the person's groups (§1).
 - [ ] **LFX meetings** — add them to each group's meeting series in LFX so they receive the invitations (board meetings, PSIRT Leads meetings).
 - [ ] **Slack** — invite them to the Akrites Slack workspace and `#all-akrites` (accepting is up to them). For PSIRT leads, also add `#psirt-leads` and `#sirt-disclosures`. **Do not** add anyone to `#sirt-ops-eng` or a case channel at onboarding; that happens only through read-in.
 - [ ] **GitHub** — for member engineers and PSIRT leads, add their GitHub ID to the [Akrites-Foundation GitHub organization](https://github.com/Akrites-Foundation). **Do not** add anyone to a case repository; that happens only through read-in.
-- [ ] **Welcome** — send the welcome email ([Communications Playbook](sirt-communications-playbook.md) Play 21).
+- [ ] **Welcome** — send the welcome email ([Communications Playbook](../playbooks/communications-playbook.md) Play 21).
 - [ ] **Record** — note the date and the groups, channels, and repo access added on the roster entry.
 
 ---
@@ -144,7 +144,7 @@ Administrative onboarding (§5–§7) gives a member engineer general Akrites co
 A member engineer is ready for SIRT operations onboarding when all of the following are true:
 
 - [ ] They have been administratively onboarded (§7 checklist complete).
-- [ ] They have been read in under the [Read-In Policy](Akrites-Read-In-Policy.md). Read-in is what grants access to `#sirt-ops-eng` and to the repositories that carry case material.
+- [ ] They have been read in under the [Read-In Policy](../policies/read-in-policy.md). Read-in is what grants access to `#sirt-ops-eng` and to the repositories that carry case material.
 - [ ] Akrites SIRT staff have confirmed which repositories and issues they will work on, based on their skills and capacity.
 
 ### 8.2 What the SIRT provides
@@ -153,7 +153,7 @@ Once the requirements are met, Akrites SIRT staff provide the engineer with:
 
 1. **A Getting Started guide** (template in §8.3) that explains the workflow, work packages, timelines, and scope.
 2. **A prioritized issue list** matched to the engineer's skills and capacity.
-3. **Access to the specific repositories** for those issues, granted through the [Read-In Policy](Akrites-Read-In-Policy.md), so that triage can begin.
+3. **Access to the specific repositories** for those issues, granted through the [Read-In Policy](../policies/read-in-policy.md), so that triage can begin.
 
 The SIRT is the engineer's main contact. Engineers can reach their SIRT contact directly on Slack, or engage the wider team in the `#sirt-ops-eng` channel.
 
@@ -169,7 +169,7 @@ SIRT staff send the guide below, filling in the engineer's name and the prioriti
 >
 > #### Getting started
 >
-> **Process and scope.** Read the full workflow in the [Lightweight CVD Process Documentation](Akrites_SIRT_GitHub_lightweight_CVD_Playbook.md). Each issue (ACT-) should already contain an automated severity assessment, a candidate patch, and a draft report. Your main task is human verification, organized into four work packages:
+> **Process and scope.** Read the full workflow in the [Lightweight CVD Process Documentation](github-fallback-case-handling-procedure.md). Each issue (ACT-) should already contain an automated severity assessment, a candidate patch, and a draft report. Your main task is human verification, organized into four work packages:
 >
 > | Work package | Focus | What you do |
 > |---|---|---|
@@ -198,7 +198,7 @@ SIRT staff send the guide below, filling in the engineer's name and the prioriti
 
 ### 8.4 Staff checklist: SIRT operations onboarding
 
-- [ ] **Confirm prerequisites.** Administrative onboarding (§7) is complete and the engineer is read in under the [Read-In Policy](Akrites-Read-In-Policy.md).
+- [ ] **Confirm prerequisites.** Administrative onboarding (§7) is complete and the engineer is read in under the [Read-In Policy](../policies/read-in-policy.md).
 - [ ] **Assess fit.** Identify the engineer's skills and capacity, and choose the repositories and issues that match.
 - [ ] **Grant access.** Through the Read-In Policy, give the engineer access to the specific repositories for their issues, and add them to `#sirt-ops-eng` if not already done at read-in.
 - [ ] **Build the prioritized issue list.** Rank the issues for the engineer.

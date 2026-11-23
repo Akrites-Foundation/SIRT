@@ -49,8 +49,8 @@ To develop a cohort of trustworthy, vendor-neutral, vetted, well-orchestrated an
 
 ### Quick Start
 - **Reporting a vulnerability?** Start with our [security policy](SECURITY.md).
-- [Akrites SIRT documentation](docs/readme.md)
-- [Akrites SIRT templates](templates/readme.md)
+- [Akrites SIRT documentation](docs/README.md)
+- [Akrites SIRT templates](templates/README.md)
 #### Areas that need contributions
 - Comments/feedback on the plan or services you'd like to see the Akrites SIRT offer
 - Where to file issues - [https://github.com/Akrites-Foundation/SIRT/issues](https://github.com/Akrites-Foundation/SIRT/issues)

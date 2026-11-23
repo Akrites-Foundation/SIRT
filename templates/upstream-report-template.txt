@@ -1,6 +1,6 @@
 TLP:AMBER+STRICT — Share only within your project's security team / maintainers, on a need-to-know basis.
 Embargoed until the agreed Public Disclosure date. See the Akrites CVD Policy:
-https://github.com/Akrites-Foundation/SIRT/blob/main/docs/Akrites_CVD_Policy.md
+https://github.com/Akrites-Foundation/SIRT/blob/main/docs/policies/cvd-policy.md
 
 ## 1. Description
 - High-level description of the vulnerability.

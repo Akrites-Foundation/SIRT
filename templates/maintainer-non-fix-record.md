@@ -1,6 +1,6 @@
 # Maintainer non-fix record (template)
 
-*Per [MoLR Policy](../docs/Maintainer_of_Last_Resort_Policy.md) Part I §2 and Part II §4 (Deliberate Non-Fix).*
+*Per [MoLR Policy](../docs/policies/molr-policy.md) Part I §2 and Part II §4 (Deliberate Non-Fix).*
 
 ```
 Case ID / CVE:

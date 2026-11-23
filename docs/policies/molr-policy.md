@@ -1,8 +1,10 @@
-# Akrites SIRT Maintainer of Last Resort (MoLR) Policy
+# Maintainer of Last Resort (MoLR) Policy
 
+**Type:** Policy
+**Approver:** Governing Board
 **Status:** Draft — for Governing Board review (v1.0)
 **Applies to:** Akrites SIRT, Working Groups, and Upstream Maintainers
-**Companion doc:** [MoLR Guidelines and Procedures](molr_guidelines_and_procedures.md) — how the SIRT carries out this policy, step by step.
+**Companion doc:** [MoLR Procedure](../procedures/molr-procedure.md) — how the SIRT carries out this policy, step by step.
 **Precedence:** The plain-language commitments in Part I are the non-negotiable floor for all SIRT actions and take precedence over the rest of this policy and over the Guidelines and Procedures.
 
 ---
@@ -78,7 +80,7 @@ This policy governs SIRT actions when coordinated vulnerability disclosure (CVD)
 | **Abandonment Clock** | Governs when Akrites may conclude a project is abandoned and eligible for Track B. Does not apply to the EOL-branch path (§4), which never declares a project abandoned. | **Hard floor: 90 calendar days of total silence** across all channels. This period may begin at the T0 of a trusted third party's contact attempts, provided a complete log of those attempts is submitted (see §3.2). Insensitive to severity or exploit pressure. |
 
 ### 3.1 Disclosure Clock Contact & Escalation
-The SIRT works a fixed contact and escalation ladder from T0 to the T0 + 15 business-day decision point, recording every attempt. The ladder is set out in the [Guidelines and Procedures](molr_guidelines_and_procedures.md#1-contact-and-escalation-ladder).
+The SIRT works a fixed contact and escalation ladder from T0 to the T0 + 15 business-day decision point, recording every attempt. The ladder is set out in the [Guidelines and Procedures](../procedures/molr-procedure.md).
 
 ### 3.2 Trusted Third-Party Clock Start
 * **Who qualifies**: For now, a trusted third party is an **active Akrites member organization**. Other coordinators (for example, a government CERT) will be defined once Akrites accepts reports from outside its membership.
@@ -119,10 +121,10 @@ Track B requires a signed entry test confirming all seven criteria:
 * **Mandatory Recusal**: Any approver with a commercial, personal, or organizational dependency on the affected package must recuse. If the SIRT Director is conflicted, the Akrites CTO approves. A Member staffing the engagement may have a dependency on the package, but it does not approve the engagement or sign off its own releases.
 
 ### 5.3 The Artifact
-The deliverable is a clean build of a frozen upstream commit plus the approved security patches, published under an Akrites-controlled namespace and never into the original project's namespace. The artifact rules are in the [Guidelines and Procedures](molr_guidelines_and_procedures.md#4-the-artifact-patch-series-on-a-pinned-commit).
+The deliverable is a clean build of a frozen upstream commit plus the approved security patches, published under an Akrites-controlled namespace and never into the original project's namespace. The artifact rules are in the [Guidelines and Procedures](../procedures/molr-procedure.md).
 
 ### 5.4 Release Integrity & Correctness
-No MoLR security release is published until it passes every integrity and correctness gate in the [Guidelines and Procedures](molr_guidelines_and_procedures.md#5-release-integrity--correctness-gates), including two named human reviewers who disclose any AI assistance.
+No MoLR security release is published until it passes every integrity and correctness gate in the [Guidelines and Procedures](../procedures/molr-procedure.md), including two named human reviewers who disclose any AI assistance.
 
 ---
 
@@ -140,13 +142,13 @@ No MoLR security release is published until it passes every integrity and correc
 # Part III: Wind-Down & Downstream Routing
 
 ### 1. Successor Maintainers
-Akrites may help a project's community find a successor through targeted outreach, but never broadcasts that a package is unmaintained and never selects or approves the successor. How the SIRT supports a search is in the [Guidelines and Procedures](molr_guidelines_and_procedures.md#7-successor-maintainers).
+Akrites may help a project's community find a successor through targeted outreach, but never broadcasts that a package is unmaintained and never selects or approves the successor. How the SIRT supports a search is in the [Guidelines and Procedures](../procedures/molr-procedure.md).
 
 ### 2. Freeze on Wind-Down
 If an engagement ends or no successor emerges, Akrites **freezes the artifact** (published, signed, immutable, marked `"no further fixes"`). Akrites **never unpublishes, deletes, or yanks** a security release, as doing so breaks downstream builds and causes supply-chain incidents.
 
 ### 3. Routing Without Taking Namespaces
-Downstream users are routed to fixes through machine-readable advisories (OSV, VEX), Linux distribution security teams, and intermediate maintainers — never by taking package names. The routing steps are in the [Guidelines and Procedures](molr_guidelines_and_procedures.md#6-publishing-and-downstream-routing).
+Downstream users are routed to fixes through machine-readable advisories (OSV, VEX), Linux distribution security teams, and intermediate maintainers — never by taking package names. The routing steps are in the [Guidelines and Procedures](../procedures/molr-procedure.md).
 
 ---
 
@@ -166,5 +168,5 @@ Downstream users are routed to fixes through machine-readable advisories (OSV, V
 
 | Version | Date | Description |
 | ------- | ---------- | -------------- |
-| 1.0 | 2026-11-10 | Split into this policy and the [MoLR Guidelines and Procedures](molr_guidelines_and_procedures.md); operational detail moved there. Incorporates [PR #183](https://github.com/Akrites-Foundation/SIRT/pull/183) by Roman Zhukov (trusted third-party clock start, chain-of-custody criterion, criticality justification, recusal). Adds: 12-month operational donation, no ownership or custody, no steward approval, no term limits, no urgency exception to the 90-day floor, Track B after a deliberate non-fix only for an end-of-life branch whose vulnerability the maintainer does not dispute (EOL-branch path). Prepared for first Governing Board review. |
-| 1.1 (draft) | 2026-11-10 | Approval of Track B moves to the SIRT Director, with the Governing Board informed (§5.2). "Do not fork" gains a critical-infrastructure exception decided by the SIRT Director, with advance notice to the maintainer (Part I §6). A returning maintainer takes control back and chooses how to continue (Part I §5). Adds transfer on request at the end of an engagement (§6). Aligns with the [MoLR Guidelines and Procedures](molr_guidelines_and_procedures.md) v0. |
+| 1.0 | 2026-11-10 | Split into this policy and the [MoLR Procedure](../procedures/molr-procedure.md); operational detail moved there. Incorporates [PR #183](https://github.com/Akrites-Foundation/SIRT/pull/183) by Roman Zhukov (trusted third-party clock start, chain-of-custody criterion, criticality justification, recusal). Adds: 12-month operational donation, no ownership or custody, no steward approval, no term limits, no urgency exception to the 90-day floor, Track B after a deliberate non-fix only for an end-of-life branch whose vulnerability the maintainer does not dispute (EOL-branch path). Prepared for first Governing Board review. |
+| 1.1 (draft) | 2026-11-10 | Approval of Track B moves to the SIRT Director, with the Governing Board informed (§5.2). "Do not fork" gains a critical-infrastructure exception decided by the SIRT Director, with advance notice to the maintainer (Part I §6). A returning maintainer takes control back and chooses how to continue (Part I §5). Adds transfer on request at the end of an engagement (§6). Aligns with the [MoLR Procedure](../procedures/molr-procedure.md) v0. |

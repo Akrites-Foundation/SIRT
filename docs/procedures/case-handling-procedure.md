@@ -8,8 +8,8 @@
 **Status:** Draft — for Akrites SIRT review
 
 Step-by-step actions for the responder on duty, keyed to the nine-phase
-lifecycle in the [Akrites CVD Policy](Akrites_CVD_Policy.md).
-Templates referenced below are in [`templates/notification-templates.md`](../templates/notification-templates.md). Default handling for pre-disclosure material follows the phased TLP table in CVD Policy §8 (TLP:RED at intake).  For the reasoning behind each step and what a good outcome looks like for each party, see the [CVD Playbook](Akrites_CVD_Playbook.md).
+lifecycle in the [Akrites CVD Policy](../policies/cvd-policy.md).
+Templates referenced below are in [`templates/notification-templates.md`](../../templates/notification-templates.md). Default handling for pre-disclosure material follows the phased TLP table in CVD Policy §8 (TLP:RED at intake).  For the reasoning behind each step and what a good outcome looks like for each party, see the [CVD Process](../processes/cvd-process.md).
 
 ```
 Discover → Deduplicate & Triage → Validate → Coordination → Patch → Test → Document → Distribute → Disclose
@@ -19,11 +19,11 @@ Discover → Deduplicate & Triage → Validate → Coordination → Patch → Te
 - Confirm the channel: **GitHub private vulnerability reporting** (preferred) or
   `SIRT@Akrites.dev`. If it arrived the "wrong" way (public
   issue, wrong list), move it private and continue — don't penalize the Finder.
-- Assign a tracking ID and open the case record: reporter, date, project, claimed versions, current TLP label, disclosure status, maintainer contacts, and PD date (once set). Keep it current as the case moves; record each read-in in the [case read-in log](../templates/Akrites_ReadIn_Log_CASE.csv).
+- Assign a tracking ID and open the case record: reporter, date, project, claimed versions, current TLP label, disclosure status, maintainer contacts, and PD date (once set). Keep it current as the case moves; record each read-in in the [case read-in log](../../templates/Akrites_ReadIn_Log_CASE.csv).
 - Send **Template 1 (Acknowledgement)**. Set the report to TLP:RED.
 
 ### 2. Deduplicate & Triage — is it new, and is it a security issue?
-- Check for duplicates against cases in flight; if duplicate, merge and send [Play 13 (co-finder)](sirt-communications-playbook.md#play-13--duplicate--co-finder-notification).
+- Check for duplicates against cases in flight; if duplicate, merge and send [Play 13 (co-finder)](../playbooks/communications-playbook.md).
 - Compare against prior risk assessments, threat models, and bug bars.
 - Decide: vulnerability / non-security bug (including feature requests) / works-as-intended.
 - Set the **priority**: source tier, a provisional SSVC outcome, and any active-exploitation override ([Prioritization](#prioritization)). Record them in the case record.
@@ -34,10 +34,10 @@ Discover → Deduplicate & Triage → Validate → Coordination → Patch → Te
 - Confirm or adjust the SSVC outcome now that impact is known ([Prioritization](#prioritization)).
 - Open a **private** GitHub Security Advisory; add the Finder as collaborator if
   they wish to stay involved. Engage the Owner and any needed maintainers.
-- **AI Tooling Guardrail:** Put case artifacts, PoCs, and code only through confidential, access-controlled AI tooling (self-hosted, enterprise with contractual no-training/confidentiality terms, or the SIRT environment) — never public AI services ([AI-use policy](ai-use-disclosure.md)). Record the Finder's AI use and classify embargo eligibility. Operational controls are in the [AI Operations Guidelines](ai_operations_guidelines.md).
+- **AI Tooling Guardrail:** Put case artifacts, PoCs, and code only through confidential, access-controlled AI tooling (self-hosted, enterprise with contractual no-training/confidentiality terms, or the SIRT environment) — never public AI services ([AI-use policy](../policies/attribution-and-ai-use-disclosure-policy.md)). Record the Finder's AI use and classify embargo eligibility. Operational controls are in the [AI Operations Guidelines](../guidelines/ai-operations-guidelines.md).
 
 ### 4. Coordination — embargo & disclosure date
-- Identify read-in **Collaborators** (need-to-know only); formally read them in following the [Read-In Policy](Akrites-Read-In-Policy.md) and log each acceptance of the Read-In Notice.
+- Identify read-in **Collaborators** (need-to-know only); formally read them in following the [Read-In Policy](../policies/read-in-policy.md) and log each acceptance of the Read-In Notice.
 - Decide whether an embargo is required; propose the **Public Disclosure (PD)** date to the maintainer, who has final say, and keep the Finder informed — tell the Finder in writing the date the upstream disclosure period starts (CVD Policy §7). Proposed upstream embargo: 15 business days (total target time to PD: **≤ 17 bd** Low/Med, **≤ 21 bd** High, **≤ 24 bd** Critical).
 - Record the agreed release trigger or date, who is participating, and the publication permissions agreed with the Finder and upstream. Align the advisory to the upstream release.
 - Prepare the **leak contingency** (Template 5): what to tell Consumers if
@@ -47,7 +47,7 @@ Discover → Deduplicate & Triage → Validate → Coordination → Patch → Te
 - Develop and test the fix on a private branch / temporary private fork so the
   fix isn't visible before users can apply it. Create a patch or work-around
   that addresses the **root cause (CWE)**.
-- **Avoid Public Leakage:** Do NOT trigger public CI/CD pipelines (e.g., public GitHub Actions runners) or commit to public branches, as public build logs and commits constitute a public disclosure ([What counts as public disclosure](what-counts-as-public-disclosure.md)).
+- **Avoid Public Leakage:** Do NOT trigger public CI/CD pipelines (e.g., public GitHub Actions runners) or commit to public branches, as public build logs and commits constitute a public disclosure ([What counts as public disclosure](../guidelines/public-disclosure-guidelines.md)).
 
 ### 6. Test — verify
 - Run regression, smoke, and relevant tests; confirm the issue is resolved with
@@ -70,7 +70,7 @@ Discover → Deduplicate & Triage → Validate → Coordination → Patch → Te
   release, and publish **Template 4** to release notes / security-announce; for
   high-impact issues, the general community channel too.
 - Reference the CVE ID; link the OSV record. Flip private patch branches public.
-- Credit the Finder and participating maintainers following the [Attribution and AI-Use Disclosure Policy](ai-use-disclosure.md). Reclassify case material to TLP:CLEAR and archive read-in coordination channels within 72 hours.
+- Credit the Finder and participating maintainers following the [Attribution and AI-Use Disclosure Policy](../policies/attribution-and-ai-use-disclosure-policy.md). Reclassify case material to TLP:CLEAR and archive read-in coordination channels within 72 hours.
 
 ### Case checkpoints
 Give each open item an owner and a next action, and mark items that do not apply as not applicable.
@@ -80,7 +80,7 @@ Give each open item an owner and a next action, and mark items that do not apply
 - [ ] Maintainers, recipients and the delivery channel are confirmed, with encrypted delivery agreed for private patches and reproducers.
 
 **Before sending a patch**
-- [ ] The patch is tested, with before-and-after results recorded ([AI Operations Guidelines](ai_operations_guidelines.md) §2 for AI-drafted patches).
+- [ ] The patch is tested, with before-and-after results recorded ([AI Operations Guidelines](../guidelines/ai-operations-guidelines.md) §2 for AI-drafted patches).
 - [ ] Authorship, sign-offs and any AI-assistance disclosure are checked.
 - [ ] The actual recipients, including any addresses added automatically, match the agreed disclosure scope.
 
@@ -92,7 +92,7 @@ Give each open item an owner and a next action, and mark items that do not apply
 
 ## Prioritization
 
-Every confirmed vulnerability is worked. Priority sets the **order**, never whether a report is handled ([Read-In Policy](Akrites-Read-In-Policy.md) — no issue is dropped).
+Every confirmed vulnerability is worked. Priority sets the **order**, never whether a report is handled ([Read-In Policy](../policies/read-in-policy.md) — no issue is dropped).
 
 **1. Source tier sets the processing order.**
 
@@ -100,13 +100,13 @@ Every confirmed vulnerability is worked. Priority sets the **order**, never whet
 | --- | --- |
 | **P0** | Akrites member organizations |
 | **P1** | Strategic partners (government security teams, vendor SIRTs, ISACs) and trusted OSS security teams (for example, the Linux kernel or ASF security teams) reporting an issue in a project other than their own |
-| **P2** | The public, once public intake opens ([CVD Policy §12](Akrites_CVD_Policy.md)) |
+| **P2** | The public, once public intake opens ([CVD Policy §12](../policies/cvd-policy.md)) |
 
 A trusted OSS security team reporting a vulnerability in **its own** project is acting as the maintainer: help in place, with no queue position.
 
 **2. Active exploitation goes first.** A report with confirmed exploitation in the wild moves to the front, whatever its tier, onto the accelerated track (CVD Policy §9: actionable guidance within 7 days). Escalate to the SIRT Director.
 
-**3. Within a tier: SSVC outcome, then age.** Order by SSVC outcome — **Act → Attend → Track\* → Track** ([Severity Scoring Guidelines](severity_scoring_guidelines.md), Layer 4) — then oldest first. Set a provisional outcome at triage (step 2) and confirm it after validation (step 3).
+**3. Within a tier: SSVC outcome, then age.** Order by SSVC outcome — **Act → Attend → Track\* → Track** ([Severity Scoring Guidelines](../guidelines/severity-scoring-guidelines.md), Layer 4) — then oldest first. Set a provisional outcome at triage (step 2) and confirm it after validation (step 3).
 
 **4. Needs info.** A report missing what triage or validation needs (for example, the affected project and version, or steps to reproduce) moves to **Needs info**. Ask the Finder for what is missing. The report rejoins its tier when the information arrives, ordered from that date.
 
@@ -125,4 +125,4 @@ phase on an accelerated timeline.
 Finder intends to publish early, the issue spans multiple projects/vendors
 (multi-party coordination), or a PD date is at risk of slipping.
 
-If the Director declares a Critical Situation, run the case under the [Crit-Sit Playbook](critical_situation_playbook.md).
+If the Director declares a Critical Situation, run the case under the [Crit-Sit Playbook](../playbooks/crit-sit-playbook.md).

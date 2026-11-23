@@ -1,7 +1,7 @@
 # Akrites SIRT Notification Templates
 
 Pre-written messages for each communication point in the
-[CVD Policy](../docs/Akrites_CVD_Policy.md) lifecycle.
+[CVD Policy](../docs/policies/cvd-policy.md) lifecycle.
 Replace every `{{PLACEHOLDER}}` before sending. Pre-disclosure material follows
 the phased TLP model in CVD Policy §8: **TLP:RED** at intake (Finder and SIRT),
 **TLP:AMBER+STRICT** during verification and remediation (read-in Tiers 1, 1.5
@@ -11,7 +11,7 @@ and 2), **TLP:AMBER** for downstream staging (Tiers 3 and 3.5), and
 Every embargoed notification and public advisory carries an **AI use** block
 stating, for both the Finder and the Akrites SIRT, whether and how AI/LLM tooling was
 used. The wording, capability vocabulary, and rules are defined in the
-[AI and LLM Use Disclosure Policy](../docs/ai-use-disclosure.md).
+[AI and LLM Use Disclosure Policy](../docs/policies/attribution-and-ai-use-disclosure-policy.md).
 
 Quick map of which template to use when:
 
@@ -64,7 +64,7 @@ advisory}}. If anything material changes on your end (for example, you observe
 exploitation in the wild, or you intend to publish), please tell us right away.
 
 Our coordinated disclosure policy:
-https://github.com/Akrites-Foundation/SIRT/blob/main/docs/Akrites_CVD_Policy.md
+https://github.com/Akrites-Foundation/SIRT/blob/main/docs/policies/cvd-policy.md
 
 Thank you,
 Akrites SIRT
@@ -146,7 +146,7 @@ Akrites SIRT
 
 > Sent to read-in providers/downstreams on the embargo list. Timing and TLP
 > follow the recipient's read-in tier
-> ([Read-In Policy §4](../docs/Akrites-Read-In-Policy.md#4-the-tiers-at-a-glance)):
+> ([Read-In Policy §4](../docs/policies/read-in-policy.md)):
 >
 > | Recipient | Tier | TLP | Lead time before PD |
 > | --- | --- | --- | --- |
@@ -262,7 +262,7 @@ AI use
 References
   - Advisory: {{ADVISORY_URL}}
   - Patch / release: {{RELEASE_URL}}
-  - AI-use disclosure policy: https://github.com/Akrites-Foundation/SIRT/blob/main/docs/ai-use-disclosure.md
+  - AI-use disclosure policy: https://github.com/Akrites-Foundation/SIRT/blob/main/docs/policies/attribution-and-ai-use-disclosure-policy.md
   - {{Additional links}}
 
 Revision history
@@ -277,7 +277,7 @@ Revision history
 > accelerated; publish whatever helps Consumers protect themselves even without
 > a complete fix. If exploitation in the wild is confirmed, the target is
 > actionable guidance within **7 days** of confirmation
-> ([CVD Policy §9](../docs/Akrites_CVD_Policy.md#9-actively-exploited-vulnerabilities)).
+> ([CVD Policy §9](../docs/policies/cvd-policy.md)).
 > This notice is public (TLP:CLEAR) and, like every advisory, carries the AI use
 > block.
 

@@ -5,7 +5,7 @@
 **Owner:** Akrites SIRT
 **Status:** Draft — for Akrites SIRT review
 **Applies to:** All Akrites SIRT–coordinated cases and the advisories they produce — reports from Finders and work performed by the SIRT and its Working Groups (WGs)
-**Related:** [CVD Policy](./Akrites_CVD_Policy.md) · [Embargo Handling Guidance](./Embargo%20Handling%20Guidance.md) (§4.3) · [Notification Templates](../templates/notification-templates.md) · [Intake Template](../templates/vulnerability-report-intake-template.md)
+**Related:** [CVD Policy](./cvd-policy.md) · [Embargo Handling Guidelines](../guidelines/embargo-handling-guidelines.md) (§4.3) · [Notification Templates](../../templates/notification-templates.md) · [Intake Template](../../templates/vulnerability-report-intake-template.md)
 
 > This document combines the former *AI and LLM Use Disclosure Policy* and *Acknowledgements & Attribution Guidance* into one source.
 
@@ -19,7 +19,7 @@ The goal is straightforward: a Finder, Maintainer, Consumer, or downstream provi
 
 It also defines how Finders, their organizations, co-finders, Working Groups, and the Coordinator are **credited** in advisories: by default, honoring any request not to be named, and consistently across advisories.
 
-This document is the authoritative source for AI-use disclosure. The CVD Policy, CVD Playbook, glossary, intake template, and notification templates all point here.
+This document is the authoritative source for AI-use disclosure. The CVD Policy, CVD Process, glossary, intake template, and notification templates all point here.
 
 ---
 
@@ -42,7 +42,7 @@ It applies regardless of who owns or hosts the tool (public service, enterprise/
 
 3. **Human accountability is never transferred.** AI-assisted work is always reviewed and owned by a named human (the Finder for their report; a named WG member or SIRT staffer for SIRT work). Disclosing AI use documents a tool; it does not shift responsibility for the finding, the patch, or the advisory.
 
-4. **Confidentiality is preserved.** Disclosing *that* AI was used never means revealing case detail. And per the [Embargo Handling Guidance](./Embargo%20Handling%20Guidance.md) §4.3, using a **public** AI service can itself defeat an embargo — so AI use is captured at intake precisely so the SIRT can classify embargo eligibility correctly.
+4. **Confidentiality is preserved.** Disclosing *that* AI was used never means revealing case detail. And per the [Embargo Handling Guidelines](../guidelines/embargo-handling-guidelines.md) §4.3, using a **public** AI service can itself defeat an embargo — so AI use is captured at intake precisely so the SIRT can classify embargo eligibility correctly.
 
 5. **Consistency across the record.** The same capability vocabulary and the same two-line format are used at intake, in the case record, in embargoed notifications, and in the public advisory, so the statement means the same thing everywhere.
 
@@ -280,7 +280,7 @@ AI use
 
 Disclosing AI use and preserving confidentiality are two different things, and both matter.
 
-- **Public, hosted LLM services are not confidential.** Prompts and pasted material may be retained, logged, used for training, or reviewed by the provider. Per [Embargo Handling Guidance §4.3](./Embargo%20Handling%20Guidance.md), **a report developed with public LLM tooling is treated as having no embargo available** and is handled on an accelerated / assume-exposed basis.
+- **Public, hosted LLM services are not confidential.** Prompts and pasted material may be retained, logged, used for training, or reviewed by the provider. Per [Embargo Handling Guidelines §4.3](../guidelines/embargo-handling-guidelines.md), **a report developed with public LLM tooling is treated as having no embargo available** and is handled on an accelerated / assume-exposed basis.
 - **Confidential tooling preserves the embargo option** — self-hosted or enterprise models with contractual confidentiality and no-training guarantees, or the SIRT's own hardened analysis environment.
 - **This is why AI use is captured at intake:** so the SIRT can classify embargo eligibility correctly. If a Finder is unsure whether their tooling qualifies as confidential, they should say so at intake.
 
@@ -292,11 +292,11 @@ The SIRT holds itself to the same standard: sensitive case material is only put 
 
 | Stage | Where | What |
 |---|---|---|
-| **Intake** | [Intake template](../templates/vulnerability-report-intake-template.md) "AI / LLM tooling used" and "Reporter" sections | Finder states whether/how AI was used, and whether tooling was public or confidential |
-| **Acknowledgement** | [Notification Template 1](../templates/notification-templates.md) | SIRT confirms it noted the Finder's AI use and explains the public-tool/embargo caveat if relevant |
+| **Intake** | [Intake template](../../templates/vulnerability-report-intake-template.md) "AI / LLM tooling used" and "Reporter" sections | Finder states whether/how AI was used, and whether tooling was public or confidential |
+| **Acknowledgement** | [Notification Template 1](../../templates/notification-templates.md) | SIRT confirms it noted the Finder's AI use and explains the public-tool/embargo caveat if relevant |
 | **Triage / case record** | Case file | SIRT records both the Finder's and the SIRT's AI use; classifies embargo eligibility |
-| **Embargoed notification** | [Notification Template 3](../templates/notification-templates.md) | Read-in providers see the AI-use block so they can weigh exposure |
-| **Public disclosure** | [Notification Template 4](../templates/notification-templates.md) + advisory | The standard two-line AI-use block is published |
+| **Embargoed notification** | [Notification Template 3](../../templates/notification-templates.md) | Read-in providers see the AI-use block so they can weigh exposure |
+| **Public disclosure** | [Notification Template 4](../../templates/notification-templates.md) + advisory | The standard two-line AI-use block is published |
 
 ### Attribution intake checklist
 
@@ -320,7 +320,7 @@ Captured at intake, confirmed before PD (held TLP:RED until PD):
 - The **controlled vocabulary** (capability phrases and any publishable tool/model names) is maintained by the SIRT and updated without a policy revision; unlisted tool-name requests are normalized or held for review. The SIRT reviews the vocabulary and the publishable tool/model list **quarterly**, and whenever a tool-name request is held for review.
 - The SIRT **reviews the acknowledgement and AI-use lines before public disclosure** and may normalize vendor names to the controlled vocabulary (anti-gaming gate).
 - This policy is maintained in the open; proposed changes are reviewed publicly. Only case-specific embargoed data is ever kept private.
-- How the SIRT operates its own AI tooling — oversight by task class, patch verification, data handling, and failure response — is set out in the [AI Operations Guidelines](ai_operations_guidelines.md).
+- How the SIRT operates its own AI tooling — oversight by task class, patch verification, data handling, and failure response — is set out in the [AI Operations Guidelines](../guidelines/ai-operations-guidelines.md).
 
 ---
 

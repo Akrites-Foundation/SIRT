@@ -1,9 +1,11 @@
-# Akrites SIRT — Upstream Engagement Guidelines
+# Upstream Engagement Guidelines
 
+**Type:** Guidelines
+**Approver:** SIRT Director
 **Owner:** Akrites SIRT
 **Status:** Draft — for Akrites SIRT review
 **Audience:** SIRT coordinators and WG engineers who engage upstream projects
-**Companion docs:** [Communications Playbook](sirt-communications-playbook.md) (Plays 9, 10, 15, 17), [Attribution and AI-Use Disclosure Policy](ai-use-disclosure.md), [Embargo Handling Guidance](Embargo%20Handling%20Guidance.md), [Maintainer of Last Resort Policy](Maintainer_of_Last_Resort_Policy.md)
+**Companion docs:** [Communications Playbook](../playbooks/communications-playbook.md) (Plays 9, 10, 15, 17), [Attribution and AI-Use Disclosure Policy](../policies/attribution-and-ai-use-disclosure-policy.md), [Embargo Handling Guidelines](embargo-handling-guidelines.md), [Maintainer of Last Resort Policy](../policies/molr-policy.md)
 
 ## Purpose
 
@@ -49,7 +51,7 @@ Automate this where possible, but confirm with human judgment:
 - **Maintainer-to-maintainer tone.** Humble, appreciative, concise. Acknowledge their time is
   scarce and that we're here to help, not to add burden or take over.
 - **Set expectations up front.** Tell maintainers what they can expect from us — the commitments in
-  [MoLR Policy Part I](Maintainer_of_Last_Resort_Policy.md) (what we offer, what we will never do, and that they keep authority). These commitments serve as the Akrites upstream-engagement code of conduct.
+  [MoLR Policy Part I](../policies/molr-policy.md) (what we offer, what we will never do, and that they keep authority). These commitments serve as the Akrites upstream-engagement code of conduct.
 
 ### 1.3 Deliver an excellent report
 
@@ -157,7 +159,7 @@ Order of preference (least intervention first — takeovers/forks demand real ca
 1. **Maintainer fixes** based on our disclosure package. *(Always the goal.)*
 2. **Akrites publishes a patch file / mitigation** so consumers can protect themselves, framed as an
    initial/proposed fix and inviting the maintainer back in at any time.
-3. **Maintainer of Last Resort** — a per-CVE security release under an Akrites-controlled namespace, with **Governing Board approval**, as a last resort ([MoLR Policy](Maintainer_of_Last_Resort_Policy.md)).
+3. **Maintainer of Last Resort** — a per-CVE security release under an Akrites-controlled namespace, with **Governing Board approval**, as a last resort ([MoLR Policy](../policies/molr-policy.md)).
 
 Mechanics and cautions:
 
@@ -174,7 +176,7 @@ Mechanics and cautions:
 
 Every unresponsive-path action is framed as consumer protection, *not* a takeover. Explicitly invite
 the maintainer to adopt, refine, or replace our work, and to reclaim their project at any time. Log
-the full attempt history in the [contact attempt log](../templates/Contact_attempt_log.md) for the postmortem.
+the full attempt history in the [contact attempt log](../../templates/contact-attempt-log.md) for the postmortem.
 
 ---
 
@@ -275,7 +277,7 @@ Who to call:
 ## Appendix — cross-references & open items
 
 **Companion plays:** upstream first-contact (Play 9), unresponsive/overwhelmed (Play 10),
-MoLR release publication (Play 15), rejected patch (Play 17) — all in `sirt-communications-playbook.md`.
+MoLR release publication (Play 15), rejected patch (Play 17) — all in `communications-playbook.md`.
 
 **Decisions (2026-11-10)** — decided by the SIRT Director under the document approval rules (decision D2):
 

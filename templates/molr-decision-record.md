@@ -9,7 +9,7 @@ labels: ["molr"]
 MoLR case issue template.
 Source of truth: Akrites-Foundation/SIRT templates/. Copy into SIRT-private/.github/ISSUE_TEMPLATE/molr-case.md.
 Never open this issue in a public repository: it names the staffing Member and pre-public details.
-Steps follow docs/molr_guidelines_and_procedures.md. Tick boxes as you go; link evidence inline.
+Steps follow docs/procedures/molr-procedure.md. Tick boxes as you go; link evidence inline.
 -->
 
 ## Case

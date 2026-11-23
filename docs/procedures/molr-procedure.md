@@ -1,11 +1,14 @@
-# Akrites SIRT — MoLR Guidelines and Procedures
+# MoLR Procedure
 
+**Type:** Procedure
+**Approver:** SIRT Director
+**Formerly titled:** MoLR Guidelines and Procedures
 **Owner:** Akrites SIRT
 **Status:** Draft — for Akrites SIRT review (v0)
 **Audience:** Part A: upstream maintainers. Part B: SIRT case coordinators and Member engineers.
-**Companion docs:** [Maintainer of Last Resort (MoLR) Policy](Maintainer_of_Last_Resort_Policy.md), [Upstream Engagement Guidelines](upstream-engagement-guidelines.md), [Communications Playbook](sirt-communications-playbook.md), [CVD Policy](Akrites_CVD_Policy.md), [Templates](../templates/readme.md#unresponsive-projects-and-maintainer-of-last-resort)
+**Companion docs:** [Maintainer of Last Resort (MoLR) Policy](../policies/molr-policy.md), [Upstream Engagement Guidelines](../guidelines/upstream-engagement-guidelines.md), [Communications Playbook](../playbooks/communications-playbook.md), [CVD Policy](../policies/cvd-policy.md), [Templates](../../templates/README.md)
 
-The [MoLR Policy](Maintainer_of_Last_Resort_Policy.md) sets the rules; this document sets the steps. Where they differ, the policy governs, and the Policy's Part I maintainer commitments always come first.
+The [MoLR Policy](../policies/molr-policy.md) sets the rules; this document sets the steps. Where they differ, the policy governs, and the Policy's Part I maintainer commitments always come first.
 
 ---
 
@@ -68,7 +71,7 @@ You are probably reading this because the Akrites SIRT emailed you about your pr
 | **Suggest who should take over** | Tell us who | We pass it on. Akrites does not choose or approve your successor, but we can transfer our copy to whoever the community settles on. |
 | **Do nothing** | Nothing | We carry security fixes for up to 12 months, keep offering them to you, then hand over or freeze our copy. |
 
-**What we will never do:** take your package name, publish under your name or namespace, unpublish releases people rely on, or ask you to justify an absence. Full list: [MoLR Policy, Part I](Maintainer_of_Last_Resort_Policy.md#part-i-plain-language-maintainer-commitments).
+**What we will never do:** take your package name, publish under your name or namespace, unpublish releases people rely on, or ask you to justify an absence. Full list: [MoLR Policy, Part I](../policies/molr-policy.md).
 
 **Reach us:** reply to our email, or write to **SIRT@akrites.dev** with your project name.
 
@@ -85,7 +88,7 @@ You are probably reading this because the Akrites SIRT emailed you about your pr
 | **SIRT Director** | Approves the engagement and informs the Governing Board. |
 | **Publishers** | Two people who jointly publish each release under two-person control. |
 
-Each engagement has **one case issue** in [`SIRT-private`](https://github.com/Akrites-Foundation/SIRT-private), opened from the [MoLR case issue template](<../templates/MoLR decision record .md>). The issue is the record: every checkbox, decision, and notice goes there.
+Each engagement has **one case issue** in [`SIRT-private`](https://github.com/Akrites-Foundation/SIRT-private), opened from the [MoLR case issue template](<../../templates/molr-decision-record.md>). The issue is the record: every checkbox, decision, and notice goes there.
 
 ```mermaid
 flowchart TB
@@ -116,10 +119,10 @@ flowchart TB
 
 MoLR only starts after normal coordinated disclosure has failed. Two routes lead here.
 
-1. **Unresponsive or abandoned project.** Run the contact ladder in [Policy Part II §3.1](Maintainer_of_Last_Resort_Policy.md#31-disclosure-clock-contact--escalation) and log every attempt in the [contact attempt log](../templates/Contact_attempt_log.md). The advisory, VEX, and source patch publish on the disclosure clock as usual. MoLR becomes possible only after the abandonment floor in [Policy Part I §4](Maintainer_of_Last_Resort_Policy.md#4-90-day-silence-floor). Any sign of life resets it.
-2. **End-of-life refusal.** The maintainer declined to patch an affected branch because it is end-of-life, doesn't dispute the vulnerability, and has fixed it in supported versions. Record their answer in the [Maintainer non-fix record](<../templates/Maintainer non-fix record .md>) and offer them the verbatim rationale.
+1. **Unresponsive or abandoned project.** Run the contact ladder in [Policy Part II §3.1](../policies/molr-policy.md) and log every attempt in the [contact attempt log](../../templates/contact-attempt-log.md). The advisory, VEX, and source patch publish on the disclosure clock as usual. MoLR becomes possible only after the abandonment floor in [Policy Part I §4](../policies/molr-policy.md). Any sign of life resets it.
+2. **End-of-life refusal.** The maintainer declined to patch an affected branch because it is end-of-life, doesn't dispute the vulnerability, and has fixed it in supported versions. Record their answer in the [Maintainer non-fix record](<../../templates/maintainer-non-fix-record.md>) and offer them the verbatim rationale.
 
-A disputed finding or a WONTFIX on a supported version **never** leads here ([Policy Part II §4](Maintainer_of_Last_Resort_Policy.md#4-scenario-decision-matrix)). Handle it with an advisory, VEX, and mitigations. Communications: Plays 10, 14 and 17 in the [Communications Playbook](sirt-communications-playbook.md).
+A disputed finding or a WONTFIX on a supported version **never** leads here ([Policy Part II §4](../policies/molr-policy.md)). Handle it with an advisory, VEX, and mitigations. Communications: Plays 10, 14 and 17 in the [Communications Playbook](../playbooks/communications-playbook.md).
 
 ## Step 0 — Entry check `[SIRT]`
 
@@ -128,12 +131,12 @@ Open the case issue in `SIRT-private` and work through its Step 0 checklist. Do 
 1. **Project health assessment.** Fill in the checklist in the case issue: last commit, last release, maintainer activity, `SECURITY.md`, license, dependents and criticality.
 2. **Out of support.** Either the project is unresponsive past the abandonment floor (route 1), or the affected version is end-of-life by the maintainer's own statement (route 2).
 3. **Outreach tried and failed.** Link the contact attempt log (route 1) or the non-fix record (route 2). Confirm distributions and downstream projects were asked to carry the fix and declined.
-4. **Policy entry test.** Confirm the remaining criteria in [Policy Part II §5.1](Maintainer_of_Last_Resort_Policy.md#51-mandatory-entry-test-all-must-hold): criticality, a license that permits redistribution, a bounded patch series, and a free capacity slot.
+4. **Policy entry test.** Confirm the remaining criteria in [Policy Part II §5.1](../policies/molr-policy.md): criticality, a license that permits redistribution, a bounded patch series, and a free capacity slot.
 5. **"Do not fork" check.** Look at the project's `SECURITY.md` and our records. If a "do not fork" preference exists, stop, unless the SIRT Director records a critical-infrastructure override in the issue. If there is an override, the maintainer is told before anything is created.
-6. **Member staffing.** A Member commits a **named engineer and a backup** for 12 months. Both are read in under the [Read-In Policy](Akrites-Read-In-Policy.md). Record the commitment in the case issue. It stays internal: publicly, engineers appear only by GitHub handle, and the Member company is never named.
+6. **Member staffing.** A Member commits a **named engineer and a backup** for 12 months. Both are read in under the [Read-In Policy](../policies/read-in-policy.md). Record the commitment in the case issue. It stays internal: publicly, engineers appear only by GitHub handle, and the Member company is never named.
 7. **Conflicts.** Record any dependency the staffing Member has on the package. That is allowed, but that Member can't approve the engagement or sign off its own releases.
 8. **SIRT Director approves** in the case issue.
-9. **Send the notices** (templates in [MoLR communications](../templates/molr-communications.md)):
+9. **Send the notices** (templates in [MoLR communications](../../templates/molr-communications.md)):
    - **M1 — Engagement notice** to the maintainer, at least **14 days before Step 3**, at every address in the contact log.
    - **S1 — MoLR engagement starting** in `#sirt-disclosures`.
 
@@ -141,7 +144,7 @@ Open the case issue in `SIRT-private` and work through its Step 0 checklist. Do 
 
 1. **Create a private repository** in [`akrites-molr`](https://github.com/akrites-molr). Use a fresh repository seeded from the pinned upstream commit, not a GitHub fork, so it doesn't inherit upstream's settings. Name it `<project>-molr`.
 2. **Lock it down:** add the Member engineers by GitHub handle, protect branches, require signed commits, and set up two-person publish control.
-3. **Add the internal registry entry** in `SIRT-private` ([row format](../templates/molr-communications.md#registry-entries)): project, affected versions, case issue, staffing Member, start date, planned end date, status `Preparing`.
+3. **Add the internal registry entry** in `SIRT-private` ([row format](../../templates/molr-communications.md)): project, affected versions, case issue, staffing Member, start date, planned end date, status `Preparing`.
 4. **Inform the Board** with notice **B1**.
 
 ## Step 2 — Fork is patched
@@ -155,12 +158,12 @@ Open the case issue in `SIRT-private` and work through its Step 0 checklist. Do 
 
 <a id="6-publishing-and-downstream-routing"></a>
 
-1. **Make the repository public** with the [README header](../templates/molr-communications.md#readme-header) at the top. Issues are open for patch regressions only. PRs are closed except from Member engineers.
-2. **Release.** Publish a signed, tagged source release on GitHub. Publish to a package registry only if the case issue records it, and then only under an Akrites-controlled name, never the original ([Policy Part I §3](Maintainer_of_Last_Resort_Policy.md#3-absolute-wont-do-boundaries)).
+1. **Make the repository public** with the [README header](../../templates/molr-communications.md) at the top. Issues are open for patch regressions only. PRs are closed except from Member engineers.
+2. **Release.** Publish a signed, tagged source release on GitHub. Publish to a package registry only if the case issue records it, and then only under an Akrites-controlled name, never the original ([Policy Part I §3](../policies/molr-policy.md)).
 3. **Offer every patch upstream** as a PR or patch file on the original project.
-4. **Route downstream:** OSV and VEX pointers, distribution security teams, and intermediate maintainers ([Policy Part III §3](Maintainer_of_Last_Resort_Policy.md#3-routing-without-taking-namespaces)).
+4. **Route downstream:** OSV and VEX pointers, distribution security teams, and intermediate maintainers ([Policy Part III §3](../policies/molr-policy.md)).
 5. **Update the public org page** (`akrites-molr/.github/profile/README.md`) with the project, the affected versions, and the planned end date. Only public engagements are listed there. Never describe a project as unpatched.
-6. **Update the internal registry** to status `Active`, and record the start and end dates. The 12-month clock starts at this first release ([Policy Part II §6](Maintainer_of_Last_Resort_Policy.md#6-limits-of-a-molr-engagement)).
+6. **Update the internal registry** to status `Active`, and record the start and end dates. The 12-month clock starts at this first release ([Policy Part II §6](../policies/molr-policy.md)).
 7. **Send the notices:** **M2 — Fork is public** to the maintainer, and **S2 — MoLR public disclosure** in `#sirt-disclosures`.
 
 ## During the 12 months
@@ -187,7 +190,7 @@ flowchart TB
 ```
 
 **Option 1 — A new owner carries it (Member-staffed or not).** This creates a new maintainer of last resort outside Akrites, which is the goal.
-1. Transfer the repository to the new owner's GitHub organization when they ask for it. This is a **transfer on request, not an appointment**: Akrites does not select or approve successors ([Policy Part I §3](Maintainer_of_Last_Resort_Policy.md#3-absolute-wont-do-boundaries)). We can share our recommended checks (identity, contribution history, signed commits, staged co-maintenance; see the [stewardship records](../templates/stewardship-records.md)).
+1. Transfer the repository to the new owner's GitHub organization when they ask for it. This is a **transfer on request, not an appointment**: Akrites does not select or approve successors ([Policy Part I §3](../policies/molr-policy.md)). We can share our recommended checks (identity, contribution history, signed commits, staged co-maintenance; see the [stewardship records](../../templates/stewardship-records.md)).
 2. Send **M4 — New home** to the original maintainer, and **S3** in `#sirt-disclosures`.
 3. Update the advisories to point to the new location. Move the registry and org-page entries to `Moved`.
 
@@ -205,7 +208,7 @@ flowchart TB
 
 If no home is found:
 1. Send **M5 — Freeze notice** to the maintainer, distributions, and downstream parties at least **30 days before** the end date.
-2. At the end date, **freeze**: archive the repository read-only and add a "no further fixes" notice to the README. Releases stay published, signed, and immutable. Never unpublish, delete, or yank ([Policy Part III §2](Maintainer_of_Last_Resort_Policy.md#2-freeze-on-wind-down)).
+2. At the end date, **freeze**: archive the repository read-only and add a "no further fixes" notice to the README. Releases stay published, signed, and immutable. Never unpublish, delete, or yank ([Policy Part III §2](../policies/molr-policy.md)).
 3. Send **S3**, and set registry and org page to `Frozen`. New vulnerabilities in the package are then handled with advisories, VEX, and mitigations only.
 
 ## The two-way door
@@ -239,21 +242,21 @@ Any activity by the maintainer's verified identity hands control back to them, a
 - **Scope:** build configuration and toolchains may change to produce a signed build. Library source outside the patch series and the public API may not.
 - **Naming and versioning:** never the original project's name or logo as the release identity. Version strings must not shadow upstream versions.
 - **Integrity:** clean-room build, signed commits and artifacts with per-engagement keys, SLSA build provenance, and two-person publish control.
-- **Correctness:** the upstream test suite passes, a sample of downstream consumer tests passes, the public API diff against the pinned commit is empty, and two named human reviewers sign off, disclosing any AI assistance ([AI-Use Disclosure Policy](ai-use-disclosure.md)).
+- **Correctness:** the upstream test suite passes, a sample of downstream consumer tests passes, the public API diff against the pinned commit is empty, and two named human reviewers sign off, disclosing any AI assistance ([AI-Use Disclosure Policy](../policies/attribution-and-ai-use-disclosure-policy.md)).
 
 ## Successor search
 
 <a id="7-successor-maintainers"></a>
 
-Akrites helps a project's community find a new home through targeted outreach to distributions, dependent projects, foundations, Members, and past contributors. It never broadcasts that a package is unmaintained, and it never selects or approves the successor. Record outreach in the [stewardship records](../templates/stewardship-records.md).
+Akrites helps a project's community find a new home through targeted outreach to distributions, dependent projects, foundations, Members, and past contributors. It never broadcasts that a package is unmaintained, and it never selects or approves the successor. Record outreach in the [stewardship records](../../templates/stewardship-records.md).
 
 ## Templates
 
-- [MoLR case issue template](<../templates/MoLR decision record .md>) — one issue per engagement, opened in `SIRT-private`
-- [Contact attempt log](../templates/Contact_attempt_log.md) — every outreach attempt
-- [Maintainer non-fix record](<../templates/Maintainer non-fix record .md>) — end-of-life refusals
-- [MoLR communications](../templates/molr-communications.md) — maintainer emails (M1–M6), `#sirt-disclosures` notices (S1–S3), Board notice (B1), README header, registry entries
-- [Stewardship records](../templates/stewardship-records.md) — successor outreach
+- [MoLR case issue template](<../../templates/molr-decision-record.md>) — one issue per engagement, opened in `SIRT-private`
+- [Contact attempt log](../../templates/contact-attempt-log.md) — every outreach attempt
+- [Maintainer non-fix record](<../../templates/maintainer-non-fix-record.md>) — end-of-life refusals
+- [MoLR communications](../../templates/molr-communications.md) — maintainer emails (M1–M6), `#sirt-disclosures` notices (S1–S3), Board notice (B1), README header, registry entries
+- [Stewardship records](../../templates/stewardship-records.md) — successor outreach
 
 ## Open items
 

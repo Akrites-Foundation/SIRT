@@ -7,7 +7,7 @@
 **Status:** Draft — for Akrites SIRT review
 **Tracking:** [Akrites-Foundation/SIRT #23](https://github.com/Akrites-Foundation/SIRT/issues/23)
 **Audience:** Akrites members, WGs, SIRT staff, and ecosystem participants
-**Companion docs:** [Communications Playbook](sirt-communications-playbook.md) (Play 5 public disclosure, Play 6 embargo break), [Embargo Handling Guidance](Embargo%20Handling%20Guidance.md), [Attribution and AI-Use Disclosure Policy](ai-use-disclosure.md)
+**Companion docs:** [Communications Playbook](../playbooks/communications-playbook.md) (Play 5 public disclosure, Play 6 embargo break), [Embargo Handling Guidelines](embargo-handling-guidelines.md), [Attribution and AI-Use Disclosure Policy](../policies/attribution-and-ai-use-disclosure-policy.md)
 
 > Spelling standard: **Akrites** (Akrites Foundation, Akrites SIRT). "OSS-SIRT" is a synonym.
 
@@ -30,7 +30,7 @@ procedure; and the leak/break classification and response procedure.
   PD can be **intentional** (our coordinated release) or **unintentional** (a leak/break). Once
   information is genuinely public, it is public regardless of how it got there.
 - **Embargo / confidentiality arrangement:** an agreement that named parties will hold vulnerability
-  information privately until an agreed time or trigger. Default proposed upstream embargo is **15 business days (bd)** from owner hand-off (targeting total time to PD of ≤ 17 bd Low/Med, ≤ 21 bd High, ≤ 24 bd Critical), negotiable and deferring to upstream (see Embargo Handling Guidance).
+  information privately until an agreed time or trigger. Default proposed upstream embargo is **15 business days (bd)** from owner hand-off (targeting total time to PD of ≤ 17 bd Low/Med, ≤ 21 bd High, ≤ 24 bd Critical), negotiable and deferring to upstream (see Embargo Handling Guidelines).
 - **PD date (Coordinated Release Date, CRD):** the pre-agreed date/time for intentional PD, set when the fix
   is available and an identifier is assigned. Other Akrites documents call this the PD date.
 - **Tiered / read-in sharing:** sharing with specific trusted parties under a confidentiality
@@ -97,7 +97,7 @@ left guessing. Coordinate with the maintainer on describing the issue.
 
 ### 3.4 "If we found it, others can" (LLM/fuzzer-discoverable)
 
-Something found with a public LLM or fuzzer is not treated as a secret in the same way as a privately held finding. Under the CVD Policy §8 and the Embargo Handling Guidance §4.3, a report developed with public AI tooling has no embargo available and is handled on an accelerated, assume-exposed basis. That rule concerns embargo eligibility. It does not mean the vulnerability has been publicly disclosed: PD still requires that specific information has actually been made public (§2). Use reproducibility when weighing timelines and acceleration, not as a definition of PD.
+Something found with a public LLM or fuzzer is not treated as a secret in the same way as a privately held finding. Under the CVD Policy §8 and the Embargo Handling Guidelines §4.3, a report developed with public AI tooling has no embargo available and is handled on an accelerated, assume-exposed basis. That rule concerns embargo eligibility. It does not mean the vulnerability has been publicly disclosed: PD still requires that specific information has actually been made public (§2). Use reproducibility when weighing timelines and acceleration, not as a definition of PD.
 
 ### 3.5 Partial vs. full exposure
 
@@ -265,7 +265,7 @@ flowchart TD
 
 Decided by the SIRT Director under the document approval rules (decision D2):
 
-- **PD definition and bright-line test** (§1–§2) are adopted. Key terms are to be added to the [Glossary](Akrites_SIRT_CVD_Glossary.md).
+- **PD definition and bright-line test** (§1–§2) are adopted. Key terms are to be added to the [Glossary](../reference/glossary.md).
 - **Silent patches** are treated as partial public disclosure, with the follow-up obligation in §3.3.
 - **"Reproducible ≠ public"** (§3.4): reproducibility weighs on timelines and acceleration, but does not by itself mean PD.
 - **Break matrix and decision authority** (§5.3–5.6): the SIRT case coordinator decides accelerate or hold; the SIRT Director makes the final decision; the Governing Board is informed of policy deviations.
@@ -274,9 +274,9 @@ Decided by the SIRT Director under the document approval rules (decision D2):
 
 ## 8. Cross-references
 
-- Public disclosure mechanics: `sirt-communications-playbook.md` **Play 5**.
-- Embargo break comms templates: `sirt-communications-playbook.md` **Play 6**.
+- Public disclosure mechanics: `communications-playbook.md` **Play 5**.
+- Embargo break comms templates: `communications-playbook.md` **Play 6**.
 - Read-in finder updates / postmortem: **Play 3**, **Play 18**.
-- Embargo windows and extensions: `Embargo Handling Guidance.md`.
-- Attribution at PD: [Attribution and AI-Use Disclosure Policy](ai-use-disclosure.md).
+- Embargo windows and extensions: `embargo-handling-guidelines.md`.
+- Attribution at PD: [Attribution and AI-Use Disclosure Policy](../policies/attribution-and-ai-use-disclosure-policy.md).
 
