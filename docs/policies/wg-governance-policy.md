@@ -53,7 +53,7 @@ A Chair does **not**:
 * **Co-Chairs**: An as-needed WG with more than 3 members must designate a Co-Chair. The Co-Chair shares the Chair's responsibilities and acts in their absence.
 * **Organizational Separation**: The Co-Chair **must be from a different member organization** than the Chair to ensure continuity and prevent single-organization dependency.
 * **Foundation Staff Review**: Where either the Chair or Co-Chair is employed by the foundation or its fiscal sponsor ("staff"), the other role should be filled by a non-staff member organization whenever possible. WGs where both leadership roles are held by staff are flagged to the Governing Board for review.
-* **Replacement Chairs**: If an as-needed WG's Chair steps down or is removed, the SIRT designates a replacement from among the WG's members.
+* **Replacement Chairs**: If an as-needed WG's Chair steps down or is removed, the SIRT Director or Technical PgM Director designates a replacement from among the WG's members.
 
 ---
 
@@ -67,10 +67,10 @@ A Chair candidate must:
 * Not hold Chair roles in more than **two WGs simultaneously**.
 
 ### 4.2 Designation
-The SIRT designates the Chair, and a Co-Chair where §3.3 requires one, when the WG is created, after consulting the proposed members and their member organizations. The SIRT records the designation and includes it in the creation notice to the Governing Board (§6.2).
+The SIRT Director or the Technical Program Management (PgM) Director designates the Chair, and a Co-Chair where §3.3 requires one, when the WG is created, after consulting the proposed members and their member organizations. The SIRT records the designation and includes it in the creation notice to the Governing Board (§6.2).
 
 ### 4.3 Stepping Down
-A Chair may step down at any time by written notice to the SIRT and WG. The Co-Chair, if there is one, assumes the Chair role; otherwise the SIRT designates a replacement (§3.3).
+A Chair may step down at any time by written notice to the SIRT and WG. The Co-Chair, if there is one, assumes the Chair role; otherwise the SIRT Director or Technical PgM Director designates a replacement (§3.3).
 
 ---
 
