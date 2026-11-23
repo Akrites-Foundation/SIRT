@@ -17,6 +17,7 @@ Titles follow `<Subject> <Type>`, and filenames follow `<subject>-<type>.md` in 
 - [Security Policy — how to report a vulnerability](../SECURITY.md)
 - [Coordinated Vulnerability Disclosure (CVD) Policy](policies/cvd-policy.md)
 - [Read-In Policy](policies/read-in-policy.md)
+- [Working Group Governance Policy](policies/wg-governance-policy.md)
 - [Maintainer of Last Resort (MoLR) Policy](policies/molr-policy.md)
 - [Attribution and AI-Use Disclosure Policy](policies/attribution-and-ai-use-disclosure-policy.md)
 - [Code of Conduct](../Code_of_Conduct.md)
@@ -29,15 +30,17 @@ Titles follow `<Subject> <Type>`, and filenames follow `<subject>-<type>.md` in 
 - [GitHub Fallback Case Handling Procedure (temporary manual process)](procedures/github-fallback-case-handling-procedure.md)
 - [Member Onboarding and Offboarding Procedure](procedures/member-onboarding-and-offboarding-procedure.md)
 - [MoLR Procedure](procedures/molr-procedure.md)
-- [Working Group Governance and Operations](Working_Group_Governance_and_Operations.md) — holds a policy (Part I) and a procedure (Part II); to be split
+- [Working Group Operating Procedure](procedures/wg-operating-procedure.md)
 
 ## Playbooks
 - [Critical Situation (Crit-Sit) Playbook](playbooks/crit-sit-playbook.md)
 - [Communications Playbook](playbooks/communications-playbook.md)
+- [Embargo Break Playbook](playbooks/embargo-break-playbook.md)
 
 ## Guidelines
 - [Embargo Handling Guidelines](guidelines/embargo-handling-guidelines.md)
 - [Public Disclosure Guidelines](guidelines/public-disclosure-guidelines.md)
+- [Communications Guidelines](guidelines/communications-guidelines.md)
 - [Severity Scoring Guidelines](guidelines/severity-scoring-guidelines.md)
 - [AI Operations Guidelines](guidelines/ai-operations-guidelines.md)
 - [Upstream Engagement Guidelines](guidelines/upstream-engagement-guidelines.md)
@@ -87,7 +90,10 @@ Titles follow `<Subject> <Type>`, and filenames follow `<subject>-<type>.md` in 
 | [Severity Scoring Guidelines](guidelines/severity-scoring-guidelines.md) | Guidelines | SIRT Director | Draft — for Akrites SIRT review |
 | [Embargo Handling Guidelines](guidelines/embargo-handling-guidelines.md) | Guidelines | SIRT Director | Draft — for Akrites SIRT review |
 | [GitHub Fallback Case Handling Procedure](procedures/github-fallback-case-handling-procedure.md) | Procedure | SIRT Director | Draft — for Akrites SIRT review |
-| [Working Group Governance and Operations](Working_Group_Governance_and_Operations.md) | Procedure (and policy) | SIRT Director | Draft — for Akrites SIRT review |
+| [Working Group Governance Policy](policies/wg-governance-policy.md) | Policy | SIRT Director | Draft — for Akrites SIRT review |
+| [Working Group Operating Procedure](procedures/wg-operating-procedure.md) | Procedure | SIRT Director | Draft — for Akrites SIRT review |
+| [Embargo Break Playbook](playbooks/embargo-break-playbook.md) | Playbook | SIRT Director | Draft — for Akrites SIRT review |
+| [Communications Guidelines](guidelines/communications-guidelines.md) | Guidelines | SIRT Director | Draft — for Akrites SIRT review |
 | [Read-In Engineer Quick Reference](reference/read-in-engineer-quick-reference.md) | Reference | SIRT Director | Draft — for Akrites SIRT review |
 | [Metrics Framework](reference/metrics-framework.md) | Reference | SIRT Director | Draft — for Akrites SIRT review |
 | [TAP Intake API Specification](reference/tap-intake-api-specification.md) | Reference | SIRT Director | Draft — for Akrites SIRT review |

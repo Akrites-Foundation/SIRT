@@ -94,7 +94,7 @@ The phases map to the nine-phase CVD lifecycle used in the Case Handling Procedu
 1. **Upstream-first remediation.** Develop and test the patch for the original project and offer it to its maintainer — no forks. Remediation material is **TLP:AMBER+STRICT**.
 2. **Selective read-in expansion.** Read in only those the fix needs, at the lowest sufficient tier (Read-In Policy §4–§5): analysts and patch authors at Tier 1, the upstream maintainer at Tier 1.5, testers at Tier 2. The IC approves each read-in; use Emergency Read-In (Read-In Policy §3.1) when an essential SME cannot wait for full prerequisites.
 3. **Pre-notification.** Stage the fix with distribution partners (Tiers 2–3) and notify international coordinators (Tier 3.5, at most 24 hours before PD) using Notification Template 3; staging material is **TLP:AMBER**. Critical-infrastructure requests follow Comms Play 16, and government and coordinator engagement follows Comms Play 11 — **no single-government pre-disclosure**. Members receive situational awareness only, without case specifics (Comms Play 4).
-4. **Prepare for an embargo break.** Have Notification Template 5 ready; if a break happens, follow Public Disclosure Guidelines §5 and Comms Play 6.
+4. **Prepare for an embargo break.** Have Notification Template 5 ready; if a break happens, follow the [Embargo Break Playbook](embargo-break-playbook.md) and Comms Play 6.
 
 ### Phase 4 — Synchronized release, CVE/VEX & public disclosure
 *Lifecycle: Document, Distribute, Disclose.*
