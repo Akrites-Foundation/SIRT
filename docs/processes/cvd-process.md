@@ -151,7 +151,7 @@ The full practice is in the [Upstream Engagement Guidelines](../guidelines/upstr
 - [Read-In Policy](../policies/read-in-policy.md), [Read-In Notice template](../../templates/case-read-in-notice-template.md), [read-in log](../../templates/Akrites_ReadIn_Log_CASE.csv)
 - [Case Handling Procedure](../procedures/case-handling-procedure.md) — the on-duty, step-by-step checklist for each phase
 - VDR and deviation-notice formats *(to be published)*
-- [Working Group guide](../Working_Group_Governance_and_Operations.md) and the [engineer read-in one-pager](../reference/read-in-engineer-quick-reference.md)
+- [Working Group Governance Policy](../policies/wg-governance-policy.md), [Working Group Operating Procedure](../procedures/wg-operating-procedure.md) and the [engineer read-in one-pager](../reference/read-in-engineer-quick-reference.md)
 - OpenSSF `SECURITY.md`, embargo-notification, and disclosure-notification templates
 - [Attribution and AI-Use Disclosure Policy](../policies/attribution-and-ai-use-disclosure-policy.md), and the intake template's "AI / LLM tooling used" section
 

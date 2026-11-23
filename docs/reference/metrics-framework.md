@@ -71,7 +71,7 @@ Every time-based metric is measured in **business days** unless stated, from the
 | PD within severity target | Report received | Public Disclosure (advisory published) | Severity band = the band assigned at enrichment. Cases on a longer timeline under the upstream project's own policy (CVD Policy §8) and accelerated cases (§9) are reported separately, not as misses. There is no "clock pause." |
 | Median time: report → fix | Report received | Fixed release or merged upstream fix publicly available | "Fix availability" in the public cut means the same stop event |
 | Actionable guidance after exploitation | Active exploitation confirmed | Guidance or mitigation published | Target 7 calendar days (CVD Policy §9) |
-| Embargo integrity | — | — | % of cases reaching PD with no embargo break, as classified in [Public Disclosure Guidelines](../guidelines/public-disclosure-guidelines.md) §5 |
+| Embargo integrity | — | — | % of cases reaching PD with no embargo break, as classified in [Embargo Break Playbook](../playbooks/embargo-break-playbook.md) §4 |
 | Upstream fixes merged | — | Fix merged upstream | % = merged ÷ coordinated disclosures completed in the period |
 | Downstream remediation enabled; automation ratio | — | — | *To be defined before first Board report* |
 
