@@ -33,7 +33,7 @@ Entries within each section are ordered alphabetically. Instructions for proposi
 | **SIRT case coordinator** | The SIRT staff member accountable for a case: evaluates read-ins, assigns tiers, runs the timeline, and executes publication. |
 | **SIRT Director** | Leads the Akrites SIRT; the escalation point after the case coordinator and an independent coordinator review, before the Governing Board (CVD Policy §15). |
 | **Upstream** | the original open source project for the software being worked on. |
-| **WG member** | An individual on a Working Group's membership register, read in under the [Read-In Policy](../policies/read-in-policy.md) §7. Only member engineers and approved delegates are eligible. WG membership does not by itself grant access to any case. |
+| **WG member** | An individual who takes part in a Working Group, read in under the [Read-In Policy](../policies/read-in-policy.md) §7. Only member engineers and approved delegates are eligible. WG membership does not by itself grant access to any case. |
 | **Working Group (WG)** | A small, private, self-organizing team of read-in members that analyzes, tests, and patches vulnerabilities for a specific case, incident, or defined need. Working Groups are convened as needed; there are no standing Working Groups at present. See the [Working Group Governance Policy](../policies/wg-governance-policy.md). |
 
 ---
