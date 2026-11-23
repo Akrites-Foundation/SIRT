@@ -5,7 +5,7 @@
 **Owner:** Akrites SIRT
 **Status:** Draft for Akrites SIRT review
 **Audience:** SIRT staff and coordinators; referenced by WGs and read-in participants
-**Companion docs:** [Attribution and AI-Use Disclosure Policy](ai-use-disclosure.md), [Embargo Handling Guidance](Embargo%20Handling%20Guidance.md), [CVD Policy](Akrites_CVD_Policy.md), [Read-In Policy](Akrites-Read-In-Policy.md)
+**Companion docs:** [Attribution and AI-Use Disclosure Policy](../policies/attribution-and-ai-use-disclosure-policy.md), [Embargo Handling Guidelines](../guidelines/embargo-handling-guidelines.md), [CVD Policy](../policies/cvd-policy.md), [Read-In Policy](../policies/read-in-policy.md)
 
 > Every outbound message is written as if it may be read back publicly, quoted by a maintainer, or produced in a postmortem; with or without context.
 
@@ -41,7 +41,7 @@ Intake processing by the SIRT pipeline enforces three prioritized tiers:
 * **P1 — Strategic Partners**: Dedicated tier for strategic partners (government security teams, vendor SIRTs, ISACs) and trusted OSS security teams (for example, the Linux kernel or ASF security teams) reporting an issue in another project.
 * **P2 — Public**: Internet-public intake processing.
 
-* Priority affects processing order only. Every report receives the commitments in the CVD Policy §5, and the currently open reporter classes are set by CVD Policy §12. A report with confirmed active exploitation goes first, whatever its tier (CVD Policy §9). The full rules are in the [Intake Runbook](intake-runbook.md#prioritization).
+* Priority affects processing order only. Every report receives the commitments in the CVD Policy §5, and the currently open reporter classes are set by CVD Policy §12. A report with confirmed active exploitation goes first, whatever its tier (CVD Policy §9). The full rules are in the [Case Handling Procedure](../procedures/case-handling-procedure.md).
   
 ## 2. Core principles
 
@@ -143,7 +143,7 @@ Elements of a SIRT-ready finding (see the intake template; a report is accepted 
 specifics of the finding; potential impact; PoC/PoV; proposed patch; unit test validating the fix;
 tools & techniques used.
 
-**Template:** use [Notification Template 1 — Acknowledgement](../templates/notification-templates.md#1-acknowledgement-discover--intake).
+**Template:** use [Notification Template 1 — Acknowledgement](../../templates/notification-templates.md).
 
 **Notes:** Kick off the SLA acknowledgement clock here. Do not confirm it *is* a valid
 vulnerability yet — say validation is underway.
@@ -299,7 +299,7 @@ target. Members receive a special notice again at PD (Play 5 companion).
 **Audience:** General public + members (member notice in parallel).
 **Channel & TLP:** Website, GHSA, OSV (→ CVE-LIST/EUVD), CSAF VEX feed, SIREN; TLP:CLEAR.
 
-**Template:** use [Notification Template 4 — Public disclosure advisory](../templates/notification-templates.md#4-public-disclosure-advisory-disclose). Where they apply, also include: a deviation notice if our severity assessment differs from the maintainer's; **Detection / IOCs** (prefer IOCs over PoC); and a short **Timeline**.
+**Template:** use [Notification Template 4 — Public disclosure advisory](../../templates/notification-templates.md). Where they apply, also include: a deviation notice if our severity assessment differs from the maintainer's; **Detection / IOCs** (prefer IOCs over PoC); and a short **Timeline**.
 
 **Notes:** Publish machine-readable data (CSAF VEX, OSV) alongside human-readable. Do **not** publish
 PoC/exploit code; prefer IOCs. Attribute coordination to the Akrites SIRT / Akrites Foundation.
@@ -344,7 +344,7 @@ forward. We'll finalize the fix/advisory as quickly as possible and coordinate t
 with you. Current proposal: {accelerate to {date/time}} / {publish now}. Your input by {time}?
 ```
 
-**Step 3 — accelerated public notice (if warranted):** use [Notification Template 5 — Embargo-break notice](../templates/notification-templates.md#5-embargo-break-notice-early-leak-contingency)
+**Step 3 — accelerated public notice (if warranted):** use [Notification Template 5 — Embargo-break notice](../../templates/notification-templates.md)
 
 **Notes:** Match the response to the break — existence-only leaks may not warrant full acceleration;
 full-detail leaks usually do. Capture the break in the postmortem (Play "Blameless postmortem").
@@ -356,7 +356,7 @@ full-detail leaks usually do. Capture the break in the postmortem (Play "Blamele
 **When to use:** At intake and again before PD, to confirm attribution preference.
 **Audience:** Finder (each co-finder individually).
 **Channel & TLP:** Case/intake channel; TLP:RED.
-**Companion:** `ai-use-disclosure.md` (scenarios 1–3, controlled AI vocabulary).
+**Companion:** `attribution-and-ai-use-disclosure-policy.md` (scenarios 1–3, controlled AI vocabulary).
 
 **Template**
 
@@ -720,10 +720,10 @@ adapt rather than push. Keep it collaborative.
 ## Play 18 — Blameless postmortem / lessons learned
 
 **When to use:** After resolution of any case, especially hard ones. A postmortem is **required**, and is scheduled within 72 hours of the triggering event (or of PD, if later), when any of these occurs:
-- an embargo break or premature disclosure ([What Counts as Public Disclosure](what-counts-as-public-disclosure.md) §5);
+- an embargo break or premature disclosure ([Public Disclosure Guidelines](../guidelines/public-disclosure-guidelines.md) §5);
 - an AI or automation failure that reached a third party — for example, an AI-assisted patch that introduced a flaw, or a non-existent vulnerability reported upstream;
 - a missed CVD Policy commitment: acknowledgement (2 bd), initial assessment (10 bd), the severity PD target, or actionable guidance within 7 days of confirmed exploitation (§9);
-- any declared Critical Situation ([Crit-Sit Playbook](critical_situation_playbook.md), Phase 5).
+- any declared Critical Situation ([Crit-Sit Playbook](crit-sit-playbook.md), Phase 5).
   
 **Audience:** Case team, WG; aggregate learnings to members/Governing Board.
 **Channel & TLP:** Internal; shareable summary TLP:GREEN.
@@ -910,7 +910,7 @@ These shape the templates above and are still open from the F2F:
 
 # Appendix C — Companion documents
 
-- [Attribution and AI-Use Disclosure Policy](ai-use-disclosure.md) — attribution scenarios + AI-disclosure vocabulary (Play 7).
-- [Embargo Handling Guidance](Embargo%20Handling%20Guidance.md) — embargo mechanics (Plays 6, 12).
-- [Upstream Engagement Guidelines](upstream-engagement-guidelines.md) and [MoLR Policy](Maintainer_of_Last_Resort_Policy.md) (Plays 10, 15).
+- [Attribution and AI-Use Disclosure Policy](../policies/attribution-and-ai-use-disclosure-policy.md) — attribution scenarios + AI-disclosure vocabulary (Play 7).
+- [Embargo Handling Guidelines](../guidelines/embargo-handling-guidelines.md) — embargo mechanics (Plays 6, 12).
+- [Upstream Engagement Guidelines](../guidelines/upstream-engagement-guidelines.md) and [MoLR Policy](../policies/molr-policy.md) (Plays 10, 15).
 

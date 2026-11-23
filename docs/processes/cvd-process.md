@@ -27,7 +27,7 @@ These principles, drawn largely from long-standing coordination practice, guide 
 - **Act ethically and neutrally.** The Coordinator is an honest broker, not an advocate for one side. Meet maintainers where they are; do not impose process or tooling on them.
 - **The maintainer has final say.** On the fix and the disclosure date, the upstream project decides. The Coordinator advises and facilitates; it does not override — except where active exploitation or a public embargo break requires acceleration to protect users (CVD Policy §9).
 - **Confidentiality and least privilege.** Information is handled under TLP and shared only with those who have a need to know and can move the fix forward.
-- **Be transparent about AI use.** Where AI/LLM tooling materially assisted — whether the Finder's or the Coordinator's — say so, at a capability level, in the case record and the advisory. AI use never removes human accountability, and public AI services are treated as non-confidential (see the [AI and LLM Use Disclosure Policy](https://github.com/Akrites-Foundation/SIRT/blob/main/docs/ai-use-disclosure.md)).
+- **Be transparent about AI use.** Where AI/LLM tooling materially assisted — whether the Finder's or the Coordinator's — say so, at a capability level, in the case record and the advisory. AI use never removes human accountability, and public AI services are treated as non-confidential (see the [AI and LLM Use Disclosure Policy](https://github.com/Akrites-Foundation/SIRT/blob/main/docs/policies/attribution-and-ai-use-disclosure-policy.md)).
 - **Improve continuously.** Review each case blamelessly, capture what worked and what didn't, and feed it back into the process.
 
 ---
@@ -73,7 +73,7 @@ The report is confirmed, deduplicated against work already in flight, and scoped
 
 ### Phase 3 — Prioritization
 The confirmed issue is assessed for severity and urgency, and resources are allocated.
-- **Coordinator:** use severity (CVSS v4.0 and the severity label) and exploit evidence (exploit state and SSVC priority — see the [Severity Scoring Guidelines](severity_scoring_guidelines.md)) as routing and pacing signals — never as a filter to drop a real issue. The order in which reports are worked is set in the [Intake Runbook](intake-runbook.md#prioritization). Note where a "medium" is critical for a specific sector. If your assessment differs from an existing public score, prepare a deviation notice rather than a dispute.
+- **Coordinator:** use severity (CVSS v4.0 and the severity label) and exploit evidence (exploit state and SSVC priority — see the [Severity Scoring Guidelines](../guidelines/severity-scoring-guidelines.md)) as routing and pacing signals — never as a filter to drop a real issue. The order in which reports are worked is set in the [Case Handling Procedure](../procedures/case-handling-procedure.md). Note where a "medium" is critical for a specific sector. If your assessment differs from an existing public score, prepare a deviation notice rather than a dispute.
 - **Maintainer:** weigh real-world impact and the cost of a fix.
 - **Finder:** provide context on impact and exploitability.
 
@@ -113,7 +113,7 @@ The vulnerability and its remediation are released publicly, in sync.
 ### Phase 9 — Post-Disclosure & Retrospective
 Deployment is supported and the case is reviewed.
 - **Consumer:** deploy the fix or mitigation promptly.
-- **Coordinator:** support deployment, capture [metrics](Akrites_SIRT_Metrics.md), and run a blameless retrospective; feed lessons back into the process.
+- **Coordinator:** support deployment, capture [metrics](../reference/metrics-framework.md), and run a blameless retrospective; feed lessons back into the process.
 - **Maintainer & Finder:** recognized for the outcome; input welcomed into the retrospective.
 
 ---
@@ -121,7 +121,7 @@ Deployment is supported and the case is reviewed.
 ## 4. Upstream engagement practices
 
 Working *with* projects — not around them — is the heart of good coordination.
-The full practice is in the [Upstream Engagement Guidelines](upstream-engagement-guidelines.md); the essentials:
+The full practice is in the [Upstream Engagement Guidelines](../guidelines/upstream-engagement-guidelines.md); the essentials:
 
 - **Meet maintainers where they are.** Adapt to the project's workflow and tools; don't impose yours. Many maintainers are volunteers with limited time.
 - **First contact is human-to-human.** Reach a real person before any automation. Use the project's stated security contact or private reporting channel; if none exists, gently encourage adopting one.
@@ -135,10 +135,10 @@ The full practice is in the [Upstream Engagement Guidelines](upstream-engagement
 
 ## 5. Troubleshooting — when things go sideways
 
-- **Unresponsive, unmaintained, or overwhelmed maintainer.** Distinguish the three: keep trying to re-establish contact with an unresponsive but active project; for a genuinely unmaintained one, escalate the response ladder — (1) the maintainer fixes from the disclosure package; (2) the Coordinator publishes a patch; (3) a per-CVE Maintainer of Last Resort release as a carefully bounded last resort, only with Governing Board approval: [Maintainer of Last Resort Policy](Maintainer_of_Last_Resort_Policy.md).
+- **Unresponsive, unmaintained, or overwhelmed maintainer.** Distinguish the three: keep trying to re-establish contact with an unresponsive but active project; for a genuinely unmaintained one, escalate the response ladder — (1) the maintainer fixes from the disclosure package; (2) the Coordinator publishes a patch; (3) a per-CVE Maintainer of Last Resort release as a carefully bounded last resort, only with Governing Board approval: [Maintainer of Last Resort Policy](../policies/molr-policy.md).
 - **Disputed finding or rejected patch.** Handle it blamelessly. If the project declines to act and the risk is real, a deviation notice can document the Coordinator's position without attacking the maintainer.
 - **Leak or broken embargo.** Coordinate the response based on what leaked and how; notify affected parties; consider accelerating disclosure. Establish up front that participants must report suspected breaks immediately.
-- **Active exploitation in the wild.** Strong signal to accelerate the timeline — defenders need the fix now.  If the SIRT Director declares a Critical Situation, see the [Crit-Sit Playbook](critical_situation_playbook.md).
+- **Active exploitation in the wild.** Strong signal to accelerate the timeline — defenders need the fix now.  If the SIRT Director declares a Critical Situation, see the [Crit-Sit Playbook](../playbooks/crit-sit-playbook.md).
 - **Independent discovery / co-finders.** If more than one party found it, coordinate attribution and consider that the secret may not hold — accelerate if needed.
 - **Hype and branding pressure.** A branded vulnerability is not more dangerous; keep prioritization based on risk, and keep messaging proportionate.
 - **Embargo extension requests.** Any party may request one through the Coordinator; the maintainer decides, with the Coordinator advising and consulting the Finder, weighing the harm-reduction principle.
@@ -148,12 +148,12 @@ The full practice is in the [Upstream Engagement Guidelines](upstream-engagement
 ## 6. Templates & references
 
 **Companion templates & internal artifacts**
-- [Read-In Policy](Akrites-Read-In-Policy.md), [Read-In Notice template](../templates/Akrites_Case_ReadIn_Notice_Template.md), [read-in log](../templates/Akrites_ReadIn_Log_CASE.csv)
-- [Intake Runbook](intake-runbook.md) — the on-duty, step-by-step checklist for each phase
+- [Read-In Policy](../policies/read-in-policy.md), [Read-In Notice template](../../templates/case-read-in-notice-template.md), [read-in log](../../templates/Akrites_ReadIn_Log_CASE.csv)
+- [Case Handling Procedure](../procedures/case-handling-procedure.md) — the on-duty, step-by-step checklist for each phase
 - VDR and deviation-notice formats *(to be published)*
-- [Working Group guide](Working_Group_Governance_and_Operations.md) and the [engineer read-in one-pager](Akrites_ReadIn_Engineer_OnePager.md)
+- [Working Group guide](../Working_Group_Governance_and_Operations.md) and the [engineer read-in one-pager](../reference/read-in-engineer-quick-reference.md)
 - OpenSSF `SECURITY.md`, embargo-notification, and disclosure-notification templates
-- [Attribution and AI-Use Disclosure Policy](ai-use-disclosure.md), and the intake template's "AI / LLM tooling used" section
+- [Attribution and AI-Use Disclosure Policy](../policies/attribution-and-ai-use-disclosure-policy.md), and the intake template's "AI / LLM tooling used" section
 
 **Authoritative sources this guide draws on**
 - OpenSSF *Guide to Coordinated Vulnerability Disclosure for OSS* (finder & maintainer guides, templates) — CC-BY-4.0: <https://github.com/ossf/oss-vulnerability-guide>

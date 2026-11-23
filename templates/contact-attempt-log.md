@@ -2,7 +2,7 @@
 
 *One log per case. Record every attempt to reach the upstream maintainer, as it happens. The log is what M1 quotes to the maintainer and what the MoLR case issue links to, so write it as if the maintainer will read it.*
 
-*Timings come from the [MoLR Policy](../docs/Maintainer_of_Last_Resort_Policy.md#31-disclosure-clock-contact--escalation) (contact ladder) and [Part I §4](../docs/Maintainer_of_Last_Resort_Policy.md#4-90-day-silence-floor) (abandonment floor). This log doesn't restate them.*
+*Timings come from the [MoLR Policy](../docs/policies/molr-policy.md) (contact ladder) and [Part I §4](../docs/policies/molr-policy.md) (abandonment floor). This log doesn't restate them.*
 
 ```
 Case ID:

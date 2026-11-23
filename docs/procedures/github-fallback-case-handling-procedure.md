@@ -8,7 +8,7 @@
 
 *Temporary, manual process for the SIRT on how to manage and coordinate disclosures outside of the automation pipeline.*
 
-This process is a lightweight, manual version of the broader [CVD](Akrites_CVD_Playbook.md) process. It is meant to be temporary, and only to be used as a stopgap when we need to operate outside of The Akrites Pipeline ("TAP").
+This process is a lightweight, manual version of the broader [CVD](../processes/cvd-process.md) process. It is meant to be temporary, and only to be used as a stopgap when we need to operate outside of The Akrites Pipeline ("TAP").
 
 > **All repositories used by this process are private.** Never open a vulnerability issue in a public repository; the only exception is a finding triaged as `action: public-intake-report` (below).
 
@@ -29,7 +29,7 @@ This process is a lightweight, manual version of the broader [CVD](Akrites_CVD_P
 - **Akrites Members WG Rotations** ("The Rotation"): A member-staffed rotation is responsible for triaging, daily, the issue list in github.
 - **Working Group Members**: subject matter experts who can both weigh in and help with vulnerabilities.
 
-> The Rotation and WG members see pre-disclosure material, so each must be a standing WG member read in under the [Read-In Policy](Akrites-Read-In-Policy.md) §7. Issues in these repositories are TLP:RED at intake and TLP:AMBER+STRICT once shared with the WG.
+> The Rotation and WG members see pre-disclosure material, so each must be a standing WG member read in under the [Read-In Policy](../policies/read-in-policy.md) §7. Issues in these repositories are TLP:RED at intake and TLP:AMBER+STRICT once shared with the WG.
 
 ## Tools assisting this process
 - **GitHub**: 
@@ -38,7 +38,7 @@ This process is a lightweight, manual version of the broader [CVD](Akrites_CVD_P
 - **Slack**: 
    - **Slack Notification / bots**: Every vulnerability working group has a slack channel they ought to use for communicating. These follow the `#wg-<workingGroupName>` shape.
 - **Templates**:
-   - Upstream reporting template: [../templates/upstream-report-template.txt](../templates/upstream-report-template.txt)
+   - Upstream reporting template: [../templates/upstream-report-template.txt](../../templates/upstream-report-template.txt)
    - Agentic skill to generate a report based on the template: \<TBD\>
 
 ### Labels
@@ -108,7 +108,7 @@ flowchart TD
 | | **The SIRT** will respond to assigned tasks within 1 business day. |
 | **<= 3 days**: | The maximum number of days we will keep something in our queue. |
 | **3 days**: | Re-send to upstream on un-ack'd reports, widening contacts (MoLR Policy Part II §3.1). |
-| **7 days**: | Escalate un-ack'd reports (umbrella org, foundations, distro security teams) and log every attempt in the [contact attempt log](../templates/Contact_attempt_log.md). |
+| **7 days**: | Escalate un-ack'd reports (umbrella org, foundations, distro security teams) and log every attempt in the [contact attempt log](../../templates/contact-attempt-log.md). |
 
 These internal SLOs sit inside the public commitments in the CVD Policy §5 (acknowledge within 2 business days; initial assessment within 10).
 
@@ -127,7 +127,7 @@ At the high level, this process exists to allow us to ensure we do not drop vuln
     - If there are tagged issues needing attention, they should get it
         - escalate or fetch experts on the slack channel as needed
         - if escalation is not working out, escalate to the SIRT
-- issues get good questions and comments when unclear or missing information based on the [UPSTREAM REPORT TEMPLATE](../templates/upstream-report-template.txt).
+- issues get good questions and comments when unclear or missing information based on the [UPSTREAM REPORT TEMPLATE](../../templates/upstream-report-template.txt).
 
 **The SIRT** ensures...
 - all reporting `action:` labels are acted upon daily
@@ -137,13 +137,13 @@ At the high level, this process exists to allow us to ensure we do not drop vuln
 **The Akrites Working Groups Members** ensure...
 - a response is provided, or find The Right SME to get involved when needed or requested by the Rotation (when issues are tagged with `action: need-SME-review` or `action: need-additional-SME-review` or similar)
 - the issues reported are well-formed
-    - we want to base this on the [UPSTREAM REPORT TEMPLATE](../templates/upstream-report-template.txt).
+    - we want to base this on the [UPSTREAM REPORT TEMPLATE](../../templates/upstream-report-template.txt).
     - the reported issues are within the project's Threat Model
         - these can be fetched online for the most part.
 
 ### Before closing an issue
 Accepted upstream is not the end of the case. Close only when:
 - [ ] Public Disclosure has happened, on the date the maintainer set (CVD Policy §8)
-- [ ] A CVE is assigned by the authoritative CNA (CVD Policy §2) and the advisory is published ([Notification Template 4](../templates/notification-templates.md))
-- [ ] The Finder is credited per their choice and the AI-use block is included ([Attribution and AI-Use Disclosure Policy](ai-use-disclosure.md))
+- [ ] A CVE is assigned by the authoritative CNA (CVD Policy §2) and the advisory is published ([Notification Template 4](../../templates/notification-templates.md))
+- [ ] The Finder is credited per their choice and the AI-use block is included ([Attribution and AI-Use Disclosure Policy](../policies/attribution-and-ai-use-disclosure-policy.md))
 - [ ] Read-in access for the case is revoked (Read-In Policy §8)

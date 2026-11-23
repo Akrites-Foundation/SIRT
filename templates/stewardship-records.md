@@ -1,6 +1,6 @@
 # Stewardship records (template)
 
-*Per [MoLR Policy](../docs/Maintainer_of_Last_Resort_Policy.md) Part III §1. Use §1 when searching for a steward, and §2 to vet and approve a candidate.*
+*Per [MoLR Policy](../docs/policies/molr-policy.md) Part III §1. Use §1 when searching for a steward, and §2 to vet and approve a candidate.*
 
 ---
 

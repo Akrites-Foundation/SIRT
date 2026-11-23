@@ -5,7 +5,7 @@
 **Owner:** Akrites SIRT
 **Status:** Draft for Akrites SIRT review
 **Audience:** SIRT staff, case coordinators, and Working Group members who build, run, or rely on AI-assisted tooling
-**Companion docs:** [Attribution and AI-Use Disclosure Policy](ai-use-disclosure.md), [CVD Policy](Akrites_CVD_Policy.md) (§8 confidentiality, §13 AI disclosure), [Intake Runbook](intake-runbook.md), [Maintainer of Last Resort Policy](Maintainer_of_Last_Resort_Policy.md) (Part II §5.4), [Communications Playbook](sirt-communications-playbook.md) (Play 18), [Metrics](Akrites_SIRT_Metrics.md), [Upstream Engagement Guidelines](upstream-engagement-guidelines.md)
+**Companion docs:** [Attribution and AI-Use Disclosure Policy](../policies/attribution-and-ai-use-disclosure-policy.md), [CVD Policy](../policies/cvd-policy.md) (§8 confidentiality, §13 AI disclosure), [Case Handling Procedure](../procedures/case-handling-procedure.md), [Maintainer of Last Resort Policy](../policies/molr-policy.md) (Part II §5.4), [Communications Playbook](../playbooks/communications-playbook.md) (Play 18), [Metrics](../reference/metrics-framework.md), [Upstream Engagement Guidelines](upstream-engagement-guidelines.md)
 
 ---
 
@@ -15,8 +15,8 @@ The Akrites SIRT uses large language models (LLMs) and other automated tools for
 
 They are operating guidance under existing policy, not a new policy. The rules they implement are already set elsewhere:
 
-- **AI use is disclosed, both ways,** and AI-assisted work is always owned by a named human — CVD Policy §13 and the [Attribution and AI-Use Disclosure Policy](ai-use-disclosure.md).
-- **Case material only goes through confidential tooling, never public AI services** — the AI-use policy's Confidentiality section and the Intake Runbook's AI Tooling Guardrail.
+- **AI use is disclosed, both ways,** and AI-assisted work is always owned by a named human — CVD Policy §13 and the [Attribution and AI-Use Disclosure Policy](../policies/attribution-and-ai-use-disclosure-policy.md).
+- **Case material only goes through confidential tooling, never public AI services** — the AI-use policy's Confidentiality section and the Case Handling Procedure's AI Tooling Guardrail.
 
 Where these guidelines and a policy disagree, the policy governs.
 
@@ -60,13 +60,13 @@ AI-assisted triage reduces noise. It does not make final decisions about reports
 
 ### 3.2 Sampling audit *(proposed)*
 
-Each week, the SIRT case coordinator on duty reviews a random sample of at least **15%** of the reports AI classified as duplicate or low priority, records the error rate, and raises any pattern with the SIRT Director. Results feed the metrics program ([Metrics](Akrites_SIRT_Metrics.md) — automation ratio).
+Each week, the SIRT case coordinator on duty reviews a random sample of at least **15%** of the reports AI classified as duplicate or low priority, records the error rate, and raises any pattern with the SIRT Director. Results feed the metrics program ([Metrics](../reference/metrics-framework.md) — automation ratio).
 
 ---
 
 ## 4. Protecting case data
 
-Pre-disclosure case material — anything at TLP:RED, TLP:AMBER+STRICT, or TLP:AMBER — is processed only through **confidential AI tooling**, as the [Attribution and AI-Use Disclosure Policy](ai-use-disclosure.md) defines it: self-hosted models, enterprise services with contractual no-training and confidentiality terms, or the SIRT's own analysis environment. **Public AI services are never used for case material.**
+Pre-disclosure case material — anything at TLP:RED, TLP:AMBER+STRICT, or TLP:AMBER — is processed only through **confidential AI tooling**, as the [Attribution and AI-Use Disclosure Policy](../policies/attribution-and-ai-use-disclosure-policy.md) defines it: self-hosted models, enterprise services with contractual no-training and confidentiality terms, or the SIRT's own analysis environment. **Public AI services are never used for case material.**
 
 For any tooling run by a third party:
 

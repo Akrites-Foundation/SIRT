@@ -5,7 +5,7 @@
 ---
 You have passed verification confirming you have expertise relevant to this disclosure and that you are able to contribute.
 
-**You are being read into a restricted vulnerability case.** Please read this notice in full before taking any action. To participate you must accept the terms of this Read-In Notice, the [Akrites Read-In Policy](https://github.com/Akrites-Foundation/SIRT/blob/main/docs/Akrites-Read-In-Policy.md), the [Akrites Code of Conduct](https://github.com/Akrites-Foundation/SIRT/blob/main/Code_of_Conduct.md), and the Linux Foundation [Antitrust Policy](https://www.linuxfoundation.org/antitrust-policy). Please also review the [Akrites SIRT Read-In One-Pager](https://github.com/Akrites-Foundation/SIRT/blob/main/docs/Akrites_ReadIn_Engineer_OnePager.md).
+**You are being read into a restricted vulnerability case.** Please read this notice in full before taking any action. To participate you must accept the terms of this Read-In Notice, the [Akrites Read-In Policy](https://github.com/Akrites-Foundation/SIRT/blob/main/docs/policies/read-in-policy.md), the [Akrites Code of Conduct](https://github.com/Akrites-Foundation/SIRT/blob/main/Code_of_Conduct.md), and the Linux Foundation [Antitrust Policy](https://www.linuxfoundation.org/antitrust-policy). Please also review the [Akrites SIRT Read-In One-Pager](https://github.com/Akrites-Foundation/SIRT/blob/main/docs/reference/read-in-engineer-quick-reference.md).
 
 **To accept, reply to this message stating that you accept this notice (see §7), and include your GitHub ID.** Access to the case resources below is enabled only after the SIRT receives your acceptance. Your continued participation confirms your continued adherence to these terms.
 
@@ -28,7 +28,7 @@ You have passed verification confirming you have expertise relevant to this disc
 
 ## 1. Data classification — Traffic Light Protocol (TLP)
 
-This case is governed by the **FIRST Traffic Light Protocol (TLP 2.0)**. Every piece of case information carries a TLP label that tells you exactly how far you may share it. What information you receive is scoped to your tier per the [Read-In Policy §4](https://github.com/Akrites-Foundation/SIRT/blob/main/docs/Akrites-Read-In-Policy.md#4-the-tiers-at-a-glance). **When in doubt, treat information as TLP:RED and ask the SIRT case coordinator.**
+This case is governed by the **FIRST Traffic Light Protocol (TLP 2.0)**. Every piece of case information carries a TLP label that tells you exactly how far you may share it. What information you receive is scoped to your tier per the [Read-In Policy §4](https://github.com/Akrites-Foundation/SIRT/blob/main/docs/policies/read-in-policy.md#4-the-tiers-at-a-glance). **When in doubt, treat information as TLP:RED and ask the SIRT case coordinator.**
 
 | Label | What it means for you |
 |---|---|
@@ -101,6 +101,6 @@ By replying to accept this notice, you agree to participate in this case and con
 2. Will communicate about this case **only with the named parties** in §2, via the **channels** in §4.
 3. Will route any **additional read-in requests through the SIRT** (§3).
 4. Will comply with the **embargo** and report any suspected break (§6).
-5. Understand that an embargo break results in **immediate suspension of your access**, that the Akrites Governing Board decides on permanent removal (for you and potentially your sponsoring organization), and that an accidental break you promptly self-report is reviewed blamelessly ([Read-In Policy §11](https://github.com/Akrites-Foundation/SIRT/blob/main/docs/Akrites-Read-In-Policy.md#11-embargo-breaches)).
+5. Understand that an embargo break results in **immediate suspension of your access**, that the Akrites Governing Board decides on permanent removal (for you and potentially your sponsoring organization), and that an accidental break you promptly self-report is reviewed blamelessly ([Read-In Policy §11](https://github.com/Akrites-Foundation/SIRT/blob/main/docs/policies/read-in-policy.md#11-embargo-breaches)).
 
 *Questions about this notice go to the SIRT case coordinator listed in the header — not to anyone outside the read-in list.*

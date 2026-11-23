@@ -5,7 +5,7 @@
 **Owner:** Akrites SIRT
 **Status:** Draft for Akrites SIRT review
 **Audience:** SIRT staff, case coordinators, and Working Group analysts who assess and communicate vulnerability severity
-**Companion docs:** [CVD Policy](Akrites_CVD_Policy.md) (§8 severity targets, §9 actively exploited vulnerabilities, §10 severity and identifiers), [Intake Runbook](intake-runbook.md), [Critical Situation Playbook](critical_situation_playbook.md), [Communications Playbook](sirt-communications-playbook.md), [Notification Templates](../templates/notification-templates.md), [Metrics](Akrites_SIRT_Metrics.md)
+**Companion docs:** [CVD Policy](../policies/cvd-policy.md) (§8 severity targets, §9 actively exploited vulnerabilities, §10 severity and identifiers), [Case Handling Procedure](../procedures/case-handling-procedure.md), [Critical Situation Playbook](../playbooks/crit-sit-playbook.md), [Communications Playbook](../playbooks/communications-playbook.md), [Notification Templates](../../templates/notification-templates.md), [Metrics](../reference/metrics-framework.md)
 **Credits:** Based on an initial draft by Robb Gatica ([PR #61](https://github.com/Akrites-Foundation/SIRT/pull/61)), with the layered model proposed by Jenny Ferries and review by CRob in [issue #32](https://github.com/Akrites-Foundation/SIRT/issues/32).
 
 ---
@@ -88,7 +88,7 @@ Exploit state is tracked as its own field, separate from the CVSS score and the 
 
 ### What each state means for the case
 
-- **Active** — the CVD Policy §9 accelerated track applies (actionable guidance within 7 days), and it is a trigger for the SIRT Director to consider a Crit-Sit ([Critical Situation Playbook](critical_situation_playbook.md)).
+- **Active** — the CVD Policy §9 accelerated track applies (actionable guidance within 7 days), and it is a trigger for the SIRT Director to consider a Crit-Sit ([Critical Situation Playbook](../playbooks/crit-sit-playbook.md)).
 - **Demonstrated** with a low-barrier exploit — a strong signal to accelerate; raise the SSVC priority.
 - **PoC** — monitor for escalation.
 - **Theoretical** or **Unknown** — absence of evidence is not evidence of low risk. **"Unknown" never means "safe."**
@@ -112,7 +112,7 @@ When exploit state changes after PD, update the advisory's exploit-state field w
 
 ## 4. Layer 4 — SSVC priority (internal only)
 
-The SIRT uses CISA's **Stakeholder-Specific Vulnerability Categorization (SSVC)** decision tree to decide response priority — which cases to staff first, and how urgently. SSVC results are **never published**. How the SSVC outcome combines with the report's source tier is set out in the [Intake Runbook](intake-runbook.md#prioritization).
+The SIRT uses CISA's **Stakeholder-Specific Vulnerability Categorization (SSVC)** decision tree to decide response priority — which cases to staff first, and how urgently. SSVC results are **never published**. How the SSVC outcome combines with the report's source tier is set out in the [Case Handling Procedure](../procedures/case-handling-procedure.md).
 
 | Decision point | Question |
 | --- | --- |
@@ -160,7 +160,7 @@ Many upstream maintainers are security-capable but not security specialists. Whe
 
 - Lead with the label and a plain-language description of what an attacker can achieve — not the CVSS number.
 - Be honest about preconditions: the configuration, access, or user interaction required.
-- Treat disagreement as a technical discussion, not a dispute, and record both views (see [Communications Playbook](sirt-communications-playbook.md) Play 14).
+- Treat disagreement as a technical discussion, not a dispute, and record both views (see [Communications Playbook](../playbooks/communications-playbook.md) Play 14).
 - Never imply a Medium or Low issue does not matter. Every confirmed vulnerability gets fixed; the label sets the pace, not whether the work happens.
 
 ### Pitfalls

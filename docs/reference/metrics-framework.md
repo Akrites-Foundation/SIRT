@@ -71,7 +71,7 @@ Every time-based metric is measured in **business days** unless stated, from the
 | PD within severity target | Report received | Public Disclosure (advisory published) | Severity band = the band assigned at enrichment. Cases on a longer timeline under the upstream project's own policy (CVD Policy §8) and accelerated cases (§9) are reported separately, not as misses. There is no "clock pause." |
 | Median time: report → fix | Report received | Fixed release or merged upstream fix publicly available | "Fix availability" in the public cut means the same stop event |
 | Actionable guidance after exploitation | Active exploitation confirmed | Guidance or mitigation published | Target 7 calendar days (CVD Policy §9) |
-| Embargo integrity | — | — | % of cases reaching PD with no embargo break, as classified in [What Counts as Public Disclosure](what-counts-as-public-disclosure.md) §5 |
+| Embargo integrity | — | — | % of cases reaching PD with no embargo break, as classified in [Public Disclosure Guidelines](../guidelines/public-disclosure-guidelines.md) §5 |
 | Upstream fixes merged | — | Fix merged upstream | % = merged ÷ coordinated disclosures completed in the period |
 | Downstream remediation enabled; automation ratio | — | — | *To be defined before first Board report* |
 
@@ -83,7 +83,7 @@ Every time-based metric is measured in **business days** unless stated, from the
 The full-resolution, real-time view for the SIRT team: intake volume and sources, dedup rate, queue depth and backlog age, time-in-stage across the workflow, cycle time, WG capacity and active cases, rework and rejected-patch rates, regressions introduced, and embargo near-misses and extension requests. This tier may include live and case-identifying detail because it stays with SIRT staff.
 
 ### Board / members — "value & health"
-An aggregated **weekly update**: disclosures completed, upstream fixes merged, downstream remediation enabled (weighted by severity label — Critical / High / Medium / Low, per the [Severity Scoring Guidelines](severity_scoring_guidelines.md)), coverage, median time-to-fix trend (with regressions), automation ratio, embargo integrity, risk posture (aging embargoes, unmaintained-project exposure, MoLR cases), and capacity vs. demand. No live embargoed detail; no individual member identification beyond a member's own data.
+An aggregated **weekly update**: disclosures completed, upstream fixes merged, downstream remediation enabled (weighted by severity label — Critical / High / Medium / Low, per the [Severity Scoring Guidelines](../guidelines/severity-scoring-guidelines.md)), coverage, median time-to-fix trend (with regressions), automation ratio, embargo integrity, risk posture (aging embargoes, unmaintained-project exposure, MoLR cases), and capacity vs. demand. No live embargoed detail; no individual member identification beyond a member's own data.
 
 ### Public — "trust, aggregate, safe"
 Kept deliberately simple and credible — five numbers plus stories. The SIRT Director approves each period's public cut against the confidentiality gate.
@@ -132,6 +132,6 @@ This preserves the member-value signal without exposing anyone's dependency map.
 Decided by the SIRT Director under the document approval rules (decision D2):
 
 - **Cadence and format:** for now, the Board / member view is sent as a weekly written update, alongside progress and membership news.
-- **Severity weighting:** impact metrics are weighted by the severity label (Critical / High / Medium / Low) from the [Severity Scoring Guidelines](severity_scoring_guidelines.md). EPSS is not used, because embargoed cases have no EPSS value.
+- **Severity weighting:** impact metrics are weighted by the severity label (Critical / High / Medium / Low) from the [Severity Scoring Guidelines](../guidelines/severity-scoring-guidelines.md). EPSS is not used, because embargoed cases have no EPSS value.
 - **Public cut:** the SIRT Director approves each period's public cut against the confidentiality gate.
 - **Data store owner:** the SIRT Director owns the case-lifecycle data store these metrics are computed from.

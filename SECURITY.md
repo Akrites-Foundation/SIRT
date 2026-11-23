@@ -5,7 +5,7 @@ disclosure of security vulnerabilities affecting Akrites-maintained
 code and assists open source maintainers in resolving security findings. We welcome good-faith security research and reports from the community.
 
 Our full **Coordinated Vulnerability Disclosure (CVD) Policy** — including our
-lifecycle, embargo handling, and timelines — is published at [docs/Akrites_CVD_Policy.md](docs/Akrites_CVD_Policy.md) 
+lifecycle, embargo handling, and timelines — is published at [docs/policies/cvd-policy.md](docs/policies/cvd-policy.md) 
 
 ## Who this policy is for
 
@@ -32,7 +32,7 @@ To help us validate and reproduce the issue quickly, please include:
 * **Environment**: OS, architecture, platform, and relevant configuration.
 * **Reproduction Steps**: Step-by-step instructions or proof-of-concept (PoC) code/screenshots. Share PoC material only over a private channel (GitHub private vulnerability reporting counts as one).
 * **Impact**: Estimated severity, root cause (CWE) if known, and potential exploitation scenarios.
-* **AI Assistance Disclosure**: State whether AI/LLM tooling was used during discovery, analysis, or PoC creation, and whether public or confidential tooling was used. A report developed with a public, hosted AI service is treated as having **no embargo available** (see our [AI and LLM Use Disclosure Policy](docs/ai-use-disclosure.md)).
+* **AI Assistance Disclosure**: State whether AI/LLM tooling was used during discovery, analysis, or PoC creation, and whether public or confidential tooling was used. A report developed with a public, hosted AI service is treated as having **no embargo available** (see our [AI and LLM Use Disclosure Policy](docs/policies/attribution-and-ai-use-disclosure-policy.md)).
 * **Attribution Preferences**: How you (and your organization) would like to be credited — named, clearinghouse, or anonymous (we credit Finders by default).
 * **Timing Constraints**: Any upcoming embargo timing, conference deadlines or publication windows we should be aware of.
 * **Exploitation and exposure**: Whether you know of exploitation in the wild, and whether you have shared the issue with anyone else (who, when, how).
@@ -51,7 +51,7 @@ To help us validate and reproduce the issue quickly, please include:
 | Disclosure      | Coordinated with maintainers and finders under a proposed **15-business-day** upstream embargo; target ≤ 17/21/24 business days from receipt for Low–Medium/High/Critical |
 
 ## If you can't reach us, or we go quiet
-If you believe the process has stalled, add a comment to your private report, or email **SIRT@Akrites.dev** with your report link. If you disagree with how your report was handled, see the disputes and appeals path in [CVD Policy §15](docs/Akrites_CVD_Policy.md). If the vulnerability is being actively exploited, tell us immediately so we can accelerate.
+If you believe the process has stalled, add a comment to your private report, or email **SIRT@Akrites.dev** with your report link. If you disagree with how your report was handled, see the disputes and appeals path in [CVD Policy §15](docs/policies/cvd-policy.md). If the vulnerability is being actively exploited, tell us immediately so we can accelerate.
 
 ## Our process at a glance
 We follow a nine-phase lifecycle:

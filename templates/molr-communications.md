@@ -1,6 +1,6 @@
 # MoLR communications (templates)
 
-*Used with the [MoLR Guidelines and Procedures](../docs/molr_guidelines_and_procedures.md). Every message is plain, specific, and says what the maintainer can do. Fill every `<placeholder>`; delete lines that don't apply. Log each send in the case issue.*
+*Used with the [MoLR Procedure](../docs/procedures/molr-procedure.md). Every message is plain, specific, and says what the maintainer can do. Fill every `<placeholder>`; delete lines that don't apply. Log each send in the case issue.*
 
 | ID | When | To |
 | --- | --- | --- |
@@ -70,7 +70,7 @@ WHAT YOU CAN DO (any time, now or later)
 - Suggest who should take over: tell us who.
 
 How this works, step by step:
-https://github.com/Akrites-Foundation/SIRT/blob/main/docs/molr_guidelines_and_procedures.md
+https://github.com/Akrites-Foundation/SIRT/blob/main/docs/procedures/molr-procedure.md
 
 Reply to this email or write to SIRT@akrites.dev. You don't need to explain
 any absence.
@@ -264,7 +264,7 @@ Top of every MoLR repository's README from Step 3.
 > [!IMPORTANT]
 > **This is not the official <project>.** It is a temporary, security-fixes-only copy
 > of <project> <versions>, maintained by the Akrites SIRT under its
-> [Maintainer of Last Resort process](https://github.com/Akrites-Foundation/SIRT/blob/main/docs/molr_guidelines_and_procedures.md).
+> [Maintainer of Last Resort process](https://github.com/Akrites-Foundation/SIRT/blob/main/docs/procedures/molr-procedure.md).
 >
 > - **Official project:** <upstream URL>
 > - **Why this exists:** <advisory link>
