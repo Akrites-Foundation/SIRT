@@ -41,7 +41,7 @@ The SIRT provisions three private spaces for each new WG: a **GitHub repository*
    * Initial Chair and Co-Chair names and contact details.
    * Member invitation list and specific engineering resource needs (e.g., protocol developers, test engineers).
 3. **Announce Internally**: Post an announcement in `#all-akrites` calling for qualified member participation.
-4. **Designate Leadership**: The SIRT Director (foundation staff) designates the Chair, and a Co-Chair where the [Governance Policy](../policies/wg-governance-policy.md) §3.3 requires one.
+4. **Designate Leadership**: The SIRT Director or the Technical PgM Director designates the Chair, and a Co-Chair where the [Governance Policy](../policies/wg-governance-policy.md) §3.3 requires one.
 5. **Agree on Cadence**: Establish working norms (e.g., async repository tracking plus short weekly syncs) and assign functional roles (analysis, patching, testing).
 6. **Verify Access**: Ensure all members complete hardware-key 2FA setup.
 
