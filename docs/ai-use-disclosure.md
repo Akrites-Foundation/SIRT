@@ -1,5 +1,7 @@
 # Attribution and AI-Use Disclosure Policy
 
+**Type:** Policy
+**Approver:** SIRT Director
 **Owner:** Akrites SIRT
 **Status:** Draft — for Akrites SIRT review
 **Applies to:** All Akrites SIRT–coordinated cases and the advisories they produce — reports from Finders and work performed by the SIRT and its Working Groups (WGs)

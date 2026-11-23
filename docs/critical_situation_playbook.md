@@ -1,5 +1,7 @@
-# Akrites SIRT — Critical Situation (Crit-Sit) Playbook
+# Critical Situation (Crit-Sit) Playbook
 
+**Type:** Playbook
+**Approver:** SIRT Director
 **Owner:** Akrites SIRT
 **Status:** Draft for Akrites SIRT review
 **Audience:** SIRT Director, SIRT case coordinators, and Working Group members working a declared Crit-Sit

@@ -1,5 +1,8 @@
-# Akrites SIRT Metrics
+# Metrics Framework
 
+**Type:** Reference
+**Approver:** SIRT Director
+**Formerly titled:** Akrites SIRT Metrics
 **Status:** Draft — for Akrites SIRT review
 **Owner:** Policy/Process work stream (CRob)
 **Scope:** A lean starter set of metrics, measurable in the near term and tied to the 30/60/90 goals. A fuller "north-star" catalog can follow in a later phase.

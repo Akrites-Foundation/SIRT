@@ -1,5 +1,7 @@
-# Akrites SIRT Communications Playbook
+# Communications Playbook
 
+**Type:** Playbook
+**Approver:** SIRT Director
 **Owner:** Akrites SIRT
 **Status:** Draft for Akrites SIRT review
 **Audience:** SIRT staff and coordinators; referenced by WGs and read-in participants

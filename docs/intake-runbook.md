@@ -1,5 +1,10 @@
-# Akrites SIRT Intake Runbook (one page) - DRAFT v0.4
+# Case Handling Procedure
 
+**Type:** Procedure
+**Owner:** Akrites SIRT
+**Approver:** SIRT Director
+**Version:** 0.4
+**Formerly titled:** Intake Runbook
 **Status:** Draft — for Akrites SIRT review
 
 Step-by-step actions for the responder on duty, keyed to the nine-phase

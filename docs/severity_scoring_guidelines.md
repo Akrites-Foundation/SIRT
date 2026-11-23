@@ -1,5 +1,7 @@
-# Akrites SIRT — Severity Scoring Guidelines
+# Severity Scoring Guidelines
 
+**Type:** Guidelines
+**Approver:** SIRT Director
 **Owner:** Akrites SIRT
 **Status:** Draft for Akrites SIRT review
 **Audience:** SIRT staff, case coordinators, and Working Group analysts who assess and communicate vulnerability severity

@@ -1,5 +1,7 @@
-# Akrites Read-In Policy
+# Read-In Policy
 
+**Type:** Policy
+**Approver:** Governing Board
 **Status:** Draft — for Governing Board review (v0.8)
 **Scope:** All Akrites vulnerability Working Groups (WGs) and all pre-disclosure cases handled by the Akrites SIRT.
 

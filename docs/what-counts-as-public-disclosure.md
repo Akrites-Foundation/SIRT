@@ -1,5 +1,8 @@
-# What Counts as Public Disclosure — Process & Guidelines
+# Public Disclosure Guidelines
 
+**Type:** Guidelines
+**Approver:** SIRT Director
+**Formerly titled:** What Counts as Public Disclosure — Process & Guidelines
 **Owner:** Akrites SIRT
 **Status:** Draft — for Akrites SIRT review
 **Tracking:** [Akrites-Foundation/SIRT #23](https://github.com/Akrites-Foundation/SIRT/issues/23)
