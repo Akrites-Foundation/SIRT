@@ -23,7 +23,7 @@ Follow these steps for each person, for each case.
 
 1. **Nominate.** The Finder, WG, maintainer, or delegated authority proposes a person and states which sanctioned role they will perform (policy §2, Gate 2). The nomination includes the written statement of need required by Gate 1.
 2. **Verify.** The SIRT case coordinator evaluates and records **each of the three gates** (policy §2), confirms all prerequisites (policy §3), and completes the exclusion check. A nomination that is unclear is returned for more information. It is not approved provisionally.
-3. **Approve.** The SIRT case coordinator approves. Consult the Finder and the maintainer on Tier 0, 1 and 1.5 additions. They are consulted, not asked for a veto.
+3. **Approve.** The SIRT case coordinator approves. In a declared Crit-Sit, the Incident Commander approves, on the case coordinator's verification in step 2 ([Crit-Sit Playbook §2](../playbooks/crit-sit-playbook.md#2-roles)). Consult the Finder and the maintainer on Tier 0, 1 and 1.5 additions. They are consulted, not asked for a veto.
 4. **Assign tier.** Apply policy §5 and record the reason for the tier chosen.
 5. **Acknowledge.** Send the [Read-In Notice](../../templates/case-read-in-notice-template.md) from the SIRT. The individual must acknowledge it **before** access is enabled.
 6. **Grant scoped access.** Give access to that single case's private repository and communications channel, and nothing else.
@@ -82,7 +82,7 @@ To revoke, remove repository and channel access, log the revocation and the reas
 
 **Where it goes.** The levels and who holds each are in the policy (§9). In short:
 
-1. The **SIRT case coordinator** adjusts priority, pulls in more Tier 1 SMEs, or reads a party in earlier, all within existing tier definitions.
+1. The **SIRT case coordinator** (the Incident Commander in a declared Crit-Sit) adjusts priority, pulls in more Tier 1 SMEs, or reads a party in earlier, all within existing tier definitions.
 2. The **SIRT Director** decides cross-cutting or contested calls, such as vertical-versus-industry severity conflicts, broad-scope resourcing, or convening a Working Group.
 3. The **Governing Board** decides policy and legal matters.
 
