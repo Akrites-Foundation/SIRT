@@ -396,7 +396,7 @@ You can verify us at {akrites.dev/verify}.
 
 **Notes:** The steps and timing for each attempt are in the [MoLR Procedure](../procedures/molr-procedure.md#contact-and-escalation-ladder); this play supplies the wording. Distinguish **unmaintained** (nothing touched), **unresponsive** (silent but active
 elsewhere), and **overwhelmed** (afloat, not prioritizing). Be transparent about *why* we want to
-help and earn trust. MoLR decisions are last-resort and require Governing Board approval (see Play 15 and the MoLR Policy). Preference order: maintainer fixes → advisory + mitigation for consumers → last-resort security release (patch series, Governing Board approval) → steward search. Akrites never forks a project or takes a package name (MoLR Policy Part I §3).
+help and earn trust. MoLR decisions are last-resort and require SIRT Director approval, with the Governing Board informed (see Play 15 and the MoLR Policy). Preference order: maintainer fixes → advisory + mitigation for consumers → last-resort security release (patch series, SIRT Director approval) → steward search. Akrites never forks a project or takes a package name (MoLR Policy Part I §3).
 
 ---
 
@@ -542,7 +542,7 @@ Feeds the future dispute-resolution process (incl. CNA-LR scenarios).
 
 ## Play 15 — Maintainer-of-last-resort / last-resort security release notice
 
-**When to use:** Upstream can't/won't act and the Governing Board has approved a MoLR security release (or the SIRT has decided to publish a patch file / mitigation).
+**When to use:** Upstream can't/won't act and the SIRT Director has approved a MoLR security release (or the SIRT has decided to publish a patch file / mitigation).
 **Audience:** Public + members; maintainer informed as a courtesy if reachable.
 **Channel & TLP:** Website/GH + advisory channels; TLP:CLEAR at publication.
 
@@ -561,7 +561,7 @@ applicable.}
 Fix: {patch/commit/release link}   Advisory: {refs}
 ```
 
-**Notes:** Last resort only, with an explicit Governing Board decision for any MoLR release. Order of preference: maintainer fixes
+**Notes:** Last resort only, with an explicit SIRT Director decision for any MoLR release (Governing Board informed). Order of preference: maintainer fixes
 → publish patch file → last-resort security release → steward search. Frame as "initial/proposed" and invite the maintainer back
 in. Avoid implying ongoing maintenance you won't provide.
 
@@ -801,7 +801,7 @@ These shape the templates above and are still open from the F2F:
 - Confirm the standard **extension** principle (the 15-bd window and PD targets are set in CVD Policy §8).
 - Define the **co-finder attribution cutoff** (referenced in Plays 7 and 13).
 - Ratify the **read-in delegation** model and whether maintainers may veto read-ins.
-- MoLR authority: Governing Board (see MoLR Policy); confirm triggers.
+- MoLR authority: SIRT Director, Board informed (MoLR Policy §5.2); confirm triggers.
 - Finalize **disclosure definition** (what counts as "public") and whether **first-report date** is
   published (Plays 2, 5).
 - Approve a distinct **Code of Conduct for upstream engagement** to accompany first-contact (Play 9).
