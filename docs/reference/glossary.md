@@ -27,6 +27,7 @@ Entries within each section are ordered alphabetically. Instructions for proposi
 | **Intake** | the SIRT's process for receiving reports, deduplicating, and processing certain reports as a Case. |
 | **Member (member organization)** | An organization that has joined Akrites under its membership agreement. Used on its own, "member" always means the organization — refer to people as *member engineers*, *WG members*, or *staff*. Membership level carries no additional access to case information. |
 | **Member engineer** | An individual employed by a member organization, or that member's authorized and approved delegate, who participates in Akrites work. Member engineers are read in to cases only through the [Read-In Policy](../policies/read-in-policy.md). |
+| <a id="premier-member"></a>**Premier member** | A member organization at the Premier membership level. Each Premier member designates a board member and an alternate to the Governing Board. Membership level, including Premier, carries no additional access to case information. See *Member*. |
 | **PSIRT** | Product Security Incident Response Team — a vendor's or project's own product-security response function; Akrites coordinates with these. |
 | **SIG** | Special Interest Group — a group formed around technology surrounding a WG's focus area. |
 | **SIRT** | Security Incident Response Team — the Akrites staff and infrastructure that coordinate intake, disclosure, and upstream engagement. Major incidents are run under the [Critical Situation Playbook](../playbooks/crit-sit-playbook.md). |
