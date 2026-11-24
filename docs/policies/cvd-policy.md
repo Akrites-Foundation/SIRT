@@ -2,7 +2,7 @@
 
 **Type:** Policy
 **Approver:** Governing Board
-**Version:** 1.7
+**Version:** 1.8
 **Status:** Board-reviewed — v1.0, 2026-10-20 (later edits reported to the Board)
 **Owner:** Akrites SIRT (Security Incident Response Team)
 **Primary contact:** SIRT@Akrites.dev
@@ -291,6 +291,13 @@ This is where the "open process, private data" balance is enforced.
   without the Owner's explicit consent. Tier definitions are in the
   [Read-In Policy](read-in-policy.md).
 
+  The Akrites Charter (§1(e)(ii)) returns restricted TLP labels to TLP:CLEAR
+  30 days after receipt unless the Governing Board or the SIRT designates a
+  longer restriction period. Where a case's agreed Public Disclosure date falls
+  more than 30 days after receipt (for example, a Critical case at 24 business
+  days, or an agreed extension), the SIRT designates the restriction period to
+  run until that date and records the designation in the case.
+
 - **Need-to-know and read-in.** Access to embargoed details is restricted to the
   individuals required to resolve the issue. Collaborators are formally read in
   and are expected to maintain confidentiality until PD.
@@ -501,6 +508,7 @@ SIRT@Akrites.dev.
 | 1.5     | 2026-11-10 | Decision D3: §8 states the maintainer decides the PD date, with the SIRT Director as the SIRT's final decision point. Decision D4: §7 downstream lead time set to 7–14 days (Tiers 2–3) and at most 24 hours (Tier 3.5), matching the Read-In Policy. Reported to the Governing Board. |
 | 1.6     | 2026-11-23 | Editorial only — no change to policy substance. §3: term definitions moved to the Glossary and replaced with links, so each term is defined in one place (definitions of Collaborator, Clearinghouse, Finder, Owner and others carried into the Glossary unchanged in meaning). §7: states that this section holds the canonical nine-phase list and that the CVD Process and Case Handling Procedure follow it. To be reported to the Governing Board. |
 | 1.7     | 2026-11-23 | §5: the commitment "Communicate continuously" now reads "Consistent and reliable communication", since continuous communication cannot be promised (issue #105). To be reported to the Governing Board. |
+| 1.8     | 2026-11-23 | §8: where a case's agreed Public Disclosure date is more than 30 days after receipt, the SIRT designates the TLP restriction period to run until that date, as Charter §1(e)(ii) allows. This closes a gap between the Charter's 30-day default and the §8 disclosure targets. To be reported to the Governing Board. |
 
 ## 17. References
 

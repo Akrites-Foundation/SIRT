@@ -114,6 +114,8 @@ Track B requires a signed entry test confirming all seven criteria:
 6. **Per-CVE Approval**: Approval is granted specifically for one CVE ID.
 7. **Chain of Custody for Prior Silence**: If relying on a trusted third party's contact attempts to satisfy the 90-day floor, the submitter provides a complete log of those attempts (§3.2).
 
+**Cap and threshold.** The SIRT Director sets and publishes the cap on concurrent engagements (criterion 5) and the criticality threshold (criterion 2), and informs the Governing Board whenever either changes.
+
 **EOL-branch path.** For an EOL branch (§4), criteria 1–6 apply and criterion 7 is replaced by: the maintainer's end-of-life statement on record; confirmation that the maintainer does not dispute the vulnerability; the fix available in the project's supported versions; documented absence of any downstream party willing to carry the fix; and advance notice to the maintainer, with the offer of verbatim rationale (Part I §2). The release covers only the end-of-life branch. A "do not fork" preference (Part I §6) still blocks it, subject only to the critical-infrastructure exception in Part I §6.
 
 ### 5.2 Approval Authority & Recusal
@@ -170,3 +172,4 @@ Downstream users are routed to fixes through machine-readable advisories (OSV, V
 | ------- | ---------- | -------------- |
 | 1.0 | 2026-11-10 | Split into this policy and the [MoLR Procedure](../procedures/molr-procedure.md); operational detail moved there. Incorporates [PR #183](https://github.com/Akrites-Foundation/SIRT/pull/183) by Roman Zhukov (trusted third-party clock start, chain-of-custody criterion, criticality justification, recusal). Adds: 12-month operational donation, no ownership or custody, no steward approval, no term limits, no urgency exception to the 90-day floor, Track B after a deliberate non-fix only for an end-of-life branch whose vulnerability the maintainer does not dispute (EOL-branch path). Prepared for first Governing Board review. |
 | 1.1 (draft) | 2026-11-10 | Approval of Track B moves to the SIRT Director, with the Governing Board informed (§5.2). "Do not fork" gains a critical-infrastructure exception decided by the SIRT Director, with advance notice to the maintainer (Part I §6). A returning maintainer takes control back and chooses how to continue (Part I §5). Adds transfer on request at the end of an engagement (§6). Aligns with the [MoLR Procedure](../procedures/molr-procedure.md) v0. |
+| 1.2 (draft) | 2026-11-23 | §5.1: the SIRT Director sets and publishes the concurrency cap and the criticality threshold, and informs the Governing Board of changes. |
