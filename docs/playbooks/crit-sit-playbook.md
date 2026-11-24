@@ -4,7 +4,7 @@
 **Approver:** SIRT Director
 **Owner:** Akrites SIRT
 **Status:** Draft for Akrites SIRT review
-**Audience:** SIRT Director, SIRT case coordinators, and Working Group members working a declared Crit-Sit
+**Audience:** SIRT Director, Incident Commanders, SIRT case coordinators, and Working Group members working a declared Crit-Sit
 **Companion docs:** [CVD Policy](../policies/cvd-policy.md) (§8 embargo and TLP, §9 actively exploited vulnerabilities, §15 escalation), [Read-In Policy](../policies/read-in-policy.md), [Case Handling Procedure](../procedures/case-handling-procedure.md), [Communications Playbook](communications-playbook.md), [Public Disclosure Guidelines](../guidelines/public-disclosure-guidelines.md), [Maintainer of Last Resort Policy](../policies/molr-policy.md)
 
 ---
@@ -25,7 +25,7 @@ A Crit-Sit is a **mode of the existing CVD lifecycle, not a separate process.** 
 | **Declared by** | The **SIRT Director**, who also declares it closed. |
 | **TLP handling** | Phased, per CVD Policy §8: **TLP:RED** at intake, **TLP:AMBER+STRICT** for remediation (Tiers 1, 1.5, 2), **TLP:AMBER** for downstream staging (Tiers 3, 3.5), **TLP:CLEAR** at Public Disclosure. |
 | **Response timing** | Declaration as soon as a trigger is confirmed; actionable guidance to defenders within **7 days** of confirmed exploitation (CVD Policy §9). See §3. |
-| **Read-in and escalation** | The SIRT case coordinator (as Incident Commander) approves every read-in under the Read-In Policy. The Director escalates to the Governing Board through Comms Play 19. |
+| **Read-in and escalation** | The Incident Commander approves every read-in under the Read-In Policy (§6), on the SIRT case coordinator's verification of the gates and prerequisites. The Director escalates to the Governing Board through Comms Play 19. |
 
 **Not a Crit-Sit on its own:** a high severity score, or an unmaintained project, without one of the triggers above. An unmaintained project *with* a trigger is a Crit-Sit, and the MoLR Policy still governs any last-resort release.
 
@@ -38,12 +38,13 @@ Anyone working a case may ask the Director to consider a declaration. The Case H
 | Role | Who | Responsibilities |
 | --- | --- | --- |
 | **SIRT Director** | SIRT Director | Declares and closes the Crit-Sit; decides high-impact timing calls; escalates to the Governing Board (CVD Policy §15). |
-| **Incident Commander (IC)** | The SIRT case coordinator for the case | Runs the operational flow; owns the timeline and status cadence; **approves all read-ins** (Read-In Policy §6). |
+| **Incident Commander (IC)** | Akrites staff brought in by the SIRT Director at declaration (currently the Technical Program Management Director). Never the case's SIRT case coordinator. | Takes responsibility for handling the case: runs the operational flow; owns the timeline and status cadence; **approves all read-ins**, assigns tiers, and grants and revokes access (Read-In Policy §6, §13); names the Scribe and Comms Lead. |
+| **SIRT case coordinator** | The SIRT case coordinator already assigned to the case | Stays on the case as technical coordinator: verifies each nomination against the Three-Gate Test, prerequisites and exclusion check, and recommends it to the IC; coordinates the technical work with the Remediation Lead, SMEs and maintainer. |
 | **Remediation Lead** | The upstream maintainer (Tier 1.5) or a Tier 1 WG analyst / patch author | Leads drafting and testing of the fix, privately. The maintainer keeps authority over the fix and release except where CVD Policy §9 requires acceleration. |
 | **Scribe** | A SIRT staff member named by the IC | Keeps the [case read-in log](../../templates/case-read-in-log-template.csv), Read-In Notice acknowledgements, the case timeline, and the current TLP state. Records read-ins; does **not** approve them. |
 | **Comms Lead** | A SIRT staff member named by the IC | Runs communication with the Finder, upstream maintainers, and pre-notification partners using the Communications Playbook and the [notification templates](../../templates/notification-templates.md). |
 
-One person may hold more than one role in a small Crit-Sit, but the IC and the Scribe should be different people.
+One person may hold more than one role in a small Crit-Sit, except that the IC is never the SIRT case coordinator, and the IC and the Scribe should be different people.
 
 ---
 
@@ -74,7 +75,7 @@ The phases map to the nine-phase CVD lifecycle used in the Case Handling Procedu
 *Lifecycle: Discover, Deduplicate & Triage. Timing: as soon as a trigger is confirmed.*
 
 1. **Intake & dedupe.** Take in the finding (from a member, scanner, or external Finder) and merge duplicate reports into one canonical case ID (Case Handling Procedure step 2).
-2. **Declare the Crit-Sit.** The SIRT Director records the declaration in the case record — case ID, trigger, time (UTC), and Incident Commander. Case material is **TLP:RED** at this stage (CVD Policy §8).
+2. **Declare the Crit-Sit.** The SIRT Director records the declaration in the case record — case ID, trigger, time (UTC), and the Incident Commander the Director has brought in. Case material is **TLP:RED** at this stage (CVD Policy §8).
 3. **Enforce read-in.**
    1. Restrict the case channel, bridge, and private advisory workspace to people on the case's read-in list. Being in the same company, WG, or Slack workspace is not being read in.
    2. Every participant accepts the [Case Read-In Notice](../../templates/case-read-in-notice-template.md) before access is enabled, and the Scribe records it in the case read-in log.
@@ -92,7 +93,7 @@ The phases map to the nine-phase CVD lifecycle used in the Case Handling Procedu
 *Lifecycle: Patch, Test.*
 
 1. **Upstream-first remediation.** Develop and test the patch for the original project and offer it to its maintainer — no forks. Remediation material is **TLP:AMBER+STRICT**.
-2. **Selective read-in expansion.** Read in only those the fix needs, at the lowest sufficient tier (Read-In Policy §4–§5): analysts and patch authors at Tier 1, the upstream maintainer at Tier 1.5, testers at Tier 2. The IC approves each read-in; use Emergency Read-In (Read-In Policy §3.1) when an essential SME cannot wait for full prerequisites.
+2. **Selective read-in expansion.** Read in only those the fix needs, at the lowest sufficient tier (Read-In Policy §4–§5): analysts and patch authors at Tier 1, the upstream maintainer at Tier 1.5, testers at Tier 2. The IC approves each read-in on the SIRT case coordinator's verification; use Emergency Read-In (Read-In Policy §3.1) when an essential SME cannot wait for full prerequisites.
 3. **Pre-notification.** Stage the fix with distribution partners (Tiers 2–3) and notify international coordinators (Tier 3.5, at most 24 hours before PD) using Notification Template 3; staging material is **TLP:AMBER**. Critical-infrastructure requests follow Comms Play 16, and government and coordinator engagement follows Comms Play 11 — **no single-government pre-disclosure**. Members receive situational awareness only, without case specifics (Comms Play 4).
 4. **Prepare for an embargo break.** Have Notification Template 5 ready; if a break happens, follow the [Embargo Break Playbook](embargo-break-playbook.md) and Comms Play 6.
 
@@ -128,7 +129,7 @@ Subject: [TLP:RED] Crit-Sit declared — {case-id} — {component}
 TLP:RED — Private vulnerability information. Share only with the read-in list for {case-id}.
 
 Crit-Sit declared: {date/time UTC} by {SIRT Director}
-Incident Commander: {name}   Scribe: {name}   Comms Lead: {name}
+Incident Commander: {name}   Case coordinator: {name}   Scribe: {name}   Comms Lead: {name}
 Bridge / workspace: {private link — read-in list only}
 Affected component: {package} {version range}
 

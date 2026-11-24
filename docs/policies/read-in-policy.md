@@ -189,7 +189,7 @@ A detailed **RACI** — the specific actions each tier may take, and by whom —
 Every read-in meets these requirements. The steps for doing it are in the [Read-In Procedure](../procedures/read-in-procedure.md).
 
 - **Nominated with a stated role.** The Finder, WG, maintainer, or delegated authority proposes the person and the sanctioned role they will perform.
-- **Verified and approved by the SIRT case coordinator**, who records each of the three gates (§2), confirms the prerequisites (§3), and completes the exclusion check. The Finder and maintainer are consulted on Tier 0, 1 and 1.5 additions; they do not hold a veto.
+- **Verified and approved by the SIRT case coordinator**, who records each of the three gates (§2), confirms the prerequisites (§3), and completes the exclusion check. The Finder and maintainer are consulted on Tier 0, 1 and 1.5 additions; they do not hold a veto. In a declared Crit-Sit, the Incident Commander approves, on the case coordinator's verification (§13).
 - **Tier assigned under §5**, with the rationale recorded.
 - **Acknowledged first.** The read-in is sent from the SIRT and the individual must acknowledge it **before** access is enabled.
 - **Scoped.** Access covers that single case's private repository and communications channel — nothing else.
@@ -228,7 +228,7 @@ People whose earlier record is out of date, or who have been unresponsive or not
 
 **Levels.**
 
-1. **SIRT case coordinator.** Adjusts priority, pulls in additional Tier 1 SMEs, or reads a party in earlier — all within existing tier definitions.
+1. **SIRT case coordinator** (the Incident Commander in a declared Crit-Sit). Adjusts priority, pulls in additional Tier 1 SMEs, or reads a party in earlier — all within existing tier definitions.
 2. **SIRT Director.** Cross-cutting or contested calls: vertical-versus-industry severity conflicts, broad-scope resourcing, or convening a Working Group.
 3. **Governing Board.** Policy and legal matters: antitrust, and government or critical-infrastructure coordination.
 
@@ -279,7 +279,8 @@ Exceptions are handled case-by-case. Each is time-bounded, justified, approved b
 
 | Body | Authority |
 |---|---|
-| **SIRT case coordinator** | Evaluates the Three-Gate Test and prerequisites; runs the exclusion check; approves read-ins; assigns tiers; grants and revokes access; maintains the case read-in log; Level-1 escalation; coordinates breach response. |
+| **SIRT case coordinator** | Evaluates the Three-Gate Test and prerequisites; runs the exclusion check; approves read-ins; assigns tiers; grants and revokes access; maintains the case read-in log; Level-1 escalation; coordinates breach response. In a declared Crit-Sit, keeps the gate, prerequisite and exclusion-check evaluation and technical coordination; the other authorities in this row pass to the Incident Commander. |
+| **Incident Commander** (declared Crit-Sit only) | Akrites staff brought in by the SIRT Director at declaration; never the case coordinator. Takes responsibility for handling the case: approves read-ins; assigns tiers; grants and revokes access; Level-1 escalation; coordinates breach response; is accountable for the case read-in log, kept by the Scribe ([Crit-Sit Playbook §2](../playbooks/crit-sit-playbook.md#2-roles)). |
 | **SIRT Director** | Level-2 escalation: cross-cutting severity and vertical calls; broad-scope resourcing; convening a Working Group; approving Maintainer-of-Last-Resort engagements ([MoLR Policy §5.2](molr-policy.md#52-approval-authority--recusal)). |
 | **Finder & maintainer** | Consulted on the read-in list, embargo, and PD. The maintainer sets the final fix and PD date. |
 | **Working Group** | Nominates SMEs; requests escalation for its domain or vertical. |

@@ -641,7 +641,7 @@ Corrective actions: {action — owner — due date — tracking issue}
 Reusable comms/templates to update: {…}
 ```
 
-**Notes:** Explicitly blameless — examine systems, not individuals. The SIRT case coordinator (the Incident Commander in a Crit-Sit) assembles the timeline from the case record, the read-in log, communication logs, and commit history. Corrective actions get an owner, a due date, and a tracking issue within 5 business days of the postmortem; track them in a **private** repository, or publicly only once sanitized and after PD, because details of an embargo failure can themselves leak case information. Feed changes back into this playbook and the process docs.
+**Notes:** Explicitly blameless — examine systems, not individuals. The SIRT case coordinator (in a Crit-Sit, the Incident Commander, who is a different person) assembles the timeline from the case record, the read-in log, communication logs, and commit history. Corrective actions get an owner, a due date, and a tracking issue within 5 business days of the postmortem; track them in a **private** repository, or publicly only once sanitized and after PD, because details of an embargo failure can themselves leak case information. Feed changes back into this playbook and the process docs.
 
 ---
 
