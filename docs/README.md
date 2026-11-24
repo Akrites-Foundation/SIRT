@@ -20,6 +20,7 @@ Titles follow `<Subject> <Type>`, and filenames follow `<subject>-<type>.md` in 
 - [Working Group Governance Policy](policies/wg-governance-policy.md)
 - [Maintainer of Last Resort (MoLR) Policy](policies/molr-policy.md)
 - [Attribution and AI-Use Disclosure Policy](policies/attribution-and-ai-use-disclosure-policy.md)
+- [Conflict of Interest and Recusal Policy](policies/conflict-of-interest-and-recusal-policy.md)
 - [Code of Conduct](../Code_of_Conduct.md)
 
 ## Processes
@@ -93,6 +94,7 @@ Titles follow `<Subject> <Type>`, and filenames follow `<subject>-<type>.md` in 
 | [Embargo Handling Guidelines](guidelines/embargo-handling-guidelines.md) | Guidelines | SIRT Director | Draft — for Akrites SIRT review |
 | [GitHub Fallback Case Handling Procedure](procedures/github-fallback-case-handling-procedure.md) | Procedure | SIRT Director | Draft — for Akrites SIRT review |
 | [Working Group Governance Policy](policies/wg-governance-policy.md) | Policy | SIRT Director | Draft — for Akrites SIRT review |
+| [Conflict of Interest and Recusal Policy](policies/conflict-of-interest-and-recusal-policy.md) | Policy | SIRT Director | Draft — for Akrites SIRT review |
 | [Working Group Operating Procedure](procedures/wg-operating-procedure.md) | Procedure | SIRT Director | Draft — for Akrites SIRT review |
 | [Embargo Break Playbook](playbooks/embargo-break-playbook.md) | Playbook | SIRT Director | Draft — for Akrites SIRT review |
 | [Communications Guidelines](guidelines/communications-guidelines.md) | Guidelines | SIRT Director | Draft — for Akrites SIRT review |
