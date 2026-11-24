@@ -2,7 +2,7 @@
 
 **Type:** Policy
 **Approver:** Governing Board
-**Version:** 1.6
+**Version:** 1.7
 **Status:** Board-reviewed — v1.0, 2026-10-20 (later edits reported to the Board)
 **Owner:** Akrites SIRT (Security Incident Response Team)
 **Primary contact:** SIRT@Akrites.dev
@@ -118,7 +118,7 @@ rollout phase — see Section 12).
   maintain the CVE Record in due time; otherwise we coordinate with the
   authoritative CNA (see Section 2).
 - **Target Public Disclosure:** ≤ 17 business days (Low/Medium), ≤ 21 bd (High), or ≤ 24 bd (Critical) from receipt, incorporating a 15-business-day proposed upstream embargo (see Section 8)
-- **Communicate continuously:** — we maintain an open dialogue, give status
+- **Consistent and reliable communication:** — we maintain an open dialogue, give status
   updates, and are transparent about anything that may delay resolution.
 - **Respect confidentiality:** — we handle case material under TLP 2.0: **TLP:RED** at intake, **TLP:AMBER+STRICT** during verification and remediation, **TLP:AMBER** for downstream staging, and **TLP:CLEAR** at the agreed public date (see the table in Section 8). We share only with those who need to know.
 - **Credit you:** — by default we credit the Finder under the name or handle they reported with, confirm the credit line with them before disclosure, and honor any request for anonymity (see Section 11).
@@ -500,6 +500,7 @@ SIRT@Akrites.dev.
 | 1.4     | 2026-11-09 | Board decision D1: §14 names the Linux Foundation as the entity making the safe-harbor commitment. |
 | 1.5     | 2026-11-10 | Decision D3: §8 states the maintainer decides the PD date, with the SIRT Director as the SIRT's final decision point. Decision D4: §7 downstream lead time set to 7–14 days (Tiers 2–3) and at most 24 hours (Tier 3.5), matching the Read-In Policy. Reported to the Governing Board. |
 | 1.6     | 2026-11-23 | Editorial only — no change to policy substance. §3: term definitions moved to the Glossary and replaced with links, so each term is defined in one place (definitions of Collaborator, Clearinghouse, Finder, Owner and others carried into the Glossary unchanged in meaning). §7: states that this section holds the canonical nine-phase list and that the CVD Process and Case Handling Procedure follow it. To be reported to the Governing Board. |
+| 1.7     | 2026-11-23 | §5: the commitment "Communicate continuously" now reads "Consistent and reliable communication", since continuous communication cannot be promised (issue #105). To be reported to the Governing Board. |
 
 ## 17. References
 
