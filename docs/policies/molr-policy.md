@@ -120,7 +120,7 @@ Track B requires a signed entry test confirming all seven criteria:
 
 ### 5.2 Approval Authority & Recusal
 * **Approval**: Track B requires approval by the **SIRT Director**, for each engagement and for each additional vulnerability fixed during it, recorded in the MoLR case issue. The **Governing Board is informed** of every new engagement.
-* **Mandatory Recusal**: Any approver with a commercial, personal, or organizational dependency on the affected package must recuse. If the SIRT Director is conflicted, the Akrites CTO approves. A Member staffing the engagement may have a dependency on the package, but it does not approve the engagement or sign off its own releases.
+* **Mandatory Recusal**: Any approver with a commercial, personal, or organizational dependency on the affected package must recuse. If the SIRT Director is conflicted, the Technical PgM Director approves. A Member staffing the engagement may have a dependency on the package, but it does not approve the engagement or sign off its own releases.
 
 ### 5.3 The Artifact
 The deliverable is a clean build of a frozen upstream commit plus the approved security patches, published under an Akrites-controlled namespace and never into the original project's namespace. The artifact rules are in the [Guidelines and Procedures](../procedures/molr-procedure.md).
@@ -133,6 +133,7 @@ No MoLR security release is published until it passes every integrity and correc
 ## 6. Limits of a MoLR Engagement
 
 * **Operational donation, not ownership**: A MoLR engagement is an operational donation by Akrites of **up to 12 months**, counted from the first last-resort security release. Akrites does not take long-term ownership of any project.
+* **Not a maintainer of the project**: Consistent with the Akrites Charter (§1(d)), Akrites does not act as a maintainer of open source projects. MoLR is time-bounded security patching of individual vulnerabilities, not maintainership of the project.
 * **Not a custodian**: Akrites is not a custodian for un-owned or abandoned projects. When the engagement ends, the artifact is frozen (Part III §2).
 * **No steward approval**: Akrites does not select, appoint, or approve successor maintainers or stewards. It may help a project's community find candidates (Part III §1).
 * **Transfer on request**: When an engagement ends, Akrites may transfer its MoLR repository to a party that asks to carry it. This is a transfer, not an appointment; the original maintainer is notified, and MoLR repositories never stay in Akrites' organization after the engagement ends.
@@ -173,3 +174,4 @@ Downstream users are routed to fixes through machine-readable advisories (OSV, V
 | 1.0 | 2026-11-10 | Split into this policy and the [MoLR Procedure](../procedures/molr-procedure.md); operational detail moved there. Incorporates [PR #183](https://github.com/Akrites-Foundation/SIRT/pull/183) by Roman Zhukov (trusted third-party clock start, chain-of-custody criterion, criticality justification, recusal). Adds: 12-month operational donation, no ownership or custody, no steward approval, no term limits, no urgency exception to the 90-day floor, Track B after a deliberate non-fix only for an end-of-life branch whose vulnerability the maintainer does not dispute (EOL-branch path). Prepared for first Governing Board review. |
 | 1.1 (draft) | 2026-11-10 | Approval of Track B moves to the SIRT Director, with the Governing Board informed (§5.2). "Do not fork" gains a critical-infrastructure exception decided by the SIRT Director, with advance notice to the maintainer (Part I §6). A returning maintainer takes control back and chooses how to continue (Part I §5). Adds transfer on request at the end of an engagement (§6). Aligns with the [MoLR Procedure](../procedures/molr-procedure.md) v0. |
 | 1.2 (draft) | 2026-11-23 | §5.1: the SIRT Director sets and publishes the concurrency cap and the criticality threshold, and informs the Governing Board of changes. |
+| 1.3 (draft) | 2026-11-23 | §5.2: fallback approver if the SIRT Director is conflicted is the Technical PgM Director (replaces undefined "CTO"). §6: states that MoLR is not maintainership under Charter §1(d). To be reported to the Governing Board. |

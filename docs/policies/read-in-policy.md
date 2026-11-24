@@ -151,6 +151,8 @@ Automated intake — deduplication, severity estimation, and routing — sits wi
 | International coordinator / strategic partner | Pre-stage PD notifications | Tier 3.5 | At most 24 hours before PD |
 | Affected user / interested member engineer | — | None | Public disclosure |
 
+**Membership does not confer read-in.** Akrites membership at any level (Premier, General or Associate) does not by itself entitle a Member or its engineers to be read in to a case. Engineers of Associate Members, like all others, are admitted only when they pass the Three-Gate Test and meet the prerequisites for the tier. Premier status gives representation on the Governing Board, not case access.
+
 ---
 
 ## 5. Tier placement criteria
@@ -250,7 +252,7 @@ Exceptions are handled case-by-case. Each is time-bounded, justified, approved b
 | **Finder with a patch and customer obligations** | Sharing a fix before disclosure or upstream engagement is discouraged but cannot be prohibited. It must be declared to the SIRT; risks and consequences are documented. The SIRT respects the Finder's timeframe for meeting its customer obligations and coordinates the case timeline with it. | SIRT |
 | **Early mitigations / workarounds** | Expected to be shared when patch development will exceed the agreed embargo or disclosure window. | SIRT |
 | **Upstream maintainer who cannot sign the Read-In Notice** | Where the project's published policy says its maintainers do not sign NDAs or acknowledgements, the SIRT records the project's own confidentiality and embargo terms in the case read-in log and sends the Read-In Notice for information only. The SIRT shares only what those terms allow. The Three-Gate Test, the exclusion check, tier placement, logging and expiry all still apply. | SIRT |
-| **Maintainer of Last Resort / time-bounded hardened fork** | Permitted only with Governing Board approval. | Governing Board |
+| **Maintainer of Last Resort / time-bounded hardened fork** | Permitted only under the [MoLR Policy](molr-policy.md#52-approval-authority--recusal): the SIRT Director approves each engagement and the Governing Board is informed. | SIRT Director |
 | **Government / critical-infrastructure / telco coordination without pre-disclosure** | A Governing Board determination, consistent with the standing decision **not to pre-disclose to any single government**. | Governing Board |
 
 ---
@@ -259,7 +261,8 @@ Exceptions are handled case-by-case. Each is time-bounded, justified, approved b
 
 - Anyone read in to the case — participant, WG member, or staff — who discovers a breach **must promptly notify the SIRT**.
 - **An embargo break results in immediate suspension of access.** The Governing Board decides on permanent removal. An accidental break that the participant promptly self-reports is reviewed blamelessly.
-- The SIRT coordinates the response and escalates the violation to the Governing Board, which holds final authority for permanent revocation or further administrative action. The steps are in the [Read-In Procedure](../procedures/read-in-procedure.md).
+- The SIRT coordinates the response and escalates the violation to the Governing Board, which holds final authority for permanent revocation or further administrative action. The steps are in the [Read-In Procedure](../procedures/read-in-procedure.md), and the incident response to the break itself is in the [Embargo Break Playbook](../playbooks/embargo-break-playbook.md).
+- Where the person who broke the embargo is an Akrites Member's representative, the Charter's process applies in addition: violations are reported to the Governing Board, the Chair or a Co-Chair may suspend the Member, and the Member may appeal to the Linux Foundation (Akrites Charter §1(e)(iii)–(iv)).
 
 ---
 
@@ -277,7 +280,7 @@ Exceptions are handled case-by-case. Each is time-bounded, justified, approved b
 | Body | Authority |
 |---|---|
 | **SIRT case coordinator** | Evaluates the Three-Gate Test and prerequisites; runs the exclusion check; approves read-ins; assigns tiers; grants and revokes access; maintains the case read-in log; Level-1 escalation; coordinates breach response. |
-| **SIRT Director** | Level-2 escalation: cross-cutting severity and vertical calls; broad-scope resourcing; convening a Working Group. |
+| **SIRT Director** | Level-2 escalation: cross-cutting severity and vertical calls; broad-scope resourcing; convening a Working Group; approving Maintainer-of-Last-Resort engagements ([MoLR Policy §5.2](molr-policy.md#52-approval-authority--recusal)). |
 | **Finder & maintainer** | Consulted on the read-in list, embargo, and PD. The maintainer sets the final fix and PD date. |
 | **Working Group** | Nominates SMEs; requests escalation for its domain or vertical. |
-| **Governing Board** | Policy and legal exceptions — antitrust, government coordination; Maintainer-of-Last-Resort approval; creation of any standing WG (none today); permanent removal after a breach; grey-area cases. |
+| **Governing Board** | Policy and legal exceptions — antitrust, government coordination; informed of new Maintainer-of-Last-Resort engagements; creation of any standing WG (none today); permanent removal after a breach; grey-area cases. |

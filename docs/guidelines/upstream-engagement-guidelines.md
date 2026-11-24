@@ -275,6 +275,6 @@ MoLR release publication (Play 15), rejected patch (Play 17) — all in `communi
 **Decisions (2026-11-10)** — decided by the SIRT Director under the document approval rules (decision D2):
 
 - **Code of conduct:** no separate document. The commitments in MoLR Policy Part I serve as the upstream-engagement code of conduct (§1.2).
-- **Binaries:** Akrites ships source and patches only, except Governing Board–approved MoLR releases (§2.4).
+- **Binaries:** Akrites ships source and patches only, except SIRT Director–approved MoLR releases (§2.4).
 - **Security Starter Kit:** owned by the Akrites SIRT, which reviews its links whenever this document is reviewed (§3.7).
 
