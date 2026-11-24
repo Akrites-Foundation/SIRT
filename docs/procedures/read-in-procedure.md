@@ -141,3 +141,9 @@ Keep one log per case, using the [read-in log template](../../templates/case-rea
 - expiry, and any revocation with its reason.
 
 At each case, review the read-in list against least privilege. Keep participant identities out of anything that is shared outside the case.
+
+---
+
+## Open items
+
+- **RACI per tier:** the specific actions each tier may take, and by whom, as a companion table to the [Read-In Policy](../policies/read-in-policy.md). Owner: Akrites SIRT.

@@ -279,8 +279,7 @@ Akrites helps a project's community find a new home through targeted outreach to
 
 ## Open items
 
-- **Capacity cap:** the maximum number of concurrent MoLR engagements (Policy Part II §5.1, criterion 5).
-- **Criticality threshold:** the published metric and threshold (Policy Part II §5.1, criterion 2).
+- **Capacity cap and criticality threshold:** the SIRT Director sets and publishes both (Policy §5.1, criteria 2 and 5), and informs the Governing Board of changes. The values themselves are still to be set.
 - **Akrites registry namespace per ecosystem** (npm, PyPI, Maven Central, crates.io, and others).
 - **Per-engagement signing keys:** generation, storage, and retirement.
 - **Notice periods:** 14 days before Step 3 (M1) and 30 days before a freeze (M5) are proposed here and need confirming.

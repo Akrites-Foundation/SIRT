@@ -178,7 +178,7 @@ Every candidate must first clear the Three-Gate Test (§2) and the Prerequisites
 
 A **tier** governs *when* and *how much* a person is read in. A **disclosure boundary** governs *what information exists or is shared* at a point in the case. Each tier receives only the TLP-classified material its task requires: TLP:RED at intake (Tier 0), TLP:AMBER+STRICT for verification and remediation material (Tiers 1, 1.5, 2), and TLP:AMBER for downstream staging (Tiers 3, 3.5). See the CVD Policy §8 table.
 
-A detailed **RACI** — the specific actions each tier may take, and by whom — is to be developed as a companion to this policy (Appendix A, item 2).
+A detailed **RACI** — the specific actions each tier may take, and by whom — is developed as a companion document owned by the Akrites SIRT, and is tracked in the [Read-In Procedure](../procedures/read-in-procedure.md).
 
 ---
 
@@ -281,15 +281,3 @@ Exceptions are handled case-by-case. Each is time-bounded, justified, approved b
 | **Finder & maintainer** | Consulted on the read-in list, embargo, and PD. The maintainer sets the final fix and PD date. |
 | **Working Group** | Nominates SMEs; requests escalation for its domain or vertical. |
 | **Governing Board** | Policy and legal exceptions — antitrust, government coordination; Maintainer-of-Last-Resort approval; creation of any standing WG (none today); permanent removal after a breach; grey-area cases. |
-
----
-
-## Appendix A — Consolidated open items
-
-Items carried forward from both source documents, deduplicated, with the body that owns the decision. This appendix is the single list of what remains unresolved; it is expected to shrink to zero before the policy leaves DRAFT status.
-
-| # | Open item | Detail | Owner |
-|---|---|---|---|
-| 2 | **RACI per tier** | Define the specific actions each tier may take, and by whom, as a companion document to this policy. | Akrites SIRT, companion document |
----
-
