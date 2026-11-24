@@ -794,20 +794,7 @@ isolation.
 | 20 | Trend / periodic report | ecosystem |
 | 21 | General onboarding / welcome | New member engineers |
 
-# Appendix B — Open items for Governing Board
-
-These shape the templates above and are still open from the F2F:
-
-- Confirm the standard **extension** principle (the 15-bd window and PD targets are set in CVD Policy §8).
-- Define the **co-finder attribution cutoff** (referenced in Plays 7 and 13).
-- Ratify the **read-in delegation** model and whether maintainers may veto read-ins.
-- MoLR authority: SIRT Director, Board informed (MoLR Policy §5.2); confirm triggers.
-- Finalize **disclosure definition** (what counts as "public") and whether **first-report date** is
-  published (Plays 2, 5).
-- Approve a distinct **Code of Conduct for upstream engagement** to accompany first-contact (Play 9).
-- Confirm the **dispute-resolution** process and the **deviation notice** format (Play 14).
-
-# Appendix C — Companion documents
+# Appendix B — Companion documents
 
 - [Attribution and AI-Use Disclosure Policy](../policies/attribution-and-ai-use-disclosure-policy.md) — attribution scenarios + AI-disclosure vocabulary (Play 7).
 - [Embargo Handling Guidelines](../guidelines/embargo-handling-guidelines.md) — embargo mechanics (Plays 6, 12).
