@@ -6,24 +6,27 @@ https://github.com/Akrites-Foundation/SIRT/blob/main/docs/policies/cvd-policy.md
 - High-level description of the vulnerability.
 - Impacted versions:
    - <provide an exact commit ID or precise version rather than only a range.>
+   - <distinguish versions confirmed by testing from those inferred by code analysis, and note which releases were actually executed.>
 
 ## 2. Security Impact
-- CVSSv4:
-- Severity Assessment: (e.g. Critical / High / Medium / Low) - <reason articulated>
+- CVSSv4: <vector> (base score <n>, <severity>; confirm the score with the FIRST CVSS v4.0 calculator)
+- CWE: <CWE-nnn (name)> as the primary weakness<, with CWE-mmm (name) as the underlying cause>
+- Severity Assessment: (e.g. Critical / High / Medium / Low) - <reason articulated; reconcile with the submitter's claimed severity if it differs>
   - [Optional] Threat Model Used*: Link to the threat model used if there is one
 
 ## 3. Reproduction Steps
 - Attack Vector:
 - Steps to reproduce:
    - Configuration: <prerequisites and conditions required for exploitation (e.g. default vs non-default config), which map directly onto the CVSS vector (attack complexity, privileges required, etc.).>
+   - Status: <reproduced | not reproduced>; environment <e.g. AddressSanitizer build of <version>, kind cluster, release binary>, with a one-line note on what was observed.
    - Exploit: A working exploit exists and is available privately upon request. Exploit code is intentionally kept out of this report.
 
 ## 4. Detailed Analysis
 <The impacted code, detailed, with files and lines cited.>
 
 ## 5. Patch / Mitigation
-- If we have a patch; include the patch and `diff`,
-- otherwise, the mitigation we propose in either configuration or elsewhere.
+- If we have a patch: inline the fix `diff` here. Accompanying test code may be omitted for brevity and offered on request (like the PoC). Include a Signed-off-by — the patch author's own, or the engineer who validated it; note "authored with AI assistance" when there is no individual human author, and never synthesize a sign-off.
+- Otherwise, the mitigation we propose in either configuration or elsewhere.
 
 ## 6. Embargo
 If your project has a published disclosure policy, we follow it. Otherwise, we propose an upstream embargo of fifteen (15) business days from <UPSTREAM_START_DATE>, with a proposed Public Disclosure date of <PD_DATE>. If you need more time to ship a fix, tell us and we will work out a date with you.
@@ -34,3 +37,5 @@ If your project has a published disclosure policy, we follow it. Otherwise, we p
 - AI use (capability level, per the Akrites AI and LLM Use Disclosure Policy):
    - Finder: <No AI tooling was used. / AI-assisted {phase(s)}. Tools: {names, only if the Finder consented}.>
    - Coordinator (Akrites SIRT): <No AI tooling was used. / AI-assisted {phase(s)}, under human review.>
+- Patch: <author; "authored with AI assistance" when there is no individual human author; validated and signed off by <name/email>>
+- Reported by: Akrites SIRT <sirt@akrites.dev>. Akrites SIRT is a CVE Numbering Authority (CNA) and can reserve and assign a CVE ID for this issue on request.
